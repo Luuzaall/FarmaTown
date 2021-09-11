@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APPBTS.Datos
+namespace FarmaTown.Datos
 {
     public class DBHelper
     {
