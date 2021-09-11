@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Data;
-using APPBTS.Negocio;
 using System.Windows.Forms;
 
-namespace APPBTS
+namespace FarmaTown
 {
     public partial class frmLogin : Form
     {
 
         //Atributos
-        private Usuario miUsuario = new Usuario();
-
-        internal Usuario MiUsuario { get => miUsuario; set => miUsuario = value; }
 
         public frmLogin()
         //Constructor
@@ -43,6 +39,7 @@ namespace APPBTS
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            /*
             string usuario = this.txtUsuario.Text;
             string clave = this.txtClave.Text;
 
@@ -83,6 +80,7 @@ namespace APPBTS
                 this.txtClave.Text = string.Empty;
                 this.txtUsuario.Focus();
             }
+            */
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -94,15 +92,22 @@ namespace APPBTS
 
         private void txtClave_Enter(object sender, KeyPressEventArgs e)
         {
+            /*
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnIngresar.PerformClick();
             }
+            */
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

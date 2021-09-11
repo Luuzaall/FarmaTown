@@ -1,5 +1,5 @@
 ﻿
-namespace APPBTS
+namespace FarmaTown
 {
     partial class frmLogin
     //
@@ -33,19 +33,21 @@ namespace APPBTS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.txtbNomUs = new JMaterialTextbox.JMaterialTextbox();
+            this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
+            this.lblIngreso = new System.Windows.Forms.Label();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.btnIngresar = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Gadugi", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(72, 30);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(40, 81);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(63, 18);
+            this.lblUsuario.Size = new System.Drawing.Size(87, 23);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
@@ -53,78 +55,137 @@ namespace APPBTS
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Font = new System.Drawing.Font("Gadugi", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(48, 73);
+            this.lblClave.BackColor = System.Drawing.Color.Transparent;
+            this.lblClave.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Location = new System.Drawing.Point(12, 130);
             this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(87, 18);
+            this.lblClave.Size = new System.Drawing.Size(129, 23);
             this.lblClave.TabIndex = 1;
             this.lblClave.Text = "Contraseña:";
             // 
-            // txtUsuario
+            // txtbNomUs
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(152, 30);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(128, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtbNomUs.BackColor = System.Drawing.Color.Transparent;
+            this.txtbNomUs.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbNomUs.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbNomUs.ForeColors = System.Drawing.Color.Black;
+            this.txtbNomUs.HintText = null;
+            this.txtbNomUs.IsPassword = false;
+            this.txtbNomUs.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtbNomUs.LineThickness = 2;
+            this.txtbNomUs.Location = new System.Drawing.Point(160, 81);
+            this.txtbNomUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbNomUs.MaxLength = 32767;
+            this.txtbNomUs.Name = "txtbNomUs";
+            this.txtbNomUs.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtbNomUs.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbNomUs.ReadOnly = false;
+            this.txtbNomUs.Size = new System.Drawing.Size(244, 23);
+            this.txtbNomUs.TabIndex = 6;
+            this.txtbNomUs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbNomUs.TextName = "";
             // 
-            // txtClave
+            // txtbClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(152, 73);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(128, 20);
-            this.txtClave.TabIndex = 3;
-            this.txtClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_Enter);
+            this.txtbClave.BackColor = System.Drawing.Color.Transparent;
+            this.txtbClave.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbClave.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbClave.ForeColors = System.Drawing.Color.Black;
+            this.txtbClave.HintText = null;
+            this.txtbClave.IsPassword = false;
+            this.txtbClave.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtbClave.LineThickness = 2;
+            this.txtbClave.Location = new System.Drawing.Point(160, 130);
+            this.txtbClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbClave.MaxLength = 32767;
+            this.txtbClave.Name = "txtbClave";
+            this.txtbClave.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtbClave.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbClave.ReadOnly = false;
+            this.txtbClave.Size = new System.Drawing.Size(244, 23);
+            this.txtbClave.TabIndex = 7;
+            this.txtbClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbClave.TextName = "";
             // 
-            // btnIngresar
+            // lblIngreso
             // 
-            this.btnIngresar.AutoEllipsis = true;
-            this.btnIngresar.BackColor = System.Drawing.SystemColors.Window;
-            this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnIngresar.Font = new System.Drawing.Font("Gadugi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(184, 119);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(96, 34);
-            this.btnIngresar.TabIndex = 4;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.lblIngreso.AutoSize = true;
+            this.lblIngreso.BackColor = System.Drawing.Color.Transparent;
+            this.lblIngreso.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngreso.Location = new System.Drawing.Point(108, 21);
+            this.lblIngreso.Name = "lblIngreso";
+            this.lblIngreso.Size = new System.Drawing.Size(252, 32);
+            this.lblIngreso.TabIndex = 10;
+            this.lblIngreso.Text = "Ingreso al Sistema";
             // 
             // btnSalir
             // 
-            this.btnSalir.AutoEllipsis = true;
-            this.btnSalir.BackColor = System.Drawing.SystemColors.Window;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnSalir.BorderRadius = 20;
+            this.btnSalir.BorderSize = 0;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnSalir.Location = new System.Drawing.Point(89, 130);
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalir.Location = new System.Drawing.Point(85, 195);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Size = new System.Drawing.Size(111, 40);
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "Salir";
+            this.btnSalir.TextColor = System.Drawing.Color.Black;
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIngresar.BorderColor = System.Drawing.Color.White;
+            this.btnIngresar.BorderRadius = 20;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIngresar.Location = new System.Drawing.Point(247, 185);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(157, 50);
+            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextColor = System.Drawing.Color.Black;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = global::FarmaTown.Properties.Resources.FondoFarmaTown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(344, 176);
+            this.CancelButton = this.btnIngresar;
+            this.ClientSize = new System.Drawing.Size(462, 259);
+            this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.txtClave);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtbClave);
+            this.Controls.Add(this.txtbNomUs);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.lblUsuario);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
@@ -138,10 +199,11 @@ namespace APPBTS
 
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button btnSalir;
+        private JMaterialTextbox.JMaterialTextbox txtbNomUs;
+        private JMaterialTextbox.JMaterialTextbox txtbClave;
+        private CustomControls.RJControls.RJButton btnIngresar;
+        private CustomControls.RJControls.RJButton btnSalir;
+        private System.Windows.Forms.Label lblIngreso;
     }
 }
 
