@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Lógica\Rol.cs" />
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -65,6 +66,7 @@
     <Compile Include="Presentacion\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lógica\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
@@ -96,9 +98,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Lógica\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />

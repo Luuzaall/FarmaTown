@@ -8,47 +8,35 @@ namespace FarmaTown
     {
 
         //Atributos
+        private Usuario oUsuario;
+        public string nomUsuario;
 
         public frmLogin()
-        //Constructor
         {
+        /*
+        * Constructor
+        */
             InitializeComponent();
-        }
-
-        private bool validarCredenciales(string usuario, string clave)
-        {
-            //DataTable usuarios = dbhelper.consultarTabla("Usuarios");
-
-            return true;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-         
+            oUsuario = new Usuario();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            /*
-            string usuario = this.txtUsuario.Text;
-            string clave = this.txtClave.Text;
+        /*
+        * Permite que al haber hecho click en el botón ingresar, valide
+        * la completitud de los datos ingresados y si son correctos para
+        * el ingreso al sistema.
+        */
+
+            string usuario = this.txtbUsuario.Text;
+            string clave = this.txtbClave.Text;
 
             if (string.IsNullOrEmpty(usuario))
             {
                 MessageBox.Show("Debe ingresar un usuario",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtUsuario.Focus();
+                txtbUsuario.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(clave)) 
@@ -56,16 +44,17 @@ namespace FarmaTown
                 MessageBox.Show("Debe ingresar una clave",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtClave.Focus();
+                txtbClave.Focus();
                 return;
             }
 
-            this.MiUsuario.Nombre = usuario;
-            this.MiUsuario.Password = clave;
+            this.oUsuario.IdUsuario = 0;   //Por si no puede conectarse a la BD.
+            this.oUsuario.Nombre = usuario;
+            this.oUsuario.Clave = clave;
 
-            this.MiUsuario.Id_usuario = this.MiUsuario.validarUsuario(usuario, clave);
+            this.oUsuario.IdUsuario = this.oUsuario.validarUsuario(usuario, clave);
            
-            if (this.MiUsuario.Id_usuario != 0)
+            if (this.oUsuario.IdUsuario != 0)
             {
                 MessageBox.Show("Login Ok", "Ingreso al Sistema"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,15 +65,18 @@ namespace FarmaTown
                 MessageBox.Show("Usuario y/o contraseña incorrectos",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                this.txtUsuario.Text = "";
-                this.txtClave.Text = string.Empty;
-                this.txtUsuario.Focus();
+                this.txtbUsuario.Text = "";
+                this.txtbClave.Text = string.Empty;
+                this.txtbUsuario.Focus();
             }
-            */
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+        /*
+        * Borón salir cierre el formulario.
+        */
             this.Close();
         }
 
@@ -92,22 +84,14 @@ namespace FarmaTown
 
         private void txtClave_Enter(object sender, KeyPressEventArgs e)
         {
-            /*
+        /*
+        * Al apretar enter en el campo clave, 
+        * fuera como apretar Ingresar.
+        */
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnIngresar.PerformClick();
             }
-            */
-        }
-
-        private void lblUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {             
-
         }
     }
 }

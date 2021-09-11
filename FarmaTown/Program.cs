@@ -17,15 +17,6 @@ namespace FarmaTown
         [STAThread]
         static void Main()
         {
-            DBHelper db = new DBHelper();
-            DataTable tabla = db.consultarTabla("TiposMedicamentos");
-            foreach (DataRow dataRow in tabla.Rows)
-            {
-                foreach (var item in dataRow.ItemArray)
-                {
-                    Console.WriteLine(item);
-                }
-            }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());

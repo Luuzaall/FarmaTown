@@ -33,7 +33,7 @@ namespace FarmaTown
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
-            this.txtbNomUs = new JMaterialTextbox.JMaterialTextbox();
+            this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
             this.lblIngreso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
@@ -50,7 +50,6 @@ namespace FarmaTown
             this.lblUsuario.Size = new System.Drawing.Size(87, 23);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // lblClave
             // 
@@ -63,27 +62,27 @@ namespace FarmaTown
             this.lblClave.TabIndex = 1;
             this.lblClave.Text = "Contraseña:";
             // 
-            // txtbNomUs
+            // txtbUsuario
             // 
-            this.txtbNomUs.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNomUs.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbNomUs.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbNomUs.ForeColors = System.Drawing.Color.Black;
-            this.txtbNomUs.HintText = null;
-            this.txtbNomUs.IsPassword = false;
-            this.txtbNomUs.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtbNomUs.LineThickness = 2;
-            this.txtbNomUs.Location = new System.Drawing.Point(160, 81);
-            this.txtbNomUs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbNomUs.MaxLength = 32767;
-            this.txtbNomUs.Name = "txtbNomUs";
-            this.txtbNomUs.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtbNomUs.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNomUs.ReadOnly = false;
-            this.txtbNomUs.Size = new System.Drawing.Size(244, 23);
-            this.txtbNomUs.TabIndex = 6;
-            this.txtbNomUs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNomUs.TextName = "";
+            this.txtbUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.txtbUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbUsuario.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtbUsuario.ForeColors = System.Drawing.Color.Black;
+            this.txtbUsuario.HintText = null;
+            this.txtbUsuario.IsPassword = false;
+            this.txtbUsuario.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtbUsuario.LineThickness = 2;
+            this.txtbUsuario.Location = new System.Drawing.Point(160, 81);
+            this.txtbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbUsuario.MaxLength = 32767;
+            this.txtbUsuario.Name = "txtbUsuario";
+            this.txtbUsuario.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtbUsuario.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbUsuario.ReadOnly = false;
+            this.txtbUsuario.Size = new System.Drawing.Size(244, 23);
+            this.txtbUsuario.TabIndex = 6;
+            this.txtbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbUsuario.TextName = "";
             // 
             // txtbClave
             // 
@@ -141,7 +140,7 @@ namespace FarmaTown
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.Black;
             this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnIngresar
             // 
@@ -166,6 +165,7 @@ namespace FarmaTown
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.Black;
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // frmLogin
             // 
@@ -180,7 +180,7 @@ namespace FarmaTown
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtbClave);
-            this.Controls.Add(this.txtbNomUs);
+            this.Controls.Add(this.txtbUsuario);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.lblUsuario);
             this.DoubleBuffered = true;
@@ -189,7 +189,6 @@ namespace FarmaTown
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +198,7 @@ namespace FarmaTown
 
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblClave;
-        private JMaterialTextbox.JMaterialTextbox txtbNomUs;
+        private JMaterialTextbox.JMaterialTextbox txtbUsuario;
         private JMaterialTextbox.JMaterialTextbox txtbClave;
         private CustomControls.RJControls.RJButton btnIngresar;
         private CustomControls.RJControls.RJButton btnSalir;

@@ -152,7 +152,7 @@ namespace FarmaTown.Datos
 
         public DataTable consultarTabla(string tabla)
         {
-            return this.consultaSQL("SELECT * FROM" + tabla);
+            return this.consultaSQL("SELECT * FROM " + tabla);
         }
     }
 }
