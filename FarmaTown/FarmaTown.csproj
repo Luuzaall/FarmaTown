@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JMaterialTextbox">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Facu\3 AÑO\E2 - Programación Aplicaciónes Visuales I\Código\Buttons\JMaterialTextbox.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive\Escritorio\tools visual studio\JMaterialTextbox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Presentación\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,7 +97,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datos\" />
     <Folder Include="Lógica\" />
   </ItemGroup>
   <ItemGroup>

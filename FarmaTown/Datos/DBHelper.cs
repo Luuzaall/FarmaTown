@@ -11,6 +11,7 @@ namespace APPBTS.Datos
     public class DBHelper
     {
         //Atributes
+        private static DBHelper instance;
         private SqlConnection cnn = new SqlConnection();
         private SqlCommand cmd = new SqlCommand();
         //SqlCommand para DML
@@ -19,10 +20,16 @@ namespace APPBTS.Datos
 
         public DBHelper()
         {
-            stringConexion = "Data Source=DESKTOP-1M42EM5\\SQLEXPRESS" +
-                ";Initial Catalog=PAV_BTS;Integrated Security=True";
+            stringConexion = "Data Source=SQL5108.site4now.net;Initial Catalog=db_a79a32_farmatown;User Id=db_a79a32_farmatown_admin;" +
+                "Password=123123GGHHj";
         }
 
+        public static DBHelper getDBHelper()
+        {
+            if (instance == null)
+                instance = new DBHelper();
+            return new DBHelper();
+        }
         public string getStringConexion()
         {
             return stringConexion;
