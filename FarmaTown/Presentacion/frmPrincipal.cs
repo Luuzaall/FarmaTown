@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentación
+namespace FarmaTown.Presentacion
 {
-    public partial class frmABMUsuarios : Form
+    public partial class frmPrincipal : Form
     {
         //Atributos
         private bool estaLogeado = false;
 
-        public frmABMUsuarios()
+        public frmPrincipal()
         {
             InitializeComponent();
         }

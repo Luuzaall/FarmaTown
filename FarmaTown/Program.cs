@@ -1,14 +1,12 @@
-﻿using FarmaTown.Presentación;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Datos;
-using FarmaTown.Presentacion;
 
-namespace FarmaTown
+namespace FarmaTown.Presentacion
 {
     static class Program
     {
@@ -20,8 +18,8 @@ namespace FarmaTown
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPrincipal());
-            Application.Run(new frmABMUsuario());
+            Application.Run(new frmPrincipal());
+            //Application.Run(new frmABMUsuario());
         }
     }
 }
