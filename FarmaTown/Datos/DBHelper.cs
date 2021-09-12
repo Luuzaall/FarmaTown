@@ -1,4 +1,4 @@
-﻿using FarmaTown.Lógica;
+﻿using FarmaTown.Logica;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,25 +21,36 @@ namespace FarmaTown.Datos
 
         public DBHelper()
         {
+            /*
+             * Establece el string de conexión
+             */
             stringConexion = "Data Source=SQL5108.site4now.net;Initial Catalog=db_a79a32_farmatown;User Id=db_a79a32_farmatown_admin;" +
                 "Password=123123GGHHj";
         }
 
         public static DBHelper getDBHelper()
         {
+        /*
+         * Permite utilziar una instancia del DBHelper
+         * , siendo el patrón Singleton
+         */
             if (instance == null)
                 instance = new DBHelper();
             return new DBHelper();
         }
         public string getStringConexion()
         {
+            /*
+            * Permite obtener el string de conexión
+            */
             return stringConexion;
         }
 
         public int ejecutarSQL(string strSql)
         {
             /*
-             * Utilizada para DML!
+             * Utilizada para realizar modificación de datos
+             * , específicamente transacciones.
              */
 
             int afectadas = 0;
@@ -79,6 +90,9 @@ namespace FarmaTown.Datos
 
         public Usuario obtenerUsuarioPorNom(string nomUs)
         {
+            /*
+            * Permite obtener el usuario por su nombre
+            */
             string query = "SELECT *" +
                 " FROM Usuarios " +
                 " WHERE nombre = '" + nomUs + "'" +
@@ -174,6 +188,11 @@ namespace FarmaTown.Datos
 
         private Usuario objectMappingUsuario(DataRow row)
         {
+            /*
+             * A partir del registro de un usuario,
+             * tranforma esa información en un 
+             * objeto del tipo Usuario
+             */
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),

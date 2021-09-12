@@ -91,7 +91,7 @@ namespace FarmaTown
             this.txtbClave.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtbClave.ForeColors = System.Drawing.Color.Black;
             this.txtbClave.HintText = null;
-            this.txtbClave.IsPassword = false;
+            this.txtbClave.IsPassword = true;
             this.txtbClave.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtbClave.LineThickness = 2;
             this.txtbClave.Location = new System.Drawing.Point(160, 130);
@@ -158,9 +158,9 @@ namespace FarmaTown
             this.btnIngresar.ForeColor = System.Drawing.Color.Black;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(247, 194);
+            this.btnIngresar.Location = new System.Drawing.Point(249, 176);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(157, 41);
+            this.btnIngresar.Size = new System.Drawing.Size(155, 59);
             this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.Black;
@@ -175,7 +175,7 @@ namespace FarmaTown
             this.BackgroundImage = global::FarmaTown.Properties.Resources.FondoFarmaTown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnIngresar;
-            this.ClientSize = new System.Drawing.Size(462, 259);
+            this.ClientSize = new System.Drawing.Size(462, 263);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);

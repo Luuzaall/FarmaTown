@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentación
 {
-    public partial class frmPrincipal : Form
+    public partial class frmABMUsuarios : Form
     {
         //Atributos
         private bool estaLogeado = false;
 
-        public frmPrincipal()
+        public frmABMUsuarios()
         {
             InitializeComponent();
         }

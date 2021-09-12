@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTown
+namespace FarmaTown.Logica
 {
-    class Farmacia
+    public class Cliente
     {
-        public int IdFarmacia { get; set; }
+        public int IdCliente {get; set;}
+        public int NroDoc { get; set; }
+        public TipoDocumento TipoDoc { get; set; }
+        public string Apellido { get; set; }
         public string Nombre { get; set; }
         public string Calle { get; set; }
         public int Numero { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Logica;
+using System;
 using System.Data;
 using System.Windows.Forms;
 

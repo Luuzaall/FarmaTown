@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTown.Lógica
+namespace FarmaTown.Logica
 {
-    public class Rol
+    public class ObraSocial
     {
-        public int IdRol { get; set; }
-        public string Nombre { get; set; }
+        public int IdOS { get; set; }
+        public string NombreOS { get; set; }
         public bool Borrado { get; set; }
     }
 }

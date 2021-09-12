@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTown
+namespace FarmaTown.Logica
 {
-    class Venta
+    public class Venta
     {
         public int IdVenta { get; set; }
         public Farmacia IdFarmacia { get; set; }

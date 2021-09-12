@@ -63,6 +63,26 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addPerson {
+            get {
+                object obj = ResourceManager.GetObject("addPerson", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editor {
+            get {
+                object obj = ResourceManager.GetObject("Editor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondoFarmaTown {
             get {
                 object obj = ResourceManager.GetObject("FondoFarmaTown", resourceCulture);
@@ -86,6 +106,26 @@ namespace FarmaTown.Properties {
         internal static System.Drawing.Bitmap Inicio_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Inicio-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_High_five_re_jy71png {
+            get {
+                object obj = ResourceManager.GetObject("undraw_High_five_re_jy71png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

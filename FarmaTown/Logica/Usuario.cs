@@ -1,8 +1,7 @@
-﻿using FarmaTown.Lógica;
-using System;
+﻿using System;
 using FarmaTown.Datos;
 
-namespace FarmaTown
+namespace FarmaTown.Logica
 {
     public class Usuario
     {

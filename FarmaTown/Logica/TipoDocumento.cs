@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTown
+namespace FarmaTown.Logica
 {
-    class Barrio
+    public class TipoDocumento
     {
-        public int IdBarrio { get; set; }
+        public int IdTipo { get; set; }
         public string Nombre { get; set; }
-        public Localidad IdLocalidad { get; set; }
         public bool Borrado { get; set; }
     }
 }

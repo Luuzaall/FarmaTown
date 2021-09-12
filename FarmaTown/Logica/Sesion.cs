@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarmaTown
+namespace FarmaTown.Logica
 {
-    class Sesion
+    public class Sesion
     {
         public int IdSesion { get; set; }
         public Usuario IdUsuario { get; set; }
