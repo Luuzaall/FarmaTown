@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JMaterialTextbox">
-      <HintPath>..\..\..\..\..\OneDrive\Escritorio\tools visual studio\JMaterialTextbox.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\No borrar PAV\JMaterialTextbox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
