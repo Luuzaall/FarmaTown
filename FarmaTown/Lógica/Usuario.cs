@@ -13,6 +13,7 @@ namespace FarmaTown
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Clave { get; set; }
+        public Empleado Empleado { get; set; }
         public Rol Rol { get; set; }
         public bool Borrado { get; set; }
 

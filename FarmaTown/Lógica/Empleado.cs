@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProbandoUsuario
+namespace FarmaTown.Lógica
+
 {
-    class Empleado
+    public class Empleado
     {
         public int IdEmpleado { get; set; }
         public int NroDoc { get; set; }

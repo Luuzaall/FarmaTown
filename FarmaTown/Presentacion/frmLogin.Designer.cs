@@ -158,9 +158,9 @@ namespace FarmaTown
             this.btnIngresar.ForeColor = System.Drawing.Color.Black;
             this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(247, 185);
+            this.btnIngresar.Location = new System.Drawing.Point(247, 194);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(157, 50);
+            this.btnIngresar.Size = new System.Drawing.Size(157, 41);
             this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.Black;
@@ -189,6 +189,7 @@ namespace FarmaTown
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
