@@ -101,6 +101,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
+    <None Include="Presentacion\Imagenes\Inicio-removebg-preview.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

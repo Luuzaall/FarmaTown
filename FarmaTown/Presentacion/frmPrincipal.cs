@@ -12,6 +12,9 @@ namespace FarmaTown.Presentación
 {
     public partial class frmPrincipal : Form
     {
+        //Atributos
+        private bool estaLogeado = false;
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -27,15 +30,33 @@ namespace FarmaTown.Presentación
                 == DialogResult.Yes)
                 e.Cancel = false;
             else
+            {
                 e.Cancel = true;
-
+                if (!estaLogeado)
+                {
+                    this.cargarLogIn();
+                }
+            }
+                
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            this.cargarLogIn();
+        }
+
+        private void cargarLogIn()
+        {
             frmLogin frmLog = new frmLogin();
             frmLog.ShowDialog();
-
+            if (frmLog.idUsuario == -1)
+            {
+                this.Close();
+            }
+            else
+            {
+                estaLogeado = true;
+            }
         }
     }
 }

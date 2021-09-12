@@ -1,10 +1,14 @@
 ﻿using FarmaTown.Lógica;
 using System;
+using FarmaTown.Datos;
 
 namespace FarmaTown
 {
-    internal class Usuario
+    public class Usuario
     {
+        //Atributos
+
+
         //Propiedades
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
@@ -14,7 +18,19 @@ namespace FarmaTown
 
         internal int validarUsuario(string usuario, string clave)
         {
-            throw new NotImplementedException();
+            Usuario usuLogin = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
+            if (usuLogin is null)
+            {
+                return -1;
+            }
+            else
+            {
+                if (usuLogin.Clave == clave)
+                {
+                    return usuLogin.IdUsuario;
+                }
+            }
+            return -1;
         }
     }
 }
