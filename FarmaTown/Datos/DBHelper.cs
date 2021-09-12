@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Lógica;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,7 +12,7 @@ namespace FarmaTown.Datos
     public class DBHelper
     {
         //Atributes
-        private static DBHelper instance;
+        private static DBHelper instance = null;
         private SqlConnection cnn = new SqlConnection();
         private SqlCommand cmd = new SqlCommand();
         //SqlCommand para DML
@@ -76,7 +77,23 @@ namespace FarmaTown.Datos
 
         }
 
-        public DataTable consultaSQL(string strSql)
+        public Usuario obtenerUsuarioPorNom(string nomUs)
+        {
+            string query = "SELECT *" +
+                " FROM Usuarios " +
+                " WHERE nombre = '" + nomUs + "'" +
+                " AND borrado = 0;";
+
+            DataTable tablaUs = instance.consultaSQL(query);
+            if (tablaUs.Rows.Count > 0)
+            {
+                return objectMappingUsuario(tablaUs.Rows[0]);
+            }
+            return null;
+            
+        }
+
+        private DataTable consultaSQL(string strSql)
         {
             /*
              * Sólo para consultas sin parámetros.
@@ -153,6 +170,18 @@ namespace FarmaTown.Datos
         public DataTable consultarTabla(string tabla)
         {
             return this.consultaSQL("SELECT * FROM " + tabla);
+        }
+
+        private Usuario objectMappingUsuario(DataRow row)
+        {
+            Usuario oUsuario = new Usuario
+            {
+                IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
+                Nombre = row["nombre"].ToString(),
+                Clave = row["clave"].ToString(),
+            };
+
+            return oUsuario;
         }
     }
 }

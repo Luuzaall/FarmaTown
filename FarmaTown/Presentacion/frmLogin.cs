@@ -9,7 +9,7 @@ namespace FarmaTown
 
         //Atributos
         private Usuario oUsuario;
-        public string nomUsuario;
+        public int idUsuario = -1;
 
         public frmLogin()
         {
@@ -28,8 +28,8 @@ namespace FarmaTown
         * el ingreso al sistema.
         */
 
-            string usuario = this.txtbUsuario.Text;
-            string clave = this.txtbClave.Text;
+            string usuario = this.txtbUsuario.TextName;
+            string clave = this.txtbClave.TextName;
 
             if (string.IsNullOrEmpty(usuario))
             {
@@ -48,13 +48,9 @@ namespace FarmaTown
                 return;
             }
 
-            this.oUsuario.IdUsuario = 0;   //Por si no puede conectarse a la BD.
-            this.oUsuario.Nombre = usuario;
-            this.oUsuario.Clave = clave;
-
-            this.oUsuario.IdUsuario = this.oUsuario.validarUsuario(usuario, clave);
+            this.idUsuario = this.oUsuario.validarUsuario(usuario, clave);
            
-            if (this.oUsuario.IdUsuario != 0)
+            if (this.idUsuario != -1)
             {
                 MessageBox.Show("Login Ok", "Ingreso al Sistema"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
