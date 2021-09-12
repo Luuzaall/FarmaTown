@@ -59,6 +59,10 @@
     <Compile Include="Lógica\Medicamento.cs" />
     <Compile Include="Lógica\ObraSocial.cs" />
     <Compile Include="Lógica\Rol.cs" />
+    <Compile Include="Lógica\Sesion.cs" />
+    <Compile Include="Lógica\TipoDocumento.cs" />
+    <Compile Include="Lógica\TipoMedicamento.cs" />
+    <Compile Include="Lógica\Venta.cs" />
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
