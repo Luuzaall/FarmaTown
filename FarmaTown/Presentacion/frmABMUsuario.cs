@@ -16,10 +16,12 @@ namespace FarmaTown.Presentacion
         //Atributos
         private FormMode formMode = FormMode.insert;
         private readonly Usuario oUsuario;
+        private Rol oRol;
         public frmABMUsuario()
         {
             InitializeComponent();
             oUsuario = new Usuario();
+            oRol = new Rol();
         }
 
         public enum FormMode
@@ -41,6 +43,7 @@ namespace FarmaTown.Presentacion
                         break;
                     }
             }
+            this.cargarCombo(cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -51,6 +54,23 @@ namespace FarmaTown.Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            /*
+             * Encargado de cargar los perfiles
+             */
+
+        }
+
+        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
+        {
+            cbo.DataSource = source;
+            cbo.DisplayMember = display;
+            cbo.ValueMember = value;
+            cbo.SelectedIndex = -1;
+            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }
