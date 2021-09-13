@@ -37,7 +37,6 @@ namespace FarmaTown.Presentacion
             this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
-            this.pbImg = new System.Windows.Forms.PictureBox();
             this.transparentLabel4 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel2 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
@@ -45,6 +44,7 @@ namespace FarmaTown.Presentacion
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
+            this.pbImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,20 +188,10 @@ namespace FarmaTown.Presentacion
             this.cboPerfil.Size = new System.Drawing.Size(301, 21);
             this.cboPerfil.TabIndex = 18;
             // 
-            // pbImg
-            // 
-            this.pbImg.BackColor = System.Drawing.Color.Silver;
-            this.pbImg.InitialImage = null;
-            this.pbImg.Location = new System.Drawing.Point(-155, -67);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(570, 414);
-            this.pbImg.TabIndex = 17;
-            this.pbImg.TabStop = false;
-            // 
             // transparentLabel4
             // 
             this.transparentLabel4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.transparentLabel4.Location = new System.Drawing.Point(143, 112);
             this.transparentLabel4.Name = "transparentLabel4";
             this.transparentLabel4.Size = new System.Drawing.Size(79, 23);
@@ -213,7 +203,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel3
             // 
             this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.transparentLabel3.Location = new System.Drawing.Point(103, 149);
             this.transparentLabel3.Name = "transparentLabel3";
             this.transparentLabel3.Size = new System.Drawing.Size(119, 23);
@@ -225,7 +215,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel2
             // 
             this.transparentLabel2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.transparentLabel2.Location = new System.Drawing.Point(28, 186);
             this.transparentLabel2.Name = "transparentLabel2";
             this.transparentLabel2.Size = new System.Drawing.Size(194, 23);
@@ -237,7 +227,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel1
             // 
             this.transparentLabel1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.transparentLabel1.Location = new System.Drawing.Point(167, 223);
             this.transparentLabel1.Name = "transparentLabel1";
             this.transparentLabel1.Size = new System.Drawing.Size(55, 23);
@@ -249,7 +239,7 @@ namespace FarmaTown.Presentacion
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblNombre.Location = new System.Drawing.Point(129, 81);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(93, 23);
@@ -310,12 +300,24 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // pbImg
+            // 
+            this.pbImg.BackColor = System.Drawing.Color.Silver;
+            this.pbImg.Image = global::FarmaTown.Properties.Resources.undraw_High_five_re_jy711;
+            this.pbImg.InitialImage = null;
+            this.pbImg.Location = new System.Drawing.Point(-9, -33);
+            this.pbImg.Name = "pbImg";
+            this.pbImg.Size = new System.Drawing.Size(627, 414);
+            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImg.TabIndex = 17;
+            this.pbImg.TabStop = false;
+            // 
             // frmABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(614, 359);
+            this.ClientSize = new System.Drawing.Size(614, 366);
             this.Controls.Add(this.transparentLabel4);
             this.Controls.Add(this.transparentLabel3);
             this.Controls.Add(this.transparentLabel2);

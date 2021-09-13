@@ -173,6 +173,7 @@ namespace FarmaTown
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = global::FarmaTown.Properties.Resources.FondoFarmaTown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(462, 263);
