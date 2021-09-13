@@ -67,6 +67,19 @@ namespace FarmaTown.Presentacion
 
         }
 
+        private void cargarGrilla(DataGridView dgv, DataTable table)
+        {
+            dgv.Rows.Clear();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                dgv.Rows.Add(table.Rows[i]["idEmpleado"],
+                                table.Rows[i]["nomEmpleado"],
+                                table.Rows[i]["nroDoc"],
+                                table.Rows[i]["nomTipoDoc"],
+                                table.Rows[i]["nomFarmacia"]); ;
+            }
+        }
+
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
         {
             cbo.DataSource = source;

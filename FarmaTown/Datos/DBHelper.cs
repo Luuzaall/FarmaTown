@@ -97,6 +97,36 @@ namespace FarmaTown.Datos
             return afectadas;
 
         }
+        public DataTable consultarEmpleados()
+        {
+            /*
+             * Permite obtener los datos completos de 
+             * todos los empleados
+             */
+            string query = "SELECT e.idEmpleado" +
+                ", e.nroDoc" +
+                ", t.nombre as nomTipoDoc" +
+                ", f.nombre as nomFarmacia" +
+                ", e.nombre as nomEmpleado" +
+                " FROM Empleados e" +
+                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
+                " WHERE e.borrado = 0;";
+
+            return this.consultaSQL(query);
+        }
+        /*
+        public bool persistirSesion(Sesion ses)
+        {
+            string query = "INSERT INTO Sesiones(idUsuario," +
+                "borrado, fechaInicio, fechaFin)" +
+                "VALUES" +
+                "(" + ses.Usuario.IdUsuario +
+                ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
+            int resultado = this.ejecutarSQL(query);
+            if (resultado)
+        }
+        */
 
         public Usuario obtenerUsuarioPorNom(string nomUs)
         {
