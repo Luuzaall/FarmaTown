@@ -44,8 +44,8 @@ namespace FarmaTown.Presentacion
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -166,7 +166,7 @@ namespace FarmaTown.Presentacion
             this.cboPerfil.FormattingEnabled = true;
             this.cboPerfil.Location = new System.Drawing.Point(273, 155);
             this.cboPerfil.Name = "cboPerfil";
-            this.cboPerfil.Size = new System.Drawing.Size(301, 21);
+            this.cboPerfil.Size = new System.Drawing.Size(301, 27);
             this.cboPerfil.TabIndex = 18;
             // 
             // transparentLabel3
@@ -281,6 +281,7 @@ namespace FarmaTown.Presentacion
             this.groupBox1.Controls.Add(this.transparentLabel3);
             this.groupBox1.Controls.Add(this.txtbClaveRep);
             this.groupBox1.Controls.Add(this.txtbClave);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(28, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(743, 191);
@@ -293,20 +294,13 @@ namespace FarmaTown.Presentacion
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.rjButton2);
             this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox2.Location = new System.Drawing.Point(28, 222);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(743, 134);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Empleado";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(537, 109);
-            this.dataGridView1.TabIndex = 0;
             // 
             // rjButton2
             // 
@@ -332,6 +326,14 @@ namespace FarmaTown.Presentacion
             this.rjButton2.Text = "Registrar Empleado";
             this.rjButton2.TextColor = System.Drawing.Color.Black;
             this.rjButton2.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(537, 109);
+            this.dataGridView1.TabIndex = 0;
             // 
             // frmABMUsuario
             // 
