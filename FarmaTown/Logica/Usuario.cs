@@ -18,12 +18,8 @@ namespace FarmaTown.Logica
 
         internal int validarUsuario(string usuario, string clave)
         {
-            Usuario usuLogin = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
-            if (usuLogin is null)
-            {
-                return -1;
-            }
-            else
+            Usuario usuLogin = traerUsuario(usuario);
+            if (usuLogin != null)
             {
                 if (usuLogin.Clave == clave)
                 {
@@ -31,6 +27,16 @@ namespace FarmaTown.Logica
                 }
             }
             return -1;
+        }
+
+        internal Usuario traerUsuario(string usuario)
+        {
+            Usuario usuLogin = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
+            if (usuLogin != null)
+            {
+                return usuLogin;
+            }
+            return null;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace FarmaTown.Logica
         public int IdSesion { get; set; }
         public Usuario IdUsuario { get; set; }
         public bool Borrado { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
 
     }
 }

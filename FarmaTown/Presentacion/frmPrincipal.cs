@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FarmaTown.Logica;
 
 namespace FarmaTown.Presentacion
 {
@@ -14,6 +15,8 @@ namespace FarmaTown.Presentacion
     {
         //Atributos
         private bool estaLogeado = false;
+        private Rol rol;
+        private Usuario user;
 
         public frmPrincipal()
         {
@@ -54,6 +57,10 @@ namespace FarmaTown.Presentacion
             }
             else
             {
+                Sesion sesion = new Sesion();
+                //persistir sesion
+                user = user.traerUsuario(frmLog.oUsuario.Nombre);
+                rol = user.Rol;
                 estaLogeado = true;
             }
         }
