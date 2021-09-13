@@ -9,7 +9,7 @@ namespace FarmaTown
     {
 
         //Atributos
-        private Usuario oUsuario;
+        public Usuario oUsuario;
         public int idUsuario = -1;
 
         public frmLogin()

@@ -126,7 +126,7 @@ namespace FarmaTown.Presentacion
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 185);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(414, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(540, 150);
             this.dataGridView1.TabIndex = 13;
             // 
             // label2
@@ -219,7 +219,7 @@ namespace FarmaTown.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 444);
+            this.ClientSize = new System.Drawing.Size(609, 444);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);

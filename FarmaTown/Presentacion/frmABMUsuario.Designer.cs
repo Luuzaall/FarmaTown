@@ -59,7 +59,7 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNombre.LineThickness = 4;
             this.txtbNombre.Location = new System.Drawing.Point(245, 81);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -81,7 +81,7 @@ namespace FarmaTown.Presentacion
             this.txtbCorreo.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbCorreo.LineThickness = 4;
             this.txtbCorreo.Location = new System.Drawing.Point(245, 112);
-            this.txtbCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtbCorreo.MaxLength = 32767;
             this.txtbCorreo.Name = "txtbCorreo";
             this.txtbCorreo.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -103,7 +103,7 @@ namespace FarmaTown.Presentacion
             this.txtbClave.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbClave.LineThickness = 4;
             this.txtbClave.Location = new System.Drawing.Point(245, 149);
-            this.txtbClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClave.MaxLength = 32767;
             this.txtbClave.Name = "txtbClave";
             this.txtbClave.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -125,7 +125,7 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbClaveRep.LineThickness = 4;
             this.txtbClaveRep.Location = new System.Drawing.Point(245, 186);
-            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClaveRep.MaxLength = 32767;
             this.txtbClaveRep.Name = "txtbClaveRep";
             this.txtbClaveRep.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -242,8 +242,9 @@ namespace FarmaTown.Presentacion
             // 
             // lblNombre
             // 
+            this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.Window;
             this.lblNombre.Location = new System.Drawing.Point(129, 81);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(93, 23);
@@ -266,7 +267,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel1
             // 
             this.transparentLabel1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.Window;
             this.transparentLabel1.Location = new System.Drawing.Point(167, 223);
             this.transparentLabel1.Name = "transparentLabel1";
             this.transparentLabel1.Size = new System.Drawing.Size(55, 23);
@@ -278,7 +279,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel2
             // 
             this.transparentLabel2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.Window;
             this.transparentLabel2.Location = new System.Drawing.Point(28, 186);
             this.transparentLabel2.Name = "transparentLabel2";
             this.transparentLabel2.Size = new System.Drawing.Size(194, 23);
@@ -290,7 +291,7 @@ namespace FarmaTown.Presentacion
             // transparentLabel3
             // 
             this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.Window;
             this.transparentLabel3.Location = new System.Drawing.Point(103, 149);
             this.transparentLabel3.Name = "transparentLabel3";
             this.transparentLabel3.Size = new System.Drawing.Size(119, 23);
@@ -301,8 +302,9 @@ namespace FarmaTown.Presentacion
             // 
             // transparentLabel4
             // 
+            this.transparentLabel4.BackColor = System.Drawing.Color.White;
             this.transparentLabel4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.Window;
             this.transparentLabel4.Location = new System.Drawing.Point(143, 112);
             this.transparentLabel4.Name = "transparentLabel4";
             this.transparentLabel4.Size = new System.Drawing.Size(79, 23);
