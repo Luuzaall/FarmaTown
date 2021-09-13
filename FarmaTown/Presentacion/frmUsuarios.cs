@@ -40,16 +40,12 @@ namespace FarmaTown.Presentacion
 
         }
 
-        private void gbFiltros_Enter(object sender, EventArgs e)
-        {
-                    }
-
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             /*
              * Encargado de cargar los combos
              */
-            this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol") ;
+            this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
         }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
@@ -57,8 +53,13 @@ namespace FarmaTown.Presentacion
             cbo.DataSource = source;
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
-            cbo.SelectedItem = -1;
+            cbo.SelectedIndex = -1;
+            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

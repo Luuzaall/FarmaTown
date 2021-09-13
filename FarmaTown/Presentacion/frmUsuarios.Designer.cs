@@ -30,58 +30,58 @@ namespace FarmaTown.Presentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.gbResultados = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.cboRoles = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbResultados.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(414, 150);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Location = new System.Drawing.Point(30, 45);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(425, 150);
+            this.dgvUsuarios.TabIndex = 13;
             // 
             // gbResultados
             // 
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
-            this.gbResultados.Controls.Add(this.dataGridView1);
+            this.gbResultados.Controls.Add(this.dgvUsuarios);
             this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbResultados.Location = new System.Drawing.Point(33, 198);
+            this.gbResultados.Location = new System.Drawing.Point(33, 246);
             this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(455, 220);
+            this.gbResultados.Size = new System.Drawing.Size(478, 212);
             this.gbResultados.TabIndex = 20;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
-            // groupBox1
+            // gbFiltros
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.txtbNombre);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnConsultar);
-            this.groupBox1.Controls.Add(this.cboRoles);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(33, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 180);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Resultados";
+            this.gbFiltros.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbFiltros.Controls.Add(this.txtbNombre);
+            this.gbFiltros.Controls.Add(this.label1);
+            this.gbFiltros.Controls.Add(this.btnConsultar);
+            this.gbFiltros.Controls.Add(this.cboRoles);
+            this.gbFiltros.Controls.Add(this.label2);
+            this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.gbFiltros.Location = new System.Drawing.Point(33, 12);
+            this.gbFiltros.Name = "gbFiltros";
+            this.gbFiltros.Size = new System.Drawing.Size(478, 228);
+            this.gbFiltros.TabIndex = 21;
+            this.gbFiltros.TabStop = false;
+            this.gbFiltros.Text = "Filtros";
             // 
             // txtbNombre
             // 
@@ -93,7 +93,7 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.IsPassword = false;
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNombre.LineThickness = 2;
-            this.txtbNombre.Location = new System.Drawing.Point(150, 45);
+            this.txtbNombre.Location = new System.Drawing.Point(150, 55);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
@@ -110,11 +110,30 @@ namespace FarmaTown.Presentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 45);
+            this.label1.Location = new System.Drawing.Point(26, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 11;
             this.label1.Text = "Usuario:";
+            // 
+            // cboRoles
+            // 
+            this.cboRoles.FormattingEnabled = true;
+            this.cboRoles.Location = new System.Drawing.Point(150, 113);
+            this.cboRoles.Name = "cboRoles";
+            this.cboRoles.Size = new System.Drawing.Size(244, 31);
+            this.cboRoles.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(67, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Rol:";
             // 
             // btnConsultar
             // 
@@ -133,32 +152,14 @@ namespace FarmaTown.Presentacion
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(302, 136);
+            this.btnConsultar.Location = new System.Drawing.Point(306, 173);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 37);
             this.btnConsultar.TabIndex = 12;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
-            // cboRoles
-            // 
-            this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Location = new System.Drawing.Point(150, 87);
-            this.cboRoles.Name = "cboRoles";
-            this.cboRoles.Size = new System.Drawing.Size(244, 31);
-            this.cboRoles.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Rol:";
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnSalir
             // 
@@ -174,7 +175,7 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(414, 436);
+            this.btnSalir.Location = new System.Drawing.Point(435, 484);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 18;
@@ -196,7 +197,7 @@ namespace FarmaTown.Presentacion
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(116, 436);
+            this.btnEditar.Location = new System.Drawing.Point(116, 484);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 17;
@@ -218,7 +219,7 @@ namespace FarmaTown.Presentacion
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(200, 436);
+            this.btnEliminar.Location = new System.Drawing.Point(200, 484);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 16;
@@ -241,7 +242,7 @@ namespace FarmaTown.Presentacion
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(33, 436);
+            this.btnAgregar.Location = new System.Drawing.Point(33, 484);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
             this.btnAgregar.TabIndex = 15;
@@ -255,8 +256,8 @@ namespace FarmaTown.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Hire_re_gn5j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(510, 514);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(547, 559);
+            this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -266,22 +267,22 @@ namespace FarmaTown.Presentacion
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.gbResultados.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbFiltros.ResumeLayout(false);
+            this.gbFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
         private CustomControls.RJControls.RJButton btnAgregar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.GroupBox gbResultados;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbFiltros;
         private JMaterialTextbox.JMaterialTextbox txtbNombre;
         private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJButton btnConsultar;
