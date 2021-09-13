@@ -37,7 +37,6 @@ namespace FarmaTown.Presentacion
                     this.cargarLogIn();
                 }
             }
-                
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -57,6 +56,17 @@ namespace FarmaTown.Presentacion
             {
                 estaLogeado = true;
             }
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmUsu = new frmUsuarios();
+            frmUsu.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

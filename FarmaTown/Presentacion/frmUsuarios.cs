@@ -17,9 +17,28 @@ namespace FarmaTown.Presentacion
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbFiltros_Enter(object sender, EventArgs e)
+        {
+                    }
     }
 }

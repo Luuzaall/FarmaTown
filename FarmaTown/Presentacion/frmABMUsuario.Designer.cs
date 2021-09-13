@@ -37,14 +37,14 @@ namespace FarmaTown.Presentacion
             this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
+            this.pbImg = new System.Windows.Forms.PictureBox();
+            this.transparentLabel4 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.transparentLabel2 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.transparentLabel1 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
-            this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.pbImg = new System.Windows.Forms.PictureBox();
-            this.transparentLabel1 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.transparentLabel2 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.transparentLabel4 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,9 +57,9 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.HintText = null;
             this.txtbNombre.IsPassword = false;
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNombre.LineThickness = 4;
+            this.txtbNombre.LineThickness = 3;
             this.txtbNombre.Location = new System.Drawing.Point(245, 81);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -79,9 +79,9 @@ namespace FarmaTown.Presentacion
             this.txtbCorreo.HintText = null;
             this.txtbCorreo.IsPassword = false;
             this.txtbCorreo.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbCorreo.LineThickness = 4;
+            this.txtbCorreo.LineThickness = 3;
             this.txtbCorreo.Location = new System.Drawing.Point(245, 112);
-            this.txtbCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtbCorreo.MaxLength = 32767;
             this.txtbCorreo.Name = "txtbCorreo";
             this.txtbCorreo.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -101,9 +101,9 @@ namespace FarmaTown.Presentacion
             this.txtbClave.HintText = null;
             this.txtbClave.IsPassword = false;
             this.txtbClave.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbClave.LineThickness = 4;
+            this.txtbClave.LineThickness = 3;
             this.txtbClave.Location = new System.Drawing.Point(245, 149);
-            this.txtbClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClave.MaxLength = 32767;
             this.txtbClave.Name = "txtbClave";
             this.txtbClave.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -123,9 +123,9 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.HintText = null;
             this.txtbClaveRep.IsPassword = false;
             this.txtbClaveRep.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbClaveRep.LineThickness = 4;
+            this.txtbClaveRep.LineThickness = 3;
             this.txtbClaveRep.Location = new System.Drawing.Point(245, 186);
-            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClaveRep.MaxLength = 32767;
             this.txtbClaveRep.Name = "txtbClaveRep";
             this.txtbClaveRep.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -188,6 +188,76 @@ namespace FarmaTown.Presentacion
             this.cboPerfil.Size = new System.Drawing.Size(301, 21);
             this.cboPerfil.TabIndex = 18;
             // 
+            // pbImg
+            // 
+            this.pbImg.BackColor = System.Drawing.Color.Silver;
+            this.pbImg.InitialImage = null;
+            this.pbImg.Location = new System.Drawing.Point(-155, -67);
+            this.pbImg.Name = "pbImg";
+            this.pbImg.Size = new System.Drawing.Size(570, 414);
+            this.pbImg.TabIndex = 17;
+            this.pbImg.TabStop = false;
+            // 
+            // transparentLabel4
+            // 
+            this.transparentLabel4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel4.Location = new System.Drawing.Point(143, 112);
+            this.transparentLabel4.Name = "transparentLabel4";
+            this.transparentLabel4.Size = new System.Drawing.Size(79, 23);
+            this.transparentLabel4.TabIndex = 23;
+            this.transparentLabel4.TabStop = false;
+            this.transparentLabel4.Text = "Correo:";
+            this.transparentLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // transparentLabel3
+            // 
+            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel3.Location = new System.Drawing.Point(103, 149);
+            this.transparentLabel3.Name = "transparentLabel3";
+            this.transparentLabel3.Size = new System.Drawing.Size(119, 23);
+            this.transparentLabel3.TabIndex = 22;
+            this.transparentLabel3.TabStop = false;
+            this.transparentLabel3.Text = "Contraseña:";
+            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // transparentLabel2
+            // 
+            this.transparentLabel2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel2.Location = new System.Drawing.Point(28, 186);
+            this.transparentLabel2.Name = "transparentLabel2";
+            this.transparentLabel2.Size = new System.Drawing.Size(194, 23);
+            this.transparentLabel2.TabIndex = 21;
+            this.transparentLabel2.TabStop = false;
+            this.transparentLabel2.Text = "Repetir Contraseña:";
+            this.transparentLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // transparentLabel1
+            // 
+            this.transparentLabel1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.transparentLabel1.Location = new System.Drawing.Point(167, 223);
+            this.transparentLabel1.Name = "transparentLabel1";
+            this.transparentLabel1.Size = new System.Drawing.Size(55, 23);
+            this.transparentLabel1.TabIndex = 20;
+            this.transparentLabel1.TabStop = false;
+            this.transparentLabel1.Text = "Perfil:";
+            this.transparentLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.Location = new System.Drawing.Point(129, 81);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(93, 23);
+            this.lblNombre.TabIndex = 19;
+            this.lblNombre.TabStop = false;
+            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -239,77 +309,6 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNombre.Location = new System.Drawing.Point(129, 81);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(93, 23);
-            this.lblNombre.TabIndex = 19;
-            this.lblNombre.TabStop = false;
-            this.lblNombre.Text = "Nombre:";
-            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // pbImg
-            // 
-            this.pbImg.BackColor = System.Drawing.Color.Silver;
-            this.pbImg.Image = global::FarmaTown.Properties.Resources.undraw_High_five_re_jy71png;
-            this.pbImg.InitialImage = null;
-            this.pbImg.Location = new System.Drawing.Point(-155, -67);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(570, 414);
-            this.pbImg.TabIndex = 17;
-            this.pbImg.TabStop = false;
-            // 
-            // transparentLabel1
-            // 
-            this.transparentLabel1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.transparentLabel1.Location = new System.Drawing.Point(167, 223);
-            this.transparentLabel1.Name = "transparentLabel1";
-            this.transparentLabel1.Size = new System.Drawing.Size(55, 23);
-            this.transparentLabel1.TabIndex = 20;
-            this.transparentLabel1.TabStop = false;
-            this.transparentLabel1.Text = "Perfil:";
-            this.transparentLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // transparentLabel2
-            // 
-            this.transparentLabel2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.transparentLabel2.Location = new System.Drawing.Point(28, 186);
-            this.transparentLabel2.Name = "transparentLabel2";
-            this.transparentLabel2.Size = new System.Drawing.Size(194, 23);
-            this.transparentLabel2.TabIndex = 21;
-            this.transparentLabel2.TabStop = false;
-            this.transparentLabel2.Text = "Repetir Contraseña:";
-            this.transparentLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // transparentLabel3
-            // 
-            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.transparentLabel3.Location = new System.Drawing.Point(103, 149);
-            this.transparentLabel3.Name = "transparentLabel3";
-            this.transparentLabel3.Size = new System.Drawing.Size(119, 23);
-            this.transparentLabel3.TabIndex = 22;
-            this.transparentLabel3.TabStop = false;
-            this.transparentLabel3.Text = "Contraseña:";
-            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // transparentLabel4
-            // 
-            this.transparentLabel4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.transparentLabel4.Location = new System.Drawing.Point(143, 112);
-            this.transparentLabel4.Name = "transparentLabel4";
-            this.transparentLabel4.Size = new System.Drawing.Size(79, 23);
-            this.transparentLabel4.TabIndex = 23;
-            this.transparentLabel4.TabStop = false;
-            this.transparentLabel4.Text = "Correo:";
-            this.transparentLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // frmABMUsuario
             // 

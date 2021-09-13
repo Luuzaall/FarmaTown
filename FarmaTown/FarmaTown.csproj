@@ -140,15 +140,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Presentacion\Imagenes\addDocument.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <Content Include="Presentacion\Imagenes\detail.png" />
     <Content Include="Presentacion\Imagenes\Editor.png" />
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
-    <None Include="Presentacion\Imagenes\Inicio-removebg-preview.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
-    <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71png.png" />
+    <Content Include="Presentacion\Imagenes\trash.png" />
+    <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
+    <Content Include="Presentacion\Imagenes\undraw_medical_care_movn.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

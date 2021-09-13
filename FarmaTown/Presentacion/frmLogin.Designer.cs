@@ -32,12 +32,12 @@ namespace FarmaTown
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblClave = new System.Windows.Forms.Label();
             this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
             this.lblIngreso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnIngresar = new CustomControls.RJControls.RJButton();
+            this.lblClave = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -45,22 +45,11 @@ namespace FarmaTown
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(40, 81);
+            this.lblUsuario.Location = new System.Drawing.Point(54, 81);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(87, 23);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario:";
-            // 
-            // lblClave
-            // 
-            this.lblClave.AutoSize = true;
-            this.lblClave.BackColor = System.Drawing.Color.Transparent;
-            this.lblClave.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClave.Location = new System.Drawing.Point(12, 130);
-            this.lblClave.Name = "lblClave";
-            this.lblClave.Size = new System.Drawing.Size(129, 23);
-            this.lblClave.TabIndex = 1;
-            this.lblClave.Text = "Contraseña:";
             // 
             // txtbUsuario
             // 
@@ -126,6 +115,7 @@ namespace FarmaTown
             this.btnSalir.BorderRadius = 20;
             this.btnSalir.BorderSize = 0;
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,7 +148,7 @@ namespace FarmaTown
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIngresar.Location = new System.Drawing.Point(267, 181);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(137, 54);
+            this.btnIngresar.Size = new System.Drawing.Size(126, 54);
             this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.Black;
@@ -166,23 +156,33 @@ namespace FarmaTown
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lblClave
+            // 
+            this.lblClave.AutoSize = true;
+            this.lblClave.BackColor = System.Drawing.Color.Transparent;
+            this.lblClave.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClave.Location = new System.Drawing.Point(12, 130);
+            this.lblClave.Name = "lblClave";
+            this.lblClave.Size = new System.Drawing.Size(129, 23);
+            this.lblClave.TabIndex = 11;
+            this.lblClave.Text = "Contraseña:";
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.BackgroundImage = global::FarmaTown.Properties.Resources.FondoFarmaTown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(462, 263);
             this.ControlBox = false;
+            this.Controls.Add(this.lblClave);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtbClave);
             this.Controls.Add(this.txtbUsuario);
-            this.Controls.Add(this.lblClave);
             this.Controls.Add(this.lblUsuario);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -199,12 +199,12 @@ namespace FarmaTown
         #endregion
 
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblClave;
         private JMaterialTextbox.JMaterialTextbox txtbUsuario;
         private JMaterialTextbox.JMaterialTextbox txtbClave;
         private CustomControls.RJControls.RJButton btnIngresar;
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.Label lblIngreso;
+        private System.Windows.Forms.Label lblClave;
     }
 }
 

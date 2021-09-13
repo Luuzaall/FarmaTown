@@ -63,9 +63,9 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap addPerson {
+        internal static System.Drawing.Bitmap undraw_High_five_re_jy71 {
             get {
-                object obj = ResourceManager.GetObject("addPerson", resourceCulture);
+                object obj = ResourceManager.GetObject("undraw_High_five_re_jy71", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Editor {
+        internal static System.Drawing.Bitmap undraw_Hire_re_gn5j {
             get {
-                object obj = ResourceManager.GetObject("Editor", resourceCulture);
+                object obj = ResourceManager.GetObject("undraw_Hire_re_gn5j", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,49 +83,9 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FondoFarmaTown {
+        internal static System.Drawing.Bitmap undraw_Hire_re_gn5j1 {
             get {
-                object obj = ResourceManager.GetObject("FondoFarmaTown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FondoFarmaTown1 {
-            get {
-                object obj = ResourceManager.GetObject("FondoFarmaTown1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Inicio_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("Inicio-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logout {
-            get {
-                object obj = ResourceManager.GetObject("logout", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap undraw_High_five_re_jy71png {
-            get {
-                object obj = ResourceManager.GetObject("undraw_High_five_re_jy71png", resourceCulture);
+                object obj = ResourceManager.GetObject("undraw_Hire_re_gn5j1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
