@@ -16,25 +16,25 @@ namespace FarmaTown.Logica
         public Rol Rol { get; set; }
         public bool Borrado { get; set; }
 
-        internal int validarUsuario(string usuario, string clave)
+        internal string validarUsuario(string usuario, string clave)
         {
             Usuario usuLogin = traerUsuario(usuario);
             if (usuLogin != null)
             {
                 if (usuLogin.Clave == clave)
                 {
-                    return usuLogin.IdUsuario;
+                    return usuLogin.Nombre;
                 }
             }
-            return -1;
+            return null;
         }
 
         internal Usuario traerUsuario(string usuario)
         {
-            Usuario usuLogin = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
-            if (usuLogin != null)
+            Usuario oUsuario = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
+            if (oUsuario != null)
             {
-                return usuLogin;
+                return oUsuario;
             }
             return null;
         }

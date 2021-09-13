@@ -93,10 +93,16 @@ namespace FarmaTown.Datos
             /*
             * Permite obtener el usuario por su nombre
             */
-            string query = "SELECT *" +
-                " FROM Usuarios " +
-                " WHERE nombre = '" + nomUs + "'" +
-                " AND borrado = 0;";
+            string query = "SELECT u.idUsuario" + 
+                " , u.idEmpleado" + 
+                " , u.nombre as NombreUsuario" + 
+                " , u.clave " + 
+                " , r.idRol" +
+                " , r.idRol " + 
+                " , r.nombre as NombreRol " +
+                " FROM Usuarios u" + " INNER JOIN Roles r ON u.idRol = r.idRol" + 
+                " WHERE u.nombre = '" + nomUs + "'" +
+                " AND u.borrado = 0;";
 
             DataTable tablaUs = instance.consultaSQL(query);
             if (tablaUs.Rows.Count > 0)
@@ -196,8 +202,13 @@ namespace FarmaTown.Datos
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
-                Nombre = row["nombre"].ToString(),
+                Nombre = row["NombreUsuario"].ToString(),
                 Clave = row["clave"].ToString(),
+                Rol = new Rol()
+                {
+                    IdRol = Convert.ToInt32(row["idRol"].ToString()),
+                    Nombre = row["NombreRol"].ToString(),
+                }
             };
 
             return oUsuario;

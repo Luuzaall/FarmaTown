@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace FarmaTown.Presentacion
 {
     public partial class frmUsuarios : Form
     {
+        private Rol oRol;
         public frmUsuarios()
         {
+            oRol = new Rol();
             InitializeComponent();
         }
 
@@ -40,5 +43,22 @@ namespace FarmaTown.Presentacion
         private void gbFiltros_Enter(object sender, EventArgs e)
         {
                     }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            /*
+             * Encargado de cargar los combos
+             */
+            this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol") ;
+        }
+
+        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
+        {
+            cbo.DataSource = source;
+            cbo.DisplayMember = display;
+            cbo.ValueMember = value;
+            cbo.SelectedItem = -1;
+
+        }
     }
 }

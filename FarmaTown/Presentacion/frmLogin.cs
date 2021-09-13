@@ -9,8 +9,8 @@ namespace FarmaTown
     {
 
         //Atributos
-        public Usuario oUsuario;
-        public int idUsuario = -1;
+        private Usuario oUsuario;
+        public string nomUsuario;
 
         public frmLogin()
         {
@@ -49,9 +49,9 @@ namespace FarmaTown
                 return;
             }
 
-            this.idUsuario = this.oUsuario.validarUsuario(usuario, clave);
+            this.nomUsuario = this.oUsuario.validarUsuario(usuario, clave);
            
-            if (this.idUsuario != -1)
+            if (! (this.nomUsuario is null))
             {
                 MessageBox.Show("Login Ok", "Ingreso al Sistema"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
