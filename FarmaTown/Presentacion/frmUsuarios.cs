@@ -14,6 +14,8 @@ namespace FarmaTown.Presentacion
     public partial class frmUsuarios : Form
     {
         private Rol oRol;
+        private frmABMUsuario frmUs = new frmABMUsuario();
+        private Usuario user;
         public frmUsuarios()
         {
             oRol = new Rol();
@@ -27,17 +29,19 @@ namespace FarmaTown.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, user);
+            frmUs.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.update, user);
+            frmUs.ShowDialog();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            frmUs.ShowDialog();
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -60,6 +64,13 @@ namespace FarmaTown.Presentacion
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             
+        }
+
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnEditar.Enabled = true;
+            this.btnEliminar.Enabled = true;
         }
     }
 }

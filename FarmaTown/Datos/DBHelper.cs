@@ -45,7 +45,7 @@ namespace FarmaTown.Datos
             */
             return stringConexion;
         }
-        public bool persistirSesion(Sesion ses)
+        /*public bool persistirSesion(Sesion ses)
         {
             string query = "INSERT INTO Sesiones(idUsuario," +
                 "borrado, fechaInicio, fechaFin)" +
@@ -54,7 +54,7 @@ namespace FarmaTown.Datos
                 ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
             int resultado = this.ejecutarSQL(query);
             if (resultado)
-        }
+        }*/
 
         public int ejecutarSQL(string strSql)
         {

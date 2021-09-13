@@ -15,7 +15,7 @@ namespace FarmaTown.Presentacion
     {
         //Atributos
         private FormMode formMode = FormMode.insert;
-        private readonly Usuario oUsuario;
+        private Usuario oUsuario;
         private Rol oRol;
         private Empleado oEmpleado;
         public frmABMUsuario()
@@ -46,7 +46,7 @@ namespace FarmaTown.Presentacion
                     }
             }
             this.cargarCombo(cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
-            this.cargarGrilla(dgv, oEmpleado.recuperarTodos());
+            //this.cargarGrilla(dgv, oEmpleado.recuperarTodos());
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace FarmaTown.Presentacion
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        /*private void cargarGrilla(DataGridView dgv, DataTable table)
         {
             dgv.Rows.Clear();
             for (int i=0; i< table.Rows.Count; i++)
@@ -86,7 +86,7 @@ namespace FarmaTown.Presentacion
                                 table.Rows[i][""],
                                 table.Rows[i][""]);
             }
-        }
+        }*/
 
         private void lblNombre_Click(object sender, EventArgs e)
         {
@@ -96,6 +96,12 @@ namespace FarmaTown.Presentacion
         private void txtbCorreo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void seleccionarUsuario(FormMode op, Usuario usuarioSelected)
+        {
+            formMode = op;
+            oUsuario = usuarioSelected;
         }
     }
 }
