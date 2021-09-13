@@ -45,6 +45,16 @@ namespace FarmaTown.Datos
             */
             return stringConexion;
         }
+        public bool persistirSesion(Sesion ses)
+        {
+            string query = "INSERT INTO Sesiones(idUsuario," +
+                "borrado, fechaInicio, fechaFin)" +
+                "VALUES" +
+                "(" + ses.Usuario.IdUsuario +
+                ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
+            int resultado = this.ejecutarSQL(query);
+            if (resultado)
+        }
 
         public int ejecutarSQL(string strSql)
         {

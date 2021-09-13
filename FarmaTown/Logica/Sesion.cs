@@ -10,10 +10,10 @@ namespace FarmaTown.Logica
     public class Sesion
     {
         public int IdSesion { get; set; }
-        public Usuario IdUsuario { get; set; }
-        public bool Borrado { get; set; }
+        public Usuario Usuario { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+        public bool Borrado { get; set; }
 
     }
 }

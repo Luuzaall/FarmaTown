@@ -15,12 +15,12 @@ namespace FarmaTown.Presentacion
     {
         //Atributos
         private bool estaLogeado = false;
-        private Rol oRol;
-        private Usuario oUsuario;
+        private Rol oRolLogueado;
+        private Usuario oUsuarioLogueado;
 
         public frmPrincipal()
         {
-            oUsuario = new Usuario();
+            oUsuarioLogueado = new Usuario();
             InitializeComponent();
         }
 
@@ -58,10 +58,14 @@ namespace FarmaTown.Presentacion
             }
             else
             {
-                Sesion sesion = new Sesion();
+                Sesion oSesion = new Sesion();
                 //Persistencia de la Sesión.
-                oUsuario = oUsuario.traerUsuario(frmLog.nomUsuario);
-                oRol = oUsuario.Rol;
+                oUsuarioLogueado = oUsuarioLogueado.traerUsuario(frmLog.nomUsuario);
+                oRolLogueado = oUsuarioLogueado.Rol;
+                oSesion.Usuario = oUsuarioLogueado;
+                oSesion.FechaInicio = DateTime.Now;
+
+                
                 estaLogeado = true;
             }
         }
