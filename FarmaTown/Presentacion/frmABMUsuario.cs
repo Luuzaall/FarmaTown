@@ -17,11 +17,13 @@ namespace FarmaTown.Presentacion
         private FormMode formMode = FormMode.insert;
         private readonly Usuario oUsuario;
         private Rol oRol;
+        private Empleado oEmpleado;
         public frmABMUsuario()
         {
             InitializeComponent();
             oUsuario = new Usuario();
             oRol = new Rol();
+            oEmpleado = new Empleado();
         }
 
         public enum FormMode
@@ -44,6 +46,7 @@ namespace FarmaTown.Presentacion
                     }
             }
             this.cargarCombo(cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
+            this.cargarGrilla(dgv, oEmpleado.recuperarTodos());
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -71,6 +74,18 @@ namespace FarmaTown.Presentacion
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cargarGrilla(DataGridView dgv, DataTable table)
+        {
+            dgv.Rows.Clear();
+            for (int i=0; i< table.Rows.Count; i++)
+            {
+                dgv.Rows.Add(table.Rows[i][""],
+                                table.Rows[i][""],
+                                table.Rows[i][""],
+                                table.Rows[i][""]);
+            }
         }
 
         private void lblNombre_Click(object sender, EventArgs e)

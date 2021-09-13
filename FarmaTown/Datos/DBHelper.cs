@@ -192,6 +192,11 @@ namespace FarmaTown.Datos
             return this.consultaSQL("SELECT * FROM " + tabla);
         }
 
+        public DataTable consultarEmpleados()
+        {
+            return this.consultaSQL("SELECT * FROM Empleados INNER JOIN Farmacias");
+        }
+
         private Usuario objectMappingUsuario(DataRow row)
         {
             /*
