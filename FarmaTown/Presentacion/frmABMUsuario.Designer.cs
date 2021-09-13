@@ -31,21 +31,24 @@ namespace FarmaTown.Presentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMUsuario));
             this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbCorreo = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClaveRep = new JMaterialTextbox.JMaterialTextbox();
             this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
-            this.transparentLabel4 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel2 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel1 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
-            this.pbImg = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtbNombre
@@ -58,7 +61,7 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.IsPassword = false;
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNombre.LineThickness = 3;
-            this.txtbNombre.Location = new System.Drawing.Point(245, 81);
+            this.txtbNombre.Location = new System.Drawing.Point(273, 30);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
@@ -70,28 +73,6 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtbNombre.TextName = "";
             // 
-            // txtbCorreo
-            // 
-            this.txtbCorreo.BackColor = System.Drawing.Color.Transparent;
-            this.txtbCorreo.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbCorreo.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbCorreo.ForeColors = System.Drawing.Color.Black;
-            this.txtbCorreo.HintText = null;
-            this.txtbCorreo.IsPassword = false;
-            this.txtbCorreo.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbCorreo.LineThickness = 3;
-            this.txtbCorreo.Location = new System.Drawing.Point(245, 112);
-            this.txtbCorreo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbCorreo.MaxLength = 32767;
-            this.txtbCorreo.Name = "txtbCorreo";
-            this.txtbCorreo.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbCorreo.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbCorreo.ReadOnly = false;
-            this.txtbCorreo.Size = new System.Drawing.Size(301, 23);
-            this.txtbCorreo.TabIndex = 13;
-            this.txtbCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbCorreo.TextName = "";
-            // 
             // txtbClave
             // 
             this.txtbClave.BackColor = System.Drawing.Color.Transparent;
@@ -102,7 +83,7 @@ namespace FarmaTown.Presentacion
             this.txtbClave.IsPassword = false;
             this.txtbClave.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbClave.LineThickness = 3;
-            this.txtbClave.Location = new System.Drawing.Point(245, 149);
+            this.txtbClave.Location = new System.Drawing.Point(273, 74);
             this.txtbClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClave.MaxLength = 32767;
             this.txtbClave.Name = "txtbClave";
@@ -124,7 +105,7 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.IsPassword = false;
             this.txtbClaveRep.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbClaveRep.LineThickness = 3;
-            this.txtbClaveRep.Location = new System.Drawing.Point(245, 186);
+            this.txtbClaveRep.Location = new System.Drawing.Point(273, 115);
             this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4);
             this.txtbClaveRep.MaxLength = 32767;
             this.txtbClaveRep.Name = "txtbClaveRep";
@@ -183,28 +164,16 @@ namespace FarmaTown.Presentacion
             // cboPerfil
             // 
             this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(245, 223);
+            this.cboPerfil.Location = new System.Drawing.Point(273, 155);
             this.cboPerfil.Name = "cboPerfil";
             this.cboPerfil.Size = new System.Drawing.Size(301, 21);
             this.cboPerfil.TabIndex = 18;
-            // 
-            // transparentLabel4
-            // 
-            this.transparentLabel4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel4.Location = new System.Drawing.Point(143, 112);
-            this.transparentLabel4.Name = "transparentLabel4";
-            this.transparentLabel4.Size = new System.Drawing.Size(79, 23);
-            this.transparentLabel4.TabIndex = 23;
-            this.transparentLabel4.TabStop = false;
-            this.transparentLabel4.Text = "Correo:";
-            this.transparentLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // transparentLabel3
             // 
             this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel3.Location = new System.Drawing.Point(103, 149);
+            this.transparentLabel3.Location = new System.Drawing.Point(94, 74);
             this.transparentLabel3.Name = "transparentLabel3";
             this.transparentLabel3.Size = new System.Drawing.Size(119, 23);
             this.transparentLabel3.TabIndex = 22;
@@ -216,7 +185,7 @@ namespace FarmaTown.Presentacion
             // 
             this.transparentLabel2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.transparentLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel2.Location = new System.Drawing.Point(28, 186);
+            this.transparentLabel2.Location = new System.Drawing.Point(19, 115);
             this.transparentLabel2.Name = "transparentLabel2";
             this.transparentLabel2.Size = new System.Drawing.Size(194, 23);
             this.transparentLabel2.TabIndex = 21;
@@ -228,7 +197,7 @@ namespace FarmaTown.Presentacion
             // 
             this.transparentLabel1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.transparentLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel1.Location = new System.Drawing.Point(167, 223);
+            this.transparentLabel1.Location = new System.Drawing.Point(158, 153);
             this.transparentLabel1.Name = "transparentLabel1";
             this.transparentLabel1.Size = new System.Drawing.Size(55, 23);
             this.transparentLabel1.TabIndex = 20;
@@ -240,13 +209,14 @@ namespace FarmaTown.Presentacion
             // 
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(129, 81);
+            this.lblNombre.Location = new System.Drawing.Point(112, 30);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(93, 23);
+            this.lblNombre.Size = new System.Drawing.Size(101, 23);
             this.lblNombre.TabIndex = 19;
             this.lblNombre.TabStop = false;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "  Nombre:";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // btnCancelar
             // 
@@ -265,7 +235,7 @@ namespace FarmaTown.Presentacion
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(164, 288);
+            this.btnCancelar.Location = new System.Drawing.Point(206, 403);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 40);
             this.btnCancelar.TabIndex = 11;
@@ -291,7 +261,7 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(349, 270);
+            this.btnAceptar.Location = new System.Drawing.Point(499, 385);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(143, 58);
             this.btnAceptar.TabIndex = 10;
@@ -300,37 +270,80 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // pbImg
+            // groupBox1
             // 
-            this.pbImg.BackColor = System.Drawing.Color.Silver;
-            this.pbImg.Image = global::FarmaTown.Properties.Resources.undraw_High_five_re_jy711;
-            this.pbImg.InitialImage = null;
-            this.pbImg.Location = new System.Drawing.Point(-9, -33);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(627, 414);
-            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImg.TabIndex = 17;
-            this.pbImg.TabStop = false;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.Controls.Add(this.txtbNombre);
+            this.groupBox1.Controls.Add(this.cboPerfil);
+            this.groupBox1.Controls.Add(this.transparentLabel1);
+            this.groupBox1.Controls.Add(this.transparentLabel2);
+            this.groupBox1.Controls.Add(this.transparentLabel3);
+            this.groupBox1.Controls.Add(this.txtbClaveRep);
+            this.groupBox1.Controls.Add(this.txtbClave);
+            this.groupBox1.Location = new System.Drawing.Point(28, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(743, 191);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos del Usuario";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.rjButton2);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(28, 222);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(743, 134);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos del Empleado";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(537, 109);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.rjButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rjButton2.BorderColor = System.Drawing.Color.Green;
+            this.rjButton2.BorderRadius = 20;
+            this.rjButton2.BorderSize = 1;
+            this.rjButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rjButton2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.rjButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.rjButton2.ForeColor = System.Drawing.Color.Black;
+            this.rjButton2.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.rjButton2.Location = new System.Drawing.Point(593, 44);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(106, 56);
+            this.rjButton2.TabIndex = 26;
+            this.rjButton2.Text = "Registrar Empleado";
+            this.rjButton2.TextColor = System.Drawing.Color.Black;
+            this.rjButton2.UseVisualStyleBackColor = false;
             // 
             // frmABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(614, 366);
-            this.Controls.Add(this.transparentLabel4);
-            this.Controls.Add(this.transparentLabel3);
-            this.Controls.Add(this.transparentLabel2);
-            this.Controls.Add(this.transparentLabel1);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.cboPerfil);
-            this.Controls.Add(this.txtbClaveRep);
-            this.Controls.Add(this.txtbClave);
-            this.Controls.Add(this.txtbCorreo);
-            this.Controls.Add(this.txtbNombre);
+            this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_High_five_re_jy711;
+            this.ClientSize = new System.Drawing.Size(800, 473);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.pbImg);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -340,7 +353,9 @@ namespace FarmaTown.Presentacion
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMUsuario";
             this.Load += new System.EventHandler(this.frmABMUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,17 +364,18 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnAceptar;
         private CustomControls.RJControls.RJButton btnCancelar;
         private JMaterialTextbox.JMaterialTextbox txtbNombre;
-        private JMaterialTextbox.JMaterialTextbox txtbCorreo;
         private JMaterialTextbox.JMaterialTextbox txtbClave;
         private JMaterialTextbox.JMaterialTextbox txtbClaveRep;
         private JMaterialTextbox.JMaterialTextbox txtbUsuario;
         private JMaterialTextbox.JMaterialTextbox jMaterialTextbox2;
         private System.Windows.Forms.ComboBox cboPerfil;
         private DiseñosElemGUI.TransparentLabel lblNombre;
-        private System.Windows.Forms.PictureBox pbImg;
         private DiseñosElemGUI.TransparentLabel transparentLabel1;
         private DiseñosElemGUI.TransparentLabel transparentLabel2;
         private DiseñosElemGUI.TransparentLabel transparentLabel3;
-        private DiseñosElemGUI.TransparentLabel transparentLabel4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CustomControls.RJControls.RJButton rjButton2;
     }
 }

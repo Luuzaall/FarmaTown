@@ -72,5 +72,15 @@ namespace FarmaTown.Presentacion
             cbo.SelectedIndex = -1;
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbCorreo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
