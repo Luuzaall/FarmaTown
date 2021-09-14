@@ -66,12 +66,15 @@ namespace FarmaTown.Presentacion
             this.nomRol,
             this.nomEmpleado});
             this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvUsuarios.Location = new System.Drawing.Point(19, 31);
+            this.dgvUsuarios.Location = new System.Drawing.Point(45, 31);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersWidth = 50;
+            this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(614, 164);
+            this.dgvUsuarios.ShowEditingIcon = false;
+            this.dgvUsuarios.Size = new System.Drawing.Size(573, 164);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 

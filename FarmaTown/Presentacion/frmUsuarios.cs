@@ -84,7 +84,20 @@ namespace FarmaTown.Presentacion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            string usuario = this.txtbNombre.TextName;
+            int idRol = this.cboRoles.SelectedIndex;
             
+            if (string.IsNullOrEmpty(usuario)
+                & this.cboRoles.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un usuario o un Rol",
+                    "Validación de Datos", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                this.txtbNombre.Focus();
+                this.cboRoles.Focus();
+            }
+
+
         }
 
 
