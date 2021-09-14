@@ -37,7 +37,7 @@ namespace FarmaTown
                 MessageBox.Show("Debe ingresar un usuario",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtbUsuario.Focus();
+                this.txtbUsuario.Focus();
                 return;
             }
             else if (string.IsNullOrEmpty(clave)) 
@@ -45,7 +45,7 @@ namespace FarmaTown
                 MessageBox.Show("Debe ingresar una clave",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                txtbClave.Focus();
+                this.txtbClave.Focus();
                 return;
             }
 

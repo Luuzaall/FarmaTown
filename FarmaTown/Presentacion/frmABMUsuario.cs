@@ -51,7 +51,7 @@ namespace FarmaTown.Presentacion
              */
 
             //Llenar combo
-            this.cargarCombo(this.cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
+            this.cargarCombo(this.cboRol, oRol.recuperarTodos(), "nombre", "idRol");
 
             switch (formMode)
             {
@@ -109,9 +109,9 @@ namespace FarmaTown.Presentacion
             {
                 case FormMode.insert:
                     {
-                        //if (ExisteUsuario() == false)
+                        //if (this.existeUsuario() == false)
                         //{
-                        //    if (ValidarCampos())
+                        //    if (this.validarCampos())
                         //    {
                         //        var oUsuario = new Usuario();
                         //        oUsuario.NombreUsuario = txtNombre.Text;
@@ -176,6 +176,71 @@ namespace FarmaTown.Presentacion
             this.Close();
         }
         
+        private bool existeUsuario()
+        {
+            /*
+             * Determina si ya existe un usuario
+             * con el mismo nombre, retornando FALSE
+             * si no existe y TRUE si existe.
+             */
+            string nomUs = this.txtbNombre.TextName;
+            Usuario usEncontrado = this.oUsuario.traerUsuario(nomUs);
+            if ( usEncontrado is null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool validarCampos()
+        {
+            string nom = this.txtbNombre.TextName;
+            string clave = this.txtbClave.TextName;
+            string claveRep = this.txtbClaveRep.TextName;
+            string idRol = this.cboRol.SelectedValue.ToString();
+            if (string.IsNullOrEmpty(nom))
+            {
+                MessageBox.Show("Debe ingresar un nombre",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
+            else if (string.IsNullOrEmpty(clave))
+            {
+                MessageBox.Show("Debe ingresar una clave",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbClave.Focus();
+            }
+            else if (string.IsNullOrEmpty(claveRep))
+            {
+                MessageBox.Show("Debe repetir la clave",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbClaveRep.Focus();
+            }
+            else if (idRol == "-1")
+            {
+                MessageBox.Show("Debe seleccionar un Rol",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.cboRol.Focus();
+            }
+            else if (clave != claveRep)
+            {
+                MessageBox.Show("La clave repetida debe coincidir con la primera!",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbClaveRep.Focus();
+            }
+            else
+            {
+                return true;
+            }
+            //Cuando no llegó al último else, entró a 
+            // alguno anterior...
+            return false;
+        }
 
         private void cargarGrilla(DataGridView dgv, DataTable table)
         {

@@ -63,7 +63,7 @@ namespace FarmaTown.Presentacion
                 oSesion.Usuario = oUsuarioLogueado;
                 oSesion.FechaInicio = DateTime.Now;
 
-                oSesion.persistir();
+                //oSesion.persistir();
 
                 
                 estaLogeado = true;

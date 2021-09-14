@@ -33,9 +33,9 @@ namespace FarmaTown.Presentacion
             this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
             this.txtbClaveRep = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbUsuario = new JMaterialTextbox.JMaterialTextbox();
+            this.txtbFantasma = new JMaterialTextbox.JMaterialTextbox();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
-            this.cboPerfil = new System.Windows.Forms.ComboBox();
+            this.cboRol = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblRol = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
@@ -122,27 +122,27 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtbClaveRep.TextName = "";
             // 
-            // txtbUsuario
+            // txtbFantasma
             // 
-            this.txtbUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.txtbUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbUsuario.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbUsuario.ForeColors = System.Drawing.Color.Black;
-            this.txtbUsuario.HintText = null;
-            this.txtbUsuario.IsPassword = false;
-            this.txtbUsuario.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtbUsuario.LineThickness = 2;
-            this.txtbUsuario.Location = new System.Drawing.Point(245, 81);
-            this.txtbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbUsuario.MaxLength = 32767;
-            this.txtbUsuario.Name = "txtbUsuario";
-            this.txtbUsuario.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtbUsuario.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbUsuario.ReadOnly = false;
-            this.txtbUsuario.Size = new System.Drawing.Size(301, 23);
-            this.txtbUsuario.TabIndex = 12;
-            this.txtbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbUsuario.TextName = "";
+            this.txtbFantasma.BackColor = System.Drawing.Color.Transparent;
+            this.txtbFantasma.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.txtbFantasma.Font_Size = new System.Drawing.Font("Century Gothic", 15F);
+            this.txtbFantasma.ForeColors = System.Drawing.Color.Black;
+            this.txtbFantasma.HintText = null;
+            this.txtbFantasma.IsPassword = false;
+            this.txtbFantasma.LineBackColor = System.Drawing.Color.Red;
+            this.txtbFantasma.LineThickness = 3;
+            this.txtbFantasma.Location = new System.Drawing.Point(368, 110);
+            this.txtbFantasma.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtbFantasma.MaxLength = 32767;
+            this.txtbFantasma.Name = "txtbFantasma";
+            this.txtbFantasma.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtbFantasma.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbFantasma.ReadOnly = false;
+            this.txtbFantasma.Size = new System.Drawing.Size(452, 31);
+            this.txtbFantasma.TabIndex = 12;
+            this.txtbFantasma.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbFantasma.TextName = "";
             // 
             // jMaterialTextbox2
             // 
@@ -166,27 +166,27 @@ namespace FarmaTown.Presentacion
             this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.jMaterialTextbox2.TextName = "";
             // 
-            // cboPerfil
+            // cboRol
             // 
-            this.cboPerfil.FormattingEnabled = true;
-            this.cboPerfil.Location = new System.Drawing.Point(420, 154);
-            this.cboPerfil.Name = "cboPerfil";
-            this.cboPerfil.Size = new System.Drawing.Size(301, 27);
-            this.cboPerfil.TabIndex = 18;
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(420, 154);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(301, 27);
+            this.cboRol.TabIndex = 18;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtbNombre);
-            this.groupBox1.Controls.Add(this.cboPerfil);
+            this.groupBox1.Controls.Add(this.cboRol);
             this.groupBox1.Controls.Add(this.lblRol);
             this.groupBox1.Controls.Add(this.lblRepetirContra);
             this.groupBox1.Controls.Add(this.lblContraseña);
             this.groupBox1.Controls.Add(this.txtbClaveRep);
             this.groupBox1.Controls.Add(this.txtbClave);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(28, 25);
+            this.groupBox1.Location = new System.Drawing.Point(28, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(990, 191);
             this.groupBox1.TabIndex = 24;
@@ -247,7 +247,7 @@ namespace FarmaTown.Presentacion
             this.groupBox2.Controls.Add(this.rjButton2);
             this.groupBox2.Controls.Add(this.dgvEmpleados);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(28, 222);
+            this.groupBox2.Location = new System.Drawing.Point(28, 250);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(990, 230);
             this.groupBox2.TabIndex = 25;
@@ -293,7 +293,7 @@ namespace FarmaTown.Presentacion
             this.nomFarmacia});
             this.dgvEmpleados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(61, 26);
+            this.dgvEmpleados.Location = new System.Drawing.Point(78, 26);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
@@ -419,9 +419,9 @@ namespace FarmaTown.Presentacion
         private JMaterialTextbox.JMaterialTextbox txtbNombre;
         private JMaterialTextbox.JMaterialTextbox txtbClave;
         private JMaterialTextbox.JMaterialTextbox txtbClaveRep;
-        private JMaterialTextbox.JMaterialTextbox txtbUsuario;
+        private JMaterialTextbox.JMaterialTextbox txtbFantasma;
         private JMaterialTextbox.JMaterialTextbox jMaterialTextbox2;
-        private System.Windows.Forms.ComboBox cboPerfil;
+        private System.Windows.Forms.ComboBox cboRol;
         private DiseñosElemGUI.TransparentLabel lblNombre;
         private DiseñosElemGUI.TransparentLabel lblRol;
         private DiseñosElemGUI.TransparentLabel lblRepetirContra;

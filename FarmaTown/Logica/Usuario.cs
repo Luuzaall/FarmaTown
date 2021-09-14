@@ -45,5 +45,10 @@ namespace FarmaTown.Logica
         {
             return DBHelper.getDBHelper().consultarUsuarios(); 
         }
+
+        public DataTable recurperarUsuarioCParametros(string nom, string idRol)
+        {
+            return DBHelper.getDBHelper().consultarUsuariosCParam(nom, idRol);
+        }
     }
 }

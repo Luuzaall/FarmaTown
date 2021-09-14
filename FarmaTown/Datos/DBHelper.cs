@@ -56,10 +56,33 @@ namespace FarmaTown.Datos
                 " FROM Usuarios u" +
                 " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
                 " INNER JOIN Roles r ON r.idRol = u.idRol" +
-                " WHERE u.borrado = 0;";
+                " WHERE u.borrado = 0";
             return this.consultaSQL(query);
         }
 
+        public DataTable consultarUsuariosCParam(string nom, string idRol)
+        {
+            string query = "SELECT u.idUsuario" +
+                ", u.nombre as nomUsuario" +
+                ", r.nombre as nomRol" +
+                ", e.nombre as nomEmpleado" +
+                " FROM Usuarios u " +
+                " INNER JOIN Roles r ON u.idRol = r.idRol" +
+                " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
+                " WHERE u.borrado = 0";
+
+            if ( !(nom is null))
+            {
+                query = query + " AND u.nombre LIKE '%" + nom + "%'";
+            }
+            if (!(idRol == "-1"))
+            {
+                query = query + " AND u.idRol = " + idRol;
+            }
+
+            return this.consultaSQL(query);
+
+        }
         public DataTable consultarEmpleados()
         {
             /*
@@ -78,7 +101,30 @@ namespace FarmaTown.Datos
 
             return this.consultaSQL(query);
         }
+        public Usuario obtenerUsuarioPorNom(string nomUs)
+        {
+            /*
+            * Permite obtener el usuario por su nombre
+            */
+            string query = "SELECT u.idUsuario" +
+                " , u.idEmpleado" +
+                " , u.nombre as NombreUsuario" +
+                " , u.clave " +
+                " , r.idRol" +
+                " , r.idRol " +
+                " , r.nombre as NombreRol " +
+                " FROM Usuarios u" + " INNER JOIN Roles r ON u.idRol = r.idRol" +
+                " WHERE u.nombre = '" + nomUs + "'" +
+                " AND u.borrado = 0;";
 
+            DataTable tablaUs = instance.consultaSQL(query);
+            if (tablaUs.Rows.Count > 0)
+            {
+                return objectMappingUsuario(tablaUs.Rows[0]);
+            }
+            return null;
+
+        }
         /*public bool persistirSesion(Sesion ses)
         {
             string query = "INSERT INTO Sesiones(idUsuario," +
@@ -135,44 +181,7 @@ namespace FarmaTown.Datos
             return afectadas;
 
         }
-       
-        /*
-        public bool persistirSesion(Sesion ses)
-        {
-            string query = "INSERT INTO Sesiones(idUsuario," +
-                "borrado, fechaInicio, fechaFin)" +
-                "VALUES" +
-                "(" + ses.Usuario.IdUsuario +
-                ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
-            int resultado = this.ejecutarSQL(query);
-            if (resultado)
-        }
-        */
 
-        public Usuario obtenerUsuarioPorNom(string nomUs)
-        {
-            /*
-            * Permite obtener el usuario por su nombre
-            */
-            string query = "SELECT u.idUsuario" + 
-                " , u.idEmpleado" + 
-                " , u.nombre as NombreUsuario" + 
-                " , u.clave " + 
-                " , r.idRol" +
-                " , r.idRol " + 
-                " , r.nombre as NombreRol " +
-                " FROM Usuarios u" + " INNER JOIN Roles r ON u.idRol = r.idRol" + 
-                " WHERE u.nombre = '" + nomUs + "'" +
-                " AND u.borrado = 0;";
-
-            DataTable tablaUs = instance.consultaSQL(query);
-            if (tablaUs.Rows.Count > 0)
-            {
-                return objectMappingUsuario(tablaUs.Rows[0]);
-            }
-            return null;
-            
-        }
 
         private DataTable consultaSQL(string strSql)
         {

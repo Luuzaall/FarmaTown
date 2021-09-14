@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion
 {
-    public partial class frmUsuarios : Form
+    public partial class frmABMUsuarios : Form
     {
         private Rol oRol;
-        private frmABMUsuario frmUs = new frmABMUsuario();
+        private frmABMUsuario frmABMUs = new frmABMUsuario();
         private Usuario oUsuario;
-        public frmUsuarios()
+        public frmABMUsuarios()
         {
             oRol = new Rol();
             oUsuario = new Usuario();
@@ -30,22 +30,22 @@ namespace FarmaTown.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
-            frmUs.ShowDialog();
+            frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
+            frmABMUs.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
-            frmUs.ShowDialog();
+            frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
+            frmABMUs.ShowDialog();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmUs.ShowDialog();
+            frmABMUs.ShowDialog();
         }
 
-        private void frmUsuarios_Load(object sender, EventArgs e)
+        private void frmABMUsuarios_Load(object sender, EventArgs e)
         {
             /*
              * Encargado de cargar los combos
@@ -85,7 +85,7 @@ namespace FarmaTown.Presentacion
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string usuario = this.txtbNombre.TextName;
-            int idRol = this.cboRoles.SelectedIndex;
+            string idRol = this.cboRoles.SelectedValue.ToString();
             
             if (string.IsNullOrEmpty(usuario)
                 & this.cboRoles.SelectedIndex == -1)
@@ -95,9 +95,11 @@ namespace FarmaTown.Presentacion
                     MessageBoxIcon.Exclamation);
                 this.txtbNombre.Focus();
                 this.cboRoles.Focus();
+                this.cargarGrilla(this.dgvUsuarios, this.oUsuario.recuperarTodos());
             }
 
-
+            DataTable resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
+            this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
         }
 
 
