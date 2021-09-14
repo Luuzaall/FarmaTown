@@ -1,4 +1,5 @@
 ﻿using FarmaTown;
+using FarmaTown.Datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,11 @@ namespace FarmaTown.Logica
         public DateTime FechaFin { get; set; }
         public bool Borrado { get; set; }
 
+        /*internal void persistir()
+        {
+            bool bandera;
+
+            bandera = DBHelper.getDBHelper().persistirSesion(this);
+        }*/
     }
 }

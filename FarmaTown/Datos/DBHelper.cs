@@ -28,12 +28,13 @@ namespace FarmaTown.Datos
                 "Password=123123GGHHj";
         }
 
+
         public static DBHelper getDBHelper()
         {
-        /*
-         * Permite utilziar una instancia del DBHelper
-         * , siendo el patrón Singleton
-         */
+            /*
+             * Permite utilziar una instancia del DBHelper
+             * , siendo el patrón Singleton
+             */
             if (instance == null)
                 instance = new DBHelper();
             return new DBHelper();
@@ -79,15 +80,19 @@ namespace FarmaTown.Datos
         }
 
         /*public bool persistirSesion(Sesion ses)
-{
-   string query = "INSERT INTO Sesiones(idUsuario," +
-       "borrado, fechaInicio, fechaFin)" +
-       "VALUES" +
-       "(" + ses.Usuario.IdUsuario +
-       ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
-   int resultado = this.ejecutarSQL(query);
-   if (resultado)
-}*/
+        {
+            string query = "INSERT INTO Sesiones(idUsuario," +
+                            "borrado, fechaInicio, fechaFin)" +
+                            " VALUES" +
+                             " (" + ses.Usuario.IdUsuario +
+                             ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
+            int resultado = this.ejecutarSQL(query);
+            if (resultado==0)
+            {
+                return false;
+            }
+            return true;
+        }*/
 
         public int ejecutarSQL(string strSql)
         {
