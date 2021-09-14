@@ -21,7 +21,7 @@ namespace FarmaTown.Logica
 
         public DataTable recuperarTodos()
         {
-            return DBHelper.getDBHelper().consultarTabla("Empleados");
+            return DBHelper.getDBHelper().consultarEmpleados();
         }
 
     }

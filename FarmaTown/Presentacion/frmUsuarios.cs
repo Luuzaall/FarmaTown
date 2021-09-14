@@ -15,10 +15,11 @@ namespace FarmaTown.Presentacion
     {
         private Rol oRol;
         private frmABMUsuario frmUs = new frmABMUsuario();
-        private Usuario user;
+        private Usuario oUsuario;
         public frmUsuarios()
         {
             oRol = new Rol();
+            oUsuario = new Usuario();
             InitializeComponent();
         }
 
@@ -29,13 +30,13 @@ namespace FarmaTown.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, user);
+            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
             frmUs.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.update, user);
+            frmUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
             frmUs.ShowDialog();
         }
 
@@ -50,6 +51,26 @@ namespace FarmaTown.Presentacion
              * Encargado de cargar los combos
              */
             this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
+
+            DataTable tablaUsuarios = oUsuario.recuperarTodos();
+            if (tablaUsuarios.Rows.Count > 0)
+            {
+                this.cargarGrilla(this.dgvUsuarios, tablaUsuarios);
+                this.dgvUsuarios.ClearSelection();
+            }
+            else
+                this.dgvUsuarios.Rows.Add("No se encontraron Usuarios...");
+        }
+        private void cargarGrilla(DataGridView dgv, DataTable table)
+        {
+            dgv.Rows.Clear();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                dgv.Rows.Add(table.Rows[i]["idUsuario"],
+                                table.Rows[i]["nomUsuario"],
+                                table.Rows[i]["nomRol"],
+                                table.Rows[i]["nomEmpleado"]); ;
+            }
         }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
@@ -71,6 +92,11 @@ namespace FarmaTown.Presentacion
         {
             this.btnEditar.Enabled = true;
             this.btnEliminar.Enabled = true;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

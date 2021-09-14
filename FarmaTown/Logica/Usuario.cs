@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using FarmaTown.Datos;
 
 namespace FarmaTown.Logica
@@ -39,9 +40,10 @@ namespace FarmaTown.Logica
             return null;
         }
 
-        public Object recuperarTodos()
+        //return DBHelper.getDBHelper().consultarTabla("Usuarios");
+        public DataTable recuperarTodos()
         {
-            return DBHelper.getDBHelper().consultarTabla("Usuarios");
+            return DBHelper.getDBHelper().consultarUsuarios(); 
         }
     }
 }

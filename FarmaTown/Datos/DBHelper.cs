@@ -45,16 +45,49 @@ namespace FarmaTown.Datos
             */
             return stringConexion;
         }
-        /*public bool persistirSesion(Sesion ses)
+
+        public DataTable consultarUsuarios()
         {
-            string query = "INSERT INTO Sesiones(idUsuario," +
-                "borrado, fechaInicio, fechaFin)" +
-                "VALUES" +
-                "(" + ses.Usuario.IdUsuario +
-                ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
-            int resultado = this.ejecutarSQL(query);
-            if (resultado)
-        }*/
+            string query = "SELECT u.idUsuario" +
+                ", u.nombre as nomUsuario" +
+                ", r.nombre as nomRol" +
+                ", e.nombre as nomEmpleado" +
+                " FROM Usuarios u" +
+                " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
+                " INNER JOIN Roles r ON r.idRol = u.idRol" +
+                " WHERE u.borrado = 0;";
+            return this.consultaSQL(query);
+        }
+
+        public DataTable consultarEmpleados()
+        {
+            /*
+             * Permite obtener los datos completos de 
+             * todos los empleados
+             */
+            string query = "SELECT e.idEmpleado" +
+                ", e.nroDoc" +
+                ", t.nombre as nomTipoDoc" +
+                ", f.nombre as nomFarmacia" +
+                ", e.nombre as nomEmpleado" +
+                " FROM Empleados e" +
+                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
+                " WHERE e.borrado = 0;";
+
+            return this.consultaSQL(query);
+        }
+
+        /*public bool persistirSesion(Sesion ses)
+{
+   string query = "INSERT INTO Sesiones(idUsuario," +
+       "borrado, fechaInicio, fechaFin)" +
+       "VALUES" +
+       "(" + ses.Usuario.IdUsuario +
+       ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
+   int resultado = this.ejecutarSQL(query);
+   if (resultado)
+}*/
 
         public int ejecutarSQL(string strSql)
         {
@@ -97,24 +130,7 @@ namespace FarmaTown.Datos
             return afectadas;
 
         }
-        public DataTable consultarEmpleados()
-        {
-            /*
-             * Permite obtener los datos completos de 
-             * todos los empleados
-             */
-            string query = "SELECT e.idEmpleado" +
-                ", e.nroDoc" +
-                ", t.nombre as nomTipoDoc" +
-                ", f.nombre as nomFarmacia" +
-                ", e.nombre as nomEmpleado" +
-                " FROM Empleados e" +
-                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
-                " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
-                " WHERE e.borrado = 0;";
-
-            return this.consultaSQL(query);
-        }
+       
         /*
         public bool persistirSesion(Sesion ses)
         {
@@ -230,11 +246,6 @@ namespace FarmaTown.Datos
         public DataTable consultarTabla(string tabla)
         {
             return this.consultaSQL("SELECT * FROM " + tabla);
-        }
-
-        public DataTable consultarEmpleados()
-        {
-            return this.consultaSQL("SELECT * FROM Empleados INNER JOIN Farmacias");
         }
 
         private Usuario objectMappingUsuario(DataRow row)

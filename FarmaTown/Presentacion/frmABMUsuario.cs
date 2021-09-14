@@ -36,17 +36,25 @@ namespace FarmaTown.Presentacion
         private void frmABMUsuario_Load(object sender, EventArgs e)
         {
             //Llenar combo
+            this.cargarCombo(this.cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
 
             switch (formMode)
             {
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Usuario";
+                        DataTable tablaEmpleados = oEmpleado.recuperarTodos();
+
+                        if (tablaEmpleados.Rows.Count > 0)
+                        {
+                            this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
+                            this.dgvEmpleados.ClearSelection();
+                        }
+                        else
+                            this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
                         break;
                     }
             }
-            this.cargarCombo(cboPerfil, oRol.recuperarTodos(), "nombre", "idRol");
-            //this.cargarGrilla(dgv, oEmpleado.recuperarTodos());
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -59,13 +67,6 @@ namespace FarmaTown.Presentacion
             this.Close();
         }
         
-        private void frmUsuarios_Load(object sender, EventArgs e)
-        {
-            /*
-             * Encargado de cargar los perfiles
-             */
-
-        }
 
         private void cargarGrilla(DataGridView dgv, DataTable table)
         {

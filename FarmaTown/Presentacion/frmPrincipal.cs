@@ -15,7 +15,6 @@ namespace FarmaTown.Presentacion
     {
         //Atributos
         private bool estaLogeado = false;
-        private Rol oRolLogueado;
         private Usuario oUsuarioLogueado;
 
         public frmPrincipal()
@@ -61,7 +60,6 @@ namespace FarmaTown.Presentacion
                 Sesion oSesion = new Sesion();
                 //Persistencia de la Sesión.
                 oUsuarioLogueado = oUsuarioLogueado.traerUsuario(frmLog.nomUsuario);
-                oRolLogueado = oUsuarioLogueado.Rol;
                 oSesion.Usuario = oUsuarioLogueado;
                 oSesion.FechaInicio = DateTime.Now;
 
