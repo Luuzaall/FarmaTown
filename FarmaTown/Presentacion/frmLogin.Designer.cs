@@ -190,7 +190,7 @@ namespace FarmaTown
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Log In";
+            this.Text = "FarmaTown - Ingreso";
             this.ResumeLayout(false);
             this.PerformLayout();
 

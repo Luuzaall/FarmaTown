@@ -70,7 +70,6 @@ namespace FarmaTown.Presentacion
         private void cargarGrilla(DataGridView dgv, DataTable table)
         {
             dgv.Rows.Clear();
-            Console.WriteLine(table);
             if (table != null)
             {
                 for (int i = 0; i < table.Rows.Count; i++)
