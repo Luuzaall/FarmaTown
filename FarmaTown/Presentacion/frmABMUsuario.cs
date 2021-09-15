@@ -142,12 +142,12 @@ namespace FarmaTown.Presentacion
 
                                 if (oUsuario.crearUsuario(oUsuario))
                                 {
-                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                             }
                             else
-                                MessageBox.Show("Nombre de usuario encontrado! Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Este nombre de usuario esta en uso! Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break; 
                     }

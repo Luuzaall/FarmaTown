@@ -70,14 +70,18 @@ namespace FarmaTown.Presentacion
         private void cargarGrilla(DataGridView dgv, DataTable table)
         {
             dgv.Rows.Clear();
-            for (int i = 0; i < table.Rows.Count; i++)
+            Console.WriteLine(table);
+            if (table != null)
             {
-                dgv.Rows.Add(table.Rows[i]["idUsuario"],
-                                table.Rows[i]["nomUsuario"],
-                                table.Rows[i]["nomRol"],
-                                table.Rows[i]["nomEmpleado"]); ;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    dgv.Rows.Add(table.Rows[i]["idUsuario"],
+                                    table.Rows[i]["nomUsuario"],
+                                    table.Rows[i]["nomRol"],
+                                    table.Rows[i]["nomEmpleado"]); ;
+                }
+                this.dgvUsuarios.ClearSelection();
             }
-            this.dgvUsuarios.ClearSelection();
         }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
@@ -95,13 +99,14 @@ namespace FarmaTown.Presentacion
             DataTable resultadosUsuarios = null;
 
             if (string.IsNullOrEmpty(usuario)
-                & this.cboRoles.SelectedIndex == -1)
+                && this.cboRoles.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe ingresar un usuario o un Rol",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 this.txtbNombre.Focus();
                 this.cboRoles.Focus();
+                resultadosUsuarios = oUsuario.recuperarTodos();
             }
             else if (!(this.cboRoles.SelectedIndex == -1))
             {
