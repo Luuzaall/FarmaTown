@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion
 {
-    public partial class frmABMUsuarios : Form
+    public partial class frmUsuarios : Form
     {
         private Rol oRol;
         private frmABMUsuario frmABMUs = new frmABMUsuario();
         private Usuario oUsuario;
-        public frmABMUsuarios()
+        public frmUsuarios()
         {
+            InitializeComponent();
             oRol = new Rol();
             oUsuario = new Usuario();
-            InitializeComponent();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -36,6 +36,8 @@ namespace FarmaTown.Presentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
+            oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
             frmABMUs.ShowDialog();
         }
@@ -45,7 +47,7 @@ namespace FarmaTown.Presentacion
             frmABMUs.ShowDialog();
         }
 
-        private void frmABMUsuarios_Load(object sender, EventArgs e)
+        private void frmUsuarios_Load(object sender, EventArgs e)
         {
             /*
              * Encargado de cargar los combos
@@ -85,8 +87,7 @@ namespace FarmaTown.Presentacion
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string usuario = this.txtbNombre.TextName;
-            string idRol = this.cboRoles.SelectedValue.ToString();
-            
+
             if (string.IsNullOrEmpty(usuario)
                 & this.cboRoles.SelectedIndex == -1)
             {
@@ -97,9 +98,12 @@ namespace FarmaTown.Presentacion
                 this.cboRoles.Focus();
                 this.cargarGrilla(this.dgvUsuarios, this.oUsuario.recuperarTodos());
             }
-
-            DataTable resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
-            this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
+            else
+            {
+                string idRol = this.cboRoles.SelectedValue.ToString();
+                DataTable resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
+                this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
+            }
         }
 
 

@@ -59,7 +59,7 @@ namespace FarmaTown.Presentacion
                     {
                         this.Text = "Nuevo Usuario";
                         DataTable tablaEmpleados = oEmpleado.recuperarTodos();
-
+                        this.limpiarDatos();
                         if (tablaEmpleados.Rows.Count > 0)
                         {
                             this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
@@ -73,14 +73,19 @@ namespace FarmaTown.Presentacion
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Usuario";
-                        //// Recuperar usuario seleccionado en la grilla 
-                        //MostrarDatos();
-                        //txtNombre.Enabled = true;
-                        //txtEmail.Enabled = true;
-                        //txtEmail.Enabled = true;
-                        //txtPassword.Enabled = true;
-                        //txtConfirmarPass.Enabled = true;
-                        //cboPerfil.Enabled = true;
+                        DataTable tablaEmpleados = oEmpleado.recuperarTodos();
+                        if (tablaEmpleados.Rows.Count > 0)
+                        {
+                            this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
+                            this.dgvEmpleados.ClearSelection();
+                        }
+                        else
+                            this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
+                        this.cargarDatos();
+                        this.txtbNombre.Enabled = true;
+                        this.txtbClave.Enabled = true;
+                        this.txtbClaveRep.Enabled = true;
+                        this.cboRol.Enabled = true;
                         break;
                     }
 
@@ -99,6 +104,34 @@ namespace FarmaTown.Presentacion
             }
         }
 
+        private void cargarDatos()
+        {
+            /*
+            * Carga los datos en los text box y combos
+            * según el usuario seleccionado.
+            */
+            this.txtbNombre.TextName = this.oUsuario.Nombre;
+            this.txtbClave.TextName = 
+                this.txtbClaveRep.TextName = this.oUsuario.Clave;
+            this.cboRol.SelectedValue = this.oUsuario.Rol.IdRol;
+            int cantFilasDvg = this.dgvEmpleados.RowCount;
+            for(int i = 0; i < cantFilasDvg; i++)
+            {
+
+            }
+        }
+        private void limpiarDatos()
+        {
+            /*
+             * Limpia los textbox y
+             * los combos para un nuevo ingreso
+             * de los mismos
+             */
+            this.txtbNombre.TextName = "";
+            this.txtbClave.TextName = "";
+            this.txtbClaveRep.TextName = "";
+            this.cboRol.SelectedIndex = -1;
+        }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             /*
@@ -109,27 +142,27 @@ namespace FarmaTown.Presentacion
             {
                 case FormMode.insert:
                     {
-                        //if (this.existeUsuario() == false)
-                        //{
-                        //    if (this.validarCampos())
-                        //    {
-                        //        var oUsuario = new Usuario();
-                        //        oUsuario.NombreUsuario = txtNombre.Text;
-                        //        oUsuario.Password = txtPassword.Text;
-                        //        oUsuario.Email = txtEmail.Text;
-                        //        oUsuario.Perfil = new Perfil();
-                        //        oUsuario.Perfil.IdPerfil = (int)cboPerfil.SelectedValue;
-                        //        oUsuario.Estado = "S";
+                        if (this.validarCampos())
+                        {
+                            if (this.existeUsuario() == false)
+                            {
+                                var oUsuario = new Usuario();
+                                oUsuario.Nombre = this.txtbNombre.TextName;
+                                oUsuario.Clave = this.txtbClave.TextName;
+                                oUsuario.Rol = new Rol();
+                                oUsuario.Rol.IdRol = (int)this.cboRol.SelectedValue;
+                                oUsuario.Empleado = new Empleado();
+                                oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
 
-                        //        if (oUsuarioService.CrearUsuario(oUsuario))
-                        //        {
-                        //            MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //            this.Close();
-                        //        }
-                        //    }
-                        //}
-                        //else
-                        //    MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (oUsuario.crearUsuario(oUsuario))
+                                {
+                                    MessageBox.Show("Usuario insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
+                            }
+                            else
+                                MessageBox.Show("Nombre de usuario encontrado! Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         break; 
                     }
                 case FormMode.update:
@@ -197,10 +230,18 @@ namespace FarmaTown.Presentacion
             string nom = this.txtbNombre.TextName;
             string clave = this.txtbClave.TextName;
             string claveRep = this.txtbClaveRep.TextName;
-            string idRol = this.cboRol.SelectedValue.ToString();
+            int indexRol = this.cboRol.SelectedIndex;
+
             if (string.IsNullOrEmpty(nom))
             {
                 MessageBox.Show("Debe ingresar un nombre",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
+            else if (nom.Count() < 3)
+            {
+                MessageBox.Show("Debe ingresar un nombre válido, mínimo 3 carácteres",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
@@ -212,6 +253,14 @@ namespace FarmaTown.Presentacion
                     , MessageBoxIcon.Information);
                 this.txtbClave.Focus();
             }
+            
+            else if (clave.Count() < 4)
+            {
+                MessageBox.Show("La clave mínimo 4 carácteres",
+                   "Validación de Datos", MessageBoxButtons.OK
+                   , MessageBoxIcon.Information);
+                this.txtbClave.Focus();
+            }
             else if (string.IsNullOrEmpty(claveRep))
             {
                 MessageBox.Show("Debe repetir la clave",
@@ -219,7 +268,7 @@ namespace FarmaTown.Presentacion
                     , MessageBoxIcon.Information);
                 this.txtbClaveRep.Focus();
             }
-            else if (idRol == "-1")
+            else if (indexRol == -1)
             {
                 MessageBox.Show("Debe seleccionar un Rol",
                     "Validación de Datos", MessageBoxButtons.OK
@@ -232,6 +281,13 @@ namespace FarmaTown.Presentacion
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbClaveRep.Focus();
+            }
+            else if (this.dgvEmpleados.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe elegir un empleado",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.dgvEmpleados.Focus();
             }
             else
             {
@@ -264,9 +320,13 @@ namespace FarmaTown.Presentacion
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        public void seleccionarUsuario(FormMode op, Usuario usuarioSelected)
+        public void seleccionarUsuario(FormMode _formMode, Usuario usuarioSelected)
         {
-            formMode = op;
+            /*
+             * Se obtiene el usuario seleccionado
+             * y el modo de apertura del formABMUsuarios
+             */
+            formMode = _formMode;
             oUsuario = usuarioSelected;
         }
     }

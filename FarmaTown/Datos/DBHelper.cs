@@ -125,6 +125,36 @@ namespace FarmaTown.Datos
             return null;
 
         }
+
+        public bool insertarUsuario(Usuario oUsuario)
+        {
+            /*
+             * Inserta el usuario nuevo en la base de datos.
+             * Su resultado se retornará en booleano.
+             * - TRUE si se insertó exitosamente
+             * - FALSE si no se logró insertar.
+             */
+            string query = "INSERT INTO Usuarios" +
+                "(idEmpleado" +
+                ", nombre" +
+                ", clave" +
+                ", idRol" +
+                ", borrado)" +
+                " VALUES" +
+                "(" + oUsuario.Empleado.IdEmpleado +
+                ", '" + oUsuario.Nombre + "'" +
+                ", '" + oUsuario.Clave + "'" +
+                ", " + oUsuario.Rol.IdRol +
+                ", 0)";
+
+            int afectadas = this.ejecutarSQL(query);
+            if (afectadas == 0)
+            {
+                return false;
+            }
+            else return true;
+        }
+
         /*public bool persistirSesion(Sesion ses)
         {
             string query = "INSERT INTO Sesiones(idUsuario," +

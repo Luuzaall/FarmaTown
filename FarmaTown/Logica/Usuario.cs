@@ -50,5 +50,10 @@ namespace FarmaTown.Logica
         {
             return DBHelper.getDBHelper().consultarUsuariosCParam(nom, idRol);
         }
+
+        public bool crearUsuario(Usuario oUsuario)
+        {
+            return DBHelper.getDBHelper().insertarUsuario(oUsuario);
+        }
     }
 }
