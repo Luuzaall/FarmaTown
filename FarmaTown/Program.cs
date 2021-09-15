@@ -18,9 +18,9 @@ namespace FarmaTown.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPrincipal());
+            Application.Run(new frmPrincipal());
             //Application.Run(new frmABMUsuario());
-            Application.Run(new frmUsuarios());
+            //Application.Run(new frmUsuarios());
             //Application.Run(new frmLogin());
         }
     }

@@ -194,20 +194,20 @@ namespace FarmaTown.Datos
             else return true;
         }
 
-        /*public bool persistirSesion(Sesion ses)
+        public bool persistirSesion(Sesion ses)
         {
             string query = "INSERT INTO Sesiones(idUsuario," +
                             "borrado, fechaInicio, fechaFin)" +
                             " VALUES" +
                              " (" + ses.Usuario.IdUsuario +
-                             ", 0, CONVERT(DATETIME, " + ses.FechaInicio + ",21) , NULL)";
+                             ", 0, CONVERT(DATETIME, "+ ses.FechaInicio + ", 20) ,CONVERT(DATETIME, " + ses.FechaFin + ", 20))";
             int resultado = this.ejecutarSQL(query);
             if (resultado==0)
             {
                 return false;
             }
             return true;
-        }*/
+        }
 
         public int ejecutarSQL(string strSql)
         {

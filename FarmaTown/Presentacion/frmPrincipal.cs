@@ -16,6 +16,7 @@ namespace FarmaTown.Presentacion
         //Atributos
         private bool estaLogeado = false;
         private Usuario oUsuarioLogueado;
+        private Sesion oSesion;
 
         public frmPrincipal()
         {
@@ -31,7 +32,14 @@ namespace FarmaTown.Presentacion
                 MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button1)
                 == DialogResult.Yes)
-                e.Cancel = false;
+            {
+                if (oSesion != null)
+                {
+                    oSesion.FechaFin = DateTime.Now;
+                    oSesion.persistir();
+                }
+                    e.Cancel = false;
+            }
             else
             {
                 e.Cancel = true;
@@ -57,14 +65,11 @@ namespace FarmaTown.Presentacion
             }
             else
             {
-                Sesion oSesion = new Sesion();
+                oSesion = new Sesion();
                 //Persistencia de la Sesión.
                 oUsuarioLogueado = oUsuarioLogueado.traerUsuario(frmLog.nomUsuario);
                 oSesion.Usuario = oUsuarioLogueado;
                 oSesion.FechaInicio = DateTime.Now;
-
-                //oSesion.persistir();
-
                 
                 estaLogeado = true;
             }
