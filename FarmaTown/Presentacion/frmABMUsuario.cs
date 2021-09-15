@@ -52,35 +52,26 @@ namespace FarmaTown.Presentacion
 
             //Llenar combo
             this.cargarCombo(this.cboRol, oRol.recuperarTodos(), "nombre", "idRol");
-
+            DataTable tablaEmpleados = oEmpleado.recuperarTodos();
+            
+            if (tablaEmpleados.Rows.Count > 0)
+            {
+                this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
+                this.dgvEmpleados.ClearSelection();
+            }
+            else
+                this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
             switch (formMode)
             {
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Usuario";
-                        DataTable tablaEmpleados = oEmpleado.recuperarTodos();
-                        this.limpiarDatos();
-                        if (tablaEmpleados.Rows.Count > 0)
-                        {
-                            this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
-                            this.dgvEmpleados.ClearSelection();
-                        }
-                        else
-                            this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
                         break;
                     }
 
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Usuario";
-                        DataTable tablaEmpleados = oEmpleado.recuperarTodos();
-                        if (tablaEmpleados.Rows.Count > 0)
-                        {
-                            this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
-                            this.dgvEmpleados.ClearSelection();
-                        }
-                        else
-                            this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
                         this.cargarDatos();
                         this.txtbNombre.Enabled = true;
                         this.txtbClave.Enabled = true;
@@ -91,14 +82,14 @@ namespace FarmaTown.Presentacion
 
                 case FormMode.delete:
                     {
-                        //MostrarDatos();
+                        this.cargarDatos();
                         this.Text = "Habilitar/Deshabilitar Usuario";
-                        //txtNombre.Enabled = false;
-                        //txtEmail.Enabled = false;
-                        //txtEmail.Enabled = false;
-                        //txtPassword.Enabled = false;
-                        //cboPerfil.Enabled = false;
-                        //txtConfirmarPass.Enabled = false;
+                        this.txtbNombre.Enabled = false;
+                        this.txtbClave.Enabled = false;
+                        this.txtbClaveRep.Enabled = false;
+                        this.cboRol.Enabled = false;
+                        this.dgvEmpleados.ReadOnly = true;
+                        this.btnRegEmpleado.Enabled = false;
                         break;
                     }
             }
@@ -115,23 +106,18 @@ namespace FarmaTown.Presentacion
                 this.txtbClaveRep.TextName = this.oUsuario.Clave;
             this.cboRol.SelectedValue = this.oUsuario.Rol.IdRol;
             int cantFilasDvg = this.dgvEmpleados.RowCount;
+
             for(int i = 0; i < cantFilasDvg; i++)
             {
-
+                int idFila = (int)this.dgvEmpleados.Rows[i].Cells["idEmpleado"].Value;
+                if ( idFila == oUsuario.Empleado.IdEmpleado)
+                {
+                    this.dgvEmpleados.Rows[i].Selected = true;
+                    break;
+                }
             }
         }
-        private void limpiarDatos()
-        {
-            /*
-             * Limpia los textbox y
-             * los combos para un nuevo ingreso
-             * de los mismos
-             */
-            this.txtbNombre.TextName = "";
-            this.txtbClave.TextName = "";
-            this.txtbClaveRep.TextName = "";
-            this.cboRol.SelectedIndex = -1;
-        }
+        
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             /*
@@ -167,37 +153,40 @@ namespace FarmaTown.Presentacion
                     }
                 case FormMode.update:
                     {
-                        //if (ValidarCampos())
-                        //{
-                        //    oUsuarioSelected.NombreUsuario = txtNombre.Text;
-                        //    oUsuarioSelected.Password = txtPassword.Text;
-                        //    oUsuarioSelected.Email = txtEmail.Text;
-                        //    oUsuarioSelected.Perfil = new Perfil();
-                        //    oUsuarioSelected.Perfil.IdPerfil = (int)cboPerfil.SelectedValue;
+                        if (this.validarCampos())
+                        {
+                            oUsuario.Nombre = txtbNombre.TextName;
+                            oUsuario.Clave = txtbClave.TextName;
+                            oUsuario.Rol = new Rol();
+                            oUsuario.Rol.IdRol = (int)cboRol.SelectedValue;
+                            oUsuario.Empleado = new Empleado();
+                            oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.SelectedRows[0].Cells["idEmpleado"].Value;
+;
 
-                        //    if (oUsuarioService.ActualizarUsuario(oUsuarioSelected))
-                        //    {
-                        //        MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //        this.Dispose();
-                        //    }
-                        //    else
-                        //        MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
+                            if (oUsuario.actualizarUsuario(oUsuario))
+                            {
+                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         break;
                     }
                 case FormMode.delete:
                     {
-                        //if (MessageBox.Show("Seguro que desea habilitar/deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                        //{
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if ( decision == DialogResult.OK)
+                        {
 
-                        //    if (oUsuarioService.ModificarEstadoUsuario(oUsuarioSelected))
-                        //    {
-                        //        MessageBox.Show("Usuario Habilitado/Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //        this.Close();
-                        //    }
-                        //    else
-                        //        MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
+                            if (oUsuario.cambiarEstadoUsuario(oUsuario))
+                            {
+                                MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                                MessageBox.Show("Error al deshabilitar el usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
                         break;
                     }
@@ -328,6 +317,27 @@ namespace FarmaTown.Presentacion
              */
             formMode = _formMode;
             oUsuario = usuarioSelected;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            /*
+             * Permite que el usuario limpie todos los campos
+             */
+            this.limpiarDatos();
+        }
+
+        private void limpiarDatos()
+        {
+            /*
+             * Limpia los textbox y
+             * los combos para un nuevo ingreso
+             * de los mismos
+             */
+            this.txtbNombre.TextName = "";
+            this.txtbClave.TextName = "";
+            this.txtbClaveRep.TextName = "";
+            this.cboRol.SelectedIndex = -1;
         }
     }
 }

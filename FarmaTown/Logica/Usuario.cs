@@ -55,5 +55,15 @@ namespace FarmaTown.Logica
         {
             return DBHelper.getDBHelper().insertarUsuario(oUsuario);
         }
+
+        public bool actualizarUsuario(Usuario oUsuario)
+        {
+            return DBHelper.getDBHelper().actualizarUsuario(oUsuario);
+        }
+
+        public bool cambiarEstadoUsuario(Usuario oUsuario)
+        {
+            return DBHelper.getDBHelper().cambiarEstadoUsuario(oUsuario);
+        }
     }
 }

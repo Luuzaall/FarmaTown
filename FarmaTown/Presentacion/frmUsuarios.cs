@@ -14,7 +14,7 @@ namespace FarmaTown.Presentacion
     public partial class frmUsuarios : Form
     {
         private Rol oRol;
-        private frmABMUsuario frmABMUs = new frmABMUsuario();
+        private frmABMUsuario frmABMUs;
         private Usuario oUsuario;
         public frmUsuarios()
         {
@@ -30,12 +30,16 @@ namespace FarmaTown.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            frmABMUs = new frmABMUsuario();
+            string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
+            oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
             frmABMUs.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            frmABMUs = new frmABMUsuario();
             string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
             oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
@@ -44,6 +48,7 @@ namespace FarmaTown.Presentacion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            frmABMUs = new frmABMUsuario();
             frmABMUs.ShowDialog();
         }
 
@@ -58,7 +63,6 @@ namespace FarmaTown.Presentacion
             if (tablaUsuarios.Rows.Count > 0)
             {
                 this.cargarGrilla(this.dgvUsuarios, tablaUsuarios);
-                this.dgvUsuarios.ClearSelection();
             }
             else
                 this.dgvUsuarios.Rows.Add("No se encontraron Usuarios...");
@@ -73,6 +77,7 @@ namespace FarmaTown.Presentacion
                                 table.Rows[i]["nomRol"],
                                 table.Rows[i]["nomEmpleado"]); ;
             }
+            this.dgvUsuarios.ClearSelection();
         }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
@@ -87,6 +92,7 @@ namespace FarmaTown.Presentacion
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string usuario = this.txtbNombre.TextName;
+            DataTable resultadosUsuarios = null;
 
             if (string.IsNullOrEmpty(usuario)
                 & this.cboRoles.SelectedIndex == -1)
@@ -96,16 +102,22 @@ namespace FarmaTown.Presentacion
                     MessageBoxIcon.Exclamation);
                 this.txtbNombre.Focus();
                 this.cboRoles.Focus();
-                this.cargarGrilla(this.dgvUsuarios, this.oUsuario.recuperarTodos());
+            }
+            else if (!(this.cboRoles.SelectedIndex == -1))
+            {
+                string idRol = this.cboRoles.SelectedValue.ToString();
+                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
             }
             else
             {
-                string idRol = this.cboRoles.SelectedValue.ToString();
-                DataTable resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
-                this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
+                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, "-1");
+                
             }
-        }
+            this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
 
+
+
+        }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -116,6 +128,24 @@ namespace FarmaTown.Presentacion
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            /*
+             * Le da oportunidad al usuario al actualizar
+             * si quiere ver algún cambio reciente.
+             */
+            this.cargarGrilla(dgvUsuarios, oUsuario.recuperarTodos());
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            /*
+             * Permite al usuario limpiar sus selecciones si desea.
+             */
+            this.txtbNombre.TextName = "";
+            this.cboRoles.SelectedIndex = -1;
         }
     }
 }

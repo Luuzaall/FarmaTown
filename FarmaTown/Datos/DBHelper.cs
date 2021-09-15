@@ -47,6 +47,41 @@ namespace FarmaTown.Datos
             return stringConexion;
         }
 
+        public bool actualizarUsuario(Usuario oUsuario)
+        {
+            /*
+             * Actualiza los datos del usuario obtenido
+             * en la base de datos, con los nuevos cambios.
+             */
+            string query = "UPDATE Usuarios " +
+                " SET nombre = '" + oUsuario.Nombre + "'" +
+                " , clave = '" + oUsuario.Clave + "'" +
+                " , idRol = " + oUsuario.Rol.IdRol +
+                " , idEmpleado = " + oUsuario.Empleado.IdEmpleado +
+                " WHERE idUsuario = " + oUsuario.IdUsuario;
+
+            int afectadas = this.ejecutarSQL(query);
+            if (afectadas > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool cambiarEstadoUsuario(Usuario oUsuario)
+        {
+            string query = "UPDATE Usuarios" +
+                " SET borrado = 1" +
+                " WHERE idUsuario = " + oUsuario.IdUsuario;
+
+            int afectadas = this.ejecutarSQL(query);
+            if (afectadas > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public DataTable consultarUsuarios()
         {
             string query = "SELECT u.idUsuario" +
@@ -113,7 +148,11 @@ namespace FarmaTown.Datos
                 " , r.idRol" +
                 " , r.idRol " +
                 " , r.nombre as NombreRol " +
-                " FROM Usuarios u" + " INNER JOIN Roles r ON u.idRol = r.idRol" +
+                " , e.nombre as NombreEmpleado" +
+                " , e.idEmpleado" +
+                " FROM Usuarios u" + 
+                " INNER JOIN Roles r ON u.idRol = r.idRol" +
+                " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado " + 
                 " WHERE u.nombre = '" + nomUs + "'" +
                 " AND u.borrado = 0;";
 
@@ -308,6 +347,11 @@ namespace FarmaTown.Datos
                 {
                     IdRol = Convert.ToInt32(row["idRol"].ToString()),
                     Nombre = row["NombreRol"].ToString(),
+                },
+                Empleado = new Empleado()
+                {
+                    IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
+                    Nombre = row["NombreEmpleado"].ToString(),
                 }
             };
 
