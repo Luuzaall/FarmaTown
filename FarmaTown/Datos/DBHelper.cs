@@ -194,13 +194,23 @@ namespace FarmaTown.Datos
             else return true;
         }
 
-        public bool persistirSesion(Sesion ses)
+        public bool persistirSesion(Sesion ses, bool esFinal)
         {
-            string query = "INSERT INTO Sesiones(idUsuario," +
-                            "borrado, fechaInicio, fechaFin)" +
+            string query = "";
+            if (!esFinal)
+            {
+                query = "INSERT INTO Sesiones(idUsuario," +
+                            "fechaInicio, fechaFin, borrado)" +
                             " VALUES" +
                              " (" + ses.Usuario.IdUsuario +
-                             ", 0, CONVERT(DATETIME, "+ ses.FechaInicio + ", 20) ,CONVERT(DATETIME, " + ses.FechaFin + ", 20))";
+                             ", CONVERT(DATETIME, '" + ses.FechaInicio + "', 103), null, 0)";
+            }
+            else
+            {
+                query = "UPDATE Sesiones" +
+                    " SET fechaFin = CONVERT(DATETIME, '" + ses.FechaFin + "', 103)" +
+                    " WHERE fechaInicio = CONVERT(DATETIME, '" + ses.FechaInicio + "', 103)";
+            }
             int resultado = this.ejecutarSQL(query);
             if (resultado==0)
             {

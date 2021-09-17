@@ -76,7 +76,7 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(633, 162);
+            this.dgvUsuarios.Size = new System.Drawing.Size(700, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -114,9 +114,9 @@ namespace FarmaTown.Presentacion
             this.gbResultados.Controls.Add(this.btnActualizar);
             this.gbResultados.Controls.Add(this.dgvUsuarios);
             this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbResultados.Location = new System.Drawing.Point(33, 246);
+            this.gbResultados.Location = new System.Drawing.Point(33, 261);
             this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(817, 247);
+            this.gbResultados.Size = new System.Drawing.Size(863, 322);
             this.gbResultados.TabIndex = 20;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(678, 116);
+            this.btnActualizar.Location = new System.Drawing.Point(741, 141);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 13;
@@ -158,7 +158,7 @@ namespace FarmaTown.Presentacion
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbFiltros.Location = new System.Drawing.Point(33, 12);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(817, 228);
+            this.gbFiltros.Size = new System.Drawing.Size(863, 228);
             this.gbFiltros.TabIndex = 21;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -285,7 +285,7 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(797, 516);
+            this.btnSalir.Location = new System.Drawing.Point(843, 599);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 18;
@@ -309,7 +309,8 @@ namespace FarmaTown.Presentacion
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(135, 516);
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnEditar.Location = new System.Drawing.Point(150, 609);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 17;
@@ -333,7 +334,7 @@ namespace FarmaTown.Presentacion
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(251, 516);
+            this.btnEliminar.Location = new System.Drawing.Point(267, 609);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 16;
@@ -357,7 +358,7 @@ namespace FarmaTown.Presentacion
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(33, 516);
+            this.btnAgregar.Location = new System.Drawing.Point(33, 609);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
             this.btnAgregar.TabIndex = 15;
@@ -370,10 +371,11 @@ namespace FarmaTown.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Hire_re_gn5j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(887, 586);
+            this.ClientSize = new System.Drawing.Size(924, 679);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);

@@ -78,10 +78,16 @@
     <Compile Include="Presentacion\DiseñosElemenGUI\TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmABMUsuario.cs">
+    <Compile Include="Presentacion\Empleados\frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmABMUsuario.Designer.cs">
+    <Compile Include="Presentacion\Empleados\frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Usuarios\frmABMUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Usuarios\frmABMUsuario.Designer.cs">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
@@ -97,15 +103,18 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Usuario.cs" />
-    <Compile Include="Presentacion\frmUsuarios.cs">
+    <Compile Include="Presentacion\Usuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmUsuarios.Designer.cs">
+    <Compile Include="Presentacion\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentacion\frmABMUsuario.resx">
+    <EmbeddedResource Include="Presentacion\Empleados\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
@@ -114,7 +123,7 @@
     <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmUsuarios.resx">
+    <EmbeddedResource Include="Presentacion\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -147,10 +156,12 @@
     <Content Include="Presentacion\Imagenes\addDocument.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />
+    <None Include="Presentacion\Imagenes\coworkers.png" />
     <Content Include="Presentacion\Imagenes\detail.png" />
     <Content Include="Presentacion\Imagenes\Editor.png" />
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
+    <None Include="Presentacion\Imagenes\principal.png" />
     <Content Include="Presentacion\Imagenes\trash.png" />
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
     <Content Include="Presentacion\Imagenes\undraw_medical_care_movn.png" />

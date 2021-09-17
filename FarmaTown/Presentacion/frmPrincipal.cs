@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Logica;
+using FarmaTown.Presentacion.Empleados;
 
 namespace FarmaTown.Presentacion
 {
@@ -36,7 +37,7 @@ namespace FarmaTown.Presentacion
                 if (oSesion != null)
                 {
                     oSesion.FechaFin = DateTime.Now;
-                    oSesion.persistir();
+                    oSesion.persistir(true);
                 }
                     e.Cancel = false;
             }
@@ -70,6 +71,7 @@ namespace FarmaTown.Presentacion
                 oUsuarioLogueado = oUsuarioLogueado.traerUsuario(frmLog.nomUsuario);
                 oSesion.Usuario = oUsuarioLogueado;
                 oSesion.FechaInicio = DateTime.Now;
+                oSesion.persistir(false);
                 
                 estaLogeado = true;
             }
@@ -84,6 +86,12 @@ namespace FarmaTown.Presentacion
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleados frmEmp = new frmEmpleados();
+            frmEmp.ShowDialog();
         }
     }
 }
