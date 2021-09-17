@@ -103,6 +103,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eyeParaClave {
+            get {
+                object obj = ResourceManager.GetObject("eyeParaClave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondoFarmaTown {
             get {
                 object obj = ResourceManager.GetObject("FondoFarmaTown", resourceCulture);
@@ -166,6 +176,16 @@ namespace FarmaTown.Properties {
         internal static System.Drawing.Bitmap undraw_High_five_re_jy711 {
             get {
                 object obj = ResourceManager.GetObject("undraw_High_five_re_jy711", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_High_five_re_jy712 {
+            get {
+                object obj = ResourceManager.GetObject("undraw_High_five_re_jy712", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -19,9 +19,15 @@ namespace FarmaTown.Logica
         public bool Borrado { get; set; }
         public Rol Rol { get; set; }
 
+        EmpleadoDao oEmpleadoDao;
+
+        public Empleado()
+        {
+            oEmpleadoDao = new EmpleadoDao();
+        }
         public DataTable recuperarTodos()
         {
-            return DBHelper.getDBHelper().consultarEmpleados();
+            return oEmpleadoDao.recuperarTodos();
         }
 
     }

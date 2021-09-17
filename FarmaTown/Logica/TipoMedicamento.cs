@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FarmaTown.Datos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,4 +15,5 @@ namespace FarmaTown.Logica
         public bool Borrado { get; set; }
 
     }
+
 }

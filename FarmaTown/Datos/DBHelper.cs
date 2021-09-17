@@ -118,24 +118,6 @@ namespace FarmaTown.Datos
             return this.consultaSQL(query);
 
         }
-        public DataTable consultarEmpleados()
-        {
-            /*
-             * Permite obtener los datos completos de 
-             * todos los empleados
-             */
-            string query = "SELECT e.idEmpleado" +
-                ", e.nroDoc" +
-                ", t.nombre as nomTipoDoc" +
-                ", f.nombre as nomFarmacia" +
-                ", e.nombre as nomEmpleado" +
-                " FROM Empleados e" +
-                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
-                " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
-                " WHERE e.borrado = 0;";
-
-            return this.consultaSQL(query);
-        }
         public Usuario obtenerUsuarioPorNom(string nomUs)
         {
             /*
@@ -262,7 +244,7 @@ namespace FarmaTown.Datos
         }
 
 
-        private DataTable consultaSQL(string strSql)
+        public DataTable consultaSQL(string strSql)
         {
             /*
              * Sólo para consultas sin parámetros.

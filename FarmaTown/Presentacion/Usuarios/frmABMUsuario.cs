@@ -84,11 +84,12 @@ namespace FarmaTown.Presentacion
                     {
                         this.cargarDatos();
                         this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
+                        this.cargarFila();
                         this.txtbNombre.Enabled = false;
                         this.txtbClave.Enabled = false;
                         this.txtbClaveRep.Enabled = false;
                         this.cboRol.Enabled = false;
-                        this.dgvEmpleados.ReadOnly = true;
+                        this.btnLimpiar.Enabled = false;
                         this.btnRegEmpleado.Enabled = false;
                         break;
                     }
@@ -105,17 +106,39 @@ namespace FarmaTown.Presentacion
             this.txtbClave.TextName = 
                 this.txtbClaveRep.TextName = this.oUsuario.Clave;
             this.cboRol.SelectedValue = this.oUsuario.Rol.IdRol;
+
+            this.seleccionarFila();
+        }
+
+        private void cargarFila()
+        {
             int cantFilasDvg = this.dgvEmpleados.RowCount;
 
-            for(int i = 0; i < cantFilasDvg; i++)
+            for (int i = 0; i < cantFilasDvg; i++)
+            {
+                bool estaSelecc = this.dgvEmpleados.Rows[i].Selected;
+                if (!estaSelecc)
+                {
+                    this.dgvEmpleados.Rows.RemoveAt(i);
+                    i = i - 1;
+                }
+                cantFilasDvg = this.dgvEmpleados.RowCount;
+            }
+        }
+        private void seleccionarFila()
+        {
+            int cantFilasDvg = this.dgvEmpleados.RowCount;
+
+            for (int i = 0; i < cantFilasDvg; i++)
             {
                 int idFila = (int)this.dgvEmpleados.Rows[i].Cells["idEmpleado"].Value;
-                if ( idFila == oUsuario.Empleado.IdEmpleado)
+                if (idFila == oUsuario.Empleado.IdEmpleado)
                 {
                     this.dgvEmpleados.Rows[i].Selected = true;
                     break;
                 }
             }
+
         }
         
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -339,5 +362,41 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.TextName = "";
             this.cboRol.SelectedIndex = -1;
         }
+
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            bool estabaActivado = this.cambiarColorBtnClave(btnVerClave);
+            if (estabaActivado)
+                this.txtbClave.IsPassword = true;
+            else
+                this.txtbClave.IsPassword = false;
+            
+        }
+
+        private void btnVerClaveRep_Click(object sender, EventArgs e)
+        {
+            bool estabaActivado = this.cambiarColorBtnClave(btnVerClaveRep);
+            if (estabaActivado)
+                this.txtbClaveRep.IsPassword = true;
+            else
+                this.txtbClaveRep.IsPassword = false;
+        }
+
+        private bool cambiarColorBtnClave(Button btn)
+        {
+            var colorActual = btn.BackColor;
+            if (colorActual == Color.Green)
+            {
+                btn.BackColor = Color.FromArgb(116, 201, 79);
+                return true;
+            }
+            else
+            {
+                btn.BackColor = Color.Green;
+                return false;
+            }
+        }
+
+        
     }
 }

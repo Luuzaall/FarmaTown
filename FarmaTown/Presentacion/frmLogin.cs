@@ -1,6 +1,7 @@
 ﻿using FarmaTown.Logica;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FarmaTown
@@ -88,6 +89,34 @@ namespace FarmaTown
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnIngresar.PerformClick();
+            }
+        }
+
+        private void btnVerClave_Click(object sender, EventArgs e)
+        {
+            bool estabaActivo = this.cambiarColorBtnClave(btnVerClave);
+            if (estabaActivo)
+            {
+                this.txtbClave.IsPassword = true;
+            }
+            else
+            {
+                this.txtbClave.IsPassword = false;
+            }
+        }
+
+        private bool cambiarColorBtnClave(Button btn)
+        {
+            var colorActual = btn.BackColor;
+            if (colorActual == Color.Green)
+            {
+                btn.BackColor = Color.FromArgb(116, 201, 79);
+                return true;
+            }
+            else
+            {
+                btn.BackColor = Color.Green;
+                return false;
             }
         }
     }

@@ -38,6 +38,7 @@ namespace FarmaTown
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnIngresar = new CustomControls.RJControls.RJButton();
             this.lblClave = new System.Windows.Forms.Label();
+            this.btnVerClave = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -167,6 +168,31 @@ namespace FarmaTown
             this.lblClave.TabIndex = 11;
             this.lblClave.Text = "Contraseña:";
             // 
+            // btnVerClave
+            // 
+            this.btnVerClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnVerClave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnVerClave.BackgroundImage = global::FarmaTown.Properties.Resources.eyeParaClave;
+            this.btnVerClave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVerClave.BorderColor = System.Drawing.Color.Green;
+            this.btnVerClave.BorderRadius = 15;
+            this.btnVerClave.BorderSize = 1;
+            this.btnVerClave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerClave.FlatAppearance.BorderSize = 0;
+            this.btnVerClave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnVerClave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnVerClave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerClave.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerClave.ForeColor = System.Drawing.Color.Black;
+            this.btnVerClave.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnVerClave.Location = new System.Drawing.Point(423, 126);
+            this.btnVerClave.Name = "btnVerClave";
+            this.btnVerClave.Size = new System.Drawing.Size(33, 29);
+            this.btnVerClave.TabIndex = 27;
+            this.btnVerClave.TextColor = System.Drawing.Color.Black;
+            this.btnVerClave.UseVisualStyleBackColor = false;
+            this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
@@ -176,8 +202,9 @@ namespace FarmaTown
             this.BackgroundImage = global::FarmaTown.Properties.Resources.FondoFarmaTown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(462, 263);
+            this.ClientSize = new System.Drawing.Size(480, 263);
             this.ControlBox = false;
+            this.Controls.Add(this.btnVerClave);
             this.Controls.Add(this.lblClave);
             this.Controls.Add(this.lblIngreso);
             this.Controls.Add(this.btnSalir);
@@ -205,6 +232,7 @@ namespace FarmaTown
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label lblClave;
+        private CustomControls.RJControls.RJButton btnVerClave;
     }
 }
 

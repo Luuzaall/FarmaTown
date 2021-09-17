@@ -45,11 +45,12 @@ namespace FarmaTown.Presentacion
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.cboRoles = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ttEnabled = new System.Windows.Forms.ToolTip(this.components);
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.lblAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -61,6 +62,7 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.AllowUserToResizeColumns = false;
             this.dgvUsuarios.AllowUserToResizeRows = false;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idUsuario,
@@ -76,7 +78,7 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(700, 252);
+            this.dgvUsuarios.Size = new System.Drawing.Size(673, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -137,7 +139,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(741, 141);
+            this.btnActualizar.Location = new System.Drawing.Point(718, 141);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 13;
@@ -265,10 +267,9 @@ namespace FarmaTown.Presentacion
             this.label2.TabIndex = 1;
             this.label2.Text = "Rol:";
             // 
-            // toolTip1
+            // ttEnabled
             // 
-            this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            this.ttEnabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             // 
             // btnSalir
             // 
@@ -285,19 +286,19 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(843, 599);
+            this.btnSalir.Location = new System.Drawing.Point(843, 609);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnSalir, "Salir");
+            this.ttEnabled.SetToolTip(this.btnSalir, "Salir");
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnEditar.BackColor = System.Drawing.Color.Gray;
+            this.btnEditar.BackgroundColor = System.Drawing.Color.Gray;
             this.btnEditar.BackgroundImage = global::FarmaTown.Properties.Resources.Editor;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEditar.BorderColor = System.Drawing.Color.Green;
@@ -315,14 +316,14 @@ namespace FarmaTown.Presentacion
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 17;
             this.btnEditar.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnEditar, "Editar usuario");
+            this.ttEnabled.SetToolTip(this.btnEditar, "Editar usuario");
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnEliminar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.Gray;
             this.btnEliminar.BackgroundImage = global::FarmaTown.Properties.Resources.trash;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEliminar.BorderColor = System.Drawing.Color.Green;
@@ -339,7 +340,7 @@ namespace FarmaTown.Presentacion
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 16;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnEliminar, "Borrar usuario");
+            this.ttEnabled.SetToolTip(this.btnEliminar, "Borrar usuario");
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -363,9 +364,20 @@ namespace FarmaTown.Presentacion
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
-            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar usuario");
+            this.ttEnabled.SetToolTip(this.btnAgregar, "Agregar usuario");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
+            this.lblAviso.Location = new System.Drawing.Point(342, 622);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(284, 22);
+            this.lblAviso.TabIndex = 22;
+            this.lblAviso.Text = "Debe elegir un usuario primero";
             // 
             // frmUsuarios
             // 
@@ -375,7 +387,8 @@ namespace FarmaTown.Presentacion
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Hire_re_gn5j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(924, 679);
+            this.ClientSize = new System.Drawing.Size(927, 679);
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
@@ -393,6 +406,7 @@ namespace FarmaTown.Presentacion
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -409,12 +423,13 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnConsultar;
         private System.Windows.Forms.ComboBox cboRoles;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip ttEnabled;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
         private CustomControls.RJControls.RJButton btnActualizar;
         private CustomControls.RJControls.RJButton btnLimpiar;
+        private System.Windows.Forms.Label lblAviso;
     }
 }
