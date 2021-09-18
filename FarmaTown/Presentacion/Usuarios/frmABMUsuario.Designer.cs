@@ -31,20 +31,20 @@ namespace FarmaTown.Presentacion
         {
             System.Windows.Forms.GroupBox groupBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMUsuario));
-            this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbClaveRep = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbFantasma = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
-            this.cboRol = new System.Windows.Forms.ComboBox();
             this.btnVerClaveRep = new CustomControls.RJControls.RJButton();
             this.btnVerClave = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
+            this.cboRol = new System.Windows.Forms.ComboBox();
             this.lblRol = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblRepetirContra = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblContraseña = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.txtbClaveRep = new JMaterialTextbox.JMaterialTextbox();
+            this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
+            this.txtbFantasma = new JMaterialTextbox.JMaterialTextbox();
+            this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,124 +60,6 @@ namespace FarmaTown.Presentacion
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtbNombre
-            // 
-            this.txtbNombre.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.ForeColors = System.Drawing.Color.Black;
-            this.txtbNombre.HintText = null;
-            this.txtbNombre.IsPassword = false;
-            this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNombre.LineThickness = 3;
-            this.txtbNombre.Location = new System.Drawing.Point(469, 26);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNombre.MaxLength = 32767;
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNombre.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNombre.ReadOnly = false;
-            this.txtbNombre.Size = new System.Drawing.Size(301, 23);
-            this.txtbNombre.TabIndex = 12;
-            this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNombre.TextName = "";
-            // 
-            // txtbClave
-            // 
-            this.txtbClave.BackColor = System.Drawing.Color.Transparent;
-            this.txtbClave.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbClave.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbClave.ForeColors = System.Drawing.Color.Black;
-            this.txtbClave.HintText = null;
-            this.txtbClave.IsPassword = true;
-            this.txtbClave.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbClave.LineThickness = 3;
-            this.txtbClave.Location = new System.Drawing.Point(469, 70);
-            this.txtbClave.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbClave.MaxLength = 32767;
-            this.txtbClave.Name = "txtbClave";
-            this.txtbClave.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbClave.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbClave.ReadOnly = false;
-            this.txtbClave.Size = new System.Drawing.Size(301, 23);
-            this.txtbClave.TabIndex = 14;
-            this.txtbClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbClave.TextName = "";
-            // 
-            // txtbClaveRep
-            // 
-            this.txtbClaveRep.BackColor = System.Drawing.Color.Transparent;
-            this.txtbClaveRep.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbClaveRep.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbClaveRep.ForeColors = System.Drawing.Color.Black;
-            this.txtbClaveRep.HintText = null;
-            this.txtbClaveRep.IsPassword = true;
-            this.txtbClaveRep.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbClaveRep.LineThickness = 3;
-            this.txtbClaveRep.Location = new System.Drawing.Point(469, 111);
-            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbClaveRep.MaxLength = 32767;
-            this.txtbClaveRep.Name = "txtbClaveRep";
-            this.txtbClaveRep.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbClaveRep.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbClaveRep.ReadOnly = false;
-            this.txtbClaveRep.Size = new System.Drawing.Size(301, 23);
-            this.txtbClaveRep.TabIndex = 15;
-            this.txtbClaveRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbClaveRep.TextName = "";
-            // 
-            // txtbFantasma
-            // 
-            this.txtbFantasma.BackColor = System.Drawing.Color.Transparent;
-            this.txtbFantasma.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.txtbFantasma.Font_Size = new System.Drawing.Font("Century Gothic", 15F);
-            this.txtbFantasma.ForeColors = System.Drawing.Color.Black;
-            this.txtbFantasma.HintText = null;
-            this.txtbFantasma.IsPassword = false;
-            this.txtbFantasma.LineBackColor = System.Drawing.Color.Red;
-            this.txtbFantasma.LineThickness = 3;
-            this.txtbFantasma.Location = new System.Drawing.Point(368, 110);
-            this.txtbFantasma.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtbFantasma.MaxLength = 32767;
-            this.txtbFantasma.Name = "txtbFantasma";
-            this.txtbFantasma.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtbFantasma.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbFantasma.ReadOnly = false;
-            this.txtbFantasma.Size = new System.Drawing.Size(452, 31);
-            this.txtbFantasma.TabIndex = 12;
-            this.txtbFantasma.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbFantasma.TextName = "";
-            // 
-            // jMaterialTextbox2
-            // 
-            this.jMaterialTextbox2.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox2.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox2.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.HintText = null;
-            this.jMaterialTextbox2.IsPassword = false;
-            this.jMaterialTextbox2.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox2.LineThickness = 2;
-            this.jMaterialTextbox2.Location = new System.Drawing.Point(245, 149);
-            this.jMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox2.MaxLength = 32767;
-            this.jMaterialTextbox2.Name = "jMaterialTextbox2";
-            this.jMaterialTextbox2.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.ReadOnly = false;
-            this.jMaterialTextbox2.Size = new System.Drawing.Size(301, 23);
-            this.jMaterialTextbox2.TabIndex = 14;
-            this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox2.TextName = "";
-            // 
-            // cboRol
-            // 
-            this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(469, 151);
-            this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(301, 27);
-            this.cboRol.TabIndex = 18;
             // 
             // groupBox1
             // 
@@ -282,6 +164,7 @@ namespace FarmaTown.Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.label1.Location = new System.Drawing.Point(17, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 38);
@@ -300,6 +183,36 @@ namespace FarmaTown.Presentacion
             this.lblNombre.TabStop = false;
             this.lblNombre.Text = "  Nombre(*):";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.Transparent;
+            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbNombre.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbNombre.ForeColors = System.Drawing.Color.Black;
+            this.txtbNombre.HintText = null;
+            this.txtbNombre.IsPassword = false;
+            this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.txtbNombre.LineThickness = 3;
+            this.txtbNombre.Location = new System.Drawing.Point(469, 26);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbNombre.MaxLength = 32767;
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.txtbNombre.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbNombre.ReadOnly = false;
+            this.txtbNombre.Size = new System.Drawing.Size(301, 23);
+            this.txtbNombre.TabIndex = 12;
+            this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbNombre.TextName = "";
+            // 
+            // cboRol
+            // 
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(469, 151);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(301, 27);
+            this.cboRol.TabIndex = 18;
             // 
             // lblRol
             // 
@@ -336,6 +249,94 @@ namespace FarmaTown.Presentacion
             this.lblContraseña.TabStop = false;
             this.lblContraseña.Text = "Contraseña(*):";
             this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // txtbClaveRep
+            // 
+            this.txtbClaveRep.BackColor = System.Drawing.Color.Transparent;
+            this.txtbClaveRep.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbClaveRep.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbClaveRep.ForeColors = System.Drawing.Color.Black;
+            this.txtbClaveRep.HintText = null;
+            this.txtbClaveRep.IsPassword = true;
+            this.txtbClaveRep.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.txtbClaveRep.LineThickness = 3;
+            this.txtbClaveRep.Location = new System.Drawing.Point(469, 111);
+            this.txtbClaveRep.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbClaveRep.MaxLength = 32767;
+            this.txtbClaveRep.Name = "txtbClaveRep";
+            this.txtbClaveRep.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.txtbClaveRep.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbClaveRep.ReadOnly = false;
+            this.txtbClaveRep.Size = new System.Drawing.Size(301, 23);
+            this.txtbClaveRep.TabIndex = 15;
+            this.txtbClaveRep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbClaveRep.TextName = "";
+            // 
+            // txtbClave
+            // 
+            this.txtbClave.BackColor = System.Drawing.Color.Transparent;
+            this.txtbClave.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbClave.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtbClave.ForeColors = System.Drawing.Color.Black;
+            this.txtbClave.HintText = null;
+            this.txtbClave.IsPassword = true;
+            this.txtbClave.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.txtbClave.LineThickness = 3;
+            this.txtbClave.Location = new System.Drawing.Point(469, 70);
+            this.txtbClave.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbClave.MaxLength = 32767;
+            this.txtbClave.Name = "txtbClave";
+            this.txtbClave.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.txtbClave.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbClave.ReadOnly = false;
+            this.txtbClave.Size = new System.Drawing.Size(301, 23);
+            this.txtbClave.TabIndex = 14;
+            this.txtbClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbClave.TextName = "";
+            // 
+            // txtbFantasma
+            // 
+            this.txtbFantasma.BackColor = System.Drawing.Color.Transparent;
+            this.txtbFantasma.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.txtbFantasma.Font_Size = new System.Drawing.Font("Century Gothic", 15F);
+            this.txtbFantasma.ForeColors = System.Drawing.Color.Black;
+            this.txtbFantasma.HintText = null;
+            this.txtbFantasma.IsPassword = false;
+            this.txtbFantasma.LineBackColor = System.Drawing.Color.Red;
+            this.txtbFantasma.LineThickness = 3;
+            this.txtbFantasma.Location = new System.Drawing.Point(368, 110);
+            this.txtbFantasma.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtbFantasma.MaxLength = 32767;
+            this.txtbFantasma.Name = "txtbFantasma";
+            this.txtbFantasma.OnFocusedColor = System.Drawing.Color.Black;
+            this.txtbFantasma.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.txtbFantasma.ReadOnly = false;
+            this.txtbFantasma.Size = new System.Drawing.Size(452, 31);
+            this.txtbFantasma.TabIndex = 12;
+            this.txtbFantasma.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbFantasma.TextName = "";
+            // 
+            // jMaterialTextbox2
+            // 
+            this.jMaterialTextbox2.BackColor = System.Drawing.Color.Transparent;
+            this.jMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.jMaterialTextbox2.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.jMaterialTextbox2.ForeColors = System.Drawing.Color.Black;
+            this.jMaterialTextbox2.HintText = null;
+            this.jMaterialTextbox2.IsPassword = false;
+            this.jMaterialTextbox2.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.jMaterialTextbox2.LineThickness = 2;
+            this.jMaterialTextbox2.Location = new System.Drawing.Point(245, 149);
+            this.jMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.jMaterialTextbox2.MaxLength = 32767;
+            this.jMaterialTextbox2.Name = "jMaterialTextbox2";
+            this.jMaterialTextbox2.OnFocusedColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox2.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.jMaterialTextbox2.ReadOnly = false;
+            this.jMaterialTextbox2.Size = new System.Drawing.Size(301, 23);
+            this.jMaterialTextbox2.TabIndex = 14;
+            this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.jMaterialTextbox2.TextName = "";
             // 
             // groupBox2
             // 

@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\EmpleadoDao.cs" />
+    <Compile Include="Datos\FarmaciaDao.cs" />
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cliente.cs" />
@@ -79,6 +80,12 @@
     </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\TransparentLabel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Empleados\frmABMEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Empleados\frmABMEmpleados.Designer.cs">
+      <DependentUpon>frmABMEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Empleados\frmEmpleados.cs">
       <SubType>Form</SubType>
@@ -113,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Empleados\frmABMEmpleados.resx">
+      <DependentUpon>frmABMEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +172,7 @@
     <Content Include="Presentacion\Imagenes\detail.png" />
     <Content Include="Presentacion\Imagenes\Editor.png" />
     <None Include="Presentacion\Imagenes\eyeParaClave.png" />
+    <None Include="Presentacion\Imagenes\Empleados.png" />
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
     <None Include="Presentacion\Imagenes\principal.png" />
