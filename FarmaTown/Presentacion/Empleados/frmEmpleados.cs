@@ -208,10 +208,11 @@ namespace FarmaTown.Presentacion.Empleados
         {
             frmABMEmpl = new frmABMEmpleados();
             string idEmpleado = this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
+            //string idEmpleado = (string)this.dgvEmpleados.CurrentRow.Cells[0].Value;
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
             frmABMEmpl.ShowDialog();
-            actualizar();
+            this.actualizar();
 
         }
     }

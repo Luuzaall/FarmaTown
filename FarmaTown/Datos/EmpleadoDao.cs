@@ -65,32 +65,34 @@ namespace FarmaTown.Datos
                 NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
                 TipoDoc = new TipoDocumento()
                 {
-                    IdTipo = Convert.ToInt32(row["tipoDoc"].ToString()),
-                    //Nombre = row["nombre"].ToString(),
+                    IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
+                    Nombre = row["nombre tipo documento"].ToString(),
                 },
                 Farmacia = new Farmacia()
                 {
                     IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
-                    //Nombre = row["nombre"].ToString(),
+                    Nombre = row["nombre farmacia"].ToString(),
                 },
 
             };
 
             return oEmpleado;
         }
-
+        
         internal Empleado traerEmpleado(string idEmpleado)
         {
             string query = "SELECT e.idEmpleado," +
-                "e.tipoDoc," +
+                "td.idTipo," +
                 "e.idFarmacia," +
                 "e.nombre," +
                 "e.nroDoc," +
                 "f.nombre," +
                 "f.calle," +
                 "b.nombre," +
-                "l.nombre"+
-                " FROM Empleados e"+
+                "l.nombre,"+
+                "td.nombre as 'nombre tipo documento',"+
+				"f.nombre as 'nombre farmacia'"+
+                " FROM Empleados e" +
                     " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
                     " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
                     " INNER JOIN Barrios b on f.idBarrio = b.idBarrio"+
@@ -100,6 +102,7 @@ namespace FarmaTown.Datos
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
 
             return this.objectMappingEmpleado(tablaEmpleados.Rows[0]);
+           
         }
     }
 }

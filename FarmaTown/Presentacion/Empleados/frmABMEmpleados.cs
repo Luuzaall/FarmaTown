@@ -258,9 +258,9 @@ namespace FarmaTown.Presentacion.Empleados
 
         }*/
 
-        internal void seleccionarEmpleado(FormMode update, Empleado empleadoSelected)
+        internal void seleccionarEmpleado(FormMode _formMode, Empleado empleadoSelected)
         {
-            formMode = update;
+            formMode = _formMode;
             oEmpleado = empleadoSelected;
 
         }
