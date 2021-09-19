@@ -29,15 +29,15 @@ namespace FarmaTown.Logica
             return oEmpleadoDao.recuperarTodos();
         }
 
-        internal Empleado traerEmpleado(string _idEmpleado)
+        internal Empleado traerEmpleado(int _idEmpleado)
         {
             return oEmpleadoDao.traerEmpleado(_idEmpleado);
 
         }
 
-        public bool existeEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        public bool existeEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
         {
-            object emplEncontrado = oEmpleadoDao.buscarEmpleado(nomEmpl, nroDoc, idTipoDoc, nomFarm);
+            object emplEncontrado = oEmpleadoDao.buscarEmpleado(nomEmpl, nroDoc, idTipoDoc, idFarm);
             if (emplEncontrado is null)
                 return false;
             else
@@ -47,6 +47,20 @@ namespace FarmaTown.Logica
         internal DataTable recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             return oEmpleadoDao.recuperarConParam(nomEmpl, nroDoc, idTipoDoc, nomFarm);
+        }
+
+        public bool crearEmpleado(Empleado oEmpleado)
+        {
+            bool resultado = oEmpleadoDao.insertarEmpleado(oEmpleado);
+
+            return resultado;
+        }
+
+        public bool actualizarEmpleado(Empleado oEmpleado)
+        {
+            bool resultado = oEmpleadoDao.actualizarEmpleado(oEmpleado);
+
+            return resultado;
         }
     }
 }

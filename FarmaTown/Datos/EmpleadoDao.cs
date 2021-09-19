@@ -56,63 +56,41 @@ namespace FarmaTown.Datos
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
-        private Empleado objectMapping(DataRow row)
-        {
-
-            Empleado oEmpleado = new Empleado
-            {
-                IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
-                NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
-                TipoDoc = new TipoDocumento()
-                {
-                    IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
-                    Nombre = row["nombre tipo documento"].ToString(),
-                },
-                Farmacia = new Farmacia()
-                {
-                    IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
-                    Nombre = row["nombre farmacia"].ToString(),
-                },
-
-            };
-
-            return oEmpleado;
-        }
         
-        internal Empleado traerEmpleado(string idEmpleado)
+        
+        internal Empleado traerEmpleado(int idEmpleado)
         {
-            string query = "SELECT e.idEmpleado," +
-                "td.idTipo," +
-                "e.idFarmacia," +
-                "e.nombre," +
-                "e.nroDoc," +
-                "f.nombre," +
-                "f.calle," +
-                "b.nombre," +
-                "l.nombre,"+
-                "td.nombre as 'nombre tipo documento',"+
-				"f.nombre as 'nombre farmacia'"+
+            string query = "SELECT e.idEmpleado" +
+                ", td.idTipo" +
+                ", e.idFarmacia" +
+                ", e.nombre as nomEmpleado" +
+                ", e.nroDoc" +
+                ", f.nombre as nomFarmacia" +
+                ", f.calle" +
+                ", b.nombre as nomBarrio" +
+                ", l.nombre as nomLocalidad" +
+                ", td.nombre as nomTipoDoc" +
                 " FROM Empleados e" +
                     " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
                     " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
                     " INNER JOIN Barrios b on f.idBarrio = b.idBarrio"+
                     " INNER JOIN Localidades l on l.idLocalidad=b.idLocalidad"+
-                    " WHERE e.idEmpleado = "+ idEmpleado +" AND e.borrado = 0;";
+                " WHERE e.idEmpleado = " + idEmpleado + 
+                    " AND e.borrado = 0;";
 
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
 
             return this.objectMapping(tablaEmpleados.Rows[0]);
         }
 
-        public DataTable buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        public DataTable buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
         {
             string query = "SELECT e.idEmpleado" +
                 ", e.nombre as nomEmpleado" +
                 ", e.nroDoc " +
                 ", t.nombre as nomTipoDoc" +
-                ", f.nombre as nomFarmacia" +
+                ", e.idFarmacia" +
                 " FROM Empleados e" +
-                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
                 " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
                 " WHERE e.borrado = 0";
 
@@ -124,9 +102,9 @@ namespace FarmaTown.Datos
             {
                 query = query + " AND e.nroDoc = '" + nroDoc + "'";
             }
-            if (!string.IsNullOrEmpty(nomFarm))
+            if (!(idFarm == 0))
             {
-                query = query + " AND f.nombre = '" + nomFarm + "'";
+                query = query + " AND e.idFarmacia = " + idFarm;
             }
             if (idTipoDoc != -1)
             {
@@ -143,5 +121,78 @@ namespace FarmaTown.Datos
             
         }
 
+        public bool insertarEmpleado(Empleado oEmpleado)
+        {
+            string query = "INSERT INTO Empleados" +
+                "(nroDoc, tipoDoc, idFarmacia, nombre, borrado)" +
+                "VALUES " +
+                "(" + oEmpleado.NroDoc + 
+                ", " + oEmpleado.TipoDoc.IdTipo + 
+                ", " + oEmpleado.Farmacia.IdFarmacia +
+                ", '" + oEmpleado.Nombre + "'" +
+                 ", 0)";
+
+            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
+            if ( afectadas == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool actualizarEmpleado(Empleado oEmpleado)
+        {
+            string query = "UPDATE Empleados" +
+                " SET nroDoc = " + oEmpleado.NroDoc +
+                ", tipoDoc = " + oEmpleado.TipoDoc.IdTipo +
+                ", idFarmacia = " + oEmpleado.Farmacia.IdFarmacia +
+                ", nombre = '" + oEmpleado.Nombre + "'"  +
+                " WHERE idEmpleado = " + oEmpleado.IdEmpleado;
+
+            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
+            if (afectadas == 0)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
+        private Empleado objectMapping(DataRow row)
+        {
+            /*
+             * Recibe una registro de datos y lo 
+             * tranforma a una instancia de una clase 
+             * Empleado.
+             */
+
+            Empleado oEmpleado = new Empleado
+            {
+                IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
+                Nombre = row["nomEmpleado"].ToString(),
+                NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
+                TipoDoc = new TipoDocumento()
+                {
+                    IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
+                    Nombre = row["nomTipoDoc"].ToString(),
+                },
+                Farmacia = new Farmacia()
+                {
+                    IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
+                    Nombre = row["nomFarmacia"].ToString(),
+                    Calle = row["calle"].ToString(),
+                    Barrio = new Barrio()
+                    {
+                        Nombre = row["nomBarrio"].ToString(),
+                        Localidad = new Localidad()
+                        {
+                            Nombre = row["nomLocalidad"].ToString(),
+                        }
+                    }
+                },
+            };
+
+            return oEmpleado;
+        }
     }
 }

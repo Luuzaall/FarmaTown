@@ -6,8 +6,6 @@ namespace FarmaTown.Logica
 {
     public class Usuario
     {
-        //Atributos
-
 
         //Propiedades
         public int IdUsuario { get; set; }
@@ -17,6 +15,13 @@ namespace FarmaTown.Logica
         public Rol Rol { get; set; }
         public bool Borrado { get; set; }
 
+        //Atributos
+        UsuarioDao oUsuarioDao;
+
+        public Usuario()
+        {
+            oUsuarioDao = new UsuarioDao();
+        }
         internal string validarUsuario(string usuario, string clave)
         {
             Usuario usuLogin = traerUsuario(usuario);
@@ -39,31 +44,29 @@ namespace FarmaTown.Logica
             }
             return null;
         }
-
-        //return DBHelper.getDBHelper().consultarTabla("Usuarios");
         public DataTable recuperarTodos()
         {
-            return DBHelper.getDBHelper().consultarUsuarios(); 
+            return this.oUsuarioDao.recuperarTodos();
         }
 
-        public DataTable recurperarUsuarioCParametros(string nom, string idRol)
+        public DataTable recurperarUsuarioCParametros(string nom, int idRol)
         {
-            return DBHelper.getDBHelper().consultarUsuariosCParam(nom, idRol);
+            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol);
         }
 
         public bool crearUsuario(Usuario oUsuario)
         {
-            return DBHelper.getDBHelper().insertarUsuario(oUsuario);
+            return this.oUsuarioDao.insertar(oUsuario);
         }
 
         public bool actualizarUsuario(Usuario oUsuario)
         {
-            return DBHelper.getDBHelper().actualizarUsuario(oUsuario);
+            return this.oUsuarioDao.actualizar(oUsuario);
         }
 
         public bool cambiarEstadoUsuario(Usuario oUsuario)
         {
-            return DBHelper.getDBHelper().cambiarEstadoUsuario(oUsuario);
+            return this.oUsuarioDao.cambiarEstado(oUsuario);
         }
     }
 }

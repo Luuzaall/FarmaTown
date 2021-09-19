@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Empleados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,15 +53,7 @@ namespace FarmaTown.Presentacion
 
             //Llenar combo
             this.cargarCombo(this.cboRol, oRol.recuperarTodos(), "nombre", "idRol");
-            DataTable tablaEmpleados = oEmpleado.recuperarTodos();
-            
-            if (tablaEmpleados.Rows.Count > 0)
-            {
-                this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
-                this.dgvEmpleados.ClearSelection();
-            }
-            else
-                this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
+            this.mostrarEmpleados();
             switch (formMode)
             {
                 case FormMode.insert:
@@ -103,18 +96,18 @@ namespace FarmaTown.Presentacion
             * según el usuario seleccionado.
             */
             this.txtbNombre.TextName = this.oUsuario.Nombre;
-            this.txtbClave.TextName = 
+            this.txtbClave.TextName =
                 this.txtbClaveRep.TextName = this.oUsuario.Clave;
             this.cboRol.SelectedValue = this.oUsuario.Rol.IdRol;
 
-            this.seleccionarFila();
+            this.seleccionarFila(this.dgvEmpleados, oUsuario.Empleado.IdEmpleado);
         }
 
         private void cargarFila()
         {
-            int cantFilasDvg = this.dgvEmpleados.RowCount;
+            int cantFilasdgv = this.dgvEmpleados.RowCount;
 
-            for (int i = 0; i < cantFilasDvg; i++)
+            for (int i = 0; i < cantFilasdgv; i++)
             {
                 bool estaSelecc = this.dgvEmpleados.Rows[i].Selected;
                 if (!estaSelecc)
@@ -122,25 +115,29 @@ namespace FarmaTown.Presentacion
                     this.dgvEmpleados.Rows.RemoveAt(i);
                     i = i - 1;
                 }
-                cantFilasDvg = this.dgvEmpleados.RowCount;
+                cantFilasdgv = this.dgvEmpleados.RowCount;
             }
         }
-        private void seleccionarFila()
+        private void seleccionarFila(DataGridView dgv, int id)
         {
-            int cantFilasDvg = this.dgvEmpleados.RowCount;
+            /*
+             * Busca en el DataGridView la fila correspondiente
+             * al dato que corresponde al id guardado en la base
+             * de datos para seleccionarlo para el usuario.
+             */
+            int cantFilasdgv = dgv.RowCount;
 
-            for (int i = 0; i < cantFilasDvg; i++)
+            for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = (int)this.dgvEmpleados.Rows[i].Cells["idEmpleado"].Value;
-                if (idFila == oUsuario.Empleado.IdEmpleado)
+                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                if (idFila == id)
                 {
-                    this.dgvEmpleados.Rows[i].Selected = true;
+                    dgv.Rows[i].Selected = true;
                     break;
                 }
             }
-
         }
-        
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             /*
@@ -397,6 +394,25 @@ namespace FarmaTown.Presentacion
             }
         }
 
-        
+        private void mostrarEmpleados()
+        {
+            DataTable tablaEmpleados = oEmpleado.recuperarTodos();
+
+            if (tablaEmpleados.Rows.Count > 0)
+            {
+                this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
+                this.dgvEmpleados.ClearSelection();
+            }
+            else
+                this.dgvEmpleados.Rows.Add("No se encontraron empleados...");
+        }
+
+        private void btnRegEmpleado_Click(object sender, EventArgs e)
+        {
+            frmABMEmpleados frmABMEmpl = new frmABMEmpleados();
+            frmABMEmpl.ShowDialog();
+
+            this.mostrarEmpleados();
+        }
     }
 }

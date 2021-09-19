@@ -61,7 +61,9 @@
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\EmpleadoDao.cs" />
     <Compile Include="Datos\FarmaciaDao.cs" />
+    <Compile Include="Datos\RolDao.cs" />
     <Compile Include="Datos\TipoDocDao.cs" />
+    <Compile Include="Datos\UsuarioDao.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cliente.cs" />
     <Compile Include="Logica\DetalleVenta.cs" />

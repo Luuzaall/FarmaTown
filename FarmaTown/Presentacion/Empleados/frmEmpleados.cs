@@ -50,8 +50,8 @@ namespace FarmaTown.Presentacion.Empleados
             {
                 DataTable resultadosEmpleados;
                 int idTipoDoc;
-                string nomEmpl = this.txtbNombre.TextName;
-                string nroDoc = this.txtbNroDoc.TextName;
+                string nomEmpl = this.txtbNombre.Text;
+                string nroDoc = this.txtbNroDoc.Text;
                 string nomFarm = this.txtbFarmacia.TextName;
                 
                 if (this.cboTipoDoc.SelectedIndex == -1)
@@ -75,7 +75,7 @@ namespace FarmaTown.Presentacion.Empleados
              * Permite al usuario limpiar sus selecciones si desea.
              */
             this.txtbNombre.TextName = "";
-            this.txtbNroDoc.TextName = "";
+            this.txtbNroDoc.Text = "";
             this.txtbFarmacia.TextName = "";
             this.cboTipoDoc.SelectedIndex = -1;
         }
@@ -104,19 +104,19 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmABMEmpleados = new frmABMEmpleados();
-            frmABMEmpleados.ShowDialog();
+            frmABMEmpl = new frmABMEmpleados();
+            frmABMEmpl.ShowDialog();
             this.actualizar();
         }
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //frmABMUs = new frmABMUsuario();
-            //string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
-            //oUsuario = this.oUsuario.traerUsuario(nomUsuario);
-            //frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
-            //frmABMUs.ShowDialog();
+            frmABMEmpl = new frmABMEmpleados();
+            int idEmpleado = (int) this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
+            frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.delete, oEmpleado);
+            frmABMEmpl.ShowDialog();
             this.actualizar();
         }
 
@@ -160,7 +160,7 @@ namespace FarmaTown.Presentacion.Empleados
         private bool validarCampos()
         {
             string nom = this.txtbNombre.TextName;
-            string nroDoc = this.txtbNroDoc.TextName;
+            string nroDoc = this.txtbNroDoc.Text;
             string nomFarmacia = this.txtbFarmacia.TextName;
             bool tieneLetrasNroDoc = nroDoc.Any(x => !char.IsLetter(x));
 
@@ -172,11 +172,6 @@ namespace FarmaTown.Presentacion.Empleados
                 MessageBox.Show("Debe ingresar algún dato!",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
-                return false;
-            }
-            else if(tieneLetrasNroDoc)
-            {
-                this.dgvEmpleados.Rows.Add("El número de documento tiene letras...");
                 return false;
             }
             return true;
@@ -207,8 +202,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void btnEditar_Click(object sender, EventArgs e)
         {
             frmABMEmpl = new frmABMEmpleados();
-            string idEmpleado = this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
-            //string idEmpleado = (string)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            int idEmpleado = (int) this.dgvEmpleados.CurrentRow.Cells[0].Value;
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
             frmABMEmpl.ShowDialog();
@@ -218,17 +212,12 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Verify that the pressed key isn't CTRL or any non-numeric digit
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            // Verifica que la tecla presionada no sea dígito.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
 
-            // If you want, you can allow decimal (float) numbers
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
         }
     }
 }

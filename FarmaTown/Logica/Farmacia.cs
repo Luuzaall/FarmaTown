@@ -27,5 +27,10 @@ namespace FarmaTown.Logica
         {
             return oFarmaciaDao.recuperarTodos();
         }
+
+        public DataTable recuperarCParam(string nombre, string calle, string barrio, string localidad)
+        {
+            return this.oFarmaciaDao.recuperarCParam(nombre, calle, barrio, localidad);
+        }
     }
 }

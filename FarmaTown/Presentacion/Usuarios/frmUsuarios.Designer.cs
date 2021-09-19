@@ -78,7 +78,7 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(673, 252);
+            this.dgvUsuarios.Size = new System.Drawing.Size(741, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion
             this.nomEmpleado.HeaderText = "Empleado";
             this.nomEmpleado.Name = "nomEmpleado";
             this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 130;
+            this.nomEmpleado.Width = 200;
             // 
             // gbResultados
             // 
@@ -118,7 +118,7 @@ namespace FarmaTown.Presentacion
             this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbResultados.Location = new System.Drawing.Point(33, 261);
             this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(863, 322);
+            this.gbResultados.Size = new System.Drawing.Size(910, 322);
             this.gbResultados.TabIndex = 20;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
@@ -139,7 +139,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(718, 141);
+            this.btnActualizar.Location = new System.Drawing.Point(778, 160);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 13;
@@ -160,7 +160,7 @@ namespace FarmaTown.Presentacion
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbFiltros.Location = new System.Drawing.Point(33, 12);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(863, 228);
+            this.gbFiltros.Size = new System.Drawing.Size(910, 228);
             this.gbFiltros.TabIndex = 21;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -181,7 +181,7 @@ namespace FarmaTown.Presentacion
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(273, 163);
+            this.btnLimpiar.Location = new System.Drawing.Point(332, 162);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(104, 37);
             this.btnLimpiar.TabIndex = 13;
@@ -200,7 +200,7 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.IsPassword = false;
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNombre.LineThickness = 2;
-            this.txtbNombre.Location = new System.Drawing.Point(313, 49);
+            this.txtbNombre.Location = new System.Drawing.Point(372, 48);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
@@ -217,7 +217,7 @@ namespace FarmaTown.Presentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 49);
+            this.label1.Location = new System.Drawing.Point(248, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 11;
@@ -239,7 +239,7 @@ namespace FarmaTown.Presentacion
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(453, 163);
+            this.btnConsultar.Location = new System.Drawing.Point(512, 162);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 37);
             this.btnConsultar.TabIndex = 12;
@@ -251,7 +251,7 @@ namespace FarmaTown.Presentacion
             // cboRoles
             // 
             this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Location = new System.Drawing.Point(313, 107);
+            this.cboRoles.Location = new System.Drawing.Point(372, 106);
             this.cboRoles.Name = "cboRoles";
             this.cboRoles.Size = new System.Drawing.Size(244, 31);
             this.cboRoles.TabIndex = 0;
@@ -261,7 +261,7 @@ namespace FarmaTown.Presentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 110);
+            this.label2.Location = new System.Drawing.Point(289, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 23);
             this.label2.TabIndex = 1;
@@ -387,7 +387,7 @@ namespace FarmaTown.Presentacion
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Hire_re_gn5j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(927, 679);
+            this.ClientSize = new System.Drawing.Size(967, 679);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnSalir);
@@ -424,12 +424,12 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.ComboBox cboRoles;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip ttEnabled;
+        private CustomControls.RJControls.RJButton btnActualizar;
+        private CustomControls.RJControls.RJButton btnLimpiar;
+        private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
-        private CustomControls.RJControls.RJButton btnActualizar;
-        private CustomControls.RJControls.RJButton btnLimpiar;
-        private System.Windows.Forms.Label lblAviso;
     }
 }

@@ -61,38 +61,34 @@ namespace FarmaTown.Presentacion.Empleados
                 case FormMode.update:
                     {
                         this.Text = "FarmaTown - Actualizar Empleado";
-                        //this.cargarDatos();
-                        //this.txtbNombre.Enabled = true;
-                        //this.txtbClave.Enabled = true;
-                        //this.txtbClaveRep.Enabled = true;
-                        //this.cboRol.Enabled = true;
+                        this.cargarDatos();
                         break;
                     }
 
                 case FormMode.delete:
                     {
-                        //this.cargarDatos();
-                        //this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
+                        this.cargarDatos();
+                        this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
                         //this.cargarFila();
-                        //this.txtbNombre.Enabled = false;
-                        //this.txtbClave.Enabled = false;
-                        //this.txtbClaveRep.Enabled = false;
-                        //this.cboRol.Enabled = false;
-                        //this.btnLimpiar.Enabled = false;
-                        //this.btnRegEmpleado.Enabled = false;
+                        this.txtbNombre.Enabled = false;
+                        this.txtbNroDoc.Enabled = false;
+                        this.cboTipoDoc.Enabled = false;
+                        this.btnLimpiarEmpleado.Enabled = false;
+                        this.gbFiltrosFarm.Enabled = false;
+
                         break;
                     }
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiarEmpleado_Click(object sender, EventArgs e)
         {
             /*
              * Limpia los textbox y combobox
              * cuando el usuario haga click en el botón Limpiar.
              */
             this.txtbNombre.TextName = "";
-            this.txtbNroDoc.TextName = "";
+            this.txtbNroDoc.Text = "";
             this.cboTipoDoc.SelectedIndex = -1;
         }
 
@@ -108,59 +104,43 @@ namespace FarmaTown.Presentacion.Empleados
                     {
                         if (this.validarCampos())
                         {
-                            /*if (this.existeEmpleado() == false)
+                            if (this.existeEmpleado() == false)
                             {
-                        //        var oUsuario = new Usuario();
-                        //        oUsuario.Nombre = this.txtbNombre.TextName;
-                        //        oUsuario.Clave = this.txtbClave.TextName;
-                        //        oUsuario.Rol = new Rol();
-                        //        oUsuario.Rol.IdRol = (int)this.cboRol.SelectedValue;
-                        //        oUsuario.Empleado = new Empleado();
-                        //        oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
 
-                        //        if (oUsuario.crearUsuario(oUsuario))
-                        //        {
-                        //            MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //            this.Close();
-                        //        }
+                                var oEmpleado = new Empleado();
+                                oEmpleado = this.cargarDatos(oEmpleado);
+                                
+                                if (oEmpleado.crearEmpleado(oEmpleado))
+                               {
+                                    MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                }
                             }
                             else
-                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
                 case FormMode.update:
                     {
-                        //if (this.validarCampos())
-                        //{
-                        //    oUsuario.Nombre = txtbNombre.TextName;
-                        //    oUsuario.Clave = txtbClave.TextName;
-                        //    oUsuario.Rol = new Rol();
-                        //    oUsuario.Rol.IdRol = (int)cboRol.SelectedValue;
-                        //    oUsuario.Empleado = new Empleado();
-                        //    oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.SelectedRows[0].Cells["idEmpleado"].Value;
-                        //    ;
+                       if (this.validarCampos())
+                        {
+                            oEmpleado.Nombre = txtbNombre.TextName;
+                            oEmpleado.NroDoc = int.Parse(txtbNroDoc.Text);
+                            oEmpleado.TipoDoc = new TipoDocumento();
+                            oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
+                            oEmpleado.Farmacia = new Farmacia();
+                            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
+                            ;
 
-                        //    if (oUsuario.actualizarUsuario(oUsuario))
-                        //    {
-                        //        MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //        this.Dispose();
-                        //    }
-                        //    else
-                        //        MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
-
-                        this.Text = "FarmaTown - Actualizar Empleado";
-                        this.cargarDatos();
-                     
-                        this.txtbNombre.Enabled = true;
-                        this.txtbNroDoc.Enabled = true;
-                        this.txtbNomFarm.Enabled = true;
-                        this.txtbNomCalle.Enabled = true;
-                        this.txtbBarrio.Enabled = true;
-                        this.txtbLocalidad.Enabled = true;
-
-
+                            if (oEmpleado.actualizarEmpleado(oEmpleado))
+                            {
+                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         break;
                     }
                 case FormMode.delete:
@@ -183,6 +163,33 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
+
+        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica que la tecla presionada no sea dígito.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnConsultarFarm_Click(object sender, EventArgs e)
+        {
+            string nomFarmacia = this.txtbNomFarm.TextName;
+            string calle = this.txtbNomCalle.TextName;
+            string barrio = this.txtbBarrio.TextName;
+            string localidad = this.txtbLocalidad.TextName;
+
+            DataTable resultadosFarm = this.oFarmacia.recuperarCParam(nomFarmacia, calle, barrio, localidad);
+            this.cargarGrilla(this.dgvFarmacias, resultadosFarm);
+
+        }
+
         //MÉTODOS FUNCIONALES
 
         private void cargarDatos()
@@ -192,14 +199,37 @@ namespace FarmaTown.Presentacion.Empleados
             * según el usuario seleccionado.
             */
             this.txtbNombre.TextName = this.oEmpleado.Nombre;
-            this.txtbNroDoc.TextName = this.oEmpleado.NroDoc.ToString();
+            this.txtbNroDoc.Text = this.oEmpleado.NroDoc.ToString();
             this.txtbNomFarm.TextName = this.oEmpleado.Farmacia.Nombre;
             this.txtbNomCalle.TextName = this.oEmpleado.Farmacia.Calle;
             this.txtbBarrio.TextName = this.oEmpleado.Farmacia.Barrio.Nombre;
             this.txtbLocalidad.TextName = this.oEmpleado.Farmacia.Barrio.Localidad.Nombre;
 
+            this.cboTipoDoc.SelectedValue = this.oEmpleado.TipoDoc.IdTipo;
 
+            int idFarmacia = oEmpleado.Farmacia.IdFarmacia;
+            this.seleccionarFila(this.dgvFarmacias, idFarmacia);
 
+        }
+
+        private void seleccionarFila(DataGridView dgv, int id)
+        {
+            /*
+             * Busca en el DataGridView la fila correspondiente
+             * al dato que corresponde al id guardado en la base
+             * de datos para seleccionarlo para el usuario.
+             */
+            int cantFilasdgv = dgv.RowCount;
+
+            for (int i = 0; i < cantFilasdgv; i++)
+            {
+                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                if (idFila == id)
+                {
+                    dgv.Rows[i].Selected = true;
+                    break;
+                }
+            }
         }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
@@ -228,7 +258,7 @@ namespace FarmaTown.Presentacion.Empleados
         private bool validarCampos()
         { 
             string nombre = this.txtbNombre.TextName;
-            string nroDoc = this.txtbNroDoc.TextName;
+            string nroDoc = this.txtbNroDoc.Text;
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
 
             if (string.IsNullOrEmpty(nombre))
@@ -237,6 +267,29 @@ namespace FarmaTown.Presentacion.Empleados
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
+            }
+            else if (string.IsNullOrEmpty(nroDoc))
+            {
+
+                MessageBox.Show("Debe ingresar un numero de documento",
+                "Validación de Datos", MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
+                this.cboTipoDoc.Focus();
+            }
+            else if (indexCboTipoDoc == -1)
+            {
+                MessageBox.Show("Debe ingresar un tipo de documento",
+                "Validación de Datos", MessageBoxButtons.OK
+                , MessageBoxIcon.Information);
+                this.txtbNroDoc.Focus();
+            }
+            else if ((nroDoc.Length < 8 || nroDoc.Length > 8) 
+                        & ((int)this.cboTipoDoc.SelectedValue) == 1)
+            { 
+                MessageBox.Show("Debe ingresar un número de documento válido!",
+                       "Validación de Datos", MessageBoxButtons.OK
+                       , MessageBoxIcon.Information);
+                this.txtbNroDoc.Focus();
             }
             else if (this.dgvFarmacias.SelectedRows.Count == 0)
             {
@@ -254,12 +307,14 @@ namespace FarmaTown.Presentacion.Empleados
             return false;
         }
 
-        /*private bool existeEmpleado()
+       
+
+        private bool existeEmpleado()
         {
             string nombre = this.txtbNombre.TextName;
-            string nroDoc = this.txtbNroDoc.TextName;
+            string nroDoc = this.txtbNroDoc.Text;
             
-            string nomFarmacia = this.dgvFarmacias.SelectedRows[0].Cells[1].Value.ToString();
+            int idFarmacia = (int) this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
             int idTipoDoc;
 
@@ -268,14 +323,31 @@ namespace FarmaTown.Presentacion.Empleados
             else
                 idTipoDoc = (int) this.cboTipoDoc.SelectedValue;
 
-            return oEmpleado.existeEmpleado(nombre, nroDoc, idTipoDoc, nomFarmacia);
+            return oEmpleado.existeEmpleado(nombre, nroDoc, idTipoDoc, idFarmacia);
         }
 
         internal void seleccionarEmpleado(FormMode _formMode, Empleado empleadoSelected)
         {
             formMode = _formMode;
             oEmpleado = empleadoSelected;
-
         }
+
+        private Empleado cargarDatos(Empleado oEmpleado)
+        {
+            string nroDoc = this.txtbNroDoc.Text;
+            
+            oEmpleado.Nombre = this.txtbNombre.TextName;
+            oEmpleado.NroDoc = int.Parse(this.txtbNroDoc.Text);
+            oEmpleado.TipoDoc = new TipoDocumento();
+            oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
+           
+
+     
+            oEmpleado.Farmacia = new Farmacia();
+            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
+
+            return oEmpleado;
+        }
+
     }
 }

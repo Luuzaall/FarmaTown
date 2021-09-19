@@ -1,4 +1,4 @@
-﻿using FarmaTown.Logica;
+﻿             using FarmaTown.Logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +39,10 @@ namespace FarmaTown.Presentacion
                 this.cargarGrilla(this.dgvUsuarios, tablaUsuarios);
             }
             else
+            {
+                this.dgvUsuarios.Columns.Clear();
                 this.dgvUsuarios.Rows.Add("No se encontraron Usuarios...");
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace FarmaTown.Presentacion
              * para el formulario
              */
             DataTable resultadosUsuarios;
-            string idRol = "";
+            int idRol = -1;
 
             string usuario = this.txtbNombre.TextName;
 
@@ -67,11 +70,11 @@ namespace FarmaTown.Presentacion
 
                 if (!(this.cboRoles.SelectedIndex == -1))
                 {
-                    idRol = this.cboRoles.SelectedValue.ToString();
+                    idRol = (int) this.cboRoles.SelectedValue;
                 }
                 else
                 {
-                    idRol = "-1";
+                    idRol = -1;
 
                 }
                 resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
