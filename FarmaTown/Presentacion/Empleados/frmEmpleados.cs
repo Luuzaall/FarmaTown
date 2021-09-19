@@ -15,7 +15,7 @@ namespace FarmaTown.Presentacion.Empleados
     {
         Empleado oEmpleado;
         TipoDocumento oTipoDoc;
-        frmABMEmpleados frmABMEmpl;
+        frmABMEmpleados frmABMEmpleados;
         public frmEmpleados()
         {
             oEmpleado = new Empleado();
@@ -213,5 +213,15 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAviso.Visible = true;
         }
 
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            frmABMEmpleados = new frmABMEmpleados();
+            string idEmpleado = (string)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
+            frmABMEmpleados.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
+            frmABMEmpleados.ShowDialog();
+            this.actualizar();
+
+        }
     }
 }

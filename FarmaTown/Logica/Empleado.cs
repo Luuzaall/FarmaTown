@@ -30,6 +30,11 @@ namespace FarmaTown.Logica
             return oEmpleadoDao.recuperarTodos();
         }
 
+        internal Empleado traerEmpleado(string _idEmpleado)
+        {
+            return oEmpleadoDao.traerEmpleado(_idEmpleado);
+
+        }
         internal DataTable recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             return oEmpleadoDao.recuperarConParam(nomEmpl, nroDoc, idTipoDoc, nomFarm);
