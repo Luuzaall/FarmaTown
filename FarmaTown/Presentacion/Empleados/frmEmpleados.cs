@@ -104,14 +104,14 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmABMEmpl = new frmABMEmpleados();
-            frmABMEmpl.ShowDialog();
+            frmABMEmpleados = new frmABMEmpleados();
+            frmABMEmpleados.ShowDialog();
             this.actualizar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmABMEmpl = new frmABMEmpleados();
+            frmABMEmpleados = new frmABMEmpleados();
             //string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
             //oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             //frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
@@ -169,7 +169,7 @@ namespace FarmaTown.Presentacion.Empleados
         private bool validarCampos()
         {
             string nom = this.txtbNombre.TextName;
-            string nroDoc = this.txtbNombre.TextName;
+            string nroDoc = this.txtbNroDoc.TextName;
             string nomFarmacia = this.txtbFarmacia.TextName;
             bool tieneLetrasNroDoc = nroDoc.Any(x => !char.IsLetter(x));
 
@@ -185,7 +185,7 @@ namespace FarmaTown.Presentacion.Empleados
             }
             else if(tieneLetrasNroDoc)
             {
-                this.dgvEmpleados.Rows.Add("El número de documentos tiene letras...");
+                this.dgvEmpleados.Rows.Add("El número de documento tiene letras...");
                 return false;
             }
             return true;
@@ -222,6 +222,21 @@ namespace FarmaTown.Presentacion.Empleados
             frmABMEmpleados.ShowDialog();
             this.actualizar();
 
+        }
+
+        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

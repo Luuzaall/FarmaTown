@@ -56,7 +56,7 @@ namespace FarmaTown.Datos
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
-        private Empleado objectMappingEmpleado(DataRow row)
+        private Empleado objectMapping(DataRow row)
         {
 
             Empleado oEmpleado = new Empleado
@@ -79,7 +79,7 @@ namespace FarmaTown.Datos
             return oEmpleado;
         }
 
-            internal Empleado traerEmpleado(string idEmpleado)
+        internal Empleado traerEmpleado(string idEmpleado)
         {
             string query = "SELECT * FROM Empleados e "+
                     " INNER JOIN TiposDocumento td ON e.idTipoDoc = td.idTipo " +
@@ -88,7 +88,47 @@ namespace FarmaTown.Datos
 
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
 
-            return this.objectMappingEmpleado(tablaEmpleados.Rows[0]);
+            return this.objectMapping(tablaEmpleados.Rows[0]);
         }
+
+        public DataTable buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        {
+            string query = "SELECT e.idEmpleado" +
+                ", e.nombre as nomEmpleado" +
+                ", e.nroDoc " +
+                ", t.nombre as nomTipoDoc" +
+                ", f.nombre as nomFarmacia" +
+                " FROM Empleados e" +
+                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
+                " WHERE e.borrado = 0";
+
+            if (!string.IsNullOrEmpty(nomEmpl))
+            {
+                query = query + " AND e.nombre = '" + nomEmpl + "'";
+            }
+            if (!string.IsNullOrEmpty(nroDoc))
+            {
+                query = query + " AND e.nroDoc = '" + nroDoc + "'";
+            }
+            if (!string.IsNullOrEmpty(nomFarm))
+            {
+                query = query + " AND f.nombre = '" + nomFarm + "'";
+            }
+            if (idTipoDoc != -1)
+            {
+                query = query + " AND e.tipoDoc = " + idTipoDoc;
+            }
+
+            DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
+            if(tablaEmpleados.Rows.Count == 0)
+            {
+                return null;
+            }
+            else
+                return tablaEmpleados;
+            
+        }
+
     }
 }

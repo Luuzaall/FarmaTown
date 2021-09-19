@@ -24,6 +24,7 @@ namespace FarmaTown.Presentacion.Empleados
             InitializeComponent();
             oTipoDoc = new TipoDocumento();
             oFarmacia = new Farmacia();
+            oEmpleado = new Empleado();
         }
 
         public enum FormMode
@@ -227,7 +228,19 @@ namespace FarmaTown.Presentacion.Empleados
 
         private bool existeEmpleado()
         {
+            string nombre = this.txtbNombre.TextName;
+            string nroDoc = this.txtbNroDoc.TextName;
+            
+            string nomFarmacia = this.dgvFarmacias.SelectedRows[0].Cells[1].Value.ToString();
+            int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
+            int idTipoDoc;
 
+            if (indexCboTipoDoc == -1)
+                idTipoDoc = -1;
+            else
+                idTipoDoc = (int) this.cboTipoDoc.SelectedValue;
+
+            return oEmpleado.existeEmpleado(nombre, nroDoc, idTipoDoc, nomFarmacia);
         }
 
         internal void seleccionarEmpleado(FormMode update, Empleado empleadoSelected)

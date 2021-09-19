@@ -35,6 +35,16 @@ namespace FarmaTown.Logica
             return oEmpleadoDao.traerEmpleado(_idEmpleado);
 
         }
+
+        public bool existeEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        {
+            object emplEncontrado = oEmpleadoDao.buscarEmpleado(nomEmpl, nroDoc, idTipoDoc, nomFarm);
+            if (emplEncontrado is null)
+                return false;
+            else
+                return true;
+
+        }
         internal DataTable recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             return oEmpleadoDao.recuperarConParam(nomEmpl, nroDoc, idTipoDoc, nomFarm);
