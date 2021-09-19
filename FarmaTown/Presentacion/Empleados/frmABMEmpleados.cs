@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion.Empleados
                     {
                         if (this.validarCampos())
                         {
-                            if (this.existeEmpleado() == false)
+                            /*if (this.existeEmpleado() == false)
                             {
                         //        var oUsuario = new Usuario();
                         //        oUsuario.Nombre = this.txtbNombre.TextName;
@@ -125,7 +125,7 @@ namespace FarmaTown.Presentacion.Empleados
                         //        }
                             }
                             else
-                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
                         }
                         break;
                     }
@@ -149,6 +149,18 @@ namespace FarmaTown.Presentacion.Empleados
                         //    else
                         //        MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //}
+
+                        this.Text = "FarmaTown - Actualizar Empleado";
+                        this.cargarDatos();
+                     
+                        this.txtbNombre.Enabled = true;
+                        this.txtbNroDoc.Enabled = true;
+                        this.txtbNomFarm.Enabled = true;
+                        this.txtbNomCalle.Enabled = true;
+                        this.txtbBarrio.Enabled = true;
+                        this.txtbLocalidad.Enabled = true;
+
+
                         break;
                     }
                 case FormMode.delete:
@@ -173,6 +185,22 @@ namespace FarmaTown.Presentacion.Empleados
 
         //MÉTODOS FUNCIONALES
 
+        private void cargarDatos()
+        {
+            /*
+            * Carga los datos en los text box y combos
+            * según el usuario seleccionado.
+            */
+            this.txtbNombre.TextName = this.oEmpleado.Nombre;
+            this.txtbNroDoc.TextName = this.oEmpleado.NroDoc.ToString();
+            this.txtbNomFarm.TextName = this.oEmpleado.Farmacia.Nombre;
+            this.txtbNomCalle.TextName = this.oEmpleado.Farmacia.Calle;
+            this.txtbBarrio.TextName = this.oEmpleado.Farmacia.Barrio.Nombre;
+            this.txtbLocalidad.TextName = this.oEmpleado.Farmacia.Barrio.Localidad.Nombre;
+
+
+
+        }
 
         private void cargarCombo(ComboBox cbo, Object source, string display, string value)
         {
@@ -226,7 +254,7 @@ namespace FarmaTown.Presentacion.Empleados
             return false;
         }
 
-        private bool existeEmpleado()
+        /*private bool existeEmpleado()
         {
             string nombre = this.txtbNombre.TextName;
             string nroDoc = this.txtbNroDoc.TextName;
@@ -243,9 +271,9 @@ namespace FarmaTown.Presentacion.Empleados
             return oEmpleado.existeEmpleado(nombre, nroDoc, idTipoDoc, nomFarmacia);
         }
 
-        internal void seleccionarEmpleado(FormMode update, Empleado empleadoSelected)
+        internal void seleccionarEmpleado(FormMode _formMode, Empleado empleadoSelected)
         {
-            formMode = update;
+            formMode = _formMode;
             oEmpleado = empleadoSelected;
 
         }

@@ -14,7 +14,7 @@ namespace FarmaTown.Logica
         public string Nombre { get; set; }
         public string Calle { get; set; }
         public int Numero { get; set; }
-        public Barrio IdBarrio { get; set; }
+        public Barrio Barrio { get; set; }
         public bool Borrado { get; set; }
 
         FarmaciaDao oFarmaciaDao;

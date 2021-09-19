@@ -66,25 +66,38 @@ namespace FarmaTown.Datos
                 TipoDoc = new TipoDocumento()
                 {
                     IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
-                    //Nombre = row["nombre"].ToString(),
+                    Nombre = row["nombre tipo documento"].ToString(),
                 },
                 Farmacia = new Farmacia()
                 {
                     IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
-                    //Nombre = row["nombre"].ToString(),
+                    Nombre = row["nombre farmacia"].ToString(),
                 },
 
             };
 
             return oEmpleado;
         }
-
+        
         internal Empleado traerEmpleado(string idEmpleado)
         {
-            string query = "SELECT * FROM Empleados e "+
-                    " INNER JOIN TiposDocumento td ON e.idTipoDoc = td.idTipo " +
-                    " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia " +
-                    " WHERE idEmpleado = "+ idEmpleado +" AND borrado = 0;";
+            string query = "SELECT e.idEmpleado," +
+                "td.idTipo," +
+                "e.idFarmacia," +
+                "e.nombre," +
+                "e.nroDoc," +
+                "f.nombre," +
+                "f.calle," +
+                "b.nombre," +
+                "l.nombre,"+
+                "td.nombre as 'nombre tipo documento',"+
+				"f.nombre as 'nombre farmacia'"+
+                " FROM Empleados e" +
+                    " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
+                    " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                    " INNER JOIN Barrios b on f.idBarrio = b.idBarrio"+
+                    " INNER JOIN Localidades l on l.idLocalidad=b.idLocalidad"+
+                    " WHERE e.idEmpleado = "+ idEmpleado +" AND e.borrado = 0;";
 
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
 

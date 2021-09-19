@@ -15,7 +15,7 @@ namespace FarmaTown.Presentacion.Empleados
     {
         Empleado oEmpleado;
         TipoDocumento oTipoDoc;
-        frmABMEmpleados frmABMEmpleados;
+        frmABMEmpleados frmABMEmpl;
         public frmEmpleados()
         {
             oEmpleado = new Empleado();
@@ -109,15 +109,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.actualizar();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            frmABMEmpleados = new frmABMEmpleados();
-            //string nomUsuario = (string)this.dgvUsuarios.CurrentRow.Cells[1].Value;
-            //oUsuario = this.oUsuario.traerUsuario(nomUsuario);
-            //frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
-            //frmABMUs.ShowDialog();
-            this.actualizar();
-        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -213,13 +204,14 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAviso.Visible = true;
         }
 
-        private void btnEditar_Click_1(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmABMEmpleados = new frmABMEmpleados();
-            string idEmpleado = (string)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            frmABMEmpl = new frmABMEmpleados();
+            string idEmpleado = this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString();
+            //string idEmpleado = (string)this.dgvEmpleados.CurrentRow.Cells[0].Value;
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
-            frmABMEmpleados.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
-            frmABMEmpleados.ShowDialog();
+            frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
+            frmABMEmpl.ShowDialog();
             this.actualizar();
 
         }

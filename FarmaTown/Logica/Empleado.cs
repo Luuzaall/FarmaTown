@@ -17,7 +17,6 @@ namespace FarmaTown.Logica
         public Farmacia Farmacia { get; set; }
         public string Nombre { get; set; }
         public bool Borrado { get; set; }
-        public Rol Rol { get; set; }
 
         EmpleadoDao oEmpleadoDao;
 
