@@ -128,7 +128,6 @@ namespace FarmaTown.Datos
                 " , u.nombre as NombreUsuario" +
                 " , u.clave " +
                 " , r.idRol" +
-                " , r.idRol " +
                 " , r.nombre as NombreRol " +
                 " , e.nombre as NombreEmpleado" +
                 " , e.idEmpleado" +

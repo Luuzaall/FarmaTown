@@ -15,6 +15,7 @@ namespace FarmaTown.Presentacion.Empleados
     {
         //Atributos
         private FormMode formMode = FormMode.insert;
+        private Empleado oEmpleado;
         TipoDocumento oTipoDoc;
         Farmacia oFarmacia;
 
@@ -86,5 +87,11 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
+        internal void seleccionarEmpleado(FormMode update, Empleado empleadoSelected)
+        {
+            formMode = update;
+            oEmpleado = empleadoSelected;
+
+        }
     }
 }

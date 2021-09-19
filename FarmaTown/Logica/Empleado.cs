@@ -30,5 +30,10 @@ namespace FarmaTown.Logica
             return oEmpleadoDao.recuperarTodos();
         }
 
+        internal Empleado traerEmpleado(string _idEmpleado)
+        {
+            return oEmpleadoDao.traerEmpleado(_idEmpleado);
+
+        }
     }
 }
