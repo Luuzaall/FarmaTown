@@ -20,7 +20,7 @@ namespace FarmaTown.Datos
                 ", l.nombre as nomLocalidad" +
                 " FROM Farmacias f" +
                 " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                " INNER JOIN Localidades l ON f.idLocalidad = l.idLocalidad";
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad";
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }

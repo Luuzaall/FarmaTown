@@ -46,7 +46,41 @@ namespace FarmaTown.Presentacion.Empleados
                 this.dgvFarmacias.ClearSelection();
             }
             else
-                this.dgvFarmacias.Rows.Add("No se encontraron empleados...");
+                this.dgvFarmacias.Rows.Add("No se encontraron farmacias...");
+
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        this.Text = "FarmaTown - Nuevo Empleado";
+                        break;
+                    }
+
+                case FormMode.update:
+                    {
+                        this.Text = "FarmaTown - Actualizar Empleado";
+                        //this.cargarDatos();
+                        //this.txtbNombre.Enabled = true;
+                        //this.txtbClave.Enabled = true;
+                        //this.txtbClaveRep.Enabled = true;
+                        //this.cboRol.Enabled = true;
+                        break;
+                    }
+
+                case FormMode.delete:
+                    {
+                        //this.cargarDatos();
+                        //this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
+                        //this.cargarFila();
+                        //this.txtbNombre.Enabled = false;
+                        //this.txtbClave.Enabled = false;
+                        //this.txtbClaveRep.Enabled = false;
+                        //this.cboRol.Enabled = false;
+                        //this.btnLimpiar.Enabled = false;
+                        //this.btnRegEmpleado.Enabled = false;
+                        break;
+                    }
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -58,6 +92,81 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNombre.TextName = "";
             this.txtbNroDoc.TextName = "";
             this.cboTipoDoc.SelectedIndex = -1;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            /*
+            * El comportamiento del botón depende de lo determinado
+            * por el formMode
+            */
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        if (this.validarCampos())
+                        {
+                            if (this.existeEmpleado() == false)
+                            {
+                        //        var oUsuario = new Usuario();
+                        //        oUsuario.Nombre = this.txtbNombre.TextName;
+                        //        oUsuario.Clave = this.txtbClave.TextName;
+                        //        oUsuario.Rol = new Rol();
+                        //        oUsuario.Rol.IdRol = (int)this.cboRol.SelectedValue;
+                        //        oUsuario.Empleado = new Empleado();
+                        //        oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+
+                        //        if (oUsuario.crearUsuario(oUsuario))
+                        //        {
+                        //            MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //            this.Close();
+                        //        }
+                            }
+                            else
+                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        break;
+                    }
+                case FormMode.update:
+                    {
+                        //if (this.validarCampos())
+                        //{
+                        //    oUsuario.Nombre = txtbNombre.TextName;
+                        //    oUsuario.Clave = txtbClave.TextName;
+                        //    oUsuario.Rol = new Rol();
+                        //    oUsuario.Rol.IdRol = (int)cboRol.SelectedValue;
+                        //    oUsuario.Empleado = new Empleado();
+                        //    oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.SelectedRows[0].Cells["idEmpleado"].Value;
+                        //    ;
+
+                        //    if (oUsuario.actualizarUsuario(oUsuario))
+                        //    {
+                        //        MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //        this.Dispose();
+                        //    }
+                        //    else
+                        //        MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
+                        break;
+                    }
+                case FormMode.delete:
+                    {
+                        //var decision = MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        //if (decision == DialogResult.OK)
+                        //{
+
+                        //    if (oUsuario.cambiarEstadoUsuario(oUsuario))
+                        //    {
+                        //        MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //        this.Close();
+                        //    }
+                        //    else
+                        //        MessageBox.Show("Error al deshabilitar el usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //}
+
+                        break;
+                    }
+            }
         }
 
         //MÉTODOS FUNCIONALES
@@ -84,6 +193,40 @@ namespace FarmaTown.Presentacion.Empleados
                                 table.Rows[i]["nomBarrio"],
                                 table.Rows[i]["nomLocalidad"]); 
             }
+        }
+
+        private bool validarCampos()
+        { 
+            string nombre = this.txtbNombre.TextName;
+            string nroDoc = this.txtbNroDoc.TextName;
+            int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
+
+            if (string.IsNullOrEmpty(nombre))
+            {
+                MessageBox.Show("Debe ingresar un nombre",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
+            else if (this.dgvFarmacias.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe elegir una farmacia",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.dgvFarmacias.Focus();
+            }
+            else
+            {
+                return true;
+            }
+            //Cuando no llegó al último else, entró a 
+            // alguno anterior...
+            return false;
+        }
+
+        private bool existeEmpleado()
+        {
+
         }
 
     }

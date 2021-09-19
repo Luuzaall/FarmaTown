@@ -40,13 +40,13 @@ namespace FarmaTown.Presentacion.Empleados
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
-            this.lblAviso = new System.Windows.Forms.Label();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
@@ -158,7 +158,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNombre.IsPassword = false;
             this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNombre.LineThickness = 2;
-            this.txtbNombre.Location = new System.Drawing.Point(249, 44);
+            this.txtbNombre.Location = new System.Drawing.Point(249, 60);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtbNombre.MaxLength = 32767;
             this.txtbNombre.Name = "txtbNombre";
@@ -212,18 +212,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbResultados.TabIndex = 23;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
-            // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblAviso.Location = new System.Drawing.Point(346, 583);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(284, 22);
-            this.lblAviso.TabIndex = 29;
-            this.lblAviso.Text = "Debe elegir un usuario primero";
             // 
             // dgvEmpleados
             // 
@@ -284,6 +272,18 @@ namespace FarmaTown.Presentacion.Empleados
             this.nomFarmacia.ReadOnly = true;
             this.nomFarmacia.Width = 300;
             // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblAviso.Location = new System.Drawing.Point(346, 583);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(313, 22);
+            this.lblAviso.TabIndex = 29;
+            this.lblAviso.Text = "Debe elegir un empleado primero";
+            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -305,6 +305,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnSalir.TabIndex = 28;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
@@ -327,6 +328,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEditar.TabIndex = 27;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -349,6 +351,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -371,6 +374,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAgregar.TabIndex = 25;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -465,7 +469,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEmpleados";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -57,31 +57,26 @@ namespace FarmaTown.Presentacion
              * Verifica la correcta selección
              * para el formulario
              */
+            DataTable resultadosUsuarios;
+            string idRol = "";
+
             string usuario = this.txtbNombre.TextName;
-            DataTable resultadosUsuarios = null;
 
-            if (string.IsNullOrEmpty(usuario)
-                && this.cboRoles.SelectedIndex == -1)
+            if (this.validarDatos())
             {
-                MessageBox.Show("Debe ingresar un usuario o un Rol",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                this.txtbNombre.Focus();
-                this.cboRoles.Focus();
-                resultadosUsuarios = oUsuario.recuperarTodos();
-            }
-            else if (!(this.cboRoles.SelectedIndex == -1))
-            {
-                string idRol = this.cboRoles.SelectedValue.ToString();
+
+                if (!(this.cboRoles.SelectedIndex == -1))
+                {
+                    idRol = this.cboRoles.SelectedValue.ToString();
+                }
+                else
+                {
+                    idRol = "-1";
+
+                }
                 resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
+                this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
             }
-            else
-            {
-                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, "-1");
-
-            }
-            this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
-
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -169,6 +164,21 @@ namespace FarmaTown.Presentacion
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        private bool validarDatos()
+        {
+            string nomUs = this.txtbNombre.TextName;
+            if (string.IsNullOrEmpty(nomUs)
+                && this.cboRoles.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar un usuario o un Rol",
+                    "Validación de Datos", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                this.txtbNombre.Focus();
+                this.cboRoles.Focus();
+                return false;
+            }
+            return true;
+        }
         private void deshabilitarBotones()
         {
             /*
