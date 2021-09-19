@@ -65,7 +65,7 @@ namespace FarmaTown.Datos
                 NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
                 TipoDoc = new TipoDocumento()
                 {
-                    IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
+                    IdTipo = Convert.ToInt32(row["tipoDoc"].ToString()),
                     //Nombre = row["nombre"].ToString(),
                 },
                 Farmacia = new Farmacia()
@@ -79,12 +79,23 @@ namespace FarmaTown.Datos
             return oEmpleado;
         }
 
-            internal Empleado traerEmpleado(string idEmpleado)
+        internal Empleado traerEmpleado(string idEmpleado)
         {
-            string query = "SELECT * FROM Empleados e "+
-                    " INNER JOIN TiposDocumento td ON e.idTipoDoc = td.idTipo " +
-                    " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia " +
-                    " WHERE idEmpleado = "+ idEmpleado +" AND borrado = 0;";
+            string query = "SELECT e.idEmpleado," +
+                "e.tipoDoc," +
+                "e.idFarmacia," +
+                "e.nombre," +
+                "e.nroDoc," +
+                "f.nombre," +
+                "f.calle," +
+                "b.nombre," +
+                "l.nombre"+
+                " FROM Empleados e"+
+                    " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
+                    " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                    " INNER JOIN Barrios b on f.idBarrio = b.idBarrio"+
+                    " INNER JOIN Localidades l on l.idLocalidad=b.idLocalidad"+
+                    " WHERE e.idEmpleado = "+ idEmpleado +" AND e.borrado = 0;";
 
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
 

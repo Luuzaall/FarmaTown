@@ -23,8 +23,8 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmUsuarios());
-
             Application.Run(new frmEmpleados());
+            //Application.Run(new frmEmpleados());
         }
     }
 }

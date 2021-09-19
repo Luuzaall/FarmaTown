@@ -10,7 +10,7 @@ namespace FarmaTown.Logica
     {
         public int IdBarrio { get; set; }
         public string Nombre { get; set; }
-        public Localidad IdLocalidad { get; set; }
+        public Localidad Localidad { get; set; }
         public bool Borrado { get; set; }
     }
 }
