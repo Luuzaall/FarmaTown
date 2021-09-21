@@ -32,6 +32,11 @@ namespace FarmaTown.Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -48,11 +53,6 @@ namespace FarmaTown.Presentacion
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -84,6 +84,42 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.Size = new System.Drawing.Size(717, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 50;
+            // 
+            // nomUsuario
+            // 
+            this.nomUsuario.HeaderText = "Usuario";
+            this.nomUsuario.Name = "nomUsuario";
+            this.nomUsuario.ReadOnly = true;
+            this.nomUsuario.Width = 200;
+            // 
+            // nomRol
+            // 
+            this.nomRol.HeaderText = "Rol";
+            this.nomRol.Name = "nomRol";
+            this.nomRol.ReadOnly = true;
+            this.nomRol.Width = 200;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Empleado";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.borrado.Visible = false;
             // 
             // gbResultados
             // 
@@ -150,7 +186,6 @@ namespace FarmaTown.Presentacion
             this.cbBorrados.TabIndex = 14;
             this.cbBorrados.Text = "Mostrar Borrados";
             this.cbBorrados.UseVisualStyleBackColor = true;
-            this.cbBorrados.Visible = false;
             this.cbBorrados.CheckedChanged += new System.EventHandler(this.cbBorrados_CheckedChanged);
             // 
             // btnLimpiar
@@ -366,42 +401,6 @@ namespace FarmaTown.Presentacion
             this.lblAviso.Size = new System.Drawing.Size(284, 22);
             this.lblAviso.TabIndex = 22;
             this.lblAviso.Text = "Debe elegir un usuario primero";
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 50;
-            // 
-            // nomUsuario
-            // 
-            this.nomUsuario.HeaderText = "Usuario";
-            this.nomUsuario.Name = "nomUsuario";
-            this.nomUsuario.ReadOnly = true;
-            this.nomUsuario.Width = 200;
-            // 
-            // nomRol
-            // 
-            this.nomRol.HeaderText = "Rol";
-            this.nomRol.Name = "nomRol";
-            this.nomRol.ReadOnly = true;
-            this.nomRol.Width = 200;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Empleado";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
-            // 
-            // borrado
-            // 
-            this.borrado.HeaderText = "Borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
-            this.borrado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.borrado.Visible = false;
             // 
             // frmUsuarios
             // 

@@ -519,7 +519,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.btnRegFarmacia.ForeColor = System.Drawing.Color.Black;
             this.btnRegFarmacia.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegFarmacia.Location = new System.Drawing.Point(1101, 278);
+            this.btnRegFarmacia.Location = new System.Drawing.Point(1110, 279);
             this.btnRegFarmacia.Name = "btnRegFarmacia";
             this.btnRegFarmacia.Size = new System.Drawing.Size(106, 56);
             this.btnRegFarmacia.TabIndex = 9;

@@ -46,6 +46,7 @@ namespace FarmaTown.Presentacion
             this.txtbFantasma = new JMaterialTextbox.JMaterialTextbox();
             this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@ namespace FarmaTown.Presentacion
             this.btnRegEmpleado = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
-            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -353,6 +353,18 @@ namespace FarmaTown.Presentacion
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Empleado";
             // 
+            // transparentLabel3
+            // 
+            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.transparentLabel3.Location = new System.Drawing.Point(21, 23);
+            this.transparentLabel3.Name = "transparentLabel3";
+            this.transparentLabel3.Size = new System.Drawing.Size(30, 23);
+            this.transparentLabel3.TabIndex = 36;
+            this.transparentLabel3.TabStop = false;
+            this.transparentLabel3.Text = "(*)";
+            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
             // dgvEmpleados
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
@@ -368,12 +380,12 @@ namespace FarmaTown.Presentacion
             this.nomTipoDoc,
             this.nomFarmacia});
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(21, 52);
+            this.dgvEmpleados.Location = new System.Drawing.Point(6, 52);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(938, 267);
+            this.dgvEmpleados.Size = new System.Drawing.Size(976, 267);
             this.dgvEmpleados.TabIndex = 27;
             // 
             // idEmpleado
@@ -427,7 +439,7 @@ namespace FarmaTown.Presentacion
             this.btnRegEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.btnRegEmpleado.ForeColor = System.Drawing.Color.Black;
             this.btnRegEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegEmpleado.Location = new System.Drawing.Point(988, 131);
+            this.btnRegEmpleado.Location = new System.Drawing.Point(997, 131);
             this.btnRegEmpleado.Name = "btnRegEmpleado";
             this.btnRegEmpleado.Size = new System.Drawing.Size(106, 56);
             this.btnRegEmpleado.TabIndex = 26;
@@ -485,18 +497,6 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // transparentLabel3
-            // 
-            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel3.Location = new System.Drawing.Point(21, 23);
-            this.transparentLabel3.Name = "transparentLabel3";
-            this.transparentLabel3.Size = new System.Drawing.Size(30, 23);
-            this.transparentLabel3.TabIndex = 36;
-            this.transparentLabel3.TabStop = false;
-            this.transparentLabel3.Text = "(*)";
-            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // frmABMUsuario
             // 

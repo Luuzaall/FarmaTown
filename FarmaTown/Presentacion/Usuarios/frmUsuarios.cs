@@ -153,9 +153,9 @@ namespace FarmaTown.Presentacion
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     //string borrado;
-                    //bool valorBorrado = table.Rows[i]["borrado"]
-                    //    .GetSqlBoolean();
-                    //if (valorBorrado == "True")
+                    //string valorBorrado = table.Rows[i]["borrado"];
+                    //Console.WriteLine(valorBorrado);
+                    //if (valorBorrado == true)
                     //    borrado = "Si";
                     //else
                     //    borrado = "No";
