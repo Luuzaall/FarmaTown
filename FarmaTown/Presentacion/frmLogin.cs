@@ -24,38 +24,19 @@ namespace FarmaTown
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-        /*
-        * Permite que al haber hecho click en el botón ingresar, valide
-        * la completitud de los datos ingresados y si son correctos para
-        * el ingreso al sistema.
-        */
-
+            /*
+            * Permite que al haber hecho click en el botón ingresar, valide
+            * la completitud de los datos ingresados y si son correctos para
+            * el ingreso al sistema.
+            */
             string usuario = this.txtbUsuario.TextName;
             string clave = this.txtbClave.TextName;
 
-            if (string.IsNullOrEmpty(usuario))
-            {
-                MessageBox.Show("Debe ingresar un usuario",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                this.txtbUsuario.Focus();
-                return;
-            }
-            else if (string.IsNullOrEmpty(clave)) 
-            {
-                MessageBox.Show("Debe ingresar una clave",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                this.txtbClave.Focus();
-                return;
-            }
-
+            this.validarDatos();
             this.nomUsuario = this.oUsuario.validarUsuario(usuario, clave);
            
             if (! (this.nomUsuario is null))
             {
-                MessageBox.Show("Login Ok", "Ingreso al Sistema"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -105,6 +86,28 @@ namespace FarmaTown
             }
         }
 
+        private void validarDatos()
+        {
+            string usuario = this.txtbUsuario.TextName;
+            string clave = this.txtbClave.TextName;
+
+            if (string.IsNullOrEmpty(usuario))
+            {
+                MessageBox.Show("Debe ingresar un usuario",
+                    "Validación de Datos", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                this.txtbUsuario.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(clave))
+            {
+                MessageBox.Show("Debe ingresar una clave",
+                    "Validación de Datos", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                this.txtbClave.Focus();
+                return;
+            }
+        }
         private bool cambiarColorBtnClave(Button btn)
         {
             var colorActual = btn.BackColor;

@@ -24,7 +24,7 @@ namespace FarmaTown.Logica
         }
         internal string validarUsuario(string usuario, string clave)
         {
-            Usuario usuLogin = traerUsuario(usuario);
+            Usuario usuLogin = this.traerUsuario(usuario);
             if (usuLogin != null)
             {
                 if (usuLogin.Clave == clave)
@@ -37,21 +37,22 @@ namespace FarmaTown.Logica
 
         internal Usuario traerUsuario(string usuario)
         {
-            Usuario oUsuario = DBHelper.getDBHelper().obtenerUsuarioPorNom(usuario);
+            Usuario oUsuario = oUsuarioDao.obtenerUsuarioPorNom(usuario);
             if (oUsuario != null)
             {
                 return oUsuario;
             }
             return null;
-        }
-        public DataTable recuperarTodos()
+        } 
+
+        public DataTable recuperarTodos(bool esConBorrados)
         {
-            return this.oUsuarioDao.recuperarTodos();
+            return this.oUsuarioDao.recuperarTodos(esConBorrados);
         }
 
-        public DataTable recurperarUsuarioCParametros(string nom, int idRol)
+        public DataTable recurperarUsuarioCParametros(string nom, int idRol, bool conBorrados)
         {
-            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol);
+            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol, conBorrados);
         }
 
         public bool crearUsuario(Usuario oUsuario)
@@ -64,9 +65,9 @@ namespace FarmaTown.Logica
             return this.oUsuarioDao.actualizar(oUsuario);
         }
 
-        public bool cambiarEstadoUsuario(Usuario oUsuario)
+        public bool cambiarEstadoUsuario(Usuario oUsuario, bool seHabilita)
         {
-            return this.oUsuarioDao.cambiarEstado(oUsuario);
+            return this.oUsuarioDao.cambiarEstado(oUsuario, seHabilita);
         }
     }
 }

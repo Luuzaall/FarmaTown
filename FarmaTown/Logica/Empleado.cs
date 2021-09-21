@@ -62,5 +62,10 @@ namespace FarmaTown.Logica
 
             return resultado;
         }
+
+        public bool cambiarEstadoEmpleado(Empleado oEmpleado, bool seHabilita)
+        {
+            return this.oEmpleadoDao.cambiarEstado(oEmpleado, seHabilita);
+        }
     }
 }

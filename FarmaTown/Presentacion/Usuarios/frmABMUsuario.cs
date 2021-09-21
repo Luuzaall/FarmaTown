@@ -76,8 +76,8 @@ namespace FarmaTown.Presentacion
                 case FormMode.delete:
                     {
                         this.cargarDatos();
-                        this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
-                        this.cargarFila();
+                        this.Text = "FarmaTown - Deshabilitar Usuario";
+                        this.cargarFila(this.dgvEmpleados);
                         this.txtbNombre.Enabled = false;
                         this.txtbClave.Enabled = false;
                         this.txtbClaveRep.Enabled = false;
@@ -103,19 +103,19 @@ namespace FarmaTown.Presentacion
             this.seleccionarFila(this.dgvEmpleados, oUsuario.Empleado.IdEmpleado);
         }
 
-        private void cargarFila()
+        private void cargarFila(DataGridView dgv)
         {
-            int cantFilasdgv = this.dgvEmpleados.RowCount;
+            int cantFilasdgv = dgv.RowCount;
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                bool estaSelecc = this.dgvEmpleados.Rows[i].Selected;
+                bool estaSelecc = dgv.Rows[i].Selected;
                 if (!estaSelecc)
                 {
-                    this.dgvEmpleados.Rows.RemoveAt(i);
+                    dgv.Rows.RemoveAt(i);
                     i = i - 1;
                 }
-                cantFilasdgv = this.dgvEmpleados.RowCount;
+                cantFilasdgv = dgv.RowCount;
             }
         }
         private void seleccionarFila(DataGridView dgv, int id)
@@ -199,9 +199,9 @@ namespace FarmaTown.Presentacion
                         if ( decision == DialogResult.OK)
                         {
 
-                            if (oUsuario.cambiarEstadoUsuario(oUsuario))
+                            if (oUsuario.cambiarEstadoUsuario(oUsuario, false))
                             {
-                                MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario Deshabilitado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else

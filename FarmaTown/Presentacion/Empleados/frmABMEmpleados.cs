@@ -33,6 +33,8 @@ namespace FarmaTown.Presentacion.Empleados
             update,
             delete
         }
+
+
         //MÉTODOS DE RESPUESTA A EVENTOS
 
 
@@ -68,13 +70,14 @@ namespace FarmaTown.Presentacion.Empleados
                 case FormMode.delete:
                     {
                         this.cargarDatos();
-                        this.Text = "FarmaTown - Habilitar/Deshabilitar Usuario";
-                        //this.cargarFila();
+                        this.Text = "FarmaTown - Deshabilitar Usuario";
+                        this.cargarFila(this.dgvFarmacias);
                         this.txtbNombre.Enabled = false;
                         this.txtbNroDoc.Enabled = false;
                         this.cboTipoDoc.Enabled = false;
                         this.btnLimpiarEmpleado.Enabled = false;
                         this.gbFiltrosFarm.Enabled = false;
+                        this.btnRegFarmacia.Enabled = false;
 
                         break;
                     }
@@ -145,18 +148,18 @@ namespace FarmaTown.Presentacion.Empleados
                     }
                 case FormMode.delete:
                     {
-                        //var decision = MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                        //if (decision == DialogResult.OK)
-                        //{
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (decision == DialogResult.OK)
+                        {
 
-                        //    if (oUsuario.cambiarEstadoUsuario(oUsuario))
-                        //    {
-                        //        MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //        this.Close();
-                        //    }
-                        //    else
-                        //        MessageBox.Show("Error al deshabilitar el usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
+                            if (oEmpleado.cambiarEstadoEmpleado(oEmpleado, false))
+                            {
+                                MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                                MessageBox.Show("Error al deshabilitar el usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
 
                         break;
                     }
@@ -340,13 +343,27 @@ namespace FarmaTown.Presentacion.Empleados
             oEmpleado.NroDoc = int.Parse(this.txtbNroDoc.Text);
             oEmpleado.TipoDoc = new TipoDocumento();
             oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
-           
-
-     
+          
             oEmpleado.Farmacia = new Farmacia();
             oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
 
             return oEmpleado;
+        }
+
+        private void cargarFila(DataGridView dgv)
+        {
+            int cantFilasdgv = dgv.RowCount;
+
+            for (int i = 0; i < cantFilasdgv; i++)
+            {
+                bool estaSelecc = dgv.Rows[i].Selected;
+                if (!estaSelecc)
+                {
+                    dgv.Rows.RemoveAt(i);
+                    i = i - 1;
+                }
+                cantFilasdgv = dgv.RowCount;
+            }
         }
 
     }

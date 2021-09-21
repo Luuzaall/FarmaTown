@@ -16,10 +16,13 @@ namespace FarmaTown.Presentacion.Empleados
         Empleado oEmpleado;
         TipoDocumento oTipoDoc;
         frmABMEmpleados frmABMEmpl;
-        public frmEmpleados()
+        Rol rolLogeado;
+        public frmEmpleados(Rol _rolLogeado)
         {
             oEmpleado = new Empleado();
             oTipoDoc = new TipoDocumento();
+            rolLogeado = _rolLogeado;
+
             InitializeComponent();
         }
 

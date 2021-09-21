@@ -32,13 +32,10 @@ namespace FarmaTown.Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.cbBorrados = new System.Windows.Forms.CheckBox();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +48,11 @@ namespace FarmaTown.Presentacion
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -68,9 +70,10 @@ namespace FarmaTown.Presentacion
             this.idUsuario,
             this.nomUsuario,
             this.nomRol,
-            this.nomEmpleado});
+            this.nomEmpleado,
+            this.borrado});
             this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvUsuarios.Location = new System.Drawing.Point(19, 50);
+            this.dgvUsuarios.Location = new System.Drawing.Point(57, 49);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
@@ -78,37 +81,9 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(741, 252);
+            this.dgvUsuarios.Size = new System.Drawing.Size(717, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 50;
-            // 
-            // nomUsuario
-            // 
-            this.nomUsuario.HeaderText = "Usuario";
-            this.nomUsuario.Name = "nomUsuario";
-            this.nomUsuario.ReadOnly = true;
-            this.nomUsuario.Width = 200;
-            // 
-            // nomRol
-            // 
-            this.nomRol.HeaderText = "Rol";
-            this.nomRol.Name = "nomRol";
-            this.nomRol.ReadOnly = true;
-            this.nomRol.Width = 200;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Empleado";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
             // 
             // gbResultados
             // 
@@ -118,7 +93,7 @@ namespace FarmaTown.Presentacion
             this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbResultados.Location = new System.Drawing.Point(33, 261);
             this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(910, 322);
+            this.gbResultados.Size = new System.Drawing.Size(956, 322);
             this.gbResultados.TabIndex = 20;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
@@ -139,7 +114,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(778, 160);
+            this.btnActualizar.Location = new System.Drawing.Point(827, 155);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 13;
@@ -151,6 +126,7 @@ namespace FarmaTown.Presentacion
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbFiltros.Controls.Add(this.cbBorrados);
             this.gbFiltros.Controls.Add(this.btnLimpiar);
             this.gbFiltros.Controls.Add(this.txtbNombre);
             this.gbFiltros.Controls.Add(this.label1);
@@ -160,10 +136,22 @@ namespace FarmaTown.Presentacion
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbFiltros.Location = new System.Drawing.Point(33, 12);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(910, 228);
+            this.gbFiltros.Size = new System.Drawing.Size(956, 228);
             this.gbFiltros.TabIndex = 21;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // cbBorrados
+            // 
+            this.cbBorrados.AutoSize = true;
+            this.cbBorrados.Location = new System.Drawing.Point(654, 86);
+            this.cbBorrados.Name = "cbBorrados";
+            this.cbBorrados.Size = new System.Drawing.Size(191, 27);
+            this.cbBorrados.TabIndex = 14;
+            this.cbBorrados.Text = "Mostrar Borrados";
+            this.cbBorrados.UseVisualStyleBackColor = true;
+            this.cbBorrados.Visible = false;
+            this.cbBorrados.CheckedChanged += new System.EventHandler(this.cbBorrados_CheckedChanged);
             // 
             // btnLimpiar
             // 
@@ -379,6 +367,42 @@ namespace FarmaTown.Presentacion
             this.lblAviso.TabIndex = 22;
             this.lblAviso.Text = "Debe elegir un usuario primero";
             // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 50;
+            // 
+            // nomUsuario
+            // 
+            this.nomUsuario.HeaderText = "Usuario";
+            this.nomUsuario.Name = "nomUsuario";
+            this.nomUsuario.ReadOnly = true;
+            this.nomUsuario.Width = 200;
+            // 
+            // nomRol
+            // 
+            this.nomRol.HeaderText = "Rol";
+            this.nomRol.Name = "nomRol";
+            this.nomRol.ReadOnly = true;
+            this.nomRol.Width = 200;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Empleado";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.borrado.Visible = false;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +411,7 @@ namespace FarmaTown.Presentacion
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Hire_re_gn5j;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(967, 679);
+            this.ClientSize = new System.Drawing.Size(1021, 679);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnSalir);
@@ -395,8 +419,9 @@ namespace FarmaTown.Presentacion
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.gbResultados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FarmaTown - Gestión Usuarios";
@@ -427,9 +452,11 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnActualizar;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.CheckBox cbBorrados;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }

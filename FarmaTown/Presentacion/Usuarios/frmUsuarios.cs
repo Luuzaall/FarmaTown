@@ -16,11 +16,13 @@ namespace FarmaTown.Presentacion
         private Rol oRol;
         private frmABMUsuario frmABMUs;
         private Usuario oUsuario;
+        private bool mostrarConBorrados = false;
+
         public frmUsuarios()
         {
-            InitializeComponent();
             oRol = new Rol();
             oUsuario = new Usuario();
+            InitializeComponent();
         }
 
         // MÉTODOS RESPUESTA A EVENTOS
@@ -33,7 +35,7 @@ namespace FarmaTown.Presentacion
              */
             this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
             this.deshabilitarBotones();
-            DataTable tablaUsuarios = oUsuario.recuperarTodos();
+            DataTable tablaUsuarios = oUsuario.recuperarTodos(mostrarConBorrados);
             if (tablaUsuarios.Rows.Count > 0)
             {
                 this.cargarGrilla(this.dgvUsuarios, tablaUsuarios);
@@ -77,7 +79,7 @@ namespace FarmaTown.Presentacion
                     idRol = -1;
 
                 }
-                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
+                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol, mostrarConBorrados);
                 this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
             }
         }
@@ -136,6 +138,7 @@ namespace FarmaTown.Presentacion
             this.Close();
         }
 
+        //--------------------------------------------------------------------------------------------
         // MÉTODOS FUNCIONALES
 
 
@@ -149,10 +152,20 @@ namespace FarmaTown.Presentacion
             {
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
+                    //string borrado;
+                    //bool valorBorrado = table.Rows[i]["borrado"]
+                    //    .GetSqlBoolean();
+                    //if (valorBorrado == "True")
+                    //    borrado = "Si";
+                    //else
+                    //    borrado = "No";
+
                     dgv.Rows.Add(table.Rows[i]["idUsuario"],
                                     table.Rows[i]["nomUsuario"],
                                     table.Rows[i]["nomRol"],
-                                    table.Rows[i]["nomEmpleado"]); ;
+                                    table.Rows[i]["nomEmpleado"]
+                                    //,borrado
+                                    ) ;
                 }
                 dgv.ClearSelection();
             }
@@ -199,9 +212,25 @@ namespace FarmaTown.Presentacion
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvUsuarios, oUsuario.recuperarTodos());
+            this.cargarGrilla(dgvUsuarios, oUsuario.recuperarTodos(mostrarConBorrados));
             this.deshabilitarBotones();
         }
 
+        private void cbBorrados_CheckedChanged(object sender, EventArgs e)
+        {
+            if (mostrarConBorrados)
+            {
+                this.mostrarConBorrados = false;
+                this.dgvUsuarios.Columns["borrado"].Visible = false;
+                this.actualizar();
+            }
+            else
+            {
+                this.mostrarConBorrados = true;
+                this.dgvUsuarios.Columns["borrado"].Visible = true;
+                this.actualizar();
+            }
+            
+        }
     }
 }

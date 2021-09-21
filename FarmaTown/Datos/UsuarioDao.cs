@@ -10,31 +10,41 @@ namespace FarmaTown.Datos
 {
     class UsuarioDao
     {
-        public DataTable recuperarTodos()
+        public DataTable recuperarTodos(bool esConBorrados)
         {
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
                     ", r.nombre as nomRol" +
                     ", e.nombre as nomEmpleado" +
+                    ", e.borrado " +
                     " FROM Usuarios u" +
                     " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
                     " INNER JOIN Roles r ON r.idRol = u.idRol" +
                     " WHERE u.borrado = 0";
+
+            if (esConBorrados)
+            {
+                query = query + " OR u.borrado = 1";
+            }
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 
-        public DataTable consultarUsuariosCParam(string nomUs, int idRol)
+        public DataTable consultarUsuariosCParam(string nomUs, int idRol, bool conBorrados)
         {
             string query = "SELECT u.idUsuario" +
                 ", u.nombre as nomUsuario" +
                 ", r.nombre as nomRol" +
                 ", e.nombre as nomEmpleado" +
+                ", e.borrado as borrado" + 
                 " FROM Usuarios u " +
                 " INNER JOIN Roles r ON u.idRol = r.idRol" +
                 " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
                 " WHERE u.borrado = 0";
 
-            if (!( string.IsNullOrEmpty(nomUs) ) )
+            if (conBorrados)
+                query = query + " OR u.borrado = 1";
+
+            if (!(string.IsNullOrEmpty(nomUs)))
             {
                 query = query + " AND u.nombre LIKE '%" + nomUs + "%'";
             }
@@ -96,11 +106,17 @@ namespace FarmaTown.Datos
             return false;
         }
 
-        public bool cambiarEstado(Usuario oUsuario)
+        public bool cambiarEstado(Usuario oUsuario, bool seHabilita)
         {
             string query = "UPDATE Usuarios" +
-                " SET borrado = 1" +
-                " WHERE idUsuario = " + oUsuario.IdUsuario;
+                " SET borrado = ";
+
+            if (seHabilita)
+                query = query + "0";
+            else
+                query = query + "1";
+
+            query = query + " WHERE idUsuario = " + oUsuario.IdUsuario;
 
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
             if (afectadas > 0)
@@ -109,6 +125,60 @@ namespace FarmaTown.Datos
             }
             return false;
 
+        }
+
+        public Usuario obtenerUsuarioPorNom(string nomUs)
+        {
+            /*
+            * Permite obtener el usuario por su nombre
+            */
+            string query = "SELECT u.idUsuario" +
+                " , u.idEmpleado" +
+                " , u.nombre as NombreUsuario" +
+                " , u.clave " +
+                " , r.idRol" +
+                " , r.nombre as NombreRol " +
+                " , e.nombre as NombreEmpleado" +
+                " , e.idEmpleado" +
+                " FROM Usuarios u" +
+                " INNER JOIN Roles r ON u.idRol = r.idRol" +
+                " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado " +
+                " WHERE u.nombre = '" + nomUs + "'" +
+                " AND u.borrado = 0;";
+
+            DataTable tablaUs = DBHelper.getDBHelper().consultaSQL(query);
+            if (tablaUs.Rows.Count > 0)
+            {
+                return objectMapping(tablaUs.Rows[0]);
+            }
+            return null;
+        }
+
+        private Usuario objectMapping(DataRow row)
+        {
+            /*
+             * A partir del registro de un usuario,
+             * tranforma esa información en un 
+             * objeto del tipo Usuario
+             */
+            Usuario oUsuario = new Usuario
+            {
+                IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
+                Nombre = row["NombreUsuario"].ToString(),
+                Clave = row["clave"].ToString(),
+                Rol = new Rol()
+                {
+                    IdRol = Convert.ToInt32(row["idRol"].ToString()),
+                    Nombre = row["NombreRol"].ToString(),
+                },
+                Empleado = new Empleado()
+                {
+                    IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
+                    Nombre = row["NombreEmpleado"].ToString(),
+                }
+            };
+
+            return oUsuario;
         }
     }
 }

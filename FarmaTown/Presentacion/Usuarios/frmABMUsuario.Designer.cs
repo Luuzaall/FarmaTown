@@ -55,6 +55,7 @@ namespace FarmaTown.Presentacion
             this.btnRegEmpleado = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
+            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -341,12 +342,13 @@ namespace FarmaTown.Presentacion
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.transparentLabel3);
             this.groupBox2.Controls.Add(this.dgvEmpleados);
             this.groupBox2.Controls.Add(this.btnRegEmpleado);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(28, 250);
+            this.groupBox2.Location = new System.Drawing.Point(28, 237);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1127, 309);
+            this.groupBox2.Size = new System.Drawing.Size(1127, 335);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Empleado";
@@ -366,7 +368,7 @@ namespace FarmaTown.Presentacion
             this.nomTipoDoc,
             this.nomFarmacia});
             this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(21, 26);
+            this.dgvEmpleados.Location = new System.Drawing.Point(21, 52);
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
@@ -484,6 +486,18 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // transparentLabel3
+            // 
+            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.transparentLabel3.Location = new System.Drawing.Point(21, 23);
+            this.transparentLabel3.Name = "transparentLabel3";
+            this.transparentLabel3.Size = new System.Drawing.Size(30, 23);
+            this.transparentLabel3.TabIndex = 36;
+            this.transparentLabel3.TabStop = false;
+            this.transparentLabel3.Text = "(*)";
+            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
             // frmABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,5 +551,6 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnVerClave;
         private CustomControls.RJControls.RJButton btnVerClaveRep;
+        private DiseñosElemGUI.TransparentLabel transparentLabel3;
     }
 }

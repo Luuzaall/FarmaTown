@@ -158,6 +158,27 @@ namespace FarmaTown.Datos
                 return true;
         }
 
+        public bool cambiarEstado(Empleado empl, bool seHabilita)
+        {
+            string query = "UPDATE Empleados " +
+                " SET borrado = ";
+
+            if (seHabilita)
+                query = query + "0";
+            else
+                query = query + "1";
+
+            query = query + " WHERE idEmpleado = " + empl.IdEmpleado;
+
+            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
+            if (afectadas > 0)
+            {
+                return true;
+            }
+            return false;
+
+        }
+
         private Empleado objectMapping(DataRow row)
         {
             /*
