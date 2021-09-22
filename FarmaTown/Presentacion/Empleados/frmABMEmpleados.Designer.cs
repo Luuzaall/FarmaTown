@@ -40,6 +40,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblRepetirContra = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblNroDni = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.gbFarmacias = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.gbFiltrosFarm = new System.Windows.Forms.GroupBox();
             this.btnConsultarFarm = new CustomControls.RJControls.RJButton();
@@ -207,6 +208,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.gbFarmacias.BackColor = System.Drawing.Color.White;
             this.gbFarmacias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gbFarmacias.Controls.Add(this.btnActualizar);
             this.gbFarmacias.Controls.Add(this.transparentLabel3);
             this.gbFarmacias.Controls.Add(this.gbFiltrosFarm);
             this.gbFarmacias.Controls.Add(this.dgvFarmacias);
@@ -218,6 +220,31 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFarmacias.TabIndex = 29;
             this.gbFarmacias.TabStop = false;
             this.gbFarmacias.Text = "Datos de Farmacias";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(1111, 318);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
+            this.btnActualizar.TabIndex = 36;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // transparentLabel3
             // 
@@ -300,6 +327,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiarFarmacias.Text = "Limpiar";
             this.btnLimpiarFarmacias.TextColor = System.Drawing.Color.Black;
             this.btnLimpiarFarmacias.UseVisualStyleBackColor = false;
+            this.btnLimpiarFarmacias.Click += new System.EventHandler(this.btnLimpiarFarmacias_Click);
             // 
             // transparentLabel1
             // 
@@ -519,7 +547,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.btnRegFarmacia.ForeColor = System.Drawing.Color.Black;
             this.btnRegFarmacia.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegFarmacia.Location = new System.Drawing.Point(1110, 279);
+            this.btnRegFarmacia.Location = new System.Drawing.Point(1110, 240);
             this.btnRegFarmacia.Name = "btnRegFarmacia";
             this.btnRegFarmacia.Size = new System.Drawing.Size(106, 56);
             this.btnRegFarmacia.TabIndex = 9;
@@ -536,6 +564,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnCancelar.BorderRadius = 20;
             this.btnCancelar.BorderSize = 1;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -579,10 +608,12 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             // frmABMEmpleados
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(1292, 807);
             this.Controls.Add(gbEmpleados);
             this.Controls.Add(this.gbFarmacias);
@@ -636,5 +667,6 @@ namespace FarmaTown.Presentacion.Empleados
         private DiseñosElemGUI.TransparentLabel lblRepetirContra;
         private DiseñosElemGUI.TransparentLabel lblNroDni;
         private CustomControls.RJControls.RJButton btnConsultarFarm;
+        private CustomControls.RJControls.RJButton btnActualizar;
     }
 }

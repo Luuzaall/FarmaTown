@@ -448,6 +448,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.coworkers;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(1169, 635);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);

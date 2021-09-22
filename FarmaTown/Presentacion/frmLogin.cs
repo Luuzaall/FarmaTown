@@ -32,22 +32,25 @@ namespace FarmaTown
             string usuario = this.txtbUsuario.TextName;
             string clave = this.txtbClave.TextName;
 
-            this.validarDatos();
-            this.nomUsuario = this.oUsuario.validarUsuario(usuario, clave);
-           
-            if (! (this.nomUsuario is null))
+            if (this.validarDatos())
             {
-                this.Close();
+                this.nomUsuario = this.oUsuario.validarUsuario(usuario, clave);
+
+                if (!(this.nomUsuario is null))
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos",
+                        "Validación de Datos", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    this.txtbUsuario.Text = "";
+                    this.txtbClave.Text = string.Empty;
+                    this.txtbUsuario.Focus();
+                }
             }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                this.txtbUsuario.Text = "";
-                this.txtbClave.Text = string.Empty;
-                this.txtbUsuario.Focus();
-            }
+
             
         }
 
@@ -63,10 +66,10 @@ namespace FarmaTown
 
         private void txtClave_Enter(object sender, KeyPressEventArgs e)
         {
-        /*
-        * Al apretar enter en el campo clave, 
-        * fuera como apretar Ingresar.
-        */
+            /*
+           * Al apretar enter en el campo clave, 
+           * fuera como apretar Ingresar.
+           */
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnIngresar.PerformClick();
@@ -86,7 +89,7 @@ namespace FarmaTown
             }
         }
 
-        private void validarDatos()
+        private bool validarDatos()
         {
             string usuario = this.txtbUsuario.TextName;
             string clave = this.txtbClave.TextName;
@@ -97,7 +100,6 @@ namespace FarmaTown
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 this.txtbUsuario.Focus();
-                return;
             }
             else if (string.IsNullOrEmpty(clave))
             {
@@ -105,9 +107,13 @@ namespace FarmaTown
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 this.txtbClave.Focus();
-                return;
             }
+            else
+                return true;
+
+            return false;
         }
+
         private bool cambiarColorBtnClave(Button btn)
         {
             var colorActual = btn.BackColor;

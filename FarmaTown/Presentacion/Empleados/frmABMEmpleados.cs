@@ -112,9 +112,9 @@ namespace FarmaTown.Presentacion.Empleados
 
                                 var oEmpleado = new Empleado();
                                 oEmpleado = this.cargarDatos(oEmpleado);
-                                
+
                                 if (oEmpleado.crearEmpleado(oEmpleado))
-                               {
+                                {
                                     MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
@@ -126,7 +126,7 @@ namespace FarmaTown.Presentacion.Empleados
                     }
                 case FormMode.update:
                     {
-                       if (this.validarCampos())
+                        if (this.validarCampos())
                         {
                             oEmpleado.Nombre = txtbNombre.TextName;
                             oEmpleado.NroDoc = int.Parse(txtbNroDoc.Text);
@@ -188,11 +188,27 @@ namespace FarmaTown.Presentacion.Empleados
             string barrio = this.txtbBarrio.TextName;
             string localidad = this.txtbLocalidad.TextName;
 
+            if (string.IsNullOrEmpty(nomFarmacia)
+                & string.IsNullOrEmpty(calle)
+                & string.IsNullOrEmpty(barrio)
+                & string.IsNullOrEmpty(localidad))
+            {
+                MessageBox.Show("No ingresó ningún dato",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
+
             DataTable resultadosFarm = this.oFarmacia.recuperarCParam(nomFarmacia, calle, barrio, localidad);
             this.cargarGrilla(this.dgvFarmacias, resultadosFarm);
 
         }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.actualizar();
+        }
 
+        //---------------------------------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
         private void cargarDatos()
@@ -256,6 +272,7 @@ namespace FarmaTown.Presentacion.Empleados
                                 table.Rows[i]["nomBarrio"],
                                 table.Rows[i]["nomLocalidad"]); 
             }
+            dgv.ClearSelection();
         }
 
         private bool validarCampos()
@@ -366,5 +383,17 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
+        private void btnLimpiarFarmacias_Click(object sender, EventArgs e)
+        {
+            this.txtbNomFarm.TextName = "";
+            this.txtbNomCalle.TextName = "";
+            this.txtbBarrio.TextName = "";
+            this.txtbLocalidad.TextName = "";
+        }
+
+        private void actualizar()
+        {
+            this.cargarGrilla(dgvFarmacias, oFarmacia.recuperarTodos());
+        }
     }
 }

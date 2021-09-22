@@ -186,6 +186,7 @@ namespace FarmaTown.Presentacion
             this.cbBorrados.TabIndex = 14;
             this.cbBorrados.Text = "Mostrar Borrados";
             this.cbBorrados.UseVisualStyleBackColor = true;
+            this.cbBorrados.Visible = false;
             this.cbBorrados.CheckedChanged += new System.EventHandler(this.cbBorrados_CheckedChanged);
             // 
             // btnLimpiar

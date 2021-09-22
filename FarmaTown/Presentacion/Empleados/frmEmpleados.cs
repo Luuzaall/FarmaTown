@@ -53,7 +53,7 @@ namespace FarmaTown.Presentacion.Empleados
             {
                 DataTable resultadosEmpleados;
                 int idTipoDoc;
-                string nomEmpl = this.txtbNombre.Text;
+                string nomEmpl = this.txtbNombre.TextName;
                 string nroDoc = this.txtbNroDoc.Text;
                 string nomFarm = this.txtbFarmacia.TextName;
                 
@@ -177,7 +177,8 @@ namespace FarmaTown.Presentacion.Empleados
                     , MessageBoxIcon.Information);
                 return false;
             }
-            return true;
+            else
+                return true;
 
         }
 

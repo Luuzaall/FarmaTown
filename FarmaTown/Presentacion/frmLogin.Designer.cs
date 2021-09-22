@@ -59,6 +59,7 @@ namespace FarmaTown
             this.txtbUsuario.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtbUsuario.ForeColors = System.Drawing.Color.Black;
             this.txtbUsuario.HintText = null;
+            this.txtbUsuario.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtbUsuario.IsPassword = false;
             this.txtbUsuario.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtbUsuario.LineThickness = 2;
@@ -70,7 +71,7 @@ namespace FarmaTown
             this.txtbUsuario.OnFocusedTextColor = System.Drawing.Color.Black;
             this.txtbUsuario.ReadOnly = false;
             this.txtbUsuario.Size = new System.Drawing.Size(244, 23);
-            this.txtbUsuario.TabIndex = 6;
+            this.txtbUsuario.TabIndex = 1;
             this.txtbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtbUsuario.TextName = "";
             // 
@@ -92,9 +93,10 @@ namespace FarmaTown
             this.txtbClave.OnFocusedTextColor = System.Drawing.Color.Black;
             this.txtbClave.ReadOnly = false;
             this.txtbClave.Size = new System.Drawing.Size(244, 23);
-            this.txtbClave.TabIndex = 7;
+            this.txtbClave.TabIndex = 2;
             this.txtbClave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtbClave.TextName = "";
+            this.txtbClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClave_Enter);
             // 
             // lblIngreso
             // 
@@ -126,7 +128,7 @@ namespace FarmaTown
             this.btnSalir.Location = new System.Drawing.Point(85, 195);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(111, 40);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextColor = System.Drawing.Color.Black;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -150,7 +152,7 @@ namespace FarmaTown
             this.btnIngresar.Location = new System.Drawing.Point(267, 181);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(126, 54);
-            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextColor = System.Drawing.Color.Black;
             this.btnIngresar.UseMnemonic = false;
