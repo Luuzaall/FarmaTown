@@ -73,7 +73,7 @@ namespace FarmaTown.Presentacion
             this.nomEmpleado,
             this.borrado});
             this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvUsuarios.Location = new System.Drawing.Point(57, 49);
+            this.dgvUsuarios.Location = new System.Drawing.Point(19, 48);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
@@ -81,7 +81,7 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(717, 252);
+            this.dgvUsuarios.Size = new System.Drawing.Size(802, 252);
             this.dgvUsuarios.TabIndex = 13;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -150,7 +150,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(827, 155);
+            this.btnActualizar.Location = new System.Drawing.Point(837, 152);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 13;
@@ -186,7 +186,6 @@ namespace FarmaTown.Presentacion
             this.cbBorrados.TabIndex = 14;
             this.cbBorrados.Text = "Mostrar Borrados";
             this.cbBorrados.UseVisualStyleBackColor = true;
-            this.cbBorrados.Visible = false;
             this.cbBorrados.CheckedChanged += new System.EventHandler(this.cbBorrados_CheckedChanged);
             // 
             // btnLimpiar
@@ -310,7 +309,7 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(843, 609);
+            this.btnSalir.Location = new System.Drawing.Point(945, 609);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 18;

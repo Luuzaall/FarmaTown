@@ -34,13 +34,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.deshabilitarBotones();
             this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos()
                 , "nombre", "idTipo");
-            DataTable tablaUsuarios = oEmpleado.recuperarTodos();
-            if (tablaUsuarios.Rows.Count > 0)
-            {
-                this.cargarGrilla(this.dgvEmpleados, tablaUsuarios);
-            }
-            else
-                this.dgvEmpleados.Rows.Add("No se encontraron Usuarios...");
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

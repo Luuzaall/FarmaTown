@@ -90,9 +90,16 @@ namespace FarmaTown.Presentacion.Empleados
              * Limpia los textbox y combobox
              * cuando el usuario haga click en el botón Limpiar.
              */
-            this.txtbNombre.TextName = "";
+            this.txtbNombre.Text = "";
             this.txtbNroDoc.Text = "";
+            this.txtbPasaporteLetras.Text = "";
+            this.txtbPasaporteNro.Text = "";
+
             this.cboTipoDoc.SelectedIndex = -1;
+
+            this.deshabilitarTextBox(this.txtbNroDoc);
+            this.deshabilitarTextBox(this.txtbPasaporteLetras);
+            this.deshabilitarTextBox(this.txtbPasaporteNro);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -128,8 +135,8 @@ namespace FarmaTown.Presentacion.Empleados
                     {
                         if (this.validarCampos())
                         {
-                            oEmpleado.Nombre = txtbNombre.TextName;
-                            oEmpleado.NroDoc = int.Parse(txtbNroDoc.Text);
+                            oEmpleado.Nombre = txtbNombre.Text;
+                            oEmpleado.NroDoc = txtbNroDoc.Text;
                             oEmpleado.TipoDoc = new TipoDocumento();
                             oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
                             oEmpleado.Farmacia = new Farmacia();
@@ -166,16 +173,6 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
-
-        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verifica que la tecla presionada no sea dígito.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -208,6 +205,76 @@ namespace FarmaTown.Presentacion.Empleados
             this.actualizar();
         }
 
+        private void btnLimpiarFarmacias_Click(object sender, EventArgs e)
+        {
+            this.txtbNomFarm.TextName = "";
+            this.txtbNomCalle.TextName = "";
+            this.txtbBarrio.TextName = "";
+            this.txtbLocalidad.TextName = "";
+        }
+
+        private void cboTipoDoc_DropDownClosed(object sender, EventArgs e)
+        {
+            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
+            if (indiceSelecc != -1)
+            {
+                int valorSelecc = (int)this.cboTipoDoc.SelectedValue;
+                if (valorSelecc == 1 
+                    || valorSelecc == 3)
+                {
+                    this.deshabilitarTextBox(this.txtbPasaporteLetras);
+                    this.deshabilitarTextBox(this.txtbPasaporteNro);
+                    this.txtbPasaporteLetras.Text = "";
+                    this.txtbPasaporteNro.Text = "";
+
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "Debe tener 8 dígitos.";
+                }
+                else if (valorSelecc == 2)
+                {
+                    this.deshabilitarTextBox(this.txtbNroDoc);
+                    this.txtbNroDoc.Text = "";
+
+                    this.txtbPasaporteLetras.Visible = true;
+                    this.txtbPasaporteLetras.Enabled = true;
+                    this.txtbPasaporteNro.Visible = true;
+                    this.txtbPasaporteNro.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
+
+                }
+            }
+
+        }
+
+        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica que la tecla presionada no sea dígito.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtbPasaporteLetras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica que no pase de tres letras.
+            int cantLetras = this.txtbPasaporteLetras.Text.Length;
+            if (cantLetras >= 3)
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
         //---------------------------------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
@@ -217,7 +284,7 @@ namespace FarmaTown.Presentacion.Empleados
             * Carga los datos en los text box y combos
             * según el usuario seleccionado.
             */
-            this.txtbNombre.TextName = this.oEmpleado.Nombre;
+            this.txtbNombre.Text = this.oEmpleado.Nombre;
             this.txtbNroDoc.Text = this.oEmpleado.NroDoc.ToString();
             this.txtbNomFarm.TextName = this.oEmpleado.Farmacia.Nombre;
             this.txtbNomCalle.TextName = this.oEmpleado.Farmacia.Calle;
@@ -277,7 +344,7 @@ namespace FarmaTown.Presentacion.Empleados
 
         private bool validarCampos()
         { 
-            string nombre = this.txtbNombre.TextName;
+            string nombre = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
 
@@ -327,11 +394,9 @@ namespace FarmaTown.Presentacion.Empleados
             return false;
         }
 
-       
-
         private bool existeEmpleado()
         {
-            string nombre = this.txtbNombre.TextName;
+            string nombre = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
             
             int idFarmacia = (int) this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
@@ -355,12 +420,21 @@ namespace FarmaTown.Presentacion.Empleados
         private Empleado cargarDatos(Empleado oEmpleado)
         {
             string nroDoc = this.txtbNroDoc.Text;
-            
-            oEmpleado.Nombre = this.txtbNombre.TextName;
-            oEmpleado.NroDoc = int.Parse(this.txtbNroDoc.Text);
+
+            oEmpleado.Nombre = this.txtbNombre.Text;
             oEmpleado.TipoDoc = new TipoDocumento();
-            oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
-          
+            int idTipo = oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
+            if (idTipo == 2)
+            {
+                string letrasPasap = this.txtbPasaporteLetras.Text;
+                string nroPasap = this.txtbPasaporteNro.Text;
+                oEmpleado.NroDoc = letrasPasap + nroPasap;
+            }
+            else
+                oEmpleado.NroDoc = nroDoc;
+
+
+
             oEmpleado.Farmacia = new Farmacia();
             oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
 
@@ -383,17 +457,16 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
-        private void btnLimpiarFarmacias_Click(object sender, EventArgs e)
-        {
-            this.txtbNomFarm.TextName = "";
-            this.txtbNomCalle.TextName = "";
-            this.txtbBarrio.TextName = "";
-            this.txtbLocalidad.TextName = "";
-        }
-
         private void actualizar()
         {
             this.cargarGrilla(dgvFarmacias, oFarmacia.recuperarTodos());
+        }
+
+        private void deshabilitarTextBox(TextBox txtb)
+        {
+            txtb.Enabled = false;
+            txtb.Visible = false;
+
         }
     }
 }

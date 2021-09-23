@@ -31,13 +31,15 @@ namespace FarmaTown.Presentacion.Empleados
         {
             System.Windows.Forms.GroupBox gbEmpleados;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMEmpleados));
+            this.txtbPasaporteLetras = new System.Windows.Forms.TextBox();
+            this.txtbPasaporteNro = new System.Windows.Forms.TextBox();
+            this.lblAvisoNroDoc = new System.Windows.Forms.Label();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.btnLimpiarEmpleado = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
-            this.lblRepetirContra = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.lblTipoDoc = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblNroDni = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.gbFarmacias = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
@@ -63,6 +65,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
+            this.txtbNombre = new System.Windows.Forms.TextBox();
             gbEmpleados = new System.Windows.Forms.GroupBox();
             gbEmpleados.SuspendLayout();
             this.gbFarmacias.SuspendLayout();
@@ -75,13 +78,16 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.BackColor = System.Drawing.Color.White;
             gbEmpleados.BackgroundImage = global::FarmaTown.Properties.Resources.Empleados;
             gbEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gbEmpleados.Controls.Add(this.txtbNombre);
+            gbEmpleados.Controls.Add(this.txtbPasaporteLetras);
+            gbEmpleados.Controls.Add(this.txtbPasaporteNro);
+            gbEmpleados.Controls.Add(this.lblAvisoNroDoc);
             gbEmpleados.Controls.Add(this.txtbNroDoc);
             gbEmpleados.Controls.Add(this.btnLimpiarEmpleado);
             gbEmpleados.Controls.Add(this.label1);
             gbEmpleados.Controls.Add(this.lblNombre);
-            gbEmpleados.Controls.Add(this.txtbNombre);
             gbEmpleados.Controls.Add(this.cboTipoDoc);
-            gbEmpleados.Controls.Add(this.lblRepetirContra);
+            gbEmpleados.Controls.Add(this.lblTipoDoc);
             gbEmpleados.Controls.Add(this.lblNroDni);
             gbEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             gbEmpleados.Location = new System.Drawing.Point(23, 26);
@@ -91,15 +97,53 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.TabStop = false;
             gbEmpleados.Text = "Datos del Empleado";
             // 
+            // txtbPasaporteLetras
+            // 
+            this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbPasaporteLetras.Enabled = false;
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(477, 176);
+            this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
+            this.txtbPasaporteLetras.Size = new System.Drawing.Size(86, 20);
+            this.txtbPasaporteLetras.TabIndex = 27;
+            this.txtbPasaporteLetras.Visible = false;
+            this.txtbPasaporteLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbPasaporteLetras_KeyPress);
+            // 
+            // txtbPasaporteNro
+            // 
+            this.txtbPasaporteNro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbPasaporteNro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbPasaporteNro.Enabled = false;
+            this.txtbPasaporteNro.Location = new System.Drawing.Point(593, 176);
+            this.txtbPasaporteNro.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbPasaporteNro.Name = "txtbPasaporteNro";
+            this.txtbPasaporteNro.Size = new System.Drawing.Size(185, 20);
+            this.txtbPasaporteNro.TabIndex = 26;
+            this.txtbPasaporteNro.Visible = false;
+            this.txtbPasaporteNro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNroDoc_KeyPress);
+            // 
+            // lblAvisoNroDoc
+            // 
+            this.lblAvisoNroDoc.AutoSize = true;
+            this.lblAvisoNroDoc.BackColor = System.Drawing.Color.IndianRed;
+            this.lblAvisoNroDoc.Location = new System.Drawing.Point(493, 199);
+            this.lblAvisoNroDoc.Name = "lblAvisoNroDoc";
+            this.lblAvisoNroDoc.Size = new System.Drawing.Size(0, 19);
+            this.lblAvisoNroDoc.TabIndex = 24;
+            this.lblAvisoNroDoc.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // txtbNroDoc
             // 
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNroDoc.Location = new System.Drawing.Point(477, 113);
+            this.txtbNroDoc.Enabled = false;
+            this.txtbNroDoc.Location = new System.Drawing.Point(477, 176);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.Name = "txtbNroDoc";
             this.txtbNroDoc.Size = new System.Drawing.Size(301, 20);
             this.txtbNroDoc.TabIndex = 2;
+            this.txtbNroDoc.Visible = false;
             this.txtbNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNroDoc_KeyPress);
             // 
             // btnLimpiarEmpleado
@@ -126,6 +170,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiarEmpleado.Text = "Limpiar";
             this.btnLimpiarEmpleado.TextColor = System.Drawing.Color.Black;
             this.btnLimpiarEmpleado.UseVisualStyleBackColor = false;
+            this.btnLimpiarEmpleado.Click += new System.EventHandler(this.btnLimpiarEmpleado_Click);
             // 
             // label1
             // 
@@ -142,7 +187,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(282, 54);
+            this.lblNombre.Location = new System.Drawing.Point(282, 63);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(126, 23);
             this.lblNombre.TabIndex = 19;
@@ -150,53 +195,32 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblNombre.Text = "  Nombre(*):";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // txtbNombre
-            // 
-            this.txtbNombre.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.ForeColors = System.Drawing.Color.Black;
-            this.txtbNombre.HintText = null;
-            this.txtbNombre.IsPassword = false;
-            this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNombre.LineThickness = 3;
-            this.txtbNombre.Location = new System.Drawing.Point(477, 54);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNombre.MaxLength = 32767;
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNombre.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNombre.ReadOnly = false;
-            this.txtbNombre.Size = new System.Drawing.Size(301, 23);
-            this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNombre.TextName = "";
-            // 
             // cboTipoDoc
             // 
             this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(477, 169);
+            this.cboTipoDoc.Location = new System.Drawing.Point(477, 120);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(301, 27);
             this.cboTipoDoc.TabIndex = 3;
+            this.cboTipoDoc.DropDownClosed += new System.EventHandler(this.cboTipoDoc_DropDownClosed);
             // 
-            // lblRepetirContra
+            // lblTipoDoc
             // 
-            this.lblRepetirContra.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblRepetirContra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRepetirContra.Location = new System.Drawing.Point(215, 169);
-            this.lblRepetirContra.Name = "lblRepetirContra";
-            this.lblRepetirContra.Size = new System.Drawing.Size(193, 23);
-            this.lblRepetirContra.TabIndex = 21;
-            this.lblRepetirContra.TabStop = false;
-            this.lblRepetirContra.Text = "Tipo Documento(*):";
-            this.lblRepetirContra.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTipoDoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTipoDoc.Location = new System.Drawing.Point(215, 120);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(193, 23);
+            this.lblTipoDoc.TabIndex = 21;
+            this.lblTipoDoc.TabStop = false;
+            this.lblTipoDoc.Text = "Tipo Documento(*):";
+            this.lblTipoDoc.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // lblNroDni
             // 
             this.lblNroDni.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNroDni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNroDni.Location = new System.Drawing.Point(228, 110);
+            this.lblNroDni.Location = new System.Drawing.Point(228, 173);
             this.lblNroDni.Name = "lblNroDni";
             this.lblNroDni.Size = new System.Drawing.Size(180, 23);
             this.lblNroDni.TabIndex = 22;
@@ -606,6 +630,17 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNombre.Location = new System.Drawing.Point(477, 66);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.Size = new System.Drawing.Size(301, 20);
+            this.txtbNombre.TabIndex = 28;
+            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
+            // 
             // frmABMEmpleados
             // 
             this.AcceptButton = this.btnAceptar;
@@ -662,11 +697,14 @@ namespace FarmaTown.Presentacion.Empleados
         private CustomControls.RJControls.RJButton btnLimpiarEmpleado;
         private System.Windows.Forms.Label label1;
         private DiseñosElemGUI.TransparentLabel lblNombre;
-        private JMaterialTextbox.JMaterialTextbox txtbNombre;
         private System.Windows.Forms.ComboBox cboTipoDoc;
-        private DiseñosElemGUI.TransparentLabel lblRepetirContra;
+        private DiseñosElemGUI.TransparentLabel lblTipoDoc;
         private DiseñosElemGUI.TransparentLabel lblNroDni;
         private CustomControls.RJControls.RJButton btnConsultarFarm;
         private CustomControls.RJControls.RJButton btnActualizar;
+        private System.Windows.Forms.Label lblAvisoNroDoc;
+        private System.Windows.Forms.TextBox txtbPasaporteNro;
+        private System.Windows.Forms.TextBox txtbPasaporteLetras;
+        private System.Windows.Forms.TextBox txtbNombre;
     }
 }

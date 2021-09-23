@@ -191,7 +191,7 @@ namespace FarmaTown.Datos
             {
                 IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
                 Nombre = row["nomEmpleado"].ToString(),
-                NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
+                NroDoc = row["nroDoc"].ToString(),
                 TipoDoc = new TipoDocumento()
                 {
                     IdTipo = Convert.ToInt32(row["idTipo"].ToString()),

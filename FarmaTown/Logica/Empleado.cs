@@ -12,7 +12,7 @@ namespace FarmaTown.Logica
     public class Empleado
     {
         public int IdEmpleado { get; set; }
-        public int NroDoc { get; set; }
+        public string NroDoc { get; set; }
         public TipoDocumento TipoDoc { get; set; }
         public Farmacia Farmacia { get; set; }
         public string Nombre { get; set; }
