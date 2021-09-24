@@ -56,13 +56,13 @@ namespace FarmaTown.Presentacion.Empleados
             {
                 case FormMode.insert:
                     {
-                        this.Text = "FarmaTown - Nuevo Empleado";
+                        this.Text = "Nuevo Empleado - FarmaTown";
                         break;
                     }
 
                 case FormMode.update:
                     {
-                        this.Text = "FarmaTown - Actualizar Empleado";
+                        this.Text = "Actualizar Empleado - FarmaTown";
                         this.cargarDatos();
                         break;
                     }
@@ -70,7 +70,7 @@ namespace FarmaTown.Presentacion.Empleados
                 case FormMode.delete:
                     {
                         this.cargarDatos();
-                        this.Text = "FarmaTown - Deshabilitar Usuario";
+                        this.Text = "Deshabilitar Empleado - FarmaTown";
                         this.cargarFila(this.dgvFarmacias);
                         this.txtbNombre.Enabled = false;
                         this.txtbNroDoc.Enabled = false;
@@ -97,9 +97,7 @@ namespace FarmaTown.Presentacion.Empleados
 
             this.cboTipoDoc.SelectedIndex = -1;
 
-            this.deshabilitarTextBox(this.txtbNroDoc);
-            this.deshabilitarTextBox(this.txtbPasaporteLetras);
-            this.deshabilitarTextBox(this.txtbPasaporteNro);
+            this.deshabilitarTextBox();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -122,7 +120,7 @@ namespace FarmaTown.Presentacion.Empleados
 
                                 if (oEmpleado.crearEmpleado(oEmpleado))
                                 {
-                                    MessageBox.Show("Usuario agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Empleado agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                             }
@@ -145,27 +143,27 @@ namespace FarmaTown.Presentacion.Empleados
 
                             if (oEmpleado.actualizarEmpleado(oEmpleado))
                             {
-                                MessageBox.Show("Usuario actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Empleado actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el usuario!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al actualizar el empleado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar el usuario seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
                             if (oEmpleado.cambiarEstadoEmpleado(oEmpleado, false))
                             {
-                                MessageBox.Show("Usuario Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Empleado Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
-                                MessageBox.Show("Error al deshabilitar el usuario", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al deshabilitar el empleado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         break;
@@ -222,18 +220,18 @@ namespace FarmaTown.Presentacion.Empleados
                 if (valorSelecc == 1 
                     || valorSelecc == 3)
                 {
-                    this.deshabilitarTextBox(this.txtbPasaporteLetras);
-                    this.deshabilitarTextBox(this.txtbPasaporteNro);
+                    this.deshabilitarTextBox();
                     this.txtbPasaporteLetras.Text = "";
                     this.txtbPasaporteNro.Text = "";
 
+                    this.txtbNroDoc.Text = "";
                     this.txtbNroDoc.Visible = true;
                     this.txtbNroDoc.Enabled = true;
                     this.lblAvisoNroDoc.Text = "Debe tener 8 dígitos.";
                 }
                 else if (valorSelecc == 2)
                 {
-                    this.deshabilitarTextBox(this.txtbNroDoc);
+                    this.deshabilitarTextBox();
                     this.txtbNroDoc.Text = "";
 
                     this.txtbPasaporteLetras.Visible = true;
@@ -243,28 +241,68 @@ namespace FarmaTown.Presentacion.Empleados
                     this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
 
                 }
+                else
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "";
+                }
             }
-
         }
 
-        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
         {
-            // Verifica que la tecla presionada no sea dígito.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
             {
-                e.Handled = true;
+                int cant = this.txtbNroDoc.Text.Length;
+                if (cant >= 8)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsDigit((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
             }
         }
 
-        private void txtbPasaporteLetras_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbPasaporteNro_KeyDown(object sender, KeyEventArgs e)
         {
-            // Verifica que no pase de tres letras.
-            int cantLetras = this.txtbPasaporteLetras.Text.Length;
-            if (cantLetras >= 3)
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
             {
-                e.Handled = true;
+                int cant = this.txtbPasaporteNro.Text.Length;
+                if (cant >= 6)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsDigit((char)e.KeyCode)
+                    || char.IsPunctuation((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
             }
         }
+
+        private void txtbPasaporteLetras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbPasaporteLetras.Text.Length;
+                if (cant >= 3)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsLetter((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+        }
+
         private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))
@@ -272,8 +310,6 @@ namespace FarmaTown.Presentacion.Empleados
                 e.Handled = true;
             }
         }
-
-
 
         //---------------------------------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
@@ -462,11 +498,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.cargarGrilla(dgvFarmacias, oFarmacia.recuperarTodos());
         }
 
-        private void deshabilitarTextBox(TextBox txtb)
+        private void deshabilitarTextBox()
         {
-            txtb.Enabled = false;
-            txtb.Visible = false;
+            this.txtbNroDoc.Enabled = false;
+            this.txtbNroDoc.Visible = false;
 
+            this.txtbPasaporteLetras.Enabled = false;
+            this.txtbPasaporteNro.Enabled = false;
+            this.txtbPasaporteLetras.Visible = false;
+            this.txtbPasaporteNro.Visible = false;
+            this.lblAvisoNroDoc.Text = "";
         }
     }
 }

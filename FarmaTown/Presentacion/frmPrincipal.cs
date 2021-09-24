@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Logica;
 using FarmaTown.Presentacion.Empleados;
+using FarmaTown.Presentacion.ObrasSociales;
 
 namespace FarmaTown.Presentacion
 {
@@ -109,17 +110,24 @@ namespace FarmaTown.Presentacion
             this.Close();
         }
 
+        private void cerrarSesion()
+        {
+            oSesion.FechaFin = DateTime.Now;
+            oSesion.persistir(true);
+        }
+
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEmpleados frmEmp = new frmEmpleados(rolLogeado);
             frmEmp.ShowDialog();
         }
 
-        private void cerrarSesion()
+        private void obrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            oSesion.FechaFin = DateTime.Now;
-            oSesion.persistir(true);
+            frmOOSS frmOS = new frmOOSS();
+            frmOS.ShowDialog();
         }
+
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,6 +184,5 @@ namespace FarmaTown.Presentacion
             //update label
             this.lblReloj.Text = time;
         }
-
     }
 }

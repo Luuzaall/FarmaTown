@@ -37,6 +37,7 @@
             this.gestiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obrasSocialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -92,7 +93,8 @@
             // 
             this.gestiónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
-            this.empleadosToolStripMenuItem});
+            this.empleadosToolStripMenuItem,
+            this.obrasSocialesToolStripMenuItem});
             this.gestiónToolStripMenuItem.Name = "gestiónToolStripMenuItem";
             this.gestiónToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.gestiónToolStripMenuItem.Text = "Gestión";
@@ -100,16 +102,23 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
+            // 
+            // obrasSocialesToolStripMenuItem
+            // 
+            this.obrasSocialesToolStripMenuItem.Name = "obrasSocialesToolStripMenuItem";
+            this.obrasSocialesToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.obrasSocialesToolStripMenuItem.Text = "Obras Sociales";
+            this.obrasSocialesToolStripMenuItem.Click += new System.EventHandler(this.obrasSocialesToolStripMenuItem_Click);
             // 
             // lblUsuario
             // 
@@ -186,7 +195,7 @@
             this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FarmaTown - Pantalla Principal";
+            this.Text = "Pantalla Principal - FarmaTown";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.msPrincipal.ResumeLayout(false);
@@ -211,5 +220,6 @@
         private System.Windows.Forms.Label lblNomRol;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obrasSocialesToolStripMenuItem;
     }
 }

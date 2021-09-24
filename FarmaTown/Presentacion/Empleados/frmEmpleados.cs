@@ -46,8 +46,8 @@ namespace FarmaTown.Presentacion.Empleados
             {
                 DataTable resultadosEmpleados;
                 int idTipoDoc;
+                string nroDoc = "";
                 string nomEmpl = this.txtbNombre.TextName;
-                string nroDoc = this.txtbNroDoc.Text;
                 string nomFarm = this.txtbFarmacia.TextName;
                 
                 if (this.cboTipoDoc.SelectedIndex == -1)
@@ -57,6 +57,15 @@ namespace FarmaTown.Presentacion.Empleados
                 else
                 {
                     idTipoDoc = (int) this.cboTipoDoc.SelectedValue;
+                    if (idTipoDoc == 2)
+                    {
+
+                        string letras = this.txtbPasaporteLetras.Text;
+                        string nros = this.txtbPasaporteNro.Text;
+                        nroDoc = letras + nros;
+                    }
+                    else
+                        nroDoc = this.txtbNroDoc.Text;
                 }
 
                 resultadosEmpleados = this.oEmpleado.recuperarEmpleadoCParametros(nomEmpl, nroDoc, idTipoDoc, nomFarm);
@@ -74,6 +83,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.Text = "";
             this.txtbFarmacia.TextName = "";
             this.cboTipoDoc.SelectedIndex = -1;
+            this.deshabilitarTextBox();
         }
 
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -121,7 +131,103 @@ namespace FarmaTown.Presentacion.Empleados
             this.Close();
         }
 
+        private void cboTipoDoc_DropDownClosed(object sender, EventArgs e)
+        {
+            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
+            if (indiceSelecc != -1)
+            {
+                int valorSelecc = (int)this.cboTipoDoc.SelectedValue;
+                if (valorSelecc == 1
+                    || valorSelecc == 3)
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbPasaporteLetras.Text = "";
+                    this.txtbPasaporteNro.Text = "";
 
+                    this.txtbNroDoc.Text = "";
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+                    
+                    this.lblAvisoNroDoc.Text = "Debe tener 8 números.";
+                }
+                else if (valorSelecc == 2)
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbNroDoc.Text = "";
+
+                    this.txtbPasaporteLetras.Visible = true;
+                    this.txtbPasaporteLetras.Enabled = true;
+                    this.txtbPasaporteNro.Visible = true;
+                    this.txtbPasaporteNro.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
+
+                }
+                else
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "";
+                }
+            }
+
+        }
+
+        private void txtbPasaporteLetras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbPasaporteLetras.Text.Length;
+                if (cant >= 3)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsLetter((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+        }
+
+        private void txtbPasaporteNro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbPasaporteNro.Text.Length;
+                if (cant >= 6)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if ( !char.IsDigit((char)e.KeyCode)
+                    || char.IsPunctuation((char)e.KeyCode) )
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+        }
+
+        private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbNroDoc.Text.Length;
+                if (cant >= 8)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsDigit((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+        }
+
+
+
+        //---------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
         private void cargarGrilla(DataGridView dgv, DataTable table)
@@ -206,15 +312,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.actualizar();
 
         }
-
-        private void txtbNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        private void deshabilitarTextBox()
         {
-            // Verifica que la tecla presionada no sea dígito.
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            this.txtbNroDoc.Enabled = false;
+            this.txtbNroDoc.Visible = false;
 
+            this.txtbPasaporteLetras.Enabled = false;
+            this.txtbPasaporteNro.Enabled = false;
+            this.txtbPasaporteLetras.Visible = false;
+            this.txtbPasaporteNro.Visible = false;
+            this.lblAvisoNroDoc.Text = "";
         }
     }
 }

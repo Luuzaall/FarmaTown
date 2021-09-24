@@ -516,7 +516,6 @@ namespace FarmaTown.Presentacion
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmABMUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FarmaTown - Usuario";
             this.Load += new System.EventHandler(this.frmABMUsuario_Load);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

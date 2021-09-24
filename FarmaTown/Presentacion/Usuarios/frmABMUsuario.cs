@@ -58,13 +58,13 @@ namespace FarmaTown.Presentacion
             {
                 case FormMode.insert:
                     {
-                        this.Text = "FarmaTown - Nuevo Usuario";
+                        this.Text = "Nuevo Usuario - FarmaTown";
                         break;
                     }
 
                 case FormMode.update:
                     {
-                        this.Text = "FarmaTown - Actualizar Usuario";
+                        this.Text = "Actualizar Usuario - FarmaTown";
                         this.cargarDatos();
                         this.txtbNombre.Enabled = true;
                         this.txtbClave.Enabled = true;
@@ -76,7 +76,7 @@ namespace FarmaTown.Presentacion
                 case FormMode.delete:
                     {
                         this.cargarDatos();
-                        this.Text = "FarmaTown - Deshabilitar Usuario";
+                        this.Text = "Deshabilitar Usuario - FarmaTown";
                         this.cargarFila(this.dgvEmpleados);
                         this.txtbNombre.Enabled = false;
                         this.txtbClave.Enabled = false;

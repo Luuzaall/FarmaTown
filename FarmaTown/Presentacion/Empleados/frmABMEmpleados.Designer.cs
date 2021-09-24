@@ -31,6 +31,7 @@ namespace FarmaTown.Presentacion.Empleados
         {
             System.Windows.Forms.GroupBox gbEmpleados;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMEmpleados));
+            this.txtbNombre = new System.Windows.Forms.TextBox();
             this.txtbPasaporteLetras = new System.Windows.Forms.TextBox();
             this.txtbPasaporteNro = new System.Windows.Forms.TextBox();
             this.lblAvisoNroDoc = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
             gbEmpleados = new System.Windows.Forms.GroupBox();
             gbEmpleados.SuspendLayout();
             this.gbFarmacias.SuspendLayout();
@@ -97,6 +97,17 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.TabStop = false;
             gbEmpleados.Text = "Datos del Empleado";
             // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNombre.Location = new System.Drawing.Point(477, 66);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.Size = new System.Drawing.Size(301, 20);
+            this.txtbNombre.TabIndex = 28;
+            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
+            // 
             // txtbPasaporteLetras
             // 
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
@@ -108,7 +119,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(86, 20);
             this.txtbPasaporteLetras.TabIndex = 27;
             this.txtbPasaporteLetras.Visible = false;
-            this.txtbPasaporteLetras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbPasaporteLetras_KeyPress);
+            this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteLetras_KeyDown);
             // 
             // txtbPasaporteNro
             // 
@@ -121,7 +132,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.Size = new System.Drawing.Size(185, 20);
             this.txtbPasaporteNro.TabIndex = 26;
             this.txtbPasaporteNro.Visible = false;
-            this.txtbPasaporteNro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNroDoc_KeyPress);
+            this.txtbPasaporteNro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteNro_KeyDown);
             // 
             // lblAvisoNroDoc
             // 
@@ -144,7 +155,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.Size = new System.Drawing.Size(301, 20);
             this.txtbNroDoc.TabIndex = 2;
             this.txtbNroDoc.Visible = false;
-            this.txtbNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNroDoc_KeyPress);
+            this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNroDoc_KeyDown);
             // 
             // btnLimpiarEmpleado
             // 
@@ -629,17 +640,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // txtbNombre
-            // 
-            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(477, 66);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(301, 20);
-            this.txtbNombre.TabIndex = 28;
-            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
             // 
             // frmABMEmpleados
             // 

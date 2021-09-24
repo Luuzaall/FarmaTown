@@ -423,7 +423,7 @@ namespace FarmaTown.Presentacion
             this.MaximizeBox = false;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FarmaTown - Gestión Usuarios";
+            this.Text = "Gestión Usuarios - FarmaTown";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.gbResultados.ResumeLayout(false);

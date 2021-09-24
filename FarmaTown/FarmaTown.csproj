@@ -61,6 +61,7 @@
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\EmpleadoDao.cs" />
     <Compile Include="Datos\FarmaciaDao.cs" />
+    <Compile Include="Datos\ObraSocialDao.cs" />
     <Compile Include="Datos\RolDao.cs" />
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
@@ -95,6 +96,18 @@
     <Compile Include="Presentacion\Empleados\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ObrasSociales\frmAMBOOSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ObrasSociales\frmAMBOOSS.Designer.cs">
+      <DependentUpon>frmAMBOOSS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ObrasSociales\frmOOSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ObrasSociales\frmOOSS.Designer.cs">
+      <DependentUpon>frmOOSS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ObrasSociales\frmAMBOOSS.resx">
+      <DependentUpon>frmAMBOOSS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ObrasSociales\frmOOSS.resx">
+      <DependentUpon>frmOOSS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
@@ -178,6 +197,7 @@
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
     <None Include="Presentacion\Imagenes\principal.png" />
+    <None Include="Presentacion\Imagenes\MedicalResearch.png" />
     <Content Include="Presentacion\Imagenes\trash.png" />
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
     <Content Include="Presentacion\Imagenes\undraw_medical_care_movn.png" />

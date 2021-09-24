@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,14 @@ namespace FarmaTown.Logica
         public int IdOS { get; set; }
         public string NombreOS { get; set; }
         public bool Borrado { get; set; }
+
+        ObraSocialDao oObraSocialDao;
+
+        public ObraSocial()
+        {
+            oObraSocialDao = new ObraSocialDao();
+        }
+
+
     }
 }
