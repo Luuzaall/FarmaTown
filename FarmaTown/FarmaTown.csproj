@@ -78,6 +78,18 @@
     <Compile Include="Logica\TipoDocumento.cs" />
     <Compile Include="Logica\TipoMedicamento.cs" />
     <Compile Include="Logica\Venta.cs" />
+    <Compile Include="Presentacion\Barrios\frmABMBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Barrios\frmABMBarrios.Designer.cs">
+      <DependentUpon>frmABMBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Barrios\frmBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Barrios\frmBarrios.Designer.cs">
+      <DependentUpon>frmBarrios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Barrios\frmABMBarrios.resx">
+      <DependentUpon>frmABMBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Barrios\frmBarrios.resx">
+      <DependentUpon>frmBarrios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleados\frmABMEmpleados.resx">
       <DependentUpon>frmABMEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +222,9 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\undraw_quite_town_mg2q.png" />
+    <None Include="Resources\undraw_best_place_r685.png" />
+    <None Include="Resources\undraw_town_r6pc.png" />
     <None Include="Resources\undraw_Location_tracking_re_n3ok %281%29.png" />
     <None Include="Resources\undraw_Location_tracking_re_n3ok.png" />
     <None Include="Resources\undraw_city_life_gnpr.png" />

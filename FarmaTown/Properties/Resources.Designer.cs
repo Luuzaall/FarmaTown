@@ -193,6 +193,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undraw_best_place_r685 {
+            get {
+                object obj = ResourceManager.GetObject("undraw_best_place_r685", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undraw_city_life_gnpr {
             get {
                 object obj = ResourceManager.GetObject("undraw_city_life_gnpr", resourceCulture);
@@ -266,6 +276,26 @@ namespace FarmaTown.Properties {
         internal static System.Drawing.Bitmap undraw_Location_tracking_re_n3ok__1_ {
             get {
                 object obj = ResourceManager.GetObject("undraw_Location_tracking_re_n3ok (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_quite_town_mg2q {
+            get {
+                object obj = ResourceManager.GetObject("undraw_quite_town_mg2q", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_town_r6pc {
+            get {
+                object obj = ResourceManager.GetObject("undraw_town_r6pc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

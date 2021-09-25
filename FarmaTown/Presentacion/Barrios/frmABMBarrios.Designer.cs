@@ -32,16 +32,16 @@ namespace FarmaTown.Presentacion.Localidades
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMBarrios));
             this.SuspendLayout();
             // 
-            // frmABMLocalidades
+            // frmABMBarrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Location_tracking_re_n3ok__1_;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_town_r6pc;
+            this.ClientSize = new System.Drawing.Size(954, 541);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmABMLocalidades";
+            this.Name = "frmABMBarrios";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
