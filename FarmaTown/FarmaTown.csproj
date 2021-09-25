@@ -96,6 +96,12 @@
     <Compile Include="Presentacion\Empleados\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Localidades\frmLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Localidades\frmLocalidades.Designer.cs">
+      <DependentUpon>frmLocalidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ObrasSociales\frmAMBOOSS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Localidades\frmLocalidades.resx">
+      <DependentUpon>frmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ObrasSociales\frmAMBOOSS.resx">
       <DependentUpon>frmAMBOOSS.cs</DependentUpon>
@@ -186,6 +195,7 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\undraw_city_life_gnpr.png" />
     <None Include="Presentacion\Imagenes\ABMOOSS.png" />
     <Content Include="Presentacion\Imagenes\addDocument.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
