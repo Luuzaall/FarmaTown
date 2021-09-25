@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Datos;
 using FarmaTown.Presentacion.Empleados;
+using FarmaTown.Presentacion.ObrasSociales;
 
 namespace FarmaTown.Presentacion
 {
@@ -23,7 +24,9 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmUsuarios());
-            Application.Run(new frmEmpleados(null));
+            //Application.Run(new frmEmpleados());
+            Application.Run(new frmOOSS());
+
         }
     }
 }

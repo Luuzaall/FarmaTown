@@ -186,6 +186,7 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Presentacion\Imagenes\ABMOOSS.png" />
     <Content Include="Presentacion\Imagenes\addDocument.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />

@@ -63,6 +63,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ABMOOSS {
+            get {
+                object obj = ResourceManager.GetObject("ABMOOSS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addPerson {
             get {
                 object obj = ResourceManager.GetObject("addPerson", resourceCulture);
