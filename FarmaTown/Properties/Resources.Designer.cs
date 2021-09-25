@@ -249,5 +249,25 @@ namespace FarmaTown.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_Location_tracking_re_n3ok {
+            get {
+                object obj = ResourceManager.GetObject("undraw_Location_tracking_re_n3ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_Location_tracking_re_n3ok__1_ {
+            get {
+                object obj = ResourceManager.GetObject("undraw_Location_tracking_re_n3ok (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
