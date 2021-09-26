@@ -233,6 +233,7 @@
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />
     <None Include="Presentacion\Imagenes\coworkers.png" />
+    <None Include="Presentacion\Imagenes\barrios.png" />
     <Content Include="Presentacion\Imagenes\detail.png" />
     <Content Include="Presentacion\Imagenes\Editor.png" />
     <None Include="Presentacion\Imagenes\eyeParaClave.png" />
