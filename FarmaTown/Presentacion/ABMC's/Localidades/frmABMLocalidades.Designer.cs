@@ -156,7 +156,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.Name = "frmABMLocalidades";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmABMLocalidades_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

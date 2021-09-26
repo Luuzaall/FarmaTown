@@ -73,7 +73,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
             this.txtbNombre.TabIndex = 12;
-            this.txtbNombre.TextChanged += new System.EventHandler(this.txtbNombre_TextChanged);
+            //this.txtbNombre.TextChanged += new System.EventHandler(this.txtbNombre_TextChanged);
             // 
             // btnConsultar
             // 
