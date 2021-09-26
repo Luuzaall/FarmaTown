@@ -51,21 +51,29 @@ namespace FarmaTown.Logica
 
         public bool crearEmpleado(Empleado oEmpleado)
         {
-            bool resultado = oEmpleadoDao.insertarEmpleado(oEmpleado);
+            return validar( oEmpleadoDao.insertarEmpleado(oEmpleado) );
 
-            return resultado;
         }
 
         public bool actualizarEmpleado(Empleado oEmpleado)
         {
-            bool resultado = oEmpleadoDao.actualizarEmpleado(oEmpleado);
-
-            return resultado;
+            return validar( oEmpleadoDao.actualizarEmpleado(oEmpleado) );
         }
 
-        public bool cambiarEstadoEmpleado(Empleado oEmpleado, bool seHabilita)
+        public bool cambiarEstado(Empleado oEmpleado, bool seHabilita)
         {
-            return this.oEmpleadoDao.cambiarEstado(oEmpleado, seHabilita);
+            return validar( this.oEmpleadoDao.cambiarEstado(oEmpleado, seHabilita) );
+ 
+        }
+
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

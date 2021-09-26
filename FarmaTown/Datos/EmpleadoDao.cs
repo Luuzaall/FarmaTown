@@ -121,7 +121,7 @@ namespace FarmaTown.Datos
             
         }
 
-        public bool insertarEmpleado(Empleado oEmpleado)
+        public int insertarEmpleado(Empleado oEmpleado)
         {
             string query = "INSERT INTO Empleados" +
                 "(nroDoc, tipoDoc, idFarmacia, nombre, borrado)" +
@@ -132,15 +132,11 @@ namespace FarmaTown.Datos
                 ", '" + oEmpleado.Nombre + "'" +
                  ", 0)";
 
-            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if ( afectadas == 0)
-            {
-                return false;
-            }
-            return true;
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+
         }
 
-        public bool actualizarEmpleado(Empleado oEmpleado)
+        public int actualizarEmpleado(Empleado oEmpleado)
         {
             string query = "UPDATE Empleados" +
                 " SET nroDoc = " + oEmpleado.NroDoc +
@@ -149,16 +145,10 @@ namespace FarmaTown.Datos
                 ", nombre = '" + oEmpleado.Nombre + "'"  +
                 " WHERE idEmpleado = " + oEmpleado.IdEmpleado;
 
-            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if (afectadas == 0)
-            {
-                return false;
-            }
-            else
-                return true;
+            return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public bool cambiarEstado(Empleado empl, bool seHabilita)
+        public int cambiarEstado(Empleado empl, bool seHabilita)
         {
             string query = "UPDATE Empleados " +
                 " SET borrado = ";
@@ -170,12 +160,7 @@ namespace FarmaTown.Datos
 
             query = query + " WHERE idEmpleado = " + empl.IdEmpleado;
 
-            int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if (afectadas > 0)
-            {
-                return true;
-            }
-            return false;
+            return DBHelper.getDBHelper().ejecutarSQL(query);
 
         }
 

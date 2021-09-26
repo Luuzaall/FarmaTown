@@ -81,7 +81,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFiltros.Controls.Add(this.cboTipoDoc);
             this.gbFiltros.Controls.Add(this.label2);
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbFiltros.Location = new System.Drawing.Point(31, -2);
+            this.gbFiltros.Location = new System.Drawing.Point(30, 12);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(1106, 248);
             this.gbFiltros.TabIndex = 22;
@@ -290,7 +290,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbResultados.Controls.Add(this.dgvEmpleados);
             this.gbResultados.Controls.Add(this.btnActualizar);
             this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbResultados.Location = new System.Drawing.Point(31, 251);
+            this.gbResultados.Location = new System.Drawing.Point(30, 281);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(1106, 310);
             this.gbResultados.TabIndex = 23;
@@ -388,7 +388,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
             this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblAviso.Location = new System.Drawing.Point(346, 583);
+            this.lblAviso.Location = new System.Drawing.Point(344, 627);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(313, 22);
             this.lblAviso.TabIndex = 29;
@@ -409,7 +409,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(1083, 567);
+            this.btnSalir.Location = new System.Drawing.Point(1083, 611);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 11;
@@ -432,7 +432,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(142, 567);
+            this.btnEditar.Location = new System.Drawing.Point(139, 611);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 9;
@@ -455,7 +455,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(254, 567);
+            this.btnEliminar.Location = new System.Drawing.Point(251, 611);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 10;
@@ -478,7 +478,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(34, 567);
+            this.btnAgregar.Location = new System.Drawing.Point(31, 611);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
             this.btnAgregar.TabIndex = 8;
@@ -494,7 +494,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.BackgroundImage = global::FarmaTown.Properties.Resources.coworkers;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(1169, 635);
+            this.ClientSize = new System.Drawing.Size(1169, 672);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);

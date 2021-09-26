@@ -1,7 +1,7 @@
 ﻿
 namespace FarmaTown.Presentacion.Localidades
 {
-    partial class frmABMBarrios
+    partial class frmABMLocalidades
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace FarmaTown.Presentacion.Localidades
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMBarrios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMLocalidades));
             this.SuspendLayout();
             // 
             // frmABMLocalidades

@@ -96,16 +96,16 @@
     <Compile Include="Presentacion\DiseñosElemenGUI\TransparentLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Presentacion\Empleados\frmABMEmpleados.cs">
+    <Compile Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Empleados\frmABMEmpleados.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.Designer.cs">
       <DependentUpon>frmABMEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Empleados\frmEmpleados.cs">
+    <Compile Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Empleados\frmEmpleados.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Localidades\frmABMLocalidades.cs">
@@ -120,22 +120,22 @@
     <Compile Include="Presentacion\Localidades\frmLocalidades.Designer.cs">
       <DependentUpon>frmLocalidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\ObrasSociales\frmAMBOOSS.cs">
+    <Compile Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\ObrasSociales\frmAMBOOSS.Designer.cs">
-      <DependentUpon>frmAMBOOSS.cs</DependentUpon>
+    <Compile Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.Designer.cs">
+      <DependentUpon>frmABMOS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\ObrasSociales\frmOOSS.cs">
+    <Compile Include="Presentacion\ABMC%27s\ObrasSociales\frmOOSS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\ObrasSociales\frmOOSS.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\ObrasSociales\frmOOSS.Designer.cs">
       <DependentUpon>frmOOSS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Usuarios\frmABMUsuario.cs">
+    <Compile Include="Presentacion\ABMC%27s\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuarios\frmABMUsuario.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Usuarios\frmABMUsuario.Designer.cs">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
@@ -151,10 +151,10 @@
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Usuario.cs" />
-    <Compile Include="Presentacion\Usuarios\frmUsuarios.cs">
+    <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Usuarios\frmUsuarios.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -165,10 +165,10 @@
     <EmbeddedResource Include="Presentacion\Barrios\frmBarrios.resx">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Empleados\frmABMEmpleados.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.resx">
       <DependentUpon>frmABMEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Empleados\frmEmpleados.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Localidades\frmABMLocalidades.resx">
@@ -177,13 +177,13 @@
     <EmbeddedResource Include="Presentacion\Localidades\frmLocalidades.resx">
       <DependentUpon>frmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\ObrasSociales\frmAMBOOSS.resx">
-      <DependentUpon>frmAMBOOSS.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.resx">
+      <DependentUpon>frmABMOS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\ObrasSociales\frmOOSS.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\ObrasSociales\frmOOSS.resx">
       <DependentUpon>frmOOSS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuarios\frmABMUsuario.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
@@ -192,7 +192,7 @@
     <EmbeddedResource Include="Presentacion\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Usuarios\frmUsuarios.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

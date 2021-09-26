@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion.Localidades
 {
-    public partial class frmBarrios : Form
+    public partial class frmLocalidades : Form
     {
-        public frmBarrios()
+        public frmLocalidades()
         {
             InitializeComponent();
         }

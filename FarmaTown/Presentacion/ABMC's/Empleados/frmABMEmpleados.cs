@@ -20,11 +20,11 @@ namespace FarmaTown.Presentacion.Empleados
         Farmacia oFarmacia;
 
         public frmABMEmpleados()
-        {
-            InitializeComponent();
+        { 
             oTipoDoc = new TipoDocumento();
             oFarmacia = new Farmacia();
             oEmpleado = new Empleado();
+            InitializeComponent();
         }
 
         public enum FormMode
@@ -69,6 +69,7 @@ namespace FarmaTown.Presentacion.Empleados
 
                 case FormMode.delete:
                     {
+                        this.lblAviso.Visible = false;
                         this.cargarDatos();
                         this.Text = "Deshabilitar Empleado - FarmaTown";
                         this.cargarFila(this.dgvFarmacias);
@@ -112,7 +113,7 @@ namespace FarmaTown.Presentacion.Empleados
                     {
                         if (this.validarCampos())
                         {
-                            if (this.existeEmpleado() == false)
+                            if (! this.existeEmpleado())
                             {
 
                                 var oEmpleado = new Empleado();
@@ -120,12 +121,17 @@ namespace FarmaTown.Presentacion.Empleados
 
                                 if (oEmpleado.crearEmpleado(oEmpleado))
                                 {
-                                    MessageBox.Show("Empleado agregado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("Empleado agregado!", "Información"
+                                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
+                                else
+                                    MessageBox.Show("Error al insertar el empleado!", "Información"
+                                        , MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
-                                MessageBox.Show("Este empleado esta en uso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Este empleado ya está registrado!", "Información"
+                                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
@@ -133,21 +139,17 @@ namespace FarmaTown.Presentacion.Empleados
                     {
                         if (this.validarCampos())
                         {
-                            oEmpleado.Nombre = txtbNombre.Text;
-                            oEmpleado.NroDoc = txtbNroDoc.Text;
-                            oEmpleado.TipoDoc = new TipoDocumento();
-                            oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
-                            oEmpleado.Farmacia = new Farmacia();
-                            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
-                            ;
+                            oEmpleado = this.cargarDatos(oEmpleado);
 
                             if (oEmpleado.actualizarEmpleado(oEmpleado))
                             {
-                                MessageBox.Show("Empleado actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Empleado actualizado!", "Información"
+                                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el empleado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al actualizar el empleado!", "Información"
+                                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
@@ -157,7 +159,7 @@ namespace FarmaTown.Presentacion.Empleados
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oEmpleado.cambiarEstadoEmpleado(oEmpleado, false))
+                            if (oEmpleado.cambiarEstado(oEmpleado, false))
                             {
                                 MessageBox.Show("Empleado Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
@@ -321,13 +323,27 @@ namespace FarmaTown.Presentacion.Empleados
             * según el usuario seleccionado.
             */
             this.txtbNombre.Text = this.oEmpleado.Nombre;
-            this.txtbNroDoc.Text = this.oEmpleado.NroDoc.ToString();
             this.txtbNomFarm.TextName = this.oEmpleado.Farmacia.Nombre;
             this.txtbNomCalle.TextName = this.oEmpleado.Farmacia.Calle;
             this.txtbBarrio.TextName = this.oEmpleado.Farmacia.Barrio.Nombre;
             this.txtbLocalidad.TextName = this.oEmpleado.Farmacia.Barrio.Localidad.Nombre;
 
-            this.cboTipoDoc.SelectedValue = this.oEmpleado.TipoDoc.IdTipo;
+            int idTipoDoc = this.oEmpleado.TipoDoc.IdTipo;
+            this.cboTipoDoc.SelectedValue = idTipoDoc;
+            if (idTipoDoc == 2)
+            {
+                this.txtbPasaporteLetras.Visible = true;
+                this.txtbPasaporteLetras.Enabled = true;
+
+                this.txtbPasaporteLetras.Text = this.oEmpleado.NroDoc.ToString().Substring(4);
+                this.txtbPasaporteNro.Text = this.oEmpleado.NroDoc.ToString().Substring(0, 3);
+            }
+            else
+            {
+                this.txtbNroDoc.Enabled = true;
+                this.txtbNroDoc.Visible = true;
+                this.txtbNroDoc.Text = this.oEmpleado.NroDoc.ToString(); ;
+            }
 
             int idFarmacia = oEmpleado.Farmacia.IdFarmacia;
             this.seleccionarFila(this.dgvFarmacias, idFarmacia);
@@ -468,8 +484,6 @@ namespace FarmaTown.Presentacion.Empleados
             }
             else
                 oEmpleado.NroDoc = nroDoc;
-
-
 
             oEmpleado.Farmacia = new Farmacia();
             oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;

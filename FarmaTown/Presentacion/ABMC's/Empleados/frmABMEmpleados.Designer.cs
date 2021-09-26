@@ -37,7 +37,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAvisoNroDoc = new System.Windows.Forms.Label();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.btnLimpiarEmpleado = new CustomControls.RJControls.RJButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
@@ -75,8 +75,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             // gbEmpleados
             // 
-            gbEmpleados.BackColor = System.Drawing.Color.White;
-            gbEmpleados.BackgroundImage = global::FarmaTown.Properties.Resources.Empleados;
+            gbEmpleados.BackColor = System.Drawing.Color.Transparent;
             gbEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             gbEmpleados.Controls.Add(this.txtbNombre);
             gbEmpleados.Controls.Add(this.txtbPasaporteLetras);
@@ -84,15 +83,15 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.Controls.Add(this.lblAvisoNroDoc);
             gbEmpleados.Controls.Add(this.txtbNroDoc);
             gbEmpleados.Controls.Add(this.btnLimpiarEmpleado);
-            gbEmpleados.Controls.Add(this.label1);
+            gbEmpleados.Controls.Add(this.lblAviso);
             gbEmpleados.Controls.Add(this.lblNombre);
             gbEmpleados.Controls.Add(this.cboTipoDoc);
             gbEmpleados.Controls.Add(this.lblTipoDoc);
             gbEmpleados.Controls.Add(this.lblNroDni);
             gbEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            gbEmpleados.Location = new System.Drawing.Point(23, 26);
+            gbEmpleados.Location = new System.Drawing.Point(23, 12);
             gbEmpleados.Name = "gbEmpleados";
-            gbEmpleados.Size = new System.Drawing.Size(1233, 240);
+            gbEmpleados.Size = new System.Drawing.Size(1233, 200);
             gbEmpleados.TabIndex = 30;
             gbEmpleados.TabStop = false;
             gbEmpleados.Text = "Datos del Empleado";
@@ -101,7 +100,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(477, 66);
+            this.txtbNombre.Location = new System.Drawing.Point(477, 26);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(301, 20);
@@ -113,7 +112,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteLetras.Enabled = false;
-            this.txtbPasaporteLetras.Location = new System.Drawing.Point(477, 176);
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(477, 136);
             this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(86, 20);
@@ -126,7 +125,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteNro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteNro.Enabled = false;
-            this.txtbPasaporteNro.Location = new System.Drawing.Point(593, 176);
+            this.txtbPasaporteNro.Location = new System.Drawing.Point(593, 136);
             this.txtbPasaporteNro.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteNro.Name = "txtbPasaporteNro";
             this.txtbPasaporteNro.Size = new System.Drawing.Size(185, 20);
@@ -149,7 +148,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
-            this.txtbNroDoc.Location = new System.Drawing.Point(477, 176);
+            this.txtbNroDoc.Location = new System.Drawing.Point(477, 136);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.Name = "txtbNroDoc";
             this.txtbNroDoc.Size = new System.Drawing.Size(301, 20);
@@ -174,7 +173,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiarEmpleado.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarEmpleado.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiarEmpleado.Location = new System.Drawing.Point(916, 98);
+            this.btnLimpiarEmpleado.Location = new System.Drawing.Point(916, 58);
             this.btnLimpiarEmpleado.Name = "btnLimpiarEmpleado";
             this.btnLimpiarEmpleado.Size = new System.Drawing.Size(129, 49);
             this.btnLimpiarEmpleado.TabIndex = 4;
@@ -183,22 +182,22 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiarEmpleado.UseVisualStyleBackColor = false;
             this.btnLimpiarEmpleado.Click += new System.EventHandler(this.btnLimpiarEmpleado_Click);
             // 
-            // label1
+            // lblAviso
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.label1.Location = new System.Drawing.Point(26, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 38);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Los campos con (*) \r\nson obligatorios";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.lblAviso.Location = new System.Drawing.Point(32, 65);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(161, 38);
+            this.lblAviso.TabIndex = 23;
+            this.lblAviso.Text = "Los campos con (*) \r\nson obligatorios";
+            this.lblAviso.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(282, 63);
+            this.lblNombre.Location = new System.Drawing.Point(282, 23);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(126, 23);
             this.lblNombre.TabIndex = 19;
@@ -209,7 +208,7 @@ namespace FarmaTown.Presentacion.Empleados
             // cboTipoDoc
             // 
             this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(477, 120);
+            this.cboTipoDoc.Location = new System.Drawing.Point(477, 80);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(301, 27);
             this.cboTipoDoc.TabIndex = 3;
@@ -219,7 +218,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblTipoDoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTipoDoc.Location = new System.Drawing.Point(215, 120);
+            this.lblTipoDoc.Location = new System.Drawing.Point(215, 80);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(193, 23);
             this.lblTipoDoc.TabIndex = 21;
@@ -231,7 +230,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblNroDni.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNroDni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNroDni.Location = new System.Drawing.Point(228, 173);
+            this.lblNroDni.Location = new System.Drawing.Point(228, 133);
             this.lblNroDni.Name = "lblNroDni";
             this.lblNroDni.Size = new System.Drawing.Size(180, 23);
             this.lblNroDni.TabIndex = 22;
@@ -249,9 +248,9 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFarmacias.Controls.Add(this.dgvFarmacias);
             this.gbFarmacias.Controls.Add(this.btnRegFarmacia);
             this.gbFarmacias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.gbFarmacias.Location = new System.Drawing.Point(23, 272);
+            this.gbFarmacias.Location = new System.Drawing.Point(23, 233);
             this.gbFarmacias.Name = "gbFarmacias";
-            this.gbFarmacias.Size = new System.Drawing.Size(1233, 432);
+            this.gbFarmacias.Size = new System.Drawing.Size(1233, 429);
             this.gbFarmacias.TabIndex = 29;
             this.gbFarmacias.TabStop = false;
             this.gbFarmacias.Text = "Datos de Farmacias";
@@ -305,7 +304,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFiltrosFarm.Controls.Add(this.txtbBarrio);
             this.gbFiltrosFarm.Controls.Add(this.lblCalle);
             this.gbFiltrosFarm.Controls.Add(this.txtbNomCalle);
-            this.gbFiltrosFarm.Location = new System.Drawing.Point(18, 41);
+            this.gbFiltrosFarm.Location = new System.Drawing.Point(18, 32);
             this.gbFiltrosFarm.Name = "gbFiltrosFarm";
             this.gbFiltrosFarm.Size = new System.Drawing.Size(1198, 136);
             this.gbFiltrosFarm.TabIndex = 35;
@@ -521,7 +520,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvFarmacias.Name = "dgvFarmacias";
             this.dgvFarmacias.ReadOnly = true;
             this.dgvFarmacias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFarmacias.Size = new System.Drawing.Size(1077, 219);
+            this.dgvFarmacias.Size = new System.Drawing.Size(1078, 211);
             this.dgvFarmacias.TabIndex = 27;
             this.dgvFarmacias.TabStop = false;
             // 
@@ -607,7 +606,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(710, 735);
+            this.btnCancelar.Location = new System.Drawing.Point(712, 670);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 49);
             this.btnCancelar.TabIndex = 11;
@@ -632,7 +631,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(1116, 733);
+            this.btnAceptar.Location = new System.Drawing.Point(1116, 668);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(140, 49);
             this.btnAceptar.TabIndex = 10;
@@ -647,14 +646,15 @@ namespace FarmaTown.Presentacion.Empleados
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackgroundImage = global::FarmaTown.Properties.Resources.Empleados;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(1292, 807);
+            this.ClientSize = new System.Drawing.Size(1281, 731);
             this.Controls.Add(gbEmpleados);
             this.Controls.Add(this.gbFarmacias);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmABMEmpleados";
@@ -695,7 +695,7 @@ namespace FarmaTown.Presentacion.Empleados
         private CustomControls.RJControls.RJButton btnLimpiarFarmacias;
         private System.Windows.Forms.TextBox txtbNroDoc;
         private CustomControls.RJControls.RJButton btnLimpiarEmpleado;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAviso;
         private DiseñosElemGUI.TransparentLabel lblNombre;
         private System.Windows.Forms.ComboBox cboTipoDoc;
         private DiseñosElemGUI.TransparentLabel lblTipoDoc;

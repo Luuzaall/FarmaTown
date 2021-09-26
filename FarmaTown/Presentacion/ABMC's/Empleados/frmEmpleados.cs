@@ -31,7 +31,6 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            this.deshabilitarBotones();
             this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos()
                 , "nombre", "idTipo");
         }
@@ -115,6 +114,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.actualizar();
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmABMEmpl = new frmABMEmpleados();
+            int idEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
+            frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
+            frmABMEmpl.ShowDialog();
+            this.actualizar();
+
+        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -157,6 +166,7 @@ namespace FarmaTown.Presentacion.Empleados
 
                     this.txtbPasaporteLetras.Visible = true;
                     this.txtbPasaporteLetras.Enabled = true;
+                    this.txtbPasaporteLetras.Enabled = true;
                     this.txtbPasaporteNro.Visible = true;
                     this.txtbPasaporteNro.Enabled = true;
                     this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
@@ -175,6 +185,11 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void txtbPasaporteLetras_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
+             * Filtra los números que el usuario 
+             * quiere ingresar, lo cual no
+             * es válido para este campo
+             */
             if (!(e.KeyCode == Keys.Delete
                     || e.KeyCode == Keys.Back))
             {
@@ -192,6 +207,11 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void txtbPasaporteNro_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
+             * Filtra las letras que el usuario 
+             * quiere ingresar, lo cual no
+             * es válido para este campo
+             */
             if (!(e.KeyCode == Keys.Delete
                     || e.KeyCode == Keys.Back))
             {
@@ -210,6 +230,11 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
+             * Filtra las letras que el usuario 
+             * quiere ingresar, lo cual no
+             * es válido para este campo
+             */
             if (!(e.KeyCode == Keys.Delete
                     || e.KeyCode == Keys.Back))
             {
@@ -302,16 +327,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAviso.Visible = true;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            frmABMEmpl = new frmABMEmpleados();
-            int idEmpleado = (int) this.dgvEmpleados.CurrentRow.Cells[0].Value;
-            oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
-            frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
-            frmABMEmpl.ShowDialog();
-            this.actualizar();
-
-        }
         private void deshabilitarTextBox()
         {
             this.txtbNroDoc.Enabled = false;
