@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,9 +51,9 @@ namespace FarmaTown.Presentacion.Localidades
             return true;
         }
 
-        private bool existeOS(string nombre)
+        private bool existeLocalidad(string nombre)
         {
-            ObraSocial resultado = this.oOS.traerOS(nombre);
+            Localidad resultado = this.oLocalidad.traerLocalidad(nombre);
             if (resultado is null)
             {
                 return false;
@@ -63,25 +64,25 @@ namespace FarmaTown.Presentacion.Localidades
 
         //MÉTODOS DE RESPUESTA A EVENTOS
 
-        private void frmABMOS_Load(object sender, EventArgs e)
+        private void frmABMLocalidades_Load(object sender, EventArgs e)
         {
             switch (formMode)
             {
                 case FormMode.insert:
                     {
-                        this.Text = "Nueva Obra Social - FarmaTown";
+                        this.Text = "Nueva Localidad - FarmaTown";
                         break;
                     }
                 case FormMode.update:
                     {
-                        this.Text = "Actualizar Obra Social - FarmaTown";
-                        this.txtbNombre.Text = oOS.Nombre;
+                        this.Text = "Actualizar Localidad - FarmaTown";
+                        this.txtbNombre.Text = oLocalidad.Nombre;
                         break;
                     }
                 case FormMode.delete:
                     {
-                        this.Text = "Deshabilitar Obra Social - FarmaTown";
-                        this.txtbNombre.Text = oOS.Nombre;
+                        this.Text = "Deshabilitar Localidad - FarmaTown";
+                        this.txtbNombre.Text = oLocalidad.Nombre;
                         this.txtbNombre.Enabled = false;
                         this.btnLimpiar.Enabled = false;
                         break;
@@ -117,24 +118,24 @@ namespace FarmaTown.Presentacion.Localidades
                     {
                         if (this.validarCampos())
                         {
-                            if (!this.existeOS(nombre))
+                            if (!this.existeLocalidad(nombre))
                             {
-                                ObraSocial oNuevaOS = new ObraSocial();
-                                oNuevaOS.Nombre = nombre;
+                                Localidad oNuevaLocalidad = new Localidad();
+                                oNuevaLocalidad.Nombre = nombre;
 
-                                bool resultInsert = oNuevaOS.crearOS(oNuevaOS);
+                                bool resultInsert = oLocalidad.crearLocalidad(oNuevaLocalidad);
                                 if (resultInsert)
                                 {
-                                    MessageBox.Show("Obra Social agregada!", "Información"
+                                    MessageBox.Show("Localidad agregada!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
-                                    MessageBox.Show("Error al insertar la obra social!", "Información"
+                                    MessageBox.Show("Error al insertar la Localidad!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
-                                MessageBox.Show("Este obra social ya está registrada!", "Información"
+                                MessageBox.Show("Esta Localidad ya está registrada!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
@@ -143,36 +144,36 @@ namespace FarmaTown.Presentacion.Localidades
                     {
                         if (validarCampos())
                         {
-                            oOS.Nombre = this.txtbNombre.Text;
+                            oLocalidad.Nombre = this.txtbNombre.Text;
 
-                            bool resultActualiz = this.oOS.actualizar(oOS);
+                            bool resultActualiz = this.oLocalidad.actualizar(oLocalidad);
                             if (resultActualiz)
                             {
-                                MessageBox.Show("Obra social actualizada!", "Información"
+                                MessageBox.Show("Localidad actualizada!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar la obra social!", "Información"
+                                MessageBox.Show("Error al actualizar la Localidad!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar la obra social seleccionada?"
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar la Localidad seleccionada?"
                             , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oOS.cambiarEstado(oOS, false))
+                            if (oLocalidad.cambiarEstado(oLocalidad, false))
                             {
-                                MessageBox.Show("Obra social Deshabilitada!", "Información"
+                                MessageBox.Show("Localidad Deshabilitada!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
-                                MessageBox.Show("Error al deshabilitar la obra social", "Información"
+                                MessageBox.Show("Error al deshabilitar la Localidad", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
@@ -180,8 +181,5 @@ namespace FarmaTown.Presentacion.Localidades
                     }
             }
         }
-
     }
-    }
-
-    }
+}
