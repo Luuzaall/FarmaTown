@@ -78,16 +78,16 @@
     <Compile Include="Logica\TipoDocumento.cs" />
     <Compile Include="Logica\TipoMedicamento.cs" />
     <Compile Include="Logica\Venta.cs" />
-    <Compile Include="Presentacion\Barrios\frmABMBarrios.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmABMBarrios.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.Designer.cs">
       <DependentUpon>frmABMBarrios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmBarrios.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmBarrios.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.Designer.cs">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
@@ -108,16 +108,16 @@
     <Compile Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Localidades\frmABMLocalidades.cs">
+    <Compile Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Localidades\frmABMLocalidades.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.Designer.cs">
       <DependentUpon>frmABMLocalidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Localidades\frmLocalidades.cs">
+    <Compile Include="Presentacion\ABMC%27s\Localidades\frmLocalidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Localidades\frmLocalidades.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Localidades\frmLocalidades.Designer.cs">
       <DependentUpon>frmLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.cs">
@@ -159,10 +159,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentacion\Barrios\frmABMBarrios.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.resx">
       <DependentUpon>frmABMBarrios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Barrios\frmBarrios.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmBarrios.resx">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.resx">
@@ -171,10 +171,10 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Localidades\frmABMLocalidades.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.resx">
       <DependentUpon>frmABMLocalidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Localidades\frmLocalidades.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmLocalidades.resx">
       <DependentUpon>frmLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.resx">
