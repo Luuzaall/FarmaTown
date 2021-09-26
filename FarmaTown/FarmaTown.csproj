@@ -238,6 +238,7 @@
     <None Include="Presentacion\Imagenes\eyeParaClave.png" />
     <None Include="Presentacion\Imagenes\Empleados.png" />
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
+    <None Include="Presentacion\Imagenes\localidades.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
     <None Include="Presentacion\Imagenes\principal.png" />
     <None Include="Presentacion\Imagenes\MedicalResearch.png" />

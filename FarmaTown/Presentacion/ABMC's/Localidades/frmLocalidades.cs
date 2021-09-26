@@ -16,5 +16,10 @@ namespace FarmaTown.Presentacion.Localidades
         {
             InitializeComponent();
         }
+
+        private void txtbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
