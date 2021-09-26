@@ -265,6 +265,7 @@
     <None Include="Presentacion\Imagenes\MedicalResearch.png" />
     <Content Include="Presentacion\Imagenes\trash.png" />
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
+    <None Include="Presentacion\Imagenes\undraw_Location_tracking_re_n3ok %281%29.png" />
     <Content Include="Presentacion\Imagenes\undraw_medical_care_movn.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>

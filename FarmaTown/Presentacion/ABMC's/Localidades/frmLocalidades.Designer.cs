@@ -297,6 +297,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnSalir.TabIndex = 37;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmLocalidades
             // 
@@ -316,6 +317,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.Name = "frmLocalidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Localidades - FarmaTown";
+            this.Load += new System.EventHandler(this.frmLocalidades_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);

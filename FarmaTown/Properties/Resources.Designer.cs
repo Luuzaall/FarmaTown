@@ -313,6 +313,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undraw_Location_tracking_re_n3ok__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("undraw_Location_tracking_re_n3ok (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undraw_quite_town_mg2q {
             get {
                 object obj = ResourceManager.GetObject("undraw_quite_town_mg2q", resourceCulture);
