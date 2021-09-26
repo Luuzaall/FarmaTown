@@ -12,5 +12,7 @@ namespace FarmaTown.Logica
         public string Nombre { get; set; }
         public bool Borrado { get; set; }
 
+        LocalidadDao oLocalidadDao();
+
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\EmpleadoDao.cs" />
     <Compile Include="Datos\FarmaciaDao.cs" />
+    <Compile Include="Datos\LocalidadDao.cs" />
     <Compile Include="Datos\ObraSocialDao.cs" />
     <Compile Include="Datos\BarrioDao.cs" />
     <Compile Include="Datos\RolDao.cs" />
