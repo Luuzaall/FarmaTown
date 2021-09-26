@@ -145,9 +145,9 @@ namespace FarmaTown.Presentacion.Localidades
             this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
             this.lblAviso.Location = new System.Drawing.Point(323, 488);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(200, 44);
+            this.lblAviso.Size = new System.Drawing.Size(168, 44);
             this.lblAviso.TabIndex = 38;
-            this.lblAviso.Text = "Debe elegir una obra\r\n social primero";
+            this.lblAviso.Text = "Debe elegir una \r\nlocalidad primero";
             // 
             // btnSalir
             // 
