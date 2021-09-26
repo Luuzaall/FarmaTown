@@ -37,6 +37,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades = new System.Windows.Forms.DataGridView();
             this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
@@ -120,6 +121,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades.Size = new System.Drawing.Size(480, 218);
             this.dgvLocalidades.TabIndex = 29;
             this.dgvLocalidades.TabStop = false;
+            this.dgvLocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalidad_CellClick);
             // 
             // idOOSS
             // 
@@ -134,6 +136,18 @@ namespace FarmaTown.Presentacion.Localidades
             this.nomOOSS.Name = "nomOOSS";
             this.nomOOSS.ReadOnly = true;
             this.nomOOSS.Width = 250;
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblAviso.Location = new System.Drawing.Point(323, 488);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(200, 44);
+            this.lblAviso.TabIndex = 38;
+            this.lblAviso.Text = "Debe elegir una obra\r\n social primero";
             // 
             // btnSalir
             // 
@@ -225,7 +239,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAgregar.TabIndex = 34;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.ClientSizeChanged += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -310,6 +324,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.localidades;
             this.ClientSize = new System.Drawing.Size(709, 541);
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -328,6 +343,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbResultados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -347,5 +363,6 @@ namespace FarmaTown.Presentacion.Localidades
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnSalir;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

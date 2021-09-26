@@ -41,6 +41,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEditar.BackColor = Color.Gray;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.BackColor = Color.Gray;
+            this.lblAviso.Visible = true;
         }
 
         private void cargarGrilla(DataGridView dgv, List<Localidad> lista)
