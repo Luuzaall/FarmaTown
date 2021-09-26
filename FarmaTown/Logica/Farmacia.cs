@@ -32,5 +32,10 @@ namespace FarmaTown.Logica
         {
             return this.oFarmaciaDao.recuperarCParam(nombre, calle, barrio, localidad);
         }
+
+        public Farmacia traerFarmacia(int id)
+        {
+            return oFarmaciaDao.traerFarmacia(id);
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Logica;
 using FarmaTown.Presentacion.Empleados;
+using FarmaTown.Presentacion.Farmacias;
 using FarmaTown.Presentacion.ObrasSociales;
 
 namespace FarmaTown.Presentacion
@@ -183,6 +184,12 @@ namespace FarmaTown.Presentacion
 
             //update label
             this.lblReloj.Text = time;
+        }
+
+        private void farmaciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFarmacias frmFar = new frmFarmacias();
+            frmFar.ShowDialog();
         }
     }
 }

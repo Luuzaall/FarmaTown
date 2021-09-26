@@ -1,0 +1,475 @@
+﻿
+namespace FarmaTown.Presentacion.Farmacias
+{
+    partial class frmFarmacias
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbBorrados = new System.Windows.Forms.CheckBox();
+            this.textbNumero = new JMaterialTextbox.JMaterialTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextbCalle = new JMaterialTextbox.JMaterialTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textbSucursal = new JMaterialTextbox.JMaterialTextbox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new CustomControls.RJControls.RJButton();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.dgvFarmacias = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditar = new CustomControls.RJControls.RJButton();
+            this.btnEliminar = new CustomControls.RJControls.RJButton();
+            this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbBorrados);
+            this.groupBox1.Controls.Add(this.textbNumero);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.TextbCalle);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textbSucursal);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(23, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(906, 223);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
+            // cbBorrados
+            // 
+            this.cbBorrados.AutoSize = true;
+            this.cbBorrados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.cbBorrados.Location = new System.Drawing.Point(645, 86);
+            this.cbBorrados.Name = "cbBorrados";
+            this.cbBorrados.Size = new System.Drawing.Size(191, 27);
+            this.cbBorrados.TabIndex = 22;
+            this.cbBorrados.Text = "Mostrar Borrados";
+            this.cbBorrados.UseVisualStyleBackColor = true;
+            // 
+            // textbNumero
+            // 
+            this.textbNumero.BackColor = System.Drawing.Color.Transparent;
+            this.textbNumero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textbNumero.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textbNumero.ForeColors = System.Drawing.Color.Black;
+            this.textbNumero.HintText = null;
+            this.textbNumero.IsPassword = false;
+            this.textbNumero.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.textbNumero.LineThickness = 2;
+            this.textbNumero.Location = new System.Drawing.Point(349, 113);
+            this.textbNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textbNumero.MaxLength = 32767;
+            this.textbNumero.Name = "textbNumero";
+            this.textbNumero.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.textbNumero.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.textbNumero.ReadOnly = false;
+            this.textbNumero.Size = new System.Drawing.Size(244, 23);
+            this.textbNumero.TabIndex = 20;
+            this.textbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textbNumero.TextName = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(227, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 23);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Número:";
+            // 
+            // TextbCalle
+            // 
+            this.TextbCalle.BackColor = System.Drawing.Color.Transparent;
+            this.TextbCalle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextbCalle.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextbCalle.ForeColors = System.Drawing.Color.Black;
+            this.TextbCalle.HintText = null;
+            this.TextbCalle.IsPassword = false;
+            this.TextbCalle.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.TextbCalle.LineThickness = 2;
+            this.TextbCalle.Location = new System.Drawing.Point(349, 69);
+            this.TextbCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextbCalle.MaxLength = 32767;
+            this.TextbCalle.Name = "TextbCalle";
+            this.TextbCalle.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.TextbCalle.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.TextbCalle.ReadOnly = false;
+            this.TextbCalle.Size = new System.Drawing.Size(244, 23);
+            this.TextbCalle.TabIndex = 18;
+            this.TextbCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextbCalle.TextName = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(253, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 23);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Calle:";
+            // 
+            // textbSucursal
+            // 
+            this.textbSucursal.BackColor = System.Drawing.Color.Transparent;
+            this.textbSucursal.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textbSucursal.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.textbSucursal.ForeColors = System.Drawing.Color.Black;
+            this.textbSucursal.HintText = null;
+            this.textbSucursal.IsPassword = false;
+            this.textbSucursal.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.textbSucursal.LineThickness = 2;
+            this.textbSucursal.Location = new System.Drawing.Point(349, 28);
+            this.textbSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textbSucursal.MaxLength = 32767;
+            this.textbSucursal.Name = "textbSucursal";
+            this.textbSucursal.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.textbSucursal.OnFocusedTextColor = System.Drawing.Color.Black;
+            this.textbSucursal.ReadOnly = false;
+            this.textbSucursal.Size = new System.Drawing.Size(244, 23);
+            this.textbSucursal.TabIndex = 16;
+            this.textbSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.textbSucursal.TextName = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(225, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 23);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Sucursal:";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.BorderColor = System.Drawing.Color.Green;
+            this.btnLimpiar.BorderRadius = 20;
+            this.btnLimpiar.BorderSize = 1;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnLimpiar.Location = new System.Drawing.Point(297, 170);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(104, 37);
+            this.btnLimpiar.TabIndex = 15;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextColor = System.Drawing.Color.Black;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.BorderColor = System.Drawing.Color.Green;
+            this.btnConsultar.BorderRadius = 20;
+            this.btnConsultar.BorderSize = 1;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.Black;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnConsultar.Location = new System.Drawing.Point(477, 170);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(104, 37);
+            this.btnConsultar.TabIndex = 14;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextColor = System.Drawing.Color.Black;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnActualizar);
+            this.groupBox2.Controls.Add(this.dgvFarmacias);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(23, 241);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(906, 282);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Resultados";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(773, 127);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(104, 37);
+            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // dgvFarmacias
+            // 
+            this.dgvFarmacias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.dgvFarmacias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFarmacias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Sucursal,
+            this.Calle,
+            this.Número,
+            this.Barrio});
+            this.dgvFarmacias.Location = new System.Drawing.Point(6, 39);
+            this.dgvFarmacias.Name = "dgvFarmacias";
+            this.dgvFarmacias.Size = new System.Drawing.Size(743, 243);
+            this.dgvFarmacias.TabIndex = 13;
+            this.dgvFarmacias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFarmacias_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // Sucursal
+            // 
+            this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.Name = "Sucursal";
+            this.Sucursal.Width = 200;
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.Width = 200;
+            // 
+            // Número
+            // 
+            this.Número.HeaderText = "Número";
+            this.Número.Name = "Número";
+            // 
+            // Barrio
+            // 
+            this.Barrio.HeaderText = "Barrio";
+            this.Barrio.Name = "Barrio";
+            this.Barrio.Width = 150;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Gray;
+            this.btnEditar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnEditar.BackgroundImage = global::FarmaTown.Properties.Resources.Editor;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEditar.BorderColor = System.Drawing.Color.Green;
+            this.btnEditar.BorderRadius = 20;
+            this.btnEditar.BorderSize = 1;
+            this.btnEditar.Enabled = false;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnEditar.Location = new System.Drawing.Point(128, 529);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(58, 49);
+            this.btnEditar.TabIndex = 20;
+            this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackgroundImage = global::FarmaTown.Properties.Resources.trash;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.BorderColor = System.Drawing.Color.Green;
+            this.btnEliminar.BorderRadius = 20;
+            this.btnEliminar.BorderSize = 1;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(237, 529);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(57, 49);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregar.BorderColor = System.Drawing.Color.Green;
+            this.btnAgregar.BorderRadius = 20;
+            this.btnAgregar.BorderSize = 1;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.Location = new System.Drawing.Point(27, 529);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(56, 49);
+            this.btnAgregar.TabIndex = 18;
+            this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
+            this.lblAviso.Location = new System.Drawing.Point(346, 551);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(312, 22);
+            this.lblAviso.TabIndex = 23;
+            this.lblAviso.Text = "Debe elegir una farmacia primero";
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundImage = global::FarmaTown.Properties.Resources.logout;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.BorderColor = System.Drawing.Color.Green;
+            this.btnSalir.BorderRadius = 20;
+            this.btnSalir.BorderSize = 1;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(876, 538);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(53, 49);
+            this.btnSalir.TabIndex = 24;
+            this.btnSalir.TextColor = System.Drawing.Color.White;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // frmFarmacias
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(953, 599);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "frmFarmacias";
+            this.Text = "FarmaTown - Gestion de Farmacias";
+            this.Load += new System.EventHandler(this.frmFarmacias_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvFarmacias;
+        private CustomControls.RJControls.RJButton btnEditar;
+        private CustomControls.RJControls.RJButton btnEliminar;
+        private CustomControls.RJControls.RJButton btnAgregar;
+        private System.Windows.Forms.Label lblAviso;
+        private CustomControls.RJControls.RJButton btnSalir;
+        private CustomControls.RJControls.RJButton btnLimpiar;
+        private CustomControls.RJControls.RJButton btnConsultar;
+        private JMaterialTextbox.JMaterialTextbox textbSucursal;
+        private System.Windows.Forms.Label label1;
+        private JMaterialTextbox.JMaterialTextbox TextbCalle;
+        private System.Windows.Forms.Label label2;
+        private JMaterialTextbox.JMaterialTextbox textbNumero;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cbBorrados;
+        private CustomControls.RJControls.RJButton btnActualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Número;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barrio;
+    }
+}
