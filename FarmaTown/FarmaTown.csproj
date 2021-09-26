@@ -79,16 +79,16 @@
     <Compile Include="Logica\TipoDocumento.cs" />
     <Compile Include="Logica\TipoMedicamento.cs" />
     <Compile Include="Logica\Venta.cs" />
-    <Compile Include="Presentacion\Barrios\frmABMBarrios.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmABMBarrios.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.Designer.cs">
       <DependentUpon>frmABMBarrios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmBarrios.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Barrios\frmBarrios.Designer.cs">
+    <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.Designer.cs">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
@@ -172,10 +172,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentacion\Barrios\frmABMBarrios.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.resx">
       <DependentUpon>frmABMBarrios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Barrios\frmBarrios.resx">
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmBarrios.resx">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.resx">
