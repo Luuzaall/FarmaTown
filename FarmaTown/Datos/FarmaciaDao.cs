@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaTown.Logica;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -56,6 +57,40 @@ namespace FarmaTown.Datos
             }
 
             return DBHelper.getDBHelper().consultaSQL(query);
+        }
+
+        public Farmacia traerFarmacia(int id)
+        {
+            string query = "SELECT f.idFarmacia" +
+                ", f.nombre as nomFarmacia" +
+                ", f.calle" +
+                ", f.numero" +
+                ", b.id as idBarrio" +
+                " FROM Farmacias f" +
+                " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                "WHERE f.idFarmacia = " + id +
+                "AND Borrado = 0;";
+
+            DataTable tablaFarmacias = DBHelper.getDBHelper().consultaSQL(query);
+
+            return this.objectMapping(tablaFarmacias.Rows[0]);
+        }
+
+        private Farmacia objectMapping(DataRow row)
+        {
+            Farmacia oFarmacia = new Farmacia
+            {
+                IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
+                Nombre = row["nomFarmacia"].ToString(),
+                Calle = row["calle"].ToString(),
+                Numero = Convert.ToInt32(row["numero"].ToString()),
+                Barrio = new Barrio
+                {
+                    IdBarrio = Convert.ToInt32(row["idBarrio"].ToString())
+                }
+            };
+
+            return oFarmacia;
         }
     }
 }

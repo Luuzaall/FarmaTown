@@ -62,6 +62,7 @@
     <Compile Include="Datos\EmpleadoDao.cs" />
     <Compile Include="Datos\FarmaciaDao.cs" />
     <Compile Include="Datos\ObraSocialDao.cs" />
+    <Compile Include="Datos\BarrioDao.cs" />
     <Compile Include="Datos\RolDao.cs" />
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
@@ -107,6 +108,18 @@
     </Compile>
     <Compile Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Farmacias\frmABMFarmacias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Farmacias\frmABMFarmacias.Designer.cs">
+      <DependentUpon>frmABMFarmacias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Farmacias\frmFarmacias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Farmacias\frmFarmacias.Designer.cs">
+      <DependentUpon>frmFarmacias.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.cs">
       <SubType>Form</SubType>
@@ -170,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Farmacias\frmABMFarmacias.resx">
+      <DependentUpon>frmABMFarmacias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Farmacias\frmFarmacias.resx">
+      <DependentUpon>frmFarmacias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.resx">
       <DependentUpon>frmABMLocalidades.cs</DependentUpon>
