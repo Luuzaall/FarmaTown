@@ -40,13 +40,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.label1 = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
-            this.dgvObrasSociales = new System.Windows.Forms.DataGridView();
+            this.dgvBarrios = new System.Windows.Forms.DataGridView();
             this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -205,7 +205,7 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
             this.gbResultados.Controls.Add(this.btnActualizar);
-            this.gbResultados.Controls.Add(this.dgvObrasSociales);
+            this.gbResultados.Controls.Add(this.dgvBarrios);
             this.gbResultados.Location = new System.Drawing.Point(12, 224);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(622, 268);
@@ -237,27 +237,27 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // dgvObrasSociales
+            // dgvBarrios
             // 
-            this.dgvObrasSociales.AllowUserToAddRows = false;
-            this.dgvObrasSociales.AllowUserToDeleteRows = false;
-            this.dgvObrasSociales.AllowUserToResizeColumns = false;
-            this.dgvObrasSociales.AllowUserToResizeRows = false;
-            this.dgvObrasSociales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.dgvObrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObrasSociales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBarrios.AllowUserToAddRows = false;
+            this.dgvBarrios.AllowUserToDeleteRows = false;
+            this.dgvBarrios.AllowUserToResizeColumns = false;
+            this.dgvBarrios.AllowUserToResizeRows = false;
+            this.dgvBarrios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.dgvBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idOOSS,
             this.nomOOSS});
-            this.dgvObrasSociales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvObrasSociales.Location = new System.Drawing.Point(22, 33);
-            this.dgvObrasSociales.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.dgvObrasSociales.MultiSelect = false;
-            this.dgvObrasSociales.Name = "dgvObrasSociales";
-            this.dgvObrasSociales.ReadOnly = true;
-            this.dgvObrasSociales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObrasSociales.Size = new System.Drawing.Size(480, 218);
-            this.dgvObrasSociales.TabIndex = 29;
-            this.dgvObrasSociales.TabStop = false;
+            this.dgvBarrios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.dgvBarrios.Location = new System.Drawing.Point(22, 33);
+            this.dgvBarrios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.dgvBarrios.MultiSelect = false;
+            this.dgvBarrios.Name = "dgvBarrios";
+            this.dgvBarrios.ReadOnly = true;
+            this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBarrios.Size = new System.Drawing.Size(480, 218);
+            this.dgvBarrios.TabIndex = 29;
+            this.dgvBarrios.TabStop = false;
             // 
             // idOOSS
             // 
@@ -321,7 +321,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,7 +338,7 @@ namespace FarmaTown.Presentacion.Localidades
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbResultados;
         private CustomControls.RJControls.RJButton btnActualizar;
-        private System.Windows.Forms.DataGridView dgvObrasSociales;
+        private System.Windows.Forms.DataGridView dgvBarrios;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOOSS;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomOOSS;
         private CustomControls.RJControls.RJButton rjButton1;
