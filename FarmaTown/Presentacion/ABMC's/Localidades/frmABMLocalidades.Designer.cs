@@ -62,6 +62,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -87,6 +88,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnLimpiar
             // 
@@ -113,6 +115,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblNomOS
             // 
@@ -156,6 +159,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.Name = "frmABMLocalidades";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMLocalidades_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
