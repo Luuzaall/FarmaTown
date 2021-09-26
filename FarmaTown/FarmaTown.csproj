@@ -248,6 +248,7 @@
     <None Include="Resources\undraw_Location_tracking_re_n3ok.png" />
     <None Include="Resources\undraw_city_life_gnpr.png" />
     <None Include="Presentacion\Imagenes\ABMOOSS.png" />
+    <None Include="Presentacion\Imagenes\add-location.png" />
     <Content Include="Presentacion\Imagenes\addDocument.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />

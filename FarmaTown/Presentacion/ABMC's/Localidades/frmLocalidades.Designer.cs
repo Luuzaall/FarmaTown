@@ -214,7 +214,7 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.add_location;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregar.BorderColor = System.Drawing.Color.Green;
             this.btnAgregar.BorderRadius = 20;
@@ -315,7 +315,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.MaximizeBox = false;
             this.Name = "frmLocalidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión Localidades - FarmaTown";
+            this.Text = "Gestión de Localidades - FarmaTown";
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);

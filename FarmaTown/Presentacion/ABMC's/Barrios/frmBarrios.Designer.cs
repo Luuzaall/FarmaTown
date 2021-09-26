@@ -33,7 +33,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
-            this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
@@ -44,6 +43,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvObrasSociales = new System.Windows.Forms.DataGridView();
             this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
@@ -86,7 +86,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(104, 498);
+            this.btnEditar.Location = new System.Drawing.Point(121, 498);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 40;
@@ -114,28 +114,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEliminar.TabIndex = 41;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregar.BorderColor = System.Drawing.Color.Green;
-            this.btnAgregar.BorderRadius = 20;
-            this.btnAgregar.BorderSize = 1;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 500);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(57, 49);
-            this.btnAgregar.TabIndex = 39;
-            this.btnAgregar.TextColor = System.Drawing.Color.White;
-            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // gbFiltros
             // 
@@ -295,6 +273,28 @@ namespace FarmaTown.Presentacion.Localidades
             this.nomOOSS.ReadOnly = true;
             this.nomOOSS.Width = 250;
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.rjButton1.BackgroundImage = global::FarmaTown.Properties.Resources.add_location;
+            this.rjButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rjButton1.BorderColor = System.Drawing.Color.Green;
+            this.rjButton1.BorderRadius = 20;
+            this.rjButton1.BorderSize = 1;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.rjButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton1.Location = new System.Drawing.Point(34, 498);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(57, 49);
+            this.rjButton1.TabIndex = 44;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
             // frmBarrios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -303,10 +303,10 @@ namespace FarmaTown.Presentacion.Localidades
             this.BackgroundImage = global::FarmaTown.Properties.Resources.barrios;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(684, 561);
+            this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.gbResultados);
             this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -317,7 +317,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.Name = "frmBarrios";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión Barrios - Farmatown";
+            this.Text = "Gestión de Barrios - Farmatown";
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);
@@ -331,7 +331,6 @@ namespace FarmaTown.Presentacion.Localidades
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
-        private CustomControls.RJControls.RJButton btnAgregar;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.TextBox txtbNombre;
         private CustomControls.RJControls.RJButton btnConsultar;
@@ -342,5 +341,6 @@ namespace FarmaTown.Presentacion.Localidades
         private System.Windows.Forms.DataGridView dgvObrasSociales;
         private System.Windows.Forms.DataGridViewTextBoxColumn idOOSS;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomOOSS;
+        private CustomControls.RJControls.RJButton rjButton1;
     }
 }
