@@ -46,8 +46,8 @@ namespace FarmaTown.Presentacion.Empleados
                 DataTable resultadosEmpleados;
                 int idTipoDoc;
                 string nroDoc = "";
-                string nomEmpl = this.txtbNombre.TextName;
-                string nomFarm = this.txtbFarmacia.TextName;
+                string nomEmpl = this.txtbNombre.Text;
+                string nomFarm = this.txtbFarmacia.Text;
                 
                 if (this.cboTipoDoc.SelectedIndex == -1)
                 {
@@ -78,9 +78,9 @@ namespace FarmaTown.Presentacion.Empleados
             /*
              * Permite al usuario limpiar sus selecciones si desea.
              */
-            this.txtbNombre.TextName = "";
+            this.txtbNombre.Text = "";
             this.txtbNroDoc.Text = "";
-            this.txtbFarmacia.TextName = "";
+            this.txtbFarmacia.Text = "";
             this.cboTipoDoc.SelectedIndex = -1;
             this.deshabilitarTextBox();
         }
@@ -111,7 +111,6 @@ namespace FarmaTown.Presentacion.Empleados
         {
             frmABMEmpl = new frmABMEmpleados();
             frmABMEmpl.ShowDialog();
-            this.actualizar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -121,7 +120,6 @@ namespace FarmaTown.Presentacion.Empleados
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
             frmABMEmpl.ShowDialog();
-            this.actualizar();
 
         }
 
@@ -132,7 +130,6 @@ namespace FarmaTown.Presentacion.Empleados
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.delete, oEmpleado);
             frmABMEmpl.ShowDialog();
-            this.actualizar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -202,6 +199,10 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.btnConsultar.PerformClick();
+                }
             }
         }
 
@@ -225,6 +226,10 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.btnConsultar.PerformClick();
+                }
             }
         }
 
@@ -247,9 +252,20 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.btnConsultar.PerformClick();
+                }
             }
         }
 
+        private void txtbFiltros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.btnConsultar.PerformClick();
+            }
+        }
 
 
         //---------------------------------------------------------------------
@@ -286,9 +302,9 @@ namespace FarmaTown.Presentacion.Empleados
 
         private bool validarCampos()
         {
-            string nom = this.txtbNombre.TextName;
+            string nom = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
-            string nomFarmacia = this.txtbFarmacia.TextName;
+            string nomFarmacia = this.txtbFarmacia.Text;
             bool tieneLetrasNroDoc = nroDoc.Any(x => !char.IsLetter(x));
 
             if (string.IsNullOrEmpty(nom)
@@ -338,5 +354,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.Visible = false;
             this.lblAvisoNroDoc.Text = "";
         }
+
     }
 }

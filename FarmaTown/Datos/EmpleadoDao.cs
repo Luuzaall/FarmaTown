@@ -126,7 +126,7 @@ namespace FarmaTown.Datos
             string query = "INSERT INTO Empleados" +
                 "(nroDoc, tipoDoc, idFarmacia, nombre, borrado)" +
                 "VALUES " +
-                "(" + oEmpleado.NroDoc + 
+                "('" + oEmpleado.NroDoc + "'" + 
                 ", " + oEmpleado.TipoDoc.IdTipo + 
                 ", " + oEmpleado.Farmacia.IdFarmacia +
                 ", '" + oEmpleado.Nombre + "'" +
@@ -139,7 +139,7 @@ namespace FarmaTown.Datos
         public int actualizarEmpleado(Empleado oEmpleado)
         {
             string query = "UPDATE Empleados" +
-                " SET nroDoc = " + oEmpleado.NroDoc +
+                " SET nroDoc = '" + oEmpleado.NroDoc + "'" + 
                 ", tipoDoc = " + oEmpleado.TipoDoc.IdTipo +
                 ", idFarmacia = " + oEmpleado.Farmacia.IdFarmacia +
                 ", nombre = '" + oEmpleado.Nombre + "'"  +

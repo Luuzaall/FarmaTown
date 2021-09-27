@@ -66,8 +66,6 @@ namespace FarmaTown.Datos
 
             DataRow fila = tabla.Rows[0];
             return this.objectMapping(fila);
-
-
         }
 
         public ObraSocial traer(string nombre)

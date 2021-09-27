@@ -134,15 +134,15 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void mostrarBarrios()
         {
-            DataTable tablaBarrios = oBarrio.recuperarTodos();
+            //DataTable tablaBarrios = oBarrio.recuperarTodos(false);
 
-            if (tablaBarrios.Rows.Count > 0)
-            {
-                this.cargarGrilla(this.dgvBarrios, tablaBarrios);
-                this.dgvBarrios.ClearSelection();
-            }
-            else
-                this.dgvBarrios.Rows.Add("No se encontraron empleados...");
+            //if (tablaBarrios.Rows.Count > 0)
+            //{
+            //    this.cargarGrilla(this.dgvBarrios, tablaBarrios);
+            //    this.dgvBarrios.ClearSelection();
+            //}
+            //else
+            //    this.dgvBarrios.Rows.Add("No se encontraron empleados...");
         }
 
         private void cargarGrilla(DataGridView dgv, DataTable table)

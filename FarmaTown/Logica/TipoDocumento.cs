@@ -13,7 +13,7 @@ namespace FarmaTown.Logica
         TipoDocDao oTipoDocDao;
         public int IdTipo { get; set; }
         public string Nombre { get; set; }
-        public bool Borrado { get; set; }
+        public string Descripcion { get; set; }
 
         public TipoDocumento()
         {
@@ -25,5 +25,14 @@ namespace FarmaTown.Logica
             return oTipoDocDao.recuperarTodos();
         }
 
+        public List<TipoDocumento> recuperarCParam(string nombre, string palabraClave)
+        {
+            return this.oTipoDocDao.recuperarCParam(nombre, palabraClave);
+        }
+
+        public TipoDocumento traerTipoDOc(int idTipo)
+        {
+            return this.oTipoDocDao.traer(idTipo);
+        }
     }
 }

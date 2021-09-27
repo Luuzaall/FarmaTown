@@ -334,9 +334,11 @@ namespace FarmaTown.Presentacion.Empleados
             {
                 this.txtbPasaporteLetras.Visible = true;
                 this.txtbPasaporteLetras.Enabled = true;
+                this.txtbPasaporteNro.Visible = true;
+                this.txtbPasaporteNro.Enabled = true;
 
-                this.txtbPasaporteLetras.Text = this.oEmpleado.NroDoc.ToString().Substring(4);
-                this.txtbPasaporteNro.Text = this.oEmpleado.NroDoc.ToString().Substring(0, 3);
+                this.txtbPasaporteLetras.Text = this.oEmpleado.NroDoc.ToString().Substring(0, 3);
+                this.txtbPasaporteNro.Text = this.oEmpleado.NroDoc.ToString().Substring(3);
             }
             else
             {
@@ -400,20 +402,13 @@ namespace FarmaTown.Presentacion.Empleados
             string nroDoc = this.txtbNroDoc.Text;
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
 
-            if (string.IsNullOrEmpty(nombre))
+            if (string.IsNullOrEmpty(nombre)
+                || nombre == " ")
             {
                 MessageBox.Show("Debe ingresar un nombre",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
-            }
-            else if (string.IsNullOrEmpty(nroDoc))
-            {
-
-                MessageBox.Show("Debe ingresar un numero de documento",
-                "Validación de Datos", MessageBoxButtons.OK
-                , MessageBoxIcon.Information);
-                this.cboTipoDoc.Focus();
             }
             else if (indexCboTipoDoc == -1)
             {
@@ -422,8 +417,18 @@ namespace FarmaTown.Presentacion.Empleados
                 , MessageBoxIcon.Information);
                 this.txtbNroDoc.Focus();
             }
-            else if ((nroDoc.Length < 8 || nroDoc.Length > 8) 
-                        & ((int)this.cboTipoDoc.SelectedValue) == 1)
+            else if ( (int)this.cboTipoDoc.SelectedValue == 2
+                && ( string.IsNullOrEmpty(this.txtbPasaporteLetras.Text)
+                     || string.IsNullOrEmpty(this.txtbPasaporteNro.Text)) )
+            {
+                MessageBox.Show("Debe completar el número de pasaporte!",
+                       "Validación de Datos", MessageBoxButtons.OK
+                       , MessageBoxIcon.Information);
+                 this.txtbPasaporteLetras.Focus();
+                 this.txtbPasaporteNro.Focus();
+            }
+            else if ((int)this.cboTipoDoc.SelectedValue == 1
+                && string.IsNullOrEmpty(nroDoc) )
             { 
                 MessageBox.Show("Debe ingresar un número de documento válido!",
                        "Validación de Datos", MessageBoxButtons.OK
@@ -478,7 +483,7 @@ namespace FarmaTown.Presentacion.Empleados
             int idTipo = oEmpleado.TipoDoc.IdTipo = (int)this.cboTipoDoc.SelectedValue;
             if (idTipo == 2)
             {
-                string letrasPasap = this.txtbPasaporteLetras.Text;
+                string letrasPasap = this.txtbPasaporteLetras.Text.ToUpper();
                 string nroPasap = this.txtbPasaporteNro.Text;
                 oEmpleado.NroDoc = letrasPasap + nroPasap;
             }
@@ -486,7 +491,7 @@ namespace FarmaTown.Presentacion.Empleados
                 oEmpleado.NroDoc = nroDoc;
 
             oEmpleado.Farmacia = new Farmacia();
-            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
+            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
 
             return oEmpleado;
         }

@@ -94,7 +94,12 @@ namespace FarmaTown.Presentacion.ObrasSociales
 
         private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            if (e.KeyChar == ((char)Keys.Enter))
+            {
+                this.btnAceptar.PerformClick();
+
+            }
+            else if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
