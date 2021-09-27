@@ -78,25 +78,15 @@ namespace FarmaTown.Presentacion.Localidades
             }
 
         }
-        //private void txtbLocalidad_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (char.IsDigit((char)e.KeyCode))
-        //    {
-        //        e.SuppressKeyPress = true;
-        //    }
-        //
-        //}
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
-            //this.txtbLocalidad.Text = "";
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             string nombre = this.txtbNombre.Text;
-            //string localidad = this.txtbLocalidad.Text;
 
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")

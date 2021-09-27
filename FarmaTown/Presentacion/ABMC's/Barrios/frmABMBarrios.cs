@@ -15,10 +15,12 @@ namespace FarmaTown.Presentacion.Localidades
     {
         private FormMode formMode = FormMode.insert;
         Barrio oBarrio;
+        //Localidad oLocalidad;
         public frmABMBarrios()
         {
             InitializeComponent();
             oBarrio = new Barrio();
+            //oLocalidad = new Localidad();
         }
         public enum FormMode
         {
@@ -39,6 +41,7 @@ namespace FarmaTown.Presentacion.Localidades
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
+            //string localidad = this.txtbLocalidad.Text;
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
             {
@@ -48,6 +51,15 @@ namespace FarmaTown.Presentacion.Localidades
                 this.txtbNombre.Focus();
                 return false;
             }
+            //else if (string.IsNullOrEmpty(localidad)
+            //    || localidad == " ")
+            //{
+            //    MessageBox.Show("Debe ingresar una localidad",
+            //        "Validación de Datos", MessageBoxButtons.OK
+            //        , MessageBoxIcon.Information);
+            //    this.txtbLocalidad.Focus();
+            //    return false;
+            //}
             return true;
         }
 
@@ -61,6 +73,18 @@ namespace FarmaTown.Presentacion.Localidades
             else
                 return true;
         }
+
+        //private bool existeLocalidad(string localidad)
+        //{
+        //    Barrio resultado = this.oLocalidad.traerLocalidad(localidad);
+        //    if (resultado is null)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //        return true;
+        //}
+
 
         //MÉTODOS DE RESPUESTA A EVENTOS
 
@@ -99,9 +123,18 @@ namespace FarmaTown.Presentacion.Localidades
             }
         }
 
+        //private void txtbLocalidad_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (char.IsDigit(e.KeyChar))
+        //    {
+        //        e.Handled = true;
+        //    }
+        //}
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
+            //this.txtbLocalidad.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -30,6 +30,7 @@ namespace FarmaTown.Datos
                 " FROM Barrios" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                 " WHERE nombre LIKE '%" + nombre + "%'";
+                //" WHERE localidad LIKE '%" + localidad + "%'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
