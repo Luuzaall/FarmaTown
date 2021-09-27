@@ -31,16 +31,16 @@ namespace FarmaTown.Presentacion.Empleados
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.txtbFarmacia = new System.Windows.Forms.TextBox();
+            this.txtbNombre = new System.Windows.Forms.TextBox();
             this.txtbPasaporteLetras = new System.Windows.Forms.TextBox();
             this.txtbPasaporteNro = new System.Windows.Forms.TextBox();
             this.lblAvisoNroDoc = new System.Windows.Forms.Label();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
-            this.txtbFarmacia = new JMaterialTextbox.JMaterialTextbox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNomEmp = new System.Windows.Forms.Label();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,16 +67,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFiltros.BackColor = System.Drawing.Color.White;
             this.gbFiltros.BackgroundImage = global::FarmaTown.Properties.Resources.coworkers;
             this.gbFiltros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.gbFiltros.Controls.Add(this.txtbFarmacia);
+            this.gbFiltros.Controls.Add(this.txtbNombre);
             this.gbFiltros.Controls.Add(this.txtbPasaporteLetras);
             this.gbFiltros.Controls.Add(this.txtbPasaporteNro);
             this.gbFiltros.Controls.Add(this.lblAvisoNroDoc);
             this.gbFiltros.Controls.Add(this.txtbNroDoc);
-            this.gbFiltros.Controls.Add(this.txtbFarmacia);
             this.gbFiltros.Controls.Add(this.label5);
             this.gbFiltros.Controls.Add(this.label3);
             this.gbFiltros.Controls.Add(this.btnLimpiar);
-            this.gbFiltros.Controls.Add(this.txtbNombre);
-            this.gbFiltros.Controls.Add(this.label1);
+            this.gbFiltros.Controls.Add(this.lblNomEmp);
             this.gbFiltros.Controls.Add(this.btnConsultar);
             this.gbFiltros.Controls.Add(this.cboTipoDoc);
             this.gbFiltros.Controls.Add(this.label2);
@@ -88,15 +88,37 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
+            // txtbFarmacia
+            // 
+            this.txtbFarmacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbFarmacia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbFarmacia.Location = new System.Drawing.Point(779, 60);
+            this.txtbFarmacia.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbFarmacia.Name = "txtbFarmacia";
+            this.txtbFarmacia.Size = new System.Drawing.Size(243, 25);
+            this.txtbFarmacia.TabIndex = 34;
+            this.txtbFarmacia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
+            // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNombre.Location = new System.Drawing.Point(268, 58);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.Size = new System.Drawing.Size(243, 25);
+            this.txtbNombre.TabIndex = 33;
+            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
+            // 
             // txtbPasaporteLetras
             // 
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteLetras.Enabled = false;
-            this.txtbPasaporteLetras.Location = new System.Drawing.Point(789, 116);
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(779, 116);
             this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
-            this.txtbPasaporteLetras.Size = new System.Drawing.Size(75, 25);
+            this.txtbPasaporteLetras.Size = new System.Drawing.Size(85, 25);
             this.txtbPasaporteLetras.TabIndex = 32;
             this.txtbPasaporteLetras.Visible = false;
             this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteLetras_KeyDown);
@@ -129,35 +151,13 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
-            this.txtbNroDoc.Location = new System.Drawing.Point(789, 116);
+            this.txtbNroDoc.Location = new System.Drawing.Point(779, 116);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.Name = "txtbNroDoc";
-            this.txtbNroDoc.Size = new System.Drawing.Size(228, 25);
+            this.txtbNroDoc.Size = new System.Drawing.Size(238, 25);
             this.txtbNroDoc.TabIndex = 2;
             this.txtbNroDoc.Visible = false;
             this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNroDoc_KeyDown);
-            // 
-            // txtbFarmacia
-            // 
-            this.txtbFarmacia.BackColor = System.Drawing.Color.Transparent;
-            this.txtbFarmacia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbFarmacia.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbFarmacia.ForeColors = System.Drawing.Color.Black;
-            this.txtbFarmacia.HintText = null;
-            this.txtbFarmacia.IsPassword = false;
-            this.txtbFarmacia.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbFarmacia.LineThickness = 2;
-            this.txtbFarmacia.Location = new System.Drawing.Point(779, 60);
-            this.txtbFarmacia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtbFarmacia.MaxLength = 32767;
-            this.txtbFarmacia.Name = "txtbFarmacia";
-            this.txtbFarmacia.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbFarmacia.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbFarmacia.ReadOnly = false;
-            this.txtbFarmacia.Size = new System.Drawing.Size(238, 23);
-            this.txtbFarmacia.TabIndex = 3;
-            this.txtbFarmacia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbFarmacia.TextName = "";
             // 
             // label5
             // 
@@ -206,38 +206,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtbNombre
+            // lblNomEmp
             // 
-            this.txtbNombre.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbNombre.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtbNombre.ForeColors = System.Drawing.Color.Black;
-            this.txtbNombre.HintText = null;
-            this.txtbNombre.IsPassword = false;
-            this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNombre.LineThickness = 2;
-            this.txtbNombre.Location = new System.Drawing.Point(268, 60);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtbNombre.MaxLength = 32767;
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNombre.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNombre.ReadOnly = false;
-            this.txtbNombre.Size = new System.Drawing.Size(243, 23);
-            this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNombre.TextName = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 23);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Nombre:";
+            this.lblNomEmp.AutoSize = true;
+            this.lblNomEmp.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomEmp.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomEmp.Location = new System.Drawing.Point(136, 60);
+            this.lblNomEmp.Name = "lblNomEmp";
+            this.lblNomEmp.Size = new System.Drawing.Size(95, 23);
+            this.lblNomEmp.TabIndex = 11;
+            this.lblNomEmp.Text = "Nombre:";
             // 
             // btnConsultar
             // 
@@ -272,6 +250,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.cboTipoDoc.Size = new System.Drawing.Size(243, 31);
             this.cboTipoDoc.TabIndex = 4;
             this.cboTipoDoc.DropDownClosed += new System.EventHandler(this.cboTipoDoc_DropDownClosed);
+            this.cboTipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
             // 
             // label2
             // 
@@ -524,12 +503,10 @@ namespace FarmaTown.Presentacion.Empleados
         #endregion
 
         private System.Windows.Forms.GroupBox gbFiltros;
-        private JMaterialTextbox.JMaterialTextbox txtbFarmacia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private CustomControls.RJControls.RJButton btnLimpiar;
-        private JMaterialTextbox.JMaterialTextbox txtbNombre;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNomEmp;
         private CustomControls.RJControls.RJButton btnConsultar;
         private System.Windows.Forms.ComboBox cboTipoDoc;
         private System.Windows.Forms.Label label2;
@@ -550,5 +527,7 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.Label lblAvisoNroDoc;
         private System.Windows.Forms.TextBox txtbPasaporteLetras;
         private System.Windows.Forms.TextBox txtbPasaporteNro;
+        private System.Windows.Forms.TextBox txtbFarmacia;
+        private System.Windows.Forms.TextBox txtbNombre;
     }
 }

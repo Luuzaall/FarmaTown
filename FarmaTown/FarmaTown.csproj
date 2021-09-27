@@ -92,6 +92,18 @@
     <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.Designer.cs">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmABMTiposDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmABMTiposDoc.Designer.cs">
+      <DependentUpon>frmABMTiposDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmTiposDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmTiposDoc.Designer.cs">
+      <DependentUpon>frmTiposDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -203,6 +215,12 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\ObrasSociales\frmOOSS.resx">
       <DependentUpon>frmOOSS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\TiposDocumento\frmABMTiposDoc.resx">
+      <DependentUpon>frmABMTiposDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\TiposDocumento\frmTiposDoc.resx">
+      <DependentUpon>frmTiposDoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +280,8 @@
     <None Include="Presentacion\Imagenes\Empleados.png" />
     <Content Include="Presentacion\Imagenes\FondoFarmaTown.png" />
     <None Include="Presentacion\Imagenes\localidades.png" />
+    <None Include="Presentacion\Imagenes\frmTiposDoc.png" />
+    <None Include="Presentacion\Imagenes\frmABMTiposDoc.png" />
     <Content Include="Presentacion\Imagenes\logout.png" />
     <None Include="Presentacion\Imagenes\principal.png" />
     <None Include="Presentacion\Imagenes\MedicalResearch.png" />
@@ -272,5 +292,6 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

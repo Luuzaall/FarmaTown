@@ -121,23 +121,23 @@
   <data name="trash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undraw_town_r6pc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\undraw_town_r6pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="add-location" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\add-location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undraw_High_five_re_jy71" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="undraw_town_r6pc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\undraw_town_r6pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coworkers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\coworkers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undraw_Hire_re_gn5j" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Hire_re_gn5j.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undraw_small_town_rxs3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undraw_small_town_rxs3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addPerson" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\addPerson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +163,9 @@
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="frmTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\frmTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\delete(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +186,9 @@
   </data>
   <data name="undraw_town_r6pc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_town_r6pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undraw_High_five_re_jy71" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +211,7 @@
   <data name="undraw_Location_tracking_re_n3ok (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undraw_small_town_rxs3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\undraw_small_town_rxs3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

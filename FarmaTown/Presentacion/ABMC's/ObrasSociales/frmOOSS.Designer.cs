@@ -29,6 +29,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOOSS));
             this.label1 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
@@ -36,15 +37,16 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.btnConsultar = new CustomControls.RJControls.RJButton();
-            this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.ttipBtnABM = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -70,7 +72,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
-            this.txtbNombre.TabIndex = 12;
+            this.txtbNombre.TabIndex = 1;
             this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // dgvObrasSociales
@@ -92,7 +94,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.dgvObrasSociales.ReadOnly = true;
             this.dgvObrasSociales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSociales.Size = new System.Drawing.Size(480, 218);
-            this.dgvObrasSociales.TabIndex = 29;
+            this.dgvObrasSociales.TabIndex = 4;
             this.dgvObrasSociales.TabStop = false;
             this.dgvObrasSociales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObrasSociales_CellClick);
             // 
@@ -122,6 +124,31 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
+            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
@@ -135,6 +162,58 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros.TabIndex = 31;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.BorderColor = System.Drawing.Color.Green;
+            this.btnConsultar.BorderRadius = 20;
+            this.btnConsultar.BorderSize = 1;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.Black;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnConsultar.Location = new System.Drawing.Point(259, 109);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(125, 49);
+            this.btnConsultar.TabIndex = 2;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextColor = System.Drawing.Color.Black;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.BorderColor = System.Drawing.Color.Green;
+            this.btnLimpiar.BorderRadius = 20;
+            this.btnLimpiar.BorderSize = 1;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnLimpiar.Location = new System.Drawing.Point(448, 47);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(96, 48);
+            this.btnLimpiar.TabIndex = 3;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextColor = System.Drawing.Color.Black;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblAviso
             // 
@@ -166,8 +245,9 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnSalir.Location = new System.Drawing.Point(590, 509);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 36;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.TextColor = System.Drawing.Color.White;
+            this.ttipBtnABM.SetToolTip(this.btnSalir, "Salir");
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -189,8 +269,9 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEditar.Location = new System.Drawing.Point(118, 514);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 33;
+            this.btnEditar.TabIndex = 7;
             this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.ttipBtnABM.SetToolTip(this.btnEditar, "Modificar obra social seleccionada");
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -212,8 +293,9 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEliminar.Location = new System.Drawing.Point(215, 514);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 34;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.ttipBtnABM.SetToolTip(this.btnEliminar, "Deshabilitar obra social seleccionada");
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -235,87 +317,11 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnAgregar.Location = new System.Drawing.Point(21, 514);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
-            this.btnAgregar.TabIndex = 32;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
+            this.ttipBtnABM.SetToolTip(this.btnAgregar, "Agregar Obra Social");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultar.BorderColor = System.Drawing.Color.Green;
-            this.btnConsultar.BorderRadius = 20;
-            this.btnConsultar.BorderSize = 1;
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.Color.Black;
-            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(259, 109);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(125, 49);
-            this.btnConsultar.TabIndex = 5;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextColor = System.Drawing.Color.Black;
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpiar.BorderColor = System.Drawing.Color.Green;
-            this.btnLimpiar.BorderRadius = 20;
-            this.btnLimpiar.BorderSize = 1;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(448, 47);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(96, 48);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextColor = System.Drawing.Color.Black;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
-            this.btnActualizar.BorderRadius = 20;
-            this.btnActualizar.BorderSize = 1;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 30;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextColor = System.Drawing.Color.Black;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // frmOOSS
             // 
@@ -324,6 +330,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.ABMOOSS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(670, 575);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblAviso);
@@ -366,5 +373,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
         private CustomControls.RJControls.RJButton btnAgregar;
         private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnSalir;
+        private System.Windows.Forms.ToolTip ttipBtnABM;
     }
 }

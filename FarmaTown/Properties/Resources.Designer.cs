@@ -163,6 +163,26 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frmABMTiposDoc {
+            get {
+                object obj = ResourceManager.GetObject("frmABMTiposDoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap frmTiposDoc {
+            get {
+                object obj = ResourceManager.GetObject("frmTiposDoc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap localidades {
             get {
                 object obj = ResourceManager.GetObject("localidades", resourceCulture);
