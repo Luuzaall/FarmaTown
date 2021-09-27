@@ -242,6 +242,7 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\undraw_small_town_rxs3.png" />
     <None Include="Resources\undraw_quite_town_mg2q.png" />
     <None Include="Resources\undraw_best_place_r685.png" />
     <None Include="Resources\undraw_town_r6pc.png" />
@@ -268,6 +269,7 @@
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
     <None Include="Presentacion\Imagenes\undraw_Location_tracking_re_n3ok %281%29.png" />
     <Content Include="Presentacion\Imagenes\undraw_medical_care_movn.png" />
+    <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

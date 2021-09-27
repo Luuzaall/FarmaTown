@@ -333,9 +333,29 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undraw_small_town_rxs3 {
+            get {
+                object obj = ResourceManager.GetObject("undraw_small_town_rxs3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undraw_town_r6pc {
             get {
                 object obj = ResourceManager.GetObject("undraw_town_r6pc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undraw_town_r6pc1 {
+            get {
+                object obj = ResourceManager.GetObject("undraw_town_r6pc1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

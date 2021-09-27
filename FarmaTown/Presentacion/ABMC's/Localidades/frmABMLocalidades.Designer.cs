@@ -33,7 +33,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.lblNomOS = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.lblNomLocalidad = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -117,18 +117,18 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // lblNomOS
+            // lblNomLocalidad
             // 
-            this.lblNomOS.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomOS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNomOS.Location = new System.Drawing.Point(31, 70);
-            this.lblNomOS.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.lblNomOS.Name = "lblNomOS";
-            this.lblNomOS.Size = new System.Drawing.Size(212, 41);
-            this.lblNomOS.TabIndex = 35;
-            this.lblNomOS.TabStop = false;
-            this.lblNomOS.Text = "  Nombre:";
-            this.lblNomOS.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNomLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNomLocalidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNomLocalidad.Location = new System.Drawing.Point(31, 70);
+            this.lblNomLocalidad.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.lblNomLocalidad.Name = "lblNomLocalidad";
+            this.lblNomLocalidad.Size = new System.Drawing.Size(212, 41);
+            this.lblNomLocalidad.TabIndex = 35;
+            this.lblNomLocalidad.TabStop = false;
+            this.lblNomLocalidad.Text = "  Nombre:";
+            this.lblNomLocalidad.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // txtbNombre
             // 
@@ -149,7 +149,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.lblNomOS);
+            this.Controls.Add(this.lblNomLocalidad);
             this.Controls.Add(this.txtbNombre);
             this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -170,7 +170,7 @@ namespace FarmaTown.Presentacion.Localidades
         private CustomControls.RJControls.RJButton btnCancelar;
         private CustomControls.RJControls.RJButton btnAceptar;
         private CustomControls.RJControls.RJButton btnLimpiar;
-        private DiseñosElemGUI.TransparentLabel lblNomOS;
+        private DiseñosElemGUI.TransparentLabel lblNomLocalidad;
         private System.Windows.Forms.TextBox txtbNombre;
     }
 }
