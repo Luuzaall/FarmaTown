@@ -16,23 +16,56 @@ namespace FarmaTown.Logica
         public bool Borrado { get; set; }
 
         BarrioDao oBarrioDao;
-
         public Barrio()
         {
             oBarrioDao = new BarrioDao();
         }
-        public DataTable recuperarTodos()
-        {
-            return oBarrioDao.recuperarTodos();
-        }
-        public DataTable recuperarCParam(string nombre, string localidad)
+        public List<Barrio> recuperarCParam(string nombre, string localidad)
         {
             return this.oBarrioDao.recuperarCParam(nombre, localidad);
         }
 
+        public List<Barrio> recuperarTodos(bool esCBorrados)
+        {
+            return this.oBarrioDao.recuperarTodos(esCBorrados);
+        }
+
         public Barrio traerBarrio(int idBarrio)
         {
-            return oBarrioDao.traerBarrio(idBarrio);
+            return this.oBarrioDao.traer(idBarrio);
+        }
+
+        public Barrio traerBarrio(string nombre)
+        {
+            return this.oBarrioDao.traer(nombre);
+        }
+
+        public bool crearBarrio(Barrio nuevoBarrio)
+        {
+            return validar(this.oBarrioDao.crear(nuevoBarrio));
+
+        }
+
+        public bool actualizar(Barrio oBarrio)
+        {
+            return validar(this.oBarrioDao.actualizar(oBarrio));
+
+        }
+
+        public bool cambiarEstado(Barrio oBarrio, bool seHabilita)
+        {
+            return validar(this.oBarrioDao.cambiarEstado(oBarrio, false));
+
+        }
+
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

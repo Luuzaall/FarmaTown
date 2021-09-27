@@ -39,12 +39,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvBarrios = new System.Windows.Forms.DataGridView();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.idBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).BeginInit();
@@ -71,6 +72,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnSalir.TabIndex = 43;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
@@ -93,6 +95,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEditar.TabIndex = 40;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -115,6 +118,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEliminar.TabIndex = 41;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gbFiltros
             // 
@@ -139,6 +143,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
             this.txtbNombre.TabIndex = 12;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // btnConsultar
             // 
@@ -164,6 +169,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnLimpiar
             // 
@@ -189,6 +195,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label1
             // 
@@ -213,6 +220,51 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
+            // dgvBarrios
+            // 
+            this.dgvBarrios.AllowUserToAddRows = false;
+            this.dgvBarrios.AllowUserToDeleteRows = false;
+            this.dgvBarrios.AllowUserToResizeColumns = false;
+            this.dgvBarrios.AllowUserToResizeRows = false;
+            this.dgvBarrios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.dgvBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idBarrio,
+            this.nomBarrio,
+            this.nomLocalidad});
+            this.dgvBarrios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.dgvBarrios.Location = new System.Drawing.Point(22, 33);
+            this.dgvBarrios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.dgvBarrios.MultiSelect = false;
+            this.dgvBarrios.Name = "dgvBarrios";
+            this.dgvBarrios.ReadOnly = true;
+            this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBarrios.Size = new System.Drawing.Size(594, 218);
+            this.dgvBarrios.TabIndex = 29;
+            this.dgvBarrios.TabStop = false;
+            this.dgvBarrios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBarrios_CellClick);
+            // 
+            // idBarrio
+            // 
+            this.idBarrio.HeaderText = "ID";
+            this.idBarrio.Name = "idBarrio";
+            this.idBarrio.ReadOnly = true;
+            this.idBarrio.Width = 50;
+            // 
+            // nomBarrio
+            // 
+            this.nomBarrio.HeaderText = "Nombre";
+            this.nomBarrio.Name = "nomBarrio";
+            this.nomBarrio.ReadOnly = true;
+            this.nomBarrio.Width = 250;
+            // 
+            // nomLocalidad
+            // 
+            this.nomLocalidad.HeaderText = "Localidad";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
+            // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -236,29 +288,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // dgvBarrios
-            // 
-            this.dgvBarrios.AllowUserToAddRows = false;
-            this.dgvBarrios.AllowUserToDeleteRows = false;
-            this.dgvBarrios.AllowUserToResizeColumns = false;
-            this.dgvBarrios.AllowUserToResizeRows = false;
-            this.dgvBarrios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.dgvBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idBarrio,
-            this.nomBarrio,
-            this.nomLocalidad});
-            this.dgvBarrios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvBarrios.Location = new System.Drawing.Point(22, 33);
-            this.dgvBarrios.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.dgvBarrios.MultiSelect = false;
-            this.dgvBarrios.Name = "dgvBarrios";
-            this.dgvBarrios.ReadOnly = true;
-            this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBarrios.Size = new System.Drawing.Size(594, 218);
-            this.dgvBarrios.TabIndex = 29;
-            this.dgvBarrios.TabStop = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // rjButton1
             // 
@@ -281,27 +311,19 @@ namespace FarmaTown.Presentacion.Localidades
             this.rjButton1.TabIndex = 44;
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // idBarrio
+            // lblAviso
             // 
-            this.idBarrio.HeaderText = "ID";
-            this.idBarrio.Name = "idBarrio";
-            this.idBarrio.ReadOnly = true;
-            this.idBarrio.Width = 50;
-            // 
-            // nomBarrio
-            // 
-            this.nomBarrio.HeaderText = "Nombre";
-            this.nomBarrio.Name = "nomBarrio";
-            this.nomBarrio.ReadOnly = true;
-            this.nomBarrio.Width = 250;
-            // 
-            // nomLocalidad
-            // 
-            this.nomLocalidad.HeaderText = "Localidad";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 250;
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblAviso.Location = new System.Drawing.Point(311, 514);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(245, 22);
+            this.lblAviso.TabIndex = 45;
+            this.lblAviso.Text = "Debe elegir barrio primero";
             // 
             // frmBarrios
             // 
@@ -311,6 +333,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.BackgroundImage = global::FarmaTown.Properties.Resources.barrios;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(875, 561);
+            this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.btnSalir);
@@ -327,11 +350,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Barrios - Farmatown";
+            this.Load += new System.EventHandler(this.frmBarrios_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -352,5 +377,6 @@ namespace FarmaTown.Presentacion.Localidades
         private System.Windows.Forms.DataGridViewTextBoxColumn idBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
+        private System.Windows.Forms.Label lblAviso;
     }
 }

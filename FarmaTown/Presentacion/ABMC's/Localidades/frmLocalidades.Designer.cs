@@ -38,13 +38,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvLocalidades = new System.Windows.Forms.DataGridView();
+            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).BeginInit();
@@ -74,6 +74,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
             this.txtbNombre.TabIndex = 12;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // btnConsultar
             // 
@@ -200,6 +201,20 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades.TabStop = false;
             this.dgvLocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalidad_CellClick);
             // 
+            // idLocalidad
+            // 
+            this.idLocalidad.HeaderText = "ID";
+            this.idLocalidad.Name = "idLocalidad";
+            this.idLocalidad.ReadOnly = true;
+            this.idLocalidad.Width = 50;
+            // 
+            // nomLocalidad
+            // 
+            this.nomLocalidad.HeaderText = "Nombre";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
+            // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
@@ -303,20 +318,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // idLocalidad
-            // 
-            this.idLocalidad.HeaderText = "ID";
-            this.idLocalidad.Name = "idLocalidad";
-            this.idLocalidad.ReadOnly = true;
-            this.idLocalidad.Width = 50;
-            // 
-            // nomLocalidad
-            // 
-            this.nomLocalidad.HeaderText = "Nombre";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 250;
             // 
             // frmLocalidades
             // 
