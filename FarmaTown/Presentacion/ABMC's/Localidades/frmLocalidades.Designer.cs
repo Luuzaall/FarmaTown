@@ -32,19 +32,19 @@ namespace FarmaTown.Presentacion.Localidades
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocalidades));
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvLocalidades = new System.Windows.Forms.DataGridView();
-            this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
-            this.btnConsultar = new CustomControls.RJControls.RJButton();
-            this.btnLimpiar = new CustomControls.RJControls.RJButton();
+            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).BeginInit();
@@ -75,6 +75,58 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
             this.txtbNombre.TabIndex = 12;
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.BorderColor = System.Drawing.Color.Green;
+            this.btnConsultar.BorderRadius = 20;
+            this.btnConsultar.BorderSize = 1;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.Color.Black;
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnConsultar.Location = new System.Drawing.Point(259, 109);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(125, 49);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextColor = System.Drawing.Color.Black;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.BorderColor = System.Drawing.Color.Green;
+            this.btnLimpiar.BorderRadius = 20;
+            this.btnLimpiar.BorderSize = 1;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnLimpiar.Location = new System.Drawing.Point(448, 47);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(96, 48);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextColor = System.Drawing.Color.Black;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -100,6 +152,31 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
+            this.btnActualizar.TabIndex = 30;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // dgvLocalidades
             // 
             this.dgvLocalidades.AllowUserToAddRows = false;
@@ -109,8 +186,8 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.dgvLocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idOOSS,
-            this.nomOOSS});
+            this.idLocalidad,
+            this.nomLocalidad});
             this.dgvLocalidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.dgvLocalidades.Location = new System.Drawing.Point(22, 33);
             this.dgvLocalidades.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -122,20 +199,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades.TabIndex = 29;
             this.dgvLocalidades.TabStop = false;
             this.dgvLocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalidad_CellClick);
-            // 
-            // idOOSS
-            // 
-            this.idOOSS.HeaderText = "ID";
-            this.idOOSS.Name = "idOOSS";
-            this.idOOSS.ReadOnly = true;
-            this.idOOSS.Width = 50;
-            // 
-            // nomOOSS
-            // 
-            this.nomOOSS.HeaderText = "Nombre";
-            this.nomOOSS.Name = "nomOOSS";
-            this.nomOOSS.ReadOnly = true;
-            this.nomOOSS.Width = 250;
             // 
             // lblAviso
             // 
@@ -241,82 +304,19 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnActualizar
+            // idLocalidad
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
-            this.btnActualizar.BorderRadius = 20;
-            this.btnActualizar.BorderSize = 1;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 30;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextColor = System.Drawing.Color.Black;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.idLocalidad.HeaderText = "ID";
+            this.idLocalidad.Name = "idLocalidad";
+            this.idLocalidad.ReadOnly = true;
+            this.idLocalidad.Width = 50;
             // 
-            // btnConsultar
+            // nomLocalidad
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnConsultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultar.BorderColor = System.Drawing.Color.Green;
-            this.btnConsultar.BorderRadius = 20;
-            this.btnConsultar.BorderSize = 1;
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.Color.Black;
-            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(259, 109);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(125, 49);
-            this.btnConsultar.TabIndex = 5;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextColor = System.Drawing.Color.Black;
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnLimpiar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpiar.BorderColor = System.Drawing.Color.Green;
-            this.btnLimpiar.BorderRadius = 20;
-            this.btnLimpiar.BorderSize = 1;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(448, 47);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(96, 48);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextColor = System.Drawing.Color.Black;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.nomLocalidad.HeaderText = "Nombre";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
             // 
             // frmLocalidades
             // 
@@ -357,12 +357,12 @@ namespace FarmaTown.Presentacion.Localidades
         private System.Windows.Forms.GroupBox gbResultados;
         private CustomControls.RJControls.RJButton btnActualizar;
         private System.Windows.Forms.DataGridView dgvLocalidades;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOOSS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomOOSS;
         private CustomControls.RJControls.RJButton btnAgregar;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
     }
 }
