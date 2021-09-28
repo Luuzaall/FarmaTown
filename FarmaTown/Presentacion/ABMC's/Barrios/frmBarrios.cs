@@ -96,7 +96,7 @@ namespace FarmaTown.Presentacion.Localidades
             else
             {
                 List<Barrio> listaBarrio = new List<Barrio>();
-                //listaBarrio = this.oBarrio.recuperarCParam(nombre,localidad);
+                listaBarrio = this.oBarrio.recuperarCParam(nombre);
                 this.cargarGrilla(this.dgvBarrios, listaBarrio);
             }
 

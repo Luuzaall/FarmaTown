@@ -29,15 +29,98 @@ namespace FarmaTown.Presentacion.Localidades
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMBarrios));
+            this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.dgvLocalidades = new System.Windows.Forms.DataGridView();
+            this.lblNomLocalidad = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.lblNomBarrio = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
-            this.lblNomLocalidad = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbLocalidad = new System.Windows.Forms.TextBox();
+            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbNombre.Location = new System.Drawing.Point(159, 60);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.Size = new System.Drawing.Size(352, 25);
+            this.txtbNombre.TabIndex = 34;
+            // 
+            // dgvLocalidades
+            // 
+            this.dgvLocalidades.AllowUserToAddRows = false;
+            this.dgvLocalidades.AllowUserToDeleteRows = false;
+            this.dgvLocalidades.AllowUserToResizeColumns = false;
+            this.dgvLocalidades.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLocalidades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLocalidades.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLocalidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idLocalidad,
+            this.nomLocalidad});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLocalidades.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvLocalidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.dgvLocalidades.Location = new System.Drawing.Point(159, 118);
+            this.dgvLocalidades.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.dgvLocalidades.MultiSelect = false;
+            this.dgvLocalidades.Name = "dgvLocalidades";
+            this.dgvLocalidades.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLocalidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLocalidades.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvLocalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLocalidades.Size = new System.Drawing.Size(352, 138);
+            this.dgvLocalidades.TabIndex = 41;
+            this.dgvLocalidades.TabStop = false;
+            // 
+            // lblNomLocalidad
+            // 
+            this.lblNomLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNomLocalidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNomLocalidad.Location = new System.Drawing.Point(28, 156);
+            this.lblNomLocalidad.Name = "lblNomLocalidad";
+            this.lblNomLocalidad.Size = new System.Drawing.Size(106, 23);
+            this.lblNomLocalidad.TabIndex = 40;
+            this.lblNomLocalidad.TabStop = false;
+            this.lblNomLocalidad.Text = "Localidad:";
+            this.lblNomLocalidad.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
             // btnCancelar
             // 
@@ -56,7 +139,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(91, 205);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 46);
             this.btnCancelar.TabIndex = 38;
@@ -81,7 +164,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(281, 203);
+            this.btnAceptar.Location = new System.Drawing.Point(355, 278);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(127, 46);
             this.btnAceptar.TabIndex = 37;
@@ -107,7 +190,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(349, 94);
+            this.btnLimpiar.Location = new System.Drawing.Point(550, 118);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(101, 44);
             this.btnLimpiar.TabIndex = 36;
@@ -120,7 +203,7 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.lblNomBarrio.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNomBarrio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNomBarrio.Location = new System.Drawing.Point(12, 82);
+            this.lblNomBarrio.Location = new System.Drawing.Point(28, 60);
             this.lblNomBarrio.Name = "lblNomBarrio";
             this.lblNomBarrio.Size = new System.Drawing.Size(106, 23);
             this.lblNomBarrio.TabIndex = 35;
@@ -128,40 +211,23 @@ namespace FarmaTown.Presentacion.Localidades
             this.lblNomBarrio.Text = "  Nombre:";
             this.lblNomBarrio.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // txtbNombre
+            // idLocalidad
             // 
-            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbNombre.Location = new System.Drawing.Point(127, 82);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(197, 25);
-            this.txtbNombre.TabIndex = 34;
-            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLocalidad.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idLocalidad.HeaderText = "ID";
+            this.idLocalidad.Name = "idLocalidad";
+            this.idLocalidad.ReadOnly = true;
+            this.idLocalidad.Width = 50;
             // 
-            // lblNomLocalidad
+            // nomLocalidad
             // 
-            this.lblNomLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomLocalidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNomLocalidad.Location = new System.Drawing.Point(12, 136);
-            this.lblNomLocalidad.Name = "lblNomLocalidad";
-            this.lblNomLocalidad.Size = new System.Drawing.Size(106, 23);
-            this.lblNomLocalidad.TabIndex = 40;
-            this.lblNomLocalidad.TabStop = false;
-            this.lblNomLocalidad.Text = "Localidad:";
-            this.lblNomLocalidad.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // txtbLocalidad
-            // 
-            this.txtbLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbLocalidad.Location = new System.Drawing.Point(127, 136);
-            this.txtbLocalidad.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbLocalidad.Name = "txtbLocalidad";
-            this.txtbLocalidad.Size = new System.Drawing.Size(197, 25);
-            this.txtbLocalidad.TabIndex = 39;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomLocalidad.DefaultCellStyle = dataGridViewCellStyle4;
+            this.nomLocalidad.HeaderText = "Nombre";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
             // 
             // frmABMBarrios
             // 
@@ -169,9 +235,9 @@ namespace FarmaTown.Presentacion.Localidades
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_small_town_rxs3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(514, 298);
+            this.ClientSize = new System.Drawing.Size(663, 336);
+            this.Controls.Add(this.dgvLocalidades);
             this.Controls.Add(this.lblNomLocalidad);
-            this.Controls.Add(this.txtbLocalidad);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnLimpiar);
@@ -184,6 +250,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmABMBarrios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +264,8 @@ namespace FarmaTown.Presentacion.Localidades
         private DiseñosElemGUI.TransparentLabel lblNomBarrio;
         private System.Windows.Forms.TextBox txtbNombre;
         private DiseñosElemGUI.TransparentLabel lblNomLocalidad;
-        private System.Windows.Forms.TextBox txtbLocalidad;
+        private System.Windows.Forms.DataGridView dgvLocalidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
     }
 }

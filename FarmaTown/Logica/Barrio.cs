@@ -20,9 +20,9 @@ namespace FarmaTown.Logica
         {
             oBarrioDao = new BarrioDao();
         }
-        public List<Barrio> recuperarCParam(string nombre, string localidad)
+        public List<Barrio> recuperarCParam(string nombre)
         {
-            return this.oBarrioDao.recuperarCParam(nombre, localidad);
+            return this.oBarrioDao.recuperarCParam(nombre);
         }
 
         public List<Barrio> recuperarTodos(bool esCBorrados)

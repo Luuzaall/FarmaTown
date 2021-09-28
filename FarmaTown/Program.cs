@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using FarmaTown.Datos;
 using FarmaTown.Presentacion.ABMC_s.TiposDocumento;
 using FarmaTown.Presentacion.Empleados;
+using FarmaTown.Presentacion.Farmacias;
 using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 
@@ -25,6 +26,7 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmPrincipal());
 
             //Application.Run(new frmABMUsuario());
+            Application.Run(new frmFarmacias());
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmEmpleados(null)); 
             //Application.Run(new frmLocalidades());

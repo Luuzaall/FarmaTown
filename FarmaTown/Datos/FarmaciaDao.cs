@@ -26,7 +26,7 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 
-        public DataTable recuperarCParam(string nombre, string calle, string barrio, string localidad)
+        public DataTable recuperarCParam(string nombre, string calle, string num, string barrio, string localidad)
         {
             string query = "SELECT f.idFarmacia" +
                 ", f.nombre as nomFarmacia" +
@@ -55,6 +55,10 @@ namespace FarmaTown.Datos
             {
                 query = query + " AND l.nombre LIKE '%" + localidad + "%'";
             }
+            if (!string.IsNullOrEmpty(num))
+            {
+                query = query + " AND f.numero LIKE '" + Convert.ToInt32(num) + "'";
+            }
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
@@ -65,11 +69,11 @@ namespace FarmaTown.Datos
                 ", f.nombre as nomFarmacia" +
                 ", f.calle" +
                 ", f.numero" +
-                ", b.id as idBarrio" +
+                ", b.idBarrio" +
                 " FROM Farmacias f" +
                 " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                "WHERE f.idFarmacia = " + id +
-                "AND Borrado = 0;";
+                " WHERE f.idFarmacia = " + id +
+                " AND f.borrado = 0;";
 
             DataTable tablaFarmacias = DBHelper.getDBHelper().consultaSQL(query);
 
