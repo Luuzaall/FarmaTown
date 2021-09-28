@@ -125,7 +125,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(197, 25);
             this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.TextChanged += new System.EventHandler(this.txtbNombre_TextChanged);
             // 
             // txtbDescrip
             // 
@@ -137,7 +136,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbDescrip.Name = "txtbDescrip";
             this.txtbDescrip.Size = new System.Drawing.Size(321, 82);
             this.txtbDescrip.TabIndex = 2;
-            this.txtbDescrip.TextChanged += new System.EventHandler(this.txtbDescrip_TextChanged);
             // 
             // lblDescripcion
             // 

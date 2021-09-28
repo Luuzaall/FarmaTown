@@ -98,8 +98,8 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
         {
             oFrmABMTipoDoc = new frmABMTiposDoc();
             int idTipoDoc = int.Parse(this.dgvTiposDoc.CurrentRow.Cells[0].Value.ToString());
-            oTipoDoc = this.oTipoDoc.traerTipoDOc(idTipoDoc);
-            oFrmABMTipoDoc.seleccionarOS(frmABMTiposDoc.FormMode.update, oObraSocial);
+            oTipoDoc = this.oTipoDoc.traerTipoDoc(idTipoDoc);
+            oFrmABMTipoDoc.seleccionarOS(frmABMTiposDoc.FormMode.update, oTipoDoc);
             oFrmABMTipoDoc.ShowDialog();
             this.actualizar();
         }

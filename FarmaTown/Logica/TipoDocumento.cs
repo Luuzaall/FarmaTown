@@ -30,9 +30,39 @@ namespace FarmaTown.Logica
             return this.oTipoDocDao.recuperarCParam(nombre, palabraClave);
         }
 
-        public TipoDocumento traerTipoDOc(int idTipo)
+        public TipoDocumento traerTipoDoc(int idTipo)
         {
             return this.oTipoDocDao.traer(idTipo);
+        }
+        
+        public TipoDocumento traerTipoDoc(string nom)
+        {
+            return this.oTipoDocDao.traer(nom);
+        }
+
+        public bool crearNuevo(TipoDocumento oNuevoTipoDoc)
+        {
+            return validar( this.oTipoDocDao.crear(oNuevoTipoDoc) );
+        }
+
+        public bool actualizar(TipoDocumento oTipoDoc)
+        {
+            return validar( this.oTipoDocDao.actualizar(oTipoDoc) );
+        }
+
+        public bool cambiarEstado(bool seHabilita, TipoDocumento oTipoDoc)
+        {
+            return validar( this.oTipoDocDao.cambiarEstado(seHabilita, oTipoDoc) );
+        }
+
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

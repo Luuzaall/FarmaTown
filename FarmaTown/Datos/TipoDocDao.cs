@@ -59,6 +59,60 @@ namespace FarmaTown.Datos
             return this.objectMapping(fila);
         }
 
+        public TipoDocumento traer(string nom)
+        {
+            string query = "SELECT *" +
+                " FROM TiposDocumentos" +
+                " WHERE borrado = 0" +
+                " AND nombre = '" + nom + "'";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            int cantFilas = tabla.Rows.Count;
+            if (cantFilas == 0)
+                return null;
+            else
+            {
+                DataRow fila = tabla.Rows[0];
+                return this.objectMapping(fila);
+            }
+        }
+
+        public int crear(TipoDocumento oNuevoTipoDoc)
+        {
+            string query = "INSERT INTO TiposDocumentos" +
+                "(nombre, borrado, descripcion)" +
+                " VALUES" +
+                "('" + oNuevoTipoDoc.Nombre + "'" + 
+                ", 0, '" + oNuevoTipoDoc.Descripcion + "')";
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
+
+        public int actualizar(TipoDocumento oTipoDoc)
+        {
+            string query = "UPDATE TiposDocumento" +
+                " SET nombre = '" + oTipoDoc.Nombre + "'" +
+                ", descripcion = '" + oTipoDoc.Descripcion + "'" +
+                " WHERE idTipo = " + oTipoDoc.IdTipo;
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
+
+        public int cambiarEstado(bool seHabilita, TipoDocumento oTipoDoc)
+        {
+            string query = "UPDATE TiposDocumento" +
+                " SET borrado = ";
+
+            if (seHabilita)
+                query = query + "0";
+            else
+                query = query + "1";
+
+            query = query + " WHERE idTipo = " + oTipoDoc.IdTipo;
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
+
         private TipoDocumento objectMapping(DataRow row)
         {
             /*
@@ -66,7 +120,6 @@ namespace FarmaTown.Datos
              * tranforma a una instancia de una clase 
              * Empleado.
              */
-
             TipoDocumento oOS = new TipoDocumento
             {
                 IdTipo = Convert.ToInt32(row["idTipo"].ToString()),
