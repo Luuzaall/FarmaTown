@@ -178,6 +178,9 @@
   <data name="undraw_best_place_r685" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_best_place_r685.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FondoFarmaTown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\FondoFarmaTown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,7 +214,7 @@
   <data name="undraw_Location_tracking_re_n3ok (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="undraw_medical_care_movn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\undraw_medical_care_movn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

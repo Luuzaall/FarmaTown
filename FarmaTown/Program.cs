@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Datos;
+using FarmaTown.Presentacion.ABMC_s.Medicamentos;
 using FarmaTown.Presentacion.Empleados;
 using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
@@ -26,9 +27,11 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmEmpleados(null)); 
-            Application.Run(new frmBarrios());
-            Application.Run(new frmABMBarrios());
             //Application.Run(new frmBarrios());
+            //Application.Run(new frmABMBarrios());
+            //Application.Run(new frmBarrios());
+            //Application.Run(new frmABMMedicamentos());
+            Application.Run(new frmMedicamentos());
 
         }
     }
