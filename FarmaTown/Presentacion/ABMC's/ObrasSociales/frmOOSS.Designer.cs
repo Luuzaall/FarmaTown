@@ -41,12 +41,13 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.ttipBtnABM = new System.Windows.Forms.ToolTip(this.components);
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -117,7 +118,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
             this.gbResultados.Controls.Add(this.btnActualizar);
             this.gbResultados.Controls.Add(this.dgvObrasSociales);
-            this.gbResultados.Location = new System.Drawing.Point(21, 224);
+            this.gbResultados.Location = new System.Drawing.Point(23, 269);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(622, 268);
             this.gbResultados.TabIndex = 30;
@@ -156,7 +157,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros.Controls.Add(this.btnConsultar);
             this.gbFiltros.Controls.Add(this.btnLimpiar);
             this.gbFiltros.Controls.Add(this.label1);
-            this.gbFiltros.Location = new System.Drawing.Point(21, 12);
+            this.gbFiltros.Location = new System.Drawing.Point(23, 57);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(622, 185);
             this.gbFiltros.TabIndex = 31;
@@ -215,18 +216,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblAviso.Location = new System.Drawing.Point(305, 514);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(200, 44);
-            this.lblAviso.TabIndex = 35;
-            this.lblAviso.Text = "Debe elegir una obra\r\n social primero";
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -242,7 +231,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(590, 509);
+            this.btnSalir.Location = new System.Drawing.Point(592, 554);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 9;
@@ -266,7 +255,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(118, 514);
+            this.btnEditar.Location = new System.Drawing.Point(120, 559);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 7;
@@ -290,7 +279,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(215, 514);
+            this.btnEliminar.Location = new System.Drawing.Point(217, 559);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 8;
@@ -303,7 +292,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addOS;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregar.BorderColor = System.Drawing.Color.Green;
             this.btnAgregar.BorderRadius = 20;
@@ -314,7 +303,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(21, 514);
+            this.btnAgregar.Location = new System.Drawing.Point(23, 559);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
             this.btnAgregar.TabIndex = 6;
@@ -322,6 +311,29 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.ttipBtnABM.SetToolTip(this.btnAgregar, "Agregar Obra Social");
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
+            this.lblAviso.Location = new System.Drawing.Point(292, 559);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(205, 44);
+            this.lblAviso.TabIndex = 36;
+            this.lblAviso.Text = "Debe elegir una obra \r\nsocial primero";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(177, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(331, 33);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Consulta Obras Sociales";
             // 
             // frmOOSS
             // 
@@ -331,9 +343,10 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.BackgroundImage = global::FarmaTown.Properties.Resources.ABMOOSS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(670, 575);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(670, 625);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
@@ -346,7 +359,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.MaximizeBox = false;
             this.Name = "frmOOSS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión OS - FarmaTown";
+            this.Text = "Gestión Obras Sociales - FarmaTown";
             this.Load += new System.EventHandler(this.frmOOSS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).EndInit();
             this.gbResultados.ResumeLayout(false);
@@ -371,8 +384,9 @@ namespace FarmaTown.Presentacion.ObrasSociales
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
-        private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.ToolTip ttipBtnABM;
+        private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Label label2;
     }
 }

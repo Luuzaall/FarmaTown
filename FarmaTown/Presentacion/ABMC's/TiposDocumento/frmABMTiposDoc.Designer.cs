@@ -57,7 +57,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(93, 274);
+            this.btnCancelar.Location = new System.Drawing.Point(165, 274);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 46);
             this.btnCancelar.TabIndex = 4;
@@ -75,7 +75,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAceptar.BorderRadius = 20;
             this.btnAceptar.BorderSize = 1;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -83,7 +82,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(318, 272);
+            this.btnAceptar.Location = new System.Drawing.Point(418, 272);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(127, 46);
             this.btnAceptar.TabIndex = 3;
@@ -109,7 +108,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(385, 57);
+            this.btnLimpiar.Location = new System.Drawing.Point(444, 57);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(101, 44);
             this.btnLimpiar.TabIndex = 5;
@@ -125,7 +124,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbNombre.Location = new System.Drawing.Point(165, 67);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(197, 25);
+            this.txtbNombre.Size = new System.Drawing.Size(263, 25);
             this.txtbNombre.TabIndex = 1;
             // 
             // txtbDescrip
@@ -136,7 +135,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbDescrip.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbDescrip.Multiline = true;
             this.txtbDescrip.Name = "txtbDescrip";
-            this.txtbDescrip.Size = new System.Drawing.Size(321, 82);
+            this.txtbDescrip.Size = new System.Drawing.Size(380, 82);
             this.txtbDescrip.TabIndex = 2;
             // 
             // lblDescripcion
@@ -171,14 +170,13 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             // 
             // frmABMTiposDoc
             // 
-            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.frmABMTiposDoc;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(525, 350);
+            this.ClientSize = new System.Drawing.Size(578, 350);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblDescripcion);
@@ -195,7 +193,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.Name = "frmABMTiposDoc";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmABMTiposDoc";
             this.Load += new System.EventHandler(this.frmABMTiposDoc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Logica;
+using FarmaTown.Presentacion.ABMC_s.TiposDocumento;
 using FarmaTown.Presentacion.Empleados;
 using FarmaTown.Presentacion.Farmacias;
+using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 
 namespace FarmaTown.Presentacion
@@ -69,16 +71,39 @@ namespace FarmaTown.Presentacion
 
                 if (rolLogeado.IdRol == 2)
                 {
-                    this.usuariosToolStripMenuItem.Visible = false;
-                    this.empleadosToolStripMenuItem.Visible = false;
+                    this.gestiónToolStripMenuItem.Visible = false;
                 }
             }
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEmpleados frmEmp = new frmEmpleados(rolLogeado);
+            frmEmp.ShowDialog();
+        }
+
+        private void tiposDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTiposDoc ofrmTiposDoc = new frmTiposDoc();
+            ofrmTiposDoc.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmUsuarios frmUsu = new frmUsuarios();
             frmUsu.ShowDialog();
+        }
+
+        private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalidades oFrmLocalidades = new frmLocalidades();
+            oFrmLocalidades.ShowDialog();
+        }
+
+        private void barriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBarrios oFrmBarrios = new frmBarrios();
+            oFrmBarrios.ShowDialog();
         }
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -106,6 +131,15 @@ namespace FarmaTown.Presentacion
             }
         }
 
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.lblNombre.Text = "";
+            this.lblNomRol.Text = "";
+            this.estaLogeado = false;
+            this.cerrarSesion();
+            this.cargarLogIn();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -117,12 +151,6 @@ namespace FarmaTown.Presentacion
             oSesion.persistir(true);
         }
 
-        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmEmpleados frmEmp = new frmEmpleados(rolLogeado);
-            frmEmp.ShowDialog();
-        }
-
         private void obrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOOSS frmOS = new frmOOSS();
@@ -130,13 +158,10 @@ namespace FarmaTown.Presentacion
         }
 
 
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void farmaciasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.lblNombre.Text = "";
-            this.lblNomRol.Text = "";
-            this.estaLogeado = false;
-            this.cerrarSesion();
-            this.cargarLogIn();
+            frmFarmacias frmFar = new frmFarmacias();
+            frmFar.ShowDialog();
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -184,12 +209,6 @@ namespace FarmaTown.Presentacion
 
             //update label
             this.lblReloj.Text = time;
-        }
-
-        private void farmaciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmFarmacias frmFar = new frmFarmacias();
-            frmFar.ShowDialog();
         }
     }
 }

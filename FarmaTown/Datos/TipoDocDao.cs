@@ -9,13 +9,9 @@ using System.Threading.Tasks;
 namespace FarmaTown.Datos
 {
     class TipoDocDao
-    {
-        public DataTable recuperarTodos(bool esConBorrados)
-        {
-            return DBHelper.getDBHelper().consultarTabla("TiposDocumento");
-        }
+    { 
 
-        public List<TipoDocumento> recuperarTodosList(bool esConBorrados)
+        public List<TipoDocumento> recuperarTodos(bool esConBorrados)
         {
             string query = "SELECT *" +
                 " FROM TiposDocumento" +
@@ -82,7 +78,7 @@ namespace FarmaTown.Datos
         public TipoDocumento traer(string nom)
         {
             string query = "SELECT *" +
-                " FROM TiposDocumentos" +
+                " FROM TiposDocumento" +
                 " WHERE borrado = 0" +
                 " AND nombre = '" + nom + "'";
 
@@ -99,7 +95,7 @@ namespace FarmaTown.Datos
 
         public int crear(TipoDocumento oNuevoTipoDoc)
         {
-            string query = "INSERT INTO TiposDocumentos" +
+            string query = "INSERT INTO TiposDocumento" +
                 "(nombre, borrado, descripcion)" +
                 " VALUES" +
                 "('" + oNuevoTipoDoc.Nombre + "'" + 

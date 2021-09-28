@@ -42,11 +42,12 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvTiposDoc = new System.Windows.Forms.DataGridView();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.lblAviso = new System.Windows.Forms.Label();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.ttipBtnABM = new System.Windows.Forms.ToolTip(this.components);
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.idTiposDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomTiposDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(126, 60);
+            this.txtbNombre.Location = new System.Drawing.Point(163, 61);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(200, 25);
@@ -71,7 +72,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 60);
+            this.label1.Location = new System.Drawing.Point(59, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 23);
             this.label1.TabIndex = 12;
@@ -86,7 +87,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.gbFiltros.Controls.Add(this.btnLimpiar);
             this.gbFiltros.Controls.Add(this.txtbNombre);
             this.gbFiltros.Controls.Add(this.label1);
-            this.gbFiltros.Location = new System.Drawing.Point(21, 12);
+            this.gbFiltros.Location = new System.Drawing.Point(22, 81);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(834, 185);
             this.gbFiltros.TabIndex = 13;
@@ -98,21 +99,22 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.lblPalabraClave.AutoSize = true;
             this.lblPalabraClave.BackColor = System.Drawing.Color.Transparent;
             this.lblPalabraClave.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPalabraClave.Location = new System.Drawing.Point(381, 60);
+            this.lblPalabraClave.Location = new System.Drawing.Point(440, 61);
             this.lblPalabraClave.Name = "lblPalabraClave";
-            this.lblPalabraClave.Size = new System.Drawing.Size(154, 23);
+            this.lblPalabraClave.Size = new System.Drawing.Size(132, 23);
             this.lblPalabraClave.TabIndex = 14;
-            this.lblPalabraClave.Text = "Palabra Clave:";
+            this.lblPalabraClave.Text = "Descripción:";
             // 
             // txtbPalabraClave
             // 
             this.txtbPalabraClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPalabraClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbPalabraClave.Location = new System.Drawing.Point(544, 60);
+            this.txtbPalabraClave.Location = new System.Drawing.Point(581, 61);
             this.txtbPalabraClave.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtbPalabraClave.Name = "txtbPalabraClave";
             this.txtbPalabraClave.Size = new System.Drawing.Size(200, 25);
             this.txtbPalabraClave.TabIndex = 2;
+            this.txtbPalabraClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbPalabraClave_KeyPress);
             // 
             // btnConsultar
             // 
@@ -169,7 +171,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
             this.gbResultados.Controls.Add(this.btnActualizar);
             this.gbResultados.Controls.Add(this.dgvTiposDoc);
-            this.gbResultados.Location = new System.Drawing.Point(21, 224);
+            this.gbResultados.Location = new System.Drawing.Point(22, 293);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(834, 268);
             this.gbResultados.TabIndex = 31;
@@ -238,7 +240,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(725, 509);
+            this.btnSalir.Location = new System.Drawing.Point(803, 578);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 10;
@@ -246,18 +248,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.ttipBtnABM.SetToolTip(this.btnSalir, "Salir");
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.BackColor = System.Drawing.Color.GreenYellow;
-            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.lblAviso.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblAviso.Location = new System.Drawing.Point(305, 514);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(213, 44);
-            this.lblAviso.TabIndex = 40;
-            this.lblAviso.Text = "Debe elegir un tipo de \r\ndocumento primero";
             // 
             // btnEditar
             // 
@@ -274,7 +264,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(118, 514);
+            this.btnEditar.Location = new System.Drawing.Point(119, 583);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 8;
@@ -298,20 +288,20 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(215, 514);
+            this.btnEliminar.Location = new System.Drawing.Point(216, 583);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.ttipBtnABM.SetToolTip(this.btnEliminar, "Deshabilitar Tipo de Documento seleccionado");
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addDocument;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregar.BorderColor = System.Drawing.Color.Green;
             this.btnAgregar.BorderRadius = 20;
@@ -322,7 +312,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(21, 514);
+            this.btnAgregar.Location = new System.Drawing.Point(22, 583);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
             this.btnAgregar.TabIndex = 7;
@@ -331,13 +321,36 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
+            this.lblAviso.Location = new System.Drawing.Point(289, 583);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(213, 44);
+            this.lblAviso.TabIndex = 41;
+            this.lblAviso.Text = "Debe elegir un tipo de \r\ndocumento primero";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(276, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(359, 33);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Consulta Tipos Documento";
+            // 
             // idTiposDoc
             // 
             this.idTiposDoc.HeaderText = "ID";
             this.idTiposDoc.Name = "idTiposDoc";
             this.idTiposDoc.ReadOnly = true;
             this.idTiposDoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.idTiposDoc.Width = 130;
+            this.idTiposDoc.Width = 30;
             // 
             // nomTiposDoc
             // 
@@ -345,7 +358,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.nomTiposDoc.Name = "nomTiposDoc";
             this.nomTiposDoc.ReadOnly = true;
             this.nomTiposDoc.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nomTiposDoc.Width = 130;
+            this.nomTiposDoc.Width = 200;
             // 
             // descripcion
             // 
@@ -363,9 +376,10 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.BackgroundImage = global::FarmaTown.Properties.Resources.frmTiposDoc;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(874, 575);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(882, 651);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAviso);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
@@ -379,7 +393,8 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.Name = "frmTiposDoc";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTiposDoc";
+            this.Text = "Gestión Tipos Documento - FarmaTown";
+            this.Load += new System.EventHandler(this.frmTipoDoc_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);
@@ -400,13 +415,14 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
         private CustomControls.RJControls.RJButton btnActualizar;
         private System.Windows.Forms.DataGridView dgvTiposDoc;
         private CustomControls.RJControls.RJButton btnSalir;
-        private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
         private System.Windows.Forms.ToolTip ttipBtnABM;
         private System.Windows.Forms.Label lblPalabraClave;
         private System.Windows.Forms.TextBox txtbPalabraClave;
+        private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTiposDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomTiposDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;

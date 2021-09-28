@@ -52,7 +52,7 @@ namespace FarmaTown.Presentacion
             /*
              * Permite al usuario limpiar sus selecciones si desea.
              */
-            this.txtbNombre.TextName = "";
+            this.txtbNombre.Text = "";
             this.cboRoles.SelectedIndex = -1;
         }
 
@@ -65,7 +65,7 @@ namespace FarmaTown.Presentacion
             DataTable resultadosUsuarios;
             int idRol = -1;
 
-            string usuario = this.txtbNombre.TextName;
+            string usuario = this.txtbNombre.Text;
 
             if (this.validarDatos())
             {
@@ -183,7 +183,7 @@ namespace FarmaTown.Presentacion
 
         private bool validarDatos()
         {
-            string nomUs = this.txtbNombre.TextName;
+            string nomUs = this.txtbNombre.Text;
             if (string.IsNullOrEmpty(nomUs)
                 && this.cboRoles.SelectedIndex == -1)
             {

@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblAvisoNroDoc.AutoSize = true;
             this.lblAvisoNroDoc.BackColor = System.Drawing.Color.IndianRed;
-            this.lblAvisoNroDoc.Location = new System.Drawing.Point(493, 199);
+            this.lblAvisoNroDoc.Location = new System.Drawing.Point(498, 159);
             this.lblAvisoNroDoc.Name = "lblAvisoNroDoc";
             this.lblAvisoNroDoc.Size = new System.Drawing.Size(0, 19);
             this.lblAvisoNroDoc.TabIndex = 24;
@@ -212,7 +212,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(301, 27);
             this.cboTipoDoc.TabIndex = 2;
-            this.cboTipoDoc.DropDownClosed += new System.EventHandler(this.cboTipoDoc_DropDownClosed);
+            this.cboTipoDoc.SelectionChangeCommitted += new System.EventHandler(this.cboTipoDoc_SelectionChangeCommited);
             // 
             // lblTipoDoc
             // 

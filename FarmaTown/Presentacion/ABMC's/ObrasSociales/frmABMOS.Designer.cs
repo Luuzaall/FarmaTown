@@ -59,7 +59,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnLimpiar.BorderSize = 1;
             this.btnLimpiar.CausesValidation = false;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -85,7 +84,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnAceptar.BorderRadius = 20;
             this.btnAceptar.BorderSize = 1;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -152,7 +150,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             // 
             // frmABMOS
             // 
-            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;

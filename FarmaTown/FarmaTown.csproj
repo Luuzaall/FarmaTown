@@ -270,6 +270,7 @@
     <None Include="Presentacion\Imagenes\ABMOOSS.png" />
     <None Include="Presentacion\Imagenes\add-location.png" />
     <Content Include="Presentacion\Imagenes\addDocument.png" />
+    <None Include="Presentacion\Imagenes\addOS.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />
     <None Include="Presentacion\Imagenes\coworkers.png" />

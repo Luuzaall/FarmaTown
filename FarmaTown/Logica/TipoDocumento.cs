@@ -20,14 +20,9 @@ namespace FarmaTown.Logica
             oTipoDocDao = new TipoDocDao();
         }
 
-        public DataTable recuperarTodos(bool conBorrados)
+        public List<TipoDocumento> recuperarTodos(bool conBorrados)
         {
             return oTipoDocDao.recuperarTodos(conBorrados);
-        }
-
-        public List<TipoDocumento> recuperarTodosList(bool conBorrados)
-        {
-            return oTipoDocDao.recuperarTodosList(conBorrados);
         }
 
         public List<TipoDocumento> recuperarCParam(string nombre, string palabraClave)

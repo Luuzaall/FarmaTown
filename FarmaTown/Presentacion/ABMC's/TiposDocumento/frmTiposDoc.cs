@@ -119,17 +119,26 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.Close();
         }
 
-        //-----------------------------------------------------
-        //MÉTODOS FUNCIONALES
-
-        private void frmOOSS_Load(object sender, EventArgs e)
+        private void frmTipoDoc_Load(object sender, EventArgs e)
         {
             this.actualizar();
         }
 
+        private void txtbPalabraClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                this.btnConsultar.PerformClick();
+
+            }
+        }
+
+        //-----------------------------------------------------
+        //MÉTODOS FUNCIONALES
+
         private void actualizar()
         {
-            this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodosList(false));
+            this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodos(false));
             this.deshabilitarBotones();
         }
 

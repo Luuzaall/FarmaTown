@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.Close();
         }
 
-        private void cboTipoDoc_DropDownClosed(object sender, EventArgs e)
+        private void cboTipoDoc_SelectionChangeCommited(object sender, EventArgs e)
         {
             int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
             if (indiceSelecc != -1)
@@ -312,9 +312,7 @@ namespace FarmaTown.Presentacion.Empleados
                 & string.IsNullOrEmpty(nomFarmacia)
                 & this.cboTipoDoc.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe ingresar algún dato!",
-                    "Validación de Datos", MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
+                this.actualizar(); 
                 return false;
             }
             else

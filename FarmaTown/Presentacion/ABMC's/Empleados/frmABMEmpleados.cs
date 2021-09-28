@@ -42,7 +42,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void frmABMEmpleados_Load(object sender, EventArgs e)
         {
             //Carga los combos
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
+            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
             List<Farmacia> listaFarmacias = oFarmacia.recuperarTodos();
 
             if (listaFarmacias.Count > 0)
@@ -216,7 +216,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbLocalidad.TextName = "";
         }
 
-        private void cboTipoDoc_DropDownClosed(object sender, EventArgs e)
+        private void cboTipoDoc_SelectionChangeCommited(object sender, EventArgs e)
         {
             int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
             if (indiceSelecc != -1)
@@ -366,7 +366,7 @@ namespace FarmaTown.Presentacion.Empleados
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                int idFila = int.Parse(dgv.Rows[i].Cells[0].Value.ToString() );
                 if (idFila == id)
                 {
                     dgv.Rows[i].Selected = true;
@@ -468,7 +468,7 @@ namespace FarmaTown.Presentacion.Empleados
             string nombre = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
             
-            int idFarmacia = (int) this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
+            int idFarmacia =  int.Parse( this.dgvFarmacias.SelectedRows[0].Cells[0].Value.ToString() );
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
             int idTipoDoc;
 
@@ -503,7 +503,7 @@ namespace FarmaTown.Presentacion.Empleados
                 oEmpleado.NroDoc = nroDoc;
 
             oEmpleado.Farmacia = new Farmacia();
-            oEmpleado.Farmacia.IdFarmacia = (int)this.dgvFarmacias.SelectedRows[0].Cells[0].Value;
+            oEmpleado.Farmacia.IdFarmacia = int.Parse( this.dgvFarmacias.SelectedRows[0].Cells[0].Value.ToString() );
 
             return oEmpleado;
         }

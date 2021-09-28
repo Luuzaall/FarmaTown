@@ -50,8 +50,6 @@ namespace FarmaTown
                     this.txtbUsuario.Focus();
                 }
             }
-
-            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

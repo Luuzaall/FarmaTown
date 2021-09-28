@@ -160,6 +160,12 @@
   <data name="undraw_Location_tracking_re_n3ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_Location_tracking_re_n3ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addDocument" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\addDocument.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +196,8 @@
   <data name="undraw_High_five_re_jy71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="barrios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\barrios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +217,7 @@
   <data name="undraw_Location_tracking_re_n3ok (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\addOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -36,9 +36,9 @@ namespace FarmaTown
             this.txtbClave = new JMaterialTextbox.JMaterialTextbox();
             this.lblIngreso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.btnIngresar = new CustomControls.RJControls.RJButton();
             this.lblClave = new System.Windows.Forms.Label();
             this.btnVerClave = new CustomControls.RJControls.RJButton();
+            this.btnIngresar = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -103,7 +103,7 @@ namespace FarmaTown
             this.lblIngreso.AutoSize = true;
             this.lblIngreso.BackColor = System.Drawing.Color.Transparent;
             this.lblIngreso.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngreso.Location = new System.Drawing.Point(108, 21);
+            this.lblIngreso.Location = new System.Drawing.Point(117, 20);
             this.lblIngreso.Name = "lblIngreso";
             this.lblIngreso.Size = new System.Drawing.Size(252, 32);
             this.lblIngreso.TabIndex = 10;
@@ -123,7 +123,6 @@ namespace FarmaTown
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.Location = new System.Drawing.Point(85, 195);
             this.btnSalir.Name = "btnSalir";
@@ -133,31 +132,6 @@ namespace FarmaTown
             this.btnSalir.TextColor = System.Drawing.Color.Black;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
-            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
-            this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnIngresar.BorderColor = System.Drawing.Color.White;
-            this.btnIngresar.BorderRadius = 20;
-            this.btnIngresar.BorderSize = 0;
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.FlatAppearance.BorderSize = 0;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
-            this.btnIngresar.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresar.Image")));
-            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnIngresar.Location = new System.Drawing.Point(267, 181);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(126, 54);
-            this.btnIngresar.TabIndex = 3;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.TextColor = System.Drawing.Color.Black;
-            this.btnIngresar.UseMnemonic = false;
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // lblClave
             // 
@@ -195,6 +169,30 @@ namespace FarmaTown
             this.btnVerClave.UseVisualStyleBackColor = false;
             this.btnVerClave.Click += new System.EventHandler(this.btnVerClave_Click);
             // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnIngresar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(185)))), ((int)(((byte)(15)))));
+            this.btnIngresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIngresar.BorderColor = System.Drawing.Color.White;
+            this.btnIngresar.BorderRadius = 20;
+            this.btnIngresar.BorderSize = 0;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnIngresar.Location = new System.Drawing.Point(267, 181);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(128, 54);
+            this.btnIngresar.TabIndex = 3;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.TextColor = System.Drawing.Color.Black;
+            this.btnIngresar.UseMnemonic = false;
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnIngresar;
@@ -230,11 +228,11 @@ namespace FarmaTown
         private System.Windows.Forms.Label lblUsuario;
         private JMaterialTextbox.JMaterialTextbox txtbUsuario;
         private JMaterialTextbox.JMaterialTextbox txtbClave;
-        private CustomControls.RJControls.RJButton btnIngresar;
         private CustomControls.RJControls.RJButton btnSalir;
         private System.Windows.Forms.Label lblIngreso;
         private System.Windows.Forms.Label lblClave;
         private CustomControls.RJControls.RJButton btnVerClave;
+        private CustomControls.RJControls.RJButton btnIngresar;
     }
 }
 
