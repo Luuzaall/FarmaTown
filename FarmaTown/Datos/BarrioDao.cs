@@ -17,7 +17,7 @@ namespace FarmaTown.Datos
                             ", l.nombre as nomLocalidad" +
                             "FROM Barrios b " +
                             "INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            "WHERE borrado = 0;";
+                            "WHERE b.borrado = 0;";
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
@@ -26,7 +26,7 @@ namespace FarmaTown.Datos
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
-                ", borrado" +
+                ", b.borrado" +
                 " FROM Barrios" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                 " WHERE nomBarrio LIKE '%" + nombre + "%'";
@@ -48,9 +48,13 @@ namespace FarmaTown.Datos
 
         public List<Barrio> recuperarTodos(bool esCBorrados)
         {
-            string query = "SELECT *" +
-                " FROM Barrios" +
-                " WHERE borrado = 0";
+            string query = "SELECT b.idBarrio" +
+                            ", b.nombre as nomBarrio" +
+                            ", l.nombre as nomLocalidad" +
+                            " FROM Barrios b " +
+                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                            " WHERE b.borrado = 0;";
+
             if (esCBorrados)
                 query = query + " OR borrado = 1";
 
@@ -137,7 +141,7 @@ namespace FarmaTown.Datos
             Barrio oBarrio = new Barrio
             {
                 IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
-                Nombre = row["nombre"].ToString(),
+                Nombre = row["nomBarrio"].ToString(),
                 Localidad = new Localidad()
                 {
                     Nombre = row["nomLocalidad"].ToString(),
