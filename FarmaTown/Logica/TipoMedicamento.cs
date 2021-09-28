@@ -14,6 +14,16 @@ namespace FarmaTown.Logica
         public string Descripcion { get; set; }
         public bool Borrado { get; set; }
 
+        TipoMedDao oTipoMedDao;
+
+        public TipoMedicamento()
+        {
+            oTipoMedDao = new TipoMedDao();
+        }
+        internal object recuperarTodos()
+        {
+            return oTipoMedDao.recuperarTodos();
+        }
     }
 
 }

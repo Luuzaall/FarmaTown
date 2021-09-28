@@ -62,10 +62,12 @@
     <Compile Include="Datos\EmpleadoDao.cs" />
     <Compile Include="Datos\FarmaciaDao.cs" />
     <Compile Include="Datos\LocalidadDao.cs" />
+    <Compile Include="Datos\MedicamentoDao.cs" />
     <Compile Include="Datos\ObraSocialDao.cs" />
     <Compile Include="Datos\BarrioDao.cs" />
     <Compile Include="Datos\RolDao.cs" />
     <Compile Include="Datos\TipoDocDao.cs" />
+    <Compile Include="Datos\TipoMedDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cliente.cs" />
@@ -91,6 +93,18 @@
     </Compile>
     <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.Designer.cs">
       <DependentUpon>frmBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Medicamentos\frmABMMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Medicamentos\frmABMMedicamentos.Designer.cs">
+      <DependentUpon>frmABMMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Medicamentos\frmMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Medicamentos\frmMedicamentos.Designer.cs">
+      <DependentUpon>frmMedicamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmABMTiposDoc.cs">
       <SubType>Form</SubType>
@@ -208,6 +222,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmLocalidades.resx">
       <DependentUpon>frmLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Medicamentos\frmABMMedicamentos.resx">
+      <DependentUpon>frmABMMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Medicamentos\frmMedicamentos.resx">
+      <DependentUpon>frmMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\ObrasSociales\frmABMOS.resx">
       <DependentUpon>frmABMOS.cs</DependentUpon>

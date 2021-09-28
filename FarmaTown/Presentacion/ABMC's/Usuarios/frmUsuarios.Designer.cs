@@ -84,7 +84,6 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.ShowEditingIcon = false;
             this.dgvUsuarios.Size = new System.Drawing.Size(802, 252);
             this.dgvUsuarios.TabIndex = 13;
-            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // idUsuario
             // 

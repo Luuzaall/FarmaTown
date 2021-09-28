@@ -363,6 +363,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undraw_medical_care_movn {
+            get {
+                object obj = ResourceManager.GetObject("undraw_medical_care_movn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap undraw_quite_town_mg2q {
             get {
                 object obj = ResourceManager.GetObject("undraw_quite_town_mg2q", resourceCulture);
