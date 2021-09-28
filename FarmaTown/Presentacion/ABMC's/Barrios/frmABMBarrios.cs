@@ -15,11 +15,13 @@ namespace FarmaTown.Presentacion.Localidades
     {
         private FormMode formMode = FormMode.insert;
         Barrio oBarrio;
+        Localidad oLocalidad;
 
         public frmABMBarrios()
         {
             InitializeComponent();
             oBarrio = new Barrio();
+            oLocalidad = new Localidad();
 
         }
         public enum FormMode
@@ -82,18 +84,25 @@ namespace FarmaTown.Presentacion.Localidades
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Barrio - FarmaTown";
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(true));
                         break;
                     }
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Barrio - FarmaTown";
                         this.txtbNombre.Text = oBarrio.Nombre;
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(true));
+                        this.seleccionarFila(this.dgvLocalidades, oLocalidad.IdLocalidad);
+                        this.dgvLocalidades.Enabled = true;
                         break;
                     }
                 case FormMode.delete:
                     {
                         this.Text = "Deshabilitar Barrio - FarmaTown";
                         this.txtbNombre.Text = oBarrio.Nombre;
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(false));
+                        this.cargarFila(this.dgvLocalidades);
+                        this.dgvLocalidades.Enabled = false;
                         this.txtbNombre.Enabled = false;
                         this.btnLimpiar.Enabled = false;
                         break;
@@ -103,6 +112,64 @@ namespace FarmaTown.Presentacion.Localidades
         }
 
 
+        //NUEVO DESDE ACA
+
+        //Borra todo lo que no esta seleccionado de la dgv
+        private void cargarFila(DataGridView dgv)
+        {
+            int cantFilasdgv = dgv.RowCount;
+
+            for (int i = 0; i < cantFilasdgv; i++)
+            {
+                bool estaSelecc = dgv.Rows[i].Selected;
+                if (!estaSelecc)
+                {
+                    dgv.Rows.RemoveAt(i);
+                    i = i - 1;
+                }
+                cantFilasdgv = dgv.RowCount;
+            }
+        }
+
+        private void seleccionarFila(DataGridView dgv, int id)
+        {
+            /*
+             * Busca en el DataGridView la fila correspondiente
+             * al dato que corresponde al id guardado en la base
+             * de datos para seleccionarlo para el usuario.
+             */
+            int cantFilasdgv = dgv.RowCount;
+
+            for (int i = 0; i < cantFilasdgv; i++)
+            {
+                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                if (idFila == id)
+                {
+                    dgv.Rows[i].Selected = true;
+                    break;
+                }
+            }
+        }
+        private void cargarGrilla(DataGridView dgv, List<Localidad> lista)
+        {
+            /*
+             * Carga la grilla con los datos necesarios
+             * pasado por lista.
+             */
+            dgv.Rows.Clear();
+            if (lista != null)
+            {
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
+                {
+                    dgv.Rows.Add(lista[i].IdLocalidad.ToString()
+                        , lista[i].Nombre.ToString()
+                        );
+                }
+                dgv.ClearSelection();
+            }
+        }
+        // HASTA ACA
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
@@ -167,14 +234,14 @@ namespace FarmaTown.Presentacion.Localidades
                     }
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar el Barrio seleccionada?"
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el Barrio seleccionado?"
                             , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
                             if (oBarrio.cambiarEstado(oBarrio, false))
                             {
-                                MessageBox.Show("Barrio Deshabilitada!", "Información"
+                                MessageBox.Show("Barrio Deshabilitado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
