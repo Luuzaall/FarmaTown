@@ -10,9 +10,29 @@ namespace FarmaTown.Datos
 {
     class TipoDocDao
     {
-        public DataTable recuperarTodos()
+        public DataTable recuperarTodos(bool esConBorrados)
         {
             return DBHelper.getDBHelper().consultarTabla("TiposDocumento");
+        }
+
+        public List<TipoDocumento> recuperarTodosList(bool esConBorrados)
+        {
+            string query = "SELECT *" +
+                " FROM TiposDocumento" +
+                " WHERE borrado = 0";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            int cantFilas = tabla.Rows.Count;
+
+            List<TipoDocumento> listaTD = new List<TipoDocumento>();
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                listaTD.Add(this.objectMapping(fila));
+            }
+
+            return listaTD;
+
         }
 
         public List<TipoDocumento> recuperarCParam(string nombre, string pClave)
@@ -21,7 +41,7 @@ namespace FarmaTown.Datos
                 ", nombre" +
                 ", descripcion" +
                 ", borrado" +
-                " FROM ObrasSociales" +
+                " FROM TiposDocumento" +
                 " WHERE borrado = 0";
 
             if ( !(string.IsNullOrEmpty(nombre)
@@ -49,7 +69,7 @@ namespace FarmaTown.Datos
         public TipoDocumento traer(int idTipo)
         {
             string query = "SELECT *" +
-                " FROM TiposDocumentos" +
+                " FROM TiposDocumento" +
                 " WHERE borrado = 0" +
                 " AND idTipo = " + idTipo;
 

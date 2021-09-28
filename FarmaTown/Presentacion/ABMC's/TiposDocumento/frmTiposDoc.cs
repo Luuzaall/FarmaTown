@@ -64,7 +64,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
 
         }
 
-        private void dgvObrasSociales_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTiposDocumento_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             /*
              * Habilita los botones para poder ser seleccionados,
@@ -99,7 +99,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             oFrmABMTipoDoc = new frmABMTiposDoc();
             int idTipoDoc = int.Parse(this.dgvTiposDoc.CurrentRow.Cells[0].Value.ToString());
             oTipoDoc = this.oTipoDoc.traerTipoDoc(idTipoDoc);
-            oFrmABMTipoDoc.seleccionarOS(frmABMTiposDoc.FormMode.update, oTipoDoc);
+            oFrmABMTipoDoc.seleccionarTipoDoc(frmABMTiposDoc.FormMode.update, oTipoDoc);
             oFrmABMTipoDoc.ShowDialog();
             this.actualizar();
         }
@@ -107,9 +107,9 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             oFrmABMTipoDoc = new frmABMTiposDoc();
-            //int idOS = int.Parse(this.dgvTiposDoc.CurrentRow.Cells[0].Value.ToString());
-            //oTipoDoc = this.oTipoDoc.traerOS(idOS);
-            //oFrmABMTipoDoc.seleccionarOS(frmABMTiposDoc.FormMode.delete, oObraSocial);
+            int idTipoDoc = int.Parse(this.dgvTiposDoc.CurrentRow.Cells[0].Value.ToString());
+            oTipoDoc = this.oTipoDoc.traerTipoDoc(idTipoDoc);
+            oFrmABMTipoDoc.seleccionarTipoDoc(frmABMTiposDoc.FormMode.delete, oTipoDoc);
             oFrmABMTipoDoc.ShowDialog();
             this.actualizar();
         }
@@ -129,7 +129,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
 
         private void actualizar()
         {
-            //this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodos(false));
+            this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodosList(false));
             this.deshabilitarBotones();
         }
 

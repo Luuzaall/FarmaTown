@@ -41,7 +41,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void frmABMEmpleados_Load(object sender, EventArgs e)
         {
             //Carga los combos
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
+            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
             DataTable tablaFarmacias = oFarmacia.recuperarTodos();
 
             if (tablaFarmacias.Rows.Count > 0)

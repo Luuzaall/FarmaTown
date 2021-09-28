@@ -31,7 +31,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
         //-----------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
-        public void seleccionarOS(FormMode _formMode, TipoDocumento tipoDocumentoSelected)
+        public void seleccionarTipoDoc(FormMode _formMode, TipoDocumento tipoDocumentoSelected)
         {
             formMode = _formMode;
             oTipoDoc = tipoDocumentoSelected;
@@ -71,7 +71,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
 
         //MÉTODOS DE RESPUESTA A EVENTOS
 
-        private void frmABMOS_Load(object sender, EventArgs e)
+        private void frmABMTiposDoc_Load(object sender, EventArgs e)
         {
             switch (formMode)
             {
