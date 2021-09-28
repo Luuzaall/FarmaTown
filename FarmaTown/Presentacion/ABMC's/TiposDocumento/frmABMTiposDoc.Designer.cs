@@ -64,6 +64,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -74,7 +75,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAceptar.BorderRadius = 20;
             this.btnAceptar.BorderSize = 1;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -89,6 +90,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnLimpiar
             // 
@@ -100,7 +102,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnLimpiar.BorderSize = 1;
             this.btnLimpiar.CausesValidation = false;
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
@@ -115,6 +116,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // txtbNombre
             // 
@@ -194,6 +196,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmABMTiposDoc";
+            this.Load += new System.EventHandler(this.frmABMTiposDoc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

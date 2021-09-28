@@ -29,6 +29,7 @@ namespace FarmaTown.Presentacion.Farmacias
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFarmacias));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbBorrados = new System.Windows.Forms.CheckBox();
             this.textbNumero = new JMaterialTextbox.JMaterialTextbox();
@@ -108,6 +109,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.textbNumero.TabIndex = 20;
             this.textbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textbNumero.TextName = "";
+            this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
             // 
             // label3
             // 
@@ -238,6 +240,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.dgvFarmacias);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -275,6 +278,10 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             // dgvFarmacias
             // 
+            this.dgvFarmacias.AllowUserToAddRows = false;
+            this.dgvFarmacias.AllowUserToDeleteRows = false;
+            this.dgvFarmacias.AllowUserToResizeColumns = false;
+            this.dgvFarmacias.AllowUserToResizeRows = false;
             this.dgvFarmacias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.dgvFarmacias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFarmacias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -283,8 +290,12 @@ namespace FarmaTown.Presentacion.Farmacias
             this.Calle,
             this.Número,
             this.Barrio});
+            this.dgvFarmacias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvFarmacias.Location = new System.Drawing.Point(6, 39);
             this.dgvFarmacias.Name = "dgvFarmacias";
+            this.dgvFarmacias.ReadOnly = true;
+            this.dgvFarmacias.RowHeadersWidth = 51;
+            this.dgvFarmacias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFarmacias.Size = new System.Drawing.Size(743, 243);
             this.dgvFarmacias.TabIndex = 13;
             this.dgvFarmacias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFarmacias_CellClick);
@@ -292,30 +303,41 @@ namespace FarmaTown.Presentacion.Farmacias
             // ID
             // 
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Width = 50;
             // 
             // Sucursal
             // 
             this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.MinimumWidth = 6;
             this.Sucursal.Name = "Sucursal";
+            this.Sucursal.ReadOnly = true;
             this.Sucursal.Width = 200;
             // 
             // Calle
             // 
             this.Calle.HeaderText = "Calle";
+            this.Calle.MinimumWidth = 6;
             this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
             this.Calle.Width = 200;
             // 
             // Número
             // 
             this.Número.HeaderText = "Número";
+            this.Número.MinimumWidth = 6;
             this.Número.Name = "Número";
+            this.Número.ReadOnly = true;
+            this.Número.Width = 125;
             // 
             // Barrio
             // 
             this.Barrio.HeaderText = "Barrio";
+            this.Barrio.MinimumWidth = 6;
             this.Barrio.Name = "Barrio";
+            this.Barrio.ReadOnly = true;
             this.Barrio.Width = 150;
             // 
             // btnEditar
@@ -426,6 +448,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(953, 599);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblAviso);

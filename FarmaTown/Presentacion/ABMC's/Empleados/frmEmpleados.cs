@@ -31,7 +31,7 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos()
+            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false)
                 , "nombre", "idTipo");
         }
 

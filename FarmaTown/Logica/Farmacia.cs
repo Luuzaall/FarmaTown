@@ -23,19 +23,45 @@ namespace FarmaTown.Logica
             oFarmaciaDao = new FarmaciaDao();
         }
 
-        public DataTable recuperarTodos()
+        public List<Farmacia> recuperarTodos()
         {
             return oFarmaciaDao.recuperarTodos();
         }
 
-        public DataTable recuperarCParam(string nombre, string calle, string barrio, string localidad)
+        public List<Farmacia> recuperarCParam(string nombre, string calle, string num, string barrio, string localidad)
         {
-            return this.oFarmaciaDao.recuperarCParam(nombre, calle, barrio, localidad);
+            return this.oFarmaciaDao.recuperarCParam(nombre, calle, num, barrio, localidad);
         }
 
         public Farmacia traerFarmacia(int id)
         {
             return oFarmaciaDao.traerFarmacia(id);
         }
+
+        public bool crearFarmacia(Farmacia nuevaFarmacia)
+        {
+            return validar(this.oFarmaciaDao.crear(nuevaFarmacia));
+        }
+
+        public bool actualizarFarmacia(Farmacia farmacia)
+        {
+            return validar(oFarmaciaDao.actualizar(farmacia));
+        }
+
+        public bool cambiarEstadoFarmacia(Farmacia farmacia, bool habilitar)
+        {
+            return validar(oFarmaciaDao.cambiarEstado(farmacia, habilitar));
+        }
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
+        
     }
 }

@@ -30,6 +30,7 @@ namespace FarmaTown.Presentacion.Farmacias
         private void InitializeComponent()
         {
             System.Windows.Forms.GroupBox groupBox1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMFarmacias));
             this.label1 = new System.Windows.Forms.Label();
             this.lblSucursal = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
@@ -175,7 +176,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.txtbNumero.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
             this.txtbNumero.ForeColors = System.Drawing.Color.Black;
             this.txtbNumero.HintText = null;
-            this.txtbNumero.IsPassword = true;
+            this.txtbNumero.IsPassword = false;
             this.txtbNumero.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.txtbNumero.LineThickness = 3;
             this.txtbNumero.Location = new System.Drawing.Point(227, 161);
@@ -255,6 +256,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.dgvBarrios.MultiSelect = false;
             this.dgvBarrios.Name = "dgvBarrios";
             this.dgvBarrios.ReadOnly = true;
+            this.dgvBarrios.RowHeadersWidth = 51;
             this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBarrios.Size = new System.Drawing.Size(464, 227);
             this.dgvBarrios.TabIndex = 27;
@@ -262,6 +264,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // idEmpleado
             // 
             this.idEmpleado.HeaderText = "ID";
+            this.idEmpleado.MinimumWidth = 6;
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
             this.idEmpleado.Width = 50;
@@ -269,6 +272,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.Width = 200;
@@ -276,6 +280,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // Localidad
             // 
             this.Localidad.HeaderText = "Localidad";
+            this.Localidad.MinimumWidth = 6;
             this.Localidad.Name = "Localidad";
             this.Localidad.ReadOnly = true;
             this.Localidad.Width = 170;
@@ -359,6 +364,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(646, 700);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

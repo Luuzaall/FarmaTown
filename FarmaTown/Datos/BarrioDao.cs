@@ -15,9 +15,9 @@ namespace FarmaTown.Datos
             string query = "SELECT b.idBarrio" +
                             ", b.nombre as nomBarrio" +
                             ", l.nombre as nomLocalidad" +
-                            "FROM Barrios b " +
-                            "INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            "WHERE b.borrado = 0;";
+                            " FROM Barrios b" +
+                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                            " WHERE b.borrado = 0";
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
@@ -27,9 +27,9 @@ namespace FarmaTown.Datos
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
                 ", b.borrado" +
-                " FROM Barrios" +
+                " FROM Barrios b" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " WHERE nomBarrio LIKE '%" + nombre + "%'";
+                " WHERE b.nombre LIKE '%" + nombre + "%'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -51,9 +51,10 @@ namespace FarmaTown.Datos
             string query = "SELECT b.idBarrio" +
                             ", b.nombre as nomBarrio" +
                             ", l.nombre as nomLocalidad" +
+                            ", l.idLocalidad " +
                             " FROM Barrios b " +
                             " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            " WHERE b.borrado = 0;";
+                            " WHERE b.borrado = 0";
 
             if (esCBorrados)
                 query = query + " OR borrado = 1";
@@ -74,10 +75,14 @@ namespace FarmaTown.Datos
 
         public Barrio traer(int idBarrio)
         {
-            string query = "SELECT *" +
-                " FROM Barrios" +
-                " WHERE borrado = 0" +
-                " AND idBarrio = " + idBarrio;
+            string query = "SELECT b.idBarrio" +
+                           ", b.nombre as nomBarrio" +
+                           ", l.nombre as nomLocalidad" +
+                           ", l.idLocalidad " +
+                           " FROM Barrios b " +
+                           " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                           " WHERE b.borrado = 0"+
+                           " AND idBarrio = " + idBarrio;
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -87,10 +92,14 @@ namespace FarmaTown.Datos
 
         public Barrio traer(string nombre)
         {
-            string query = "SELECT *" +
-                " FROM Barrios" +
-                " WHERE borrado = 0" +
-                " AND nombre = '" + nombre + "'";
+            string query = "SELECT b.idBarrio" +
+                           ", b.nombre as nomBarrio" +
+                           ", l.nombre as nomLocalidad" +
+                           ", l.idLocalidad " +
+                           " FROM Barrios b " +
+                           " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                           " WHERE b.borrado = 0" +
+                           " AND nombre = '" + nombre + "'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -144,6 +153,7 @@ namespace FarmaTown.Datos
                 Nombre = row["nomBarrio"].ToString(),
                 Localidad = new Localidad()
                 {
+                    IdLocalidad = Convert.ToInt32(row["idLocalidad"].ToString()),
                     Nombre = row["nomLocalidad"].ToString(),
                 }
             };

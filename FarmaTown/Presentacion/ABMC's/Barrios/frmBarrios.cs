@@ -61,6 +61,7 @@ namespace FarmaTown.Presentacion.Localidades
                 {
                     dgv.Rows.Add(lista[i].IdBarrio.ToString()
                         , lista[i].Nombre.ToString()
+                        , lista[i].Localidad.Nombre.ToString()
                         );
                 }
                 dgv.ClearSelection();

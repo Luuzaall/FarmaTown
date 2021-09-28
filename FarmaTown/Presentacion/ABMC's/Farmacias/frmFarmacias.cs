@@ -26,10 +26,10 @@ namespace FarmaTown.Presentacion.Farmacias
         private void frmFarmacias_Load(object sender, EventArgs e)
         {
             //this.deshabilitarBotones();
-            DataTable tablaFarmacias = oFarmacia.recuperarTodos();
-            if (tablaFarmacias.Rows.Count > 0)
+            List<Farmacia> listaFarmacias = oFarmacia.recuperarTodos();
+            if (listaFarmacias.Count > 0)
             {
-                this.cargarGrilla(this.dgvFarmacias, tablaFarmacias);
+                this.cargarGrilla(this.dgvFarmacias, listaFarmacias);
             }
             else
             {
@@ -37,32 +37,24 @@ namespace FarmaTown.Presentacion.Farmacias
 
             }
         }
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Farmacia> lista)
         {
             /*
-             * Carga la grilla con los datos necesarios
-             */
+                * Carga la grilla con los datos necesarios
+                * pasado por lista.
+                */
             dgv.Rows.Clear();
-            if (table != null)
+            if (lista != null)
             {
-                for (int i = 0; i < table.Rows.Count; i++)
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
                 {
-                    //string borrado;
-                    //bool valorBorrado = (bool) table.Rows[i]["borrado"];
-                    //Console.WriteLine(valorBorrado);
-
-                    //if (valorBorrado == "True")
-                    //    borrado = "Si";
-                    //else
-                    //    borrado = "No";
-
-                    dgv.Rows.Add(table.Rows[i]["idFarmacia"],
-                                    table.Rows[i]["nomFarmacia"],
-                                    table.Rows[i]["calle"],
-                                    table.Rows[i]["numero"],
-                                    table.Rows[i]["nomBarrio"]
-                                    //,borrado
-                                    ) ;
+                    dgv.Rows.Add(lista[i].IdFarmacia.ToString()
+                        , lista[i].Nombre.ToString()
+                        , lista[i].Calle.ToString()
+                        , lista[i].Numero.ToString()
+                        , lista[i].Barrio.Nombre.ToString()
+                        );
                 }
                 dgv.ClearSelection();
             }
@@ -77,14 +69,14 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            DataTable resultadoFarmacias;
+            List<Farmacia> resultadoFarmacias;
             string sucursal = this.textbSucursal.TextName;
             string calle = this.TextbCalle.TextName;
             string numero = this.textbNumero.TextName;
 
             if (validarDatos())
             {
-                resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, "", "");
+                resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, numero, "", "");
                 this.cargarGrilla(this.dgvFarmacias, resultadoFarmacias);
             }
         }
@@ -99,7 +91,7 @@ namespace FarmaTown.Presentacion.Farmacias
                 && string.IsNullOrEmpty(numero)
                 )
             {
-                MessageBox.Show("Debe ingresar un usuario o un Rol",
+                MessageBox.Show("Debe ingresar al menos uno de los datos",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 this.textbSucursal.Focus();
@@ -154,7 +146,7 @@ namespace FarmaTown.Presentacion.Farmacias
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ABMFar = new frmABMFarmacias();
-            int id = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
+            int id = Convert.ToInt32(this.dgvFarmacias.CurrentRow.Cells[0].Value.ToString());
             oFarmacia = this.oFarmacia.traerFarmacia(id);
             ABMFar.seleccionarFarmacia(frmABMFarmacias.FormMode.update, oFarmacia);
             ABMFar.ShowDialog();
@@ -164,11 +156,23 @@ namespace FarmaTown.Presentacion.Farmacias
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ABMFar = new frmABMFarmacias();
-            int id = (int)this.dgvFarmacias.CurrentRow.Cells[0].Value;
+            int id = Convert.ToInt32(this.dgvFarmacias.CurrentRow.Cells[0].Value.ToString());
             oFarmacia = this.oFarmacia.traerFarmacia(id);
             ABMFar.seleccionarFarmacia(frmABMFarmacias.FormMode.delete, oFarmacia);
             ABMFar.ShowDialog();
             this.actualizar();
+        }
+        private void textbNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnConsultar.PerformClick();
+
+            }
+            else if (char.IsDigit((char)e.KeyCode))
+            {
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
