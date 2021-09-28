@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Localidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,7 +124,7 @@ namespace FarmaTown.Presentacion.Farmacias
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                int idFila = Convert.ToInt32(dgv.Rows[i].Cells[0].Value.ToString());
                 if (idFila == id)
                 {
                     dgv.Rows[i].Selected = true;
@@ -134,45 +135,33 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void mostrarBarrios()
         {
-            //DataTable tablaBarrios = oBarrio.recuperarTodos(false);
+            List<Barrio> tablaBarrios = oBarrio.recuperarTodos(false);
 
-            //if (tablaBarrios.Rows.Count > 0)
-            //{
-            //    this.cargarGrilla(this.dgvBarrios, tablaBarrios);
-            //    this.dgvBarrios.ClearSelection();
-            //}
-            //else
-            //    this.dgvBarrios.Rows.Add("No se encontraron empleados...");
+            
+            this.cargarGrilla(this.dgvBarrios, tablaBarrios);
+            
         }
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Barrio> lista)
         {
             /*
-             * Carga la grilla con los datos necesarios
-             */
+                * Carga la grilla con los datos necesarios
+                */
             dgv.Rows.Clear();
-            if (table != null)
+            if (lista != null)
             {
-                for (int i = 0; i < table.Rows.Count; i++)
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
                 {
-                    //string borrado;
-                    //bool valorBorrado = (bool) table.Rows[i]["borrado"];
-                    //Console.WriteLine(valorBorrado);
-
-                    //if (valorBorrado == "True")
-                    //    borrado = "Si";
-                    //else
-                    //    borrado = "No";
-
-                    dgv.Rows.Add(table.Rows[i]["idBarrio"],
-                                    table.Rows[i]["nomBarrio"],
-                                    table.Rows[i]["nomLocalidad"]
-                                    //,borrado
-                                    );
+                    dgv.Rows.Add(lista[i].IdBarrio.ToString()
+                        , lista[i].Nombre.ToString()
+                        , lista[i].Localidad.Nombre.ToString()
+                        );
                 }
                 dgv.ClearSelection();
             }
         }
+        
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -195,7 +184,7 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             switch (formMode)
             {
-                /*case.FormMode.insert:
+                case FormMode.insert:
                     {
                         if (this.validarCampos())
                         {
@@ -206,7 +195,7 @@ namespace FarmaTown.Presentacion.Farmacias
                                 oFarmacia.Calle = this.txtbCalle.TextName;
                                 oFarmacia.Numero = Convert.ToInt32(this.txtbNumero.TextName);
                                 oFarmacia.Barrio = new Barrio();
-                                oFarmacia.Barrio.IdBarrio = (int)this.dgvBarrios.CurrentRow.Cells[0].Value;
+                                oFarmacia.Barrio.IdBarrio = Convert.ToInt32(this.dgvBarrios.CurrentRow.Cells[0].Value.ToString());
 
                                 if (oFarmacia.crearFarmacia(oFarmacia))
                                 {
@@ -218,19 +207,113 @@ namespace FarmaTown.Presentacion.Farmacias
                                 MessageBox.Show("La farmacia que intenta ingresar ya esta en el sistema!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
-                    }*/
+                    }
+                case FormMode.update:
+                    {
+                        if (this.validarCampos())
+                        {
+                            oFarmacia.Nombre = txtbNombre.TextName;
+                            oFarmacia.Calle = txtbCalle.TextName;
+                            oFarmacia.Numero = Convert.ToInt32(txtbNumero.TextName);
+                            oFarmacia.Barrio = new Barrio();
+                            oFarmacia.Barrio.IdBarrio = Convert.ToInt32(this.dgvBarrios.SelectedRows[0].Cells[0].Value);
+                            ;
+
+                            if (oFarmacia.actualizarFarmacia(oFarmacia))
+                            {
+                                MessageBox.Show("Farmacia actualizada!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                                MessageBox.Show("Error al actualizar la farmacia!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        break;
+                    }
+                case FormMode.delete:
+                    {
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar la farmacia seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (decision == DialogResult.OK)
+                        {
+
+                            if (oFarmacia.cambiarEstadoFarmacia(oFarmacia, false))
+                            {
+                                MessageBox.Show("Farmacia Deshabilitada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                                MessageBox.Show("Error al deshabilitar la farmacia", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+                    }
 
             }
         }
 
-        /*private bool existeFarmacia()
+        private bool existeFarmacia()
         {
-            
-        }*/
+            string nom = this.txtbNombre.TextName;
+            string calle = this.txtbCalle.TextName;
+            string num = this.txtbNumero.TextName;
+            List<Farmacia> farma = this.oFarmacia.recuperarCParam(this.txtbNombre.TextName, this.txtbCalle.TextName, this.txtbNumero.TextName, this.dgvBarrios.CurrentRow.Cells[1].Value.ToString(), this.dgvBarrios.CurrentRow.Cells[2].Value.ToString());
+            if (farma.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool validarCampos()
+        {
+            string nom = this.txtbNombre.TextName;
+            string calle = this.txtbCalle.TextName;
+            string num = this.txtbNumero.TextName;
+
+            if (string.IsNullOrEmpty(nom))
+            {
+                MessageBox.Show("Debe ingresar un nombre",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
+            else if (string.IsNullOrEmpty(calle))
+            {
+                MessageBox.Show("Debe ingresar un nombre de calle",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbCalle.Focus();
+            }
+            else if (string.IsNullOrEmpty(num))
+            {
+                MessageBox.Show("Debe ingresar un numero de direccion",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNumero.Focus();
+            }
+            else if (this.dgvBarrios.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe elegir un barrio",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.dgvBarrios.Focus();
+            }
+            else
+            {
+                return true;
+            }
+            //Cuando no llegó al último else, entró a 
+            // alguno anterior...
+            return false;
+        }
 
         private void btnRegBarrio_Click(object sender, EventArgs e)
         {
-
+            frmABMBarrios barrios = new frmABMBarrios();
+            barrios.ShowDialog();
+            this.mostrarBarrios();
         }
     }
 }

@@ -588,6 +588,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia.Text = "Registrar Farmacia";
             this.btnRegFarmacia.TextColor = System.Drawing.Color.Black;
             this.btnRegFarmacia.UseVisualStyleBackColor = false;
+            this.btnRegFarmacia.Click += new System.EventHandler(this.btnRegFarmacia_Click);
             // 
             // btnCancelar
             // 

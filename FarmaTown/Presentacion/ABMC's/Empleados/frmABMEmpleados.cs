@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Farmacias;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,16 +42,18 @@ namespace FarmaTown.Presentacion.Empleados
         private void frmABMEmpleados_Load(object sender, EventArgs e)
         {
             //Carga los combos
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
-            DataTable tablaFarmacias = oFarmacia.recuperarTodos();
+            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
+            List<Farmacia> listaFarmacias = oFarmacia.recuperarTodos();
 
-            if (tablaFarmacias.Rows.Count > 0)
+            if (listaFarmacias.Count > 0)
             {
-                this.cargarGrilla(this.dgvFarmacias, tablaFarmacias);
-                this.dgvFarmacias.ClearSelection();
+                this.cargarGrilla(this.dgvFarmacias, listaFarmacias);
             }
             else
-                this.dgvFarmacias.Rows.Add("No se encontraron farmacias...");
+            {
+                this.dgvFarmacias.Columns.Clear();
+
+            }
 
             switch (formMode)
             {
@@ -196,7 +199,7 @@ namespace FarmaTown.Presentacion.Empleados
                 this.txtbNombre.Focus();
             }
 
-            DataTable resultadosFarm = this.oFarmacia.recuperarCParam(nomFarmacia, calle, barrio, localidad);
+            List<Farmacia> resultadosFarm = this.oFarmacia.recuperarCParam(nomFarmacia, calle,"", barrio, localidad);
             this.cargarGrilla(this.dgvFarmacias, resultadosFarm);
 
         }
@@ -381,19 +384,28 @@ namespace FarmaTown.Presentacion.Empleados
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Farmacia> lista)
         {
+            /*
+                * Carga la grilla con los datos necesarios
+                * pasado por lista.
+                */
             dgv.Rows.Clear();
-            for (int i = 0; i < table.Rows.Count; i++)
+            if (lista != null)
             {
-                dgv.Rows.Add(table.Rows[i]["idFarmacia"],
-                                table.Rows[i]["nomFarmacia"],
-                                table.Rows[i]["calle"],
-                                table.Rows[i]["numero"],
-                                table.Rows[i]["nomBarrio"],
-                                table.Rows[i]["nomLocalidad"]); 
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
+                {
+                    dgv.Rows.Add(lista[i].IdFarmacia.ToString()
+                        , lista[i].Nombre.ToString()
+                        , lista[i].Calle.ToString()
+                        , lista[i].Numero.ToString()
+                        , lista[i].Barrio.Nombre.ToString()
+                        , lista[i].Barrio.Localidad.Nombre.ToString()
+                        );
+                }
+                dgv.ClearSelection();
             }
-            dgv.ClearSelection();
         }
 
         private bool validarCampos()
@@ -527,6 +539,14 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.Visible = false;
             this.txtbPasaporteNro.Visible = false;
             this.lblAvisoNroDoc.Text = "";
+        }
+
+        private void btnRegFarmacia_Click(object sender, EventArgs e)
+        {
+            frmABMFarmacias farmacias = new frmABMFarmacias();
+            farmacias.ShowDialog();
+
+            this.actualizar();
         }
     }
 }
