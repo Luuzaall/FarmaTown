@@ -84,7 +84,7 @@ namespace FarmaTown.Presentacion.Farmacias
 
             if (validarDatos())
             {
-                resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, "", "");
+                resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, numero, "", "");
                 this.cargarGrilla(this.dgvFarmacias, resultadoFarmacias);
             }
         }
@@ -99,7 +99,7 @@ namespace FarmaTown.Presentacion.Farmacias
                 && string.IsNullOrEmpty(numero)
                 )
             {
-                MessageBox.Show("Debe ingresar un usuario o un Rol",
+                MessageBox.Show("Debe ingresar al menos uno de los datos",
                     "Validación de Datos", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                 this.textbSucursal.Focus();
@@ -169,6 +169,18 @@ namespace FarmaTown.Presentacion.Farmacias
             ABMFar.seleccionarFarmacia(frmABMFarmacias.FormMode.delete, oFarmacia);
             ABMFar.ShowDialog();
             this.actualizar();
+        }
+        private void textbNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnConsultar.PerformClick();
+
+            }
+            else if (char.IsDigit((char)e.KeyCode))
+            {
+                e.SuppressKeyPress = true;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

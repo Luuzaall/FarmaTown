@@ -28,9 +28,9 @@ namespace FarmaTown.Logica
             return oFarmaciaDao.recuperarTodos();
         }
 
-        public DataTable recuperarCParam(string nombre, string calle, string barrio, string localidad)
+        public DataTable recuperarCParam(string nombre, string calle, string num, string barrio, string localidad)
         {
-            return this.oFarmaciaDao.recuperarCParam(nombre, calle, barrio, localidad);
+            return this.oFarmaciaDao.recuperarCParam(nombre, calle, num, barrio, localidad);
         }
 
         public Farmacia traerFarmacia(int id)
