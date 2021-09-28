@@ -21,7 +21,7 @@ namespace FarmaTown.Datos
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }
-        public List<Barrio> recuperarCParam(string nombre, string localidad)
+        public List<Barrio> recuperarCParam(string nombre)
         {
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
@@ -29,8 +29,7 @@ namespace FarmaTown.Datos
                 ", borrado" +
                 " FROM Barrios" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " WHERE nombre LIKE '%" + nombre + "%'";
-                //" WHERE localidad LIKE '%" + localidad + "%'";
+                " WHERE nomBarrio LIKE '%" + nombre + "%'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

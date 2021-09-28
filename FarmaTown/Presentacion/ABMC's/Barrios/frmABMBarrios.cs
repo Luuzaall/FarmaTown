@@ -15,12 +15,12 @@ namespace FarmaTown.Presentacion.Localidades
     {
         private FormMode formMode = FormMode.insert;
         Barrio oBarrio;
-        //Localidad oLocalidad;
+
         public frmABMBarrios()
         {
             InitializeComponent();
             oBarrio = new Barrio();
-            //oLocalidad = new Localidad();
+
         }
         public enum FormMode
         {
@@ -41,7 +41,7 @@ namespace FarmaTown.Presentacion.Localidades
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
-            //string localidad = this.txtbLocalidad.Text;
+            int localidad = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
             {
@@ -51,15 +51,14 @@ namespace FarmaTown.Presentacion.Localidades
                 this.txtbNombre.Focus();
                 return false;
             }
-            //else if (string.IsNullOrEmpty(localidad)
-            //    || localidad == " ")
-            //{
-            //    MessageBox.Show("Debe ingresar una localidad",
-            //        "Validación de Datos", MessageBoxButtons.OK
-            //        , MessageBoxIcon.Information);
-            //    this.txtbLocalidad.Focus();
-            //    return false;
-            //}
+            else if 
+                (this.dgvLocalidades.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar una localidad",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                return false;
+            }
             return true;
         }
 
@@ -73,18 +72,6 @@ namespace FarmaTown.Presentacion.Localidades
             else
                 return true;
         }
-
-        //private bool existeLocalidad(string localidad)
-        //{
-        //    Barrio resultado = this.oLocalidad.traerLocalidad(localidad);
-        //    if (resultado is null)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //        return true;
-        //}
-
 
         //MÉTODOS DE RESPUESTA A EVENTOS
 
@@ -115,26 +102,10 @@ namespace FarmaTown.Presentacion.Localidades
             }
         }
 
-        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        //private void txtbLocalidad_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (char.IsDigit(e.KeyChar))
-        //    {
-        //        e.Handled = true;
-        //    }
-        //}
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
-            //this.txtbLocalidad.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -155,6 +126,7 @@ namespace FarmaTown.Presentacion.Localidades
                             {
                                 Barrio oNuevoBarrio = new Barrio();
                                 oNuevoBarrio.Nombre = nombre;
+                                oNuevoBarrio.IdBarrio = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
 
                                 bool resultInsert = oNuevoBarrio.crearBarrio(oNuevoBarrio);
                                 if (resultInsert)
@@ -178,6 +150,7 @@ namespace FarmaTown.Presentacion.Localidades
                         if (validarCampos())
                         {
                             oBarrio.Nombre = this.txtbNombre.Text;
+                            oBarrio.IdBarrio = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
 
                             bool resultActualiz = this.oBarrio.actualizar(oBarrio);
                             if (resultActualiz)

@@ -25,9 +25,9 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmUsuarios());
-            Application.Run(new frmEmpleados(null)); 
-            //Application.Run(new frmLocalidades());
-            //Application.Run(new frmABMLocalidades());
+            //Application.Run(new frmEmpleados(null)); 
+            Application.Run(new frmLocalidades());
+            Application.Run(new frmABMLocalidades());
             //Application.Run(new frmBarrios());
 
         }
