@@ -15,6 +15,8 @@ namespace FarmaTown.Datos
             string query = "SELECT b.idBarrio" +
                             ", b.nombre as nomBarrio" +
                             ", l.nombre as nomLocalidad" +
+                            //NUEVA
+                            ", l.idLocalidad " +
                             " FROM Barrios b" +
                             " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                             " WHERE b.borrado = 0";
@@ -26,6 +28,8 @@ namespace FarmaTown.Datos
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
+                //NUEVA
+                ", l.idLocalidad " +
                 ", b.borrado" +
                 " FROM Barrios b" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
@@ -114,9 +118,11 @@ namespace FarmaTown.Datos
         public int crear(Barrio nuevoBarrio)
         {
             string query = "INSERT INTO Barrios" +
-                "(nombre, borrado)" +
-                " VALUES" +
-                "('" + nuevoBarrio.Nombre + "', 0)";
+                            //nuevo idLocalidad y nombre
+                           "(nombre, idLocalidad, nombre, borrado)" +
+                           " VALUES" +
+                           //Nueva lo de nuevobarrio.Localidad y la de al lado
+                           "('" + nuevoBarrio.Nombre + "','" + nuevoBarrio.Localidad.IdLocalidad + "','" + nuevoBarrio.Localidad.Nombre + "', 0)";
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
@@ -124,7 +130,8 @@ namespace FarmaTown.Datos
         public int actualizar(Barrio oBarrio)
         {
             string query = "UPDATE Barrios" +
-                " SET nombre = '" + oBarrio.Nombre + "'" +
+                //Nuevo a partir de ....................aca
+                " SET nombre = '" + oBarrio.Nombre + "'" + "',idLocalidad = '" + oBarrio.Localidad.IdLocalidad + "' ,nomLocalidad = " + oBarrio.Localidad.Nombre +
                 " WHERE idBarrio = " + oBarrio.IdBarrio;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
