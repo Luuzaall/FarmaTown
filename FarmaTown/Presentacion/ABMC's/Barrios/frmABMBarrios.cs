@@ -43,7 +43,7 @@ namespace FarmaTown.Presentacion.Localidades
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
-            int localidad = int.Parse( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
+            oLocalidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
             {
@@ -142,7 +142,7 @@ namespace FarmaTown.Presentacion.Localidades
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = int.Parse(dgv.Rows[i].Cells[0].Value.ToString() );
+                int idFila = Convert.ToInt32(dgv.Rows[i].Cells[0].Value.ToString());
                 if (idFila == id)
                 {
                     dgv.Rows[i].Selected = true;
