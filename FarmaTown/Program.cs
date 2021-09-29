@@ -33,7 +33,7 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmABMBarrios());
             //Application.Run(new frmBarrios());
             //Application.Run(new frmABMMedicamentos());
-            Application.Run(new frmMedicamentos());
+            //Application.Run(new frmMedicamentos());
 
             //Application.Run(new frmTiposDoc());
             //Application.Run(new frmTiposDoc());
