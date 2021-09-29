@@ -193,7 +193,9 @@ namespace FarmaTown.Presentacion.Localidades
                             if (!this.existeBarrio(nombre))
                             {
                                 Barrio oNuevoBarrio = new Barrio();
-                                oNuevoBarrio.Nombre = nombre;
+                                //oNuevoBarrio.Nombre = nombre;
+                                //nueva, vieja la de arriba
+                                oNuevoBarrio.Nombre = this.txtbNombre.Text;
                                 oNuevoBarrio.IdBarrio = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
                                 //Nueva:
                                 oNuevoBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
@@ -220,7 +222,7 @@ namespace FarmaTown.Presentacion.Localidades
                         if (validarCampos())
                         {
                             oBarrio.Nombre = this.txtbNombre.Text;
-                            //¿que hace la linea que sigue???
+                            //¿que hace la linea que sige??
                             oBarrio.IdBarrio = int.Parse( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
                             oBarrio.Localidad = new Localidad();
                             //Nueva:
