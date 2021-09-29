@@ -43,6 +43,7 @@ namespace FarmaTown.Presentacion.Localidades
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
+            //Nueva:
             oLocalidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
@@ -114,9 +115,9 @@ namespace FarmaTown.Presentacion.Localidades
 
         //NUEVO DESDE ACA
 
-        //Borra todo lo que no esta seleccionado de la dgv
         private void cargarFila(DataGridView dgv)
         {
+            //Borra todo lo que no esta seleccionado de la dgv
             int cantFilasdgv = dgv.RowCount;
 
             for (int i = 0; i < cantFilasdgv; i++)
@@ -194,6 +195,8 @@ namespace FarmaTown.Presentacion.Localidades
                                 Barrio oNuevoBarrio = new Barrio();
                                 oNuevoBarrio.Nombre = nombre;
                                 oNuevoBarrio.IdBarrio = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
+                                //Nueva:
+                                oNuevoBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
 
                                 bool resultInsert = oNuevoBarrio.crearBarrio(oNuevoBarrio);
                                 if (resultInsert)
@@ -217,7 +220,12 @@ namespace FarmaTown.Presentacion.Localidades
                         if (validarCampos())
                         {
                             oBarrio.Nombre = this.txtbNombre.Text;
+                            //¿que hace la linea que sigue???
                             oBarrio.IdBarrio = int.Parse( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
+                            oBarrio.Localidad = new Localidad();
+                            //Nueva:
+                            oBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.SelectedRows[0].Cells[0].Value);
+
 
                             bool resultActualiz = this.oBarrio.actualizar(oBarrio);
                             if (resultActualiz)
