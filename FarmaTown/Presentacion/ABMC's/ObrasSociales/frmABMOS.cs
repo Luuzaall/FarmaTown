@@ -49,6 +49,15 @@ namespace FarmaTown.Presentacion.ObrasSociales
                 this.txtbNombre.Focus();
                 return false;
             }
+            else if (nombre.Length <= 2)
+            {
+                MessageBox.Show("Debe ingresar un nombre válido",
+                       "Validación de Datos", MessageBoxButtons.OK
+                       , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+                return false;
+
+            }
             return true;
         }
 
@@ -85,6 +94,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
                         this.Text = "Deshabilitar Obra Social - FarmaTown";
                         this.txtbNombre.Text = oOS.Nombre;
                         this.txtbNombre.Enabled = false;
+                        this.lblAviso.Visible = false;
                         this.btnLimpiar.Enabled = false;
                         break;
 
@@ -187,6 +197,5 @@ namespace FarmaTown.Presentacion.ObrasSociales
                     }
             }
         }
-
     }
 }

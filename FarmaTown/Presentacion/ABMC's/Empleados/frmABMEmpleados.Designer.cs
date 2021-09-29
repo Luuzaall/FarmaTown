@@ -46,16 +46,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.gbFiltrosFarm = new System.Windows.Forms.GroupBox();
+            this.txtbLocalidad = new System.Windows.Forms.TextBox();
+            this.txtbNomFarm = new System.Windows.Forms.TextBox();
+            this.txtbNomCalle = new System.Windows.Forms.TextBox();
+            this.txtbBarrio = new System.Windows.Forms.TextBox();
             this.btnConsultarFarm = new CustomControls.RJControls.RJButton();
             this.btnLimpiarFarmacias = new CustomControls.RJControls.RJButton();
             this.transparentLabel1 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbLocalidad = new JMaterialTextbox.JMaterialTextbox();
             this.lblNomFarm = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.transparentLabel2 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNomFarm = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbBarrio = new JMaterialTextbox.JMaterialTextbox();
             this.lblCalle = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNomCalle = new JMaterialTextbox.JMaterialTextbox();
             this.dgvFarmacias = new System.Windows.Forms.DataGridView();
             this.idFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +105,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(301, 20);
             this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // txtbPasaporteLetras
             // 
@@ -240,7 +240,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             // gbFarmacias
             // 
-            this.gbFarmacias.BackColor = System.Drawing.Color.White;
+            this.gbFarmacias.BackColor = System.Drawing.Color.Transparent;
             this.gbFarmacias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbFarmacias.Controls.Add(this.btnActualizar);
             this.gbFarmacias.Controls.Add(this.transparentLabel3);
@@ -294,22 +294,68 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             // gbFiltrosFarm
             // 
+            this.gbFiltrosFarm.BackColor = System.Drawing.Color.Snow;
+            this.gbFiltrosFarm.Controls.Add(this.txtbLocalidad);
+            this.gbFiltrosFarm.Controls.Add(this.txtbNomFarm);
+            this.gbFiltrosFarm.Controls.Add(this.txtbNomCalle);
+            this.gbFiltrosFarm.Controls.Add(this.txtbBarrio);
             this.gbFiltrosFarm.Controls.Add(this.btnConsultarFarm);
             this.gbFiltrosFarm.Controls.Add(this.btnLimpiarFarmacias);
             this.gbFiltrosFarm.Controls.Add(this.transparentLabel1);
-            this.gbFiltrosFarm.Controls.Add(this.txtbLocalidad);
             this.gbFiltrosFarm.Controls.Add(this.lblNomFarm);
             this.gbFiltrosFarm.Controls.Add(this.transparentLabel2);
-            this.gbFiltrosFarm.Controls.Add(this.txtbNomFarm);
-            this.gbFiltrosFarm.Controls.Add(this.txtbBarrio);
             this.gbFiltrosFarm.Controls.Add(this.lblCalle);
-            this.gbFiltrosFarm.Controls.Add(this.txtbNomCalle);
             this.gbFiltrosFarm.Location = new System.Drawing.Point(18, 32);
             this.gbFiltrosFarm.Name = "gbFiltrosFarm";
             this.gbFiltrosFarm.Size = new System.Drawing.Size(1198, 136);
             this.gbFiltrosFarm.TabIndex = 35;
             this.gbFiltrosFarm.TabStop = false;
             this.gbFiltrosFarm.Text = "FILTROS";
+            // 
+            // txtbLocalidad
+            // 
+            this.txtbLocalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbLocalidad.Location = new System.Drawing.Point(711, 84);
+            this.txtbLocalidad.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbLocalidad.Name = "txtbLocalidad";
+            this.txtbLocalidad.Size = new System.Drawing.Size(301, 20);
+            this.txtbLocalidad.TabIndex = 8;
+            this.txtbLocalidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbLocalidad_KeyDown);
+            // 
+            // txtbNomFarm
+            // 
+            this.txtbNomFarm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNomFarm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNomFarm.Location = new System.Drawing.Point(194, 26);
+            this.txtbNomFarm.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNomFarm.Name = "txtbNomFarm";
+            this.txtbNomFarm.Size = new System.Drawing.Size(301, 20);
+            this.txtbNomFarm.TabIndex = 5;
+            this.txtbNomFarm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNomFarm_KeyDown);
+            // 
+            // txtbNomCalle
+            // 
+            this.txtbNomCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNomCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNomCalle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbNomCalle.Location = new System.Drawing.Point(194, 81);
+            this.txtbNomCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNomCalle.Name = "txtbNomCalle";
+            this.txtbNomCalle.Size = new System.Drawing.Size(301, 20);
+            this.txtbNomCalle.TabIndex = 7;
+            this.txtbNomCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNomCalle_KeyDown);
+            // 
+            // txtbBarrio
+            // 
+            this.txtbBarrio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbBarrio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbBarrio.Location = new System.Drawing.Point(711, 29);
+            this.txtbBarrio.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbBarrio.Name = "txtbBarrio";
+            this.txtbBarrio.Size = new System.Drawing.Size(301, 20);
+            this.txtbBarrio.TabIndex = 6;
+            this.txtbBarrio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbBarrio_KeyDown);
             // 
             // btnConsultarFarm
             // 
@@ -375,28 +421,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.transparentLabel1.Text = "Barrio:";
             this.transparentLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // txtbLocalidad
-            // 
-            this.txtbLocalidad.BackColor = System.Drawing.Color.Transparent;
-            this.txtbLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbLocalidad.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbLocalidad.ForeColors = System.Drawing.Color.Black;
-            this.txtbLocalidad.HintText = null;
-            this.txtbLocalidad.IsPassword = false;
-            this.txtbLocalidad.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbLocalidad.LineThickness = 3;
-            this.txtbLocalidad.Location = new System.Drawing.Point(711, 78);
-            this.txtbLocalidad.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbLocalidad.MaxLength = 32767;
-            this.txtbLocalidad.Name = "txtbLocalidad";
-            this.txtbLocalidad.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbLocalidad.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbLocalidad.ReadOnly = false;
-            this.txtbLocalidad.Size = new System.Drawing.Size(301, 23);
-            this.txtbLocalidad.TabIndex = 8;
-            this.txtbLocalidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbLocalidad.TextName = "";
-            // 
             // lblNomFarm
             // 
             this.lblNomFarm.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -421,50 +445,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.transparentLabel2.Text = " Localidad:";
             this.transparentLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // txtbNomFarm
-            // 
-            this.txtbNomFarm.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNomFarm.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNomFarm.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNomFarm.ForeColors = System.Drawing.Color.Black;
-            this.txtbNomFarm.HintText = null;
-            this.txtbNomFarm.IsPassword = false;
-            this.txtbNomFarm.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNomFarm.LineThickness = 3;
-            this.txtbNomFarm.Location = new System.Drawing.Point(194, 26);
-            this.txtbNomFarm.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNomFarm.MaxLength = 32767;
-            this.txtbNomFarm.Name = "txtbNomFarm";
-            this.txtbNomFarm.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNomFarm.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNomFarm.ReadOnly = false;
-            this.txtbNomFarm.Size = new System.Drawing.Size(301, 23);
-            this.txtbNomFarm.TabIndex = 5;
-            this.txtbNomFarm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNomFarm.TextName = "";
-            // 
-            // txtbBarrio
-            // 
-            this.txtbBarrio.BackColor = System.Drawing.Color.Transparent;
-            this.txtbBarrio.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbBarrio.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbBarrio.ForeColors = System.Drawing.Color.Black;
-            this.txtbBarrio.HintText = null;
-            this.txtbBarrio.IsPassword = false;
-            this.txtbBarrio.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbBarrio.LineThickness = 3;
-            this.txtbBarrio.Location = new System.Drawing.Point(711, 26);
-            this.txtbBarrio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbBarrio.MaxLength = 32767;
-            this.txtbBarrio.Name = "txtbBarrio";
-            this.txtbBarrio.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbBarrio.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbBarrio.ReadOnly = false;
-            this.txtbBarrio.Size = new System.Drawing.Size(301, 23);
-            this.txtbBarrio.TabIndex = 7;
-            this.txtbBarrio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbBarrio.TextName = "";
-            // 
             // lblCalle
             // 
             this.lblCalle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -476,28 +456,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblCalle.TabStop = false;
             this.lblCalle.Text = "Nombre Calle:";
             this.lblCalle.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // txtbNomCalle
-            // 
-            this.txtbNomCalle.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNomCalle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNomCalle.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNomCalle.ForeColors = System.Drawing.Color.Black;
-            this.txtbNomCalle.HintText = null;
-            this.txtbNomCalle.IsPassword = false;
-            this.txtbNomCalle.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNomCalle.LineThickness = 3;
-            this.txtbNomCalle.Location = new System.Drawing.Point(194, 78);
-            this.txtbNomCalle.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNomCalle.MaxLength = 32767;
-            this.txtbNomCalle.Name = "txtbNomCalle";
-            this.txtbNomCalle.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNomCalle.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNomCalle.ReadOnly = false;
-            this.txtbNomCalle.Size = new System.Drawing.Size(301, 23);
-            this.txtbNomCalle.TabIndex = 6;
-            this.txtbNomCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNomCalle.TextName = "";
             // 
             // dgvFarmacias
             // 
@@ -523,6 +481,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvFarmacias.Size = new System.Drawing.Size(1078, 211);
             this.dgvFarmacias.TabIndex = 11;
             this.dgvFarmacias.TabStop = false;
+            this.dgvFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFarmacias_KeyDown);
             // 
             // idFarmacia
             // 
@@ -643,7 +602,6 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             // frmABMEmpleados
             // 
-            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -666,6 +624,7 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.PerformLayout();
             this.gbFarmacias.ResumeLayout(false);
             this.gbFiltrosFarm.ResumeLayout(false);
+            this.gbFiltrosFarm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).EndInit();
             this.ResumeLayout(false);
 
@@ -676,13 +635,9 @@ namespace FarmaTown.Presentacion.Empleados
         private CustomControls.RJControls.RJButton btnAceptar;
         private System.Windows.Forms.GroupBox gbFarmacias;
         private System.Windows.Forms.DataGridView dgvFarmacias;
-        private JMaterialTextbox.JMaterialTextbox txtbNomFarm;
         private DiseñosElemGUI.TransparentLabel lblNomFarm;
-        private JMaterialTextbox.JMaterialTextbox txtbLocalidad;
         private DiseñosElemGUI.TransparentLabel transparentLabel2;
-        private JMaterialTextbox.JMaterialTextbox txtbBarrio;
         private DiseñosElemGUI.TransparentLabel transparentLabel1;
-        private JMaterialTextbox.JMaterialTextbox txtbNomCalle;
         private DiseñosElemGUI.TransparentLabel lblCalle;
         private CustomControls.RJControls.RJButton btnRegFarmacia;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFarmacia;
@@ -707,5 +662,9 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.TextBox txtbPasaporteNro;
         private System.Windows.Forms.TextBox txtbPasaporteLetras;
         private System.Windows.Forms.TextBox txtbNombre;
+        private System.Windows.Forms.TextBox txtbLocalidad;
+        private System.Windows.Forms.TextBox txtbNomFarm;
+        private System.Windows.Forms.TextBox txtbNomCalle;
+        private System.Windows.Forms.TextBox txtbBarrio;
     }
 }

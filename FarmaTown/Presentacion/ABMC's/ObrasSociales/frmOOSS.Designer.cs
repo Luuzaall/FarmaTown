@@ -157,7 +157,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros.Controls.Add(this.btnConsultar);
             this.gbFiltros.Controls.Add(this.btnLimpiar);
             this.gbFiltros.Controls.Add(this.label1);
-            this.gbFiltros.Location = new System.Drawing.Point(23, 57);
+            this.gbFiltros.Location = new System.Drawing.Point(23, 78);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(622, 185);
             this.gbFiltros.TabIndex = 31;
@@ -180,7 +180,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(259, 109);
+            this.btnConsultar.Location = new System.Drawing.Point(245, 109);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(125, 49);

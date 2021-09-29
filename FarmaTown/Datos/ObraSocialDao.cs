@@ -16,7 +16,8 @@ namespace FarmaTown.Datos
                 ", nombre" +
                 ", borrado" +
                 " FROM ObrasSociales" +
-                " WHERE nombre LIKE '%" + nombre + "%'";
+                " WHERE nombre LIKE '%" + nombre + "%' " +
+                " AND borrado = 0";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

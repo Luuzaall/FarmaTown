@@ -28,15 +28,15 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmFarmacias());
             //Application.Run(new frmUsuarios());
-            //Application.Run(new frmEmpleados(null)); 
-            Application.Run(new frmBarrios());
+            Application.Run(new frmEmpleados(null)); 
+            //Application.Run(new frmBarrios());
             //Application.Run(new frmABMBarrios());
             //Application.Run(new frmLocalidades());
             //Application.Run(new frmABMLocalidades());
             //Application.Run(new frmABMMedicamentos());
             //Application.Run(new frmMedicamentos());
 
-            //Application.Run(new frmTiposDoc());
+            //Application.Run(new frmOOSS());
             //Application.Run(new frmTiposDoc());
 
         }

@@ -90,6 +90,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
                     {
                         this.Text = "Deshabilitar Tipo Documento - FarmaTown";
                         this.cargarCampos();
+                        this.lblAviso.Visible = false;
                         this.txtbNombre.Enabled = false;
                         this.txtbDescrip.Enabled = false;
                         this.btnLimpiar.Enabled = false;

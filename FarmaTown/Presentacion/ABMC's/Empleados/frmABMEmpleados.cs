@@ -72,16 +72,17 @@ namespace FarmaTown.Presentacion.Empleados
 
                 case FormMode.delete:
                     {
-                        this.lblAviso.Visible = false;
                         this.cargarDatos();
                         this.Text = "Deshabilitar Empleado - FarmaTown";
                         this.cargarFila(this.dgvFarmacias);
+
+                        this.lblAviso.Visible = false;
                         this.txtbNombre.Enabled = false;
                         this.txtbNroDoc.Enabled = false;
                         this.cboTipoDoc.Enabled = false;
                         this.btnLimpiarEmpleado.Enabled = false;
-                        this.gbFiltrosFarm.Enabled = false;
-                        this.btnRegFarmacia.Enabled = false;
+
+                        this.gbFarmacias.Enabled = false;
 
                         break;
                     }
@@ -183,10 +184,10 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void btnConsultarFarm_Click(object sender, EventArgs e)
         {
-            string nomFarmacia = this.txtbNomFarm.TextName;
-            string calle = this.txtbNomCalle.TextName;
-            string barrio = this.txtbBarrio.TextName;
-            string localidad = this.txtbLocalidad.TextName;
+            string nomFarmacia = this.txtbNomFarm.Text;
+            string calle = this.txtbNomCalle.Text;
+            string barrio = this.txtbBarrio.Text;
+            string localidad = this.txtbLocalidad.Text;
 
             if (string.IsNullOrEmpty(nomFarmacia)
                 & string.IsNullOrEmpty(calle)
@@ -210,10 +211,10 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void btnLimpiarFarmacias_Click(object sender, EventArgs e)
         {
-            this.txtbNomFarm.TextName = "";
-            this.txtbNomCalle.TextName = "";
-            this.txtbBarrio.TextName = "";
-            this.txtbLocalidad.TextName = "";
+            this.txtbNomFarm.Text = "";
+            this.txtbNomCalle.Text = "";
+            this.txtbBarrio.Text = "";
+            this.txtbLocalidad.Text = "";
         }
 
         private void cboTipoDoc_SelectionChangeCommited(object sender, EventArgs e)
@@ -254,6 +255,14 @@ namespace FarmaTown.Presentacion.Empleados
                     this.lblAvisoNroDoc.Text = "";
                 }
             }
+        }
+
+        private void btnRegFarmacia_Click(object sender, EventArgs e)
+        {
+            frmABMFarmacias farmacias = new frmABMFarmacias();
+            farmacias.ShowDialog();
+
+            this.actualizar();
         }
 
         private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
@@ -308,11 +317,45 @@ namespace FarmaTown.Presentacion.Empleados
             }
         }
 
-        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar))
+            this.verificarIngresoLetra(e, this.btnAceptar);
+        }
+
+        private void txtbNomFarm_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.verificarIngresoLetra(e, this.btnConsultarFarm);
+        }
+
+        private void txtbBarrio_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.verificarIngresoLetra(e, this.btnConsultarFarm);
+        }
+
+        private void txtbNomCalle_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.verificarIngresoLetra(e, this.btnConsultarFarm);
+        }
+
+        private void txtbLocalidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.verificarIngresoLetra(e, this.btnConsultarFarm);
+        }
+
+        private void dgvFarmacias_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.verificarIngresoLetra(e, this.btnAceptar);
+        }
+
+        private void verificarIngresoLetra(KeyEventArgs e, Button btn)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                e.Handled = true;
+                btn.PerformClick();
+            }
+            if (char.IsDigit((char)e.KeyCode))
+            {
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -326,10 +369,10 @@ namespace FarmaTown.Presentacion.Empleados
             * según el usuario seleccionado.
             */
             this.txtbNombre.Text = this.oEmpleado.Nombre;
-            this.txtbNomFarm.TextName = this.oEmpleado.Farmacia.Nombre;
-            this.txtbNomCalle.TextName = this.oEmpleado.Farmacia.Calle;
-            this.txtbBarrio.TextName = this.oEmpleado.Farmacia.Barrio.Nombre;
-            this.txtbLocalidad.TextName = this.oEmpleado.Farmacia.Barrio.Localidad.Nombre;
+            this.txtbNomFarm.Text = this.oEmpleado.Farmacia.Nombre;
+            this.txtbNomCalle.Text = this.oEmpleado.Farmacia.Calle;
+            this.txtbBarrio.Text = this.oEmpleado.Farmacia.Barrio.Nombre;
+            this.txtbLocalidad.Text = this.oEmpleado.Farmacia.Barrio.Localidad.Nombre;
 
             int idTipoDoc = this.oEmpleado.TipoDoc.IdTipo;
             this.cboTipoDoc.SelectedValue = idTipoDoc;
@@ -422,6 +465,13 @@ namespace FarmaTown.Presentacion.Empleados
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
             }
+            else if(nombre.Length <= 2)
+            {
+                MessageBox.Show("Debe ingresar un nombre válido",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNombre.Focus();
+            }
             else if (indexCboTipoDoc == -1)
             {
                 MessageBox.Show("Debe ingresar un tipo de documento",
@@ -431,7 +481,9 @@ namespace FarmaTown.Presentacion.Empleados
             }
             else if ( (int)this.cboTipoDoc.SelectedValue == 2
                 && ( string.IsNullOrEmpty(this.txtbPasaporteLetras.Text)
-                     || string.IsNullOrEmpty(this.txtbPasaporteNro.Text)) )
+                     || string.IsNullOrEmpty(this.txtbPasaporteNro.Text)
+                     || this.txtbPasaporteLetras.Text.Length < 3
+                     || this.txtbPasaporteNro.Text.Length < 6) ) 
             {
                 MessageBox.Show("Debe completar el número de pasaporte!",
                        "Validación de Datos", MessageBoxButtons.OK
@@ -440,7 +492,8 @@ namespace FarmaTown.Presentacion.Empleados
                  this.txtbPasaporteNro.Focus();
             }
             else if ((int)this.cboTipoDoc.SelectedValue == 1
-                && string.IsNullOrEmpty(nroDoc) )
+                && (string.IsNullOrEmpty(nroDoc)
+                    || nroDoc.Length <8) )
             { 
                 MessageBox.Show("Debe ingresar un número de documento válido!",
                        "Validación de Datos", MessageBoxButtons.OK
@@ -539,14 +592,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.Visible = false;
             this.txtbPasaporteNro.Visible = false;
             this.lblAvisoNroDoc.Text = "";
-        }
-
-        private void btnRegFarmacia_Click(object sender, EventArgs e)
-        {
-            frmABMFarmacias farmacias = new frmABMFarmacias();
-            farmacias.ShowDialog();
-
-            this.actualizar();
         }
     }
 }
