@@ -119,10 +119,16 @@ namespace FarmaTown.Datos
         {
             string query = "INSERT INTO Barrios" +
                             //nuevo idLocalidad y nombre
-                           "(nombre, idLocalidad, nombre, borrado)" +
-                           " VALUES" +
-                           //Nueva lo de nuevobarrio.Localidad y la de al lado
-                           "('" + nuevoBarrio.Nombre + "','" + nuevoBarrio.Localidad.IdLocalidad + "','" + nuevoBarrio.Localidad.Nombre + "', 0)";
+                            "(nombre" +
+                            ", idLocalidad" +
+                            ", nomLocalidad" +
+                            ", borrado" +
+                            " VALUES" +
+                            //Nueva lo de nuevobarrio.Localidad id y nombre
+                            "( '" + nuevoBarrio.Nombre + "'" +
+                            ", '" + nuevoBarrio.Localidad.IdLocalidad + "'" +
+                            ", '" + nuevoBarrio.Localidad.Nombre + "'" +
+                            ", 0)";
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
@@ -130,14 +136,16 @@ namespace FarmaTown.Datos
         public int actualizar(Barrio oBarrio)
         {
             string query = "UPDATE Barrios" +
-                //Nuevo a partir de ....................aca
-                " SET nombre = '" + oBarrio.Nombre + "'" + "',idLocalidad = '" + oBarrio.Localidad.IdLocalidad + "' ,nomLocalidad = " + oBarrio.Localidad.Nombre +
+                //Nuevo a partir de idLocalidad y nomLocalidad
+                " SET nombre = '" + oBarrio.Nombre + "'" + 
+                //"',idLocalidad = '" + oBarrio.Localidad.IdLocalidad + 
+                //"' ,nomLocalidad = " + oBarrio.Localidad.Nombre +
                 " WHERE idBarrio = " + oBarrio.IdBarrio;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public int cambiarEstado(Barrio oBarrio, bool seHabilita)
+            public int cambiarEstado(Barrio oBarrio, bool seHabilita)
         {
             string query = "UPDATE Barrios" +
                 " SET borrado = ";
