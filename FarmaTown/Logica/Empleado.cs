@@ -24,7 +24,7 @@ namespace FarmaTown.Logica
         {
             oEmpleadoDao = new EmpleadoDao();
         }
-        public DataTable recuperarTodos()
+        public List<Empleado> recuperarTodos()
         {
             return oEmpleadoDao.recuperarTodos();
         }
@@ -44,7 +44,7 @@ namespace FarmaTown.Logica
                 return true;
 
         }
-        internal DataTable recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        internal List<Empleado> recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             return oEmpleadoDao.recuperarConParam(nomEmpl, nroDoc, idTipoDoc, nomFarm);
         }

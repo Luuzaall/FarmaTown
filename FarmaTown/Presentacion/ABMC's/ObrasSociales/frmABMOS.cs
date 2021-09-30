@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -102,17 +103,10 @@ namespace FarmaTown.Presentacion.ObrasSociales
             }
         }
 
-        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == ((char)Keys.Enter))
-            {
-                this.btnAceptar.PerformClick();
-
-            }
-            else if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextBoxService.enter(this.btnAceptar, e);
+            TextBoxService.noDigitos(e);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -197,5 +191,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
                     }
             }
         }
+
     }
 }

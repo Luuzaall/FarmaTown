@@ -10,11 +10,14 @@ namespace FarmaTown.Datos
 {
     class UsuarioDao
     {
-        public DataTable recuperarTodos(bool esConBorrados)
+        public List<Usuario> recuperarTodos(bool esConBorrados)
         {
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
+                    ", u.clave" + 
+                    ", u.idRol" + 
                     ", r.nombre as nomRol" +
+                    ", u.idEmpleado" + 
                     ", e.nombre as nomEmpleado" +
                     ", e.borrado " +
                     " FROM Usuarios u" +
@@ -26,20 +29,24 @@ namespace FarmaTown.Datos
             {
                 query = query + " OR u.borrado = 1";
             }
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            return listMapping(tabla);
         }
 
-        public DataTable consultarUsuariosCParam(string nomUs, int idRol, bool conBorrados)
+        public List<Usuario> consultarUsuariosCParam(string nomUs, int idRol, bool conBorrados)
         {
             string query = "SELECT u.idUsuario" +
-                ", u.nombre as nomUsuario" +
-                ", r.nombre as nomRol" +
-                ", e.nombre as nomEmpleado" +
-                ", e.borrado as borrado" + 
-                " FROM Usuarios u " +
-                " INNER JOIN Roles r ON u.idRol = r.idRol" +
-                " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
-                " WHERE u.borrado = 0";
+                    ", u.nombre as nomUsuario" +
+                    ", u.clave" +
+                    ", u.idRol" +
+                    ", r.nombre as nomRol" +
+                    ", u.idEmpleado" +
+                    ", e.nombre as nomEmpleado" +
+                    ", e.borrado " +
+                    " FROM Usuarios u" +
+                    " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
+                    " INNER JOIN Roles r ON r.idRol = u.idRol" +
+                    " WHERE u.borrado = 0";
 
             if (conBorrados)
                 query = query + " OR u.borrado = 1";
@@ -53,7 +60,8 @@ namespace FarmaTown.Datos
                 query = query + " AND u.idRol = " + idRol;
             }
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            return listMapping(tabla);
         }
 
         public bool insertar(Usuario oUsuario)
@@ -134,11 +142,11 @@ namespace FarmaTown.Datos
             */
             string query = "SELECT u.idUsuario" +
                 " , u.idEmpleado" +
-                " , u.nombre as NombreUsuario" +
+                " , u.nombre as nomUsuario" +
                 " , u.clave " +
                 " , r.idRol" +
-                " , r.nombre as NombreRol " +
-                " , e.nombre as NombreEmpleado" +
+                " , r.nombre as nomRol " +
+                " , e.nombre as nomEmpleado" +
                 " , e.idEmpleado" +
                 " FROM Usuarios u" +
                 " INNER JOIN Roles r ON u.idRol = r.idRol" +
@@ -154,6 +162,26 @@ namespace FarmaTown.Datos
             return null;
         }
 
+        private List<Usuario> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<Usuario> lista = new List<Usuario>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
+        }
+
         private Usuario objectMapping(DataRow row)
         {
             /*
@@ -164,17 +192,17 @@ namespace FarmaTown.Datos
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
-                Nombre = row["NombreUsuario"].ToString(),
+                Nombre = row["nomUsuario"].ToString(),
                 Clave = row["clave"].ToString(),
                 Rol = new Rol()
                 {
                     IdRol = Convert.ToInt32(row["idRol"].ToString()),
-                    Nombre = row["NombreRol"].ToString(),
+                    Nombre = row["nomRol"].ToString(),
                 },
                 Empleado = new Empleado()
                 {
                     IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
-                    Nombre = row["NombreEmpleado"].ToString(),
+                    Nombre = row["nomEmpleado"].ToString(),
                 }
             };
 

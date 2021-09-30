@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Data;
 using System.Drawing;
@@ -29,8 +30,8 @@ namespace FarmaTown
             * la completitud de los datos ingresados y si son correctos para
             * el ingreso al sistema.
             */
-            string usuario = this.txtbUsuario.TextName;
-            string clave = this.txtbClave.TextName;
+            string usuario = this.txtbUsuario.Text;
+            string clave = this.txtbClave.Text;
 
             if (this.validarDatos())
             {
@@ -76,21 +77,13 @@ namespace FarmaTown
 
         private void btnVerClave_Click(object sender, EventArgs e)
         {
-            bool estabaActivo = this.cambiarColorBtnClave(btnVerClave);
-            if (estabaActivo)
-            {
-                this.txtbClave.IsPassword = true;
-            }
-            else
-            {
-                this.txtbClave.IsPassword = false;
-            }
+            TextBoxService.verClave(this.txtbClave, this.btnVerClave);
         }
 
         private bool validarDatos()
         {
-            string usuario = this.txtbUsuario.TextName;
-            string clave = this.txtbClave.TextName;
+            string usuario = this.txtbUsuario.Text;
+            string clave = this.txtbClave.Text;
 
             if (string.IsNullOrEmpty(usuario))
             {
@@ -112,19 +105,5 @@ namespace FarmaTown
             return false;
         }
 
-        private bool cambiarColorBtnClave(Button btn)
-        {
-            var colorActual = btn.BackColor;
-            if (colorActual == Color.Green)
-            {
-                btn.BackColor = Color.FromArgb(116, 201, 79);
-                return true;
-            }
-            else
-            {
-                btn.BackColor = Color.Green;
-                return false;
-            }
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,18 +26,10 @@ namespace FarmaTown.Presentacion.ObrasSociales
 
         private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.btnConsultar.PerformClick();
-
-            }
-            else if (char.IsDigit((char)e.KeyCode))
-            {
-                e.SuppressKeyPress = true;
-            }
-
-
+            TextBoxService.enter(this.btnConsultar, e);
+            TextBoxService.noDigitos(e);
         }
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

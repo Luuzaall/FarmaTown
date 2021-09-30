@@ -10,30 +10,45 @@ namespace FarmaTown.Datos
 {
     class EmpleadoDao
     {
-        public DataTable recuperarTodos()
+        public List<Empleado> recuperarTodos()
         {
             string query = "SELECT e.idEmpleado" +
                 ", e.nroDoc" +
-                ", t.nombre as nomTipoDoc" +
-                ", f.nombre as nomFarmacia" +
                 ", e.nombre as nomEmpleado" +
+                ", t.idTipo" +
+                ", t.nombre as nomTipoDoc" +
+                ", e.idFarmacia " +
+                ", f.nombre as nomFarmacia" +
+                ", f.calle" + 
+                ", b.nombre as nomBarrio" + 
+                ", l.nombre as nomLocalidad" +
                 " FROM Empleados e" +
                 " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" + 
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" + 
                 " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
                 " WHERE e.borrado = 0;";
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            return listMapping(tabla);
         }
 
-        internal DataTable recuperarConParam(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        internal List<Empleado> recuperarConParam(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             string query = "SELECT e.idEmpleado" +
+                ", e.nroDoc" +
+                ", t.idTipo" +
                 ", e.nombre as nomEmpleado" +
-                ", e.nroDoc " +
                 ", t.nombre as nomTipoDoc" +
+                ", e.idFarmacia " +
                 ", f.nombre as nomFarmacia" +
+                ", f.calle" +
+                ", b.nombre as nomBarrio" +
+                ", l.nombre as nomLocalidad" +
                 " FROM Empleados e" +
-                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" + 
+                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                 " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
                 " WHERE e.borrado = 0";
 
@@ -54,7 +69,8 @@ namespace FarmaTown.Datos
                 query = query + " AND e.tipoDoc = " + idTipoDoc;
             }
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            return listMapping(tabla);
         }
         
         
@@ -83,7 +99,7 @@ namespace FarmaTown.Datos
             return this.objectMapping(tablaEmpleados.Rows[0]);
         }
 
-        public DataTable buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
+        public Empleado buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
         {
             string query = "SELECT e.idEmpleado" +
                 ", e.nombre as nomEmpleado" +
@@ -117,7 +133,10 @@ namespace FarmaTown.Datos
                 return null;
             }
             else
-                return tablaEmpleados;
+            {
+                DataRow fila = tablaEmpleados.Rows[0];
+                return this.objectMapping(fila);
+            }
             
         }
 
@@ -164,6 +183,27 @@ namespace FarmaTown.Datos
 
         }
 
+        private List<Empleado> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<Empleado> lista = new List<Empleado>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
+
+        }
+
         private Empleado objectMapping(DataRow row)
         {
             /*
@@ -200,5 +240,6 @@ namespace FarmaTown.Datos
 
             return oEmpleado;
         }
+
     }
 }

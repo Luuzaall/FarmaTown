@@ -1,5 +1,6 @@
 ﻿using FarmaTown.Logica;
 using FarmaTown.Presentacion.Empleados;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +53,7 @@ namespace FarmaTown.Presentacion
              */
 
             //Llenar combo
-            this.cargarCombo(this.cboRol, oRol.recuperarTodos(), "nombre", "idRol");
+            ComboBoxService.cargarCombo(this.cboRol, oRol.recuperarTodos(), "nombre", "idRol");
             this.mostrarEmpleados();
             switch (formMode)
             {
@@ -95,9 +96,9 @@ namespace FarmaTown.Presentacion
             * Carga los datos en los text box y combos
             * según el usuario seleccionado.
             */
-            this.txtbNombre.TextName = this.oUsuario.Nombre;
-            this.txtbClave.TextName =
-                this.txtbClaveRep.TextName = this.oUsuario.Clave;
+            this.txtbNombre.Text = this.oUsuario.Nombre;
+            this.txtbClave.Text =
+                this.txtbClaveRep.Text = this.oUsuario.Clave;
             this.cboRol.SelectedValue = this.oUsuario.Rol.IdRol;
 
             this.seleccionarFila(this.dgvEmpleados, oUsuario.Empleado.IdEmpleado);
@@ -129,7 +130,7 @@ namespace FarmaTown.Presentacion
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = (int)dgv.Rows[i].Cells[0].Value;
+                int idFila = int.Parse(dgv.Rows[i].Cells[0].Value.ToString() );
                 if (idFila == id)
                 {
                     dgv.Rows[i].Selected = true;
@@ -153,12 +154,12 @@ namespace FarmaTown.Presentacion
                             if (this.existeUsuario() == false)
                             {
                                 var oUsuario = new Usuario();
-                                oUsuario.Nombre = this.txtbNombre.TextName;
-                                oUsuario.Clave = this.txtbClave.TextName;
+                                oUsuario.Nombre = this.txtbNombre.Text;
+                                oUsuario.Clave = this.txtbClave.Text;
                                 oUsuario.Rol = new Rol();
                                 oUsuario.Rol.IdRol = (int)this.cboRol.SelectedValue;
                                 oUsuario.Empleado = new Empleado();
-                                oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+                                oUsuario.Empleado.IdEmpleado = int.Parse( this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString() );
 
                                 if (oUsuario.crearUsuario(oUsuario))
                                 {
@@ -175,12 +176,12 @@ namespace FarmaTown.Presentacion
                     {
                         if (this.validarCampos())
                         {
-                            oUsuario.Nombre = txtbNombre.TextName;
-                            oUsuario.Clave = txtbClave.TextName;
+                            oUsuario.Nombre = txtbNombre.Text;
+                            oUsuario.Clave = txtbClave.Text;
                             oUsuario.Rol = new Rol();
                             oUsuario.Rol.IdRol = (int)cboRol.SelectedValue;
                             oUsuario.Empleado = new Empleado();
-                            oUsuario.Empleado.IdEmpleado = (int)this.dgvEmpleados.SelectedRows[0].Cells["idEmpleado"].Value;
+                            oUsuario.Empleado.IdEmpleado = int.Parse(this.dgvEmpleados.SelectedRows[0].Cells[0].Value.ToString() );
 ;
 
                             if (oUsuario.actualizarUsuario(oUsuario))
@@ -225,7 +226,7 @@ namespace FarmaTown.Presentacion
              * con el mismo nombre, retornando FALSE
              * si no existe y TRUE si existe.
              */
-            string nomUs = this.txtbNombre.TextName;
+            string nomUs = this.txtbNombre.Text;
             Usuario usEncontrado = this.oUsuario.traerUsuario(nomUs);
             if ( usEncontrado is null)
             {
@@ -236,9 +237,9 @@ namespace FarmaTown.Presentacion
 
         private bool validarCampos()
         {
-            string nom = this.txtbNombre.TextName;
-            string clave = this.txtbClave.TextName;
-            string claveRep = this.txtbClaveRep.TextName;
+            string nom = this.txtbNombre.Text;
+            string clave = this.txtbClave.Text;
+            string claveRep = this.txtbClaveRep.Text;
             int indexRol = this.cboRol.SelectedIndex;
 
             if (string.IsNullOrEmpty(nom))
@@ -307,27 +308,26 @@ namespace FarmaTown.Presentacion
             return false;
         }
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Empleado> lista)
         {
+            /*
+             * Carga la grilla con los datos necesarios
+             */
             dgv.Rows.Clear();
-            for (int i = 0; i < table.Rows.Count; i++)
+            if (lista != null)
             {
-                dgv.Rows.Add(table.Rows[i]["idEmpleado"],
-                                table.Rows[i]["nomEmpleado"],
-                                table.Rows[i]["nroDoc"],
-                                table.Rows[i]["nomTipoDoc"],
-                                table.Rows[i]["nomFarmacia"]); ;
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    dgv.Rows.Add(lista[i].IdEmpleado.ToString(),
+                                lista[i].Nombre.ToString(),
+                                lista[i].NroDoc.ToString(),
+                                lista[i].TipoDoc.Nombre.ToString(),
+                                lista[i].Farmacia.Nombre.ToString()); ;
+                }
+                dgv.ClearSelection();
             }
         }
 
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
 
         public void seleccionarUsuario(FormMode _formMode, Usuario usuarioSelected)
         {
@@ -354,53 +354,29 @@ namespace FarmaTown.Presentacion
              * los combos para un nuevo ingreso
              * de los mismos
              */
-            this.txtbNombre.TextName = "";
-            this.txtbClave.TextName = "";
-            this.txtbClaveRep.TextName = "";
+            this.txtbNombre.Text = "";
+            this.txtbClave.Text = "";
+            this.txtbClaveRep.Text = "";
             this.cboRol.SelectedIndex = -1;
         }
 
         private void btnVerClave_Click(object sender, EventArgs e)
         {
-            bool estabaActivado = this.cambiarColorBtnClave(btnVerClave);
-            if (estabaActivado)
-                this.txtbClave.IsPassword = true;
-            else
-                this.txtbClave.IsPassword = false;
-            
+            TextBoxService.verClave(this.txtbClave, this.btnVerClave);
         }
 
         private void btnVerClaveRep_Click(object sender, EventArgs e)
         {
-            bool estabaActivado = this.cambiarColorBtnClave(btnVerClaveRep);
-            if (estabaActivado)
-                this.txtbClaveRep.IsPassword = true;
-            else
-                this.txtbClaveRep.IsPassword = false;
-        }
-
-        private bool cambiarColorBtnClave(Button btn)
-        {
-            var colorActual = btn.BackColor;
-            if (colorActual == Color.Green)
-            {
-                btn.BackColor = Color.FromArgb(116, 201, 79);
-                return true;
-            }
-            else
-            {
-                btn.BackColor = Color.Green;
-                return false;
-            }
+            TextBoxService.verClave(this.txtbClaveRep, this.btnVerClaveRep);
         }
 
         private void mostrarEmpleados()
         {
-            DataTable tablaEmpleados = oEmpleado.recuperarTodos();
+            List<Empleado> listaEmpleados = oEmpleado.recuperarTodos();
 
-            if (tablaEmpleados.Rows.Count > 0)
+            if (listaEmpleados.Count > 0)
             {
-                this.cargarGrilla(this.dgvEmpleados, tablaEmpleados);
+                this.cargarGrilla(this.dgvEmpleados, listaEmpleados);
                 this.dgvEmpleados.ClearSelection();
             }
             else
@@ -415,5 +391,14 @@ namespace FarmaTown.Presentacion
             this.mostrarEmpleados();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.cargarGrilla(this.dgvEmpleados, oEmpleado.recuperarTodos());
+        }
+
+        private void txtbEnter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+        }
     }
 }

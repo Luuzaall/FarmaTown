@@ -95,7 +95,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.dgvObrasSociales.ReadOnly = true;
             this.dgvObrasSociales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObrasSociales.Size = new System.Drawing.Size(480, 218);
-            this.dgvObrasSociales.TabIndex = 4;
+            this.dgvObrasSociales.TabIndex = 60;
             this.dgvObrasSociales.TabStop = false;
             this.dgvObrasSociales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObrasSociales_CellClick);
             // 
@@ -144,7 +144,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnActualizar.Location = new System.Drawing.Point(511, 123);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 5;
+            this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -234,7 +234,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnSalir.Location = new System.Drawing.Point(592, 554);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.TabIndex = 8;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.ttipBtnABM.SetToolTip(this.btnSalir, "Salir");
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -258,7 +258,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEditar.Location = new System.Drawing.Point(120, 559);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 7;
+            this.btnEditar.TabIndex = 6;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.ttipBtnABM.SetToolTip(this.btnEditar, "Modificar obra social seleccionada");
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -282,7 +282,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnEliminar.Location = new System.Drawing.Point(217, 559);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.ttipBtnABM.SetToolTip(this.btnEliminar, "Deshabilitar obra social seleccionada");
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -306,7 +306,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnAgregar.Location = new System.Drawing.Point(23, 559);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
-            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.TabIndex = 5;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.ttipBtnABM.SetToolTip(this.btnAgregar, "Agregar Obra Social");
             this.btnAgregar.UseVisualStyleBackColor = false;

@@ -83,7 +83,9 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.ShowEditingIcon = false;
             this.dgvUsuarios.Size = new System.Drawing.Size(802, 252);
-            this.dgvUsuarios.TabIndex = 13;
+            this.dgvUsuarios.TabIndex = 60;
+            this.dgvUsuarios.TabStop = false;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // idUsuario
             // 
@@ -130,7 +132,7 @@ namespace FarmaTown.Presentacion
             this.gbResultados.Location = new System.Drawing.Point(31, 312);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(956, 322);
-            this.gbResultados.TabIndex = 20;
+            this.gbResultados.TabIndex = 2;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
@@ -153,7 +155,7 @@ namespace FarmaTown.Presentacion
             this.btnActualizar.Location = new System.Drawing.Point(837, 152);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
-            this.btnActualizar.TabIndex = 13;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -173,7 +175,7 @@ namespace FarmaTown.Presentacion
             this.gbFiltros.Location = new System.Drawing.Point(31, 63);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(956, 228);
-            this.gbFiltros.TabIndex = 21;
+            this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
@@ -185,7 +187,8 @@ namespace FarmaTown.Presentacion
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(244, 25);
-            this.txtbNombre.TabIndex = 15;
+            this.txtbNombre.TabIndex = 1;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // cbBorrados
             // 
@@ -218,7 +221,7 @@ namespace FarmaTown.Presentacion
             this.btnLimpiar.Location = new System.Drawing.Point(332, 162);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(104, 37);
-            this.btnLimpiar.TabIndex = 13;
+            this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -254,7 +257,7 @@ namespace FarmaTown.Presentacion
             this.btnConsultar.Location = new System.Drawing.Point(512, 162);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 37);
-            this.btnConsultar.TabIndex = 12;
+            this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -266,7 +269,8 @@ namespace FarmaTown.Presentacion
             this.cboRoles.Location = new System.Drawing.Point(372, 106);
             this.cboRoles.Name = "cboRoles";
             this.cboRoles.Size = new System.Drawing.Size(244, 31);
-            this.cboRoles.TabIndex = 0;
+            this.cboRoles.TabIndex = 2;
+            this.cboRoles.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboRoles_KeyDown);
             // 
             // label2
             // 
@@ -298,10 +302,10 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(943, 660);
+            this.btnSalir.Location = new System.Drawing.Point(934, 660);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 18;
+            this.btnSalir.TabIndex = 9;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.ttEnabled.SetToolTip(this.btnSalir, "Salir");
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -326,7 +330,7 @@ namespace FarmaTown.Presentacion
             this.btnEditar.Location = new System.Drawing.Point(148, 660);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 17;
+            this.btnEditar.TabIndex = 7;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.ttEnabled.SetToolTip(this.btnEditar, "Editar usuario");
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -350,7 +354,7 @@ namespace FarmaTown.Presentacion
             this.btnEliminar.Location = new System.Drawing.Point(265, 660);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.ttEnabled.SetToolTip(this.btnEliminar, "Borrar usuario");
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -374,7 +378,7 @@ namespace FarmaTown.Presentacion
             this.btnAgregar.Location = new System.Drawing.Point(31, 660);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
-            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.ttEnabled.SetToolTip(this.btnAgregar, "Agregar usuario");
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -425,7 +429,7 @@ namespace FarmaTown.Presentacion
             this.MaximizeBox = false;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "Gestión Usuarios - FarmaTown";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.gbResultados.ResumeLayout(false);

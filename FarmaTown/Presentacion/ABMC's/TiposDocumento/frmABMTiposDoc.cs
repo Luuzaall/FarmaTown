@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -99,19 +100,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             }
         }
 
-        private void txtbNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == ((char)Keys.Enter))
-            {
-                this.btnAceptar.PerformClick();
-
-            }
-            else if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
@@ -199,5 +187,15 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             }
         }
 
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+            TextBoxService.noDigitos(e);
+        }
+
+        private void txtbDescrip_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+        }
     }
 }

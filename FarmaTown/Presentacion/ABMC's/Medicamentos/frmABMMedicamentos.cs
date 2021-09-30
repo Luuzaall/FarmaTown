@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FarmaTown.Presentacion.Servicios;
 
 namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 {
@@ -46,7 +46,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * fue llamado, definido en el switch de los distintos
              * FormMode.
              */
-            this.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
 
             switch (formMode)
             {
@@ -276,15 +276,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 return false;
             }
             return true;
-        }
-
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cargarDatos()

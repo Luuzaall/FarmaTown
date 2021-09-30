@@ -1,4 +1,5 @@
 ﻿             using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,12 +34,12 @@ namespace FarmaTown.Presentacion
              * Encargado de preparar los combos, grillas y 
              * botones del formulario.
              */
-            this.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
+            ComboBoxService.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
             this.deshabilitarBotones();
-            DataTable tablaUsuarios = oUsuario.recuperarTodos(mostrarConBorrados);
-            if (tablaUsuarios.Rows.Count > 0)
+            List<Usuario> listaUsuarios = oUsuario.recuperarTodos(mostrarConBorrados);
+            if (listaUsuarios.Count > 0)
             {
-                this.cargarGrilla(this.dgvUsuarios, tablaUsuarios);
+                this.cargarGrilla(this.dgvUsuarios, listaUsuarios);
             }
             else
             {
@@ -62,7 +63,7 @@ namespace FarmaTown.Presentacion
              * Verifica la correcta selección
              * para el formulario
              */
-            DataTable resultadosUsuarios;
+            List<Usuario> resultadosUsuarios = new List<Usuario>();
             int idRol = -1;
 
             string usuario = this.txtbNombre.Text;
@@ -138,19 +139,29 @@ namespace FarmaTown.Presentacion
             this.Close();
         }
 
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
+        }
+
+        private void cboRoles_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
+        }
+
         //--------------------------------------------------------------------------------------------
         // MÉTODOS FUNCIONALES
 
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Usuario> lista)
         {
             /*
              * Carga la grilla con los datos necesarios
              */
             dgv.Rows.Clear();
-            if (table != null)
+            if (lista != null)
             {
-                for (int i = 0; i < table.Rows.Count; i++)
+                for (int i = 0; i < lista.Count; i++)
                 {
                     //string borrado;
                     //bool valorBorrado = (bool) table.Rows[i]["borrado"];
@@ -161,24 +172,13 @@ namespace FarmaTown.Presentacion
                     //else
                     //    borrado = "No";
 
-                    dgv.Rows.Add(table.Rows[i]["idUsuario"],
-                                    table.Rows[i]["nomUsuario"],
-                                    table.Rows[i]["nomRol"],
-                                    table.Rows[i]["nomEmpleado"]
-                                    //,borrado
-                                    ) ;
+                    dgv.Rows.Add(lista[i].IdUsuario.ToString(),
+                               lista[i].Nombre.ToString(),
+                               lista[i].Rol.Nombre.ToString(),
+                               lista[i].Empleado.Nombre.ToString());
                 }
                 dgv.ClearSelection();
             }
-        }
-
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private bool validarDatos()
@@ -187,11 +187,7 @@ namespace FarmaTown.Presentacion
             if (string.IsNullOrEmpty(nomUs)
                 && this.cboRoles.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe ingresar un usuario o un Rol",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                this.txtbNombre.Focus();
-                this.cboRoles.Focus();
+                this.actualizar();
                 return false;
             }
             return true;
@@ -233,5 +229,6 @@ namespace FarmaTown.Presentacion
             }
             
         }
+
     }
 }

@@ -126,6 +126,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(263, 25);
             this.txtbNombre.TabIndex = 1;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // txtbDescrip
             // 
@@ -137,6 +138,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.txtbDescrip.Name = "txtbDescrip";
             this.txtbDescrip.Size = new System.Drawing.Size(380, 82);
             this.txtbDescrip.TabIndex = 2;
+            this.txtbDescrip.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbDescrip_KeyDown);
             // 
             // lblDescripcion
             // 

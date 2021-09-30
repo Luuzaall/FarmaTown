@@ -1,5 +1,6 @@
 ﻿using FarmaTown.Logica;
 using FarmaTown.Presentacion.Farmacias;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void frmABMEmpleados_Load(object sender, EventArgs e)
         {
             //Carga los combos
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
             List<Farmacia> listaFarmacias = oFarmacia.recuperarTodos();
 
             if (listaFarmacias.Count > 0)
@@ -280,6 +281,7 @@ namespace FarmaTown.Presentacion.Empleados
                     e.SuppressKeyPress = true;
                 }
             }
+            TextBoxService.enter(this.btnAceptar, e);
         }
 
         private void txtbPasaporteNro_KeyDown(object sender, KeyEventArgs e)
@@ -298,6 +300,7 @@ namespace FarmaTown.Presentacion.Empleados
                     e.SuppressKeyPress = true;
                 }
             }
+            TextBoxService.enter(this.btnAceptar, e);
         }
 
         private void txtbPasaporteLetras_KeyDown(object sender, KeyEventArgs e)
@@ -315,6 +318,7 @@ namespace FarmaTown.Presentacion.Empleados
                     e.SuppressKeyPress = true;
                 }
             }
+            TextBoxService.enter(this.btnAceptar, e);
         }
 
         private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
@@ -349,14 +353,8 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void verificarIngresoLetra(KeyEventArgs e, Button btn)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btn.PerformClick();
-            }
-            if (char.IsDigit((char)e.KeyCode))
-            {
-                e.SuppressKeyPress = true;
-            }
+            TextBoxService.enter(btn, e);
+            TextBoxService.noDigitos(e);
         }
 
         //---------------------------------------------------------------------------------------------------------
@@ -416,15 +414,6 @@ namespace FarmaTown.Presentacion.Empleados
                     break;
                 }
             }
-        }
-
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void cargarGrilla(DataGridView dgv, List<Farmacia> lista)

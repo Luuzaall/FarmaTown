@@ -197,6 +197,9 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
+    <Compile Include="Presentacion\Servicios\GrillaService.cs" />
+    <Compile Include="Presentacion\Servicios\TextBoxService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmABMBarrios.resx">

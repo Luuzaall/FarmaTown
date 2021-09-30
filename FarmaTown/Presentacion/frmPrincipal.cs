@@ -78,7 +78,7 @@ namespace FarmaTown.Presentacion
 
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmEmpleados frmEmp = new frmEmpleados(rolLogeado);
+            frmEmpleados frmEmp = new frmEmpleados();
             frmEmp.ShowDialog();
         }
 

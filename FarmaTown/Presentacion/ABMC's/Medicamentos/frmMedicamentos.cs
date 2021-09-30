@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * Encargado de preparar los combos, grillas y 
              * botones del formulario.
              */
-            this.cargarCombo(this.cboTipos, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipos, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
             this.deshabilitarBotones();
 
             DataTable tablaMedicamentos = oMedicamento.recuperarTodos(mostrarConBorrados);
@@ -80,14 +81,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             }
         }
 
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
         private void deshabilitarBotones()
         {
             /*

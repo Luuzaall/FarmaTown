@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,10 @@ namespace FarmaTown.Presentacion.Empleados
         Empleado oEmpleado;
         TipoDocumento oTipoDoc;
         frmABMEmpleados frmABMEmpl;
-        Rol rolLogeado;
-        public frmEmpleados(Rol _rolLogeado)
+        public frmEmpleados()
         {
             oEmpleado = new Empleado();
             oTipoDoc = new TipoDocumento();
-            rolLogeado = _rolLogeado;
 
             InitializeComponent();
         }
@@ -31,7 +30,7 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            this.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false)
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false)
                 , "nombre", "idTipo");
         }
 
@@ -43,7 +42,7 @@ namespace FarmaTown.Presentacion.Empleados
              */
             if (this.validarCampos())
             {
-                DataTable resultadosEmpleados;
+                List<Empleado> resultadosEmpleados = new List<Empleado>();
                 int idTipoDoc;
                 string nroDoc = "";
                 string nomEmpl = this.txtbNombre.Text;
@@ -116,7 +115,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void btnEditar_Click(object sender, EventArgs e)
         {
             frmABMEmpl = new frmABMEmpleados();
-            int idEmpleado = (int)this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            int idEmpleado = int.Parse( this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString() );
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.update, oEmpleado);
             frmABMEmpl.ShowDialog();
@@ -126,7 +125,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             frmABMEmpl = new frmABMEmpleados();
-            int idEmpleado = (int) this.dgvEmpleados.CurrentRow.Cells[0].Value;
+            int idEmpleado = int.Parse( this.dgvEmpleados.CurrentRow.Cells[0].Value.ToString() );
             oEmpleado = this.oEmpleado.traerEmpleado(idEmpleado);
             frmABMEmpl.seleccionarEmpleado(frmABMEmpleados.FormMode.delete, oEmpleado);
             frmABMEmpl.ShowDialog();
@@ -199,10 +198,7 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
-                if (e.KeyCode == Keys.Enter)
-                {
-                    this.btnConsultar.PerformClick();
-                }
+                TextBoxService.enter(this.btnConsultar, e);
             }
         }
 
@@ -226,11 +222,8 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
-                if (e.KeyCode == Keys.Enter)
-                {
-                    this.btnConsultar.PerformClick();
+                TextBoxService.enter(this.btnConsultar, e);
                 }
-            }
         }
 
         private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
@@ -252,52 +245,38 @@ namespace FarmaTown.Presentacion.Empleados
                 {
                     e.SuppressKeyPress = true;
                 }
-                if (e.KeyCode == Keys.Enter)
-                {
-                    this.btnConsultar.PerformClick();
-                }
+                TextBoxService.enter(this.btnConsultar, e);
             }
         }
 
-        private void txtbFiltros_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbFiltros_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                this.btnConsultar.PerformClick();
-            }
+            TextBoxService.enter(this.btnConsultar, e);
+            TextBoxService.noDigitos(e);
         }
 
 
         //---------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Empleado> lista)
         {
             /*
              * Carga la grilla con los datos necesarios
              */
             dgv.Rows.Clear();
-            if (table != null)
+            if (lista != null)
             {
-                for (int i = 0; i < table.Rows.Count; i++)
+                for (int i = 0; i < lista.Count; i++)
                 {
-                    dgv.Rows.Add(table.Rows[i]["idEmpleado"],
-                                table.Rows[i]["nomEmpleado"],
-                                table.Rows[i]["nroDoc"],
-                                table.Rows[i]["nomTipoDoc"],
-                                table.Rows[i]["nomFarmacia"]);
+                    dgv.Rows.Add(lista[i].IdEmpleado.ToString(),
+                                lista[i].Nombre.ToString(),
+                                lista[i].NroDoc.ToString(),
+                                lista[i].TipoDoc.Nombre.ToString(),
+                                lista[i].Farmacia.Nombre.ToString() ); ;
                 }
                 dgv.ClearSelection();
             }
-        }
-
-        private void cargarCombo(ComboBox cbo, Object source, string display, string value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private bool validarCampos()

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using FarmaTown.Datos;
 
 namespace FarmaTown.Logica
@@ -45,12 +45,12 @@ namespace FarmaTown.Logica
             return null;
         } 
 
-        public DataTable recuperarTodos(bool esConBorrados)
+        public List<Usuario> recuperarTodos(bool esConBorrados)
         {
             return this.oUsuarioDao.recuperarTodos(esConBorrados);
         }
 
-        public DataTable recurperarUsuarioCParametros(string nom, int idRol, bool conBorrados)
+        public List<Usuario> recurperarUsuarioCParametros(string nom, int idRol, bool conBorrados)
         {
             return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol, conBorrados);
         }

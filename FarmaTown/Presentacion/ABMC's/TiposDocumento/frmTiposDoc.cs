@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,19 +24,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
         }
 
         //MÉTODOS A RESPUESTA A EVENTOS
-
-        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.btnConsultar.PerformClick();
-
-            }
-            else if (char.IsDigit((char)e.KeyCode))
-            {
-                e.SuppressKeyPress = true;
-            }
-        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -124,13 +112,15 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
             this.actualizar();
         }
 
-        private void txtbPalabraClave_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char) Keys.Enter)
-            {
-                this.btnConsultar.PerformClick();
+            TextBoxService.enter(this.btnConsultar, e);
+            TextBoxService.noDigitos(e);
+        }
 
-            }
+        private void txtbPalabraClave_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
         }
 
         //-----------------------------------------------------
@@ -176,5 +166,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
                 dgv.ClearSelection();
             }
         }
+
     }
 }

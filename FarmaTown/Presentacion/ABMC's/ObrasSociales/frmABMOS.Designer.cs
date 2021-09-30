@@ -47,7 +47,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(197, 25);
             this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbNombre_KeyPress);
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // btnLimpiar
             // 

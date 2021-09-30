@@ -97,7 +97,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbFarmacia.Name = "txtbFarmacia";
             this.txtbFarmacia.Size = new System.Drawing.Size(243, 25);
             this.txtbFarmacia.TabIndex = 2;
-            this.txtbFarmacia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
+            this.txtbFarmacia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbFiltros_KeyDown);
             // 
             // txtbNombre
             // 
@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(243, 25);
             this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbFiltros_KeyDown);
             // 
             // txtbPasaporteLetras
             // 
@@ -250,7 +250,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.cboTipoDoc.Size = new System.Drawing.Size(243, 31);
             this.cboTipoDoc.TabIndex = 3;
             this.cboTipoDoc.SelectionChangeCommitted += new System.EventHandler(this.cboTipoDoc_SelectionChangeCommited);
-            this.cboTipoDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbFiltros_KeyPress);
+            this.cboTipoDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbFiltros_KeyDown);
             // 
             // label2
             // 
@@ -298,6 +298,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(938, 267);
             this.dgvEmpleados.TabIndex = 8;
+            this.dgvEmpleados.TabStop = false;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
             // idEmpleado
@@ -354,7 +355,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnActualizar.Location = new System.Drawing.Point(976, 142);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -378,7 +379,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnSalir.Location = new System.Drawing.Point(1085, 663);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 13;
+            this.btnSalir.TabIndex = 12;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -401,7 +402,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEditar.Location = new System.Drawing.Point(141, 663);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 11;
+            this.btnEditar.TabIndex = 10;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -424,7 +425,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnEliminar.Location = new System.Drawing.Point(253, 663);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -447,7 +448,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAgregar.Location = new System.Drawing.Point(33, 663);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(57, 49);
-            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.TabIndex = 9;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
