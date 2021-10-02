@@ -94,6 +94,18 @@
     <Compile Include="Presentacion\ABMC%27s\Barrios\frmBarrios.Designer.cs">
       <DependentUpon>frmBarrios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Clientes\frmABMClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Clientes\frmABMClientes.Designer.cs">
+      <DependentUpon>frmABMClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Clientes\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\Clientes\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ABMC%27s\Medicamentos\frmABMMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +209,12 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmVentas.Designer.cs">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
     <Compile Include="Presentacion\Servicios\GrillaService.cs" />
     <Compile Include="Presentacion\Servicios\TextBoxService.cs" />
@@ -207,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Barrios\frmBarrios.resx">
       <DependentUpon>frmBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Clientes\frmABMClientes.resx">
+      <DependentUpon>frmABMClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\Clientes\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Empleados\frmABMEmpleados.resx">
       <DependentUpon>frmABMEmpleados.cs</DependentUpon>
@@ -256,6 +280,9 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmVentas.resx">
+      <DependentUpon>frmVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -292,12 +319,16 @@
     <None Include="Resources\undraw_city_life_gnpr.png" />
     <None Include="Presentacion\Imagenes\ABMOOSS.png" />
     <None Include="Presentacion\Imagenes\add-location.png" />
+    <None Include="Presentacion\Imagenes\add.png" />
+    <None Include="Presentacion\Imagenes\ABMClients.png" />
     <Content Include="Presentacion\Imagenes\addDocument.png" />
     <None Include="Presentacion\Imagenes\addOS.png" />
     <Content Include="Presentacion\Imagenes\addPerson.png" />
     <None Include="Presentacion\Imagenes\delete%281%29.png" />
     <None Include="Presentacion\Imagenes\coworkers.png" />
     <None Include="Presentacion\Imagenes\barrios.png" />
+    <None Include="Presentacion\Imagenes\carroVacioVenta.png" />
+    <None Include="Presentacion\Imagenes\clients.png" />
     <Content Include="Presentacion\Imagenes\detail.png" />
     <Content Include="Presentacion\Imagenes\Editor.png" />
     <None Include="Presentacion\Imagenes\eyeParaClave.png" />
@@ -309,6 +340,10 @@
     <Content Include="Presentacion\Imagenes\logout.png" />
     <None Include="Presentacion\Imagenes\principal.png" />
     <None Include="Presentacion\Imagenes\MedicalResearch.png" />
+    <None Include="Presentacion\Imagenes\search.png" />
+    <None Include="Presentacion\Imagenes\rehacer.png" />
+    <None Include="Presentacion\Imagenes\save.png" />
+    <None Include="Presentacion\Imagenes\ready.png" />
     <Content Include="Presentacion\Imagenes\trash.png" />
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
     <None Include="Presentacion\Imagenes\undraw_Location_tracking_re_n3ok %281%29.png" />
