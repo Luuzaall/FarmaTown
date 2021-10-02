@@ -16,7 +16,8 @@ namespace FarmaTown.Datos
                 ", nombre" +
                 ", borrado" +
                 " FROM Localidades" +
-                " WHERE nombre LIKE '%" + nombre + "%'";
+                " WHERE nombre LIKE '%" + nombre + "%'" +
+                " AND borrado = 0";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -66,8 +67,6 @@ namespace FarmaTown.Datos
 
             DataRow fila = tabla.Rows[0];
             return this.objectMapping(fila);
-
-
         }
 
         public Localidad traer(string nombre)
