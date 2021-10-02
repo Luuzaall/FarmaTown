@@ -123,8 +123,7 @@ namespace FarmaTown.Datos
             string query = "UPDATE Barrios" +
                 //Nuevo a partir de idLocalidad y nomLocalidad
                 " SET nombre = '" + oBarrio.Nombre + "'" + 
-                //"',idLocalidad = '" + oBarrio.Localidad.IdLocalidad + 
-                //"' ,nomLocalidad = " + oBarrio.Localidad.Nombre +
+                ",idLocalidad = " + oBarrio.Localidad.IdLocalidad + 
                 " WHERE idBarrio = " + oBarrio.IdBarrio;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
