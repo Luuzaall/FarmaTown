@@ -32,11 +32,8 @@ namespace FarmaTown.Presentacion.Farmacias
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFarmacias));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbBorrados = new System.Windows.Forms.CheckBox();
-            this.textbNumero = new JMaterialTextbox.JMaterialTextbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TextbCalle = new JMaterialTextbox.JMaterialTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textbSucursal = new JMaterialTextbox.JMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
@@ -53,6 +50,9 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.textbNumero = new System.Windows.Forms.TextBox();
+            this.TextbCalle = new System.Windows.Forms.TextBox();
+            this.textbSucursal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).BeginInit();
@@ -60,12 +60,12 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbBorrados);
-            this.groupBox1.Controls.Add(this.textbNumero);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.TextbCalle);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textbSucursal);
+            this.groupBox1.Controls.Add(this.TextbCalle);
+            this.groupBox1.Controls.Add(this.textbNumero);
+            this.groupBox1.Controls.Add(this.cbBorrados);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnConsultar);
@@ -88,94 +88,27 @@ namespace FarmaTown.Presentacion.Farmacias
             this.cbBorrados.Text = "Mostrar Borrados";
             this.cbBorrados.UseVisualStyleBackColor = true;
             // 
-            // textbNumero
-            // 
-            this.textbNumero.BackColor = System.Drawing.Color.Transparent;
-            this.textbNumero.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textbNumero.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textbNumero.ForeColors = System.Drawing.Color.Black;
-            this.textbNumero.HintText = null;
-            this.textbNumero.IsPassword = false;
-            this.textbNumero.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.textbNumero.LineThickness = 2;
-            this.textbNumero.Location = new System.Drawing.Point(349, 113);
-            this.textbNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textbNumero.MaxLength = 32767;
-            this.textbNumero.Name = "textbNumero";
-            this.textbNumero.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.textbNumero.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.textbNumero.ReadOnly = false;
-            this.textbNumero.Size = new System.Drawing.Size(244, 23);
-            this.textbNumero.TabIndex = 20;
-            this.textbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textbNumero.TextName = "";
-            this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(227, 113);
+            this.label3.Location = new System.Drawing.Point(227, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 23);
             this.label3.TabIndex = 21;
             this.label3.Text = "Número:";
-            // 
-            // TextbCalle
-            // 
-            this.TextbCalle.BackColor = System.Drawing.Color.Transparent;
-            this.TextbCalle.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextbCalle.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextbCalle.ForeColors = System.Drawing.Color.Black;
-            this.TextbCalle.HintText = null;
-            this.TextbCalle.IsPassword = false;
-            this.TextbCalle.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.TextbCalle.LineThickness = 2;
-            this.TextbCalle.Location = new System.Drawing.Point(349, 69);
-            this.TextbCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.TextbCalle.MaxLength = 32767;
-            this.TextbCalle.Name = "TextbCalle";
-            this.TextbCalle.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.TextbCalle.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.TextbCalle.ReadOnly = false;
-            this.TextbCalle.Size = new System.Drawing.Size(244, 23);
-            this.TextbCalle.TabIndex = 18;
-            this.TextbCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextbCalle.TextName = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(253, 69);
+            this.label2.Location = new System.Drawing.Point(253, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 23);
             this.label2.TabIndex = 19;
             this.label2.Text = "Calle:";
-            // 
-            // textbSucursal
-            // 
-            this.textbSucursal.BackColor = System.Drawing.Color.Transparent;
-            this.textbSucursal.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textbSucursal.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.textbSucursal.ForeColors = System.Drawing.Color.Black;
-            this.textbSucursal.HintText = null;
-            this.textbSucursal.IsPassword = false;
-            this.textbSucursal.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.textbSucursal.LineThickness = 2;
-            this.textbSucursal.Location = new System.Drawing.Point(349, 28);
-            this.textbSucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textbSucursal.MaxLength = 32767;
-            this.textbSucursal.Name = "textbSucursal";
-            this.textbSucursal.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.textbSucursal.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.textbSucursal.ReadOnly = false;
-            this.textbSucursal.Size = new System.Drawing.Size(244, 23);
-            this.textbSucursal.TabIndex = 16;
-            this.textbSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.textbSucursal.TextName = "";
             // 
             // label1
             // 
@@ -444,6 +377,39 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // textbNumero
+            // 
+            this.textbNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textbNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbNumero.Location = new System.Drawing.Point(349, 120);
+            this.textbNumero.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textbNumero.Name = "textbNumero";
+            this.textbNumero.Size = new System.Drawing.Size(244, 25);
+            this.textbNumero.TabIndex = 30;
+            this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
+            // 
+            // TextbCalle
+            // 
+            this.TextbCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.TextbCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextbCalle.Location = new System.Drawing.Point(349, 71);
+            this.TextbCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.TextbCalle.Name = "TextbCalle";
+            this.TextbCalle.Size = new System.Drawing.Size(244, 25);
+            this.TextbCalle.TabIndex = 31;
+            this.TextbCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextbCalle_KeyDown);
+            // 
+            // textbSucursal
+            // 
+            this.textbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textbSucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbSucursal.Location = new System.Drawing.Point(349, 26);
+            this.textbSucursal.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textbSucursal.Name = "textbSucursal";
+            this.textbSucursal.Size = new System.Drawing.Size(244, 25);
+            this.textbSucursal.TabIndex = 32;
+            this.textbSucursal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbSucursal_KeyDown);
+            // 
             // frmFarmacias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,11 +447,8 @@ namespace FarmaTown.Presentacion.Farmacias
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnConsultar;
-        private JMaterialTextbox.JMaterialTextbox textbSucursal;
         private System.Windows.Forms.Label label1;
-        private JMaterialTextbox.JMaterialTextbox TextbCalle;
         private System.Windows.Forms.Label label2;
-        private JMaterialTextbox.JMaterialTextbox textbNumero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cbBorrados;
         private CustomControls.RJControls.RJButton btnActualizar;
@@ -494,5 +457,8 @@ namespace FarmaTown.Presentacion.Farmacias
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Número;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barrio;
+        private System.Windows.Forms.TextBox textbSucursal;
+        private System.Windows.Forms.TextBox TextbCalle;
+        private System.Windows.Forms.TextBox textbNumero;
     }
 }

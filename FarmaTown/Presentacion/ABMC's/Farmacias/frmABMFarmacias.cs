@@ -1,5 +1,6 @@
 ﻿using FarmaTown.Logica;
 using FarmaTown.Presentacion.Localidades;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,9 +91,9 @@ namespace FarmaTown.Presentacion.Farmacias
             * Carga los datos en los text box
             * según la farmacia seleccionada.
             */
-            this.txtbNombre.TextName = this.oFarmacia.Nombre;
-            this.txtbCalle.TextName = this.oFarmacia.Calle;
-            this.txtbNumero.TextName = this.oFarmacia.Numero.ToString();
+            this.txtbNombre.Text = this.oFarmacia.Nombre;
+            this.txtbCalle.Text = this.oFarmacia.Calle;
+            this.txtbNumero.Text = this.oFarmacia.Numero.ToString();
 
             this.seleccionarFila(this.dgvBarrios, oFarmacia.Barrio.IdBarrio);
         }
@@ -170,9 +171,9 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void limpiarDatos()
         {
-            this.txtbNombre.TextName = "";
-            this.txtbCalle.TextName = "";
-            this.txtbNumero.TextName = "";
+            this.txtbNombre.Text = "";
+            this.txtbCalle.Text = "";
+            this.txtbNumero.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -191,9 +192,9 @@ namespace FarmaTown.Presentacion.Farmacias
                             if (this.existeFarmacia() == false)
                             {
                                 var oFarmacia = new Farmacia();
-                                oFarmacia.Nombre = this.txtbNombre.TextName;
-                                oFarmacia.Calle = this.txtbCalle.TextName;
-                                oFarmacia.Numero = Convert.ToInt32(this.txtbNumero.TextName);
+                                oFarmacia.Nombre = this.txtbNombre.Text;
+                                oFarmacia.Calle = this.txtbCalle.Text;
+                                oFarmacia.Numero = Convert.ToInt32(this.txtbNumero.Text);
                                 oFarmacia.Barrio = new Barrio();
                                 oFarmacia.Barrio.IdBarrio = Convert.ToInt32(this.dgvBarrios.CurrentRow.Cells[0].Value.ToString());
 
@@ -212,9 +213,9 @@ namespace FarmaTown.Presentacion.Farmacias
                     {
                         if (this.validarCampos())
                         {
-                            oFarmacia.Nombre = txtbNombre.TextName;
-                            oFarmacia.Calle = txtbCalle.TextName;
-                            oFarmacia.Numero = Convert.ToInt32(txtbNumero.TextName);
+                            oFarmacia.Nombre = txtbNombre.Text;
+                            oFarmacia.Calle = txtbCalle.Text;
+                            oFarmacia.Numero = Convert.ToInt32(txtbNumero.Text);
                             oFarmacia.Barrio = new Barrio();
                             oFarmacia.Barrio.IdBarrio = Convert.ToInt32(this.dgvBarrios.SelectedRows[0].Cells[0].Value);
                             ;
@@ -252,10 +253,10 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private bool existeFarmacia()
         {
-            string nom = this.txtbNombre.TextName;
-            string calle = this.txtbCalle.TextName;
-            string num = this.txtbNumero.TextName;
-            List<Farmacia> farma = this.oFarmacia.recuperarCParam(this.txtbNombre.TextName, this.txtbCalle.TextName, this.txtbNumero.TextName, this.dgvBarrios.CurrentRow.Cells[1].Value.ToString(), this.dgvBarrios.CurrentRow.Cells[2].Value.ToString());
+            string nom = this.txtbNombre.Text;
+            string calle = this.txtbCalle.Text;
+            string num = this.txtbNumero.Text;
+            List<Farmacia> farma = this.oFarmacia.recuperarCParam(this.txtbNombre.Text, this.txtbCalle.Text, this.txtbNumero.Text, this.dgvBarrios.CurrentRow.Cells[1].Value.ToString(), this.dgvBarrios.CurrentRow.Cells[2].Value.ToString());
             if (farma.Count > 0)
             {
                 return true;
@@ -268,9 +269,9 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private bool validarCampos()
         {
-            string nom = this.txtbNombre.TextName;
-            string calle = this.txtbCalle.TextName;
-            string num = this.txtbNumero.TextName;
+            string nom = this.txtbNombre.Text;
+            string calle = this.txtbCalle.Text;
+            string num = this.txtbNumero.Text;
 
             if (string.IsNullOrEmpty(nom))
             {
@@ -314,6 +315,23 @@ namespace FarmaTown.Presentacion.Farmacias
             frmABMBarrios barrios = new frmABMBarrios();
             barrios.ShowDialog();
             this.mostrarBarrios();
+        }
+
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+            TextBoxService.noDigitos(e);
+        }
+
+        private void txtbCalle_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+            TextBoxService.noDigitos(e);
+        }
+
+        private void txtbNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
         }
     }
 }

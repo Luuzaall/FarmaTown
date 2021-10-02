@@ -31,14 +31,14 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             System.Windows.Forms.GroupBox groupBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMFarmacias));
+            this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.txtbCalle = new System.Windows.Forms.TextBox();
+            this.txtbNumero = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSucursal = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.txtbNombre = new JMaterialTextbox.JMaterialTextbox();
             this.lblNumero = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.lblCalle = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNumero = new JMaterialTextbox.JMaterialTextbox();
-            this.txtbCalle = new JMaterialTextbox.JMaterialTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.dgvBarrios = new System.Windows.Forms.DataGridView();
@@ -58,14 +58,14 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             groupBox1.BackColor = System.Drawing.Color.White;
             groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            groupBox1.Controls.Add(this.txtbNombre);
+            groupBox1.Controls.Add(this.txtbCalle);
+            groupBox1.Controls.Add(this.txtbNumero);
             groupBox1.Controls.Add(this.label1);
             groupBox1.Controls.Add(this.lblSucursal);
             groupBox1.Controls.Add(this.btnLimpiar);
-            groupBox1.Controls.Add(this.txtbNombre);
             groupBox1.Controls.Add(this.lblNumero);
             groupBox1.Controls.Add(this.lblCalle);
-            groupBox1.Controls.Add(this.txtbNumero);
-            groupBox1.Controls.Add(this.txtbCalle);
             groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             groupBox1.Location = new System.Drawing.Point(12, 26);
             groupBox1.Name = "groupBox1";
@@ -73,6 +73,39 @@ namespace FarmaTown.Presentacion.Farmacias
             groupBox1.TabIndex = 26;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Farmacia";
+            // 
+            // txtbNombre
+            // 
+            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNombre.Location = new System.Drawing.Point(227, 44);
+            this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNombre.Name = "txtbNombre";
+            this.txtbNombre.Size = new System.Drawing.Size(301, 20);
+            this.txtbNombre.TabIndex = 29;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
+            // 
+            // txtbCalle
+            // 
+            this.txtbCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbCalle.Location = new System.Drawing.Point(227, 103);
+            this.txtbCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbCalle.Name = "txtbCalle";
+            this.txtbCalle.Size = new System.Drawing.Size(301, 20);
+            this.txtbCalle.TabIndex = 28;
+            this.txtbCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbCalle_KeyDown);
+            // 
+            // txtbNumero
+            // 
+            this.txtbNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbNumero.Location = new System.Drawing.Point(227, 164);
+            this.txtbNumero.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbNumero.Name = "txtbNumero";
+            this.txtbNumero.Size = new System.Drawing.Size(301, 20);
+            this.txtbNumero.TabIndex = 27;
+            this.txtbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNumero_KeyDown);
             // 
             // label1
             // 
@@ -123,28 +156,6 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // txtbNombre
-            // 
-            this.txtbNombre.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNombre.ForeColors = System.Drawing.Color.Black;
-            this.txtbNombre.HintText = null;
-            this.txtbNombre.IsPassword = false;
-            this.txtbNombre.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNombre.LineThickness = 3;
-            this.txtbNombre.Location = new System.Drawing.Point(227, 41);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNombre.MaxLength = 32767;
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNombre.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNombre.ReadOnly = false;
-            this.txtbNombre.Size = new System.Drawing.Size(301, 23);
-            this.txtbNombre.TabIndex = 12;
-            this.txtbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNombre.TextName = "";
-            // 
             // lblNumero
             // 
             this.lblNumero.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -168,50 +179,6 @@ namespace FarmaTown.Presentacion.Farmacias
             this.lblCalle.TabStop = false;
             this.lblCalle.Text = "Calle(*):";
             this.lblCalle.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // txtbNumero
-            // 
-            this.txtbNumero.BackColor = System.Drawing.Color.Transparent;
-            this.txtbNumero.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNumero.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbNumero.ForeColors = System.Drawing.Color.Black;
-            this.txtbNumero.HintText = null;
-            this.txtbNumero.IsPassword = false;
-            this.txtbNumero.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbNumero.LineThickness = 3;
-            this.txtbNumero.Location = new System.Drawing.Point(227, 161);
-            this.txtbNumero.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbNumero.MaxLength = 32767;
-            this.txtbNumero.Name = "txtbNumero";
-            this.txtbNumero.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbNumero.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbNumero.ReadOnly = false;
-            this.txtbNumero.Size = new System.Drawing.Size(301, 23);
-            this.txtbNumero.TabIndex = 15;
-            this.txtbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbNumero.TextName = "";
-            // 
-            // txtbCalle
-            // 
-            this.txtbCalle.BackColor = System.Drawing.Color.Transparent;
-            this.txtbCalle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbCalle.Font_Size = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtbCalle.ForeColors = System.Drawing.Color.Black;
-            this.txtbCalle.HintText = null;
-            this.txtbCalle.IsPassword = false;
-            this.txtbCalle.LineBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.txtbCalle.LineThickness = 3;
-            this.txtbCalle.Location = new System.Drawing.Point(227, 100);
-            this.txtbCalle.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbCalle.MaxLength = 32767;
-            this.txtbCalle.Name = "txtbCalle";
-            this.txtbCalle.OnFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.txtbCalle.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbCalle.ReadOnly = false;
-            this.txtbCalle.Size = new System.Drawing.Size(301, 23);
-            this.txtbCalle.TabIndex = 14;
-            this.txtbCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbCalle.TextName = "";
             // 
             // groupBox2
             // 
@@ -391,15 +358,15 @@ namespace FarmaTown.Presentacion.Farmacias
         private CustomControls.RJControls.RJButton btnLimpiar;
         private System.Windows.Forms.Label label1;
         private DiseñosElemGUI.TransparentLabel lblSucursal;
-        private JMaterialTextbox.JMaterialTextbox txtbNombre;
         private DiseñosElemGUI.TransparentLabel lblNumero;
         private DiseñosElemGUI.TransparentLabel lblCalle;
-        private JMaterialTextbox.JMaterialTextbox txtbNumero;
-        private JMaterialTextbox.JMaterialTextbox txtbCalle;
         private CustomControls.RJControls.RJButton btnCancelar;
         private CustomControls.RJControls.RJButton btnAceptar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
+        private System.Windows.Forms.TextBox txtbNombre;
+        private System.Windows.Forms.TextBox txtbCalle;
+        private System.Windows.Forms.TextBox txtbNumero;
     }
 }

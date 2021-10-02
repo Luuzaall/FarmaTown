@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,17 +63,17 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.textbSucursal.TextName = "";
-            this.TextbCalle.TextName = "";
-            this.textbNumero.TextName = "";
+            this.textbSucursal.Text = "";
+            this.TextbCalle.Text = "";
+            this.textbNumero.Text = "";
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<Farmacia> resultadoFarmacias;
-            string sucursal = this.textbSucursal.TextName;
-            string calle = this.TextbCalle.TextName;
-            string numero = this.textbNumero.TextName;
+            string sucursal = this.textbSucursal.Text;
+            string calle = this.TextbCalle.Text;
+            string numero = this.textbNumero.Text;
 
             if (validarDatos())
             {
@@ -83,9 +84,9 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private bool validarDatos()
         {
-            string sucursal = this.textbSucursal.TextName;
-            string calle = this.TextbCalle.TextName;
-            string numero = this.textbNumero.TextName;
+            string sucursal = this.textbSucursal.Text;
+            string calle = this.TextbCalle.Text;
+            string numero = this.textbNumero.Text;
             if (string.IsNullOrEmpty(sucursal)
                 && string.IsNullOrEmpty(calle)
                 && string.IsNullOrEmpty(numero)
@@ -162,22 +163,27 @@ namespace FarmaTown.Presentacion.Farmacias
             ABMFar.ShowDialog();
             this.actualizar();
         }
-        private void textbNumero_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.btnConsultar.PerformClick();
-
-            }
-            else if (char.IsDigit((char)e.KeyCode))
-            {
-                e.SuppressKeyPress = true;
-            }
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textbSucursal_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
+            TextBoxService.noDigitos(e);
+        }
+
+        private void TextbCalle_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
+            TextBoxService.noDigitos(e);
+        }
+
+        private void textbNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
         }
     }
 }
