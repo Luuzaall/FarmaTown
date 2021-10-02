@@ -196,8 +196,9 @@ namespace FarmaTown.Presentacion.Localidades
                                 //oNuevoBarrio.Nombre = nombre;
                                 //nueva, vieja la de arriba
                                 oNuevoBarrio.Nombre = this.txtbNombre.Text;
-                                oNuevoBarrio.IdBarrio = (int)this.dgvLocalidades.SelectedRows[0].Cells[0].Value;
+                                oNuevoBarrio.IdBarrio = Convert.ToInt32(this.dgvLocalidades.SelectedRows[0].Cells[0].Value);
                                 //Nueva:
+                                oNuevoBarrio.Localidad = new Localidad();
                                 oNuevoBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
 
                                 bool resultInsert = oNuevoBarrio.crearBarrio(oNuevoBarrio);

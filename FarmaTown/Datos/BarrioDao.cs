@@ -103,7 +103,7 @@ namespace FarmaTown.Datos
                            " FROM Barrios b " +
                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                            " WHERE b.borrado = 0" +
-                           " AND nombre = '" + nombre + "'";
+                           " AND b.nombre = '" + nombre + "'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -121,13 +121,11 @@ namespace FarmaTown.Datos
                             //nuevo idLocalidad y nombre
                             "(nombre" +
                             ", idLocalidad" +
-                            ", nomLocalidad" +
-                            ", borrado" +
+                            ", borrado)" +
                             " VALUES" +
                             //Nueva lo de nuevobarrio.Localidad id y nombre
                             "( '" + nuevoBarrio.Nombre + "'" +
                             ", '" + nuevoBarrio.Localidad.IdLocalidad + "'" +
-                            ", '" + nuevoBarrio.Localidad.Nombre + "'" +
                             ", 0)";
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
