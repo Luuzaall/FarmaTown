@@ -10,30 +10,17 @@ namespace FarmaTown.Datos
 {
     class BarrioDao
     {
-        public DataTable recuperarTodos()
-        {
-            string query = "SELECT b.idBarrio" +
-                            ", b.nombre as nomBarrio" +
-                            ", l.nombre as nomLocalidad" +
-                            //NUEVA
-                            ", l.idLocalidad " +
-                            " FROM Barrios b" +
-                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            " WHERE b.borrado = 0";
-
-            return DBHelper.getDBHelper().consultaSQL(query);
-        }
         public List<Barrio> recuperarCParam(string nombre)
         {
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
-                //NUEVA
                 ", l.idLocalidad " +
                 ", b.borrado" +
                 " FROM Barrios b" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " WHERE b.nombre LIKE '%" + nombre + "%'";
+                " WHERE b.nombre LIKE '%" + nombre + "%'" +
+                " AND b.borrado = 0 ";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -118,12 +105,10 @@ namespace FarmaTown.Datos
         public int crear(Barrio nuevoBarrio)
         {
             string query = "INSERT INTO Barrios" +
-                            //nuevo idLocalidad y nombre
                             "(nombre" +
                             ", idLocalidad" +
                             ", borrado)" +
                             " VALUES" +
-                            //Nueva lo de nuevobarrio.Localidad id y nombre
                             "( '" + nuevoBarrio.Nombre + "'" +
                             ", '" + nuevoBarrio.Localidad.IdLocalidad + "'" +
                             ", 0)";
@@ -134,10 +119,8 @@ namespace FarmaTown.Datos
         public int actualizar(Barrio oBarrio)
         {
             string query = "UPDATE Barrios" +
-                //Nuevo a partir de idLocalidad y nomLocalidad
                 " SET nombre = '" + oBarrio.Nombre + "'" + 
-                //"',idLocalidad = '" + oBarrio.Localidad.IdLocalidad + 
-                //"' ,nomLocalidad = " + oBarrio.Localidad.Nombre +
+                ",idLocalidad = " + oBarrio.Localidad.IdLocalidad + 
                 " WHERE idBarrio = " + oBarrio.IdBarrio;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);

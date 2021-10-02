@@ -224,7 +224,7 @@ namespace FarmaTown.Presentacion.Localidades
                         {
                             oBarrio.Nombre = this.txtbNombre.Text;
                             //¿que hace la linea que sige??
-                            oBarrio.IdBarrio = int.Parse( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
+                            //oBarrio.IdBarrio = Convert.ToInt32( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
                             oBarrio.Localidad = new Localidad();
                             //Nueva:
                             oBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.SelectedRows[0].Cells[0].Value);
