@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Datos;
+using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.ABMC_s.Medicamentos;
 using FarmaTown.Presentacion.Empleados;
 using FarmaTown.Presentacion.Farmacias;
@@ -42,7 +43,8 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmTiposDoc());
 
 
-            Application.Run(new frmVentas());
+            //Application.Run(new frmVentas());
+            Application.Run(new frmClientes());
 
         }
     }
