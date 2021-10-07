@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace FarmaTown.Presentacion
     {
         // Atributos
         TipoFactura oTipoFact;
+        Cliente oCliente;
         public frmVentas()
         {
             InitializeComponent();
             oTipoFact = new TipoFactura();
+            oCliente = new Cliente();
         }
 
         //MÉTODOS DE RESPUESTA A EVENTOS
@@ -30,8 +33,15 @@ namespace FarmaTown.Presentacion
              * Debe ejecutar el form de consulta a clientes
              * Y pasar por parámtetro el elegido.
              */
-
-
+            frmClientes oFrmClientes = new frmClientes(FormMode.selection);
+            DialogResult resultado = oFrmClientes.ShowDialog();
+            if (resultado != DialogResult.Cancel)
+            {
+                oCliente = oFrmClientes.recuperarSeleccion();
+                this.txtNomCliente.Text = oCliente.Nombre;
+                this.txtbNroDoc.Text = oCliente.NroDoc;
+                this.txtbTipoDoc.Text = oCliente.TipoDoc.Nombre;
+            }
         }
 
         private void btnBuscMedicamento_Click(object sender, EventArgs e)

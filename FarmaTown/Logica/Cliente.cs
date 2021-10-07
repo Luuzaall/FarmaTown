@@ -13,28 +13,68 @@ namespace FarmaTown.Logica
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public TipoDocumento TipoDoc { get; set; }
-        public int NroDoc { get; set; }
+        public string NroDoc { get; set; }
         public string Calle { get; set; }
-        public int Numero { get; set; }
+        public int NroCalle { get; set; }
         public Barrio Barrio { get; set; }
         public bool Borrado { get; set; }
 
-        ClienteDao oCliente;
+        ClienteDao oClienteDao;
 
         public Cliente()
         {
-            oCliente = new ClienteDao();
+            oClienteDao = new ClienteDao();
         }
 
         public List<Cliente> recuperarTodos(bool esCBorrados)
         {
-            return this.oCliente.recuperarTodos(esCBorrados);
+            return this.oClienteDao.recuperarTodos(esCBorrados);
         }
 
         public List<Cliente> recuperarConParam(string nombre, string apellido
             , string nroDoc, int idTipoDoc)
         {
-            return oCliente.recuperarConParam(nombre, apellido, nroDoc, idTipoDoc);
+            return oClienteDao.recuperarConParam(nombre, apellido, nroDoc, idTipoDoc);
+        }
+
+        public Cliente traerCliente(int idCliente)
+        {
+            return oClienteDao.traer(idCliente);
+        }
+
+        public bool existe(int idTipoDoc, string nroDoc)
+        {
+            Cliente resultado = oClienteDao.recuperar(idTipoDoc, nroDoc);
+
+            if (resultado is null)
+                return false;
+            else
+                return true;
+        }
+
+        public bool crear(Cliente oCliente)
+        {
+            return validar( oClienteDao.insertar(oCliente) );
+        }
+
+        public bool actualizar(Cliente oCliente)
+        {
+            return validar(oClienteDao.actualizar(oCliente));
+        }
+
+        public bool cambiarEstado(Cliente oCliente)
+        {
+            return validar(oClienteDao.cambiarEstado(oCliente));
+        }
+
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

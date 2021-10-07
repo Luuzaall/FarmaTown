@@ -64,7 +64,7 @@ namespace FarmaTown.Presentacion
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbTipoDoc = new System.Windows.Forms.TextBox();
             this.btnBuscCliente = new CustomControls.RJControls.RJButton();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -181,7 +181,7 @@ namespace FarmaTown.Presentacion
             this.txtbImporteTotal.Location = new System.Drawing.Point(682, 395);
             this.txtbImporteTotal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbImporteTotal.Name = "txtbImporteTotal";
-            this.txtbImporteTotal.Size = new System.Drawing.Size(151, 29);
+            this.txtbImporteTotal.Size = new System.Drawing.Size(169, 29);
             this.txtbImporteTotal.TabIndex = 25;
             // 
             // txtbSubtotal
@@ -192,7 +192,7 @@ namespace FarmaTown.Presentacion
             this.txtbSubtotal.Location = new System.Drawing.Point(682, 327);
             this.txtbSubtotal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbSubtotal.Name = "txtbSubtotal";
-            this.txtbSubtotal.Size = new System.Drawing.Size(151, 29);
+            this.txtbSubtotal.Size = new System.Drawing.Size(169, 29);
             this.txtbSubtotal.TabIndex = 23;
             // 
             // txtbDescuento
@@ -203,7 +203,7 @@ namespace FarmaTown.Presentacion
             this.txtbDescuento.Location = new System.Drawing.Point(682, 359);
             this.txtbDescuento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbDescuento.Name = "txtbDescuento";
-            this.txtbDescuento.Size = new System.Drawing.Size(151, 29);
+            this.txtbDescuento.Size = new System.Drawing.Size(169, 29);
             this.txtbDescuento.TabIndex = 24;
             // 
             // label8
@@ -510,7 +510,7 @@ namespace FarmaTown.Presentacion
             // 
             this.gbCliente.BackColor = System.Drawing.Color.Transparent;
             this.gbCliente.Controls.Add(this.label10);
-            this.gbCliente.Controls.Add(this.textBox2);
+            this.gbCliente.Controls.Add(this.txtbTipoDoc);
             this.gbCliente.Controls.Add(this.btnBuscCliente);
             this.gbCliente.Controls.Add(this.txtbNroDoc);
             this.gbCliente.Controls.Add(this.label9);
@@ -537,17 +537,17 @@ namespace FarmaTown.Presentacion
             this.label10.TabIndex = 28;
             this.label10.Text = "Tipo Doc:";
             // 
-            // textBox2
+            // txtbTipoDoc
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Silver;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(730, 41);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 22);
-            this.textBox2.TabIndex = 27;
+            this.txtbTipoDoc.BackColor = System.Drawing.Color.Silver;
+            this.txtbTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbTipoDoc.Enabled = false;
+            this.txtbTipoDoc.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.txtbTipoDoc.Location = new System.Drawing.Point(730, 41);
+            this.txtbTipoDoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtbTipoDoc.Name = "txtbTipoDoc";
+            this.txtbTipoDoc.Size = new System.Drawing.Size(172, 22);
+            this.txtbTipoDoc.TabIndex = 27;
             // 
             // btnBuscCliente
             // 
@@ -775,6 +775,6 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnBuscCliente;
         private System.Windows.Forms.ToolTip ttDescripcionBtn;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtbTipoDoc;
     }
 }

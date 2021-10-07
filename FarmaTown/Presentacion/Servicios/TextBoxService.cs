@@ -43,6 +43,15 @@ namespace FarmaTown.Presentacion.Servicios
             }
         }
 
+        public static void noLetras(KeyEventArgs e)
+        {
+            if (!char.IsDigit((char)e.KeyCode)
+                    || char.IsPunctuation((char)e.KeyCode))
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
         public static void verClave(TextBox txtb, Button btn)
         {
             bool estabaActivo = cambiarColorBtnClave(btn);

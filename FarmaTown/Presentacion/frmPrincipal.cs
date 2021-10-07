@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Logica;
+using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.ABMC_s.TiposDocumento;
 using FarmaTown.Presentacion.Empleados;
 using FarmaTown.Presentacion.Farmacias;
@@ -163,6 +164,11 @@ namespace FarmaTown.Presentacion
             frmFarmacias frmFar = new frmFarmacias();
             frmFar.ShowDialog();
         }
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmClientes oFrmClientes = new frmClientes(FormMode.management);
+            oFrmClientes.ShowDialog();
+        }
 
         private void t_Tick(object sender, EventArgs e)
         {
@@ -210,5 +216,6 @@ namespace FarmaTown.Presentacion
             //update label
             this.lblReloj.Text = time;
         }
+
     }
 }

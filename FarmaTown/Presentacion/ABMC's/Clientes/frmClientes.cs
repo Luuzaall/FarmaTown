@@ -12,22 +12,107 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion.ABMC_s.Clientes
 {
+    public enum FormMode
+    {
+        selection,
+        management
+    }
+
     public partial class frmClientes : Form
     {
-        Cliente oCliente;
-        TipoDocumento oTipoDoc;
-        Barrio oBarrio;
-        public frmClientes()
+        private Cliente oCliente;
+        private TipoDocumento oTipoDoc;
+        private FormMode modo;
+        
+        public frmClientes(FormMode _modo)
         {
+            InitializeComponent();
             oCliente = new Cliente();
             oTipoDoc = new TipoDocumento();
-            oBarrio = new Barrio();
-            InitializeComponent();
+            modo = _modo;
         }
+
+        // MÉTODOS DE RESPUESTA A EVENTOS
         private void frmClientes_Load(object sender, EventArgs e)
         {
             ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false)
                 , "nombre", "idTipo");
+
+           if (modo == FormMode.selection)
+                this.btnSeleccionar.Visible = true;
+            else
+                this.btnSeleccionar.Visible = false;
+        }
+
+        private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noDigitos(e);
+            TextBoxService.enter(this.btnConsultar, e);
+        }
+
+        private void cboTipoDoc_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            /*
+             * Permite actualizar el aviso de lo que
+             * debe ingresar para el textbox correspondiente
+             * al número de documento.
+             * 
+             * Además, pone a la vista los textbox
+             * correctos para el tipo de documento
+             * que se haya elegido
+             */
+
+            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
+            if (indiceSelecc != -1)
+            {
+                int valorSelecc = (int)this.cboTipoDoc.SelectedValue;
+                if (valorSelecc == 1
+                    || valorSelecc == 3)
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbPasaporteLetras.Text = "";
+                    this.txtbPasaporteNro.Text = "";
+
+                    this.txtbNroDoc.Text = "";
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+
+                    this.lblAvisoNroDoc.Text = "Debe tener 8 números.";
+                }
+                else if (valorSelecc == 2)
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbNroDoc.Text = "";
+
+                    this.txtbPasaporteLetras.Visible = true;
+                    this.txtbPasaporteLetras.Enabled = true;
+                    this.txtbPasaporteLetras.Enabled = true;
+                    this.txtbPasaporteNro.Visible = true;
+                    this.txtbPasaporteNro.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
+
+                }
+                else
+                {
+                    this.deshabilitarTextBox();
+                    this.txtbNroDoc.Visible = true;
+                    this.txtbNroDoc.Enabled = true;
+                    this.lblAvisoNroDoc.Text = "";
+                }
+            }
+
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            /*
+             * Limpia todos los textbox del 
+             * formulario
+             */
+            this.txtbNombre.Text = "";
+            this.txtbApellido.Text = "";
+            this.txtbNroDoc.Text = "";
+            this.txtbPasaporteLetras.Text = "";
+            this.txtbPasaporteNro.Text = "";
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -71,6 +156,61 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         }
 
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+             * Habilita los botones para poder ser seleccionados,
+             * proyenedo una invitación visual
+             */
+            this.btnEditar.Enabled = true;
+            this.btnEditar.BackColor = Color.FromArgb(116, 201, 79);
+            this.btnEliminar.Enabled = true;
+            this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
+            this.lblAviso.Visible = false;
+
+            if (modo == FormMode.selection)
+                this.btnSeleccionar.Enabled = true;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.cargarGrilla(this.dgvClientes, oCliente.recuperarTodos(false));
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmABMClientes oFrmABMClientes = new frmABMClientes();
+            oFrmABMClientes.ShowDialog();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int idClienteSelecc = int.Parse(this.dgvClientes.CurrentRow.Cells[0].Value.ToString());
+            Cliente clienteSelecc = oCliente.traerCliente(idClienteSelecc);
+            frmABMClientes oFrmABMClientes = new frmABMClientes();
+
+            oFrmABMClientes.seleccionarCliente(FormModeABM.update, clienteSelecc);
+            oFrmABMClientes.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idClienteSelecc = int.Parse(this.dgvClientes.CurrentRow.Cells[0].Value.ToString());
+            Cliente clienteSelecc = oCliente.traerCliente(idClienteSelecc);
+            frmABMClientes oFrmABMClientes = new frmABMClientes();
+
+            oFrmABMClientes.seleccionarCliente(FormModeABM.delete, clienteSelecc);
+            oFrmABMClientes.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // -----------------------------------------------------------------------------
+        // MÉTODOS FUNCIONALES
+
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
@@ -78,7 +218,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             string nroDoc = this.txtbNroDoc.Text;
             string nroPasaporte = this.txtbPasaporteNro.Text;
             string letrasPasaporte = this.txtbPasaporteLetras.Text;
-            
+
             if (string.IsNullOrEmpty(nombre)
                 & string.IsNullOrEmpty(nroDoc)
                 & string.IsNullOrEmpty(nroPasaporte)
@@ -116,69 +256,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                                 lista[i].NroDoc.ToString(),
                                 lista[i].TipoDoc.Nombre.ToString(),
                                 lista[i].Calle.ToString(),
-                                lista[i].Numero.ToString(),
+                                lista[i].NroCalle.ToString(),
                                 lista[i].Barrio.Nombre.ToString()); ;
                 }
                 dgv.ClearSelection();
             }
-        }
-
-        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
-        {
-            TextBoxService.noDigitos(e);
-        }
-
-        private void txtbApellido_KeyDown(object sender, KeyEventArgs e)
-        {
-            TextBoxService.noDigitos(e);
-        }
-
-        private void txtbCalle_KeyDown(object sender, KeyEventArgs e)
-        {
-            TextBoxService.noDigitos(e);
-        }
-
-        private void cboTipoDoc_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
-            if (indiceSelecc != -1)
-            {
-                int valorSelecc = (int)this.cboTipoDoc.SelectedValue;
-                if (valorSelecc == 1
-                    || valorSelecc == 3)
-                {
-                    this.deshabilitarTextBox();
-                    this.txtbPasaporteLetras.Text = "";
-                    this.txtbPasaporteNro.Text = "";
-
-                    this.txtbNroDoc.Text = "";
-                    this.txtbNroDoc.Visible = true;
-                    this.txtbNroDoc.Enabled = true;
-
-                    this.lblAvisoNroDoc.Text = "Debe tener 8 números.";
-                }
-                else if (valorSelecc == 2)
-                {
-                    this.deshabilitarTextBox();
-                    this.txtbNroDoc.Text = "";
-
-                    this.txtbPasaporteLetras.Visible = true;
-                    this.txtbPasaporteLetras.Enabled = true;
-                    this.txtbPasaporteLetras.Enabled = true;
-                    this.txtbPasaporteNro.Visible = true;
-                    this.txtbPasaporteNro.Enabled = true;
-                    this.lblAvisoNroDoc.Text = "Deben ser 3 letras y 6 números.";
-
-                }
-                else
-                {
-                    this.deshabilitarTextBox();
-                    this.txtbNroDoc.Visible = true;
-                    this.txtbNroDoc.Enabled = true;
-                    this.lblAvisoNroDoc.Text = "";
-                }
-            }
-
         }
 
         private void deshabilitarTextBox()
@@ -199,31 +281,21 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
              * Deshabilita los botones cambiándoles
              * el color para que el usuario visualmente
              * lo vea
-            // */
-            //this.btnEditar.Enabled = false;
-            //this.btnEditar.BackColor = Color.Gray;
-            //this.btnEliminar.Enabled = false;
-            //this.btnEliminar.BackColor = Color.Gray;
-            //this.lblAviso.Visible = true;
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            /*
-             * Limpia todos los textbox del 
-             * formulario
              */
-            this.txtbNombre.Text = "";
-            this.txtbApellido.Text = "";
-            this.txtbNroDoc.Text = "";
-            this.txtbPasaporteLetras.Text = "";
-            this.txtbPasaporteNro.Text = "";
+            this.btnEditar.Enabled = false;
+            this.btnEditar.BackColor = Color.Gray;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.BackColor = Color.Gray;
+            this.lblAviso.Visible = true;
+
+            if (modo == FormMode.selection)
+                this.btnSeleccionar.Enabled = false;
         }
 
+        public Cliente recuperarSeleccion()
+        {
+            int idCliente = int.Parse( this.dgvClientes.SelectedRows[0].Cells[0].Value.ToString());
+            return oCliente.traerCliente(idCliente);
+        }
     }
 }

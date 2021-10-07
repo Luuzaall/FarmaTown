@@ -220,6 +220,17 @@ namespace FarmaTown.Presentacion.Empleados
 
         private void cboTipoDoc_SelectionChangeCommited(object sender, EventArgs e)
         {
+            /*
+             *Permite actualizar el aviso de lo que
+             *debe ingresar para el textbox correspondiente
+            * al número de documento.
+
+            *
+            *Además, pone a la vista los textbox
+             *correctos para el tipo de documento
+            * que se haya elegido
+            */
+
             int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
             if (indiceSelecc != -1)
             {

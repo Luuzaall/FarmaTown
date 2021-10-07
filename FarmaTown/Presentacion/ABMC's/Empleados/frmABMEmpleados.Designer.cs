@@ -31,6 +31,9 @@ namespace FarmaTown.Presentacion.Empleados
         {
             System.Windows.Forms.GroupBox gbEmpleados;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMEmpleados));
+            this.lblTipoDoc = new System.Windows.Forms.Label();
+            this.lblNroDoc = new System.Windows.Forms.Label();
+            this.lblNomEmp = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.txtbPasaporteLetras = new System.Windows.Forms.TextBox();
             this.txtbPasaporteNro = new System.Windows.Forms.TextBox();
@@ -40,13 +43,18 @@ namespace FarmaTown.Presentacion.Empleados
             this.lblAviso = new System.Windows.Forms.Label();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.gbFarmacias = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltrosFarm = new System.Windows.Forms.GroupBox();
             this.txtbLocalidad = new System.Windows.Forms.TextBox();
             this.txtbNomFarm = new System.Windows.Forms.TextBox();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblBarrio = new System.Windows.Forms.Label();
             this.txtbNomCalle = new System.Windows.Forms.TextBox();
+            this.lblNomCalle = new System.Windows.Forms.Label();
             this.txtbBarrio = new System.Windows.Forms.TextBox();
             this.btnConsultarFarm = new CustomControls.RJControls.RJButton();
+            this.lnlNomFarm = new System.Windows.Forms.Label();
             this.btnLimpiarFarmacias = new CustomControls.RJControls.RJButton();
             this.dgvFarmacias = new System.Windows.Forms.DataGridView();
             this.idFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,14 +66,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
-            this.lblNomEmp = new System.Windows.Forms.Label();
-            this.lnlNomFarm = new System.Windows.Forms.Label();
-            this.lblLocalidad = new System.Windows.Forms.Label();
-            this.lblNomCalle = new System.Windows.Forms.Label();
-            this.lblBarrio = new System.Windows.Forms.Label();
-            this.lblNroDoc = new System.Windows.Forms.Label();
-            this.lblTipoDoc = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             gbEmpleados = new System.Windows.Forms.GroupBox();
             gbEmpleados.SuspendLayout();
             this.gbFarmacias.SuspendLayout();
@@ -95,6 +95,36 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.TabIndex = 30;
             gbEmpleados.TabStop = false;
             gbEmpleados.Text = "Datos del Empleado";
+            // 
+            // lblTipoDoc
+            // 
+            this.lblTipoDoc.AutoSize = true;
+            this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTipoDoc.Location = new System.Drawing.Point(239, 80);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(201, 23);
+            this.lblTipoDoc.TabIndex = 31;
+            this.lblTipoDoc.Text = "Tipo Documento(*):";
+            // 
+            // lblNroDoc
+            // 
+            this.lblNroDoc.AutoSize = true;
+            this.lblNroDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNroDoc.Location = new System.Drawing.Point(255, 133);
+            this.lblNroDoc.Name = "lblNroDoc";
+            this.lblNroDoc.Size = new System.Drawing.Size(185, 23);
+            this.lblNroDoc.TabIndex = 30;
+            this.lblNroDoc.Text = "N° Documento(*):";
+            // 
+            // lblNomEmp
+            // 
+            this.lblNomEmp.AutoSize = true;
+            this.lblNomEmp.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNomEmp.Location = new System.Drawing.Point(308, 26);
+            this.lblNomEmp.Name = "lblNomEmp";
+            this.lblNomEmp.Size = new System.Drawing.Size(132, 23);
+            this.lblNomEmp.TabIndex = 25;
+            this.lblNomEmp.Text = "  Nombre(*):";
             // 
             // txtbNombre
             // 
@@ -219,6 +249,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFarmacias.TabStop = false;
             this.gbFarmacias.Text = "Datos de Farmacias";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(14, 177);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 23);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "(*)";
+            // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -286,6 +326,26 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNomFarm.TabIndex = 5;
             this.txtbNomFarm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNomFarm_KeyDown);
             // 
+            // lblLocalidad
+            // 
+            this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblLocalidad.Location = new System.Drawing.Point(571, 84);
+            this.lblLocalidad.Name = "lblLocalidad";
+            this.lblLocalidad.Size = new System.Drawing.Size(119, 23);
+            this.lblLocalidad.TabIndex = 27;
+            this.lblLocalidad.Text = " Localidad:";
+            // 
+            // lblBarrio
+            // 
+            this.lblBarrio.AutoSize = true;
+            this.lblBarrio.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblBarrio.Location = new System.Drawing.Point(619, 29);
+            this.lblBarrio.Name = "lblBarrio";
+            this.lblBarrio.Size = new System.Drawing.Size(71, 23);
+            this.lblBarrio.TabIndex = 29;
+            this.lblBarrio.Text = "Barrio:";
+            // 
             // txtbNomCalle
             // 
             this.txtbNomCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
@@ -297,6 +357,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNomCalle.Size = new System.Drawing.Size(301, 20);
             this.txtbNomCalle.TabIndex = 7;
             this.txtbNomCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNomCalle_KeyDown);
+            // 
+            // lblNomCalle
+            // 
+            this.lblNomCalle.AutoSize = true;
+            this.lblNomCalle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lblNomCalle.Location = new System.Drawing.Point(37, 81);
+            this.lblNomCalle.Name = "lblNomCalle";
+            this.lblNomCalle.Size = new System.Drawing.Size(153, 23);
+            this.lblNomCalle.TabIndex = 28;
+            this.lblNomCalle.Text = "Nombre Calle:";
             // 
             // txtbBarrio
             // 
@@ -334,6 +404,16 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnConsultarFarm.TextColor = System.Drawing.Color.Black;
             this.btnConsultarFarm.UseVisualStyleBackColor = false;
             this.btnConsultarFarm.Click += new System.EventHandler(this.btnConsultarFarm_Click);
+            // 
+            // lnlNomFarm
+            // 
+            this.lnlNomFarm.AutoSize = true;
+            this.lnlNomFarm.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.lnlNomFarm.Location = new System.Drawing.Point(83, 26);
+            this.lnlNomFarm.Name = "lnlNomFarm";
+            this.lnlNomFarm.Size = new System.Drawing.Size(107, 23);
+            this.lnlNomFarm.TabIndex = 26;
+            this.lnlNomFarm.Text = "  Nombre:";
             // 
             // btnLimpiarFarmacias
             // 
@@ -503,86 +583,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // lblNomEmp
-            // 
-            this.lblNomEmp.AutoSize = true;
-            this.lblNomEmp.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomEmp.Location = new System.Drawing.Point(308, 26);
-            this.lblNomEmp.Name = "lblNomEmp";
-            this.lblNomEmp.Size = new System.Drawing.Size(132, 23);
-            this.lblNomEmp.TabIndex = 25;
-            this.lblNomEmp.Text = "  Nombre(*):";
-            // 
-            // lnlNomFarm
-            // 
-            this.lnlNomFarm.AutoSize = true;
-            this.lnlNomFarm.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lnlNomFarm.Location = new System.Drawing.Point(83, 26);
-            this.lnlNomFarm.Name = "lnlNomFarm";
-            this.lnlNomFarm.Size = new System.Drawing.Size(107, 23);
-            this.lnlNomFarm.TabIndex = 26;
-            this.lnlNomFarm.Text = "  Nombre:";
-            // 
-            // lblLocalidad
-            // 
-            this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblLocalidad.Location = new System.Drawing.Point(571, 84);
-            this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(119, 23);
-            this.lblLocalidad.TabIndex = 27;
-            this.lblLocalidad.Text = " Localidad:";
-            // 
-            // lblNomCalle
-            // 
-            this.lblNomCalle.AutoSize = true;
-            this.lblNomCalle.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomCalle.Location = new System.Drawing.Point(37, 81);
-            this.lblNomCalle.Name = "lblNomCalle";
-            this.lblNomCalle.Size = new System.Drawing.Size(153, 23);
-            this.lblNomCalle.TabIndex = 28;
-            this.lblNomCalle.Text = "Nombre Calle:";
-            // 
-            // lblBarrio
-            // 
-            this.lblBarrio.AutoSize = true;
-            this.lblBarrio.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblBarrio.Location = new System.Drawing.Point(619, 29);
-            this.lblBarrio.Name = "lblBarrio";
-            this.lblBarrio.Size = new System.Drawing.Size(71, 23);
-            this.lblBarrio.TabIndex = 29;
-            this.lblBarrio.Text = "Barrio:";
-            // 
-            // lblNroDoc
-            // 
-            this.lblNroDoc.AutoSize = true;
-            this.lblNroDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNroDoc.Location = new System.Drawing.Point(255, 133);
-            this.lblNroDoc.Name = "lblNroDoc";
-            this.lblNroDoc.Size = new System.Drawing.Size(185, 23);
-            this.lblNroDoc.TabIndex = 30;
-            this.lblNroDoc.Text = "N° Documento(*):";
-            // 
-            // lblTipoDoc
-            // 
-            this.lblTipoDoc.AutoSize = true;
-            this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblTipoDoc.Location = new System.Drawing.Point(239, 80);
-            this.lblTipoDoc.Name = "lblTipoDoc";
-            this.lblTipoDoc.Size = new System.Drawing.Size(201, 23);
-            this.lblTipoDoc.TabIndex = 31;
-            this.lblTipoDoc.Text = "Tipo Documento(*):";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(14, 177);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 23);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "(*)";
             // 
             // frmABMEmpleados
             // 

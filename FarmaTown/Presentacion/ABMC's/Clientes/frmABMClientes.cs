@@ -12,24 +12,34 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion.ABMC_s.Clientes
 {
+    public enum FormModeABM
+    {
+        insert,
+        update,
+        delete
+    }
+
     public partial class frmABMClientes : Form
     {
-        private FormMode formMode = FormMode.insert;
+        private FormModeABM formMode = FormModeABM.insert;
         private Cliente oCliente;
         TipoDocumento oTipoDoc;
+        private Barrio oBarrio;
 
         public frmABMClientes()
         {
+            InitializeComponent();
             oTipoDoc = new TipoDocumento();
             oCliente = new Cliente();
-            InitializeComponent();
+            oBarrio = new Barrio();
         }
-        public enum FormMode
+        
+        internal void seleccionarCliente(FormModeABM _formMode, Cliente clienteSelected)
         {
-            insert,
-            update,
-            delete
+            formMode = _formMode;
+            oCliente = clienteSelected;
         }
+
         private void deshabilitarTextBox()
         {
             this.txtbNroDoc.Enabled = false;
@@ -43,7 +53,17 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         }
         private void cboTipoDoc_SelectionChangeCommited(object sender, EventArgs e)
         {
-            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
+            /*
+             *Permite actualizar el aviso de lo que
+             *debe ingresar para el textbox correspondiente
+            * al número de documento.
+
+            *
+            *Además, pone a la vista los textbox
+             *correctos para el tipo de documento
+            * que se haya elegido
+            */
+           int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
             if (indiceSelecc != -1)
             {
                 int valorSelecc = (int)this.cboTipoDoc.SelectedValue;
@@ -80,27 +100,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                 }
             }
         }
-        private void btnLimpiarCliente_Click(object sender, EventArgs e)
-        {
-            this.txtbNombre.Text = "";
-            this.txtbApellido.Text = "";
-            this.txtbNroDoc.Text = "";
-            this.txtbPasaporteLetras.Text = "";
-            this.txtbPasaporteNro.Text = "";
-            this.txtbCalle.Text = "";
-            this.txtbNumero.Text = "";
-
-            this.cboTipoDoc.SelectedIndex = -1;
-
-            this.deshabilitarTextBox();
-        }
 
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text; 
             string apellido = this.txtbApellido.Text;
             string calle = this.txtbCalle.Text;
-            int numero = Convert.ToInt32(this.txtbNumero.Text);
+            int numero = Convert.ToInt32(this.txtbNroCalle.Text);
             //string barrio = this.
 
             string nroDoc = this.txtbNroDoc.Text;
@@ -169,63 +175,63 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         {
             switch (formMode)
             {
-                case FormMode.insert:
+                case FormModeABM.insert:
                     {
                         if (this.validarCampos())
                         {
-                            if (!this.existeEmpleado())
+                            if (!this.existeCliente())
                             {
 
-                                var oEmpleado = new Empleado();
-                                oEmpleado = this.cargarDatos(oEmpleado);
+                                var oCliente = new Cliente();
+                                oCliente = this.cargarDatos(oCliente);
 
-                                if (oEmpleado.crearEmpleado(oEmpleado))
+                                if (oCliente.crear(oCliente))
                                 {
-                                    MessageBox.Show("Empleado agregado!", "Información"
+                                    MessageBox.Show("Cliente agregado!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
-                                    MessageBox.Show("Error al insertar el empleado!", "Información"
+                                    MessageBox.Show("Error al insertar el cliente!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
-                                MessageBox.Show("Este empleado ya está registrado!", "Información"
+                                MessageBox.Show("Este Cliente ya está registrado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
-                case FormMode.update:
+                case FormModeABM.update:
                     {
                         if (this.validarCampos())
                         {
-                            oEmpleado = this.cargarDatos(oEmpleado);
+                            oCliente = this.cargarDatos(oCliente);
 
-                            if (oEmpleado.actualizarEmpleado(oEmpleado))
+                            if (oCliente.actualizar(oCliente))
                             {
-                                MessageBox.Show("Empleado actualizado!", "Información"
+                                MessageBox.Show("Cliente actualizado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el empleado!", "Información"
+                                MessageBox.Show("Error al actualizar el Cliente!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
-                case FormMode.delete:
+                case FormModeABM.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar el empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el Cliente seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oEmpleado.cambiarEstado(oEmpleado, false))
+                            if (oCliente.cambiarEstado(oCliente))
                             {
-                                MessageBox.Show("Empleado Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Cliente Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
-                                MessageBox.Show("Error al deshabilitar el empleado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al deshabilitar el Cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         break;
@@ -233,5 +239,201 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             }
         }
 
+        private void frmABMClientes_Load(object sender, EventArgs e)
+        {
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
+            switch (formMode)
+            {
+                case (FormModeABM.insert):
+                    {
+                        this.Text = "Nuevo Cliente - FarmaTown";
+                        this.txtbNombre.Focus();
+                        break;
+                    }
+
+                case (FormModeABM.update):
+                    {
+                        this.Text = "Modificar Cliente - FarmaTown";
+                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+                        this.cargarCampos();
+                        break;
+                    }
+                case (FormModeABM.delete):
+                    {
+                        this.Text = "Deshabilitar Cliente - FarmaTown";
+                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+                        this.cargarCampos();
+                        GrillaService.cargarFila(this.dgvBarrios);
+
+                        this.gbClientes.Enabled = false;
+                        this.gbUbicacion.Enabled = false;
+                        //this.lblAviso.Visible = false;
+                        //this.txtbNombre.Enabled = false;
+                        //this.txtbApellido.Enabled = false;
+                        //this.txtbNroDoc.Enabled = false;
+                        //this.cboTipoDoc.Enabled = false;
+                        //this.txtbCalle.Enabled = false;
+                        //this.txtbNroCalle.Enabled = false;
+
+                        break;
+                    }
+            }
+
+        }
+
+        private bool existeCliente()
+        {
+            int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
+            int idTipoDoc;
+            string nroDoc;
+
+            if (indexCboTipoDoc == -1)
+            {
+                idTipoDoc = -1;
+                nroDoc = "";
+            }
+                
+            else
+            {
+                idTipoDoc = (int)this.cboTipoDoc.SelectedValue;
+                if (indexCboTipoDoc == 1
+                    || indexCboTipoDoc == 3
+                    || indexCboTipoDoc == 4)
+                {
+                    nroDoc = this.txtbNroDoc.Text;
+                    
+                }
+                else if (indexCboTipoDoc == 2)
+                {
+                    nroDoc = this.txtbPasaporteLetras.Text
+                        + this.txtbPasaporteNro.Text;
+                } 
+                else
+                {
+                    nroDoc = "";
+                }
+
+            }
+            return oCliente.existe(idTipoDoc, nroDoc);
+        }
+
+        public void cargarGrilla(DataGridView dgv, List<Barrio> lista)
+        {
+            /*
+                * Carga la grilla con los datos necesarios
+                * pasado por lista.
+                */
+            dgv.Rows.Clear();
+            if (lista != null)
+            {
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
+                {
+                    dgv.Rows.Add(lista[i].IdBarrio.ToString()
+                        , lista[i].Nombre.ToString()
+                        , lista[i].Localidad.Nombre.ToString()
+                        );
+                }
+                dgv.ClearSelection();
+            }
+        }
+        private Cliente cargarDatos(Cliente oCliente)
+        {
+            oCliente.Nombre = this.txtbNombre.Text;
+            oCliente.Apellido = this.txtbApellido.Text;
+            oCliente.Calle = this.txtbCalle.Text;
+            oCliente.NroCalle = int.Parse(this.txtbNroCalle.Text);
+            oCliente.Barrio = new Barrio()
+            {
+                IdBarrio = int.Parse(this.dgvBarrios.SelectedRows[0].Cells[0].Value.ToString())
+            };    
+
+            oCliente.TipoDoc = (TipoDocumento) this.cboTipoDoc.SelectedItem;
+            int idTipoDoc = (int)this.cboTipoDoc.SelectedValue;
+
+            if (idTipoDoc == 1
+                   || idTipoDoc == 3
+                   || idTipoDoc == 4)
+            {
+                oCliente.NroDoc = this.txtbNroDoc.Text;
+
+            }
+            else if (idTipoDoc == 2)
+            {
+                    oCliente.NroDoc = (this.txtbPasaporteLetras.Text.ToUpper()
+                        + this.txtbPasaporteNro.Text);
+            }
+
+            return oCliente;
+        }
+
+        public void cargarCampos()
+        {
+            this.txtbNombre.Text = this.oCliente.Nombre;
+            this.txtbApellido.Text = this.oCliente.Apellido;
+            this.txtbCalle.Text = this.oCliente.Calle;
+            this.txtbNroCalle.Text = this.oCliente.NroCalle.ToString();
+
+            int idTipoDoc = this.oCliente.TipoDoc.IdTipo;
+            this.cboTipoDoc.SelectedValue = idTipoDoc;
+            if (idTipoDoc == 2)
+            {
+                this.txtbPasaporteLetras.Visible = true;
+                this.txtbPasaporteLetras.Enabled = true;
+                this.txtbPasaporteNro.Visible = true;
+                this.txtbPasaporteNro.Enabled = true;
+
+                this.txtbPasaporteLetras.Text = this.oCliente.NroDoc.ToString().Substring(0, 3);
+                this.txtbPasaporteNro.Text = this.oCliente.NroDoc.ToString().Substring(3);
+            }
+            else
+            {
+                this.txtbNroDoc.Enabled = true;
+                this.txtbNroDoc.Visible = true;
+                this.txtbNroDoc.Text = this.oCliente.NroDoc.ToString(); ;
+            }
+
+            int idBarrio = oCliente.Barrio.IdBarrio;
+            GrillaService.seleccionarFila(this.dgvBarrios, idBarrio);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+        }
+
+        private void btnLimpiarCliente_Click(object sender, EventArgs e)
+        {
+            this.txtbNombre.Text = "";
+            this.txtbApellido.Text = "";
+            this.cboTipoDoc.SelectedIndex = -1;
+            this.txtbNroDoc.Text = "";
+            this.txtbPasaporteLetras.Text = "";
+            this.txtbPasaporteNro.Text = "";
+            
+            this.txtbCalle.Text = "";
+            this.txtbNroCalle.Text = "";
+        }
+
+        private void btnLimpiarUbicacion_Click(object sender, EventArgs e)
+        {
+            this.txtbNombreBarrio.Text = "";
+            this.txtbLocalidad.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noDigitos(e);
+        }
+
+        private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noLetras(e);
+        }
     }
 }

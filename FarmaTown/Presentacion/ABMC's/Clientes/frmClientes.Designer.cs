@@ -45,19 +45,23 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnSeleccionar = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -98,7 +102,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbPasaporteLetras.MaxLength = 3;
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(85, 25);
-            this.txtbPasaporteLetras.TabIndex = 24;
+            this.txtbPasaporteLetras.TabIndex = 4;
             this.txtbPasaporteLetras.Visible = false;
             // 
             // txtbApellido
@@ -110,8 +114,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbApellido.MaxLength = 30;
             this.txtbApellido.Name = "txtbApellido";
             this.txtbApellido.Size = new System.Drawing.Size(243, 25);
-            this.txtbApellido.TabIndex = 32;
-            this.txtbApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbApellido_KeyDown);
+            this.txtbApellido.TabIndex = 3;
+            this.txtbApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // lblApellido
             // 
@@ -134,7 +138,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(243, 25);
             this.txtbNombre.TabIndex = 1;
-            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // txtbNroDoc
             // 
@@ -249,7 +253,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.cboTipoDoc.Location = new System.Drawing.Point(765, 39);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(243, 31);
-            this.cboTipoDoc.TabIndex = 3;
+            this.cboTipoDoc.TabIndex = 2;
             this.cboTipoDoc.SelectionChangeCommitted += new System.EventHandler(this.cboTipoDoc_SelectionChangeCommitted);
             // 
             // lblTipoDoc
@@ -266,6 +270,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // gbResultados
             // 
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
+            this.gbResultados.Controls.Add(this.btnActualizar);
             this.gbResultados.Controls.Add(this.dgvClientes);
             this.gbResultados.Location = new System.Drawing.Point(28, 295);
             this.gbResultados.Name = "gbResultados";
@@ -273,6 +278,31 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.gbResultados.TabIndex = 24;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(946, 114);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
+            this.btnActualizar.TabIndex = 13;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dgvClientes
             // 
@@ -288,6 +318,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.apellidp,
             this.nroDoc,
             this.nomTipoDoc,
+            this.calle,
+            this.nroCalle,
             this.nomBarrio});
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.dgvClientes.Location = new System.Drawing.Point(15, 31);
@@ -295,9 +327,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1033, 206);
+            this.dgvClientes.Size = new System.Drawing.Size(919, 206);
             this.dgvClientes.TabIndex = 9;
             this.dgvClientes.TabStop = false;
+            this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // idEmpleado
             // 
@@ -334,6 +367,20 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.nomTipoDoc.ReadOnly = true;
             this.nomTipoDoc.Width = 150;
             // 
+            // calle
+            // 
+            this.calle.FillWeight = 170F;
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            this.calle.Width = 170;
+            // 
+            // nroCalle
+            // 
+            this.nroCalle.HeaderText = "Altura";
+            this.nroCalle.Name = "nroCalle";
+            this.nroCalle.ReadOnly = true;
+            // 
             // nomBarrio
             // 
             this.nomBarrio.HeaderText = "Barrio";
@@ -351,6 +398,18 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.lblAviso.Size = new System.Drawing.Size(280, 22);
             this.lblAviso.TabIndex = 42;
             this.lblAviso.Text = "Debe elegir un cliente primero";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(446, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 33);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Consulta Clientes";
             // 
             // btnSalir
             // 
@@ -396,6 +455,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnEditar.TabIndex = 39;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -418,6 +478,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -440,18 +501,32 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnAgregar.TabIndex = 38;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // label1
+            // btnSeleccionar
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(446, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 33);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Consulta Clientes";
+            this.btnSeleccionar.BackColor = System.Drawing.Color.Gray;
+            this.btnSeleccionar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnSeleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSeleccionar.BorderColor = System.Drawing.Color.Green;
+            this.btnSeleccionar.BorderRadius = 20;
+            this.btnSeleccionar.BorderSize = 1;
+            this.btnSeleccionar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSeleccionar.Enabled = false;
+            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnSeleccionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.ForeColor = System.Drawing.Color.Black;
+            this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnSeleccionar.Location = new System.Drawing.Point(709, 582);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(178, 49);
+            this.btnSeleccionar.TabIndex = 44;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.TextColor = System.Drawing.Color.Black;
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Visible = false;
             // 
             // frmClientes
             // 
@@ -460,6 +535,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.BackgroundImage = global::FarmaTown.Properties.Resources.clients;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1127, 658);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);
@@ -474,6 +550,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.Name = "frmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Clientes - FarmaTown";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.gbFiltros.ResumeLayout(false);
@@ -503,17 +580,21 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private System.Windows.Forms.TextBox txtbPasaporteLetras;
         private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
         private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
         private System.Windows.Forms.Label label1;
+        private CustomControls.RJControls.RJButton btnActualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
+        private CustomControls.RJControls.RJButton btnSeleccionar;
     }
 }

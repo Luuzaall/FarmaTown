@@ -143,39 +143,6 @@ namespace FarmaTown.Datos
             }
         }
 
-        public DataTable consultarSQLConParametros(string sqlStr,
-            Object[] prs)
-        {
-            DataTable tabla = new DataTable();
-            string n_param;
-
-            try
-            {
-                cnn.ConnectionString = stringConexion;
-                cnn.Open();
-
-                cmd.Connection = cnn;
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = sqlStr;
-
-                for (int i = 0; i < prs.Length; i++)
-                    if (prs[i] != null)
-                    {
-                        //Si o si deben nombrarse param1, param2, etc!
-                        n_param = "param"
-                            + Convert.ToString(i + 1);
-                        cmd.Parameters.AddWithValue(n_param, prs[i]);
-                    }
-                tabla.Load(cmd.ExecuteReader());
-                return tabla;
-            } catch (Exception ex)
-            {
-                throw (ex);
-            } finally
-            {
-                this.closeConnection(cnn);
-            }
-        }
 
         private void closeConnection(SqlConnection cnn)
         {

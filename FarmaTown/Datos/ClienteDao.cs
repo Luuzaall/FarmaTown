@@ -18,14 +18,14 @@ namespace FarmaTown.Datos
                             ", c.apellido " +
                             ", c.nombre as nomCliente" +
                             ", c.calle " +
-                            ", c.numero " +
+                            ", c.nroCalle " +
                             ", c.idBarrio " +
                             ", b.nombre as nomBarrio" +
                             ", td.nombre as nomTipoDoc" +
                             " FROM Clientes c " +
                             " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
                             " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
-                            " WHERE b.borrado = 0";
+                            " WHERE c.borrado = 0";
 
             if (esCBorrados)
                 query = query + " OR borrado = 1";
@@ -52,14 +52,14 @@ namespace FarmaTown.Datos
                             ", c.apellido " +
                             ", c.nombre as nomCliente" +
                             ", c.calle " +
-                            ", c.numero " +
+                            ", c.nroCalle " +
                             ", c.idBarrio " +
                             ", b.nombre as nomBarrio" +
                             ", td.nombre as nomTipoDoc" +
                             " FROM Clientes c " +
                             " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
                             " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
-                            " WHERE b.borrado = 0";
+                            " WHERE c.borrado = 0";
 
             if (!string.IsNullOrEmpty(nombre))
             {
@@ -81,6 +81,107 @@ namespace FarmaTown.Datos
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             return this.listMapping(tabla);
+        }
+
+        public Cliente recuperar( int idTipoDoc, string nroDoc)
+        {
+            string query = "SELECT c.idCliente" +
+                            ", c.nroDoc" +
+                            ", c.tipoDoc" +
+                            ", c.apellido " +
+                            ", c.nombre as nomCliente" +
+                            ", c.calle " +
+                            ", c.nroCalle " +
+                            ", c.idBarrio " +
+                            ", b.nombre as nomBarrio" +
+                            ", td.nombre as nomTipoDoc" +
+                            " FROM Clientes c " +
+                            " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                            " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
+                            " WHERE c.borrado = 0" +
+                            " AND c.nroDoc = '" + nroDoc + "'" +
+                            " AND c.tipoDoc = " + idTipoDoc;
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            if (tabla.Rows.Count == 0)
+                return null;
+            else
+                return this.objectMapping(tabla.Rows[0]);
+
+        }
+
+        public Cliente traer(int idCliente)
+        {
+            string query = "SELECT c.idCliente" +
+                            ", c.nroDoc" +
+                            ", c.tipoDoc" +
+                            ", c.apellido " +
+                            ", c.nombre as nomCliente" +
+                            ", c.calle " +
+                            ", c.nroCalle " +
+                            ", c.idBarrio " +
+                            ", b.nombre as nomBarrio" +
+                            ", td.nombre as nomTipoDoc" +
+                            " FROM Clientes c " +
+                            " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                            " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
+                            " WHERE c.borrado = 0" +
+                            " AND c.idCliente =" + idCliente;
+            DataRow row = ( DBHelper.getDBHelper().consultaSQL(query) ).Rows[0];
+            return objectMapping(row);
+        }
+
+        public int insertar(Cliente oCliente) 
+        {
+            string query = "INSERT INTO Clientes" +
+                "(nroDoc, tipoDoc, apellido, nombre, calle, nroCalle" +
+                ", idBarrio, borrado)" +
+                "VALUES " +
+                "('"  + oCliente.NroDoc + "'" +
+                ", "  + oCliente.TipoDoc.IdTipo +
+                ", '" + oCliente.Apellido + "'" +
+                ", '" + oCliente.Nombre + "'" +
+                ", '" + oCliente.Calle + "'" +
+                ", "  + oCliente.NroCalle +
+                ", "  + oCliente.Barrio.IdBarrio +
+                 ", 0)";
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+
+        }
+
+        public int actualizar(Cliente oCliente)
+        {
+            string query = "UPDATE Clientes" +
+                   " SET nroDoc = '" + oCliente.NroDoc + "'" +
+                    ", tipoDoc = " + oCliente.TipoDoc.IdTipo +
+                    ", apellido = '" + oCliente.Apellido + "'" +
+                    ", nombre = '" + oCliente.Nombre + "'" +
+                    ", calle = '" + oCliente.Calle + "'" +
+                    ", nroCalle = " + oCliente.NroCalle +
+                    ", idBarrio = " + oCliente.Barrio.IdBarrio +
+                    " WHERE idCliente = " + oCliente.IdCliente;
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
+
+        }
+
+        public int cambiarEstado(Cliente oCliente)
+        {
+            string query = "UPDATE Clientes " +
+               " SET borrado = 1" +
+               " WHERE idCliente= " + oCliente.IdCliente;
+
+
+            //if (seHabilita)
+            //    query = query + "0";
+            //else
+            //    query = query + "1";
+
+            //query = query + " WHERE idEmpleado = " + empl.IdEmpleado;
+
+            return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
         private List<Cliente> listMapping(DataTable tabla)
@@ -115,9 +216,9 @@ namespace FarmaTown.Datos
                     IdTipo = Convert.ToInt32(row["tipoDoc"].ToString()),
                     Nombre = row["nomTipoDoc"].ToString()
                 },
-                NroDoc = Convert.ToInt32(row["nroDoc"].ToString()),
+                NroDoc = row["nroDoc"].ToString(),
                 Calle = row["calle"].ToString(),
-                Numero = Convert.ToInt32(row["numero"].ToString()),
+                NroCalle = Convert.ToInt32(row["nroCalle"].ToString()),
                 Barrio = new Barrio()
                 {
                     IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
