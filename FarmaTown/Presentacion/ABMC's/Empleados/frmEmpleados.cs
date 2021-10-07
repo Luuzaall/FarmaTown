@@ -284,11 +284,14 @@ namespace FarmaTown.Presentacion.Empleados
             string nom = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
             string nomFarmacia = this.txtbFarmacia.Text;
-            bool tieneLetrasNroDoc = nroDoc.Any(x => !char.IsLetter(x));
+            string nroPasaporte = this.txtbPasaporteNro.Text;
+            string letrasPasaporte = this.txtbPasaporteLetras.Text;
 
             if (string.IsNullOrEmpty(nom)
                 & string.IsNullOrEmpty(nroDoc)
                 & string.IsNullOrEmpty(nomFarmacia)
+                & string.IsNullOrEmpty(nroPasaporte)
+                & string.IsNullOrEmpty(letrasPasaporte)
                 & this.cboTipoDoc.SelectedIndex == -1)
             {
                 this.actualizar(); 

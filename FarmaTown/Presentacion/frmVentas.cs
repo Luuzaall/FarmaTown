@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace FarmaTown.Presentacion
 {
     public partial class frmVentas : Form
     {
+        // Atributos
+        TipoFactura oTipoFact;
         public frmVentas()
         {
             InitializeComponent();
+            oTipoFact = new TipoFactura();
         }
 
         //MÉTODOS DE RESPUESTA A EVENTOS
@@ -35,6 +40,7 @@ namespace FarmaTown.Presentacion
              * Debe ejecutar el form de consulta medicamentos
              * Y pasar por parámtetro el elegido.
              */
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -60,6 +66,12 @@ namespace FarmaTown.Presentacion
              * Limpia todo el formulario 
              * para una nueva factura
              */
+        }
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+            ComboBoxService.cargarCombo(this.cboTipoFactura, oTipoFact.recuperarTodos()
+                , "Nombre", "IdTipoFactura");
         }
     }
 }

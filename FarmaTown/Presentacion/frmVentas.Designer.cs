@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 86);
+            this.label2.Location = new System.Drawing.Point(60, 77);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 23);
@@ -117,11 +117,11 @@ namespace FarmaTown.Presentacion
             // 
             // txtbNroFactura
             // 
-            this.txtbNroFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNroFactura.BackColor = System.Drawing.Color.Silver;
             this.txtbNroFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroFactura.Enabled = false;
             this.txtbNroFactura.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbNroFactura.Location = new System.Drawing.Point(190, 88);
+            this.txtbNroFactura.Location = new System.Drawing.Point(191, 79);
             this.txtbNroFactura.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbNroFactura.Name = "txtbNroFactura";
             this.txtbNroFactura.Size = new System.Drawing.Size(74, 22);
@@ -175,7 +175,7 @@ namespace FarmaTown.Presentacion
             // 
             // txtbImporteTotal
             // 
-            this.txtbImporteTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbImporteTotal.BackColor = System.Drawing.Color.Silver;
             this.txtbImporteTotal.Enabled = false;
             this.txtbImporteTotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbImporteTotal.Location = new System.Drawing.Point(682, 395);
@@ -186,7 +186,7 @@ namespace FarmaTown.Presentacion
             // 
             // txtbSubtotal
             // 
-            this.txtbSubtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbSubtotal.BackColor = System.Drawing.Color.Silver;
             this.txtbSubtotal.Enabled = false;
             this.txtbSubtotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbSubtotal.Location = new System.Drawing.Point(682, 327);
@@ -374,7 +374,7 @@ namespace FarmaTown.Presentacion
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textBox1.BackColor = System.Drawing.Color.Silver;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
@@ -386,7 +386,7 @@ namespace FarmaTown.Presentacion
             // 
             // txtbPrecio
             // 
-            this.txtbPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbPrecio.BackColor = System.Drawing.Color.Silver;
             this.txtbPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPrecio.Enabled = false;
             this.txtbPrecio.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
@@ -445,14 +445,14 @@ namespace FarmaTown.Presentacion
             // 
             // txtbNomMedicamento
             // 
-            this.txtbNomMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNomMedicamento.BackColor = System.Drawing.Color.Silver;
             this.txtbNomMedicamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNomMedicamento.Enabled = false;
             this.txtbNomMedicamento.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbNomMedicamento.Location = new System.Drawing.Point(260, 50);
             this.txtbNomMedicamento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbNomMedicamento.Name = "txtbNomMedicamento";
-            this.txtbNomMedicamento.Size = new System.Drawing.Size(151, 22);
+            this.txtbNomMedicamento.Size = new System.Drawing.Size(181, 22);
             this.txtbNomMedicamento.TabIndex = 11;
             // 
             // btnBuscMedicamento
@@ -539,7 +539,7 @@ namespace FarmaTown.Presentacion
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textBox2.BackColor = System.Drawing.Color.Silver;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
@@ -578,7 +578,7 @@ namespace FarmaTown.Presentacion
             // 
             // txtbNroDoc
             // 
-            this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbNroDoc.BackColor = System.Drawing.Color.Silver;
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
             this.txtbNroDoc.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
@@ -602,7 +602,7 @@ namespace FarmaTown.Presentacion
             // 
             // txtNomCliente
             // 
-            this.txtNomCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtNomCliente.BackColor = System.Drawing.Color.Silver;
             this.txtNomCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomCliente.Enabled = false;
             this.txtNomCliente.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
@@ -720,6 +720,7 @@ namespace FarmaTown.Presentacion
             this.MaximizeBox = false;
             this.Name = "frmVentas";
             this.Text = "Ventas - FarmaTown";
+            this.Load += new System.EventHandler(this.frmVentas_Load);
             this.gbDetalle.ResumeLayout(false);
             this.gbDetalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).EndInit();

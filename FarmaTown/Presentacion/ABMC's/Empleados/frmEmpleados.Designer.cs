@@ -44,23 +44,23 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.cboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.gbResultados = new System.Windows.Forms.GroupBox();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbResultados = new System.Windows.Forms.GroupBox();
             this.gbFiltros.SuspendLayout();
-            this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            this.gbResultados.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbFiltros
@@ -263,104 +263,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo Documento:";
             // 
-            // gbResultados
-            // 
-            this.gbResultados.BackColor = System.Drawing.Color.Transparent;
-            this.gbResultados.Controls.Add(this.dgvEmpleados);
-            this.gbResultados.Controls.Add(this.btnActualizar);
-            this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbResultados.Location = new System.Drawing.Point(32, 333);
-            this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(1106, 310);
-            this.gbResultados.TabIndex = 23;
-            this.gbResultados.TabStop = false;
-            this.gbResultados.Text = "Resultados";
-            // 
-            // dgvEmpleados
-            // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.AllowUserToDeleteRows = false;
-            this.dgvEmpleados.AllowUserToResizeColumns = false;
-            this.dgvEmpleados.AllowUserToResizeRows = false;
-            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEmpleado,
-            this.nomEmpleado,
-            this.nroDoc,
-            this.nomTipoDoc,
-            this.nomFarmacia});
-            this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(16, 31);
-            this.dgvEmpleados.MultiSelect = false;
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(938, 267);
-            this.dgvEmpleados.TabIndex = 8;
-            this.dgvEmpleados.TabStop = false;
-            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
-            // 
-            // idEmpleado
-            // 
-            this.idEmpleado.HeaderText = "ID";
-            this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.ReadOnly = true;
-            this.idEmpleado.Width = 50;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Nombre";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
-            // 
-            // nroDoc
-            // 
-            this.nroDoc.HeaderText = "N° Documento";
-            this.nroDoc.Name = "nroDoc";
-            this.nroDoc.ReadOnly = true;
-            this.nroDoc.Width = 170;
-            // 
-            // nomTipoDoc
-            // 
-            this.nomTipoDoc.HeaderText = "Tipo Documento";
-            this.nomTipoDoc.Name = "nomTipoDoc";
-            this.nomTipoDoc.ReadOnly = true;
-            this.nomTipoDoc.Width = 150;
-            // 
-            // nomFarmacia
-            // 
-            this.nomFarmacia.HeaderText = "Farmacia";
-            this.nomFarmacia.Name = "nomFarmacia";
-            this.nomFarmacia.ReadOnly = true;
-            this.nomFarmacia.Width = 300;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
-            this.btnActualizar.BorderRadius = 20;
-            this.btnActualizar.BorderSize = 1;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(976, 142);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 8;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextColor = System.Drawing.Color.Black;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -476,6 +378,104 @@ namespace FarmaTown.Presentacion.Empleados
             this.label1.TabIndex = 38;
             this.label1.Text = "Consulta Empleados";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(976, 142);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(105, 37);
+            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
+            this.dgvEmpleados.AllowUserToResizeColumns = false;
+            this.dgvEmpleados.AllowUserToResizeRows = false;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEmpleado,
+            this.nomEmpleado,
+            this.nroDoc,
+            this.nomTipoDoc,
+            this.nomFarmacia});
+            this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.dgvEmpleados.Location = new System.Drawing.Point(16, 31);
+            this.dgvEmpleados.MultiSelect = false;
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleados.Size = new System.Drawing.Size(938, 267);
+            this.dgvEmpleados.TabIndex = 8;
+            this.dgvEmpleados.TabStop = false;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
+            // 
+            // nomFarmacia
+            // 
+            this.nomFarmacia.HeaderText = "Farmacia";
+            this.nomFarmacia.Name = "nomFarmacia";
+            this.nomFarmacia.ReadOnly = true;
+            this.nomFarmacia.Width = 300;
+            // 
+            // nomTipoDoc
+            // 
+            this.nomTipoDoc.HeaderText = "Tipo Documento";
+            this.nomTipoDoc.Name = "nomTipoDoc";
+            this.nomTipoDoc.ReadOnly = true;
+            this.nomTipoDoc.Width = 150;
+            // 
+            // nroDoc
+            // 
+            this.nroDoc.HeaderText = "N° Documento";
+            this.nroDoc.Name = "nroDoc";
+            this.nroDoc.ReadOnly = true;
+            this.nroDoc.Width = 170;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Nombre";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // idEmpleado
+            // 
+            this.idEmpleado.HeaderText = "ID";
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Width = 50;
+            // 
+            // gbResultados
+            // 
+            this.gbResultados.BackColor = System.Drawing.Color.Transparent;
+            this.gbResultados.Controls.Add(this.dgvEmpleados);
+            this.gbResultados.Controls.Add(this.btnActualizar);
+            this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.gbResultados.Location = new System.Drawing.Point(32, 333);
+            this.gbResultados.Name = "gbResultados";
+            this.gbResultados.Size = new System.Drawing.Size(1106, 310);
+            this.gbResultados.TabIndex = 23;
+            this.gbResultados.TabStop = false;
+            this.gbResultados.Text = "Resultados";
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -505,8 +505,8 @@ namespace FarmaTown.Presentacion.Empleados
             this.Load += new System.EventHandler(this.frmEmpleados_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
-            this.gbResultados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.gbResultados.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,18 +522,10 @@ namespace FarmaTown.Presentacion.Empleados
         private CustomControls.RJControls.RJButton btnConsultar;
         private System.Windows.Forms.ComboBox cboTipoDoc;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox gbResultados;
-        private CustomControls.RJControls.RJButton btnActualizar;
         private CustomControls.RJControls.RJButton btnEditar;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
         private CustomControls.RJControls.RJButton btnSalir;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
         private System.Windows.Forms.TextBox txtbNroDoc;
         private System.Windows.Forms.Label lblAvisoNroDoc;
         private System.Windows.Forms.TextBox txtbPasaporteLetras;
@@ -542,5 +534,13 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Label label1;
+        private CustomControls.RJControls.RJButton btnActualizar;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
+        private System.Windows.Forms.GroupBox gbResultados;
     }
 }

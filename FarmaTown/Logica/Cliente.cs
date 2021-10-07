@@ -10,10 +10,10 @@ namespace FarmaTown.Logica
     public class Cliente
     {
         public int IdCliente { get; set; }
-        public int NroDoc { get; set; }
-        public TipoDocumento TipoDoc { get; set; }
-        public string Apellido { get; set; }
         public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public TipoDocumento TipoDoc { get; set; }
+        public int NroDoc { get; set; }
         public string Calle { get; set; }
         public int Numero { get; set; }
         public Barrio Barrio { get; set; }
@@ -31,9 +31,10 @@ namespace FarmaTown.Logica
             return this.oCliente.recuperarTodos(esCBorrados);
         }
 
-        public List<Cliente> recuperarConParam(string nom, string apellido, string nroDoc, int idTipoDoc, string calle, int numCalle, int idCliente)
+        public List<Cliente> recuperarConParam(string nombre, string apellido
+            , string nroDoc, int idTipoDoc)
         {
-            return oCliente.recuperarConParam(nom, apellido, nroDoc, idTipoDoc, calle, numCalle, idCliente);
+            return oCliente.recuperarConParam(nombre, apellido, nroDoc, idTipoDoc);
         }
     }
 }
