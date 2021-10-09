@@ -48,7 +48,7 @@ namespace FarmaTown.Datos
                     ", m.cantidad" +
                     " FROM Medicamentos m" +
                     " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
-                    " INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
+                    " --INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
                     " WHERE m.borrado = 0";
 
            
