@@ -137,35 +137,35 @@ namespace FarmaTown.Presentacion
             * generando el id de la factura.
             */
 
-            //try
-            //{
-            //    var venta = new Venta
-            //    {
-            //        Fecha = dtpFecha.Value,
-            //        Cliente = (Cliente)cboCliente.SelectedItem,
-            //        TipoFactura = (TipoFactura)cboTipoFact.SelectedItem,
-            //        FacturaDetalle = listaFacturaDetalle,
-            //        SubTotal = double.Parse(txtSubtotal.Text),
-            //        Descuento = double.Parse(txtDescuento.Text)
-            //    };
+            try
+            {
+                var venta = new Venta
+                {
+                    FechaFactura = this.dtpFechaActual.Value,
+                    Cliente = oCliente,
+                    TipoFactura = (TipoFactura)this.cboTipoFactura.SelectedItem,
+                    Detalles = listaFacturaDetalle,
+                    SubTotal = double.Parse(txtSubtotal.Text),
+                    Descuento = double.Parse(txtDescuento.Text)
+                };
 
-            //    if (facturaService.ValidarDatos(factura))
-            //    {
-            //        facturaService.Crear(factura);
+                if (facturaService.ValidarDatos(factura))
+                {
+                    facturaService.Crear(factura);
 
-            //        MessageBox.Show(string.Concat("La factura nro: ", factura.IdFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(string.Concat("La factura nro: ", factura.IdFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //        InicializarFormulario();
-            //    }
+                    InicializarFormulario();
+                }
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //this.cambiarEstadoBoton(this.btnGuardar, false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            this.cambiarEstadoBoton(this.btnGuardar, false);
 
-    }
+        }
 
         private void btnNuevaFactura_Click(object sender, EventArgs e)
         {
