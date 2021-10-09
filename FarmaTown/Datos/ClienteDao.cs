@@ -227,5 +227,53 @@ namespace FarmaTown.Datos
             };
             return oCliente;
         }
+
+        //NUEVA CONTROLAR!!!!!!!!!!!!!!!!!!!!
+        public Cliente buscarCliente(string nomCli, string apellido , string calle, string nroDoc, int idTipoDoc, int idBarrio)
+        {
+            string query = "SELECT c.idCliente" +
+                            ", c.nroDoc" +
+                            ", c.tipoDoc" +
+                            ", c.apellido " +
+                            ", c.nombre as nomCliente" +
+                            ", c.calle " +
+                            ", c.nroCalle " +
+                            ", c.idBarrio " +
+                            ", b.nombre as nomBarrio" +
+                            ", td.nombre as nomTipoDoc" +
+                            " FROM Clientes c " +
+                            " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                            " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
+                            " WHERE c.borrado = 0";
+
+            if (!string.IsNullOrEmpty(nomCli))
+            {
+                query = query + " AND c.nombre = '" + nomCli + "'";
+            }
+            if (!string.IsNullOrEmpty(nroDoc))
+            {
+                query = query + " AND c.nroDoc = '" + nroDoc + "'";
+            }
+            if (!(idBarrio == 0))
+            {
+                query = query + " AND c.idBarrio = " + idBarrio;
+            }
+            if (idTipoDoc != -1)
+            {
+                query = query + " AND c.tipoDoc = " + idTipoDoc;
+            }
+
+            DataTable tablaClientes = DBHelper.getDBHelper().consultaSQL(query);
+            if (tablaClientes.Rows.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                DataRow fila = tablaClientes.Rows[0];
+                return this.objectMapping(fila);
+            }
+
+        }
     }
 }

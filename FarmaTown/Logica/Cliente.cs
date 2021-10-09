@@ -76,5 +76,14 @@ namespace FarmaTown.Logica
             else
                 return true;
         }
+        public bool existeCliente(string nomCliente, string apellido, string calle, string nroDoc, int idTipoDoc, int idBarrio)
+        {
+            object clienteEncontrado = oClienteDao.buscarCliente(nomCliente,apellido, calle, nroDoc, idTipoDoc, idBarrio);
+            if (clienteEncontrado is null)
+                return false;
+            else
+                return true;
+
+        }
     }
 }

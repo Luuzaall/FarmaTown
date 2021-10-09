@@ -45,6 +45,7 @@ namespace FarmaTown.Presentacion
 
             Application.Run(new frmVentas());
             //Application.Run(new frmClientes(FormMode.management));
+            Application.Run(new frmABMClientes());
 
         }
     }

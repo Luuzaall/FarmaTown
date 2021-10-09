@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
@@ -105,12 +106,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         {
             string nombre = this.txtbNombre.Text; 
             string apellido = this.txtbApellido.Text;
-            string calle = this.txtbCalle.Text;
-            int numero = Convert.ToInt32(this.txtbNroCalle.Text);
-            //string barrio = this.
-
             string nroDoc = this.txtbNroDoc.Text;
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
+            string calle = this.txtbCalle.Text;
+            string numeroCalle = this.txtbNroCalle.Text;
 
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
@@ -120,12 +119,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
             }
-            else if (nombre.Length <= 2)
+            else if (string.IsNullOrEmpty(apellido)
+                || apellido == " ")
             {
-                MessageBox.Show("Debe ingresar un nombre válido",
+                MessageBox.Show("Debe ingresar un apellido",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
-                this.txtbNombre.Focus();
+                this.txtbApellido.Focus();
             }
             else if (indexCboTipoDoc == -1)
             {
@@ -155,9 +155,24 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                        , MessageBoxIcon.Information);
                 this.txtbNroDoc.Focus();
             }
+            else if (string.IsNullOrEmpty(calle)
+                || calle == " ")
+            {
+                MessageBox.Show("Debe ingresar una calle",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbCalle.Focus();
+            }
+            else if (string.IsNullOrEmpty(numeroCalle))
+            {
+                MessageBox.Show("Debe ingresar un numero de calle",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbNroCalle.Focus();
+            }
             else if (this.dgvBarrios.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Debe elegir una farmacia",
+                MessageBox.Show("Debe elegir un Barrio",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.dgvBarrios.Focus();
@@ -242,6 +257,17 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private void frmABMClientes_Load(object sender, EventArgs e)
         {
             ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
+            List<Barrio> listaBarrios = oBarrio.recuperarTodos(false);
+
+            if (listaBarrios.Count > 0)
+            {
+                this.cargarGrilla(this.dgvBarrios, listaBarrios);
+            }
+            else
+            {
+                this.dgvBarrios.Columns.Clear();
+            }
+
             switch (formMode)
             {
                 case (FormModeABM.insert):
@@ -267,13 +293,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
                         this.gbClientes.Enabled = false;
                         this.gbUbicacion.Enabled = false;
-                        //this.lblAviso.Visible = false;
-                        //this.txtbNombre.Enabled = false;
-                        //this.txtbApellido.Enabled = false;
-                        //this.txtbNroDoc.Enabled = false;
-                        //this.cboTipoDoc.Enabled = false;
-                        //this.txtbCalle.Enabled = false;
-                        //this.txtbNroCalle.Enabled = false;
+                        this.txtbNombre.Enabled = false;
+                        this.txtbApellido.Enabled = false;
+                        this.txtbNroDoc.Enabled = false;
+                        this.cboTipoDoc.Enabled = false;
+                        this.txtbCalle.Enabled = false;
+                        this.txtbNroCalle.Enabled = false;
 
                         break;
                     }
@@ -283,39 +308,57 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private bool existeCliente()
         {
+            string nombre = this.txtbNombre.Text;
+            string apellido = this.txtbApellido.Text;
+            string nroDoc = this.txtbNroDoc.Text;
+            string calle = this.txtbCalle.Text;
+
+            int idBarrio = int.Parse(this.dgvBarrios.SelectedRows[0].Cells[0].Value.ToString());
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
             int idTipoDoc;
-            string nroDoc;
 
             if (indexCboTipoDoc == -1)
-            {
                 idTipoDoc = -1;
-                nroDoc = "";
-            }
-                
             else
-            {
                 idTipoDoc = (int)this.cboTipoDoc.SelectedValue;
-                if (indexCboTipoDoc == 1
-                    || indexCboTipoDoc == 3
-                    || indexCboTipoDoc == 4)
-                {
-                    nroDoc = this.txtbNroDoc.Text;
-                    
-                }
-                else if (indexCboTipoDoc == 2)
-                {
-                    nroDoc = this.txtbPasaporteLetras.Text
-                        + this.txtbPasaporteNro.Text;
-                } 
-                else
-                {
-                    nroDoc = "";
-                }
 
-            }
-            return oCliente.existe(idTipoDoc, nroDoc);
+            return oCliente.existeCliente(nombre, apellido, calle, nroDoc, idTipoDoc, idBarrio);
         }
+        //private bool existeCliente()
+        //{
+        //    int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
+        //    int idTipoDoc;
+        //    string nroDoc;
+
+        //    if (indexCboTipoDoc == -1)
+        //    {
+        //        idTipoDoc = -1;
+        //        nroDoc = "";
+        //    }
+                
+        //    else
+        //    {
+        //        idTipoDoc = (int)this.cboTipoDoc.SelectedValue;
+        //        if (indexCboTipoDoc == 1
+        //            || indexCboTipoDoc == 3
+        //            || indexCboTipoDoc == 4)
+        //        {
+        //            nroDoc = this.txtbNroDoc.Text;
+                    
+        //        }
+        //        else if (indexCboTipoDoc == 2)
+        //        {
+        //            nroDoc = this.txtbPasaporteLetras.Text
+        //                + this.txtbPasaporteNro.Text;
+        //        } 
+        //        else
+        //        {
+        //            nroDoc = "";
+        //        }
+
+        //    }
+        //    return oCliente.existe(idTipoDoc, nroDoc);
+        //}
 
         public void cargarGrilla(DataGridView dgv, List<Barrio> lista)
         {
@@ -373,7 +416,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbApellido.Text = this.oCliente.Apellido;
             this.txtbCalle.Text = this.oCliente.Calle;
             this.txtbNroCalle.Text = this.oCliente.NroCalle.ToString();
-
+            this.txtbBarrio.Text = this.oCliente.Barrio.Nombre;
             int idTipoDoc = this.oCliente.TipoDoc.IdTipo;
             this.cboTipoDoc.SelectedValue = idTipoDoc;
             if (idTipoDoc == 2)
@@ -399,6 +442,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            this.actualizar();
+        }
+
+        private void actualizar()
+        {
             this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
         }
 
@@ -410,14 +458,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNroDoc.Text = "";
             this.txtbPasaporteLetras.Text = "";
             this.txtbPasaporteNro.Text = "";
-            
-            this.txtbCalle.Text = "";
-            this.txtbNroCalle.Text = "";
         }
 
         private void btnLimpiarUbicacion_Click(object sender, EventArgs e)
         {
-            this.txtbNombreBarrio.Text = "";
+            this.txtbBarrio.Text = "";
             this.txtbLocalidad.Text = "";
         }
 
@@ -434,6 +479,93 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.noLetras(e);
+        }
+       
+        private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbNroDoc.Text.Length;
+                if (cant >= 8)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsDigit((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+            TextBoxService.enter(this.btnAceptar, e);
+        }
+
+        private void txtbPasaporteNro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbPasaporteNro.Text.Length;
+                if (cant >= 6)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsDigit((char)e.KeyCode)
+                    || char.IsPunctuation((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+            TextBoxService.enter(this.btnAceptar, e);
+        }
+
+        private void txtbPasaporteLetras_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.KeyCode == Keys.Delete
+                    || e.KeyCode == Keys.Back))
+            {
+                int cant = this.txtbPasaporteLetras.Text.Length;
+                if (cant >= 3)
+                {
+                    e.SuppressKeyPress = true;
+                }
+                else if (!char.IsLetter((char)e.KeyCode))
+                {
+                    e.SuppressKeyPress = true;
+                }
+            }
+            TextBoxService.enter(this.btnAceptar, e);
+        }
+
+        private void btnLimpiarCalleyNum_Click(object sender, EventArgs e)
+        {
+            this.txtbCalle.Text = "";
+            this.txtbNroCalle.Text = "";
+        }
+
+        private void btnConsultarUbicacion_Click(object sender, EventArgs e)
+        {
+            string barrio = this.txtbBarrio.Text;
+            string localidad = this.txtbLocalidad.Text;
+
+            if (string.IsNullOrEmpty(barrio)
+                & string.IsNullOrEmpty(localidad))
+            {
+                MessageBox.Show("No ingresó ningún dato",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbBarrio.Focus();
+            }
+
+            List<Barrio> resultadosBarrios = this.oBarrio.recuperarCParamOtro(barrio, localidad);
+            this.cargarGrilla(this.dgvBarrios, resultadosBarrios);
+        }
+
+        private void btnAgregarBarrio_Click(object sender, EventArgs e)
+        {
+            frmABMBarrios barrios = new frmABMBarrios();
+            barrios.ShowDialog();
+
+            this.actualizar();
         }
     }
 }

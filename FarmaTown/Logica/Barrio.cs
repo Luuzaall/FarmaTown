@@ -24,7 +24,10 @@ namespace FarmaTown.Logica
         {
             return this.oBarrioDao.recuperarCParam(nombre);
         }
-
+        public List<Barrio> recuperarCParamOtro(string nombre, string localidad)
+        {
+            return this.oBarrioDao.recuperarCParamOtro(nombre, localidad);
+        }
         public List<Barrio> recuperarTodos(bool esCBorrados)
         {
             return this.oBarrioDao.recuperarTodos(esCBorrados);

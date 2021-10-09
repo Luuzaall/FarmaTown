@@ -37,6 +37,35 @@ namespace FarmaTown.Datos
 
         }
 
+        //AGREGADA PARA PODER HACER LA CONSULTA EN ABM CLIENTES
+        public List<Barrio> recuperarCParamOtro(string nombre, string localidad)
+        {
+            string query = "SELECT idBarrio" +
+                ", b.nombre as nomBarrio" +
+                ", l.nombre as nomLocalidad" +
+                ", l.idLocalidad " +
+                ", b.borrado" +
+                " FROM Barrios b" +
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                " WHERE b.nombre LIKE '%" + nombre + "%'" +
+                " WHERE l.nombre LIKE '%" + localidad + "%'" +
+                " AND b.borrado = 0 ";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<Barrio> listaBarrio = new List<Barrio>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                listaBarrio.Add(this.objectMapping(fila));
+            }
+
+            return listaBarrio;
+
+        }
+
         public List<Barrio> recuperarTodos(bool esCBorrados)
         {
             string query = "SELECT b.idBarrio" +
