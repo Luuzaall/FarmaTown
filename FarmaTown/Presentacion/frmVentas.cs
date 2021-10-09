@@ -192,8 +192,19 @@ namespace FarmaTown.Presentacion
         {
             TextBoxService.noLetras(e);
             TextBoxService.enter(this.btnAgregar, e);
-            int cant = int.Parse( this.txtbCantMedicamento.Text );
+            
+        }
 
+        private void txtbCantMedicamento_KeyUp(object sender, KeyEventArgs e)
+        {
+            //string text = this.txtbCantMedicamento.Text;
+            //if (string.IsNullOrEmpty(text)
+            //        || text == " ")
+            //{
+            //    int cant = int.Parse(text);
+            //    int precioUnitario = int.Parse(this.txtbPrecio.Text);
+            //    this.txtbImporte.Text = (cant * precioUnitario).ToString();
+            //}
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -264,5 +275,7 @@ namespace FarmaTown.Presentacion
             }
 
         }
+
+
     }
 }

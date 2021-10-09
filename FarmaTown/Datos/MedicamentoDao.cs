@@ -42,7 +42,7 @@ namespace FarmaTown.Datos
             string query = "SELECT m.idMedicamento" +
                     ", m.nombre as nombreMedicamento" +
                     ", m.descripcion as descripcionMed" +
-                    ", t.idTipo as idTipo" +
+                    ", t.idTipo as idTipoMed" +
                     ", t.descripcion as nombreTipoMed" +
                     ", m.precioLista" +
                     ", m.cantidad" +

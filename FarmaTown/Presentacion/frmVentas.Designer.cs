@@ -37,6 +37,8 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.txtbDescuentoOB = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtbImporteTotal = new System.Windows.Forms.TextBox();
             this.txtbSubtotal = new System.Windows.Forms.TextBox();
             this.txtbDescuento = new System.Windows.Forms.TextBox();
@@ -68,8 +70,6 @@ namespace FarmaTown.Presentacion
             this.txtNomCliente = new System.Windows.Forms.TextBox();
             this.lblNomCliente = new System.Windows.Forms.Label();
             this.ttDescripcionBtn = new System.Windows.Forms.ToolTip(this.components);
-            this.txtbDescuentoOB = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.btnNuevaFactura = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
@@ -178,6 +178,30 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabIndex = 7;
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
+            // 
+            // txtbDescuentoOB
+            // 
+            this.txtbDescuentoOB.BackColor = System.Drawing.Color.Silver;
+            this.txtbDescuentoOB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbDescuentoOB.Enabled = false;
+            this.txtbDescuentoOB.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.txtbDescuentoOB.Location = new System.Drawing.Point(471, 142);
+            this.txtbDescuentoOB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtbDescuentoOB.Name = "txtbDescuentoOB";
+            this.txtbDescuentoOB.Size = new System.Drawing.Size(151, 22);
+            this.txtbDescuentoOB.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(177, 142);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(273, 23);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Descuento de Obra Social:";
             // 
             // txtbImporteTotal
             // 
@@ -361,6 +385,7 @@ namespace FarmaTown.Presentacion
             this.txtbCantMedicamento.Size = new System.Drawing.Size(76, 22);
             this.txtbCantMedicamento.TabIndex = 11;
             this.txtbCantMedicamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbCantMedicamento_KeyDown);
+            this.txtbCantMedicamento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtbCantMedicamento_KeyUp);
             // 
             // label3
             // 
@@ -527,30 +552,6 @@ namespace FarmaTown.Presentacion
             this.lblNomCliente.Size = new System.Drawing.Size(95, 23);
             this.lblNomCliente.TabIndex = 9;
             this.lblNomCliente.Text = "Nombre:";
-            // 
-            // txtbDescuentoOB
-            // 
-            this.txtbDescuentoOB.BackColor = System.Drawing.Color.Silver;
-            this.txtbDescuentoOB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbDescuentoOB.Enabled = false;
-            this.txtbDescuentoOB.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbDescuentoOB.Location = new System.Drawing.Point(471, 142);
-            this.txtbDescuentoOB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtbDescuentoOB.Name = "txtbDescuentoOB";
-            this.txtbDescuentoOB.Size = new System.Drawing.Size(151, 22);
-            this.txtbDescuentoOB.TabIndex = 27;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(177, 142);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(273, 23);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Descuento de Obra Social:";
             // 
             // btnGuardar
             // 
