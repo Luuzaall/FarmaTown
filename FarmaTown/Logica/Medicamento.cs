@@ -25,6 +25,10 @@ namespace FarmaTown.Logica
         {
             oMedicamentoDao = new MedicamentoDao();
         }
+        public List<Medicamento> recuperarTodos()
+        {
+            return oMedicamentoDao.recuperarTodos();
+        }
 
 
         internal Medicamento traerMedicamento(string medicamento)
@@ -42,10 +46,6 @@ namespace FarmaTown.Logica
             return this.oMedicamentoDao.insertar(oMedicamento);
         }
 
-        internal DataTable recuperarTodos(bool conBorrados)
-        {
-            return this.oMedicamentoDao.recuperarTodos(conBorrados);
-        }
 
         internal bool actualizarMedicamento(Medicamento oMedicamento)
         {
@@ -57,7 +57,7 @@ namespace FarmaTown.Logica
             return this.oMedicamentoDao.cambiarEstado(oMedicamento, habilitado);
         }
 
-        internal DataTable recurperarMedicamentoCParametros(string nom, int idTipo, bool conBorrados)
+        internal List<Medicamento> recurperarMedicamentoCParametros(string nom, int idTipo, bool conBorrados)
         { 
             return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo, conBorrados);
         }
