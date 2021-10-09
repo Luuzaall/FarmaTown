@@ -112,7 +112,7 @@ namespace FarmaTown.Presentacion
             //DialogResult resultado = oFrmClientes.ShowDialog();
             //if (resultado != DialogResult.Cancel)
             //{
-            //    oMedicamento = frmMedicamentos.recuperarSeleccion();
+            //  oMedicamento = frmMedicamentos.recuperarSeleccion();
             //    this.txtNomCliente.Text = oMedicamento.Nombre;
             //    this.txtbNroDoc.Text = oMedicamento.NroDoc;
             //    this.txtbTipoDoc.Text = oMedicamento.TipoDoc.Nombre;

@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 {
+
+
     public partial class frmMedicamentos : Form
     {
         TipoMedicamento oTipoMedicamento;
@@ -110,6 +112,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 this.actualizar();
             }
 
+        }
+
+        public Medicamento recuperarSeleccion()
+        {
+            string nombreMed = this.dgvMedicamentos.SelectedRows[0].Cells[1].Value.ToString();
+            return oMedicamento.traerMedicamento(nombreMed);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
