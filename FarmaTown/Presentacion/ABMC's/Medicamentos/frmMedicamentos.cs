@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
@@ -13,19 +14,21 @@ using System.Windows.Forms;
 namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 {
 
-
     public partial class frmMedicamentos : Form
     {
         TipoMedicamento oTipoMedicamento;
         Medicamento oMedicamento;
         private bool mostrarConBorrados = false;
         private frmABMMedicamentos frmABMMed;
+        FormMode modo;
 
-        public frmMedicamentos(Clientes.FormMode selection)
+        public frmMedicamentos(FormMode _modo)
         {
+            InitializeComponent();
             oMedicamento = new Medicamento();
             oTipoMedicamento = new TipoMedicamento();
-            InitializeComponent();
+            modo = _modo;
+
         }
 
         private void frmMedicamentos_Load(object sender, EventArgs e)
@@ -47,7 +50,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 this.dgvMedicamentos.Columns.Clear();
                 this.dgvMedicamentos.Rows.Add("No se encontraron Medicamentos...");
             }
-
+            if (modo == FormMode.selection)
+                this.btnSeleccionar.Visible = true;
         }
 
         private void cargarGrilla(DataGridView dgv, DataTable table)
@@ -95,6 +99,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnEliminar.Enabled = false;
             this.btnEliminar.BackColor = Color.Gray;
             this.lblAviso.Visible = true;
+
+            if (modo == FormMode.selection)
+            {
+                this.btnSeleccionar.Enabled = false;
+                this.btnSeleccionar.BackColor = Color.Gray;
+
+            }
         }
 
         private void cbBorrados_CheckedChanged(object sender, EventArgs e)
@@ -226,6 +237,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnEliminar.Enabled = true;
             this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
             this.lblAviso.Visible = false;
+            
+            if (modo == FormMode.selection)
+            {
+                this.btnSeleccionar.Enabled = true;
+                this.btnSeleccionar.BackColor = Color.FromArgb(116, 201, 79);
+            }
 
         }
        
