@@ -21,7 +21,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private bool mostrarConBorrados = false;
         private frmABMMedicamentos frmABMMed;
 
-        public frmMedicamentos()
+        public frmMedicamentos(Clientes.FormMode selection)
         {
             oMedicamento = new Medicamento();
             oTipoMedicamento = new TipoMedicamento();

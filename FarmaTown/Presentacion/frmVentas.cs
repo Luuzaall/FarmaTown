@@ -108,16 +108,17 @@ namespace FarmaTown.Presentacion
              * Debe ejecutar el form de consulta medicamentos
              * Y pasar por parámtetro el elegido.
              */
-            //frmMedicamentos oFrmClientes = new frmMedicamentos(FormMode.selection);
-            //DialogResult resultado = oFrmClientes.ShowDialog();
-            //if (resultado != DialogResult.Cancel)
-            //{
-            //  oMedicamento = frmMedicamentos.recuperarSeleccion();
-            //    this.txtNomCliente.Text = oMedicamento.Nombre;
-            //    this.txtbNroDoc.Text = oMedicamento.NroDoc;
-            //    this.txtbTipoDoc.Text = oMedicamento.TipoDoc.Nombre;
-            //    this.cambiarEstadoBoton(this.btnAgregar, true);
-            //}
+            frmMedicamentos oFrmMed = new frmMedicamentos(FormMode.selection);
+            DialogResult resultado = oFrmMed.ShowDialog();
+            if (resultado != DialogResult.Cancel)
+            {
+                
+
+                oMedicamento = oFrmMed.recuperarSeleccion();
+                this.txtbNomMedicamento.Text = oMedicamento.Nombre;
+                this.txtbPrecio.Text = oMedicamento.PrecioLista.ToString();
+                this.cambiarEstadoBoton(this.btnAgregar, true);
+            }
 
         }
 
