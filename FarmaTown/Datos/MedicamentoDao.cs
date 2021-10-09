@@ -10,10 +10,7 @@ namespace FarmaTown.Datos
 {
     class MedicamentoDao
     {
-        public DataTable recuperarTodos()
-        {
-            return DBHelper.getDBHelper().consultarTabla("Medicamentos");
-        }
+        
 
         public Medicamento obtenerMedicamentoPorNom(string medicamento)
         {
@@ -40,29 +37,37 @@ namespace FarmaTown.Datos
             return null;
         }
 
-        public DataTable recuperarTodos(bool esConBorrados)
+        public List<Medicamento> recuperarTodos()
         {
             string query = "SELECT m.idMedicamento" +
                     ", m.nombre as nombreMedicamento" +
                     ", m.descripcion as descripcionMed" +
-                    ", t.idTipo as idTipo" +
+                    ", t.idTipo as idTipoMed" +
                     ", t.descripcion as nombreTipoMed" +
                     ", m.precioLista" +
                     ", m.cantidad" +
                     " FROM Medicamentos m" +
                     " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
-                    " INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
+                    " --INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
                     " WHERE m.borrado = 0";
 
-            if (esConBorrados)
-            {
-                query = query + " OR m.borrado = 1";
-            } 
+           
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<Medicamento> listaMed = new List<Medicamento>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                listaMed.Add(this.objectMapping(fila));
+            }
+
+            return listaMed;
         }
 
-        internal DataTable consultarMedicamentoCParam(string nom, int idTipo, bool conBorrados)
+        public List<Medicamento> consultarMedicamentoCParam(string nom, int idTipo, bool conBorrados)
         {
             string query = "SELECT m.idMedicamento" +
                 ", m.nombre as nombreMedicamento" +
@@ -88,7 +93,18 @@ namespace FarmaTown.Datos
                 query = query + " AND m.TipoMedicamento = " + idTipo;
             }
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<Medicamento> listaMedicamento = new List<Medicamento>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                listaMedicamento.Add(this.objectMapping(fila));
+            }
+
+            return listaMedicamento;
 
         }
 

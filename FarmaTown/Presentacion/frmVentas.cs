@@ -108,16 +108,17 @@ namespace FarmaTown.Presentacion
              * Debe ejecutar el form de consulta medicamentos
              * Y pasar por parámtetro el elegido.
              */
-            //frmMedicamentos oFrmClientes = new frmMedicamentos(FormMode.selection);
-            //DialogResult resultado = oFrmClientes.ShowDialog();
-            //if (resultado != DialogResult.Cancel)
-            //{
-            //  oMedicamento = frmMedicamentos.recuperarSeleccion();
-            //    this.txtNomCliente.Text = oMedicamento.Nombre;
-            //    this.txtbNroDoc.Text = oMedicamento.NroDoc;
-            //    this.txtbTipoDoc.Text = oMedicamento.TipoDoc.Nombre;
-            //    this.cambiarEstadoBoton(this.btnAgregar, true);
-            //}
+            frmMedicamentos oFrmMed = new frmMedicamentos(FormMode.selection);
+            DialogResult resultado = oFrmMed.ShowDialog();
+            if (resultado != DialogResult.Cancel)
+            {
+                
+
+                oMedicamento = oFrmMed.recuperarSeleccion();
+                this.txtbNomMedicamento.Text = oMedicamento.Nombre;
+                this.txtbPrecio.Text = oMedicamento.PrecioLista.ToString();
+                this.cambiarEstadoBoton(this.btnAgregar, true);
+            }
 
         }
 
@@ -140,10 +141,10 @@ namespace FarmaTown.Presentacion
             //{
             //    var venta = new Venta
             //    {
-            //        Fecha = dtpFecha.Value,
-            //        Cliente = (Cliente)cboCliente.SelectedItem,
-            //        TipoFactura = (TipoFactura)cboTipoFact.SelectedItem,
-            //        FacturaDetalle = listaFacturaDetalle,
+            //        FechaFactura = this.dtpFechaActual.Value,
+            //        Cliente = oCliente,
+            //        TipoFactura = (TipoFactura)this.cboTipoFactura.SelectedItem,
+            //        Detalles = listaFacturaDetalle,
             //        SubTotal = double.Parse(txtSubtotal.Text),
             //        Descuento = double.Parse(txtDescuento.Text)
             //    };
@@ -164,7 +165,7 @@ namespace FarmaTown.Presentacion
             //}
             //this.cambiarEstadoBoton(this.btnGuardar, false);
 
-    }
+        }
 
         private void btnNuevaFactura_Click(object sender, EventArgs e)
         {
@@ -191,6 +192,19 @@ namespace FarmaTown.Presentacion
         {
             TextBoxService.noLetras(e);
             TextBoxService.enter(this.btnAgregar, e);
+            
+        }
+
+        private void txtbCantMedicamento_KeyUp(object sender, KeyEventArgs e)
+        {
+            //string text = this.txtbCantMedicamento.Text;
+            //if (string.IsNullOrEmpty(text)
+            //        || text == " ")
+            //{
+            //    int cant = int.Parse(text);
+            //    int precioUnitario = int.Parse(this.txtbPrecio.Text);
+            //    this.txtbImporte.Text = (cant * precioUnitario).ToString();
+            //}
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -261,5 +275,7 @@ namespace FarmaTown.Presentacion
             }
 
         }
+
+
     }
 }
