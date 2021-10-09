@@ -17,6 +17,7 @@ namespace FarmaTown.Logica
         public float PrecioLista { get; set; }
         public int Cantidad { get; set; }
         public bool Borrado { get; set; }
+        public List<List<String>> ListaDescuentosOS { get; set; }
 
         MedicamentoDao oMedicamentoDao;
 

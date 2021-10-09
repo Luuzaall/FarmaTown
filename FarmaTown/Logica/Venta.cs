@@ -12,11 +12,13 @@ namespace FarmaTown.Logica
         public int IdVenta { get; set; }
         public Farmacia Farmacia { get; set; }
         public int NroFactura { get; set; }
-        public int TipoFactura { get; set; }
+        public TipoFactura TipoFactura { get; set; }
         public Cliente Cliente { get; set; }
-        public int FechaFactura { get; set; }
+        public DateTime FechaFactura { get; set; }
         public Empleado Empleado { get; set; }
-        public bool Borrado { get; set; }
+        public List<DetalleVenta> Detalles { get; set; }
+
+        //public bool Borrado { get; set; }
 
         VentaDao oVenta;
         public Venta()

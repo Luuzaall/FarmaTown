@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FarmaTown.Logica
 {
-    class TipoFactura
+    public class TipoFactura
     {
         public int IdTipofactura { get; set; }
         public string Nombre { get; set; }

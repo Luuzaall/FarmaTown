@@ -47,16 +47,18 @@ namespace FarmaTown.Datos
                     ", m.descripcion as descripcionMed" +
                     ", t.idTipo as idTipo" +
                     ", t.descripcion as nombreTipoMed" +
-                    ", m.precioLista"+
-                    ", m.cantidad"+
+                    ", m.precioLista" +
+                    ", m.cantidad" +
                     " FROM Medicamentos m" +
                     " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
+                    " INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
                     " WHERE m.borrado = 0";
 
             if (esConBorrados)
             {
                 query = query + " OR m.borrado = 1";
-            }
+            } 
+
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 
@@ -71,6 +73,7 @@ namespace FarmaTown.Datos
                 ", m.borrado" +
                 " FROM Medicamentos m " +
                 " INNER JOIN TiposMedicamento t ON t.idTipo = m.TipoMedicamento" +
+                " INNER JOIN OSXMedicamentos ox ON m.idMedicamento = ox.idMedicamento" +
                 " WHERE m.borrado = 0";
 
             if (conBorrados)
@@ -178,15 +181,17 @@ namespace FarmaTown.Datos
                 IdMedicamento = Convert.ToInt32(row["idMedicamento"].ToString()),
                 Descripcion = row["descripcionMed"].ToString(),
                 Nombre = row["NombreMedicamento"].ToString(),
-                
-                 TipoMedicamento = new TipoMedicamento()
+
+                TipoMedicamento = new TipoMedicamento()
                 {
                     IdTipo = Convert.ToInt32(row["idTipoMed"].ToString()),
                     Descripcion = row["nombreTipoMEd"].ToString(),
                 },
                 PrecioLista = float.Parse(row["precioLista"].ToString()),
                 Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
+
             };
+
 
             return oMedicamento;
         }

@@ -36,7 +36,6 @@ namespace FarmaTown.Presentacion.Empleados
             delete
         }
 
-
         //MÉTODOS DE RESPUESTA A EVENTOS
 
 

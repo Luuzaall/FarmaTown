@@ -169,7 +169,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.lblAviso.Visible = false;
 
             if (modo == FormMode.selection)
+            {
                 this.btnSeleccionar.Enabled = true;
+                this.btnSeleccionar.BackColor = Color.FromArgb(116, 201, 79);
+            }
+            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -289,7 +293,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.lblAviso.Visible = true;
 
             if (modo == FormMode.selection)
+            {
                 this.btnSeleccionar.Enabled = false;
+                this.btnSeleccionar.BackColor = Color.Gray;
+            }
         }
 
         public Cliente recuperarSeleccion()

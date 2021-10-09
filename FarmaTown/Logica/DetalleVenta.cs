@@ -8,13 +8,13 @@ namespace FarmaTown.Logica
 {
     public class DetalleVenta
     {
-        public Venta IdVenta { get; set; }
-        public Medicamento IdMedicamento { get; set; }
+        // Propiedades
+        public Medicamento Medicamento { get; set; }
         public int Cantidad { get; set; }
-        public float Precio { get; set; }
-        public float Reintegro { get; set; }
-        public ObraSocial IdOS { get; set; }
-        public bool Borrado { get; set; }
+        public Double PrecioUnitario { get; set; }
+        public DetalleVenta Reintegro { get; set; }
+        public ObraSocial ObraSocial { get; set; }
+
 
     }
 }
