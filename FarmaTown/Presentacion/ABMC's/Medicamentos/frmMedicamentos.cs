@@ -39,11 +39,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              */
             ComboBoxService.cargarCombo(this.cboTipos, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
             this.deshabilitarBotones();
-
-            DataTable tablaMedicamentos = oMedicamento.recuperarTodos(mostrarConBorrados);
-            if (tablaMedicamentos.Rows.Count > 0)
+            List<Medicamento> listaMedicamentos = oMedicamento.recuperarTodos();
+            if (listaMedicamentos.Count > 0)
             {
-                this.cargarGrilla(this.dgvMedicamentos, tablaMedicamentos);
+                this.cargarGrilla(this.dgvMedicamentos, listaMedicamentos);
             }
             else
             {
@@ -54,34 +53,29 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 this.btnSeleccionar.Visible = true;
         }
 
-        private void cargarGrilla(DataGridView dgv, DataTable table)
+        private void cargarGrilla(DataGridView dgv, List<Medicamento> lista)
         {
 
             /*
              * Carga la grilla con los datos necesarios
              */
+            /*
+                * Carga la grilla con los datos necesarios
+                * pasado por lista.
+                */
             dgv.Rows.Clear();
-            if (table != null)
+            if (lista != null)
             {
-                for (int i = 0; i < table.Rows.Count; i++)
+                int cantObjs = lista.Count;
+                for (int i = 0; i < cantObjs; i++)
                 {
-                    //string borrado;
-                    //bool valorBorrado = (bool) table.Rows[i]["borrado"];
-                    //Console.WriteLine(valorBorrado);
-
-                    //if (valorBorrado == "True")
-                    //    borrado = "Si";
-                    //else
-                    //    borrado = "No";
-
-                    dgv.Rows.Add(table.Rows[i]["idMedicamento"],
-                                    table.Rows[i]["nombreMedicamento"],
-                                    table.Rows[i]["descripcionMed"],
-                                    table.Rows[i]["nombreTipoMed"],
-                                    table.Rows[i]["precioLista"],
-                                    table.Rows[i]["cantidad"]
-                                    //,borrado
-                                    );
+                    dgv.Rows.Add(lista[i].IdMedicamento.ToString()
+                        , lista[i].Nombre.ToString()
+                        , lista[i].Descripcion.ToString()
+                        , lista[i].TipoMedicamento.Descripcion.ToString()
+                        , lista[i].PrecioLista.ToString()
+                        , lista[i].Cantidad.ToString()   
+                        );
                 }
                 dgv.ClearSelection();
             }
@@ -145,7 +139,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * Verifica la correcta selección
              * para el formulario
              */
-            DataTable resultadoEmpleados;
+            List<Medicamento> resultadoMedicamentos;
             int idTipo = -1;
 
             string medicamento = this.txtbMedicamento.TextName;
@@ -162,8 +156,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                     idTipo = -1;
 
                 }
-                resultadoEmpleados = this.oMedicamento.recurperarMedicamentoCParametros(medicamento, idTipo, mostrarConBorrados);
-                this.cargarGrilla(this.dgvMedicamentos, resultadoEmpleados);
+                resultadoMedicamentos = oMedicamento.recurperarMedicamentoCParametros(medicamento, idTipo, mostrarConBorrados);
+                this.cargarGrilla(this.dgvMedicamentos, resultadoMedicamentos);
             }
         }
 
@@ -216,7 +210,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvMedicamentos, oMedicamento.recuperarTodos(mostrarConBorrados));
+            this.cargarGrilla(dgvMedicamentos, oMedicamento.recuperarTodos());
             this.deshabilitarBotones();
         }
 
