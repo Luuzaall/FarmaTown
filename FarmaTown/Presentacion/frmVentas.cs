@@ -23,6 +23,7 @@ namespace FarmaTown.Presentacion
         Medicamento oMedicamento;
         ObraSocial oObraSocial;
         BindingList<DetalleVenta> listaDetalle;
+        List<List<String>> listaOSXM;
 
         public frmVentas()
         {
@@ -51,6 +52,7 @@ namespace FarmaTown.Presentacion
             this.txtNomCliente.Text = "";
             this.txtbNroDoc.Text = "";
             this.txtbTipoDoc.Text = "";
+            this.cboObrasSociales.SelectedIndex = -1;
 
             this.inicializarDetalle();
 
@@ -247,6 +249,17 @@ namespace FarmaTown.Presentacion
         private void dgvDetalle_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             this.cambiarEstadoBoton(this.btnQuitar, false);
+        }
+
+        private void cboObrasSociales_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            oObraSocial = (ObraSocial)this.cboObrasSociales.SelectedItem;
+
+            if (oMedicamento != null)
+            {
+
+            }
+
         }
     }
 }
