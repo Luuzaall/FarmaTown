@@ -454,10 +454,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         {
             this.txtbNombre.Text = "";
             this.txtbApellido.Text = "";
-            this.cboTipoDoc.SelectedIndex = -1;
             this.txtbNroDoc.Text = "";
             this.txtbPasaporteLetras.Text = "";
             this.txtbPasaporteNro.Text = "";
+
+            this.cboTipoDoc.SelectedIndex = -1;
+            this.deshabilitarTextBox();
         }
 
         private void btnLimpiarUbicacion_Click(object sender, EventArgs e)
@@ -471,16 +473,38 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.Close();
         }
 
-        private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
+
+        private void btnLimpiarCalleyNum_Click(object sender, EventArgs e)
         {
-            TextBoxService.noDigitos(e);
+            this.txtbCalle.Text = "";
+            this.txtbNroCalle.Text = "";
         }
 
-        private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
+        private void btnConsultarUbicacion_Click(object sender, EventArgs e)
         {
-            TextBoxService.noLetras(e);
+            string barrio = this.txtbBarrio.Text;
+            string localidad = this.txtbLocalidad.Text;
+
+            if (string.IsNullOrEmpty(barrio)
+                & string.IsNullOrEmpty(localidad))
+            {
+                MessageBox.Show("No ingresó ningún dato",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.txtbBarrio.Focus();
+            }
+
+            List<Barrio> resultadosBarrios = this.oBarrio.recuperarCParamOtro(barrio, localidad);
+            this.cargarGrilla(this.dgvBarrios, resultadosBarrios);
         }
-       
+
+        private void btnAgregarBarrio_Click(object sender, EventArgs e)
+        {
+            frmABMBarrios barrios = new frmABMBarrios();
+            barrios.ShowDialog();
+
+            this.actualizar();
+        }
         private void txtbNroDoc_KeyDown(object sender, KeyEventArgs e)
         {
             if (!(e.KeyCode == Keys.Delete
@@ -535,37 +559,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             }
             TextBoxService.enter(this.btnAceptar, e);
         }
-
-        private void btnLimpiarCalleyNum_Click(object sender, EventArgs e)
+        private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
         {
-            this.txtbCalle.Text = "";
-            this.txtbNroCalle.Text = "";
+            TextBoxService.noDigitos(e);
         }
-
-        private void btnConsultarUbicacion_Click(object sender, EventArgs e)
+        private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
         {
-            string barrio = this.txtbBarrio.Text;
-            string localidad = this.txtbLocalidad.Text;
-
-            if (string.IsNullOrEmpty(barrio)
-                & string.IsNullOrEmpty(localidad))
-            {
-                MessageBox.Show("No ingresó ningún dato",
-                    "Validación de Datos", MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
-                this.txtbBarrio.Focus();
-            }
-
-            List<Barrio> resultadosBarrios = this.oBarrio.recuperarCParamOtro(barrio, localidad);
-            this.cargarGrilla(this.dgvBarrios, resultadosBarrios);
-        }
-
-        private void btnAgregarBarrio_Click(object sender, EventArgs e)
-        {
-            frmABMBarrios barrios = new frmABMBarrios();
-            barrios.ShowDialog();
-
-            this.actualizar();
+            TextBoxService.noLetras(e);
         }
     }
 }

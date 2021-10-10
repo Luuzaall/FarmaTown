@@ -29,7 +29,7 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmFarmacias());
             //Application.Run(new frmUsuarios());
-            //Application.Run(new frmEmpleados()); 
+            //Application.Run(new frmABMEmpleados()); 
 
             //Application.Run(new frmBarrios());
             //Application.Run(new frmABMBarrios());
@@ -43,9 +43,9 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmTiposDoc());
 
 
-            Application.Run(new frmVentas());
+            //Application.Run(new frmVentas());
             //Application.Run(new frmClientes(FormMode.management));
-            //Application.Run(new frmABMClientes());
+            Application.Run(new frmABMClientes());
 
         }
     }

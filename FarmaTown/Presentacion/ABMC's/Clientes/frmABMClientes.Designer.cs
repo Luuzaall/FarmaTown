@@ -90,9 +90,9 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.gbClientes.Controls.Add(this.lblAviso);
             this.gbClientes.Controls.Add(this.cboTipoDoc);
             this.gbClientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.gbClientes.Location = new System.Drawing.Point(20, 17);
+            this.gbClientes.Location = new System.Drawing.Point(12, 12);
             this.gbClientes.Name = "gbClientes";
-            this.gbClientes.Size = new System.Drawing.Size(871, 227);
+            this.gbClientes.Size = new System.Drawing.Size(871, 176);
             this.gbClientes.TabIndex = 1;
             this.gbClientes.TabStop = false;
             this.gbClientes.Text = "Datos del Cliente";
@@ -114,7 +114,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnLimpiarCliente.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarCliente.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarCliente.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiarCliente.Location = new System.Drawing.Point(368, 176);
+            this.btnLimpiarCliente.Location = new System.Drawing.Point(368, 119);
             this.btnLimpiarCliente.Name = "btnLimpiarCliente";
             this.btnLimpiarCliente.Size = new System.Drawing.Size(115, 37);
             this.btnLimpiarCliente.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.lblApeCli.AutoSize = true;
             this.lblApeCli.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblApeCli.Location = new System.Drawing.Point(19, 144);
+            this.lblApeCli.Location = new System.Drawing.Point(19, 72);
             this.lblApeCli.Name = "lblApeCli";
             this.lblApeCli.Size = new System.Drawing.Size(123, 23);
             this.lblApeCli.TabIndex = 33;
@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.txtbApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbApellido.Location = new System.Drawing.Point(148, 147);
+            this.txtbApellido.Location = new System.Drawing.Point(148, 75);
             this.txtbApellido.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbApellido.MaxLength = 30;
             this.txtbApellido.Name = "txtbApellido";
@@ -149,7 +149,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.lblTipoDoc.AutoSize = true;
             this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblTipoDoc.Location = new System.Drawing.Point(402, 102);
+            this.lblTipoDoc.Location = new System.Drawing.Point(402, 30);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(201, 23);
             this.lblTipoDoc.TabIndex = 31;
@@ -159,7 +159,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.lblNroDoc.AutoSize = true;
             this.lblNroDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNroDoc.Location = new System.Drawing.Point(415, 144);
+            this.lblNroDoc.Location = new System.Drawing.Point(415, 72);
             this.lblNroDoc.Name = "lblNroDoc";
             this.lblNroDoc.Size = new System.Drawing.Size(185, 23);
             this.lblNroDoc.TabIndex = 30;
@@ -169,7 +169,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.lblNomCli.AutoSize = true;
             this.lblNomCli.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomCli.Location = new System.Drawing.Point(19, 105);
+            this.lblNomCli.Location = new System.Drawing.Point(19, 33);
             this.lblNomCli.Name = "lblNomCli";
             this.lblNomCli.Size = new System.Drawing.Size(120, 23);
             this.lblNomCli.TabIndex = 25;
@@ -179,7 +179,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(148, 105);
+            this.txtbNombre.Location = new System.Drawing.Point(148, 33);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNombre.MaxLength = 30;
             this.txtbNombre.Name = "txtbNombre";
@@ -192,27 +192,28 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteLetras.Enabled = false;
-            this.txtbPasaporteLetras.Location = new System.Drawing.Point(608, 147);
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(608, 75);
             this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteLetras.MaxLength = 3;
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(86, 20);
             this.txtbPasaporteLetras.TabIndex = 4;
             this.txtbPasaporteLetras.Visible = false;
-            this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
+            this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteLetras_KeyDown);
             // 
             // txtbPasaporteNro
             // 
             this.txtbPasaporteNro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteNro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteNro.Enabled = false;
-            this.txtbPasaporteNro.Location = new System.Drawing.Point(724, 147);
+            this.txtbPasaporteNro.Location = new System.Drawing.Point(724, 75);
             this.txtbPasaporteNro.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteNro.MaxLength = 6;
             this.txtbPasaporteNro.Name = "txtbPasaporteNro";
             this.txtbPasaporteNro.Size = new System.Drawing.Size(95, 20);
             this.txtbPasaporteNro.TabIndex = 5;
             this.txtbPasaporteNro.Visible = false;
+            this.txtbPasaporteNro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteNro_KeyDown);
             // 
             // lblAvisoNroDoc
             // 
@@ -229,20 +230,20 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
-            this.txtbNroDoc.Location = new System.Drawing.Point(608, 147);
+            this.txtbNroDoc.Location = new System.Drawing.Point(608, 75);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.MaxLength = 8;
             this.txtbNroDoc.Name = "txtbNroDoc";
             this.txtbNroDoc.Size = new System.Drawing.Size(211, 20);
             this.txtbNroDoc.TabIndex = 4;
             this.txtbNroDoc.Visible = false;
-            this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoLetras_KeyDown);
+            this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNroDoc_KeyDown);
             // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
             this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.lblAviso.Location = new System.Drawing.Point(14, 42);
+            this.lblAviso.Location = new System.Drawing.Point(91, 119);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(161, 38);
             this.lblAviso.TabIndex = 23;
@@ -252,7 +253,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // cboTipoDoc
             // 
             this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(609, 98);
+            this.cboTipoDoc.Location = new System.Drawing.Point(609, 26);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(211, 27);
             this.cboTipoDoc.TabIndex = 3;
@@ -268,6 +269,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNroCalle.Name = "txtbNroCalle";
             this.txtbNroCalle.Size = new System.Drawing.Size(211, 20);
             this.txtbNroCalle.TabIndex = 8;
+            this.txtbNroCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoLetras_KeyDown);
             // 
             // txtbCalle
             // 
@@ -279,6 +281,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbCalle.Name = "txtbCalle";
             this.txtbCalle.Size = new System.Drawing.Size(211, 20);
             this.txtbCalle.TabIndex = 7;
+            this.txtbCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // lblCalle
             // 
@@ -325,7 +328,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.gbUbicacion.Controls.Add(this.lblNumero);
             this.gbUbicacion.Controls.Add(this.lblCalle);
             this.gbUbicacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.gbUbicacion.Location = new System.Drawing.Point(20, 250);
+            this.gbUbicacion.Location = new System.Drawing.Point(12, 194);
             this.gbUbicacion.Name = "gbUbicacion";
             this.gbUbicacion.Size = new System.Drawing.Size(871, 435);
             this.gbUbicacion.TabIndex = 2;
@@ -444,6 +447,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbLocalidad.Name = "txtbLocalidad";
             this.txtbLocalidad.Size = new System.Drawing.Size(211, 20);
             this.txtbLocalidad.TabIndex = 10;
+            this.txtbLocalidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // lblLocalidad
             // 
@@ -464,6 +468,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbBarrio.Name = "txtbBarrio";
             this.txtbBarrio.Size = new System.Drawing.Size(211, 20);
             this.txtbBarrio.TabIndex = 9;
+            this.txtbBarrio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // btnLimpiarUbicacion
             // 
@@ -538,6 +543,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.dgvBarrios.Size = new System.Drawing.Size(676, 161);
             this.dgvBarrios.TabIndex = 11;
             this.dgvBarrios.TabStop = false;
+            this.dgvBarrios.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // idBarrio
             // 
@@ -577,7 +583,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(333, 691);
+            this.btnCancelar.Location = new System.Drawing.Point(325, 635);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 46);
             this.btnCancelar.TabIndex = 16;
@@ -602,7 +608,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(482, 691);
+            this.btnAceptar.Location = new System.Drawing.Point(474, 633);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(127, 46);
             this.btnAceptar.TabIndex = 15;
@@ -616,7 +622,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.ABMClients;
-            this.ClientSize = new System.Drawing.Size(939, 749);
+            this.ClientSize = new System.Drawing.Size(931, 684);
             this.Controls.Add(this.gbUbicacion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
