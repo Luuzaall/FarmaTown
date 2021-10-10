@@ -185,7 +185,7 @@ namespace FarmaTown.Datos
 
         }
 
-        private Medicamento objectMapping(DataRow row)
+        public Medicamento objectMapping(DataRow row)
         {
             /*
              * A partir del registro de un medicamento,

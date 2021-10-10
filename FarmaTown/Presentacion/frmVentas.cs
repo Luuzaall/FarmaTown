@@ -112,12 +112,27 @@ namespace FarmaTown.Presentacion
             DialogResult resultado = oFrmMed.ShowDialog();
             if (resultado != DialogResult.Cancel)
             {
-                
-
                 oMedicamento = oFrmMed.recuperarSeleccion();
                 this.txtbNomMedicamento.Text = oMedicamento.Nombre;
                 this.txtbPrecio.Text = oMedicamento.PrecioLista.ToString();
                 this.cambiarEstadoBoton(this.btnAgregar, true);
+
+                if (oObraSocial.Nombre != null)
+                {
+                    double descuento = 0;
+                    List<List<Object>> lista = oObraSocial.listaDescuentos;
+                    int cantDescuentos = lista.Count;
+                    for (int fila = 0; fila < cantDescuentos; fila++)
+                    {
+                        if (lista[fila][0] == oMedicamento)
+                        {
+                            descuento = (double) lista[fila][1] ;
+                            break;
+                        }
+                    }
+
+                    this.txtbDescuentoOS.Text = descuento.ToString();
+                }
             }
 
         }
@@ -197,14 +212,17 @@ namespace FarmaTown.Presentacion
 
         private void txtbCantMedicamento_KeyUp(object sender, KeyEventArgs e)
         {
-            //string text = this.txtbCantMedicamento.Text;
-            //if (string.IsNullOrEmpty(text)
-            //        || text == " ")
-            //{
-            //    int cant = int.Parse(text);
-            //    int precioUnitario = int.Parse(this.txtbPrecio.Text);
-            //    this.txtbImporte.Text = (cant * precioUnitario).ToString();
-            //}
+            string textCant = this.txtbCantMedicamento.Text;
+            string textPrec = this.txtbPrecio.Text;
+            if ( !(string.IsNullOrEmpty(textCant)
+                    || textCant == " ")
+                  && !( textPrec == 0.ToString("N2") )
+                    )
+            {
+                int cant = int.Parse(textCant);
+                Double precioUnit = Double.Parse(textPrec);
+                this.txtbImporte.Text = (cant * precioUnit).ToString("N2");
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -219,7 +237,7 @@ namespace FarmaTown.Presentacion
                 ObraSocial = (ObraSocial)this.cboObrasSociales.SelectedItem,
             };
 
-            listaDetalle.Add(detalle);
+            //listaDetalle.Add(detalle);
 
             this.calcularTotales();
 

@@ -11,7 +11,9 @@ namespace FarmaTown.Logica
     {
         public int IdOS { get; set; }
         public string Nombre { get; set; }
+        public List<List<Object>> listaDescuentos { get; set; }
         public bool Borrado { get; set; }
+
 
         ObraSocialDao oObraSocialDao;
 

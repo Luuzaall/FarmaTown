@@ -10,6 +10,12 @@ namespace FarmaTown.Datos
 {
     class ObraSocialDao
     {
+        OSXMedicamentosDao oOSXMed;
+
+        public ObraSocialDao()
+        {
+            oOSXMed = new OSXMedicamentosDao();
+        }
         public List<ObraSocial> recuperarCParam(string nombre)
         {
             string query = "SELECT idOS" +
@@ -123,7 +129,7 @@ namespace FarmaTown.Datos
 
         }
 
-        private ObraSocial objectMapping(DataRow row)
+        public ObraSocial objectMapping(DataRow row)
         {
             /*
              * Recibe una registro de datos y lo 
@@ -131,10 +137,12 @@ namespace FarmaTown.Datos
              * Empleado.
              */
 
+            int idOS = Convert.ToInt32(row["idOS"].ToString());
             ObraSocial oOS = new ObraSocial
             {
-                IdOS = Convert.ToInt32(row["idOS"].ToString()),
+                IdOS = idOS,
                 Nombre = row["nombre"].ToString(),
+                listaDescuentos = oOSXMed.recuperarTodos(idOS),
             };
 
             return oOS;

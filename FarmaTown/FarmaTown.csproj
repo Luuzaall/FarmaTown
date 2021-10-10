@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\ClienteDao.cs" />
+    <Compile Include="Datos\OSXMedicamentos.cs" />
     <Compile Include="Datos\TipoFacturaDao.cs" />
     <Compile Include="Datos\VentaDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />
