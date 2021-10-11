@@ -37,6 +37,7 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.lblAvisoStock = new System.Windows.Forms.Label();
             this.txtbDescuentoOS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtbImporteTotal = new System.Windows.Forms.TextBox();
@@ -45,15 +46,7 @@ namespace FarmaTown.Presentacion
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
-            this.btnQuitar = new CustomControls.RJControls.RJButton();
-            this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
-            this.idArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbImporte = new System.Windows.Forms.TextBox();
             this.txtbPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +54,6 @@ namespace FarmaTown.Presentacion
             this.txtbCantMedicamento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbNomMedicamento = new System.Windows.Forms.TextBox();
-            this.btnBuscMedicamento = new CustomControls.RJControls.RJButton();
             this.lblMedicamento = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
@@ -69,7 +61,6 @@ namespace FarmaTown.Presentacion
             this.cboObrasSociales = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbTipoDoc = new System.Windows.Forms.TextBox();
-            this.btnBuscCliente = new CustomControls.RJControls.RJButton();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomCliente = new System.Windows.Forms.TextBox();
@@ -78,7 +69,16 @@ namespace FarmaTown.Presentacion
             this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.btnNuevaFactura = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.lblAvisoStock = new System.Windows.Forms.Label();
+            this.btnBuscCliente = new CustomControls.RJControls.RJButton();
+            this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
+            this.btnQuitar = new CustomControls.RJControls.RJButton();
+            this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.btnBuscMedicamento = new CustomControls.RJControls.RJButton();
+            this.idMedicamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -181,6 +181,18 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
             // 
+            // lblAvisoStock
+            // 
+            this.lblAvisoStock.AutoSize = true;
+            this.lblAvisoStock.BackColor = System.Drawing.Color.IndianRed;
+            this.lblAvisoStock.Location = new System.Drawing.Point(545, 74);
+            this.lblAvisoStock.Name = "lblAvisoStock";
+            this.lblAvisoStock.Size = new System.Drawing.Size(156, 22);
+            this.lblAvisoStock.TabIndex = 28;
+            this.lblAvisoStock.Text = "¡Supera el Stock!";
+            this.lblAvisoStock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAvisoStock.Visible = false;
+            // 
             // txtbDescuentoOS
             // 
             this.txtbDescuentoOS.BackColor = System.Drawing.Color.Silver;
@@ -274,96 +286,13 @@ namespace FarmaTown.Presentacion
             this.label6.TabIndex = 20;
             this.label6.Text = "Subtotal:";
             // 
-            // btnRehacerDetalle
-            // 
-            this.btnRehacerDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRehacerDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRehacerDetalle.BackgroundImage = global::FarmaTown.Properties.Resources.rehacer;
-            this.btnRehacerDetalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRehacerDetalle.BorderColor = System.Drawing.Color.Green;
-            this.btnRehacerDetalle.BorderRadius = 23;
-            this.btnRehacerDetalle.BorderSize = 1;
-            this.btnRehacerDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRehacerDetalle.FlatAppearance.BorderSize = 0;
-            this.btnRehacerDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnRehacerDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnRehacerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRehacerDetalle.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRehacerDetalle.ForeColor = System.Drawing.Color.Black;
-            this.btnRehacerDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRehacerDetalle.Location = new System.Drawing.Point(836, 48);
-            this.btnRehacerDetalle.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRehacerDetalle.Name = "btnRehacerDetalle";
-            this.btnRehacerDetalle.Size = new System.Drawing.Size(43, 43);
-            this.btnRehacerDetalle.TabIndex = 19;
-            this.btnRehacerDetalle.TextColor = System.Drawing.Color.Black;
-            this.ttDescripcionBtn.SetToolTip(this.btnRehacerDetalle, "Quitar todos los medicamentos del detalle");
-            this.btnRehacerDetalle.UseVisualStyleBackColor = false;
-            this.btnRehacerDetalle.Click += new System.EventHandler(this.btnRehacerDetalle_Click);
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackColor = System.Drawing.Color.Gray;
-            this.btnQuitar.BackgroundColor = System.Drawing.Color.Gray;
-            this.btnQuitar.BackgroundImage = global::FarmaTown.Properties.Resources.delete_1_;
-            this.btnQuitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnQuitar.BorderColor = System.Drawing.Color.Green;
-            this.btnQuitar.BorderRadius = 23;
-            this.btnQuitar.BorderSize = 1;
-            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuitar.Enabled = false;
-            this.btnQuitar.FlatAppearance.BorderSize = 0;
-            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitar.Location = new System.Drawing.Point(775, 48);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(43, 43);
-            this.btnQuitar.TabIndex = 18;
-            this.btnQuitar.TextColor = System.Drawing.Color.Black;
-            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ttDescripcionBtn.SetToolTip(this.btnQuitar, "Quitar medicamento al detalle");
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Gray;
-            this.btnAgregar.BackgroundColor = System.Drawing.Color.Gray;
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.add;
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregar.BorderColor = System.Drawing.Color.Green;
-            this.btnAgregar.BorderRadius = 23;
-            this.btnAgregar.BorderSize = 1;
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.Enabled = false;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.Location = new System.Drawing.Point(713, 48);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(43, 43);
-            this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.TextColor = System.Drawing.Color.Black;
-            this.ttDescripcionBtn.SetToolTip(this.btnAgregar, "Agregar medicamento al detalle");
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // dgvDetalle
             // 
             this.dgvDetalle.AllowUserToAddRows = false;
             this.dgvDetalle.AllowUserToDeleteRows = false;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idArticulo,
+            this.idMedicamento,
             this.descripcion,
             this.cantidad,
             this.precio,
@@ -376,40 +305,6 @@ namespace FarmaTown.Presentacion
             this.dgvDetalle.TabIndex = 17;
             this.dgvDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellClick);
             this.dgvDetalle.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellLeave);
-            // 
-            // idArticulo
-            // 
-            this.idArticulo.HeaderText = "Id Art.";
-            this.idArticulo.Name = "idArticulo";
-            this.idArticulo.ReadOnly = true;
-            this.idArticulo.Width = 60;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 350;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cant";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 150;
-            // 
-            // importe
-            // 
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
-            this.importe.ReadOnly = true;
-            this.importe.Width = 150;
             // 
             // txtbImporte
             // 
@@ -495,33 +390,6 @@ namespace FarmaTown.Presentacion
             this.txtbNomMedicamento.Name = "txtbNomMedicamento";
             this.txtbNomMedicamento.Size = new System.Drawing.Size(181, 22);
             this.txtbNomMedicamento.TabIndex = 11;
-            // 
-            // btnBuscMedicamento
-            // 
-            this.btnBuscMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnBuscMedicamento.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnBuscMedicamento.BackgroundImage = global::FarmaTown.Properties.Resources.search;
-            this.btnBuscMedicamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBuscMedicamento.BorderColor = System.Drawing.Color.Green;
-            this.btnBuscMedicamento.BorderRadius = 20;
-            this.btnBuscMedicamento.BorderSize = 1;
-            this.btnBuscMedicamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscMedicamento.FlatAppearance.BorderSize = 0;
-            this.btnBuscMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnBuscMedicamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnBuscMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscMedicamento.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscMedicamento.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscMedicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscMedicamento.Location = new System.Drawing.Point(21, 50);
-            this.btnBuscMedicamento.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscMedicamento.Name = "btnBuscMedicamento";
-            this.btnBuscMedicamento.Size = new System.Drawing.Size(50, 39);
-            this.btnBuscMedicamento.TabIndex = 11;
-            this.btnBuscMedicamento.TextColor = System.Drawing.Color.Black;
-            this.ttDescripcionBtn.SetToolTip(this.btnBuscMedicamento, "Buscar y seleccionar Medicamento");
-            this.btnBuscMedicamento.UseVisualStyleBackColor = false;
-            this.btnBuscMedicamento.Click += new System.EventHandler(this.btnBuscMedicamento_Click);
             // 
             // lblMedicamento
             // 
@@ -616,33 +484,6 @@ namespace FarmaTown.Presentacion
             this.txtbTipoDoc.Name = "txtbTipoDoc";
             this.txtbTipoDoc.Size = new System.Drawing.Size(172, 22);
             this.txtbTipoDoc.TabIndex = 27;
-            // 
-            // btnBuscCliente
-            // 
-            this.btnBuscCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnBuscCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnBuscCliente.BackgroundImage = global::FarmaTown.Properties.Resources.search;
-            this.btnBuscCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBuscCliente.BorderColor = System.Drawing.Color.Green;
-            this.btnBuscCliente.BorderRadius = 20;
-            this.btnBuscCliente.BorderSize = 1;
-            this.btnBuscCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscCliente.FlatAppearance.BorderSize = 0;
-            this.btnBuscCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnBuscCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnBuscCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscCliente.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscCliente.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscCliente.Location = new System.Drawing.Point(18, 30);
-            this.btnBuscCliente.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscCliente.Name = "btnBuscCliente";
-            this.btnBuscCliente.Size = new System.Drawing.Size(50, 39);
-            this.btnBuscCliente.TabIndex = 26;
-            this.btnBuscCliente.TextColor = System.Drawing.Color.Black;
-            this.ttDescripcionBtn.SetToolTip(this.btnBuscCliente, "Buscar y seleccionar Cliente");
-            this.btnBuscCliente.UseVisualStyleBackColor = false;
-            this.btnBuscCliente.Click += new System.EventHandler(this.btnBuscCliente_Click);
             // 
             // txtbNroDoc
             // 
@@ -765,17 +606,181 @@ namespace FarmaTown.Presentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // lblAvisoStock
+            // btnBuscCliente
             // 
-            this.lblAvisoStock.AutoSize = true;
-            this.lblAvisoStock.BackColor = System.Drawing.Color.IndianRed;
-            this.lblAvisoStock.Location = new System.Drawing.Point(545, 74);
-            this.lblAvisoStock.Name = "lblAvisoStock";
-            this.lblAvisoStock.Size = new System.Drawing.Size(156, 22);
-            this.lblAvisoStock.TabIndex = 28;
-            this.lblAvisoStock.Text = "¡Supera el Stock!";
-            this.lblAvisoStock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblAvisoStock.Visible = false;
+            this.btnBuscCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnBuscCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnBuscCliente.BackgroundImage = global::FarmaTown.Properties.Resources.search;
+            this.btnBuscCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscCliente.BorderColor = System.Drawing.Color.Green;
+            this.btnBuscCliente.BorderRadius = 20;
+            this.btnBuscCliente.BorderSize = 1;
+            this.btnBuscCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscCliente.FlatAppearance.BorderSize = 0;
+            this.btnBuscCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnBuscCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnBuscCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscCliente.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscCliente.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscCliente.Location = new System.Drawing.Point(18, 30);
+            this.btnBuscCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscCliente.Name = "btnBuscCliente";
+            this.btnBuscCliente.Size = new System.Drawing.Size(50, 39);
+            this.btnBuscCliente.TabIndex = 26;
+            this.btnBuscCliente.TextColor = System.Drawing.Color.Black;
+            this.ttDescripcionBtn.SetToolTip(this.btnBuscCliente, "Buscar y seleccionar Cliente");
+            this.btnBuscCliente.UseVisualStyleBackColor = false;
+            this.btnBuscCliente.Click += new System.EventHandler(this.btnBuscCliente_Click);
+            // 
+            // btnRehacerDetalle
+            // 
+            this.btnRehacerDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRehacerDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRehacerDetalle.BackgroundImage = global::FarmaTown.Properties.Resources.rehacer;
+            this.btnRehacerDetalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRehacerDetalle.BorderColor = System.Drawing.Color.Green;
+            this.btnRehacerDetalle.BorderRadius = 23;
+            this.btnRehacerDetalle.BorderSize = 1;
+            this.btnRehacerDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRehacerDetalle.FlatAppearance.BorderSize = 0;
+            this.btnRehacerDetalle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRehacerDetalle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnRehacerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRehacerDetalle.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRehacerDetalle.ForeColor = System.Drawing.Color.Black;
+            this.btnRehacerDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRehacerDetalle.Location = new System.Drawing.Point(836, 48);
+            this.btnRehacerDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRehacerDetalle.Name = "btnRehacerDetalle";
+            this.btnRehacerDetalle.Size = new System.Drawing.Size(43, 43);
+            this.btnRehacerDetalle.TabIndex = 19;
+            this.btnRehacerDetalle.TextColor = System.Drawing.Color.Black;
+            this.ttDescripcionBtn.SetToolTip(this.btnRehacerDetalle, "Quitar todos los medicamentos del detalle");
+            this.btnRehacerDetalle.UseVisualStyleBackColor = false;
+            this.btnRehacerDetalle.Click += new System.EventHandler(this.btnRehacerDetalle_Click);
+            // 
+            // btnQuitar
+            // 
+            this.btnQuitar.BackColor = System.Drawing.Color.Gray;
+            this.btnQuitar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnQuitar.BackgroundImage = global::FarmaTown.Properties.Resources.delete_1_;
+            this.btnQuitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnQuitar.BorderColor = System.Drawing.Color.Green;
+            this.btnQuitar.BorderRadius = 23;
+            this.btnQuitar.BorderSize = 1;
+            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuitar.Enabled = false;
+            this.btnQuitar.FlatAppearance.BorderSize = 0;
+            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitar.ForeColor = System.Drawing.Color.Black;
+            this.btnQuitar.Location = new System.Drawing.Point(775, 48);
+            this.btnQuitar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(43, 43);
+            this.btnQuitar.TabIndex = 18;
+            this.btnQuitar.TextColor = System.Drawing.Color.Black;
+            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ttDescripcionBtn.SetToolTip(this.btnQuitar, "Quitar medicamento al detalle");
+            this.btnQuitar.UseVisualStyleBackColor = false;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Gray;
+            this.btnAgregar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.add;
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAgregar.BorderColor = System.Drawing.Color.Green;
+            this.btnAgregar.BorderRadius = 23;
+            this.btnAgregar.BorderSize = 1;
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.Enabled = false;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.Location = new System.Drawing.Point(713, 48);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(43, 43);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.TextColor = System.Drawing.Color.Black;
+            this.ttDescripcionBtn.SetToolTip(this.btnAgregar, "Agregar medicamento al detalle");
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBuscMedicamento
+            // 
+            this.btnBuscMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnBuscMedicamento.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnBuscMedicamento.BackgroundImage = global::FarmaTown.Properties.Resources.search;
+            this.btnBuscMedicamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBuscMedicamento.BorderColor = System.Drawing.Color.Green;
+            this.btnBuscMedicamento.BorderRadius = 20;
+            this.btnBuscMedicamento.BorderSize = 1;
+            this.btnBuscMedicamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscMedicamento.FlatAppearance.BorderSize = 0;
+            this.btnBuscMedicamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnBuscMedicamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnBuscMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscMedicamento.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscMedicamento.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscMedicamento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscMedicamento.Location = new System.Drawing.Point(21, 50);
+            this.btnBuscMedicamento.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscMedicamento.Name = "btnBuscMedicamento";
+            this.btnBuscMedicamento.Size = new System.Drawing.Size(50, 39);
+            this.btnBuscMedicamento.TabIndex = 11;
+            this.btnBuscMedicamento.TextColor = System.Drawing.Color.Black;
+            this.ttDescripcionBtn.SetToolTip(this.btnBuscMedicamento, "Buscar y seleccionar Medicamento");
+            this.btnBuscMedicamento.UseVisualStyleBackColor = false;
+            this.btnBuscMedicamento.Click += new System.EventHandler(this.btnBuscMedicamento_Click);
+            // 
+            // idMedicamento
+            // 
+            this.idMedicamento.DataPropertyName = "idMedicamento";
+            this.idMedicamento.HeaderText = "Id Art.";
+            this.idMedicamento.Name = "idMedicamento";
+            this.idMedicamento.ReadOnly = true;
+            this.idMedicamento.Width = 60;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 350;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "cantidad";
+            this.cantidad.HeaderText = "Cant";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "precioUnitario";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 150;
+            // 
+            // importe
+            // 
+            this.importe.DataPropertyName = "importe";
+            this.importe.HeaderText = "Importe";
+            this.importe.Name = "importe";
+            this.importe.ReadOnly = true;
+            this.importe.Width = 150;
             // 
             // frmVentas
             // 
@@ -835,11 +840,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbImporte;
         private System.Windows.Forms.DataGridView dgvDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idArticulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private CustomControls.RJControls.RJButton btnAgregar;
         private CustomControls.RJControls.RJButton btnRehacerDetalle;
         private CustomControls.RJControls.RJButton btnQuitar;
@@ -863,5 +863,10 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.TextBox txtbDescuentoOS;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblAvisoStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idMedicamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
     }
 }

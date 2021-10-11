@@ -12,7 +12,7 @@ namespace FarmaTown.Logica
         public Medicamento Medicamento { get; set; }
         public int Cantidad { get; set; }
         public Double PrecioUnitario { get; set; }
-        public DetalleVenta Reintegro { get; set; }
+        public Double Reintegro { get; set; }
         public ObraSocial ObraSocial { get; set; }
 
 
