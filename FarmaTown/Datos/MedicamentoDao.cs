@@ -119,7 +119,7 @@ namespace FarmaTown.Datos
                 " , descripcion = '" + oMedicamento.Descripcion + "'" +
                 " , tipoMedicamento = " + oMedicamento.TipoMedicamento.IdTipo +
                 " , precioLista = " + oMedicamento.PrecioLista +
-                " , cantidad = " + oMedicamento.Cantidad +
+                " , cantidad = " + oMedicamento.CantidadStock +
                 " WHERE idMedicamento = " + oMedicamento.IdMedicamento;
 
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
@@ -170,7 +170,7 @@ namespace FarmaTown.Datos
                 ", '" + oMedicamento.Nombre + "'" +
                 ", '" + oMedicamento.TipoMedicamento.IdTipo + "'" +
                 ", '" + oMedicamento.PrecioLista + "'" +
-                ", '" + oMedicamento.Cantidad + "'" +
+                ", '" + oMedicamento.CantidadStock + "'" +
                 ", 0)";
 
 
@@ -203,7 +203,7 @@ namespace FarmaTown.Datos
                     Descripcion = row["nombreTipoMEd"].ToString(),
                 },
                 PrecioLista = float.Parse(row["precioLista"].ToString()),
-                Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
+                CantidadStock = Convert.ToInt32(row["cantidad"].ToString()),
 
             };
 

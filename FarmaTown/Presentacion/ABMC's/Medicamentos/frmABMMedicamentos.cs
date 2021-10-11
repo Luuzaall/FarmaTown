@@ -151,7 +151,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                             oMedicamento.TipoMedicamento = new TipoMedicamento();
                             oMedicamento.TipoMedicamento.IdTipo = (int)cboTipoMedicamento.SelectedValue;
                             oMedicamento.PrecioLista = float.Parse(this.txtbPrecio.Text);
-                            oMedicamento.Cantidad = int.Parse(this.txtbCantidad.Text);
+                            oMedicamento.CantidadStock = int.Parse(this.txtbCantidad.Text);
 
                             if (oMedicamento.actualizarMedicamento(oMedicamento))
                             {
@@ -288,7 +288,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbDescripcion.Text = this.oMedicamento.Descripcion;
             this.cboTipoMedicamento.SelectedValue = this.oMedicamento.TipoMedicamento.IdTipo;
             this.txtbPrecio.Text = this.oMedicamento.PrecioLista.ToString();
-            this.txtbCantidad.Text = this.oMedicamento.Cantidad.ToString();
+            this.txtbCantidad.Text = this.oMedicamento.CantidadStock.ToString();
         }
 
 
