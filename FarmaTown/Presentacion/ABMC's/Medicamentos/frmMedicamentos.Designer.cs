@@ -41,19 +41,18 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
-            this.idMedicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.btnSeleccionar = new CustomControls.RJControls.RJButton();
+            this.idMedicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
@@ -137,6 +136,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.cbBorrados.TabIndex = 16;
             this.cbBorrados.Text = "Mostrar Borrados";
             this.cbBorrados.UseVisualStyleBackColor = false;
+            this.cbBorrados.Visible = false;
             this.cbBorrados.CheckedChanged += new System.EventHandler(this.cbBorrados_CheckedChanged);
             // 
             // cboTipos
@@ -243,8 +243,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.Descripcion,
             this.Tipo,
             this.precio,
-            this.cantidad,
-            this.borrado});
+            this.cantidad});
             this.dgvMedicamentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.dgvMedicamentos.Location = new System.Drawing.Point(19, 31);
             this.dgvMedicamentos.MultiSelect = false;
@@ -257,52 +256,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.dgvMedicamentos.Size = new System.Drawing.Size(808, 186);
             this.dgvMedicamentos.TabIndex = 14;
             this.dgvMedicamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellClick);
-            // 
-            // idMedicamentos
-            // 
-            this.idMedicamentos.HeaderText = "ID";
-            this.idMedicamentos.Name = "idMedicamentos";
-            this.idMedicamentos.ReadOnly = true;
-            this.idMedicamentos.Width = 50;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 130;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo Medicamento";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 150;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio Lista";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 130;
-            // 
-            // borrado
-            // 
-            this.borrado.HeaderText = "Borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
             // 
             // lblAviso
             // 
@@ -434,6 +387,46 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Visible = false;
             // 
+            // idMedicamentos
+            // 
+            this.idMedicamentos.HeaderText = "ID";
+            this.idMedicamentos.Name = "idMedicamentos";
+            this.idMedicamentos.ReadOnly = true;
+            this.idMedicamentos.Width = 50;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 130;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo Medicamento";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 150;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio Lista";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 130;
+            // 
             // frmMedicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,13 +474,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private CustomControls.RJControls.RJButton btnEliminar;
         private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnSalir;
+        private CustomControls.RJControls.RJButton btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMedicamentos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
-        private CustomControls.RJControls.RJButton btnSeleccionar;
     }
 }

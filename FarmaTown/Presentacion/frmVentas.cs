@@ -113,6 +113,7 @@ namespace FarmaTown.Presentacion
             if (resultado != DialogResult.Cancel)
             {
                 oMedicamento = oFrmMed.recuperarSeleccion();
+                oFrmMed.Dispose();
                 this.txtbNomMedicamento.Text = oMedicamento.Nombre;
                 this.txtbPrecio.Text = oMedicamento.PrecioLista.ToString();
                 this.cambiarEstadoBoton(this.btnAgregar, true);
@@ -124,7 +125,8 @@ namespace FarmaTown.Presentacion
                     int cantDescuentos = lista.Count;
                     for (int fila = 0; fila < cantDescuentos; fila++)
                     {
-                        if (lista[fila][0] == oMedicamento)
+                        int idLista = (int) typeof(Medicamento).GetProperty("IdMedicamento").GetValue(lista[0][0]);
+                        if ( idLista == oMedicamento.IdMedicamento)
                         {
                             descuento = (double) lista[fila][1] ;
                             break;
@@ -214,14 +216,34 @@ namespace FarmaTown.Presentacion
         {
             string textCant = this.txtbCantMedicamento.Text;
             string textPrec = this.txtbPrecio.Text;
+           
+            
             if ( !(string.IsNullOrEmpty(textCant)
                     || textCant == " ")
                   && !( textPrec == 0.ToString("N2") )
                     )
             {
                 int cant = int.Parse(textCant);
+                bool pasaStock = (cant > oMedicamento.Cantidad);
+
+                // Modifica el estado del botón según si pasa el stock
+                // registrado y visualiza el mensaje  de aviso si corresponde.
+                this.cambiarEstadoBoton(this.btnAgregar, !pasaStock);
+                this.lblAvisoStock.Visible = pasaStock;
+
                 Double precioUnit = Double.Parse(textPrec);
-                this.txtbImporte.Text = (cant * precioUnit).ToString("N2");
+                Double importeMed;
+                if (oObraSocial.Nombre != null)
+                {
+                    Double descuento;
+                    descuento = Double.Parse(this.txtbDescuentoOS.Text.ToString());
+                    importeMed = (cant * (precioUnit - (precioUnit * descuento) ) );
+                }
+                else
+                {
+                    importeMed = cant * precioUnit;
+                }
+                this.txtbImporte.Text = importeMed.ToString("N2");
             }
         }
 
@@ -289,6 +311,29 @@ namespace FarmaTown.Presentacion
 
             if (oMedicamento != null)
             {
+                double descuento = 0;
+                List<List<Object>> lista = oObraSocial.listaDescuentos;
+                int cantDescuentos = lista.Count;
+                for (int fila = 0; fila < cantDescuentos; fila++)
+                {
+                    int idLista = (int)typeof(Medicamento).GetProperty("IdMedicamento").GetValue(lista[fila][0]);
+                    if (idLista == oMedicamento.IdMedicamento)
+                    {
+                        descuento = (double)lista[fila][1];
+                        break;
+                    }
+                }
+                this.txtbDescuentoOS.Text = descuento.ToString();
+
+                string txtCant = this.txtbCantMedicamento.Text;
+                if ( !(string.IsNullOrEmpty(txtCant)
+                        || txtCant == " ")
+                    )
+                {
+                    Double cant = Double.Parse(txtCant);
+                    Double precioUnit = Double.Parse(this.txtbPrecio.Text);
+                    this.txtbImporte.Text = (cant * (precioUnit - (precioUnit * descuento))).ToString("N2");
+                }
 
             }
 

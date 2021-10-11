@@ -78,6 +78,7 @@ namespace FarmaTown.Presentacion
             this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.btnNuevaFactura = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.lblAvisoStock = new System.Windows.Forms.Label();
             this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -149,6 +150,7 @@ namespace FarmaTown.Presentacion
             // gbDetalle
             // 
             this.gbDetalle.BackColor = System.Drawing.Color.Transparent;
+            this.gbDetalle.Controls.Add(this.lblAvisoStock);
             this.gbDetalle.Controls.Add(this.txtbDescuentoOS);
             this.gbDetalle.Controls.Add(this.label12);
             this.gbDetalle.Controls.Add(this.txtbImporteTotal);
@@ -763,6 +765,18 @@ namespace FarmaTown.Presentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblAvisoStock
+            // 
+            this.lblAvisoStock.AutoSize = true;
+            this.lblAvisoStock.BackColor = System.Drawing.Color.IndianRed;
+            this.lblAvisoStock.Location = new System.Drawing.Point(545, 74);
+            this.lblAvisoStock.Name = "lblAvisoStock";
+            this.lblAvisoStock.Size = new System.Drawing.Size(156, 22);
+            this.lblAvisoStock.TabIndex = 28;
+            this.lblAvisoStock.Text = "¡Supera el Stock!";
+            this.lblAvisoStock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAvisoStock.Visible = false;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -848,5 +862,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.ComboBox cboObrasSociales;
         private System.Windows.Forms.TextBox txtbDescuentoOS;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAvisoStock;
     }
 }
