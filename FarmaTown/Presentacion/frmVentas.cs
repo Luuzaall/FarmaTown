@@ -19,13 +19,15 @@ namespace FarmaTown.Presentacion
     public partial class frmVentas : Form
     {
         // Atributos
-        TipoFactura oTipoFact;
-        Cliente oCliente;
-        Medicamento oMedicamento;
-        ObraSocial oObraSocial;
-        BindingList<DetalleVenta> listaDetalle;
+        private TipoFactura oTipoFact;
+        private Cliente oCliente;
+        private Medicamento oMedicamento;
+        private ObraSocial oObraSocial;
+        private BindingList<DetalleVenta> listaDetalle;
+        private Usuario oUsuario;
 
-        public frmVentas()
+
+        public frmVentas(Usuario usuario)
         {
             InitializeComponent();
             this.dgvDetalle.AutoGenerateColumns = false;
@@ -33,6 +35,7 @@ namespace FarmaTown.Presentacion
             oCliente = new Cliente();
             oObraSocial = new ObraSocial();
             listaDetalle = new BindingList<DetalleVenta>();
+            oUsuario = usuario;
         }
 
         private void inicializarDetalle()
@@ -210,18 +213,15 @@ namespace FarmaTown.Presentacion
                         Cliente = oCliente,
                         TipoFactura = (TipoFactura)this.cboTipoFactura.SelectedItem,
                         Detalles = listaDetalle,
-                        SubTotal = double.Parse(this.txtbSubtotal.Text),
-                        Descuento = double.Parse(this.txtbDescuento.Text)
+                        Empleado = oUsuario.Empleado,
+                        Farmacia = oUsuario.Empleado.Farmacia,
+                        
                     };
+                    venta.crearVenta(venta);
 
-                    if (facturaService.ValidarDatos(factura))
-                    {
-                        facturaService.Crear(factura);
-
-                        MessageBox.Show(string.Concat("La factura nro: ", factura.IdFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(string.Concat("La factura nro: ", venta.NroFactura , " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         InicializarFormulario();
-                    }
 
                 }
                 catch (Exception ex)
