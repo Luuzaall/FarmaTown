@@ -37,6 +37,8 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.lblAvisoStock = new System.Windows.Forms.Label();
             this.txtbDescuentoOS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -46,7 +48,15 @@ namespace FarmaTown.Presentacion
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
+            this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
+            this.idArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtbImporte = new System.Windows.Forms.TextBox();
             this.txtbPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,6 +64,7 @@ namespace FarmaTown.Presentacion
             this.txtbCantMedicamento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbNomMedicamento = new System.Windows.Forms.TextBox();
+            this.btnBuscMedicamento = new CustomControls.RJControls.RJButton();
             this.lblMedicamento = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
@@ -61,6 +72,7 @@ namespace FarmaTown.Presentacion
             this.cboObrasSociales = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbTipoDoc = new System.Windows.Forms.TextBox();
+            this.btnBuscCliente = new CustomControls.RJControls.RJButton();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomCliente = new System.Windows.Forms.TextBox();
@@ -69,12 +81,6 @@ namespace FarmaTown.Presentacion
             this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.btnNuevaFactura = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.idArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -147,6 +153,8 @@ namespace FarmaTown.Presentacion
             // gbDetalle
             // 
             this.gbDetalle.BackColor = System.Drawing.Color.Transparent;
+            this.gbDetalle.Controls.Add(this.label14);
+            this.gbDetalle.Controls.Add(this.btnEliminar);
             this.gbDetalle.Controls.Add(this.lblAvisoStock);
             this.gbDetalle.Controls.Add(this.txtbDescuentoOS);
             this.gbDetalle.Controls.Add(this.label12);
@@ -157,7 +165,6 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.Controls.Add(this.label7);
             this.gbDetalle.Controls.Add(this.label6);
             this.gbDetalle.Controls.Add(this.btnRehacerDetalle);
-            this.gbDetalle.Controls.Add(this.btnQuitar);
             this.gbDetalle.Controls.Add(this.btnAgregar);
             this.gbDetalle.Controls.Add(this.dgvDetalle);
             this.gbDetalle.Controls.Add(this.txtbImporte);
@@ -177,7 +184,47 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabIndex = 7;
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
-            this.gbDetalle.Enter += new System.EventHandler(this.gbDetalle_Enter);
+            this.ttDescripcionBtn.SetToolTip(this.gbDetalle, "Quitar el artículo elegido.");
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(502, 367);
+            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 27);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "%";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnEliminar.BackgroundImage = global::FarmaTown.Properties.Resources.delete_1_;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEliminar.BorderColor = System.Drawing.Color.Green;
+            this.btnEliminar.BorderRadius = 23;
+            this.btnEliminar.BorderSize = 1;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Location = new System.Drawing.Point(773, 48);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(43, 43);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.TextColor = System.Drawing.Color.Black;
+            this.ttDescripcionBtn.SetToolTip(this.btnEliminar, "Quitar medicamento al detalle");
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // lblAvisoStock
             // 
@@ -247,9 +294,12 @@ namespace FarmaTown.Presentacion
             this.txtbDescuento.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbDescuento.Location = new System.Drawing.Point(436, 365);
             this.txtbDescuento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtbDescuento.MaxLength = 2;
             this.txtbDescuento.Name = "txtbDescuento";
-            this.txtbDescuento.Size = new System.Drawing.Size(106, 29);
+            this.txtbDescuento.Size = new System.Drawing.Size(66, 29);
             this.txtbDescuento.TabIndex = 9;
+            this.txtbDescuento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbDescuento_KeyDown);
+            this.txtbDescuento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtbDescuento_KeyUp);
             // 
             // label8
             // 
@@ -310,37 +360,9 @@ namespace FarmaTown.Presentacion
             this.btnRehacerDetalle.Size = new System.Drawing.Size(43, 43);
             this.btnRehacerDetalle.TabIndex = 8;
             this.btnRehacerDetalle.TextColor = System.Drawing.Color.Black;
-            this.ttDescripcionBtn.SetToolTip(this.btnRehacerDetalle, "Quitar todos los medicamentos del detalle");
+            this.ttDescripcionBtn.SetToolTip(this.btnRehacerDetalle, "Limpiar datos medicamento y cantidad.");
             this.btnRehacerDetalle.UseVisualStyleBackColor = false;
-            this.btnRehacerDetalle.Click += new System.EventHandler(this.btnRehacerDetalle_Click);
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackColor = System.Drawing.Color.Gray;
-            this.btnQuitar.BackgroundColor = System.Drawing.Color.Gray;
-            this.btnQuitar.BackgroundImage = global::FarmaTown.Properties.Resources.delete_1_;
-            this.btnQuitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnQuitar.BorderColor = System.Drawing.Color.Green;
-            this.btnQuitar.BorderRadius = 23;
-            this.btnQuitar.BorderSize = 1;
-            this.btnQuitar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuitar.Enabled = false;
-            this.btnQuitar.FlatAppearance.BorderSize = 0;
-            this.btnQuitar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.ForeColor = System.Drawing.Color.Black;
-            this.btnQuitar.Location = new System.Drawing.Point(775, 48);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(43, 43);
-            this.btnQuitar.TabIndex = 7;
-            this.btnQuitar.TextColor = System.Drawing.Color.Black;
-            this.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ttDescripcionBtn.SetToolTip(this.btnQuitar, "Quitar medicamento al detalle");
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            this.btnRehacerDetalle.Click += new System.EventHandler(this.btnRehacerDetalle_Click_1);
             // 
             // btnAgregar
             // 
@@ -379,14 +401,14 @@ namespace FarmaTown.Presentacion
             this.dgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idMedicamento,
+            this.idArticulo,
             this.descripcion,
             this.cantidad,
             this.precio,
             this.Reintegro,
             this.importe});
             this.dgvDetalle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvDetalle.Location = new System.Drawing.Point(18, 179);
+            this.dgvDetalle.Location = new System.Drawing.Point(24, 185);
             this.dgvDetalle.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDetalle.MultiSelect = false;
             this.dgvDetalle.Name = "dgvDetalle";
@@ -396,7 +418,54 @@ namespace FarmaTown.Presentacion
             this.dgvDetalle.TabIndex = 17;
             this.dgvDetalle.TabStop = false;
             this.dgvDetalle.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellClick);
-            this.dgvDetalle.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellLeave);
+            // 
+            // idArticulo
+            // 
+            this.idArticulo.DataPropertyName = "IdMedicamento";
+            this.idArticulo.HeaderText = "Id Art.";
+            this.idArticulo.Name = "idArticulo";
+            this.idArticulo.ReadOnly = true;
+            this.idArticulo.Width = 60;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Nombre";
+            this.descripcion.HeaderText = "Nombre";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 200;
+            // 
+            // cantidad
+            // 
+            this.cantidad.DataPropertyName = "Cantidad";
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.DataPropertyName = "PrecioUnitarioShort";
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            this.precio.Width = 150;
+            // 
+            // Reintegro
+            // 
+            this.Reintegro.DataPropertyName = "Reintegro";
+            this.Reintegro.HeaderText = "Descuento";
+            this.Reintegro.Name = "Reintegro";
+            this.Reintegro.ReadOnly = true;
+            this.Reintegro.Width = 150;
+            // 
+            // importe
+            // 
+            this.importe.DataPropertyName = "Importe";
+            this.importe.HeaderText = "Importe";
+            this.importe.Name = "importe";
+            this.importe.ReadOnly = true;
+            this.importe.ToolTipText = "Precio Unitario x Cantidad";
+            this.importe.Width = 150;
             // 
             // txtbImporte
             // 
@@ -758,54 +827,6 @@ namespace FarmaTown.Presentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // idArticulo
-            // 
-            this.idArticulo.DataPropertyName = "IdMedicamento";
-            this.idArticulo.HeaderText = "Id Art.";
-            this.idArticulo.Name = "idArticulo";
-            this.idArticulo.ReadOnly = true;
-            this.idArticulo.Width = 60;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Nombre";
-            this.descripcion.HeaderText = "Nombre";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 200;
-            // 
-            // cantidad
-            // 
-            this.cantidad.DataPropertyName = "Cantidad";
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.DataPropertyName = "PrecioUnitario";
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            this.precio.Width = 150;
-            // 
-            // Reintegro
-            // 
-            this.Reintegro.DataPropertyName = "Reintegro";
-            this.Reintegro.HeaderText = "Descuento";
-            this.Reintegro.Name = "Reintegro";
-            this.Reintegro.ReadOnly = true;
-            this.Reintegro.Width = 150;
-            // 
-            // importe
-            // 
-            this.importe.DataPropertyName = "Importe";
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
-            this.importe.ReadOnly = true;
-            this.importe.ToolTipText = "Precio Unitario x Cantidad";
-            this.importe.Width = 150;
-            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -869,7 +890,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.DataGridView dgvDetalle;
         private CustomControls.RJControls.RJButton btnAgregar;
         private CustomControls.RJControls.RJButton btnRehacerDetalle;
-        private CustomControls.RJControls.RJButton btnQuitar;
         private System.Windows.Forms.TextBox txtbNroDoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtbImporteTotal;
@@ -896,5 +916,7 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reintegro;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
+        private CustomControls.RJControls.RJButton btnEliminar;
+        private System.Windows.Forms.Label label14;
     }
 }

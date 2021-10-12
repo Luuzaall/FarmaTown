@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,7 @@ namespace FarmaTown.Presentacion
             this.txtbDescuentoOS.Text = 0.ToString("N2");
 
             this.cambiarEstadoBoton(this.btnAgregar, false);
-            this.cambiarEstadoBoton(this.btnQuitar, false);
+            this.cambiarEstadoBoton(this.btnEliminar, false);
             this.lblAvisoStock.Visible = false;
         }
 
@@ -74,16 +75,16 @@ namespace FarmaTown.Presentacion
 
         private void calcularTotales()
         {
-            //var subTotal = listaDetalle.Sum(p => p.Importe);
-            //this.txtbSubtotal.Text = subTotal.ToString();
+            var subTotal = listaDetalle.Sum(p => p.Importe);
+            this.txtbSubtotal.Text = subTotal.ToString("C", new CultureInfo("es-AR"));
 
-            //double descuento = 0;
-            //double.TryParse(txtbDescuento.Text, out descuento);
+            double descuento = 0;
+            double.TryParse(txtbDescuento.Text, out descuento);
 
-            //var importeTotal = subtotal - subtotal * descuento / 100;
-            //txtbImporteTotal.Text = importeTotal.ToString("C");
+            var importeTotal = subTotal - subTotal * descuento / 100;
+            txtbImporteTotal.Text = importeTotal.ToString("C", new CultureInfo("es-AR"));
         }
-            
+
         //MÉTODOS DE RESPUESTA A EVENTOS
 
         private void btnBuscCliente_Click(object sender, EventArgs e)
@@ -101,6 +102,7 @@ namespace FarmaTown.Presentacion
                 this.txtbNroDoc.Text = oCliente.NroDoc;
                 this.txtbTipoDoc.Text = oCliente.TipoDoc.Nombre;
             }
+            this.cambiarEstadoBoton(this.btnEliminar, false);
         }
 
         private void btnBuscMedicamento_Click(object sender, EventArgs e)
@@ -134,7 +136,10 @@ namespace FarmaTown.Presentacion
                     }
                     this.txtbDescuentoOS.Text = descuento.ToString();
                 }
+                this.txtbCantMedicamento.Text = "";
+                this.lblAvisoStock.Visible = false;
             }
+            this.cambiarEstadoBoton(this.btnEliminar, false);
 
         }
 
@@ -190,6 +195,10 @@ namespace FarmaTown.Presentacion
              * para una nueva factura.
              */
             this.inicializarFormulario();
+            this.txtbDescuento.Text = "";
+            this.txtbImporteTotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
+            this.txtbSubtotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
+            this.cambiarEstadoBoton(this.btnGuardar, false);
         }
 
         private void frmVentas_Load(object sender, EventArgs e)
@@ -237,11 +246,11 @@ namespace FarmaTown.Presentacion
                 {
                     Double descuento;
                     descuento = Double.Parse(this.txtbDescuentoOS.Text.ToString());
-                    importeMed = (cant * (precioUnit - (precioUnit * descuento)));
+                    importeMed = (cant * (precioUnit - (precioUnit * descuento) ) );
                 }
                 else
                 {
-                   importeMed = cant * precioUnit;
+                    importeMed = cant * precioUnit;
                 }
                 this.txtbImporte.Text = importeMed.ToString("N2");
             }
@@ -277,43 +286,13 @@ namespace FarmaTown.Presentacion
             this.inicializarDetalle();
 
             this.cambiarEstadoBoton(this.btnGuardar, true);
-        }
-
-        private void btnQuitar_Click(object sender, EventArgs e)
-        {
-            /*
-             * Quita el detalle seleccionado del DataGridView.
-             */
-            if (listaDetalle != null) 
-            {
-                var detalleVenta = (DetalleVenta)this.dgvDetalle.CurrentRow.DataBoundItem;
-                listaDetalle.Remove(detalleVenta);
-            }
-
-            if (listaDetalle.Count == 0)
-                this.cambiarEstadoBoton(this.btnAgregar, false);
-        }
-
-        private void btnRehacerDetalle_Click(object sender, EventArgs e)
-        {
-            /*
-             * Ante el botón de rehacer detalle,
-             * vacía todo lo ingresado.
-             */
-            this.inicializarDetalle();
-
-            this.cambiarEstadoBoton(this.btnAgregar, false);
+            this.txtbDescuento.Enabled = true;
+            this.cambiarEstadoBoton(this.btnEliminar, false);
         }
 
         private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.cambiarEstadoBoton(this.btnQuitar, true);
-
-        }
-
-        private void dgvDetalle_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            this.cambiarEstadoBoton(this.btnQuitar, false);
+            this.cambiarEstadoBoton(this.btnEliminar, true);
         }
 
         private void cboObrasSociales_SelectionChangeCommitted(object sender, EventArgs e)
@@ -350,9 +329,45 @@ namespace FarmaTown.Presentacion
 
         }
 
-        private void gbDetalle_Enter(object sender, EventArgs e)
+        private void btnQuitar_Click(object sender, EventArgs e)
         {
+            /*
+             * Quita el detalle seleccionado del DataGridView.
+             */
+            if (listaDetalle != null)
+            {
+                var detalleVenta = (DetalleVenta)this.dgvDetalle.CurrentRow.DataBoundItem;
+                listaDetalle.Remove(detalleVenta);
+                this.calcularTotales();
+                if (listaDetalle.Count == 0)
+                {
+                    this.cambiarEstadoBoton(this.btnGuardar, false);
+                }
+            }
 
+            if (listaDetalle.Count == 0)
+                this.cambiarEstadoBoton(this.btnAgregar, false);
+            this.cambiarEstadoBoton(this.btnEliminar, false);
+        }
+
+        private void btnRehacerDetalle_Click_1(object sender, EventArgs e)
+        {
+            /*
+             * Ante el botón de rehacer detalle,
+             * vacía todo lo ingresado.
+             */
+            this.inicializarDetalle();
+        }
+
+        private void txtbDescuento_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noLetras(e);
+            TextBoxService.enter(this.btnGuardar, e);
+        }
+
+        private void txtbDescuento_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.calcularTotales();
         }
     }
 }

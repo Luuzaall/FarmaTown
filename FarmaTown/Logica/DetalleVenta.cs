@@ -15,6 +15,42 @@ namespace FarmaTown.Logica
         public Double Reintegro { get; set; }
         public ObraSocial ObraSocial { get; set; }
 
+        public Double PrecioUnitarioShort
+        {
+            get
+            {
+                return Math.Round(PrecioUnitario, 2);
+            }
+        }
+        
+        public int IdMedicamento
+        {
+            get
+            {
+                return Medicamento.IdMedicamento;
+            }
+        }
+        public string Nombre
+        {
+            get
+            {
+                return Medicamento.Nombre;
+            }
+        }
+
+        public Double Importe
+        {
+            get
+            {
+                if (Reintegro == 0)
+                    return Math.Round( (Cantidad * PrecioUnitario), 2);
+                else
+                {
+                    double subTotal = Cantidad * PrecioUnitario;
+                    return Math.Round( (subTotal - (subTotal * Reintegro)) , 2 );
+                }
+            }
+        }
 
     }
 }
