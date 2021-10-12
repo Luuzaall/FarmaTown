@@ -10,7 +10,7 @@ namespace FarmaTown.Presentacion.Servicios
 {
     class TextBoxService
     {
-        public static void enter(Button btn, KeyEventArgs e) 
+        public static void enter(Button btn, KeyEventArgs e)
         {
             /*
              * Su objetivo es darle la funcionalidad
@@ -27,7 +27,7 @@ namespace FarmaTown.Presentacion.Servicios
             }
         }
 
-        public static void noDigitos(KeyEventArgs e) 
+        public static void noDigitos(KeyEventArgs e)
         {
             /*
              * Su objetivo es darle la funcionalidad
@@ -37,6 +37,7 @@ namespace FarmaTown.Presentacion.Servicios
              * Se utiliza en métodos de respuesta a eventos 
              * del tipo KeyDown.
              */
+            Console.WriteLine(e.KeyCode);
             if (char.IsDigit((char)e.KeyCode))
             {
                 e.SuppressKeyPress = true;
@@ -45,7 +46,8 @@ namespace FarmaTown.Presentacion.Servicios
 
         public static void noLetras(KeyEventArgs e)
         {
-            if (char.IsLetter((char)e.KeyCode))
+            Console.WriteLine(e.KeyCode);
+            if (char.IsLetter((char)e.KeyCode) && e.KeyCode < Keys.NumPad1)
                 e.SuppressKeyPress = true;
         }
 
