@@ -237,11 +237,11 @@ namespace FarmaTown.Presentacion
                 {
                     Double descuento;
                     descuento = Double.Parse(this.txtbDescuentoOS.Text.ToString());
-                    importeMed = (cant * (precioUnit - (precioUnit * descuento) ) );
+                    importeMed = (cant * (precioUnit - (precioUnit * descuento)));
                 }
                 else
                 {
-                    importeMed = cant * precioUnit;
+                   importeMed = cant * precioUnit;
                 }
                 this.txtbImporte.Text = importeMed.ToString("N2");
             }

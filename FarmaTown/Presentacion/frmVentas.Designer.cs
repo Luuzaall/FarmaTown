@@ -46,9 +46,6 @@ namespace FarmaTown.Presentacion
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
-            this.btnQuitar = new CustomControls.RJControls.RJButton();
-            this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
             this.txtbImporte = new System.Windows.Forms.TextBox();
             this.txtbPrecio = new System.Windows.Forms.TextBox();
@@ -57,7 +54,6 @@ namespace FarmaTown.Presentacion
             this.txtbCantMedicamento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbNomMedicamento = new System.Windows.Forms.TextBox();
-            this.btnBuscMedicamento = new CustomControls.RJControls.RJButton();
             this.lblMedicamento = new System.Windows.Forms.Label();
             this.cboTipoFactura = new System.Windows.Forms.ComboBox();
             this.gbCliente = new System.Windows.Forms.GroupBox();
@@ -65,7 +61,6 @@ namespace FarmaTown.Presentacion
             this.cboObrasSociales = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbTipoDoc = new System.Windows.Forms.TextBox();
-            this.btnBuscCliente = new CustomControls.RJControls.RJButton();
             this.txtbNroDoc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomCliente = new System.Windows.Forms.TextBox();
@@ -384,7 +379,7 @@ namespace FarmaTown.Presentacion
             this.dgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idArticulo,
+            this.idMedicamento,
             this.descripcion,
             this.cantidad,
             this.precio,
