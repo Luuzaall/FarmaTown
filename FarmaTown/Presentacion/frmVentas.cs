@@ -85,6 +85,40 @@ namespace FarmaTown.Presentacion
             txtbImporteTotal.Text = importeTotal.ToString("C", new CultureInfo("es-AR"));
         }
 
+        private bool validarInput()
+        {
+            int selectedIndexTipoFact = this.cboTipoFactura.SelectedIndex;
+
+            if (selectedIndexTipoFact == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de factura",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.cboTipoFactura.Focus();
+            }
+            else if (oCliente.Nombre is null)
+            {
+                MessageBox.Show("Debe seleccionar un cliente",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.btnBuscCliente.Focus();
+            }
+            else if (listaDetalle.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un medicamento " +
+                    "al detalle",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.btnBuscMedicamento.Focus();
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+            
+        }
+
         //MÉTODOS DE RESPUESTA A EVENTOS
 
         private void btnBuscCliente_Click(object sender, EventArgs e)
@@ -101,6 +135,10 @@ namespace FarmaTown.Presentacion
                 this.txtNomCliente.Text = oCliente.Nombre;
                 this.txtbNroDoc.Text = oCliente.NroDoc;
                 this.txtbTipoDoc.Text = oCliente.TipoDoc.Nombre;
+            }
+            else
+            {
+                oCliente.Nombre = null;
             }
             this.cambiarEstadoBoton(this.btnEliminar, false);
         }
@@ -136,6 +174,10 @@ namespace FarmaTown.Presentacion
                     }
                     this.txtbDescuentoOS.Text = descuento.ToString();
                 }
+                else
+                {
+                    oMedicamento.Nombre = null;
+                }
                 this.txtbCantMedicamento.Text = "";
                 this.lblAvisoStock.Visible = false;
             }
@@ -158,33 +200,36 @@ namespace FarmaTown.Presentacion
             * generando el id de la factura.
             */
 
-            //try
-            //{
-            //    var venta = new Venta
-            //    {
-            //        FechaFactura = this.dtpFechaActual.Value,
-            //        Cliente = oCliente,
-            //        TipoFactura = (TipoFactura)this.cboTipoFactura.SelectedItem,
-            //        Detalles = listaFacturaDetalle,
-            //        SubTotal = double.Parse(txtSubtotal.Text),
-            //        Descuento = double.Parse(txtDescuento.Text)
-            //    };
+            if (validarInput())
+            {
+                try
+                {
+                    var venta = new Venta
+                    {
+                        FechaFactura = this.dtpFechaActual.Value,
+                        Cliente = oCliente,
+                        TipoFactura = (TipoFactura)this.cboTipoFactura.SelectedItem,
+                        Detalles = listaDetalle,
+                        SubTotal = double.Parse(this.txtbSubtotal.Text),
+                        Descuento = double.Parse(this.txtbDescuento.Text)
+                    };
 
-            //    if (facturaService.ValidarDatos(factura))
-            //    {
-            //        facturaService.Crear(factura);
+                    if (facturaService.ValidarDatos(factura))
+                    {
+                        facturaService.Crear(factura);
 
-            //        MessageBox.Show(string.Concat("La factura nro: ", factura.IdFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(string.Concat("La factura nro: ", factura.IdFactura, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //        InicializarFormulario();
-            //    }
+                        InicializarFormulario();
+                    }
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //this.cambiarEstadoBoton(this.btnGuardar, false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                this.cambiarEstadoBoton(this.btnGuardar, false);
+            }
 
         }
 
