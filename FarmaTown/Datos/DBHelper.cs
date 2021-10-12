@@ -14,6 +14,7 @@ namespace FarmaTown.Datos
         //Atributes
         private static DBHelper instance = null;
         private SqlConnection cnn = new SqlConnection();
+        private SqlTransaction dbTransaction;
         private SqlCommand cmd = new SqlCommand();
         //SqlCommand para DML
 
@@ -28,6 +29,23 @@ namespace FarmaTown.Datos
                 "Password=123123GGHHj";
         }
 
+        public void BeginTransaction()
+        {
+            if (cnn.State == ConnectionState.Open)
+                dbTransaction = cnn.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
 
         public static DBHelper getDBHelper()
         {
@@ -160,6 +178,60 @@ namespace FarmaTown.Datos
         public DataTable consultarTabla(string tabla)
         {
             return this.consultaSQL("SELECT * FROM " + tabla);
+        }
+
+        public int EjecutarSQLCONPARAMETROS(string strSql, Dictionary<string, object> parametros = null)
+        {
+            // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
+
+            SqlCommand cmd = new SqlCommand();
+
+            int rtdo = 0;
+
+            // Try Catch Finally
+            // Trata de ejecutar el código contenido dentro del bloque Try - Catch
+            // Si hay error lo capta a través de una excepción
+            // Si no hubo error
+            try
+            {
+                cmd.Connection = cnn;
+                cmd.Transaction = dbTransaction;
+                cmd.CommandType = CommandType.Text;
+                // Establece la instrucción a ejecutar
+                cmd.CommandText = strSql;
+
+                //Agregamos a la colección de parámetros del comando los filtros recibidos
+                foreach (var item in parametros)
+                {
+                    cmd.Parameters.AddWithValue(item.Key, item.Value);
+                }
+
+
+                // Retorna el resultado de ejecutar el comando
+                rtdo = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return rtdo;
+        }
+        public object ConsultaSQLScalar(string strSql)
+        {
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Connection = cnn;
+                cmd.Transaction = dbTransaction;
+                cmd.CommandType = CommandType.Text;
+                // Establece la instrucción a ejecutar
+                cmd.CommandText = strSql;
+                return cmd.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
         }
 
     }
