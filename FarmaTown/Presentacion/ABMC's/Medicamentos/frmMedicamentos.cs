@@ -74,7 +74,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                         , lista[i].Descripcion.ToString()
                         , lista[i].TipoMedicamento.Descripcion.ToString()
                         , lista[i].PrecioLista.ToString()
-                        , lista[i].Cantidad.ToString()   
+                        , lista[i].CantidadStock.ToString()   
                         );
                 }
                 dgv.ClearSelection();

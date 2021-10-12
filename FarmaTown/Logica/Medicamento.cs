@@ -15,7 +15,7 @@ namespace FarmaTown.Logica
         public string Nombre { get; set; }
         public TipoMedicamento TipoMedicamento { get; set; }
         public float PrecioLista { get; set; }
-        public int Cantidad { get; set; }
+        public int CantidadStock { get; set; }
         public bool Borrado { get; set; }
         public List<List<String>> ListaDescuentosOS { get; set; }
 
