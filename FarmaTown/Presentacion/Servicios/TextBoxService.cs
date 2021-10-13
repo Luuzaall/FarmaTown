@@ -47,8 +47,12 @@ namespace FarmaTown.Presentacion.Servicios
         public static void noLetras(KeyEventArgs e)
         {
             Console.WriteLine(e.KeyCode);
-            if (char.IsLetter((char)e.KeyCode) && e.KeyCode < Keys.NumPad1)
+            if  ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) &&
+                (e.KeyCode < Keys.NumPad1 || e.KeyCode > Keys.NumPad9) &&
+                !(e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back))
+            {
                 e.SuppressKeyPress = true;
+            }
         }
 
         public static void verClave(TextBox txtb, Button btn)
@@ -78,7 +82,5 @@ namespace FarmaTown.Presentacion.Servicios
                 return false;
             }
         }
-
-
     }
 }
