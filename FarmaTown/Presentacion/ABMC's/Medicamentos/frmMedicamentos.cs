@@ -181,7 +181,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         {
             frmABMMed = new frmABMMedicamentos();
             string nomMed = (string)this.dgvMedicamentos.CurrentRow.Cells[1].Value;
-            oMedicamento = this.oMedicamento.traerMedicamento(nomMed);
+            oMedicamento = this.oMedicamento.F(nomMed);
             frmABMMed.seleccionarMedicamento(frmABMMedicamentos.FormMode.insert, oMedicamento);
             frmABMMed.ShowDialog();
             this.actualizar();

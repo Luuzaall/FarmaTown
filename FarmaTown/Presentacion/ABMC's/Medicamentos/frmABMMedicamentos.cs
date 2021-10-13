@@ -127,6 +127,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                                 oMedicamento.Descripcion = this.txtbDescripcion.Text;
                                 oMedicamento.TipoMedicamento = new TipoMedicamento();
                                 oMedicamento.TipoMedicamento.IdTipo = (int)cboTipoMedicamento.SelectedValue;
+                                oMedicamento.PrecioLista = float.Parse(this.txtbPrecio.Text);
+                                oMedicamento.CantidadStock = int.Parse(this.txtbCantidad.Text);
 
                                 if (oMedicamento.crearMedicamento(oMedicamento))
                                 {
