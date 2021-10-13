@@ -116,9 +116,9 @@ namespace FarmaTown.Presentacion
             }
             else
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
             
         }
 
@@ -215,18 +215,19 @@ namespace FarmaTown.Presentacion
                         Detalles = listaDetalle,
                         Empleado = oUsuario.Empleado,
                         Farmacia = oUsuario.Empleado.Farmacia,
-                        
                     };
                     venta.crearVenta(venta);
 
-                        MessageBox.Show(string.Concat("La factura nro: ", venta.NroFactura , " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(string.Concat("La factura ", venta.NroFactura, " se generó correctamente.")
+                            , "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        InicializarFormulario();
+                        this.inicializarFormulario();
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al registrar la factura! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("¡Error al registrar la venta! " + ex.Message + ex.StackTrace
+                        , "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.cambiarEstadoBoton(this.btnGuardar, false);
             }

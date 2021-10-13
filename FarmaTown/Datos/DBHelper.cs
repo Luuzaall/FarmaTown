@@ -27,24 +27,37 @@ namespace FarmaTown.Datos
              */
             stringConexion = "Data Source=SQL5108.site4now.net;Initial Catalog=db_a79a32_farmatown;User Id=db_a79a32_farmatown_admin;" +
                 "Password=123123GGHHj";
+            cnn.ConnectionString = stringConexion;
         }
 
-        public void BeginTransaction()
+        public void beginTransaction()
         {
             if (cnn.State == ConnectionState.Open)
                 dbTransaction = cnn.BeginTransaction();
         }
 
-        public void Commit()
+        public void commit()
         {
             if (dbTransaction != null)
                 dbTransaction.Commit();
         }
 
-        public void Rollback()
+        public void rollback()
         {
             if (dbTransaction != null)
                 dbTransaction.Rollback();
+        }
+
+        public void open()
+        {
+            if (cnn.State != ConnectionState.Open)
+                cnn.Open();
+        }
+
+        public void close()
+        {
+            if (cnn.State != ConnectionState.Closed)
+                cnn.Close();
         }
 
         public static DBHelper getDBHelper()
@@ -103,7 +116,6 @@ namespace FarmaTown.Datos
 
             try
             {
-                cnn.ConnectionString = stringConexion;
                 cnn.Open();
 
                 //Starts the transaction
@@ -144,7 +156,6 @@ namespace FarmaTown.Datos
 
             try
             {
-                cnn.ConnectionString = stringConexion;
                 cnn.Open();
                 
                 cmd.Connection = cnn;
@@ -180,7 +191,7 @@ namespace FarmaTown.Datos
             return this.consultaSQL("SELECT * FROM " + tabla);
         }
 
-        public int EjecutarSQLCONPARAMETROS(string strSql, Dictionary<string, object> parametros = null)
+        public int ejecutarSQLCONPARAMETROS(string strSql, Dictionary<string, object> parametros = null)
         {
             // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
 
@@ -216,7 +227,8 @@ namespace FarmaTown.Datos
             }
             return rtdo;
         }
-        public object ConsultaSQLScalar(string strSql)
+
+        public object consultaSQLScalar(string strSql)
         {
             SqlCommand cmd = new SqlCommand();
             try

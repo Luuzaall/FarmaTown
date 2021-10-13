@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Datos;
+using FarmaTown.Logica;
 using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.ABMC_s.Medicamentos;
 using FarmaTown.Presentacion.Empleados;
@@ -42,8 +43,8 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmOOSS());
             //Application.Run(new frmTiposDoc());
 
-
-            Application.Run(new frmVentas());
+            Usuario us = new Usuario();
+            Application.Run(new frmVentas( us.traerUsuario("maru") ));
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());
 

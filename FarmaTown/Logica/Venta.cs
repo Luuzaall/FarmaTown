@@ -28,7 +28,7 @@ namespace FarmaTown.Logica
 
         public bool crearVenta(Venta nuevaVenta)
         {
-            return validar(this.oVenta.crear(nuevaVenta));
+            return this.oVenta.crear(nuevaVenta);
         }
 
         private bool validar(int resultado)

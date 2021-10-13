@@ -189,6 +189,8 @@ namespace FarmaTown.Datos
              * tranforma esa información en un 
              * objeto del tipo Usuario
              */
+            Empleado oEmplDelUsuario = (new Empleado())
+                    .traerEmpleado(Convert.ToInt32(row["idEmpleado"].ToString() ) );
             Usuario oUsuario = new Usuario
             {
                 IdUsuario = Convert.ToInt32(row["idUsuario"].ToString()),
@@ -199,11 +201,7 @@ namespace FarmaTown.Datos
                     IdRol = Convert.ToInt32(row["idRol"].ToString()),
                     Nombre = row["nomRol"].ToString(),
                 },
-                Empleado = new Empleado()
-                {
-                    IdEmpleado = Convert.ToInt32(row["idEmpleado"].ToString()),
-                    Nombre = row["nomEmpleado"].ToString(),
-                }
+                Empleado = oEmplDelUsuario,
             };
 
             return oUsuario;
