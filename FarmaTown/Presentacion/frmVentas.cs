@@ -58,12 +58,12 @@ namespace FarmaTown.Presentacion
             this.txtNomCliente.Text = "";
             this.txtbNroDoc.Text = "";
             this.txtbTipoDoc.Text = "";
-            this.cboObrasSociales.SelectedIndex = -1;
+            this.cboObrasSociales.SelectedValue = 10;
 
             this.inicializarDetalle();
 
             // Limpia el DataGridView.
-            this.dgvDetalle.DataSource = null;
+            this.listaDetalle.Clear();
         }
 
         private void cambiarEstadoBoton(Button btn, bool seHabilita)
@@ -78,20 +78,14 @@ namespace FarmaTown.Presentacion
 
         private void calcularTotales()
         {
-            var subTotal = listaDetalle.Sum(p => p.Importe);
-            this.txtbSubtotal.Text = subTotal.ToString("C", new CultureInfo("es-AR"));
-
-            double descuento = 0;
-            double.TryParse(txtbDescuento.Text, out descuento);
-
-            var importeTotal = subTotal - subTotal * descuento / 100;
+            var importeTotal = listaDetalle.Sum(p => p.Importe);
             txtbImporteTotal.Text = importeTotal.ToString("C", new CultureInfo("es-AR"));
         }
 
         private bool validarInput()
         {
             int selectedIndexTipoFact = this.cboTipoFactura.SelectedIndex;
-            int selectedIndexOS = this.cboObrasSociales.SelectedIndex;
+
             if (selectedIndexTipoFact == -1)
             {
                 MessageBox.Show("Debe seleccionar un tipo de factura",
@@ -105,13 +99,6 @@ namespace FarmaTown.Presentacion
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.btnBuscCliente.Focus();
-            }
-            else if (selectedIndexOS == -1)
-            {
-                MessageBox.Show("Debe seleccionar una obra social",
-                    "Validación de Datos", MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
-                this.cboTipoFactura.Focus();
             }
             else if (listaDetalle.Count == 0)
             {
@@ -145,6 +132,10 @@ namespace FarmaTown.Presentacion
                 this.txtNomCliente.Text = oCliente.Nombre;
                 this.txtbNroDoc.Text = oCliente.NroDoc;
                 this.txtbTipoDoc.Text = oCliente.TipoDoc.Nombre;
+
+                if (this.cboTipoFactura.SelectedIndex != -1
+                     && listaDetalle.Count != 0)
+                    this.cambiarEstadoBoton(this.btnGuardar, true);
             }
             else
             {
@@ -184,11 +175,9 @@ namespace FarmaTown.Presentacion
                     }
                     this.txtbDescuentoOS.Text = descuento.ToString();
                 }
-                else
-                {
-                    oMedicamento.Nombre = null;
-                }
+
                 this.txtbCantMedicamento.Text = "";
+                this.txtbCantMedicamento.Enabled = true;
                 this.lblAvisoStock.Visible = false;
             }
             this.cambiarEstadoBoton(this.btnEliminar, false);
@@ -255,9 +244,7 @@ namespace FarmaTown.Presentacion
              * para una nueva factura.
              */
             this.inicializarFormulario();
-            this.txtbDescuento.Text = "";
             this.txtbImporteTotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
-            this.txtbSubtotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
             this.cambiarEstadoBoton(this.btnGuardar, false);
         }
 
@@ -269,6 +256,7 @@ namespace FarmaTown.Presentacion
                 , "Nombre", "IdTipoFactura");
             ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos(false)
                 , "Nombre", "IdOS");
+            this.cboObrasSociales.SelectedValue = 10;
 
             this.dgvDetalle.DataSource = listaDetalle;
         }
@@ -277,7 +265,6 @@ namespace FarmaTown.Presentacion
         {
             TextBoxService.noLetras(e);
             TextBoxService.enter(this.btnAgregar, e);
-
         }
 
         private void txtbCantMedicamento_KeyUp(object sender, KeyEventArgs e)
@@ -288,7 +275,7 @@ namespace FarmaTown.Presentacion
             
             if ( !(string.IsNullOrEmpty(textCant)
                     || textCant == " ")
-                  && !( textPrec == 0.ToString("N2") )
+                  && !(textPrec == 0.ToString("N2"))
                   && !(textCant == "0")
                     )
             {
@@ -345,9 +332,12 @@ namespace FarmaTown.Presentacion
 
             this.inicializarDetalle();
 
-            this.cambiarEstadoBoton(this.btnGuardar, true);
-            this.txtbDescuento.Enabled = true;
+            if (oCliente.Nombre != null
+                   &&  this.cboTipoFactura.SelectedIndex != -1)
+                this.cambiarEstadoBoton(this.btnGuardar, true);
+
             this.cambiarEstadoBoton(this.btnEliminar, false);
+            this.txtbCantMedicamento.Enabled = false;
         }
 
         private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -398,6 +388,7 @@ namespace FarmaTown.Presentacion
             {
                 var detalleVenta = (DetalleVenta)this.dgvDetalle.CurrentRow.DataBoundItem;
                 listaDetalle.Remove(detalleVenta);
+                listaDetalle.IndexOf(detalleVenta);
                 this.calcularTotales();
                 if (listaDetalle.Count == 0)
                 {
@@ -428,6 +419,13 @@ namespace FarmaTown.Presentacion
         private void txtbDescuento_KeyUp(object sender, KeyEventArgs e)
         {
             this.calcularTotales();
+        }
+
+        private void cboTipoFactura_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (oCliente.Nombre != null
+                && listaDetalle.Count != 0)
+                this.cambiarEstadoBoton(this.btnGuardar, true);
         }
     }
 }

@@ -37,17 +37,12 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.lblAvisoStock = new System.Windows.Forms.Label();
             this.txtbDescuentoOS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtbImporteTotal = new System.Windows.Forms.TextBox();
-            this.txtbSubtotal = new System.Windows.Forms.TextBox();
-            this.txtbDescuento = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
@@ -153,17 +148,12 @@ namespace FarmaTown.Presentacion
             // gbDetalle
             // 
             this.gbDetalle.BackColor = System.Drawing.Color.Transparent;
-            this.gbDetalle.Controls.Add(this.label14);
             this.gbDetalle.Controls.Add(this.btnEliminar);
             this.gbDetalle.Controls.Add(this.lblAvisoStock);
             this.gbDetalle.Controls.Add(this.txtbDescuentoOS);
             this.gbDetalle.Controls.Add(this.label12);
             this.gbDetalle.Controls.Add(this.txtbImporteTotal);
-            this.gbDetalle.Controls.Add(this.txtbSubtotal);
-            this.gbDetalle.Controls.Add(this.txtbDescuento);
-            this.gbDetalle.Controls.Add(this.label8);
             this.gbDetalle.Controls.Add(this.label7);
-            this.gbDetalle.Controls.Add(this.label6);
             this.gbDetalle.Controls.Add(this.btnRehacerDetalle);
             this.gbDetalle.Controls.Add(this.btnAgregar);
             this.gbDetalle.Controls.Add(this.dgvDetalle);
@@ -185,18 +175,6 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
             this.ttDescripcionBtn.SetToolTip(this.gbDetalle, "Quitar el artículo elegido.");
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(502, 367);
-            this.label14.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 27);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "%";
             // 
             // btnEliminar
             // 
@@ -268,74 +246,24 @@ namespace FarmaTown.Presentacion
             this.txtbImporteTotal.BackColor = System.Drawing.Color.Silver;
             this.txtbImporteTotal.Enabled = false;
             this.txtbImporteTotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbImporteTotal.Location = new System.Drawing.Point(710, 365);
+            this.txtbImporteTotal.Location = new System.Drawing.Point(401, 365);
             this.txtbImporteTotal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbImporteTotal.Name = "txtbImporteTotal";
             this.txtbImporteTotal.Size = new System.Drawing.Size(169, 29);
             this.txtbImporteTotal.TabIndex = 25;
             this.txtbImporteTotal.TabStop = false;
             // 
-            // txtbSubtotal
-            // 
-            this.txtbSubtotal.BackColor = System.Drawing.Color.Silver;
-            this.txtbSubtotal.Enabled = false;
-            this.txtbSubtotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbSubtotal.Location = new System.Drawing.Point(110, 365);
-            this.txtbSubtotal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtbSubtotal.Name = "txtbSubtotal";
-            this.txtbSubtotal.Size = new System.Drawing.Size(169, 29);
-            this.txtbSubtotal.TabIndex = 23;
-            this.txtbSubtotal.TabStop = false;
-            // 
-            // txtbDescuento
-            // 
-            this.txtbDescuento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbDescuento.Enabled = false;
-            this.txtbDescuento.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbDescuento.Location = new System.Drawing.Point(436, 365);
-            this.txtbDescuento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtbDescuento.MaxLength = 2;
-            this.txtbDescuento.Name = "txtbDescuento";
-            this.txtbDescuento.Size = new System.Drawing.Size(66, 29);
-            this.txtbDescuento.TabIndex = 9;
-            this.txtbDescuento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbDescuento_KeyDown);
-            this.txtbDescuento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtbDescuento_KeyUp);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(316, 371);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 23);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Descuento:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(567, 371);
+            this.label7.Location = new System.Drawing.Point(258, 371);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 23);
             this.label7.TabIndex = 21;
             this.label7.Text = "Importe Total:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 371);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 23);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Subtotal:";
             // 
             // btnRehacerDetalle
             // 
@@ -498,7 +426,7 @@ namespace FarmaTown.Presentacion
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(463, 96);
+            this.label5.Location = new System.Drawing.Point(467, 96);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 23);
@@ -521,9 +449,11 @@ namespace FarmaTown.Presentacion
             // 
             this.txtbCantMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbCantMedicamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbCantMedicamento.Enabled = false;
             this.txtbCantMedicamento.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbCantMedicamento.Location = new System.Drawing.Point(580, 50);
             this.txtbCantMedicamento.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtbCantMedicamento.MaxLength = 2;
             this.txtbCantMedicamento.Name = "txtbCantMedicamento";
             this.txtbCantMedicamento.Size = new System.Drawing.Size(76, 22);
             this.txtbCantMedicamento.TabIndex = 5;
@@ -535,7 +465,7 @@ namespace FarmaTown.Presentacion
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(451, 48);
+            this.label3.Location = new System.Drawing.Point(463, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 23);
@@ -605,6 +535,7 @@ namespace FarmaTown.Presentacion
             this.cboTipoFactura.Name = "cboTipoFactura";
             this.cboTipoFactura.Size = new System.Drawing.Size(100, 27);
             this.cboTipoFactura.TabIndex = 1;
+            this.cboTipoFactura.SelectionChangeCommitted += new System.EventHandler(this.cboTipoFactura_SelectionChangeCommitted);
             // 
             // gbCliente
             // 
@@ -712,6 +643,7 @@ namespace FarmaTown.Presentacion
             this.txtbNroDoc.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.txtbNroDoc.Location = new System.Drawing.Point(447, 41);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtbNroDoc.MaxLength = 2;
             this.txtbNroDoc.Name = "txtbNroDoc";
             this.txtbNroDoc.Size = new System.Drawing.Size(172, 22);
             this.txtbNroDoc.TabIndex = 11;
@@ -893,11 +825,7 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.TextBox txtbNroDoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtbImporteTotal;
-        private System.Windows.Forms.TextBox txtbSubtotal;
-        private System.Windows.Forms.TextBox txtbDescuento;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnNuevaFactura;
         private CustomControls.RJControls.RJButton btnGuardar;
@@ -917,6 +845,5 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Reintegro;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private CustomControls.RJControls.RJButton btnEliminar;
-        private System.Windows.Forms.Label label14;
     }
 }

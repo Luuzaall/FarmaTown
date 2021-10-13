@@ -38,13 +38,20 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmABMLocalidades());
             //Application.Run(new frmABMMedicamentos());
-            //Application.Run(new frmMedicamentos());
+            Application.Run(new frmMedicamentos(FormMode.management));
 
             //Application.Run(new frmOOSS());
             //Application.Run(new frmTiposDoc());
 
-            Usuario us = new Usuario();
-            Application.Run(new frmVentas( us.traerUsuario("maru") ));
+
+
+
+            //Usuario us = new Usuario();
+            //Application.Run(new frmVentas( us.traerUsuario("maru") ));
+
+
+
+
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());
 

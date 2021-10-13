@@ -127,7 +127,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.txtbMedicamento.TextName = "";
+            this.txtbMedicamento.Text = "";
             this.cboTipos.SelectedIndex = -1;
 
         }
@@ -142,7 +142,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             List<Medicamento> resultadoMedicamentos;
             int idTipo = -1;
 
-            string medicamento = this.txtbMedicamento.TextName;
+            string medicamento = this.txtbMedicamento.Text;
 
             if (this.validarDatos())
             {
@@ -181,7 +181,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         {
             frmABMMed = new frmABMMedicamentos();
             string nomMed = (string)this.dgvMedicamentos.CurrentRow.Cells[1].Value;
-            oMedicamento = this.oMedicamento.F(nomMed);
+            oMedicamento = this.oMedicamento.traerMedicamento(nomMed);
             frmABMMed.seleccionarMedicamento(frmABMMedicamentos.FormMode.insert, oMedicamento);
             frmABMMed.ShowDialog();
             this.actualizar();

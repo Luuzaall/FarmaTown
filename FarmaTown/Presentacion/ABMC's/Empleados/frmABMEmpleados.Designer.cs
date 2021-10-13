@@ -135,6 +135,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(301, 20);
             this.txtbNombre.TabIndex = 1;
+            this.txtbNombre.TextChanged += new System.EventHandler(this.txtbNombre_TextChanged);
             this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // txtbPasaporteLetras

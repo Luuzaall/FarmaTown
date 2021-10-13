@@ -592,5 +592,10 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.Visible = false;
             this.lblAvisoNroDoc.Text = "";
         }
+
+        private void txtbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
