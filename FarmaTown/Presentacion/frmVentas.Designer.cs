@@ -123,10 +123,10 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroFactura.Enabled = false;
             this.txtbNroFactura.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbNroFactura.Location = new System.Drawing.Point(457, 27);
+            this.txtbNroFactura.Location = new System.Drawing.Point(454, 25);
             this.txtbNroFactura.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbNroFactura.Name = "txtbNroFactura";
-            this.txtbNroFactura.Size = new System.Drawing.Size(74, 22);
+            this.txtbNroFactura.Size = new System.Drawing.Size(113, 22);
             this.txtbNroFactura.TabIndex = 5;
             this.txtbNroFactura.TabStop = false;
             // 

@@ -71,10 +71,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 {
                     dgv.Rows.Add(lista[i].IdMedicamento.ToString()
                         , lista[i].Nombre.ToString()
-                        , lista[i].Descripcion.ToString()
                         , lista[i].TipoMedicamento.Descripcion.ToString()
                         , lista[i].PrecioLista.ToString()
-                        , lista[i].CantidadStock.ToString()   
+                        , lista[i].CantidadStock.ToString()
+                        , lista[i].Descripcion.ToString()
                         );
                 }
                 dgv.ClearSelection();
@@ -134,7 +134,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-
             /*
              * Verifica la correcta selección
              * para el formulario
@@ -156,7 +155,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                     idTipo = -1;
 
                 }
-                resultadoMedicamentos = oMedicamento.recurperarMedicamentoCParametros(medicamento, idTipo, mostrarConBorrados);
+                resultadoMedicamentos = oMedicamento.recurperarMedicamentoCParametros(medicamento
+                    , idTipo, mostrarConBorrados);
                 this.cargarGrilla(this.dgvMedicamentos, resultadoMedicamentos);
             }
         }
@@ -239,6 +239,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             }
 
         }
-       
+
+        private void txtbEnter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnConsultar, e);
+        }
+
     }
 }

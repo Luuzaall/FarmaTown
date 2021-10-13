@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FarmaTown.Presentacion.Servicios;
+using System.Globalization;
 
 namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 {
@@ -53,6 +54,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Medicamento - FarmaTown";
+                        this.txtbPrecio.Text = 0.ToString("C", new CultureInfo("es-AR"));
                         break;
                     }
 
@@ -214,32 +216,22 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             float precio = float.Parse(this.txtbPrecio.Text);
             int cantidad = int.Parse(this.txtbCantidad.Text);
 
-
-
-
-            if (string.IsNullOrEmpty(nom))
+            if (string.IsNullOrEmpty(nom)
+                || nom == " ")
             {
                 MessageBox.Show("Debe ingresar un nombre",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbNombre.Focus();
             }
-
-            else if (string.IsNullOrEmpty(desc))
-            {
-                MessageBox.Show("Debe ingresar una descripcion",
-                    "Validación de Datos", MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
-                this.txtbDescripcion.Focus();
-            }
-            else if (precio < 0)
+            else if (precio <= 0)
             {
                 MessageBox.Show("Debe ingresar un precio adecuado",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.txtbPrecio.Focus();
             }
-            else if (cantidad < 0)
+            else if (cantidad <= 0)
             {
                 MessageBox.Show("Debe ingresar una cantidad adecuada",
                     "Validación de Datos", MessageBoxButtons.OK
@@ -253,8 +245,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                     , MessageBoxIcon.Information);
 
             }
-
-
             else
             {
                 return true;
@@ -293,17 +283,26 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbCantidad.Text = this.oMedicamento.CantidadStock.ToString();
         }
 
+        private void lblPrecio_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void txtbEnter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+        }
 
+        private void txtbCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noLetras(e);
+            TextBoxService.enter(this.btnAceptar, e);
+        }
 
-
-
-
-
-
-
-
+        private void txtbPrecio_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
+        }
     }
 
 }

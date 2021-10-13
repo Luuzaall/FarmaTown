@@ -37,7 +37,6 @@ namespace FarmaTown.Presentacion.Servicios
              * Se utiliza en métodos de respuesta a eventos 
              * del tipo KeyDown.
              */
-            Console.WriteLine(e.KeyCode);
             if (char.IsDigit((char)e.KeyCode))
             {
                 e.SuppressKeyPress = true;
@@ -46,10 +45,19 @@ namespace FarmaTown.Presentacion.Servicios
 
         public static void noLetras(KeyEventArgs e)
         {
-            Console.WriteLine(e.KeyCode);
             if  ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) &&
                 (e.KeyCode < Keys.NumPad1 || e.KeyCode > Keys.NumPad9) &&
                 !(e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back))
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        public static void precio(KeyEventArgs e)
+        {
+            if ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) &&
+               (e.KeyCode < Keys.NumPad1 || e.KeyCode > Keys.NumPad9) &&
+               !(e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back))
             {
                 e.SuppressKeyPress = true;
             }

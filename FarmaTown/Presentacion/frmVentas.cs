@@ -41,9 +41,9 @@ namespace FarmaTown.Presentacion
         private void inicializarDetalle()
         {
             this.txtbNomMedicamento.Text = "";
-            this.txtbPrecio.Text = 0.ToString("N2");
+            this.txtbPrecio.Text = 0.ToString("C", new CultureInfo("es-AR"));
             this.txtbCantMedicamento.Text = "";
-            this.txtbImporte.Text = 0.ToString("N2");
+            this.txtbImporte.Text = 0.ToString("C", new CultureInfo("es-AR"));
             this.txtbDescuentoOS.Text = 0.ToString("N2");
 
             this.cambiarEstadoBoton(this.btnAgregar, false);
@@ -58,6 +58,7 @@ namespace FarmaTown.Presentacion
             this.txtNomCliente.Text = "";
             this.txtbNroDoc.Text = "";
             this.txtbTipoDoc.Text = "";
+            this.cboObrasSociales.Enabled = true;
             this.cboObrasSociales.SelectedValue = 10;
 
             this.inicializarDetalle();
@@ -224,7 +225,7 @@ namespace FarmaTown.Presentacion
                     MessageBox.Show(string.Concat("La factura ", venta.NroFactura, " se generó correctamente.")
                             , "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.inicializarFormulario();
+                    this.txtbNroFactura.Text = venta.NroFactura.ToString();
 
                 }
                 catch (Exception ex)
@@ -326,7 +327,24 @@ namespace FarmaTown.Presentacion
                 ObraSocial = (ObraSocial)this.cboObrasSociales.SelectedItem,
             };
 
-            listaDetalle.Add(detalle);
+
+            bool yaEsta = false;
+            int idMedNuevo = detalle.Medicamento.IdMedicamento;
+            for (int fila = 0; fila < this.dgvDetalle.Rows.Count; fila++)
+            {
+                DetalleVenta detalleViejo = (DetalleVenta)this.dgvDetalle.Rows[fila].DataBoundItem;
+                //int idMedicamento = (int)typeof(Medicamento).GetProperty("IdMedicamento").GetValue(detalle);
+                if (idMedNuevo == detalleViejo.Medicamento.IdMedicamento)
+                {
+                    detalleViejo.Cantidad += detalle.Cantidad;
+                    yaEsta = true;
+                    this.dgvDetalle.Refresh();
+                    break;
+                }
+            }
+
+            if(!yaEsta)
+                listaDetalle.Add(detalle);
 
             this.calcularTotales();
 
@@ -337,21 +355,8 @@ namespace FarmaTown.Presentacion
                 this.cambiarEstadoBoton(this.btnGuardar, true);
 
             this.cambiarEstadoBoton(this.btnEliminar, false);
-
-            listaDetalle.IndexOf(detalle);
-
-            //for (int fila = 0; fila < this.dgvDetalle.Rows.Count; fila++)
-            //{
-            //    int idMedicamento = (int)typeof(Medicamento).GetProperty("IdMedicamento").GetValue(detalle);
-            //    if (idMedicamento == detalle.IdMedicamento)
-            //    {
-            //        DetalleVenta detalleViejo = (DetalleVenta)this.dgvDetalle.Rows[fila].DataBoundItem;
-            //        detalleViejo.Cantidad += detalle.Cantidad;
-
-            //        break;
-            //    }
-            //}
-            //this.txtbCantMedicamento.Text = cantidad.ToString();
+            this.cboObrasSociales.Enabled = false;
+            
         }
 
         private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -406,6 +411,7 @@ namespace FarmaTown.Presentacion
                 this.calcularTotales();
                 if (listaDetalle.Count == 0)
                 {
+                    this.cboObrasSociales.Enabled = true;
                     this.cambiarEstadoBoton(this.btnGuardar, false);
                 }
             }
