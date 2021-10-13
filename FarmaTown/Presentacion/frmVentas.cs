@@ -337,7 +337,21 @@ namespace FarmaTown.Presentacion
                 this.cambiarEstadoBoton(this.btnGuardar, true);
 
             this.cambiarEstadoBoton(this.btnEliminar, false);
-            this.txtbCantMedicamento.Enabled = false;
+
+            listaDetalle.IndexOf(detalle);
+
+            //for (int fila = 0; fila < this.dgvDetalle.Rows.Count; fila++)
+            //{
+            //    int idMedicamento = (int)typeof(Medicamento).GetProperty("IdMedicamento").GetValue(detalle);
+            //    if (idMedicamento == detalle.IdMedicamento)
+            //    {
+            //        DetalleVenta detalleViejo = (DetalleVenta)this.dgvDetalle.Rows[fila].DataBoundItem;
+            //        detalleViejo.Cantidad += detalle.Cantidad;
+
+            //        break;
+            //    }
+            //}
+            //this.txtbCantMedicamento.Text = cantidad.ToString();
         }
 
         private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
