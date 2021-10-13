@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,7 +119,7 @@ namespace FarmaTown.Datos
                 " SET nombre = '" + oMedicamento.Nombre + "'" +
                 " , descripcion = '" + oMedicamento.Descripcion + "'" +
                 " , tipoMedicamento = " + oMedicamento.TipoMedicamento.IdTipo +
-                " , precioLista = " + oMedicamento.PrecioLista +
+                " , precioLista = " + oMedicamento.PrecioLista.ToString(CultureInfo.InvariantCulture) +
                 " , cantidad = " + oMedicamento.CantidadStock +
                 " WHERE idMedicamento = " + oMedicamento.IdMedicamento;
 

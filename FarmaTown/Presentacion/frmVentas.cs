@@ -225,10 +225,17 @@ namespace FarmaTown.Presentacion
                     };
                     venta.crearVenta(venta);
 
-                        MessageBox.Show(string.Concat("La factura ", venta.NroFactura, " se generó correctamente.")
+                    foreach (var item in listaDetalle)
+                    {
+                        Medicamento med = item.Medicamento;
+                        med.CantidadStock = med.CantidadStock - item.Cantidad;
+                        med.actualizarMedicamento(med);
+                    }
+
+                    MessageBox.Show(string.Concat("La factura ", venta.NroFactura, " se generó correctamente.")
                             , "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.inicializarFormulario();
+                    this.inicializarFormulario();
 
                 }
                 catch (Exception ex)
