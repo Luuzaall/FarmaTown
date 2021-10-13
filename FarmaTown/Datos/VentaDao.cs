@@ -100,6 +100,7 @@ namespace FarmaTown.Datos
                     " SET nroFactura = " + nroFact +
                     " WHERE idVenta = " + int.Parse(idVenta);
 
+                nuevaVenta.NroFactura = nroFact;
                 helper.ejecutarSQL(modifyQuery);
 
 

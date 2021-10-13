@@ -91,7 +91,7 @@ namespace FarmaTown.Presentacion
         private bool validarInput()
         {
             int selectedIndexTipoFact = this.cboTipoFactura.SelectedIndex;
-
+            int selectedIndexOS = this.cboObrasSociales.SelectedIndex;
             if (selectedIndexTipoFact == -1)
             {
                 MessageBox.Show("Debe seleccionar un tipo de factura",
@@ -105,6 +105,13 @@ namespace FarmaTown.Presentacion
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
                 this.btnBuscCliente.Focus();
+            }
+            else if (selectedIndexOS == -1)
+            {
+                MessageBox.Show("Debe seleccionar una obra social",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.cboTipoFactura.Focus();
             }
             else if (listaDetalle.Count == 0)
             {
