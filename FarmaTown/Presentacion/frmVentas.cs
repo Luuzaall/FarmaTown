@@ -49,6 +49,7 @@ namespace FarmaTown.Presentacion
             this.cambiarEstadoBoton(this.btnAgregar, false);
             this.cambiarEstadoBoton(this.btnEliminar, false);
             this.lblAvisoStock.Visible = false;
+            this.lblAvisoCant.Visible = false;
         }
 
         private void inicializarFormulario()
@@ -180,6 +181,7 @@ namespace FarmaTown.Presentacion
                 this.txtbCantMedicamento.Text = "";
                 this.txtbCantMedicamento.Enabled = true;
                 this.lblAvisoStock.Visible = false;
+                this.lblAvisoCant.Visible = false;
             }
             this.cambiarEstadoBoton(this.btnEliminar, false);
 
@@ -287,6 +289,12 @@ namespace FarmaTown.Presentacion
                     // registrado y visualiza el mensaje  de aviso si corresponde.
                 this.cambiarEstadoBoton(this.btnAgregar, !pasaStock);
                 this.lblAvisoStock.Visible = pasaStock;
+                this.lblAvisoCant.Visible = pasaStock;
+
+                if (pasaStock)
+                {
+                    this.lblAvisoCant.Text = oMedicamento.CantidadStock + "!";
+                }
 
                 Double precioUnit = Double.Parse(textPrec);
                 Double importeMed;

@@ -37,6 +37,7 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.lblAvisoCant = new System.Windows.Forms.Label();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.lblAvisoStock = new System.Windows.Forms.Label();
             this.txtbDescuentoOS = new System.Windows.Forms.TextBox();
@@ -148,6 +149,7 @@ namespace FarmaTown.Presentacion
             // gbDetalle
             // 
             this.gbDetalle.BackColor = System.Drawing.Color.Transparent;
+            this.gbDetalle.Controls.Add(this.lblAvisoCant);
             this.gbDetalle.Controls.Add(this.btnEliminar);
             this.gbDetalle.Controls.Add(this.lblAvisoStock);
             this.gbDetalle.Controls.Add(this.txtbDescuentoOS);
@@ -175,6 +177,17 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
             this.ttDescripcionBtn.SetToolTip(this.gbDetalle, "Quitar el artículo elegido.");
+            // 
+            // lblAvisoCant
+            // 
+            this.lblAvisoCant.AutoSize = true;
+            this.lblAvisoCant.BackColor = System.Drawing.Color.IndianRed;
+            this.lblAvisoCant.Location = new System.Drawing.Point(647, 76);
+            this.lblAvisoCant.Name = "lblAvisoCant";
+            this.lblAvisoCant.Size = new System.Drawing.Size(0, 22);
+            this.lblAvisoCant.TabIndex = 30;
+            this.lblAvisoCant.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAvisoCant.Visible = false;
             // 
             // btnEliminar
             // 
@@ -208,11 +221,11 @@ namespace FarmaTown.Presentacion
             // 
             this.lblAvisoStock.AutoSize = true;
             this.lblAvisoStock.BackColor = System.Drawing.Color.IndianRed;
-            this.lblAvisoStock.Location = new System.Drawing.Point(545, 74);
+            this.lblAvisoStock.Location = new System.Drawing.Point(467, 76);
             this.lblAvisoStock.Name = "lblAvisoStock";
-            this.lblAvisoStock.Size = new System.Drawing.Size(156, 22);
+            this.lblAvisoStock.Size = new System.Drawing.Size(180, 22);
             this.lblAvisoStock.TabIndex = 28;
-            this.lblAvisoStock.Text = "¡Supera el Stock!";
+            this.lblAvisoStock.Text = "¡Supera el Stock de";
             this.lblAvisoStock.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblAvisoStock.Visible = false;
             // 
@@ -695,7 +708,6 @@ namespace FarmaTown.Presentacion
             this.btnGuardar.BorderColor = System.Drawing.Color.Green;
             this.btnGuardar.BorderRadius = 20;
             this.btnGuardar.BorderSize = 1;
-            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnGuardar.Enabled = false;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
@@ -720,7 +732,6 @@ namespace FarmaTown.Presentacion
             this.btnNuevaFactura.BorderColor = System.Drawing.Color.Green;
             this.btnNuevaFactura.BorderRadius = 20;
             this.btnNuevaFactura.BorderSize = 1;
-            this.btnNuevaFactura.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNuevaFactura.FlatAppearance.BorderSize = 0;
             this.btnNuevaFactura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.btnNuevaFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -845,5 +856,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Reintegro;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private CustomControls.RJControls.RJButton btnEliminar;
+        private System.Windows.Forms.Label lblAvisoCant;
     }
 }

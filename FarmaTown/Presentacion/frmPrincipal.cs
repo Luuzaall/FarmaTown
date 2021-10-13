@@ -217,7 +217,7 @@ namespace FarmaTown.Presentacion
             this.lblReloj.Text = time;
         }
 
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmVentas ofrmVentas = new frmVentas(oUsuarioLogueado);
             ofrmVentas.ShowDialog();
