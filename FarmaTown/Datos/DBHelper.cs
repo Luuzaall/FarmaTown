@@ -188,7 +188,9 @@ namespace FarmaTown.Datos
 
         public DataTable consultarTabla(string tabla)
         {
-            return this.consultaSQL("SELECT * FROM " + tabla);
+            return this.consultaSQL("SELECT * " +
+                "FROM " + tabla +
+                " WHERE borrado = 0");
         }
 
         public int ejecutarSQLCONPARAMETROS(string strSql, Dictionary<string, object> parametros = null)

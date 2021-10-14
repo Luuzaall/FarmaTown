@@ -25,6 +25,7 @@ namespace FarmaTown.Presentacion
         private ObraSocial oObraSocial;
         private BindingList<DetalleVenta> listaDetalle;
         private Usuario oUsuario;
+        private MedioPago oMedioPago;
 
 
         public frmVentas(Usuario usuario)
@@ -34,6 +35,7 @@ namespace FarmaTown.Presentacion
             oTipoFact = new TipoFactura();
             oCliente = new Cliente();
             oObraSocial = new ObraSocial();
+            oMedioPago = new MedioPago();
             listaDetalle = new BindingList<DetalleVenta>();
             oUsuario = usuario;
         }
@@ -61,6 +63,7 @@ namespace FarmaTown.Presentacion
             this.txtbTipoDoc.Text = "";
             this.cboObrasSociales.Enabled = true;
             this.cboObrasSociales.SelectedValue = 10;
+            this.cboMedioPago.SelectedIndex = -1;
 
             this.inicializarDetalle();
 
@@ -110,6 +113,14 @@ namespace FarmaTown.Presentacion
                     , MessageBoxIcon.Information);
                 this.btnBuscMedicamento.Focus();
             }
+            else if (this.cboMedioPago.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe elegir un medio de pago " +
+                    "al detalle",
+                    "Validación de Datos", MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+                this.cboMedioPago.Focus();
+            }
             else
             {
                 return true;
@@ -119,6 +130,22 @@ namespace FarmaTown.Presentacion
         }
 
         //MÉTODOS DE RESPUESTA A EVENTOS
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+            this.inicializarFormulario();
+
+            ComboBoxService.cargarCombo(this.cboTipoFactura, oTipoFact.recuperarTodos()
+                , "Nombre", "IdTipoFactura");
+            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos(false)
+                , "Nombre", "IdOS");
+            ComboBoxService.cargarCombo(this.cboMedioPago, oMedioPago.recuperarTodos()
+                , "Nombre", "IdMedioPago");
+
+            this.cboObrasSociales.SelectedValue = 10;
+
+            this.dgvDetalle.DataSource = listaDetalle;
+        }
 
         private void btnBuscCliente_Click(object sender, EventArgs e)
         {
@@ -214,6 +241,7 @@ namespace FarmaTown.Presentacion
                         Detalles = listaDetalle,
                         Empleado = oUsuario.Empleado,
                         Farmacia = oUsuario.Empleado.Farmacia,
+                        MedioPago = (MedioPago)this.cboMedioPago.SelectedItem,
                     };
                     venta.crearVenta(venta);
 
@@ -249,19 +277,6 @@ namespace FarmaTown.Presentacion
             this.inicializarFormulario();
             this.txtbImporteTotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
             this.cambiarEstadoBoton(this.btnGuardar, false);
-        }
-
-        private void frmVentas_Load(object sender, EventArgs e)
-        {
-            this.inicializarFormulario();
-
-            ComboBoxService.cargarCombo(this.cboTipoFactura, oTipoFact.recuperarTodos()
-                , "Nombre", "IdTipoFactura");
-            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos(false)
-                , "Nombre", "IdOS");
-            this.cboObrasSociales.SelectedValue = 10;
-
-            this.dgvDetalle.DataSource = listaDetalle;
         }
 
         private void txtbCantMedicamento_KeyDown(object sender, KeyEventArgs e)
@@ -360,6 +375,7 @@ namespace FarmaTown.Presentacion
 
             if (oCliente.Nombre != null
                    &&  this.cboTipoFactura.SelectedIndex != -1)
+
                 this.cambiarEstadoBoton(this.btnGuardar, true);
 
             this.cambiarEstadoBoton(this.btnEliminar, false);

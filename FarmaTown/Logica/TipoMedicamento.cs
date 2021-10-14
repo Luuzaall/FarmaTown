@@ -20,7 +20,7 @@ namespace FarmaTown.Logica
         {
             oTipoMedDao = new TipoMedDao();
         }
-        internal object recuperarTodos()
+        internal List<TipoMedicamento> recuperarTodos()
         {
             return oTipoMedDao.recuperarTodos();
         }

@@ -11,13 +11,9 @@ namespace FarmaTown.Datos
     class TipoDocDao
     { 
 
-        public List<TipoDocumento> recuperarTodos(bool esConBorrados)
+        public List<TipoDocumento> recuperarTodos()
         {
-            string query = "SELECT *" +
-                " FROM TiposDocumento" +
-                " WHERE borrado = 0";
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            DataTable tabla = DBHelper.getDBHelper().consultarTabla("TiposDocumento");
             int cantFilas = tabla.Rows.Count;
 
             List<TipoDocumento> listaTD = new List<TipoDocumento>();

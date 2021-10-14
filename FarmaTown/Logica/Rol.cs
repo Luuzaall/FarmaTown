@@ -20,7 +20,7 @@ namespace FarmaTown.Logica
             oRolDao = new RolDao();
         }
 
-        public Object recuperarTodos()
+        public List<Rol> recuperarTodos()
         {
             return oRolDao.recuperarTodos();
         }

@@ -24,6 +24,7 @@ namespace FarmaTown.Datos
                                 ", fechaFactura" +
                                 ", idEmpleado" +
                                 ", idTipoFactura" +
+                                ", idMedioPago" +
                                 ", borrado)" +
                             " VALUES" +
                                 "( @idFarmacia" +
@@ -32,20 +33,41 @@ namespace FarmaTown.Datos
                                 ", @fechaFact" +
                                 ", @idEmpleado" +
                                 ", @tipoFact" +
+                                ", @idTipoPago" +
                                 ", @borrado)";
 
                 var parametros = new Dictionary<string, object>();
                 parametros.Add("idFarmacia", nuevaVenta.Farmacia.IdFarmacia);
-                parametros.Add("nroFact", nuevaVenta.IdVenta);
+                parametros.Add("nroFact", nuevaVenta.NroFactura);
                 parametros.Add("idCliente", nuevaVenta.Cliente.IdCliente);
                 parametros.Add("fechaFact", nuevaVenta.FechaFactura);
                 parametros.Add("idEmpleado", nuevaVenta.Empleado.IdEmpleado);
                 parametros.Add("tipoFact", nuevaVenta.TipoFactura.IdTipofactura);
+                parametros.Add("idTipoPago", nuevaVenta.MedioPago.idMedioPago);
                 parametros.Add("borrado", 0);
                 helper.ejecutarSQLCONPARAMETROS(query, parametros);
 
                 var newId = helper.consultaSQLScalar(" SELECT @@IDENTITY");
                 nuevaVenta.IdVenta = Convert.ToInt32(newId);
+
+                // Dentro de la transacción, se genera
+                // el nro factura y se lo ubica en la tabla venta.
+                string idVenta = nuevaVenta.IdVenta.ToString();
+                string idFarma = nuevaVenta.Farmacia.IdFarmacia.ToString();
+
+                int diferencia = 6 - idVenta.Length;
+                int nroFact = int.Parse(idFarma + string.Concat(Enumerable.Repeat("0", diferencia)) + idVenta);
+
+                string modifyQuery = " UPDATE Ventas" +
+                    " SET nroFactura = @nroFact" + 
+                    " WHERE idVenta = " + int.Parse(idVenta);
+
+                var paramNroFact = new Dictionary<string, object>();
+                paramNroFact.Add("nroFact", nroFact);
+
+                helper.ejecutarSQLCONPARAMETROS(modifyQuery, paramNroFact);
+
+                nuevaVenta.NroFactura = nroFact;
 
                 foreach (var itemVenta in nuevaVenta.Detalles)
                 {
@@ -89,21 +111,6 @@ namespace FarmaTown.Datos
             {
                 // Cierra la conexión 
                 helper.close();
-
-                string idVenta = nuevaVenta.IdVenta.ToString();
-                string idFarma = nuevaVenta.Farmacia.IdFarmacia.ToString();
-
-                int diferencia = 6 - idVenta.Length;
-                int nroFact = int.Parse(idFarma + string.Concat(Enumerable.Repeat("0", diferencia)) + idVenta);
-
-                string modifyQuery = " UPDATE Ventas" +
-                    " SET nroFactura = " + nroFact +
-                    " WHERE idVenta = " + int.Parse(idVenta);
-
-                nuevaVenta.NroFactura = nroFact;
-                helper.ejecutarSQL(modifyQuery);
-
-
 
             }
             return true;

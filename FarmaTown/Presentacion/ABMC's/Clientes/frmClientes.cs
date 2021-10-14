@@ -35,7 +35,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         // MÉTODOS DE RESPUESTA A EVENTOS
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false)
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos()
                 , "nombre", "idTipo");
 
            if (modo == FormMode.selection)

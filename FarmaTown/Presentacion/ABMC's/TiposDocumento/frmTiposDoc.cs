@@ -128,7 +128,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposDocumento
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodos(false));
+            this.cargarGrilla(dgvTiposDoc, oTipoDoc.recuperarTodos());
             this.deshabilitarBotones();
         }
 

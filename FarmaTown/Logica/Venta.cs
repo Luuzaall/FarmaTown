@@ -16,6 +16,7 @@ namespace FarmaTown.Logica
         public Cliente Cliente { get; set; }
         public DateTime FechaFactura { get; set; }
         public Empleado Empleado { get; set; }
+        public MedioPago MedioPago { get; set; }
         public IList<DetalleVenta> Detalles { get; set; }
 
         //public bool Borrado { get; set; }

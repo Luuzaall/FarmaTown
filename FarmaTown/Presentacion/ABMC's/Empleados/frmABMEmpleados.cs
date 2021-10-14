@@ -42,7 +42,7 @@ namespace FarmaTown.Presentacion.Empleados
         private void frmABMEmpleados_Load(object sender, EventArgs e)
         {
             //Carga los combos
-            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
             List<Farmacia> listaFarmacias = oFarmacia.recuperarTodos();
 
             if (listaFarmacias.Count > 0)

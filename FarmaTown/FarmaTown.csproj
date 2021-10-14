@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\ClienteDao.cs" />
+    <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
     <Compile Include="Datos\TipoFacturaDao.cs" />
     <Compile Include="Datos\VentaDao.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Logica\Farmacia.cs" />
     <Compile Include="Logica\Localidad.cs" />
     <Compile Include="Logica\Medicamento.cs" />
+    <Compile Include="Logica\MedioPago.cs" />
     <Compile Include="Logica\ObraSocial.cs" />
     <Compile Include="Logica\Rol.cs" />
     <Compile Include="Logica\Sesion.cs" />
@@ -214,6 +216,12 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmRendicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmRendicion.Designer.cs">
+      <DependentUpon>frmRendicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmRendicion.resx">
+      <DependentUpon>frmRendicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
@@ -356,6 +367,8 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presentacion\Reportes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

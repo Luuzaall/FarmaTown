@@ -256,7 +256,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void frmABMClientes_Load(object sender, EventArgs e)
         {
-            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(false), "nombre", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
             List<Barrio> listaBarrios = oBarrio.recuperarTodos(false);
 
             if (listaBarrios.Count > 0)

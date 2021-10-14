@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace FarmaTown.Datos
 {
-    class RolDao
+    class MedioPagoDao
     {
-
-        public List<Rol> recuperarTodos()
+        public List<MedioPago> recuperarTodos()
         {
-            DataTable tabla = DBHelper.getDBHelper().consultarTabla("Roles");
+            DataTable tabla = DBHelper.getDBHelper().consultarTabla("MediosPago");
 
             return listMapping(tabla);
+
         }
 
-        private List<Rol> listMapping(DataTable tabla)
+        private List<MedioPago> listMapping(DataTable tabla)
         {
             /*
              * Recibe una tabla con filas
@@ -26,7 +26,7 @@ namespace FarmaTown.Datos
              * una de ellas en un objeto del 
              * tipo de Empleado
              */
-            List<Rol> lista = new List<Rol>();
+            List<MedioPago> lista = new List<MedioPago>();
             int cantFilas = tabla.Rows.Count;
 
             for (int i = 0; i < cantFilas; i++)
@@ -38,7 +38,7 @@ namespace FarmaTown.Datos
             return lista;
         }
 
-        private Rol objectMapping(DataRow row)
+        private MedioPago objectMapping(DataRow row)
         {
             /*
              * Recibe una registro de datos y lo 
@@ -46,13 +46,13 @@ namespace FarmaTown.Datos
              * Tipo Factura.
              */
 
-            Rol oRol = new Rol
+            MedioPago oMedioPago = new MedioPago
             {
-                IdRol = Convert.ToInt32(row["idRol"].ToString()),
+                idMedioPago = Convert.ToInt32(row["idMedioPago"].ToString()),
                 Nombre = row["nombre"].ToString(),
             };
 
-            return oRol;
+            return oMedioPago;
         }
 
     }
