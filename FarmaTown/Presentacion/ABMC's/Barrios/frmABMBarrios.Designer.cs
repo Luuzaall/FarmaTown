@@ -180,12 +180,12 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnAceptar.Location = new System.Drawing.Point(355, 278);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(127, 46);
+            this.btnAceptar.Size = new System.Drawing.Size(120, 46);
             this.btnAceptar.TabIndex = 37;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
@@ -248,6 +248,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_small_town_rxs3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(654, 336);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.dgvLocalidades);

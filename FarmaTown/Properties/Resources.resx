@@ -151,6 +151,12 @@
   <data name="undraw_city_life_gnpr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_city_life_gnpr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ABMClients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\ABMClients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medicamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\medicamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,7 +253,7 @@
   <data name="undraw_Location_tracking_re_n3ok (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ABMClients" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\ABMClients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medicamentootro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\medicamentootro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

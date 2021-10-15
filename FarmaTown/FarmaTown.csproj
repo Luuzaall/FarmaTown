@@ -137,6 +137,18 @@
     <Compile Include="Presentacion\ABMC%27s\TiposDocumento\frmTiposDoc.Designer.cs">
       <DependentUpon>frmTiposDoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposMedicamento\frmABMTiposMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposMedicamento\frmABMTiposMed.Designer.cs">
+      <DependentUpon>frmABMTiposMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposMedicamento\frmTiposMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ABMC%27s\TiposMedicamento\frmTiposMed.Designer.cs">
+      <DependentUpon>frmTiposMed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\DiseñosElemenGUI\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -281,6 +293,12 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\TiposDocumento\frmTiposDoc.resx">
       <DependentUpon>frmTiposDoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\TiposMedicamento\frmABMTiposMed.resx">
+      <DependentUpon>frmABMTiposMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ABMC%27s\TiposMedicamento\frmTiposMed.resx">
+      <DependentUpon>frmTiposMed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +378,8 @@
     <None Include="Presentacion\Imagenes\rehacer.png" />
     <None Include="Presentacion\Imagenes\save.png" />
     <None Include="Presentacion\Imagenes\ready.png" />
+    <None Include="Presentacion\Imagenes\medicamento.png" />
+    <None Include="Presentacion\Imagenes\medicamentootro.png" />
     <Content Include="Presentacion\Imagenes\trash.png" />
     <Content Include="Presentacion\Imagenes\undraw_High_five_re_jy71.png" />
     <None Include="Presentacion\Imagenes\undraw_Location_tracking_re_n3ok %281%29.png" />

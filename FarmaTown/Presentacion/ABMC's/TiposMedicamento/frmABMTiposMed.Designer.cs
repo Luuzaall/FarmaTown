@@ -1,7 +1,7 @@
 ﻿
-namespace FarmaTown.Presentacion.Localidades
+namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
 {
-    partial class frmABMLocalidades
+    partial class frmABMTiposMed
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,27 @@ namespace FarmaTown.Presentacion.Localidades
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMLocalidades));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMTiposMed));
+            this.lblAviso = new System.Windows.Forms.Label();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.lblNomLocalidad = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
-            this.lblAviso = new System.Windows.Forms.Label();
+            this.lblTipoMedicamento = new System.Windows.Forms.Label();
+            this.txtbTipoMed = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // lblAviso
+            // 
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.lblAviso.Location = new System.Drawing.Point(15, 22);
+            this.lblAviso.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(218, 22);
+            this.lblAviso.TabIndex = 43;
+            this.lblAviso.Text = "El campo es obligatorio";
+            this.lblAviso.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnCancelar
             // 
@@ -55,15 +68,14 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(116, 158);
+            this.btnCancelar.Location = new System.Drawing.Point(129, 120);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(120, 46);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.Size = new System.Drawing.Size(146, 42);
+            this.btnCancelar.TabIndex = 45;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -81,11 +93,11 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(299, 158);
+            this.btnAceptar.Location = new System.Drawing.Point(317, 120);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(120, 46);
-            this.btnAceptar.TabIndex = 37;
+            this.btnAceptar.Size = new System.Drawing.Size(146, 42);
+            this.btnAceptar.TabIndex = 44;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -108,74 +120,57 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(431, 81);
+            this.btnLimpiar.Location = new System.Drawing.Point(486, 56);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(103, 40);
-            this.btnLimpiar.TabIndex = 36;
+            this.btnLimpiar.Size = new System.Drawing.Size(104, 45);
+            this.btnLimpiar.TabIndex = 46;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // lblNomLocalidad
+            // lblTipoMedicamento
             // 
-            this.lblNomLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNomLocalidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNomLocalidad.Location = new System.Drawing.Point(31, 96);
-            this.lblNomLocalidad.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.lblNomLocalidad.Name = "lblNomLocalidad";
-            this.lblNomLocalidad.Size = new System.Drawing.Size(126, 41);
-            this.lblNomLocalidad.TabIndex = 35;
-            this.lblNomLocalidad.TabStop = false;
-            this.lblNomLocalidad.Text = "Nombre(*):";
-            this.lblNomLocalidad.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblTipoMedicamento.AutoSize = true;
+            this.lblTipoMedicamento.BackColor = System.Drawing.Color.Transparent;
+            this.lblTipoMedicamento.Location = new System.Drawing.Point(12, 68);
+            this.lblTipoMedicamento.Name = "lblTipoMedicamento";
+            this.lblTipoMedicamento.Size = new System.Drawing.Size(256, 23);
+            this.lblTipoMedicamento.TabIndex = 47;
+            this.lblTipoMedicamento.Text = "Tipo de Medicamento(*):";
             // 
-            // txtbNombre
+            // txtbTipoMed
             // 
-            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(187, 96);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(212, 25);
-            this.txtbNombre.TabIndex = 34;
-            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
+            this.txtbTipoMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbTipoMed.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbTipoMed.Location = new System.Drawing.Point(277, 68);
+            this.txtbTipoMed.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbTipoMed.Name = "txtbTipoMed";
+            this.txtbTipoMed.Size = new System.Drawing.Size(197, 25);
+            this.txtbTipoMed.TabIndex = 48;
             // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.lblAviso.Location = new System.Drawing.Point(27, 36);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(218, 22);
-            this.lblAviso.TabIndex = 43;
-            this.lblAviso.Text = "El campo es obligatorio";
-            this.lblAviso.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // frmABMLocalidades
+            // frmABMTiposMed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FarmaTown.Properties.Resources.undraw_Location_tracking_re_n3ok__1_1;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(559, 221);
-            this.Controls.Add(this.lblAviso);
+            this.ClientSize = new System.Drawing.Size(605, 176);
+            this.Controls.Add(this.txtbTipoMed);
+            this.Controls.Add(this.lblTipoMedicamento);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.lblNomLocalidad);
-            this.Controls.Add(this.txtbNombre);
-            this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.lblAviso);
+            this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
-            this.Name = "frmABMLocalidades";
+            this.Name = "frmABMTiposMed";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmABMLocalidades_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,11 +178,11 @@ namespace FarmaTown.Presentacion.Localidades
 
         #endregion
 
+        private System.Windows.Forms.Label lblAviso;
         private CustomControls.RJControls.RJButton btnCancelar;
         private CustomControls.RJControls.RJButton btnAceptar;
         private CustomControls.RJControls.RJButton btnLimpiar;
-        private DiseñosElemGUI.TransparentLabel lblNomLocalidad;
-        private System.Windows.Forms.TextBox txtbNombre;
-        private System.Windows.Forms.Label lblAviso;
+        private System.Windows.Forms.Label lblTipoMedicamento;
+        private System.Windows.Forms.TextBox txtbTipoMed;
     }
 }
