@@ -37,7 +37,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * Encargado de preparar los combos, grillas y 
              * botones del formulario.
              */
-            ComboBoxService.cargarCombo(this.cboTipos, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipos, oTipoMedicamento.recuperarTodos(true), "descripcion", "idTipo");
             this.deshabilitarBotones();
             List<Medicamento> listaMedicamentos = oMedicamento.recuperarTodos();
             if (listaMedicamentos.Count > 0)

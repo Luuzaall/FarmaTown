@@ -132,5 +132,35 @@ namespace FarmaTown.Datos
 
             return oTipoMed;
         }
+        
+        
+        
+        
+        //NO SE USA CREO
+        public List<TipoMedicamento> recuperarTodos()
+        {
+            DataTable tabla = DBHelper.getDBHelper().consultarTabla("TiposMedicamento");
+            return listMapping(tabla);
+        }
+
+        private List<TipoMedicamento> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<TipoMedicamento> lista = new List<TipoMedicamento>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
+        }
     }
 }
