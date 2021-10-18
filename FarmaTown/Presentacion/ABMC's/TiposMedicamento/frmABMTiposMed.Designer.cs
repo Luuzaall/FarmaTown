@@ -35,7 +35,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.lblTipoMedicamento = new System.Windows.Forms.Label();
-            this.txtbTipoMed = new System.Windows.Forms.TextBox();
+            this.txtbDescripcion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAviso
@@ -76,6 +76,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -128,6 +129,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblTipoMedicamento
             // 
@@ -139,15 +141,16 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.lblTipoMedicamento.TabIndex = 47;
             this.lblTipoMedicamento.Text = "Tipo de Medicamento(*):";
             // 
-            // txtbTipoMed
+            // txtbDescripcion
             // 
-            this.txtbTipoMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbTipoMed.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbTipoMed.Location = new System.Drawing.Point(277, 68);
-            this.txtbTipoMed.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbTipoMed.Name = "txtbTipoMed";
-            this.txtbTipoMed.Size = new System.Drawing.Size(197, 25);
-            this.txtbTipoMed.TabIndex = 48;
+            this.txtbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbDescripcion.Location = new System.Drawing.Point(277, 68);
+            this.txtbDescripcion.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbDescripcion.Name = "txtbDescripcion";
+            this.txtbDescripcion.Size = new System.Drawing.Size(197, 25);
+            this.txtbDescripcion.TabIndex = 48;
+            this.txtbDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbDescripcion_KeyDown);
             // 
             // frmABMTiposMed
             // 
@@ -157,7 +160,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(605, 176);
-            this.Controls.Add(this.txtbTipoMed);
+            this.Controls.Add(this.txtbDescripcion);
             this.Controls.Add(this.lblTipoMedicamento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancelar);
@@ -171,6 +174,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.Name = "frmABMTiposMed";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmABMTiposMed_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +187,6 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
         private CustomControls.RJControls.RJButton btnAceptar;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private System.Windows.Forms.Label lblTipoMedicamento;
-        private System.Windows.Forms.TextBox txtbTipoMed;
+        private System.Windows.Forms.TextBox txtbDescripcion;
     }
 }

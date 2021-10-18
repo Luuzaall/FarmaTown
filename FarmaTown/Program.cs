@@ -8,6 +8,7 @@ using FarmaTown.Datos;
 using FarmaTown.Logica;
 using FarmaTown.Presentacion.ABMC_s.Clientes;
 using FarmaTown.Presentacion.ABMC_s.Medicamentos;
+using FarmaTown.Presentacion.ABMC_s.TiposMedicamento;
 using FarmaTown.Presentacion.Empleados;
 using FarmaTown.Presentacion.Farmacias;
 using FarmaTown.Presentacion.Localidades;
@@ -43,11 +44,11 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmOOSS());
             //Application.Run(new frmTiposDoc());
 
+            Application.Run(new frmTiposMed());
 
 
-
-            Usuario us = new Usuario();
-            Application.Run(new frmVentas(us.traerUsuario("maru")));
+            //Usuario us = new Usuario();
+            //Application.Run(new frmVentas(us.traerUsuario("maru")));
 
 
 

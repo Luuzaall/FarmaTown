@@ -32,20 +32,20 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTiposMed));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.txtbDescripcion = new System.Windows.Forms.TextBox();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.lblTipoMed = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvTiposMed = new System.Windows.Forms.DataGridView();
+            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposMed)).BeginInit();
@@ -66,7 +66,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.gbFiltros.Controls.Add(this.txtbNombre);
+            this.gbFiltros.Controls.Add(this.txtbDescripcion);
             this.gbFiltros.Controls.Add(this.btnConsultar);
             this.gbFiltros.Controls.Add(this.btnLimpiar);
             this.gbFiltros.Controls.Add(this.lblTipoMed);
@@ -77,15 +77,16 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
-            // txtbNombre
+            // txtbDescripcion
             // 
-            this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(250, 59);
-            this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(218, 25);
-            this.txtbNombre.TabIndex = 1;
+            this.txtbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbDescripcion.Location = new System.Drawing.Point(250, 59);
+            this.txtbDescripcion.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
+            this.txtbDescripcion.Name = "txtbDescripcion";
+            this.txtbDescripcion.Size = new System.Drawing.Size(218, 25);
+            this.txtbDescripcion.TabIndex = 1;
+            this.txtbDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbDescripcion_KeyDown);
             // 
             // btnConsultar
             // 
@@ -111,6 +112,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnLimpiar
             // 
@@ -136,6 +138,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // lblTipoMed
             // 
@@ -184,6 +187,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // dgvTiposMed
             // 
@@ -206,6 +210,21 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.dgvTiposMed.Size = new System.Drawing.Size(480, 218);
             this.dgvTiposMed.TabIndex = 60;
             this.dgvTiposMed.TabStop = false;
+            this.dgvTiposMed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposMed_CellClick);
+            // 
+            // idTipo
+            // 
+            this.idTipo.HeaderText = "ID";
+            this.idTipo.Name = "idTipo";
+            this.idTipo.ReadOnly = true;
+            this.idTipo.Width = 50;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 250;
             // 
             // lblAviso
             // 
@@ -239,6 +258,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnSalir.TabIndex = 40;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
@@ -261,6 +281,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnEditar.TabIndex = 38;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -283,6 +304,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnEliminar.TabIndex = 39;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -305,20 +327,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnAgregar.TabIndex = 37;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // idTipo
-            // 
-            this.idTipo.HeaderText = "ID";
-            this.idTipo.Name = "idTipo";
-            this.idTipo.ReadOnly = true;
-            this.idTipo.Width = 50;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 250;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmTiposMed
             // 
@@ -343,6 +352,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.Name = "frmTiposMed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Tipos de Medicamentos - FarmaTown";
+            this.Load += new System.EventHandler(this.frmTiposMed_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);
@@ -356,7 +366,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox gbFiltros;
-        private System.Windows.Forms.TextBox txtbNombre;
+        private System.Windows.Forms.TextBox txtbDescripcion;
         private CustomControls.RJControls.RJButton btnConsultar;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private System.Windows.Forms.Label lblTipoMed;

@@ -20,10 +20,49 @@ namespace FarmaTown.Logica
         {
             oTipoMedDao = new TipoMedDao();
         }
-        internal List<TipoMedicamento> recuperarTodos()
+        public List<TipoMedicamento> recuperarCParam(string descripcion)
         {
-            return oTipoMedDao.recuperarTodos();
+            return this.oTipoMedDao.recuperarCParam(descripcion);
+        }
+
+        public List<TipoMedicamento> recuperarTodos(bool esCBorrados)
+        {
+            return this.oTipoMedDao.recuperarTodos(esCBorrados);
+        }
+
+        public TipoMedicamento traerTipoMed(int idTipo)
+        {
+            return this.oTipoMedDao.traer(idTipo);
+        }
+
+        public TipoMedicamento traerTipoMed(string descripcion)
+        {
+            return this.oTipoMedDao.traer(descripcion);
+        }
+
+        public bool crearTipoMedicamento(TipoMedicamento nuevoTipoMedicamento)
+        {
+            return validar(this.oTipoMedDao.crear(nuevoTipoMedicamento));
+        }
+
+        public bool actualizar(TipoMedicamento oTipoMed)
+        {
+            return validar(this.oTipoMedDao.actualizar(oTipoMed));
+        }
+
+        public bool cambiarEstado(TipoMedicamento oTipoMed, bool seHabilita)
+        {
+            return validar(this.oTipoMedDao.cambiarEstado(oTipoMed, false));
+        }
+
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
-
 }
