@@ -36,8 +36,6 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboRol = new System.Windows.Forms.ComboBox();
-            this.txtbFantasma = new JMaterialTextbox.JMaterialTextbox();
-            this.jMaterialTextbox2 = new JMaterialTextbox.JMaterialTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,50 +139,6 @@ namespace FarmaTown.Presentacion
             this.cboRol.Size = new System.Drawing.Size(301, 27);
             this.cboRol.TabIndex = 6;
             this.cboRol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
-            // 
-            // txtbFantasma
-            // 
-            this.txtbFantasma.BackColor = System.Drawing.Color.Transparent;
-            this.txtbFantasma.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.txtbFantasma.Font_Size = new System.Drawing.Font("Century Gothic", 15F);
-            this.txtbFantasma.ForeColors = System.Drawing.Color.Black;
-            this.txtbFantasma.HintText = null;
-            this.txtbFantasma.IsPassword = false;
-            this.txtbFantasma.LineBackColor = System.Drawing.Color.Red;
-            this.txtbFantasma.LineThickness = 3;
-            this.txtbFantasma.Location = new System.Drawing.Point(368, 110);
-            this.txtbFantasma.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.txtbFantasma.MaxLength = 32767;
-            this.txtbFantasma.Name = "txtbFantasma";
-            this.txtbFantasma.OnFocusedColor = System.Drawing.Color.Black;
-            this.txtbFantasma.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.txtbFantasma.ReadOnly = false;
-            this.txtbFantasma.Size = new System.Drawing.Size(452, 31);
-            this.txtbFantasma.TabIndex = 12;
-            this.txtbFantasma.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtbFantasma.TextName = "";
-            // 
-            // jMaterialTextbox2
-            // 
-            this.jMaterialTextbox2.BackColor = System.Drawing.Color.Transparent;
-            this.jMaterialTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox2.Font_Size = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.jMaterialTextbox2.ForeColors = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.HintText = null;
-            this.jMaterialTextbox2.IsPassword = false;
-            this.jMaterialTextbox2.LineBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jMaterialTextbox2.LineThickness = 2;
-            this.jMaterialTextbox2.Location = new System.Drawing.Point(245, 149);
-            this.jMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.jMaterialTextbox2.MaxLength = 32767;
-            this.jMaterialTextbox2.Name = "jMaterialTextbox2";
-            this.jMaterialTextbox2.OnFocusedColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.OnFocusedTextColor = System.Drawing.Color.Black;
-            this.jMaterialTextbox2.ReadOnly = false;
-            this.jMaterialTextbox2.Size = new System.Drawing.Size(301, 23);
-            this.jMaterialTextbox2.TabIndex = 14;
-            this.jMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.jMaterialTextbox2.TextName = "";
             // 
             // groupBox2
             // 
@@ -526,8 +480,6 @@ namespace FarmaTown.Presentacion
         #endregion
         private CustomControls.RJControls.RJButton btnAceptar;
         private CustomControls.RJControls.RJButton btnCancelar;
-        private JMaterialTextbox.JMaterialTextbox txtbFantasma;
-        private JMaterialTextbox.JMaterialTextbox jMaterialTextbox2;
         private System.Windows.Forms.ComboBox cboRol;
         private DiseñosElemGUI.TransparentLabel lblNombre;
         private DiseñosElemGUI.TransparentLabel lblRol;

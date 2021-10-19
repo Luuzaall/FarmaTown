@@ -33,18 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FlatButton">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Facu\3 AÑO\E2 - Programación Aplicaciónes Visuales I\Código\Buttons\FlatButton.dll</HintPath>
-    </Reference>
-    <Reference Include="JMaterialTextbox">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Facu\3 AÑO\E2 - Programación Aplicaciónes Visuales I\Código\Buttons\JMaterialTextbox.dll</HintPath>
-    </Reference>
-    <Reference Include="JMetroTextBox">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Facu\3 AÑO\E2 - Programación Aplicaciónes Visuales I\Código\Buttons\JMetroTextBox.dll</HintPath>
-    </Reference>
-    <Reference Include="JTextBox2">
-      <HintPath>..\..\..\..\..\OneDrive\Documents\Facu\3 AÑO\E2 - Programación Aplicaciónes Visuales I\Código\Buttons\JTextBox2.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
