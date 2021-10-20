@@ -252,10 +252,16 @@
     <Compile Include="Presentacion\frmRendicion.Designer.cs">
       <DependentUpon>frmRendicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmVentas.cs">
+    <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmVentas.Designer.cs">
+    <Compile Include="Presentacion\Transacciones\frmConsVentas.Designer.cs">
+      <DependentUpon>frmConsVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
@@ -333,7 +339,10 @@
     <EmbeddedResource Include="Presentacion\frmRendicion.resx">
       <DependentUpon>frmRendicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmVentas.resx">
+    <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
+      <DependentUpon>frmConsVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Transacciones\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
