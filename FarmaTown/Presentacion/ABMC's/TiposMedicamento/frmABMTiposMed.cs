@@ -10,16 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentacion.Localidades
+namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
 {
-    public partial class frmABMLocalidades : Form
+    public partial class frmABMTiposMed : Form
     {
         private FormMode formMode = FormMode.insert;
-        Localidad oLocalidad;
-        public frmABMLocalidades()
+        TipoMedicamento oTipoMed;
+        public frmABMTiposMed()
         {
             InitializeComponent();
-            oLocalidad = new Localidad();
+            oTipoMed = new TipoMedicamento();
         }
         public enum FormMode
         {
@@ -31,30 +31,39 @@ namespace FarmaTown.Presentacion.Localidades
         //-----------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
-        public void seleccionarLocalidad(FormMode _formMode, Localidad localidadSelected)
+        public void seleccionarTipoMed(FormMode _formMode, TipoMedicamento tipoMedicamentoSelected)
         {
             formMode = _formMode;
-            oLocalidad = localidadSelected;
+            oTipoMed = tipoMedicamentoSelected;
         }
 
         private bool validarCampos()
         {
-            string nombre = this.txtbNombre.Text;
-            if (string.IsNullOrEmpty(nombre)
-                || nombre == " ")
+            string descripcion = this.txtbDescripcion.Text;
+            if (string.IsNullOrEmpty(descripcion)
+                || descripcion == " ")
             {
-                MessageBox.Show("Debe ingresar un nombre",
+                MessageBox.Show("Debe ingresar una descripcion",
                     "Validación de Datos", MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
-                this.txtbNombre.Focus();
+                this.txtbDescripcion.Focus();
                 return false;
+            }
+            else if (descripcion.Length <= 2)
+            {
+                MessageBox.Show("Debe ingresar una descripción válida",
+                       "Validación de Datos", MessageBoxButtons.OK
+                       , MessageBoxIcon.Information);
+                this.txtbDescripcion.Focus();
+                return false;
+
             }
             return true;
         }
 
-        private bool existeLocalidad(string nombre)
+        private bool existeTipoMed(string descripcion)
         {
-            Localidad resultado = this.oLocalidad.traerLocalidad(nombre);
+            TipoMedicamento resultado = this.oTipoMed.traerTipoMed(descripcion);
             if (resultado is null)
             {
                 return false;
@@ -65,34 +74,34 @@ namespace FarmaTown.Presentacion.Localidades
 
         //MÉTODOS DE RESPUESTA A EVENTOS
 
-        private void frmABMLocalidades_Load(object sender, EventArgs e)
+        private void frmABMTiposMed_Load(object sender, EventArgs e)
         {
             switch (formMode)
             {
                 case FormMode.insert:
                     {
-                        this.Text = "Nueva Localidad - FarmaTown";
+                        this.Text = "Nuevo Tipo de Medicamento - FarmaTown";
                         break;
                     }
                 case FormMode.update:
                     {
-                        this.Text = "Actualizar Localidad - FarmaTown";
-                        this.txtbNombre.Text = oLocalidad.Nombre;
+                        this.Text = "Actualizar Tipo de Medicamento - FarmaTown";
+                        this.txtbDescripcion.Text = oTipoMed.Descripcion;
                         break;
                     }
                 case FormMode.delete:
                     {
-                        this.Text = "Deshabilitar Localidad - FarmaTown";
-                        this.txtbNombre.Text = oLocalidad.Nombre;
-                        this.txtbNombre.Enabled = false;
+                        this.Text = "Deshabilitar Tipo de Medicamento - FarmaTown";
+                        this.txtbDescripcion.Text = oTipoMed.Descripcion;
+                        this.txtbDescripcion.Enabled = false;
+                        this.lblAviso.Visible = false;
                         this.btnLimpiar.Enabled = false;
                         break;
-
                     }
             }
         }
 
-        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
+        private void txtbDescripcion_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.enter(this.btnAceptar, e);
             TextBoxService.noDigitos(e);
@@ -100,7 +109,7 @@ namespace FarmaTown.Presentacion.Localidades
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.txtbNombre.Text = "";
+            this.txtbDescripcion.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -110,31 +119,31 @@ namespace FarmaTown.Presentacion.Localidades
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string nombre = this.txtbNombre.Text;
+            string descripcion = this.txtbDescripcion.Text;
             switch (formMode)
             {
                 case FormMode.insert:
                     {
                         if (this.validarCampos())
                         {
-                            if (!this.existeLocalidad(nombre))
+                            if (!this.existeTipoMed(descripcion))
                             {
-                                Localidad oNuevaLocalidad = new Localidad();
-                                oNuevaLocalidad.Nombre = nombre;
+                                TipoMedicamento oNuevoTipoMed = new TipoMedicamento();
+                                oNuevoTipoMed.Descripcion = descripcion;
 
-                                bool resultInsert = oLocalidad.crearLocalidad(oNuevaLocalidad);
+                                bool resultInsert = oNuevoTipoMed.crearTipoMedicamento(oNuevoTipoMed);
                                 if (resultInsert)
                                 {
-                                    MessageBox.Show("Localidad agregada!", "Información"
+                                    MessageBox.Show("Tipo de medicamento agregado!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
                                 else
-                                    MessageBox.Show("Error al insertar la Localidad!", "Información"
+                                    MessageBox.Show("Error al insertar el tipo de medicamento!", "Información"
                                         , MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
-                                MessageBox.Show("Esta Localidad ya está registrada!", "Información"
+                                MessageBox.Show("Este tipo de medicamento ya está registrado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
@@ -143,39 +152,38 @@ namespace FarmaTown.Presentacion.Localidades
                     {
                         if (validarCampos())
                         {
-                            oLocalidad.Nombre = this.txtbNombre.Text;
+                            oTipoMed.Descripcion = this.txtbDescripcion.Text;
 
-                            bool resultActualiz = this.oLocalidad.actualizar(oLocalidad);
+                            bool resultActualiz = this.oTipoMed.actualizar(oTipoMed);
                             if (resultActualiz)
                             {
-                                MessageBox.Show("Localidad actualizada!", "Información"
+                                MessageBox.Show("Tipo de medicamento actualizado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar la Localidad!", "Información"
+                                MessageBox.Show("Error al actualizar el tipo de medicamento!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
                     }
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar la Localidad seleccionada?"
+                        var decision = MessageBox.Show("¿Seguro que desea deshabilitar el tipo de medicamento seleccionado?"
                             , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oLocalidad.cambiarEstado(oLocalidad, false))
+                            if (oTipoMed.cambiarEstado(oTipoMed, false))
                             {
-                                MessageBox.Show("Localidad Deshabilitada!", "Información"
+                                MessageBox.Show("Tipo de medicamento Deshabilitado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
-                                MessageBox.Show("Error al deshabilitar la Localidad", "Información"
+                                MessageBox.Show("Error al deshabilitar el tipo de medicamento", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-
                         break;
                     }
             }

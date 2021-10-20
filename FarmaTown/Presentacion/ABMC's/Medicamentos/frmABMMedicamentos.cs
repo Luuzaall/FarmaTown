@@ -47,7 +47,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * fue llamado, definido en el switch de los distintos
              * FormMode.
              */
-            ComboBoxService.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(true), "descripcion", "idTipo");
 
             switch (formMode)
             {
