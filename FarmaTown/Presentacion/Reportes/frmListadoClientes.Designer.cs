@@ -1,7 +1,7 @@
 ﻿
-namespace FarmaTown.Presentacion
+namespace FarmaTown.Presentacion.Reportes
 {
-    partial class frmRendicion
+    partial class frmListadoClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,10 @@ namespace FarmaTown.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRendicion));
-            this.SuspendLayout();
-            // 
-            // frmRendicion
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "frmRendicion";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rendición - FarmaTown";
-            this.ResumeLayout(false);
-
+            this.Text = "frmListadoClientes";
         }
 
         #endregion

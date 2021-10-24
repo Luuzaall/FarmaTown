@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentacion
+namespace FarmaTown.Presentacion.Reportes
 {
-    public partial class frmRendicion : Form
+    public partial class frmListadoClientes : Form
     {
-        public frmRendicion()
+        public frmListadoClientes()
         {
             InitializeComponent();
         }

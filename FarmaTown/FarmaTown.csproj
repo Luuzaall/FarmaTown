@@ -246,11 +246,19 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmRendicion.cs">
+    <Compile Include="Presentacion\Reportes\DSClientes.cs">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmListadoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frmRendicion.Designer.cs">
-      <DependentUpon>frmRendicion.cs</DependentUpon>
+    <Compile Include="Presentacion\Reportes\frmListadoClientes.Designer.cs">
+      <DependentUpon>frmListadoClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
@@ -336,9 +344,7 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmRendicion.resx">
-      <DependentUpon>frmRendicion.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\rptClientes.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,6 +357,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Presentacion\Reportes\DSClientes.xsc">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSClientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSClientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Presentacion\Reportes\DSClientes.xss">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -429,8 +446,6 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentacion\Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

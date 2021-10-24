@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSClientes" targetNamespace="http://tempuri.org/DSClientes.xsd" xmlns:mstns="http://tempuri.org/DSClientes.xsd" xmlns="http://tempuri.org/DSClientes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSClientes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSClientes" msprop:Generator_UserDSName="DSClientes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtlListadoClientes" msprop:Generator_TableClassName="dtlListadoClientesDataTable" msprop:Generator_TableVarName="tabledtlListadoClientes" msprop:Generator_TablePropName="dtlListadoClientes" msprop:Generator_RowDeletingName="dtlListadoClientesRowDeleting" msprop:Generator_RowChangingName="dtlListadoClientesRowChanging" msprop:Generator_RowEvHandlerName="dtlListadoClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="dtlListadoClientesRowDeleted" msprop:Generator_UserTableName="dtlListadoClientes" msprop:Generator_RowChangedName="dtlListadoClientesRowChanged" msprop:Generator_RowEvArgName="dtlListadoClientesRowChangeEvent" msprop:Generator_RowClassName="dtlListadoClientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" type="xs:string" minOccurs="0" />
+              <xs:element name="barrio" msprop:Generator_ColumnVarNameInTable="columnbarrio" msprop:Generator_ColumnPropNameInRow="barrio" msprop:Generator_ColumnPropNameInTable="barrioColumn" msprop:Generator_UserColumnName="barrio" type="xs:string" minOccurs="0" />
+              <xs:element name="localidad" msprop:Generator_ColumnVarNameInTable="columnlocalidad" msprop:Generator_ColumnPropNameInRow="localidad" msprop:Generator_ColumnPropNameInTable="localidadColumn" msprop:Generator_UserColumnName="localidad" type="xs:string" minOccurs="0" />
+              <xs:element name="tipoDoc" msprop:Generator_ColumnVarNameInTable="columntipoDoc" msprop:Generator_ColumnPropNameInRow="tipoDoc" msprop:Generator_ColumnPropNameInTable="tipoDocColumn" msprop:Generator_UserColumnName="tipoDoc" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
