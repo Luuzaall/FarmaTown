@@ -344,6 +344,9 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmListadoClientes.resx">
+      <DependentUpon>frmListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\rptClientes.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
