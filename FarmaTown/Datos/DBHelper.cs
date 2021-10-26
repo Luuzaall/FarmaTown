@@ -247,6 +247,5 @@ namespace FarmaTown.Datos
                 throw (ex);
             }
         }
-
     }
 }

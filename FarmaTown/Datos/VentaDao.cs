@@ -116,5 +116,38 @@ namespace FarmaTown.Datos
             return true;
 
         }
+
+        public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
+                , int indexFarm, int indexLocalidad)
+        {
+            string query = "SELECT v.idVenta" +
+                    ", v.nroFactura" +
+                    ", f.nombre as farmacia" +
+                    ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
+                    ", e.nombre as empleado" +
+                    ", t.nombre as tipoFactura" +
+                    ", m.nombre as medioPago" +
+                    ", ROUND(SUM(precio), 2) as 'Total'" +
+                    " FROM Ventas v" +
+                    " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
+                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                    " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
+                    " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
+                    " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                        " AND CONVERT(DATE,'" + fechaHasta + "',105)" +
+                    " GROUP BY v.idVenta" +
+                        " , f.nombre" +
+                        " , v.fechaFactura" +
+                        " , e.nombre" +
+                        " , t.nombre" +
+                        " , m.nombre" +
+                        " , v.nroFactura";
+
+
+            return DBHelper.getDBHelper().consultaSQL(query);
+
+
+        }
     }
 }

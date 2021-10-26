@@ -61,7 +61,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -246,19 +246,19 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\DSClientes.cs">
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+    <Compile Include="Presentacion\Reportes\DTSVentas.cs">
+      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\DSClientes.Designer.cs">
+    <Compile Include="Presentacion\Reportes\DTSVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoClientes.cs">
+    <Compile Include="Presentacion\Reportes\frmListadoVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoClientes.Designer.cs">
-      <DependentUpon>frmListadoClientes.cs</DependentUpon>
+    <Compile Include="Presentacion\Reportes\frmListadoVentas.Designer.cs">
+      <DependentUpon>frmListadoVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
@@ -344,10 +344,10 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\frmListadoClientes.resx">
-      <DependentUpon>frmListadoClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Reportes\frmListadoVentas.resx">
+      <DependentUpon>frmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\rptClientes.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\rptVentas.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,16 +360,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Presentacion\Reportes\DSClientes.xsc">
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+    <None Include="Presentacion\Reportes\DTSVentas.xsc">
+      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\DSClientes.xsd">
+    <None Include="Presentacion\Reportes\DTSVentas.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSClientes.Designer.cs</LastGenOutput>
+      <LastGenOutput>DTSVentas.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Reportes\DSClientes.xss">
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+    <None Include="Presentacion\Reportes\DTSVentas.xss">
+      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -406,6 +406,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Presentacion\Imagenes\reporteClientes.png" />
     <None Include="Resources\undraw_small_town_rxs3.png" />
     <None Include="Resources\undraw_quite_town_mg2q.png" />
     <None Include="Resources\undraw_best_place_r685.png" />
