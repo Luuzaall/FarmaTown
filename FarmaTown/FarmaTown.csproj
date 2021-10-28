@@ -450,6 +450,8 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presentacion\Reportes\Ventas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

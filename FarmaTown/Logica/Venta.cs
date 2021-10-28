@@ -43,10 +43,10 @@ namespace FarmaTown.Logica
         }
 
         public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
-                , int indexFarm, int indexLocalidad)
+                , String idFarm, String idLocalidad)
         {
             return this.oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
-                , indexFarm, indexLocalidad);
+                , idFarm, idLocalidad);
         }
     }
 }

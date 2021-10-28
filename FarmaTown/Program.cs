@@ -48,11 +48,11 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmTiposMed());
 
 
-            Usuario us = new Usuario();
-            Application.Run(new frmVentas(us.traerUsuario("Nao")));
+            //Usuario us = new Usuario();
+            //Application.Run(new frmVentas(us.traerUsuario("Nao")));
 
 
-            //Application.Run(new frmListadoVentas());
+            Application.Run(new frmListadoVentas());
 
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());

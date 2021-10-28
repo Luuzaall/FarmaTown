@@ -38,32 +38,56 @@ namespace FarmaTown.Presentacion.Reportes
                 , "Nombre", "IdLocalidad");
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void btnGenerar_Click(object sender, EventArgs e)
         {
             DateTime fechaDesde = this.dtpFechaDesde.Value;
             DateTime fechaHasta = this.dtpFechaHasta.Value;
 
             if (fechaDesde > fechaHasta)
             {
-                MessageBox.Show("Fechas inválidas!", "Información"
-                           ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Fecha desde es mayor que la fecha hasta.", "Información"
+                           , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 int indexFarm = this.cboFarmacias.SelectedIndex;
                 int indexLocalidad = this.cboLocalidades.SelectedIndex;
+                String idFarm;
+                String idLocalidad;
+
+                if (indexFarm == -1)
+                    idFarm = "-1";
+                else
+                    idFarm = this.cboFarmacias.SelectedValue.ToString();
+
+                if (indexLocalidad == -1)
+                    idLocalidad = "-1";
+                else
+                    idLocalidad = this.cboLocalidades.SelectedValue.ToString();
+
 
 
                 this.rpvVentas.LocalReport.DataSources.Clear();
                 Object tabla = oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
-                    , indexFarm, indexLocalidad);
+                    , idFarm, idLocalidad);
                 ReportDataSource rprtDTSource = new ReportDataSource("DSVentas", tabla);
 
                 this.rpvVentas.LocalReport.DataSources.Add(rprtDTSource);
                 this.rpvVentas.RefreshReport();
             }
-            
-
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            /*
+             * Inicializa los filtros del generador
+             * del Reporte.
+             */
+            this.dtpFechaDesde.Value = DateTime.Today.AddMonths(-1);
+            this.dtpFechaHasta.Value = DateTime.Today;
+            this.cboFarmacias.SelectedIndex = -1;
+            this.cboLocalidades.SelectedIndex = -1;
+        }
+
     }
 }

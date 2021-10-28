@@ -293,6 +293,10 @@ namespace FarmaTown.Presentacion.Reportes {
             
             private global::System.Data.DataColumn columntotal;
             
+            private global::System.Data.DataColumn columnobraSocial;
+            
+            private global::System.Data.DataColumn columnlocalidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtVentasDataTable() {
@@ -384,6 +388,22 @@ namespace FarmaTown.Presentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn obraSocialColumn {
+                get {
+                    return this.columnobraSocial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn localidadColumn {
+                get {
+                    return this.columnlocalidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -419,7 +439,7 @@ namespace FarmaTown.Presentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtVentasRow AdddtVentasRow(string farmacia, string nroFactura, string fecha, string empleado, string tipoFactura, string medioPago, string total) {
+            public dtVentasRow AdddtVentasRow(string farmacia, string nroFactura, string fecha, string empleado, string tipoFactura, string medioPago, string total, string obraSocial, string localidad) {
                 dtVentasRow rowdtVentasRow = ((dtVentasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         farmacia,
@@ -428,7 +448,9 @@ namespace FarmaTown.Presentacion.Reportes {
                         empleado,
                         tipoFactura,
                         medioPago,
-                        total};
+                        total,
+                        obraSocial,
+                        localidad};
                 rowdtVentasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtVentasRow);
                 return rowdtVentasRow;
@@ -458,6 +480,8 @@ namespace FarmaTown.Presentacion.Reportes {
                 this.columntipoFactura = base.Columns["tipoFactura"];
                 this.columnmedioPago = base.Columns["medioPago"];
                 this.columntotal = base.Columns["total"];
+                this.columnobraSocial = base.Columns["obraSocial"];
+                this.columnlocalidad = base.Columns["localidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +501,10 @@ namespace FarmaTown.Presentacion.Reportes {
                 base.Columns.Add(this.columnmedioPago);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
+                this.columnobraSocial = new global::System.Data.DataColumn("obraSocial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobraSocial);
+                this.columnlocalidad = new global::System.Data.DataColumn("localidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlocalidad);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -731,6 +759,38 @@ namespace FarmaTown.Presentacion.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string obraSocial {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtVentas.obraSocialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'obraSocial\' in table \'dtVentas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtVentas.obraSocialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string localidad {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtVentas.localidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'localidad\' in table \'dtVentas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtVentas.localidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsfarmaciaNull() {
                 return this.IsNull(this.tabledtVentas.farmaciaColumn);
             }
@@ -811,6 +871,30 @@ namespace FarmaTown.Presentacion.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettotalNull() {
                 this[this.tabledtVentas.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsobraSocialNull() {
+                return this.IsNull(this.tabledtVentas.obraSocialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetobraSocialNull() {
+                this[this.tabledtVentas.obraSocialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IslocalidadNull() {
+                return this.IsNull(this.tabledtVentas.localidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetlocalidadNull() {
+                this[this.tabledtVentas.localidadColumn] = global::System.Convert.DBNull;
             }
         }
         

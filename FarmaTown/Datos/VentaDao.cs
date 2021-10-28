@@ -118,7 +118,7 @@ namespace FarmaTown.Datos
         }
 
         public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
-                , int indexFarm, int indexLocalidad)
+                , String idFarm, String idLocalidad)
         {
             string query = "SELECT v.idVenta" +
                     ", v.nroFactura" +
@@ -127,22 +127,35 @@ namespace FarmaTown.Datos
                     ", e.nombre as empleado" +
                     ", t.nombre as tipoFactura" +
                     ", m.nombre as medioPago" +
+                    ", o.nombre as obraSocial" +
+                    ", l.nombre as localidad" +
                     ", ROUND(SUM(precio), 2) as 'Total'" +
                     " FROM Ventas v" +
                     " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
+                    " INNER JOIN ObrasSociales o ON d.idOS = o.idOS" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                    " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                     " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
                     " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
                     " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
                     " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
-                        " AND CONVERT(DATE,'" + fechaHasta + "',105)" +
-                    " GROUP BY v.idVenta" +
+                        " AND CONVERT(DATE,'" + fechaHasta + "',105)";
+
+            if (idFarm != "-1")
+                query += " AND f.idFarmacia = " + idFarm;
+            if (idLocalidad != "-1")
+                query += " AND l.idLocalidad = " + idLocalidad;
+
+            query += " GROUP BY v.idVenta" +
                         " , f.nombre" +
                         " , v.fechaFactura" +
                         " , e.nombre" +
                         " , t.nombre" +
                         " , m.nombre" +
-                        " , v.nroFactura";
+                        " , v.nroFactura" +
+                        ", o.nombre" +
+                        ", l.nombre";
 
 
             return DBHelper.getDBHelper().consultaSQL(query);
