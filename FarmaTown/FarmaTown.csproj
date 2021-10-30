@@ -246,10 +246,10 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\Clientes\DSClientes.Designer.cs">
+    <Compile Include="Presentacion\Reportes\Clientes\DTSClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+      <DependentUpon>DTSClientes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Clientes\frmReporteClientes.cs">
       <SubType>Form</SubType>
@@ -375,16 +375,16 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Presentacion\Reportes\Clientes\DSClientes.xsc">
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xsc">
+      <DependentUpon>DTSClientes.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\Clientes\DSClientes.xsd">
+    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSClientes.Designer.cs</LastGenOutput>
+      <LastGenOutput>DTSClientes.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Reportes\Clientes\DSClientes.xss">
-      <DependentUpon>DSClientes.xsd</DependentUpon>
+    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xss">
+      <DependentUpon>DTSClientes.xsd</DependentUpon>
     </None>
     <None Include="Presentacion\Reportes\DTSVentas.xsc">
       <DependentUpon>DTSVentas.xsd</DependentUpon>

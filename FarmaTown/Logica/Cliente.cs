@@ -62,6 +62,11 @@ namespace FarmaTown.Logica
             return validar(oClienteDao.actualizar(oCliente));
         }
 
+        public object obtenerDatosReporte(string idBarrio, string idLocalidad)
+        {
+            return oClienteDao.obtenerDatosReporte(idBarrio, idLocalidad);
+        }
+
         public bool cambiarEstado(Cliente oCliente)
         {
             return validar(oClienteDao.cambiarEstado(oCliente));

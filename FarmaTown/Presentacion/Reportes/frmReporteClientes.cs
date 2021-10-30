@@ -11,29 +11,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentacion.Reportes.Clientes
+namespace FarmaTown.Presentacion.Reportes
 {
     public partial class frmReporteClientes : Form
     {
-        Cliente oCliente;
-        Barrio oBarrio;
         Localidad oLocalidad;
+        Barrio oBarrio;
+        Cliente oCliente;
         public frmReporteClientes()
         {
             InitializeComponent();
-            oCliente = new Cliente();
-            oBarrio = new Barrio();
             oLocalidad = new Localidad();
+            oBarrio = new Barrio();
+            oCliente = new Cliente();
         }
 
         private void frmReporteClientes_Load(object sender, EventArgs e)
         {
-            this.rpvClientes.RefreshReport();
-
-            ComboBoxService.cargarCombo(this.cboBarrios, oBarrio.recuperarTodos(false)
-                , "Nombre", "IdBarrio");
+            //Carga los combos
             ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos(false)
                 , "Nombre", "IdLocalidad");
+            ComboBoxService.cargarCombo(this.cboBarrios, oBarrio.recuperarTodos(false)
+                , "Nombre", "IdBarrio");
+
+            this.rpvClientes.RefreshReport();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -48,10 +49,13 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            int indexBarrio = this.cboBarrios.SelectedIndex;
+            //Obtiene el valor correspondiete al valor de los combos.
+            //Si no eligió alguno de los parámetros, lo genera igual,
+            //sin considerar el filtro que falta.
             int indexLocalidad = this.cboLocalidades.SelectedIndex;
-            string idBarrio;
+            int indexBarrio = this.cboBarrios.SelectedIndex;
             string idLocalidad;
+            string idBarrio;
 
             if (indexBarrio == -1)
                 idBarrio = "-1";
@@ -63,14 +67,13 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             else
                 idLocalidad = this.cboLocalidades.SelectedValue.ToString();
 
-
-
             this.rpvClientes.LocalReport.DataSources.Clear();
             Object tabla = oCliente.obtenerDatosReporte(idBarrio, idLocalidad);
             ReportDataSource rprtDTSource = new ReportDataSource("DSClientes", tabla);
 
             this.rpvClientes.LocalReport.DataSources.Add(rprtDTSource);
             this.rpvClientes.RefreshReport();
+
         }
     }
 }

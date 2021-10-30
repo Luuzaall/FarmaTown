@@ -83,6 +83,28 @@ namespace FarmaTown.Datos
             return this.listMapping(tabla);
         }
 
+        public Object obtenerDatosReporte(string idBarrio, string idLocalidad)
+        {
+            string query = "SELECT c.nombre" +
+                " , c.apellido" +
+                " , t.nombre as tipoDocumento" +
+                " , c.nroDoc as nroDocumento" +
+                " , b.nombre as barrio" +
+                " , l.nombre as localidad" +
+                " FROM Clientes c " +
+                " INNER JOIN TiposDocumento t ON c.tipoDoc = t.idTipo" +
+                " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                " WHERE c.borrado = 0";
+
+            if (idBarrio != "-1")
+                query += " AND c.idBarrio = " + idBarrio;
+            if (idLocalidad != "-1")
+                query += " AND b.idLocalidad = " + idLocalidad;
+
+            return DBHelper.getDBHelper().consultaSQL(query);
+        }
+
         public Cliente recuperar( int idTipoDoc, string nroDoc)
         {
             string query = "SELECT c.idCliente" +
@@ -228,7 +250,6 @@ namespace FarmaTown.Datos
             return oCliente;
         }
 
-        //NUEVA CONTROLAR!!!!!!!!!!!!!!!!!!!!
         public Cliente buscarCliente(string nomCli, string apellido , string calle, string nroDoc, int idTipoDoc, int idBarrio)
         {
             string query = "SELECT c.idCliente" +
