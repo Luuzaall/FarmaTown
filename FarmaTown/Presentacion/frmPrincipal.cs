@@ -15,6 +15,7 @@ using FarmaTown.Presentacion.Farmacias;
 using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 using FarmaTown.Presentacion.Reportes;
+using FarmaTown.Presentacion.Reportes.Clientes;
 
 namespace FarmaTown.Presentacion
 {
@@ -233,6 +234,18 @@ namespace FarmaTown.Presentacion
         {
             frmListadoVentas ofrmListadoVentas = new frmListadoVentas();
             ofrmListadoVentas.ShowDialog();
+        }
+
+        private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmListadoVentas oFrmListadoVentas = new frmListadoVentas();
+            oFrmListadoVentas.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmReporteClientes oFrmReporteClientes = new frmReporteClientes();
+            oFrmReporteClientes.ShowDialog();
         }
     }
 }

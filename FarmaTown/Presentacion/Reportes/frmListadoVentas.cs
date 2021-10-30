@@ -30,7 +30,7 @@ namespace FarmaTown.Presentacion.Reportes
         {
             this.rpvVentas.RefreshReport();
             this.dtpFechaDesde.Value = DateTime.Today.AddMonths(-1);
-            this.dtpFechaHasta.Value = DateTime.Today;
+            this.dtpFechaHasta.Value = DateTime.Today.AddDays(1);
 
             ComboBoxService.cargarCombo(this.cboFarmacias, oFarmacia.recuperarTodos()
                 , "Nombre", "IdFarmacia");
