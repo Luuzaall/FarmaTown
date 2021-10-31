@@ -25,8 +25,8 @@ namespace FarmaTown.Datos
             /*
              * Establece el string de conexión
              */
-            stringConexion = "Data Source=SQL5108.site4now.net;Initial Catalog=db_a79a32_farmatown;User Id=db_a79a32_farmatown_admin;" +
-                "Password=123123GGHHj";
+            stringConexion = "Data Source=SQL5063.site4now.net;Initial Catalog=db_a7bd78_famatown;User Id=db_a7bd78_famatown_admin;" +
+                "Password=123smarterasp";
             cnn.ConnectionString = stringConexion;
         }
 
