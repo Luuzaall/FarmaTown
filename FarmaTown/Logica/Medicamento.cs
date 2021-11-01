@@ -67,11 +67,11 @@ namespace FarmaTown.Logica
 
 
         //CAMBIARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-        public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
-                , int indexFarm, int indexLocalidad)
-        {
-            return this.oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
-                , indexFarm, indexLocalidad);
-        }
+        //public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
+        //        , int indexFarm, int indexLocalidad)
+        //{
+        //    return this.oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
+        //        , indexFarm, indexLocalidad);
+        //}
     }
 }
