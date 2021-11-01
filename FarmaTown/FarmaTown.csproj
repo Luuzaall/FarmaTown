@@ -76,6 +76,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\ClienteDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
@@ -254,6 +259,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.Designer.cs">
+      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmListadoVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,9 +355,13 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmListadoMedicamentos.resx">
+      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\frmListadoVentas.resx">
       <DependentUpon>frmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptVentas.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
@@ -359,6 +374,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DataSetGeneral.xsc">
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGeneral.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetGeneral.xss">
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Presentacion\Reportes\DTSVentas.xsc">
       <DependentUpon>DTSVentas.xsd</DependentUpon>
@@ -393,6 +419,7 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\listado medicamentos.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

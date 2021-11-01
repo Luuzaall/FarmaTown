@@ -234,5 +234,11 @@ namespace FarmaTown.Presentacion
             frmListadoVentas ofrmListadoVentas = new frmListadoVentas();
             ofrmListadoVentas.ShowDialog();
         }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
+            ofrmListadoMedicamentos.ShowDialog();
+        }
     }
 }
