@@ -215,14 +215,14 @@ namespace FarmaTown.Datos
         public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
         {
             string query = "SELECT m.idMedicamento" +
-                    ", descripcion" +
+                    ", m.descripcion" +
                     ", tipoMedicamento" +
                     ", precioLista" +
                     ", cantidad" +
                     ", borrado = 0" +
                     " FROM Medicamentos m" +
-                    " INNER JOIN TipoMedicamento t ON m.tipoMedicamento = t.idTipo" +
-                    " WHERE m.cantidad BETWEEN '" + cantidadMinima + "' AND '" + cantidadMaxima;
+                    " INNER JOIN TiposMedicamento t ON m.tipoMedicamento = t.idTipo" +
+                    " WHERE m.cantidad BETWEEN '" + cantidadMinima + "' AND '" + cantidadMaxima + "'";
 
          return DBHelper.getDBHelper().consultaSQL(query);
         }
