@@ -25,14 +25,23 @@ namespace FarmaTown.Presentacion.Reportes
         private void frmListadoMedicamentos_Load(object sender, EventArgs e)
         {
             //ACA SINO
-            this.medicamentosTableAdapter.Fill(this.dataSetGeneral.Medicamentos);
             this.rpvMedicamentos.RefreshReport();
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            int cantidadMinima = int.Parse(this.txtbCantMin.Text);
-            int cantidadMaxima = int.Parse(this.txtbCantMax.Text);
+            int cantidadMinima = -1;
+            int cantidadMaxima = -1 ;
+
+            if (!(this.txtbCantMin.Text == ""))
+            { 
+                cantidadMinima = int.Parse(this.txtbCantMin.Text);
+            }
+            if (!(this.txtbCantMax.Text == ""))
+            {
+                cantidadMaxima = int.Parse(this.txtbCantMax.Text);
+            }
+
 
             if (cantidadMinima > cantidadMaxima)
             {

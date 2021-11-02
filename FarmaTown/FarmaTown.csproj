@@ -259,6 +259,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.Designer.cs">
+      <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
