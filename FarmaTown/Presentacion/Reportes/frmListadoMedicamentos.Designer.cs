@@ -29,17 +29,34 @@ namespace FarmaTown.Presentacion.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoMedicamentos));
+            this.medicamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetGeneral = new FarmaTown.DataSetGeneral();
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
-            this.lblPMax = new System.Windows.Forms.Label();
-            this.lblPMin = new System.Windows.Forms.Label();
+            this.txtbCantMax = new System.Windows.Forms.TextBox();
+            this.txtbCantMin = new System.Windows.Forms.TextBox();
+            this.lblSMax = new System.Windows.Forms.Label();
+            this.lblSMin = new System.Windows.Forms.Label();
             this.rpvMedicamentos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
-            this.txtbPrecioMin = new System.Windows.Forms.TextBox();
-            this.txtbPrecioMax = new System.Windows.Forms.TextBox();
+            this.medicamentosTableAdapter = new FarmaTown.DataSetGeneralTableAdapters.MedicamentosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             this.gbFiltros.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // medicamentosBindingSource
+            // 
+            this.medicamentosBindingSource.DataMember = "Medicamentos";
+            this.medicamentosBindingSource.DataSource = this.dataSetGeneral;
+            // 
+            // dataSetGeneral
+            // 
+            this.dataSetGeneral.DataSetName = "DataSetGeneral";
+            this.dataSetGeneral.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -56,44 +73,69 @@ namespace FarmaTown.Presentacion.Reportes
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.gbFiltros.Controls.Add(this.txtbPrecioMax);
-            this.gbFiltros.Controls.Add(this.txtbPrecioMin);
-            this.gbFiltros.Controls.Add(this.lblPMax);
-            this.gbFiltros.Controls.Add(this.lblPMin);
+            this.gbFiltros.Controls.Add(this.txtbCantMax);
+            this.gbFiltros.Controls.Add(this.txtbCantMin);
+            this.gbFiltros.Controls.Add(this.lblSMax);
+            this.gbFiltros.Controls.Add(this.lblSMin);
             this.gbFiltros.Location = new System.Drawing.Point(12, 67);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(690, 118);
+            this.gbFiltros.Size = new System.Drawing.Size(658, 94);
             this.gbFiltros.TabIndex = 42;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
-            // lblPMax
+            // txtbCantMax
             // 
-            this.lblPMax.AutoSize = true;
-            this.lblPMax.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPMax.Location = new System.Drawing.Point(378, 64);
-            this.lblPMax.Name = "lblPMax";
-            this.lblPMax.Size = new System.Drawing.Size(129, 19);
-            this.lblPMax.TabIndex = 43;
-            this.lblPMax.Text = "Precio Máximo:";
+            this.txtbCantMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbCantMax.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbCantMax.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.txtbCantMax.Location = new System.Drawing.Point(485, 41);
+            this.txtbCantMax.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbCantMax.Name = "txtbCantMax";
+            this.txtbCantMax.Size = new System.Drawing.Size(158, 25);
+            this.txtbCantMax.TabIndex = 45;
             // 
-            // lblPMin
+            // txtbCantMin
             // 
-            this.lblPMin.AutoSize = true;
-            this.lblPMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPMin.Location = new System.Drawing.Point(25, 64);
-            this.lblPMin.Name = "lblPMin";
-            this.lblPMin.Size = new System.Drawing.Size(123, 19);
-            this.lblPMin.TabIndex = 42;
-            this.lblPMin.Text = "Precio Mínimo:";
+            this.txtbCantMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.txtbCantMin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbCantMin.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.txtbCantMin.Location = new System.Drawing.Point(155, 41);
+            this.txtbCantMin.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbCantMin.Name = "txtbCantMin";
+            this.txtbCantMin.Size = new System.Drawing.Size(158, 25);
+            this.txtbCantMin.TabIndex = 44;
+            // 
+            // lblSMax
+            // 
+            this.lblSMax.AutoSize = true;
+            this.lblSMax.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSMax.Location = new System.Drawing.Point(347, 47);
+            this.lblSMax.Name = "lblSMax";
+            this.lblSMax.Size = new System.Drawing.Size(122, 19);
+            this.lblSMax.TabIndex = 43;
+            this.lblSMax.Text = "Stock Máximo:";
+            // 
+            // lblSMin
+            // 
+            this.lblSMin.AutoSize = true;
+            this.lblSMin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSMin.Location = new System.Drawing.Point(23, 47);
+            this.lblSMin.Name = "lblSMin";
+            this.lblSMin.Size = new System.Drawing.Size(116, 19);
+            this.lblSMin.TabIndex = 42;
+            this.lblSMin.Text = "Stock Mínimo:";
             // 
             // rpvMedicamentos
             // 
+            reportDataSource1.Name = "DSMedicamentos";
+            reportDataSource1.Value = this.medicamentosBindingSource;
+            this.rpvMedicamentos.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvMedicamentos.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptMedicamentos.rdlc";
-            this.rpvMedicamentos.Location = new System.Drawing.Point(12, 257);
+            this.rpvMedicamentos.Location = new System.Drawing.Point(49, 234);
             this.rpvMedicamentos.Name = "rpvMedicamentos";
             this.rpvMedicamentos.ServerReport.BearerToken = null;
-            this.rpvMedicamentos.Size = new System.Drawing.Size(690, 246);
+            this.rpvMedicamentos.Size = new System.Drawing.Size(606, 246);
             this.rpvMedicamentos.TabIndex = 43;
             // 
             // btnGenerar
@@ -112,7 +154,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.Black;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnGenerar.Location = new System.Drawing.Point(289, 191);
+            this.btnGenerar.Location = new System.Drawing.Point(291, 167);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(123, 42);
             this.btnGenerar.TabIndex = 44;
@@ -121,27 +163,9 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
-            // txtbPrecioMin
+            // medicamentosTableAdapter
             // 
-            this.txtbPrecioMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbPrecioMin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbPrecioMin.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.txtbPrecioMin.Location = new System.Drawing.Point(157, 58);
-            this.txtbPrecioMin.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbPrecioMin.Name = "txtbPrecioMin";
-            this.txtbPrecioMin.Size = new System.Drawing.Size(158, 25);
-            this.txtbPrecioMin.TabIndex = 44;
-            // 
-            // txtbPrecioMax
-            // 
-            this.txtbPrecioMax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.txtbPrecioMax.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbPrecioMax.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.txtbPrecioMax.Location = new System.Drawing.Point(516, 58);
-            this.txtbPrecioMax.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.txtbPrecioMax.Name = "txtbPrecioMax";
-            this.txtbPrecioMax.Size = new System.Drawing.Size(158, 25);
-            this.txtbPrecioMax.TabIndex = 45;
+            this.medicamentosTableAdapter.ClearBeforeFill = true;
             // 
             // frmListadoMedicamentos
             // 
@@ -150,7 +174,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.listado_medicamentos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(724, 549);
+            this.ClientSize = new System.Drawing.Size(680, 492);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.rpvMedicamentos);
             this.Controls.Add(this.gbFiltros);
@@ -162,6 +186,8 @@ namespace FarmaTown.Presentacion.Reportes
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Medicamentos - FarmaTown";
             this.Load += new System.EventHandler(this.frmListadoMedicamentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).EndInit();
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.ResumeLayout(false);
@@ -173,11 +199,14 @@ namespace FarmaTown.Presentacion.Reportes
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbFiltros;
-        private System.Windows.Forms.Label lblPMax;
-        private System.Windows.Forms.Label lblPMin;
+        private System.Windows.Forms.Label lblSMax;
+        private System.Windows.Forms.Label lblSMin;
         private Microsoft.Reporting.WinForms.ReportViewer rpvMedicamentos;
         private CustomControls.RJControls.RJButton btnGenerar;
-        private System.Windows.Forms.TextBox txtbPrecioMax;
-        private System.Windows.Forms.TextBox txtbPrecioMin;
+        private System.Windows.Forms.TextBox txtbCantMax;
+        private System.Windows.Forms.TextBox txtbCantMin;
+        private DataSetGeneral dataSetGeneral;
+        private System.Windows.Forms.BindingSource medicamentosBindingSource;
+        private DataSetGeneralTableAdapters.MedicamentosTableAdapter medicamentosTableAdapter;
     }
 }

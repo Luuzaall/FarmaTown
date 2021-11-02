@@ -63,9 +63,9 @@ namespace FarmaTown.Logica
             return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo, conBorrados);
         }
 
-        public Object obtenerDatosReporte(float precioMinimo, float precioMaximo)
+        public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
         {
-            return this.oMedicamentoDao.obtenerDatosReporte(precioMinimo, precioMaximo);
+            return this.oMedicamentoDao.obtenerDatosReporte(cantidadMinima, cantidadMaxima);
         }
     }
 }

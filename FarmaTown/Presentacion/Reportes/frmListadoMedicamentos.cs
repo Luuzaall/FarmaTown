@@ -24,22 +24,27 @@ namespace FarmaTown.Presentacion.Reportes
 
         private void frmListadoMedicamentos_Load(object sender, EventArgs e)
         {
+            //ACA SINO
+            this.medicamentosTableAdapter.Fill(this.dataSetGeneral.Medicamentos);
             this.rpvMedicamentos.RefreshReport();
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            float precioMinimo = float.Parse(this.txtbPrecioMin.Text);
-            float precioMaximo = float.Parse(this.txtbPrecioMax.Text);
+            int cantidadMinima = int.Parse(this.txtbCantMin.Text);
+            int cantidadMaxima = int.Parse(this.txtbCantMax.Text);
 
-            if (precioMinimo > precioMaximo)
+            if (cantidadMinima > cantidadMaxima)
             {
-                MessageBox.Show("El monto máximo debe ser mayor al mínimo!", "Información"
+                MessageBox.Show("El stock máximo debe ser mayor al mínimo!", "Información"
                            , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Object tabla = oMedicamento.obtenerDatosReporte(precioMinimo, precioMaximo);
+                //LA PRIMER LINEA ESTA MAS ARRIBA TMB COMENTADA, BORRAR ALGUNA
+                //esta línea de código carga datos en la tabla 'dataSetGeneral.Medicamentos'.
+                this.medicamentosTableAdapter.Fill(this.dataSetGeneral.Medicamentos);
+                Object tabla = oMedicamento.obtenerDatosReporte(cantidadMinima, cantidadMaxima);
                 ReportDataSource rprtDTSource = new ReportDataSource("DSMedicamentos", tabla);
 
                 rpvMedicamentos.LocalReport.DataSources.Clear();
