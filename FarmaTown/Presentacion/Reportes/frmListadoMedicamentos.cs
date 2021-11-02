@@ -24,7 +24,6 @@ namespace FarmaTown.Presentacion.Reportes
 
         private void frmListadoMedicamentos_Load(object sender, EventArgs e)
         {
-            //ACA SINO
             this.rpvMedicamentos.RefreshReport();
         }
 
@@ -60,6 +59,11 @@ namespace FarmaTown.Presentacion.Reportes
                 rpvMedicamentos.LocalReport.DataSources.Add(rprtDTSource);
                 rpvMedicamentos.LocalReport.Refresh();
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

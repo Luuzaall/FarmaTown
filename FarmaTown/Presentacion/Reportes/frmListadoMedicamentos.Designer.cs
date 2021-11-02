@@ -43,6 +43,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.rpvMedicamentos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
             this.medicamentosTableAdapter = new FarmaTown.DataSetGeneralTableAdapters.MedicamentosTableAdapter();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -132,7 +133,7 @@ namespace FarmaTown.Presentacion.Reportes
             reportDataSource1.Value = this.medicamentosBindingSource;
             this.rpvMedicamentos.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvMedicamentos.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptMedicamentos.rdlc";
-            this.rpvMedicamentos.Location = new System.Drawing.Point(49, 234);
+            this.rpvMedicamentos.Location = new System.Drawing.Point(39, 215);
             this.rpvMedicamentos.Name = "rpvMedicamentos";
             this.rpvMedicamentos.ServerReport.BearerToken = null;
             this.rpvMedicamentos.Size = new System.Drawing.Size(606, 246);
@@ -167,6 +168,29 @@ namespace FarmaTown.Presentacion.Reportes
             // 
             this.medicamentosTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundImage = global::FarmaTown.Properties.Resources.logout;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.BorderColor = System.Drawing.Color.Green;
+            this.btnSalir.BorderRadius = 20;
+            this.btnSalir.BorderSize = 1;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(592, 476);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(53, 49);
+            this.btnSalir.TabIndex = 45;
+            this.btnSalir.TextColor = System.Drawing.Color.White;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmListadoMedicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -174,14 +198,18 @@ namespace FarmaTown.Presentacion.Reportes
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.listado_medicamentos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(680, 492);
+            this.ClientSize = new System.Drawing.Size(687, 537);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.rpvMedicamentos);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.MaximizeBox = false;
             this.Name = "frmListadoMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Medicamentos - FarmaTown";
@@ -208,5 +236,6 @@ namespace FarmaTown.Presentacion.Reportes
         private DataSetGeneral dataSetGeneral;
         private System.Windows.Forms.BindingSource medicamentosBindingSource;
         private DataSetGeneralTableAdapters.MedicamentosTableAdapter medicamentosTableAdapter;
+        private CustomControls.RJControls.RJButton btnSalir;
     }
 }
