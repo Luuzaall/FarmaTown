@@ -33,20 +33,23 @@ namespace FarmaTown.Presentacion.Reportes
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteTMedicamentosxVenta));
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
-            this.fechaHastaPicker = new System.Windows.Forms.DateTimePicker();
-            this.fechaDesdePicker = new System.Windows.Forms.DateTimePicker();
-            this.lblFFinal = new System.Windows.Forms.Label();
-            this.lblFInicial = new System.Windows.Forms.Label();
-            this.rpvMedicamentosxVenta = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DTSVentas = new FarmaTown.Presentacion.Reportes.DTSVentas();
-            this.dtVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboLocalidades = new System.Windows.Forms.ComboBox();
+            this.fechaHastaPicker = new System.Windows.Forms.DateTimePicker();
             this.lblLocalidad = new System.Windows.Forms.Label();
+            this.fechaDesdePicker = new System.Windows.Forms.DateTimePicker();
             this.cboFarmacias = new System.Windows.Forms.ComboBox();
             this.lblFarmacia = new System.Windows.Forms.Label();
+            this.lblFFinal = new System.Windows.Forms.Label();
+            this.lblFInicial = new System.Windows.Forms.Label();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.rpvMedicamentosxVenta = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.MedicamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetGeneral = new FarmaTown.DataSetGeneral();
+            this.dtVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposMedicamentoTableAdapter = new FarmaTown.DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter();
             this.gbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DTSVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MedicamentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,60 +84,6 @@ namespace FarmaTown.Presentacion.Reportes
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
-            // fechaHastaPicker
-            // 
-            this.fechaHastaPicker.Location = new System.Drawing.Point(559, 34);
-            this.fechaHastaPicker.Name = "fechaHastaPicker";
-            this.fechaHastaPicker.Size = new System.Drawing.Size(200, 27);
-            this.fechaHastaPicker.TabIndex = 45;
-            // 
-            // fechaDesdePicker
-            // 
-            this.fechaDesdePicker.Location = new System.Drawing.Point(147, 28);
-            this.fechaDesdePicker.Name = "fechaDesdePicker";
-            this.fechaDesdePicker.Size = new System.Drawing.Size(200, 27);
-            this.fechaDesdePicker.TabIndex = 44;
-            // 
-            // lblFFinal
-            // 
-            this.lblFFinal.AutoSize = true;
-            this.lblFFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFFinal.Location = new System.Drawing.Point(444, 36);
-            this.lblFFinal.Name = "lblFFinal";
-            this.lblFFinal.Size = new System.Drawing.Size(113, 19);
-            this.lblFFinal.TabIndex = 43;
-            this.lblFFinal.Text = "Fecha Hasta: ";
-            // 
-            // lblFInicial
-            // 
-            this.lblFInicial.AutoSize = true;
-            this.lblFInicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFInicial.Location = new System.Drawing.Point(24, 34);
-            this.lblFInicial.Name = "lblFInicial";
-            this.lblFInicial.Size = new System.Drawing.Size(118, 19);
-            this.lblFInicial.TabIndex = 42;
-            this.lblFInicial.Text = "Fecha Desde: ";
-            // 
-            // rpvMedicamentosxVenta
-            // 
-            this.rpvMedicamentosxVenta.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptTMedicamentosxVenta.rdlc";
-            this.rpvMedicamentosxVenta.Location = new System.Drawing.Point(29, 290);
-            this.rpvMedicamentosxVenta.Name = "rpvMedicamentosxVenta";
-            this.rpvMedicamentosxVenta.ServerReport.BearerToken = null;
-            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(827, 294);
-            this.rpvMedicamentosxVenta.TabIndex = 44;
-            this.rpvMedicamentosxVenta.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // DTSVentas
-            // 
-            this.DTSVentas.DataSetName = "DTSVentas";
-            this.DTSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dtVentasBindingSource
-            // 
-            this.dtVentasBindingSource.DataMember = "dtVentas";
-            this.dtVentasBindingSource.DataSource = this.DTSVentas;
-            // 
             // cboLocalidades
             // 
             this.cboLocalidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
@@ -147,6 +96,13 @@ namespace FarmaTown.Presentacion.Reportes
             this.cboLocalidades.Size = new System.Drawing.Size(200, 27);
             this.cboLocalidades.TabIndex = 51;
             // 
+            // fechaHastaPicker
+            // 
+            this.fechaHastaPicker.Location = new System.Drawing.Point(559, 34);
+            this.fechaHastaPicker.Name = "fechaHastaPicker";
+            this.fechaHastaPicker.Size = new System.Drawing.Size(200, 27);
+            this.fechaHastaPicker.TabIndex = 45;
+            // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
@@ -156,6 +112,13 @@ namespace FarmaTown.Presentacion.Reportes
             this.lblLocalidad.Size = new System.Drawing.Size(92, 19);
             this.lblLocalidad.TabIndex = 50;
             this.lblLocalidad.Text = "Localidad:";
+            // 
+            // fechaDesdePicker
+            // 
+            this.fechaDesdePicker.Location = new System.Drawing.Point(147, 28);
+            this.fechaDesdePicker.Name = "fechaDesdePicker";
+            this.fechaDesdePicker.Size = new System.Drawing.Size(200, 27);
+            this.fechaDesdePicker.TabIndex = 44;
             // 
             // cboFarmacias
             // 
@@ -178,6 +141,26 @@ namespace FarmaTown.Presentacion.Reportes
             this.lblFarmacia.Size = new System.Drawing.Size(89, 19);
             this.lblFarmacia.TabIndex = 48;
             this.lblFarmacia.Text = "Farmacia:";
+            // 
+            // lblFFinal
+            // 
+            this.lblFFinal.AutoSize = true;
+            this.lblFFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFFinal.Location = new System.Drawing.Point(444, 36);
+            this.lblFFinal.Name = "lblFFinal";
+            this.lblFFinal.Size = new System.Drawing.Size(113, 19);
+            this.lblFFinal.TabIndex = 43;
+            this.lblFFinal.Text = "Fecha Hasta: ";
+            // 
+            // lblFInicial
+            // 
+            this.lblFInicial.AutoSize = true;
+            this.lblFInicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFInicial.Location = new System.Drawing.Point(24, 34);
+            this.lblFInicial.Name = "lblFInicial";
+            this.lblFInicial.Size = new System.Drawing.Size(118, 19);
+            this.lblFInicial.TabIndex = 42;
+            this.lblFInicial.Text = "Fecha Desde: ";
             // 
             // btnConsultar
             // 
@@ -203,6 +186,35 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
             // 
+            // rpvMedicamentosxVenta
+            // 
+            this.rpvMedicamentosxVenta.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptTMedicamentosxVenta.rdlc";
+            this.rpvMedicamentosxVenta.Location = new System.Drawing.Point(29, 290);
+            this.rpvMedicamentosxVenta.Name = "rpvMedicamentosxVenta";
+            this.rpvMedicamentosxVenta.ServerReport.BearerToken = null;
+            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(827, 294);
+            this.rpvMedicamentosxVenta.TabIndex = 44;
+            this.rpvMedicamentosxVenta.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // MedicamentosBindingSource
+            // 
+            this.MedicamentosBindingSource.DataMember = "TiposMedicamento";
+            this.MedicamentosBindingSource.DataSource = this.dataSetGeneral;
+            // 
+            // dataSetGeneral
+            // 
+            this.dataSetGeneral.DataSetName = "DataSetGeneral";
+            this.dataSetGeneral.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtVentasBindingSource
+            // 
+            this.dtVentasBindingSource.DataSource = this.dataSetGeneral;
+            this.dtVentasBindingSource.Position = 0;
+            // 
+            // tiposMedicamentoTableAdapter
+            // 
+            this.tiposMedicamentoTableAdapter.ClearBeforeFill = true;
+            // 
             // frmReporteTMedicamentosxVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,7 +230,8 @@ namespace FarmaTown.Presentacion.Reportes
             this.Load += new System.EventHandler(this.frmReporteTMedicamentosxVenta_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DTSVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MedicamentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,13 +246,15 @@ namespace FarmaTown.Presentacion.Reportes
         private System.Windows.Forms.Label lblFInicial;
         private System.Windows.Forms.DateTimePicker fechaHastaPicker;
         private System.Windows.Forms.DateTimePicker fechaDesdePicker;
-        private Microsoft.Reporting.WinForms.ReportViewer rpvMedicamentosxVenta;
-        private System.Windows.Forms.BindingSource dtVentasBindingSource;
-        private DTSVentas DTSVentas;
         private System.Windows.Forms.ComboBox cboLocalidades;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.ComboBox cboFarmacias;
         private System.Windows.Forms.Label lblFarmacia;
         private CustomControls.RJControls.RJButton btnConsultar;
+        private Microsoft.Reporting.WinForms.ReportViewer rpvMedicamentosxVenta;
+        private System.Windows.Forms.BindingSource MedicamentosBindingSource;
+        private DataSetGeneral dataSetGeneral;
+        private System.Windows.Forms.BindingSource dtVentasBindingSource;
+        private DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter tiposMedicamentoTableAdapter;
     }
 }

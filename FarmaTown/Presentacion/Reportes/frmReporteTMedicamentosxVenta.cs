@@ -23,15 +23,15 @@ namespace FarmaTown.Presentacion.Reportes
 
         private void frmReporteTMedicamentosxVenta_Load(object sender, EventArgs e)
         {
-
+            // TODO: esta línea de código carga datos en la tabla 'dataSetGeneral.TiposMedicamento' Puede moverla o quitarla según sea necesario.
+            this.tiposMedicamentoTableAdapter.Fill(this.dataSetGeneral.TiposMedicamento);
             this.rpvMedicamentosxVenta.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-
             Object tabla = oVenta.obtenerDatosReporte(this.fechaDesdePicker.Value, this.fechaHastaPicker.Value, this.cboFarmacias.SelectedIndex, this.cboLocalidades.SelectedIndex, 2);
-            ReportDataSource rprtDTSource = new ReportDataSource("DSTMedicamento", tabla);
+            ReportDataSource rprtDTSource = new ReportDataSource("DSTipoMedicamento", tabla);
 
             rpvMedicamentosxVenta.LocalReport.DataSources.Clear();
             rpvMedicamentosxVenta.LocalReport.DataSources.Add(rprtDTSource);

@@ -9,11 +9,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>5f9a3ad2-15fd-4d28-ad90-9c92828e345c</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DataSetGeneral">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>d0217f2b-1c19-4488-9d27-6995eca64683</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TipoMedicamento">
+    <DataSet Name="DSTipoMedicamento">
       <Query>
-        <DataSourceName>DSTMedicamento</DataSourceName>
+        <DataSourceName>DataSetGeneral</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -31,8 +38,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSTMedicamento</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\valen\Source\Repos\Luuzaall\FarmaTown\FarmaTown\DSTMedicamento.xsd</rd:SchemaPath>
+        <rd:DataSetName>DataSetGeneral</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\romel\Source\Repos\Luuzaall\FarmaTown\FarmaTown\DataSetGeneral.xsd</rd:SchemaPath>
         <rd:TableName>TiposMedicamento</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -388,7 +395,6 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>TipoMedicamento</DataSetName>
             <Top>3.5239cm</Top>
             <Left>1.23401cm</Left>
             <Height>5cm</Height>
@@ -561,10 +567,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>TipoMedicamento</DataSetName>
+            <DataSetName>DSTipoMedicamento</DataSetName>
             <Top>0.87807cm</Top>
             <Left>3.647cm</Left>
-            <Height>1.35875cm</Height>
+            <Height>1.35876cm</Height>
             <Width>9.18466cm</Width>
             <ZIndex>1</ZIndex>
             <Style>

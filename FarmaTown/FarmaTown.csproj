@@ -97,11 +97,6 @@
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Datos\TipoMedDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
-    <Compile Include="DSTMedicamento.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSTMedicamento.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cliente.cs" />
     <Compile Include="Logica\DetalleVenta.cs" />
@@ -323,6 +318,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Farmacias\frmFarmacias.resx">
       <DependentUpon>frmFarmacias.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.resx">
       <DependentUpon>frmABMLocalidades.cs</DependentUpon>
@@ -399,17 +395,6 @@
     </None>
     <None Include="DataSetGeneral.xss">
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
-    </None>
-    <None Include="DSTMedicamento.xsc">
-      <DependentUpon>DSTMedicamento.xsd</DependentUpon>
-    </None>
-    <None Include="DSTMedicamento.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSTMedicamento.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DSTMedicamento.xss">
-      <DependentUpon>DSTMedicamento.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Presentacion\Reportes\DTSVentas.xsc">
