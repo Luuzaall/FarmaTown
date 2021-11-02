@@ -62,7 +62,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.84323cm</Width>
+              <Width>4.29302cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -432,7 +432,7 @@
         <Top>3.72745cm</Top>
         <Left>2.38125cm</Left>
         <Height>1.2cm</Height>
-        <Width>13.84323cm</Width>
+        <Width>14.29302cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -540,6 +540,13 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>d71e2004-47b1-4abc-b260-b077b0cf0d50</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="DSMedicamentos">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>546f6aeb-41e4-41b0-84f5-595ab25ce701</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>

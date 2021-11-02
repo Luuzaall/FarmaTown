@@ -33,5 +33,16 @@ namespace FarmaTown.Properties {
                 return ((string)(this["db_a7bd78_famatownConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5063.site4now.net;Persist Security Info=True;User ID=db_a7bd78_fam" +
+            "atown_admin;Password=123smarterasp")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
+            }
+        }
     }
 }

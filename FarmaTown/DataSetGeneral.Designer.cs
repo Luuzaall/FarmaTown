@@ -9025,7 +9025,7 @@ SELECT idBarrio, nombre, idLocalidad, borrado FROM Barrios WHERE (idBarrio = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9390,7 +9390,7 @@ SELECT idCliente, nombre, apellido, tipoDoc, nroDoc, calle, nroCalle, idBarrio, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9910,7 +9910,7 @@ SELECT idVenta, idMedicamento, cantidad, precio, reintegro, idOS, borrado FROM D
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10274,7 +10274,7 @@ SELECT idEmpleado, nroDoc, tipoDoc, idFarmacia, nombre, borrado FROM Empleados W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10679,7 +10679,7 @@ SELECT idFarmacia, nombre, calle, numero, idBarrio, borrado FROM Farmacias WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11090,7 +11090,7 @@ SELECT idLocalidad, nombre, borrado FROM Localidades WHERE (idLocalidad = @idLoc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11437,7 +11437,7 @@ SELECT idMedicamento, descripcion, nombre, tipoMedicamento, precioLista, cantida
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11805,7 +11805,7 @@ SELECT idMedioPago, nombre, borrado FROM MediosPago WHERE (idMedioPago = @idMedi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12134,7 +12134,7 @@ SELECT idMedioPago, nombre, borrado FROM MediosPago WHERE (idMedioPago = @idMedi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12467,7 +12467,7 @@ SELECT idOS, idMedicamento, descuento, borrado FROM OSXMedicamentos WHERE (idMed
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12779,7 +12779,7 @@ SELECT idOS, idMedicamento, descuento, borrado FROM OSXMedicamentos WHERE (idMed
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13118,7 +13118,7 @@ SELECT idSesion, idUsuario, fechaInicio, fechaFin, borrado FROM Sesiones WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13466,7 +13466,7 @@ SELECT idTipo, nombre, borrado, descripcion FROM TiposDocumento WHERE (idTipo = 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13821,7 +13821,7 @@ SELECT idTipoFactura, nombre, borrado FROM TiposFactura WHERE (idTipoFactura = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14151,7 +14151,7 @@ SELECT idTipo, descripcion, borrado FROM TiposMedicamento WHERE (idTipo = @idTip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14500,7 +14500,7 @@ SELECT idUsuario, idEmpleado, nombre, clave, idRol, borrado FROM Usuarios WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14891,7 +14891,7 @@ SELECT idVenta, idFarmacia, nroFactura, idCliente, fechaFactura, idEmpleado, bor
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.db_a7bd78_famatownConnectionString;
+            this._connection.ConnectionString = global::FarmaTown.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
