@@ -219,10 +219,10 @@ namespace FarmaTown.Datos
                     ", tipoMedicamento" +
                     ", precioLista" +
                     ", cantidad" +
-                    ", borrado = 0" +
                     " FROM Medicamentos m" +
                     " INNER JOIN TiposMedicamento t ON m.tipoMedicamento = t.idTipo" +
-                    " WHERE m.cantidad BETWEEN '" + cantidadMinima + "' AND '" + cantidadMaxima + "'";
+                    " WHERE (m.cantidad BETWEEN '" + cantidadMinima + "' AND '" + cantidadMaxima + "') AND " +
+                    " m.borrado = 0";
 
          return DBHelper.getDBHelper().consultaSQL(query);
         }
