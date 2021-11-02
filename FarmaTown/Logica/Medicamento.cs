@@ -21,6 +21,7 @@ namespace FarmaTown.Logica
 
         MedicamentoDao oMedicamentoDao;
 
+
         public Medicamento()
         {
             oMedicamentoDao = new MedicamentoDao();
@@ -64,7 +65,7 @@ namespace FarmaTown.Logica
 
         public Object obtenerDatosReporte(float precioMinimo, float precioMaximo)
         {
-            return this.obtenerDatosReporte(precioMinimo, precioMaximo);
+            return this.oMedicamentoDao.obtenerDatosReporte(precioMinimo, precioMaximo);
         }
     }
 }

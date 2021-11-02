@@ -39,12 +39,12 @@ namespace FarmaTown.Presentacion.Reportes
             }
             else
             {
-                this.rpvMedicamentos.LocalReport.DataSources.Clear();
                 Object tabla = oMedicamento.obtenerDatosReporte(precioMinimo, precioMaximo);
                 ReportDataSource rprtDTSource = new ReportDataSource("DSMedicamentos", tabla);
 
-                this.rpvMedicamentos.LocalReport.DataSources.Add(rprtDTSource);
-                this.rpvMedicamentos.RefreshReport();
+                rpvMedicamentos.LocalReport.DataSources.Clear();
+                rpvMedicamentos.LocalReport.DataSources.Add(rprtDTSource);
+                rpvMedicamentos.LocalReport.Refresh();
             }
         }
     }
