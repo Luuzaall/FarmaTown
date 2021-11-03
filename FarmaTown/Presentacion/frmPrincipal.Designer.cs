@@ -49,6 +49,13 @@
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorTipoDeMedicamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porFarmaciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -208,6 +215,9 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventasToolStripMenuItem2,
+            this.medicamentosToolStripMenuItem,
+            this.empleadosToolStripMenuItem});
+            this.ventasToolStripMenuItem2,
             this.clientesToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
@@ -216,10 +226,66 @@
             // 
             // ventasToolStripMenuItem2
             // 
+            this.ventasToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoToolStripMenuItem,
+            this.reportePorTipoDeMedicamentoToolStripMenuItem,
+            this.porFarmaciaToolStripMenuItem});
             this.ventasToolStripMenuItem2.Name = "ventasToolStripMenuItem2";
             this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.ventasToolStripMenuItem2.Text = "Ventas";
             this.ventasToolStripMenuItem2.Click += new System.EventHandler(this.ventasToolStripMenuItem2_Click);
+            // 
+            // listadoToolStripMenuItem
+            // 
+            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            // 
+            // reportePorTipoDeMedicamentoToolStripMenuItem
+            // 
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Name = "reportePorTipoDeMedicamentoToolStripMenuItem";
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Text = "Por Tipo de Medicamento";
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Click += new System.EventHandler(this.reportePorTipoDeMedicamentoToolStripMenuItem_Click);
+            // 
+            // porFarmaciaToolStripMenuItem
+            // 
+            this.porFarmaciaToolStripMenuItem.Name = "porFarmaciaToolStripMenuItem";
+            this.porFarmaciaToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.porFarmaciaToolStripMenuItem.Text = "Por Farmacia";
+            this.porFarmaciaToolStripMenuItem.Click += new System.EventHandler(this.porFarmaciaToolStripMenuItem_Click);
+            // 
+            // medicamentosToolStripMenuItem
+            // 
+            this.medicamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoToolStripMenuItem1});
+            this.medicamentosToolStripMenuItem.Name = "medicamentosToolStripMenuItem";
+            this.medicamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.medicamentosToolStripMenuItem.Text = "Medicamentos";
+            // 
+            // listadoToolStripMenuItem1
+            // 
+            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
+            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(125, 24);
+            this.listadoToolStripMenuItem1.Text = "Listado";
+            this.listadoToolStripMenuItem1.Click += new System.EventHandler(this.listadoToolStripMenuItem1_Click);
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoToolStripMenuItem2});
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
+            // 
+            // listadoToolStripMenuItem2
+            // 
+            this.listadoToolStripMenuItem2.Name = "listadoToolStripMenuItem2";
+            this.listadoToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.listadoToolStripMenuItem2.Text = "Listado";
+            this.listadoToolStripMenuItem2.Click += new System.EventHandler(this.listadoToolStripMenuItem2_Click);
             // 
             // lblUsuario
             // 
@@ -341,5 +407,12 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medicamentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem reportePorTipoDeMedicamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porFarmaciaToolStripMenuItem;
     }
 }

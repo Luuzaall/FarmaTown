@@ -72,8 +72,16 @@ namespace FarmaTown.Datos
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);
         }
-        
-        
+
+        internal object obtenerDatosReporte(string nom)
+        {
+            string query = "SELECT nombre, nroDoc, tipoDoc,idFarmacia " +
+                " FROM Empleados" +
+                " WHERE borrado = 0 AND nombre LIKE '" + nom + "%'"+
+                " ORDER BY 1";
+            return DBHelper.getDBHelper().consultaSQL(query);
+        }
+
         internal Empleado traerEmpleado(int idEmpleado)
         {
             string query = "SELECT e.idEmpleado" +

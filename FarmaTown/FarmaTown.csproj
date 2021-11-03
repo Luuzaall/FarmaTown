@@ -76,6 +76,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\ClienteDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
@@ -92,6 +97,11 @@
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Datos\TipoMedDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
+    <Compile Include="DSEmpleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cliente.cs" />
     <Compile Include="Logica\DetalleVenta.cs" />
@@ -265,11 +275,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteEmpleados.Designer.cs">
+      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.Designer.cs">
+      <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.Designer.cs">
+      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmListadoVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmListadoVentas.Designer.cs">
       <DependentUpon>frmListadoVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.Designer.cs">
+      <DependentUpon>frmReporteVentasxFarmacia.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
@@ -312,6 +346,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Farmacias\frmFarmacias.resx">
       <DependentUpon>frmFarmacias.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\ABMC%27s\Localidades\frmABMLocalidades.resx">
       <DependentUpon>frmABMLocalidades.cs</DependentUpon>
@@ -355,6 +390,12 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteEmpleados.resx">
+      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmListadoMedicamentos.resx">
+      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\frmReporteClientes.resx">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +403,16 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmListadoVentas.resx">
       <DependentUpon>frmListadoVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.resx">
+      <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteVentasxFarmacia.resx">
+      <DependentUpon>frmReporteVentasxFarmacia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\rptVentasFarmacia.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptVentas.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
@@ -374,6 +425,28 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DataSetGeneral.xsc">
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGeneral.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetGeneral.xss">
+      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="DSEmpleados.xsc">
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="DSEmpleados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmpleados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSEmpleados.xss">
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Presentacion\Reportes\Clientes\DTSClientes.xsc">
       <DependentUpon>DTSClientes.xsd</DependentUpon>
@@ -419,6 +492,7 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\listado medicamentos.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

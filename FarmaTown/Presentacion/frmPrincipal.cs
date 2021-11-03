@@ -86,7 +86,7 @@ namespace FarmaTown.Presentacion
 
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmEmpleados frmEmp = new frmEmpleados();
+            Empleados.frmEmpleados frmEmp = new Empleados.frmEmpleados();
             frmEmp.ShowDialog();
         }
 
@@ -239,6 +239,42 @@ namespace FarmaTown.Presentacion
         {
             frmListadoVentas ofrmListadoVentas = new frmListadoVentas();
             ofrmListadoVentas.ShowDialog();
+        }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
+            ofrmListadoMedicamentos.ShowDialog();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados ofrmfrmReporteEmpleados = new frmReporteEmpleados();
+            ofrmfrmReporteEmpleados.ShowDialog();
+        }
+
+        private void tiposDeMedicamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteTMedicamentosxVenta ofrmReporteTMedicamentosxVenta = new frmReporteTMedicamentosxVenta();
+            ofrmReporteTMedicamentosxVenta.ShowDialog();
+        }
+
+        private void reportePorTipoDeMedicamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteTMedicamentosxVenta ofrmReporteTMedicamentosxVenta = new frmReporteTMedicamentosxVenta();
+            ofrmReporteTMedicamentosxVenta.ShowDialog();
+        }
+
+        private void porFarmaciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteVentasxFarmacia ofrmReporteVentasxFarmacia = new frmReporteVentasxFarmacia();
+            ofrmReporteVentasxFarmacia.ShowDialog();
+        }
+
+        private void listadoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados ofrmReporteEmpleados = new frmReporteEmpleados();
+            ofrmReporteEmpleados.ShowDialog();
         }
 
         private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)

@@ -21,6 +21,7 @@ namespace FarmaTown.Logica
 
         MedicamentoDao oMedicamentoDao;
 
+
         public Medicamento()
         {
             oMedicamentoDao = new MedicamentoDao();
@@ -60,6 +61,11 @@ namespace FarmaTown.Logica
         internal List<Medicamento> recurperarMedicamentoCParametros(string nom, int idTipo, bool conBorrados)
         { 
             return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo, conBorrados);
+        }
+
+        public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
+        {
+            return this.oMedicamentoDao.obtenerDatosReporte(cantidadMinima, cantidadMaxima);
         }
     }
 }

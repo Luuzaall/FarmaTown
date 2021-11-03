@@ -53,6 +53,9 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmVentas(us.traerUsuario("Nao")));
 
 
+            //Application.Run(new frmListadoVentas());
+            //Application.Run(new frmReporteTMedicamentosxVenta());
+            Application.Run(new frmReporteVentasxFarmacia());
             //Application.Run(new frmReporteClientes());
 
             //Application.Run(new frmClientes(FormMode.management));

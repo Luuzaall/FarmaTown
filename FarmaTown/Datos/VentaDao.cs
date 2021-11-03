@@ -156,11 +156,73 @@ namespace FarmaTown.Datos
                         " , v.nroFactura" +
                         ", o.nombre" +
                         ", l.nombre";
+            if (reporte == 1)
+            {
+                string query = "SELECT v.idVenta" +
+                        ", v.nroFactura" +
+                        ", f.nombre as farmacia" +
+                        ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
+                        ", e.nombre as empleado" +
+                        ", t.nombre as tipoFactura" +
+                        ", m.nombre as medioPago" +
+                        ", ROUND(SUM(precio), 2) as 'Total'" +
+                        " FROM Ventas v" +
+                        " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
+                        " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                        " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
+                        " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
+                        " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                        " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                            " AND CONVERT(DATE,'" + fechaHasta + "',105)" +
+                        " GROUP BY v.idVenta" +
+                            " , f.nombre" +
+                            " , v.fechaFactura" +
+                            " , e.nombre" +
+                            " , t.nombre" +
+                            " , m.nombre" +
+                            " , v.nroFactura";
 
 
-            return DBHelper.getDBHelper().consultaSQL(query);
+                return DBHelper.getDBHelper().consultaSQL(query);
+            }
+            else if (reporte == 2)
+            {
+                string query = "SELECT" +
+                    " tm.descripcion" +
+                    " FROM Ventas v" +
+                    " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
+                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                    " INNER JOIN Medicamentos m ON d.idMedicamento = m.idMedicamento" +
+                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
+                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                    " AND CONVERT(DATE,'" + fechaHasta + "',105)";
+                    
+                if (!(indexFarm == -1))
+                {
+                    query = query + " AND v.idFarmacia = " + indexFarm;
+                }
 
+                if (!(indexLocalidad == -1))
+                {
+                    query = query + " AND b.idLocalidad = " + indexLocalidad;
+                }
 
+                return DBHelper.getDBHelper().consultaSQL(query);
+            }
+            else if (reporte == 3)
+            {
+                string query = "SELECT f.nombre" +
+                    " FROM Ventas v" +
+                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                    " AND CONVERT(DATE,'" + fechaHasta + "',105)";
+
+                return DBHelper.getDBHelper().consultaSQL(query);
+            }
+
+             return null;
+           
         }
     }
 }
