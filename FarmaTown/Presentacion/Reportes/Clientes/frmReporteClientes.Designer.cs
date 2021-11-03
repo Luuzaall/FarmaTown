@@ -68,7 +68,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.rpvClientes.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.rpvClientes.Name = "rpvClientes";
             this.rpvClientes.ServerReport.BearerToken = null;
-            this.rpvClientes.Size = new System.Drawing.Size(776, 274);
+            this.rpvClientes.Size = new System.Drawing.Size(776, 371);
             this.rpvClientes.TabIndex = 0;
             // 
             // gbFiltros
@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(318, 9);
+            this.label1.Location = new System.Drawing.Point(298, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 33);
@@ -199,7 +199,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.reporteClientes;
-            this.ClientSize = new System.Drawing.Size(839, 551);
+            this.ClientSize = new System.Drawing.Size(839, 648);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.label1);
@@ -211,6 +211,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.MaximizeBox = false;
             this.Name = "frmReporteClientes";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Clientes - FarmaTown";
             this.Load += new System.EventHandler(this.frmReporteClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtClientesBindingSource)).EndInit();

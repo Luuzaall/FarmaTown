@@ -41,7 +41,6 @@ namespace FarmaTown.Presentacion
             t.Interval = 1000;
             t.Tick += new EventHandler(this.t_Tick);
             t.Start();
-
             this.cargarLogIn();
 
         }
@@ -75,6 +74,12 @@ namespace FarmaTown.Presentacion
                 if (rolLogeado.IdRol == 2)
                 {
                     this.gestiónToolStripMenuItem.Visible = false;
+                    this.reportesToolStripMenuItem.Visible = false;
+                }
+                else
+                {
+                    this.gestiónToolStripMenuItem.Visible = true;
+                    this.reportesToolStripMenuItem.Visible = true;
                 }
             }
         }
