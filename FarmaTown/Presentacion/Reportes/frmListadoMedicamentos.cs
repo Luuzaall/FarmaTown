@@ -57,7 +57,7 @@ namespace FarmaTown.Presentacion.Reportes
 
                 rpvMedicamentos.LocalReport.DataSources.Clear();
                 rpvMedicamentos.LocalReport.DataSources.Add(rprtDTSource);
-                rpvMedicamentos.LocalReport.Refresh();
+                rpvMedicamentos.RefreshReport();
             }
         }
 

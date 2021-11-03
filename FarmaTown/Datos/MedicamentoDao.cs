@@ -228,6 +228,7 @@ namespace FarmaTown.Datos
             {
                 query = query + " AND (m.cantidad BETWEEN '" + cantidadMinima + "' AND '" + cantidadMaxima + "')";
             }
+            query = query + " ORDER BY 2";
 
          return DBHelper.getDBHelper().consultaSQL(query);
         }
