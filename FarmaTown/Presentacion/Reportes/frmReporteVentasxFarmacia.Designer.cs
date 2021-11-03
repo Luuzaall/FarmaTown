@@ -30,7 +30,6 @@ namespace FarmaTown.Presentacion.Reportes
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.farmaciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetGeneral = new FarmaTown.DataSetGeneral();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
@@ -85,10 +84,7 @@ namespace FarmaTown.Presentacion.Reportes
             // 
             // rpvVentaxFarmacia
             // 
-            reportDataSource2.Name = "Farmacia";
-            reportDataSource2.Value = this.farmaciasBindingSource;
-            this.rpvVentaxFarmacia.LocalReport.DataSources.Add(reportDataSource2);
-            this.rpvVentaxFarmacia.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.Report1.rdlc";
+            this.rpvVentaxFarmacia.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptVentasFarmacia.rdlc";
             this.rpvVentaxFarmacia.Location = new System.Drawing.Point(21, 266);
             this.rpvVentaxFarmacia.Name = "rpvVentaxFarmacia";
             this.rpvVentaxFarmacia.ServerReport.BearerToken = null;
