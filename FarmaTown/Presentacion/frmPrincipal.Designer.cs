@@ -50,6 +50,8 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorTipoDeMedicamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porFarmaciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +61,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNomRol = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
-            this.reportePorTipoDeMedicamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.porFarmaciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -238,6 +238,20 @@
             this.listadoToolStripMenuItem.Text = "Listado";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
+            // reportePorTipoDeMedicamentoToolStripMenuItem
+            // 
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Name = "reportePorTipoDeMedicamentoToolStripMenuItem";
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Text = "Por Tipo de Medicamento";
+            this.reportePorTipoDeMedicamentoToolStripMenuItem.Click += new System.EventHandler(this.reportePorTipoDeMedicamentoToolStripMenuItem_Click);
+            // 
+            // porFarmaciaToolStripMenuItem
+            // 
+            this.porFarmaciaToolStripMenuItem.Name = "porFarmaciaToolStripMenuItem";
+            this.porFarmaciaToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.porFarmaciaToolStripMenuItem.Text = "Por Farmacia";
+            this.porFarmaciaToolStripMenuItem.Click += new System.EventHandler(this.porFarmaciaToolStripMenuItem_Click);
+            // 
             // medicamentosToolStripMenuItem
             // 
             this.medicamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -265,8 +279,9 @@
             // listadoToolStripMenuItem2
             // 
             this.listadoToolStripMenuItem2.Name = "listadoToolStripMenuItem2";
-            this.listadoToolStripMenuItem2.Size = new System.Drawing.Size(125, 24);
+            this.listadoToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.listadoToolStripMenuItem2.Text = "Listado";
+            this.listadoToolStripMenuItem2.Click += new System.EventHandler(this.listadoToolStripMenuItem2_Click);
             // 
             // lblUsuario
             // 
@@ -322,20 +337,6 @@
             this.lblReloj.Size = new System.Drawing.Size(2, 82);
             this.lblReloj.TabIndex = 5;
             this.lblReloj.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // reportePorTipoDeMedicamentoToolStripMenuItem
-            // 
-            this.reportePorTipoDeMedicamentoToolStripMenuItem.Name = "reportePorTipoDeMedicamentoToolStripMenuItem";
-            this.reportePorTipoDeMedicamentoToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
-            this.reportePorTipoDeMedicamentoToolStripMenuItem.Text = "Por Tipo de Medicamento";
-            this.reportePorTipoDeMedicamentoToolStripMenuItem.Click += new System.EventHandler(this.reportePorTipoDeMedicamentoToolStripMenuItem_Click);
-            // 
-            // porFarmaciaToolStripMenuItem
-            // 
-            this.porFarmaciaToolStripMenuItem.Name = "porFarmaciaToolStripMenuItem";
-            this.porFarmaciaToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
-            this.porFarmaciaToolStripMenuItem.Text = "Por Farmacia";
-            this.porFarmaciaToolStripMenuItem.Click += new System.EventHandler(this.porFarmaciaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

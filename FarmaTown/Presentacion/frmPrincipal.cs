@@ -264,5 +264,11 @@ namespace FarmaTown.Presentacion
             frmReporteVentasxFarmacia ofrmReporteVentasxFarmacia = new frmReporteVentasxFarmacia();
             ofrmReporteVentasxFarmacia.ShowDialog();
         }
+
+        private void listadoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados ofrmReporteEmpleados = new frmReporteEmpleados();
+            ofrmReporteEmpleados.ShowDialog();
+        }
     }
 }

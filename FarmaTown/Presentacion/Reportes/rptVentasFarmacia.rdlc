@@ -573,7 +573,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de Ventas              |por Tipo de Medicamento  |</Value>
+                      <Value>reporte de Ventas  |Por farmacia          |</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                       </Style>
@@ -584,9 +584,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>0.90385cm</Top>
-              <Left>11.63723cm</Left>
+              <Left>12.96015cm</Left>
               <Height>1.10271cm</Height>
-              <Width>5.09292cm</Width>
+              <Width>3.77cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
