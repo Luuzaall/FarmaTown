@@ -167,7 +167,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.Empleados;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(837, 451);
+            this.ClientSize = new System.Drawing.Size(851, 451);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.rptEmpleados);
             this.Controls.Add(this.btnGenerar);
@@ -176,6 +176,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado Empleados - FarmaTown";
             this.Load += new System.EventHandler(this.frmReporteEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).EndInit();
