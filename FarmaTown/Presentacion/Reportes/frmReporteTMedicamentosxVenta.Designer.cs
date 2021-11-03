@@ -31,6 +31,8 @@ namespace FarmaTown.Presentacion.Reportes
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteTMedicamentosxVenta));
+            this.TiposDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetGeneral = new FarmaTown.DataSetGeneral();
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboLocalidades = new System.Windows.Forms.ComboBox();
@@ -41,17 +43,31 @@ namespace FarmaTown.Presentacion.Reportes
             this.lblFarmacia = new System.Windows.Forms.Label();
             this.lblFFinal = new System.Windows.Forms.Label();
             this.lblFInicial = new System.Windows.Forms.Label();
-            this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.rpvMedicamentosxVenta = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MedicamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetGeneral = new FarmaTown.DataSetGeneral();
             this.dtVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposMedicamentoTableAdapter = new FarmaTown.DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter();
+            this.TiposMedicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DTSVentas = new FarmaTown.Presentacion.Reportes.DTSVentas();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
+            ((System.ComponentModel.ISupportInitialize)(this.TiposDocumentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MedicamentosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiposMedicamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DTSVentas)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TiposDocumentoBindingSource
+            // 
+            this.TiposDocumentoBindingSource.DataMember = "TiposDocumento";
+            this.TiposDocumentoBindingSource.DataSource = this.dataSetGeneral;
+            // 
+            // dataSetGeneral
+            // 
+            this.dataSetGeneral.DataSetName = "DataSetGeneral";
+            this.dataSetGeneral.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -162,6 +178,40 @@ namespace FarmaTown.Presentacion.Reportes
             this.lblFInicial.TabIndex = 42;
             this.lblFInicial.Text = "Fecha Desde: ";
             // 
+            // rpvMedicamentosxVenta
+            // 
+            this.rpvMedicamentosxVenta.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptTMedicamentos.rdlc";
+            this.rpvMedicamentosxVenta.Location = new System.Drawing.Point(29, 290);
+            this.rpvMedicamentosxVenta.Name = "rpvMedicamentosxVenta";
+            this.rpvMedicamentosxVenta.ServerReport.BearerToken = null;
+            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(827, 294);
+            this.rpvMedicamentosxVenta.TabIndex = 44;
+            this.rpvMedicamentosxVenta.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // MedicamentosBindingSource
+            // 
+            this.MedicamentosBindingSource.DataMember = "TiposMedicamento";
+            this.MedicamentosBindingSource.DataSource = this.dataSetGeneral;
+            // 
+            // dtVentasBindingSource
+            // 
+            this.dtVentasBindingSource.DataSource = this.dataSetGeneral;
+            this.dtVentasBindingSource.Position = 0;
+            // 
+            // tiposMedicamentoTableAdapter
+            // 
+            this.tiposMedicamentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // TiposMedicamentoBindingSource
+            // 
+            this.TiposMedicamentoBindingSource.DataMember = "TiposMedicamento";
+            this.TiposMedicamentoBindingSource.DataSource = this.dataSetGeneral;
+            // 
+            // DTSVentas
+            // 
+            this.DTSVentas.DataSetName = "DTSVentas";
+            this.DTSVentas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -185,35 +235,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnConsultar.Text = "Generar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
-            // rpvMedicamentosxVenta
-            // 
-            this.rpvMedicamentosxVenta.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.rptTMedicamentosxVenta.rdlc";
-            this.rpvMedicamentosxVenta.Location = new System.Drawing.Point(29, 290);
-            this.rpvMedicamentosxVenta.Name = "rpvMedicamentosxVenta";
-            this.rpvMedicamentosxVenta.ServerReport.BearerToken = null;
-            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(827, 294);
-            this.rpvMedicamentosxVenta.TabIndex = 44;
-            this.rpvMedicamentosxVenta.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // MedicamentosBindingSource
-            // 
-            this.MedicamentosBindingSource.DataMember = "TiposMedicamento";
-            this.MedicamentosBindingSource.DataSource = this.dataSetGeneral;
-            // 
-            // dataSetGeneral
-            // 
-            this.dataSetGeneral.DataSetName = "DataSetGeneral";
-            this.dataSetGeneral.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dtVentasBindingSource
-            // 
-            this.dtVentasBindingSource.DataSource = this.dataSetGeneral;
-            this.dtVentasBindingSource.Position = 0;
-            // 
-            // tiposMedicamentoTableAdapter
-            // 
-            this.tiposMedicamentoTableAdapter.ClearBeforeFill = true;
+            this.btnConsultar.Click += new System.EventHandler(this.reportViewer1_Load);
             // 
             // frmReporteTMedicamentosxVenta
             // 
@@ -225,14 +247,19 @@ namespace FarmaTown.Presentacion.Reportes
             this.Controls.Add(this.rpvMedicamentosxVenta);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteTMedicamentosxVenta";
-            this.Text = "Form1";
+            this.Text = "Farmatown - Reporte de Tipos Medicamentos";
             this.Load += new System.EventHandler(this.frmReporteTMedicamentosxVenta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TiposDocumentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).EndInit();
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MedicamentosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtVentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TiposMedicamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DTSVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +283,8 @@ namespace FarmaTown.Presentacion.Reportes
         private DataSetGeneral dataSetGeneral;
         private System.Windows.Forms.BindingSource dtVentasBindingSource;
         private DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter tiposMedicamentoTableAdapter;
+        private System.Windows.Forms.BindingSource TiposMedicamentoBindingSource;
+        private DTSVentas DTSVentas;
+        private System.Windows.Forms.BindingSource TiposDocumentoBindingSource;
     }
 }
