@@ -2,23 +2,16 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DSTMedicamento">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>5f9a3ad2-15fd-4d28-ad90-9c92828e345c</rd:DataSourceID>
-    </DataSource>
     <DataSource Name="DataSetGeneral">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d0217f2b-1c19-4488-9d27-6995eca64683</rd:DataSourceID>
+      <rd:DataSourceID>81df4b1e-4742-428d-b246-23013ffad651</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSTipoMedicamento">
+    <DataSet Name="TipoMedicamento">
       <Query>
         <DataSourceName>DataSetGeneral</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -39,7 +32,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetGeneral</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\romel\Source\Repos\Luuzaall\FarmaTown\FarmaTown\DataSetGeneral.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\valen\Source\Repos\Luuzaall\FarmaTown\FarmaTown\DataSetGeneral.xsd</rd:SchemaPath>
         <rd:TableName>TiposMedicamento</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -51,11 +44,11 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Chart Name="Chart2">
+          <Chart Name="Chart4">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart2_CategoryGroup">
+                  <Group Name="Chart4_CategoryGroup">
                     <GroupExpressions>
                       <GroupExpression>=Fields!descripcion.Value</GroupExpression>
                     </GroupExpressions>
@@ -395,10 +388,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <Top>3.5239cm</Top>
-            <Left>1.23401cm</Left>
-            <Height>5cm</Height>
-            <Width>13.77699cm</Width>
+            <DataSetName>TipoMedicamento</DataSetName>
+            <Top>0.10583cm</Top>
+            <Left>3.66506cm</Left>
+            <Height>7.35162cm</Height>
+            <Width>13.71771cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -408,189 +402,18 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Tablix Name="Tablix1">
-            <TablixBody>
-              <TablixColumns>
-                <TablixColumn>
-                  <Width>4.59233cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>4.59233cm</Width>
-                </TablixColumn>
-              </TablixColumns>
-              <TablixRows>
-                <TablixRow>
-                  <Height>0.67938cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Identificador</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox9">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Tipo de medicamento</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox9</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.67938cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="idTipo">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!idTipo.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>idTipo</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="descripcion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!descripcion.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>descripcion</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-              </TablixRows>
-            </TablixBody>
-            <TablixColumnHierarchy>
-              <TablixMembers>
-                <TablixMember />
-                <TablixMember />
-              </TablixMembers>
-            </TablixColumnHierarchy>
-            <TablixRowHierarchy>
-              <TablixMembers>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <Group Name="Detalles" />
-                </TablixMember>
-              </TablixMembers>
-            </TablixRowHierarchy>
-            <DataSetName>DSTipoMedicamento</DataSetName>
-            <Top>0.87807cm</Top>
-            <Left>3.647cm</Left>
-            <Height>1.35876cm</Height>
-            <Width>9.18466cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Tablix>
         </ReportItems>
-        <Height>3.88712in</Height>
+        <Height>2.936in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>8.10713in</Width>
       <Page>
         <PageHeader>
-          <Height>4.09292cm</Height>
+          <Height>4.49792cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox1">
+            <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -609,10 +432,10 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.60854cm</Top>
-              <Left>3.94016cm</Left>
+              <Top>0.66552cm</Top>
+              <Left>4.73188cm</Left>
               <Height>1.89646cm</Height>
-              <Width>11.33584cm</Width>
+              <Width>14.06105cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -628,8 +451,8 @@
               <Source>Embedded</Source>
               <Value>logopng</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.60854cm</Top>
-              <Left>1.23401cm</Left>
+              <Top>1.00948cm</Top>
+              <Left>1.19062cm</Left>
               <Height>2.18792cm</Height>
               <Width>2.07666cm</Width>
               <ZIndex>1</ZIndex>
@@ -658,8 +481,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>2.9785cm</Top>
-              <Left>3.94016cm</Left>
+              <Top>3.03548cm</Top>
+              <Left>5.9225cm</Left>
               <Height>0.79692cm</Height>
               <Width>4.19333cm</Width>
               <ZIndex>2</ZIndex>
@@ -698,10 +521,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>2.9785cm</Top>
-              <Left>8.23933cm</Left>
+              <Top>3.03548cm</Top>
+              <Left>10.22167cm</Left>
               <Height>0.79692cm</Height>
-              <Width>5.66767cm</Width>
+              <Width>8.57125cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -722,7 +545,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.96333cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -743,8 +566,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.46729cm</Top>
-              <Left>7.68308cm</Left>
+              <Top>0.71864cm</Top>
+              <Left>11.2cm</Left>
               <Height>1.10271cm</Height>
               <Width>5.09292cm</Width>
               <Style>
@@ -776,8 +599,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.46729cm</Top>
-              <Left>12.776cm</Left>
+              <Top>0.71864cm</Top>
+              <Left>16.29292cm</Left>
               <Height>1.10271cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -827,5 +650,5 @@ aX5+MCxEebxy3OCaUBa4nw2oMxyJtnf15fm8XuscoCyFpgVIQrGRulk5QSHzrlXI0YP2eA2OBSY6L8N5
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b2f0ba3a-c747-4f63-989b-5d37e9f1c2be</rd:ReportID>
+  <rd:ReportID>47e2760b-8f34-4f72-88be-6ba44731f8e5</rd:ReportID>
 </Report>

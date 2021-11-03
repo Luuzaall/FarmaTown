@@ -386,8 +386,8 @@
       <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentosxVenta.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptVentas.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>

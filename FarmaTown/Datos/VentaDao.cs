@@ -151,7 +151,8 @@ namespace FarmaTown.Datos
             }
             else if (reporte == 2)
             {
-                string query = "SELECT tm.descripcion" +
+                string query = "SELECT tm.idTipo" +
+                    ", tm.descripcion" +
                     " FROM Ventas v" +
                     " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
