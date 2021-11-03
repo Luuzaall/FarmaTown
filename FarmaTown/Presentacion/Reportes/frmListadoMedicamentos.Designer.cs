@@ -183,7 +183,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(592, 476);
+            this.btnSalir.Location = new System.Drawing.Point(664, 412);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 45;
@@ -198,7 +198,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.listado_medicamentos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(687, 537);
+            this.ClientSize = new System.Drawing.Size(742, 474);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.rpvMedicamentos);
@@ -206,13 +206,13 @@ namespace FarmaTown.Presentacion.Reportes
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.MaximizeBox = false;
             this.Name = "frmListadoMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado de Medicamentos - FarmaTown";
+            this.Text = "Listado Medicamentos - FarmaTown";
             this.Load += new System.EventHandler(this.frmListadoMedicamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.medicamentosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).EndInit();

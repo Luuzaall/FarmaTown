@@ -77,7 +77,7 @@ namespace FarmaTown.Datos
         {
             string query = "SELECT nombre, nroDoc, tipoDoc,idFarmacia " +
                 " FROM Empleados" +
-                " WHERE nombre LIKE '" + nom + "%'"+
+                " WHERE borrado = 0 AND nombre LIKE '" + nom + "%'"+
                 " ORDER BY 1";
             return DBHelper.getDBHelper().consultaSQL(query);
         }

@@ -240,5 +240,17 @@ namespace FarmaTown.Presentacion
             frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
             ofrmListadoMedicamentos.ShowDialog();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados ofrmfrmReporteEmpleados = new frmReporteEmpleados();
+            ofrmfrmReporteEmpleados.ShowDialog();
+        }
+
+        private void tiposDeMedicamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteTMedicamentosxVenta ofrmReporteTMedicamentosxVenta = new frmReporteTMedicamentosxVenta();
+            ofrmReporteTMedicamentosxVenta.ShowDialog();
+        }
     }
 }
