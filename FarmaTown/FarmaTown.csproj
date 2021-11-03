@@ -288,6 +288,12 @@
     <Compile Include="Presentacion\Reportes\frmListadoVentas.Designer.cs">
       <DependentUpon>frmListadoVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.Designer.cs">
+      <DependentUpon>frmReporteVentasxFarmacia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -385,6 +391,10 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.resx">
       <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\frmReporteVentasxFarmacia.resx">
+      <DependentUpon>frmReporteVentasxFarmacia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentos.rdlc" />

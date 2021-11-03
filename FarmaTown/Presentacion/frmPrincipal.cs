@@ -252,5 +252,17 @@ namespace FarmaTown.Presentacion
             frmReporteTMedicamentosxVenta ofrmReporteTMedicamentosxVenta = new frmReporteTMedicamentosxVenta();
             ofrmReporteTMedicamentosxVenta.ShowDialog();
         }
+
+        private void reportePorTipoDeMedicamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteTMedicamentosxVenta ofrmReporteTMedicamentosxVenta = new frmReporteTMedicamentosxVenta();
+            ofrmReporteTMedicamentosxVenta.ShowDialog();
+        }
+
+        private void porFarmaciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteVentasxFarmacia ofrmReporteVentasxFarmacia = new frmReporteVentasxFarmacia();
+            ofrmReporteVentasxFarmacia.ShowDialog();
+        }
     }
 }

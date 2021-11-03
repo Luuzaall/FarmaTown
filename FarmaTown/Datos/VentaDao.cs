@@ -151,8 +151,8 @@ namespace FarmaTown.Datos
             }
             else if (reporte == 2)
             {
-                string query = "SELECT tm.idTipo" +
-                    ", tm.descripcion" +
+                string query = "SELECT" +
+                    " tm.descripcion" +
                     " FROM Ventas v" +
                     " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
@@ -171,6 +171,16 @@ namespace FarmaTown.Datos
                 {
                     query = query + " AND b.idLocalidad = " + indexLocalidad;
                 }
+
+                return DBHelper.getDBHelper().consultaSQL(query);
+            }
+            else if (reporte == 3)
+            {
+                string query = "SELECT f.nombre" +
+                    " FROM Ventas v" +
+                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                    " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
                 return DBHelper.getDBHelper().consultaSQL(query);
             }

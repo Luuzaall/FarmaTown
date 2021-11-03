@@ -38,6 +38,12 @@ namespace FarmaTown.Presentacion.Reportes
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
+            if (this.fechaDesdePicker.Value > this.fechaHastaPicker.Value)
+            {
+                MessageBox.Show("Fechas inválidas!", "Información"
+                           , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             int oFarm = -1;
             int oLoc = -1;
             if (this.cboFarmacias.SelectedIndex != -1)
@@ -59,6 +65,11 @@ namespace FarmaTown.Presentacion.Reportes
             rpvMedicamentosxVenta.LocalReport.DataSources.Clear();
             rpvMedicamentosxVenta.LocalReport.DataSources.Add(rprtDTSource);
             this.rpvMedicamentosxVenta.RefreshReport();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

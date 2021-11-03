@@ -7,23 +7,35 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>81df4b1e-4742-428d-b246-23013ffad651</rd:DataSourceID>
+      <rd:DataSourceID>c4560bd3-7ce9-471c-a5a3-0b55d8bc1aa5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TipoMedicamento">
+    <DataSet Name="Farmacia">
       <Query>
         <DataSourceName>DataSetGeneral</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="idTipo">
-          <DataField>idTipo</DataField>
+        <Field Name="idFarmacia">
+          <DataField>idFarmacia</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="descripcion">
-          <DataField>descripcion</DataField>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="calle">
+          <DataField>calle</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="numero">
+          <DataField>numero</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="idBarrio">
+          <DataField>idBarrio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="borrado">
           <DataField>borrado</DataField>
@@ -33,10 +45,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetGeneral</rd:DataSetName>
         <rd:SchemaPath>C:\Users\valen\Source\Repos\Luuzaall\FarmaTown\FarmaTown\DataSetGeneral.xsd</rd:SchemaPath>
-        <rd:TableName>TiposMedicamento</rd:TableName>
+        <rd:TableName>Farmacias</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TiposMedicamentoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>FarmaciasTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -44,38 +56,38 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Chart Name="Chart4">
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart4_CategoryGroup">
+                  <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!descripcion.Value</GroupExpression>
+                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!descripcion.Value</Value>
+                      <Value>=Fields!nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!descripcion.Value</Label>
+                  <Label>=Fields!nombre.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>descripcion</Label>
+                  <Label>nombre</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="descripcion">
+                <ChartSeries Name="nombre">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!descripcion.Value)</Y>
+                        <Y>=Count(Fields!nombre.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -364,7 +376,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Ventas de cada tipo de medicamento en la fecha ingresada</Caption>
+                <Caption>Ventas generadas en Farmacias en el rango de fechas seleccionado</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -393,10 +405,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>TipoMedicamento</DataSetName>
-            <Left>1.19062cm</Left>
-            <Height>7.45745cm</Height>
-            <Width>17.60231cm</Width>
+            <DataSetName>Farmacia</DataSetName>
+            <Top>0.10583cm</Top>
+            <Left>1.47791cm</Left>
+            <Height>6.47849cm</Height>
+            <Width>17.6023cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -407,13 +420,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>2.936in</Height>
+        <Height>2.59225in</Height>
         <Style />
       </Body>
-      <Width>8.10713in</Width>
+      <Width>8.09375in</Width>
       <Page>
         <PageHeader>
-          <Height>4.49792cm</Height>
+          <Height>4.92125cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -424,7 +437,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de Ventas por Tipo de Medicamento</Value>
+                      <Value>Reporte de Ventas por Farmacia</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>20pt</FontSize>
@@ -436,9 +449,9 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.66552cm</Top>
-              <Left>4.73188cm</Left>
-              <Height>1.89646cm</Height>
+              <Top>1.22114cm</Top>
+              <Left>5.01916cm</Left>
+              <Height>1.04979cm</Height>
               <Width>14.06105cm</Width>
               <Style>
                 <Border>
@@ -455,8 +468,8 @@
               <Source>Embedded</Source>
               <Value>logopng</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>1.00948cm</Top>
-              <Left>1.19062cm</Left>
+              <Top>1.22114cm</Top>
+              <Left>1.47791cm</Left>
               <Height>2.18792cm</Height>
               <Width>2.07666cm</Width>
               <ZIndex>1</ZIndex>
@@ -485,8 +498,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>3.03548cm</Top>
-              <Left>5.9225cm</Left>
+              <Top>2.61214cm</Top>
+              <Left>5.01916cm</Left>
               <Height>0.79692cm</Height>
               <Width>4.19333cm</Width>
               <ZIndex>2</ZIndex>
@@ -525,8 +538,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>3.03548cm</Top>
-              <Left>10.22167cm</Left>
+              <Top>2.61214cm</Top>
+              <Left>9.31833cm</Left>
               <Height>0.79692cm</Height>
               <Width>8.57125cm</Width>
               <ZIndex>3</ZIndex>
@@ -549,7 +562,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>2.91042cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -570,8 +583,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.71863cm</Top>
-              <Left>11.34993cm</Left>
+              <Top>0.90385cm</Top>
+              <Left>11.63723cm</Left>
               <Height>1.10271cm</Height>
               <Width>5.09292cm</Width>
               <Style>
@@ -603,8 +616,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.71863cm</Top>
-              <Left>16.29292cm</Left>
+              <Top>0.90385cm</Top>
+              <Left>16.58022cm</Left>
               <Height>1.10271cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>
@@ -654,5 +667,5 @@ aX5+MCxEebxy3OCaUBa4nw2oMxyJtnf15fm8XuscoCyFpgVIQrGRulk5QSHzrlXI0YP2eA2OBSY6L8N5
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>47e2760b-8f34-4f72-88be-6ba44731f8e5</rd:ReportID>
+  <rd:ReportID>7679cacf-6fed-4fb5-b482-d6e9440dd605</rd:ReportID>
 </Report>

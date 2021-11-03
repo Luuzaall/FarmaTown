@@ -50,6 +50,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.TiposMedicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DTSVentas = new FarmaTown.Presentacion.Reportes.DTSVentas();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.TiposDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetGeneral)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -74,7 +75,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 28);
+            this.label1.Location = new System.Drawing.Point(298, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(325, 33);
@@ -95,7 +96,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.gbFiltros.Location = new System.Drawing.Point(29, 88);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(827, 127);
+            this.gbFiltros.Size = new System.Drawing.Size(774, 127);
             this.gbFiltros.TabIndex = 43;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -106,7 +107,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.cboLocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboLocalidades.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(559, 84);
+            this.cboLocalidades.Location = new System.Drawing.Point(519, 82);
             this.cboLocalidades.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboLocalidades.Name = "cboLocalidades";
             this.cboLocalidades.Size = new System.Drawing.Size(200, 27);
@@ -114,7 +115,7 @@ namespace FarmaTown.Presentacion.Reportes
             // 
             // fechaHastaPicker
             // 
-            this.fechaHastaPicker.Location = new System.Drawing.Point(559, 34);
+            this.fechaHastaPicker.Location = new System.Drawing.Point(519, 32);
             this.fechaHastaPicker.Name = "fechaHastaPicker";
             this.fechaHastaPicker.Size = new System.Drawing.Size(200, 27);
             this.fechaHastaPicker.TabIndex = 45;
@@ -123,7 +124,7 @@ namespace FarmaTown.Presentacion.Reportes
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblLocalidad.Location = new System.Drawing.Point(459, 87);
+            this.lblLocalidad.Location = new System.Drawing.Point(419, 85);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(92, 19);
             this.lblLocalidad.TabIndex = 50;
@@ -162,7 +163,7 @@ namespace FarmaTown.Presentacion.Reportes
             // 
             this.lblFFinal.AutoSize = true;
             this.lblFFinal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblFFinal.Location = new System.Drawing.Point(444, 36);
+            this.lblFFinal.Location = new System.Drawing.Point(404, 34);
             this.lblFFinal.Name = "lblFFinal";
             this.lblFFinal.Size = new System.Drawing.Size(113, 19);
             this.lblFFinal.TabIndex = 43;
@@ -184,9 +185,8 @@ namespace FarmaTown.Presentacion.Reportes
             this.rpvMedicamentosxVenta.Location = new System.Drawing.Point(29, 290);
             this.rpvMedicamentosxVenta.Name = "rpvMedicamentosxVenta";
             this.rpvMedicamentosxVenta.ServerReport.BearerToken = null;
-            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(827, 294);
+            this.rpvMedicamentosxVenta.Size = new System.Drawing.Size(774, 294);
             this.rpvMedicamentosxVenta.TabIndex = 44;
-            this.rpvMedicamentosxVenta.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // MedicamentosBindingSource
             // 
@@ -228,7 +228,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(379, 233);
+            this.btnConsultar.Location = new System.Drawing.Point(344, 231);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(123, 42);
             this.btnConsultar.TabIndex = 52;
@@ -237,12 +237,36 @@ namespace FarmaTown.Presentacion.Reportes
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.reportViewer1_Load);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnSalir.BackgroundImage = global::FarmaTown.Properties.Resources.logout;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSalir.BorderColor = System.Drawing.Color.Green;
+            this.btnSalir.BorderRadius = 20;
+            this.btnSalir.BorderSize = 1;
+            this.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(820, 535);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(53, 49);
+            this.btnSalir.TabIndex = 53;
+            this.btnSalir.TextColor = System.Drawing.Color.White;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmReporteTMedicamentosxVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(885, 596);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.rpvMedicamentosxVenta);
             this.Controls.Add(this.gbFiltros);
@@ -286,5 +310,6 @@ namespace FarmaTown.Presentacion.Reportes
         private System.Windows.Forms.BindingSource TiposMedicamentoBindingSource;
         private DTSVentas DTSVentas;
         private System.Windows.Forms.BindingSource TiposDocumentoBindingSource;
+        private CustomControls.RJControls.RJButton btnSalir;
     }
 }

@@ -27,7 +27,7 @@ namespace FarmaTown.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmPrincipal());
 
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmFarmacias());
@@ -54,6 +54,7 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmListadoVentas());
             //Application.Run(new frmReporteTMedicamentosxVenta());
+            Application.Run(new frmReporteVentasxFarmacia());
 
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());
