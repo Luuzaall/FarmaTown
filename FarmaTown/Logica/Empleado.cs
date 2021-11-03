@@ -44,6 +44,12 @@ namespace FarmaTown.Logica
                 return true;
 
         }
+
+        internal object obtenerDatosReporte(string nom)
+        {
+            return this.oEmpleadoDao.obtenerDatosReporte(nom);
+        }
+
         internal List<Empleado> recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
         {
             return oEmpleadoDao.recuperarConParam(nomEmpl, nroDoc, idTipoDoc, nomFarm);
