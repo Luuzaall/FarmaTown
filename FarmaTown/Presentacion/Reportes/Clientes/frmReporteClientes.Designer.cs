@@ -33,7 +33,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteClientes));
             this.dtClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DTSClientes = new FarmaTown.Presentacion.Reportes.Clientes.DTSClientes();
+            this.DTSClientes = new FarmaTown.Datos.Reportes.DTSClientes();
             this.rpvClientes = new Microsoft.Reporting.WinForms.ReportViewer();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.cboLocalidades = new System.Windows.Forms.ComboBox();
@@ -43,6 +43,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DTSClientes)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -74,6 +75,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
+            this.gbFiltros.Controls.Add(this.label2);
             this.gbFiltros.Controls.Add(this.cboLocalidades);
             this.gbFiltros.Controls.Add(this.lblLocalidad);
             this.gbFiltros.Controls.Add(this.cboBarrios);
@@ -94,7 +96,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.cboLocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboLocalidades.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(516, 61);
+            this.cboLocalidades.Location = new System.Drawing.Point(518, 67);
             this.cboLocalidades.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboLocalidades.Name = "cboLocalidades";
             this.cboLocalidades.Size = new System.Drawing.Size(211, 27);
@@ -104,7 +106,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblLocalidad.Location = new System.Drawing.Point(410, 64);
+            this.lblLocalidad.Location = new System.Drawing.Point(412, 70);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(92, 19);
             this.lblLocalidad.TabIndex = 50;
@@ -116,7 +118,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.cboBarrios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboBarrios.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboBarrios.FormattingEnabled = true;
-            this.cboBarrios.Location = new System.Drawing.Point(130, 61);
+            this.cboBarrios.Location = new System.Drawing.Point(132, 67);
             this.cboBarrios.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboBarrios.Name = "cboBarrios";
             this.cboBarrios.Size = new System.Drawing.Size(211, 27);
@@ -126,7 +128,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             // 
             this.lblBarrio.AutoSize = true;
             this.lblBarrio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBarrio.Location = new System.Drawing.Point(25, 69);
+            this.lblBarrio.Location = new System.Drawing.Point(45, 75);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(57, 19);
             this.lblBarrio.TabIndex = 48;
@@ -194,6 +196,16 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(9, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(568, 19);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Sólo se muestran los barrios y localidades que tienen al menos un cliente";
+            // 
             // frmReporteClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -227,7 +239,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
 
         private Microsoft.Reporting.WinForms.ReportViewer rpvClientes;
         private System.Windows.Forms.BindingSource dtClientesBindingSource;
-        private DTSClientes DTSClientes;
+        private Datos.Reportes.DTSClientes DTSClientes;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboLocalidades;
@@ -236,5 +248,6 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
         private System.Windows.Forms.Label lblBarrio;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnGenerar;
+        private System.Windows.Forms.Label label2;
     }
 }

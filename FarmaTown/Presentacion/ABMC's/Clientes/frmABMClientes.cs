@@ -257,7 +257,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private void frmABMClientes_Load(object sender, EventArgs e)
         {
             ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos(), "nombre", "idTipo");
-            List<Barrio> listaBarrios = oBarrio.recuperarTodos(false);
+            List<Barrio> listaBarrios = oBarrio.recuperarTodos();
 
             if (listaBarrios.Count > 0)
             {
@@ -280,14 +280,14 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                 case (FormModeABM.update):
                     {
                         this.Text = "Modificar Cliente - FarmaTown";
-                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos());
                         this.cargarCampos();
                         break;
                     }
                 case (FormModeABM.delete):
                     {
                         this.Text = "Deshabilitar Cliente - FarmaTown";
-                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+                        this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos());
                         this.cargarCampos();
                         GrillaService.cargarFila(this.dgvBarrios);
 
@@ -447,7 +447,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void actualizar()
         {
-            this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos(false));
+            this.cargarGrilla(this.dgvBarrios, oBarrio.recuperarTodos());
         }
 
         private void btnLimpiarCliente_Click(object sender, EventArgs e)

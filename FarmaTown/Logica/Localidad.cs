@@ -30,6 +30,10 @@ namespace FarmaTown.Logica
             return this.oLocalidadDao.recuperarTodos();
         }
 
+        public List<Localidad> recuperarSoloUsadosClientes()
+        {
+            return this.oLocalidadDao.recuperarSoloUsadosClientes();
+        }
         public Localidad traerLocalidad(int idLocalidad)
         {
             return this.oLocalidadDao.traer(idLocalidad);

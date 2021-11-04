@@ -11,16 +11,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentacion.Reportes
+namespace FarmaTown.Presentacion.Reportes.Ventas
 {
-    public partial class frmListadoVentas : Form
+    public partial class frmReporteVentas : Form
     {
         Venta oVenta;
         Farmacia oFarmacia;
         Localidad oLocalidad;
         Empleado oEmpleado;
         ObraSocial oObraSocial;
-        public frmListadoVentas()
+        public frmReporteVentas()
         {
             InitializeComponent();
             oVenta = new Venta();
@@ -30,7 +30,7 @@ namespace FarmaTown.Presentacion.Reportes
             oObraSocial = new ObraSocial();
         }
 
-        private void frmListadoVentas_Load(object sender, EventArgs e)
+        private void frmReporteVentas_Load(object sender, EventArgs e)
         {
             this.rpvVentas.RefreshReport();
             this.dtpFechaDesde.Value = DateTime.Today.AddMonths(-1);
@@ -111,6 +111,8 @@ namespace FarmaTown.Presentacion.Reportes
                     , idFarm, idLocalidad, 1, idEmpleado, idObraSocial);
                 ReportDataSource rprtDTSource = new ReportDataSource("DSVentas", tabla);
 
+                //Crea las variables para los parámetros que recibirá 
+                // el reporte.
                 var paramFechaDesde = new ReportParameter("fechaDesde", fechaDesde.ToString("dd/MM/yyyy"));
                 var paramFechaHasta = new ReportParameter("fechaHasta", fechaHasta.ToString("dd/MM/yyyy"));
                 var paramLocalidad = new ReportParameter("localidad", nomLocalidad);

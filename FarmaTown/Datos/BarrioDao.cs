@@ -27,13 +27,7 @@ namespace FarmaTown.Datos
             List<Barrio> listaBarrio = new List<Barrio>();
             int cantFilas = tabla.Rows.Count;
 
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaBarrio.Add(this.objectMapping(fila));
-            }
-
-            return listaBarrio;
+            return this.listMapping(tabla);
 
         }
 
@@ -55,17 +49,11 @@ namespace FarmaTown.Datos
             List<Barrio> listaBarrio = new List<Barrio>();
             int cantFilas = tabla.Rows.Count;
 
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaBarrio.Add(this.objectMapping(fila));
-            }
-
-            return listaBarrio;
+            return this.listMapping(tabla);
 
         }
 
-        public List<Barrio> recuperarTodos(bool esCBorrados)
+        public List<Barrio> recuperarTodos()
         {
             string query = "SELECT b.idBarrio" +
                             ", b.nombre as nomBarrio" +
@@ -75,21 +63,12 @@ namespace FarmaTown.Datos
                             " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                             " WHERE b.borrado = 0";
 
-            if (esCBorrados)
-                query = query + " OR borrado = 1";
-
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             List<Barrio> listaBarrio = new List<Barrio>();
             int cantFilas = tabla.Rows.Count;
 
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaBarrio.Add(this.objectMapping(fila));
-            }
-
-            return listaBarrio;
+            return this.listMapping(tabla);
         }
 
         public Barrio traer(int idBarrio)
@@ -167,6 +146,47 @@ namespace FarmaTown.Datos
             query = query + " WHERE idBarrio = " + oBarrio.IdBarrio;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
+
+        public List<Barrio> recuperarSoloUsadosClientes()
+        {
+            string query = "SELECT b.nombre" +
+                " FROM Clientes c" +
+                " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                " GROUP BY b.idBarrio" +
+                "	, b.nombre";
+
+            DataTable tablaNoms = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<Barrio> barrios = new List<Barrio>();
+
+            for (int fila = 0; fila < tablaNoms.Rows.Count; fila++)
+            {
+                string nom = tablaNoms.Rows[fila]["nombre"].ToString();
+                barrios.Add(this.traer(nom));
+            }
+
+            return barrios;
+        }
+
+        private List<Barrio> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<Barrio> lista = new List<Barrio>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
         }
 
         private Barrio objectMapping(DataRow row)

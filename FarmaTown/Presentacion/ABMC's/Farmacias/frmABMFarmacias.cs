@@ -136,7 +136,7 @@ namespace FarmaTown.Presentacion.Farmacias
 
         private void mostrarBarrios()
         {
-            List<Barrio> tablaBarrios = oBarrio.recuperarTodos(false);
+            List<Barrio> tablaBarrios = oBarrio.recuperarTodos();
 
             
             this.cargarGrilla(this.dgvBarrios, tablaBarrios);

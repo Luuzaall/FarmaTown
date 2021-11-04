@@ -84,6 +84,11 @@
     <Compile Include="Datos\ClienteDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
+    <Compile Include="Datos\Reportes\DSVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\TipoFacturaDao.cs" />
     <Compile Include="Datos\VentaDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />
@@ -256,7 +261,7 @@
     <Compile Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\Clientes\DTSClientes.Designer.cs">
+    <Compile Include="Datos\Reportes\DTSClientes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DTSClientes.xsd</DependentUpon>
@@ -266,14 +271,6 @@
     </Compile>
     <Compile Include="Presentacion\Reportes\Clientes\frmReporteClientes.Designer.cs">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Reportes\DTSVentas.cs">
-      <DependentUpon>DTSVentas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Reportes\DTSVentas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteEmpleados.cs">
       <SubType>Form</SubType>
@@ -293,17 +290,17 @@
     <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.Designer.cs">
       <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoVentas.Designer.cs">
-      <DependentUpon>frmListadoVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.Designer.cs">
       <DependentUpon>frmReporteVentasxFarmacia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Ventas\frmReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Ventas\frmReporteVentas.Designer.cs">
+      <DependentUpon>frmReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
       <SubType>Form</SubType>
@@ -400,9 +397,6 @@
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\rptClientes.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\frmListadoVentas.resx">
-      <DependentUpon>frmListadoVentas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.resx">
       <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,7 +407,10 @@
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentos.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\rptVentas.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Ventas\frmReporteVentas.resx">
+      <DependentUpon>frmReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Ventas\rptVentas.rdlc" />
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
       <DependentUpon>frmConsVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +433,17 @@
     <None Include="DataSetGeneral.xss">
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
     </None>
+    <None Include="Datos\Reportes\DSVentas.xsc">
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos\Reportes\DSVentas.xss">
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </None>
     <None Include="DSEmpleados.xsc">
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
@@ -448,27 +456,16 @@
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xsc">
+    <None Include="Datos\Reportes\DTSClientes.xsc">
       <DependentUpon>DTSClientes.xsd</DependentUpon>
     </None>
-    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xsd">
+    <None Include="Datos\Reportes\DTSClientes.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DTSClientes.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Presentacion\Reportes\Clientes\DTSClientes.xss">
+    <None Include="Datos\Reportes\DTSClientes.xss">
       <DependentUpon>DTSClientes.xsd</DependentUpon>
-    </None>
-    <None Include="Presentacion\Reportes\DTSVentas.xsc">
-      <DependentUpon>DTSVentas.xsd</DependentUpon>
-    </None>
-    <None Include="Presentacion\Reportes\DTSVentas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DTSVentas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Presentacion\Reportes\DTSVentas.xss">
-      <DependentUpon>DTSVentas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -493,6 +490,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\listado medicamentos.png" />
+    <None Include="Presentacion\Imagenes\reporteVentas.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

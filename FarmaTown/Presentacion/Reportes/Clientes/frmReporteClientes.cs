@@ -30,9 +30,9 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
         {
             this.rpvClientes.RefreshReport();
 
-            ComboBoxService.cargarCombo(this.cboBarrios, oBarrio.recuperarTodos(false)
+            ComboBoxService.cargarCombo(this.cboBarrios, oBarrio.recuperarSoloUsadosClientes()
                 , "Nombre", "IdBarrio");
-            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos()
+            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarSoloUsadosClientes()
                 , "Nombre", "IdLocalidad");
         }
 
@@ -52,23 +52,40 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             int indexLocalidad = this.cboLocalidades.SelectedIndex;
             string idBarrio;
             string idLocalidad;
+            string nomLocalidad = "No Filtrado";
+            string nomBarrio = "No Filtrado";
 
             if (indexBarrio == -1)
                 idBarrio = "-1";
             else
+            {
                 idBarrio = this.cboBarrios.SelectedValue.ToString();
+                nomBarrio = this.cboBarrios.Text;
+            }
 
             if (indexLocalidad == -1)
                 idLocalidad = "-1";
             else
+            {
                 idLocalidad = this.cboLocalidades.SelectedValue.ToString();
-
-
-
+                nomLocalidad = this.cboLocalidades.Text;
+            }
             this.rpvClientes.LocalReport.DataSources.Clear();
             Object tabla = oCliente.obtenerDatosReporte(idBarrio, idLocalidad);
             ReportDataSource rprtDTSource = new ReportDataSource("DSClientes", tabla);
 
+            //Crea las variables para los parámetros que recibirá 
+            // el reporte.
+            var paramLocalidad = new ReportParameter("localidad", nomLocalidad);
+            var paramBarrio = new ReportParameter("barrio", nomBarrio);
+
+            var parametros = new List<ReportParameter>();
+            parametros.Add(paramLocalidad);
+            parametros.Add(paramBarrio);
+
+            //Le pasa los parámetros del formulario útiles 
+            //Para agregarlo en el reporte.
+            this.rpvClientes.LocalReport.SetParameters(parametros);
             this.rpvClientes.LocalReport.DataSources.Add(rprtDTSource);
             this.rpvClientes.RefreshReport();
         }

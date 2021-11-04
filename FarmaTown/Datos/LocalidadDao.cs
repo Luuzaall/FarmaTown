@@ -23,15 +23,8 @@ namespace FarmaTown.Datos
 
             List<Localidad> listaLoc = new List<Localidad>();
             int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaLoc.Add(this.objectMapping(fila));
-            }
-
-            return listaLoc;
-
+            
+            return this.listMapping(tabla);
         }
 
         public List<Localidad> recuperarTodos()
@@ -45,15 +38,27 @@ namespace FarmaTown.Datos
             List<Localidad> listaLoc = new List<Localidad>();
             int cantFilas = tabla.Rows.Count;
 
-            for (int i = 0; i < cantFilas; i++)
+            return this.listMapping(tabla);
+        }
+
+        public List<Localidad> recuperarSoloUsadosClientes()
+        {
+            string query = "SELECT l.idLocalidad" +
+                " FROM Clientes c" +
+                " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                " GROUP BY l.idLocalidad";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            List<Localidad> listaLoc = new List<Localidad>();
+            for (int fila = 0; fila < tabla.Rows.Count; fila++)
             {
-                DataRow fila = tabla.Rows[i];
-                listaLoc.Add(this.objectMapping(fila));
+                int id = Convert.ToInt32(tabla.Rows[fila]["idLocalidad"].ToString());
+                listaLoc.Add(traer(id));
             }
 
             return listaLoc;
         }
-
         public Localidad traer(int idLocalidad)
         {
             string query = "SELECT *" +
@@ -117,8 +122,27 @@ namespace FarmaTown.Datos
             query = query + " WHERE idLocalidad = " + oLocalidad.IdLocalidad;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
 
 
+        private List<Localidad> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<Localidad> lista = new List<Localidad>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
         }
 
         private Localidad objectMapping(DataRow row)

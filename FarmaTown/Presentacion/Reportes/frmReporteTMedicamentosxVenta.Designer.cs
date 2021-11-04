@@ -48,7 +48,7 @@ namespace FarmaTown.Presentacion.Reportes
             this.dtVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposMedicamentoTableAdapter = new FarmaTown.DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter();
             this.TiposMedicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DTSVentas = new FarmaTown.Presentacion.Reportes.DTSVentas();
+            this.DTSVentas = new FarmaTown.Datos.Reportes.DSVentas();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.TiposDocumentoBindingSource)).BeginInit();
@@ -308,7 +308,7 @@ namespace FarmaTown.Presentacion.Reportes
         private System.Windows.Forms.BindingSource dtVentasBindingSource;
         private DataSetGeneralTableAdapters.TiposMedicamentoTableAdapter tiposMedicamentoTableAdapter;
         private System.Windows.Forms.BindingSource TiposMedicamentoBindingSource;
-        private DTSVentas DTSVentas;
+        private Datos.Reportes.DSVentas DTSVentas;
         private System.Windows.Forms.BindingSource TiposDocumentoBindingSource;
         private CustomControls.RJControls.RJButton btnSalir;
     }

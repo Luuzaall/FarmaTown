@@ -209,7 +209,6 @@ namespace FarmaTown.Datos
             }
 
             return lista;
-
         }
 
         private Empleado objectMapping(DataRow row)
