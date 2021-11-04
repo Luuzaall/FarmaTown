@@ -34,7 +34,6 @@ namespace FarmaTown.Presentacion.Farmacias
             this.textbSucursal = new System.Windows.Forms.TextBox();
             this.TextbCalle = new System.Windows.Forms.TextBox();
             this.textbNumero = new System.Windows.Forms.TextBox();
-            this.cbBorrados = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).BeginInit();
@@ -61,10 +61,10 @@ namespace FarmaTown.Presentacion.Farmacias
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textbSucursal);
             this.groupBox1.Controls.Add(this.TextbCalle);
             this.groupBox1.Controls.Add(this.textbNumero);
-            this.groupBox1.Controls.Add(this.cbBorrados);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -73,7 +73,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(906, 223);
+            this.groupBox1.Size = new System.Drawing.Size(906, 167);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -82,7 +82,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.textbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.textbSucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbSucursal.Location = new System.Drawing.Point(349, 26);
+            this.textbSucursal.Location = new System.Drawing.Point(141, 31);
             this.textbSucursal.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textbSucursal.Name = "textbSucursal";
             this.textbSucursal.Size = new System.Drawing.Size(244, 25);
@@ -93,7 +93,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.TextbCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.TextbCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextbCalle.Location = new System.Drawing.Point(349, 71);
+            this.TextbCalle.Location = new System.Drawing.Point(141, 76);
             this.TextbCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.TextbCalle.Name = "TextbCalle";
             this.TextbCalle.Size = new System.Drawing.Size(244, 25);
@@ -104,30 +104,19 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.textbNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.textbNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbNumero.Location = new System.Drawing.Point(349, 120);
+            this.textbNumero.Location = new System.Drawing.Point(534, 31);
             this.textbNumero.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textbNumero.Name = "textbNumero";
             this.textbNumero.Size = new System.Drawing.Size(244, 25);
             this.textbNumero.TabIndex = 30;
             this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
             // 
-            // cbBorrados
-            // 
-            this.cbBorrados.AutoSize = true;
-            this.cbBorrados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.cbBorrados.Location = new System.Drawing.Point(645, 86);
-            this.cbBorrados.Name = "cbBorrados";
-            this.cbBorrados.Size = new System.Drawing.Size(191, 27);
-            this.cbBorrados.TabIndex = 22;
-            this.cbBorrados.Text = "Mostrar Borrados";
-            this.cbBorrados.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(227, 122);
+            this.label3.Location = new System.Drawing.Point(412, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 23);
             this.label3.TabIndex = 21;
@@ -138,7 +127,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(253, 73);
+            this.label2.Location = new System.Drawing.Point(45, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 23);
             this.label2.TabIndex = 19;
@@ -149,7 +138,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 28);
+            this.label1.Location = new System.Drawing.Point(17, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 17;
@@ -171,7 +160,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(297, 170);
+            this.btnLimpiar.Location = new System.Drawing.Point(255, 114);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(104, 37);
             this.btnLimpiar.TabIndex = 15;
@@ -196,7 +185,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(477, 170);
+            this.btnConsultar.Location = new System.Drawing.Point(447, 114);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 37);
             this.btnConsultar.TabIndex = 14;
@@ -211,7 +200,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.dgvFarmacias);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(23, 241);
+            this.groupBox2.Location = new System.Drawing.Point(23, 204);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(906, 282);
             this.groupBox2.TabIndex = 1;
@@ -234,7 +223,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(773, 127);
+            this.btnActualizar.Location = new System.Drawing.Point(796, 127);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 37);
             this.btnActualizar.TabIndex = 14;
@@ -263,7 +252,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.dgvFarmacias.ReadOnly = true;
             this.dgvFarmacias.RowHeadersWidth = 51;
             this.dgvFarmacias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFarmacias.Size = new System.Drawing.Size(743, 243);
+            this.dgvFarmacias.Size = new System.Drawing.Size(784, 237);
             this.dgvFarmacias.TabIndex = 13;
             this.dgvFarmacias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFarmacias_CellClick);
             // 
@@ -323,7 +312,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnEditar.Location = new System.Drawing.Point(128, 529);
+            this.btnEditar.Location = new System.Drawing.Point(131, 501);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
             this.btnEditar.TabIndex = 20;
@@ -346,7 +335,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(237, 529);
+            this.btnEliminar.Location = new System.Drawing.Point(240, 501);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 19;
@@ -358,7 +347,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.btnAgregar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.addPerson;
+            this.btnAgregar.BackgroundImage = global::FarmaTown.Properties.Resources.pharmacy;
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregar.BorderColor = System.Drawing.Color.Green;
             this.btnAgregar.BorderRadius = 20;
@@ -369,7 +358,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(27, 529);
+            this.btnAgregar.Location = new System.Drawing.Point(30, 501);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
             this.btnAgregar.TabIndex = 18;
@@ -382,7 +371,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.lblAviso.AutoSize = true;
             this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
-            this.lblAviso.Location = new System.Drawing.Point(346, 551);
+            this.lblAviso.Location = new System.Drawing.Point(349, 523);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(312, 22);
             this.lblAviso.TabIndex = 23;
@@ -403,13 +392,24 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(876, 538);
+            this.btnSalir.Location = new System.Drawing.Point(876, 501);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 24;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(430, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(372, 22);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Debe ingresar al menos uno de los datos";
             // 
             // frmFarmacias
             // 
@@ -419,7 +419,7 @@ namespace FarmaTown.Presentacion.Farmacias
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(953, 599);
+            this.ClientSize = new System.Drawing.Size(953, 562);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnEditar);
@@ -457,7 +457,6 @@ namespace FarmaTown.Presentacion.Farmacias
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox cbBorrados;
         private CustomControls.RJControls.RJButton btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
@@ -467,5 +466,6 @@ namespace FarmaTown.Presentacion.Farmacias
         private System.Windows.Forms.TextBox textbSucursal;
         private System.Windows.Forms.TextBox TextbCalle;
         private System.Windows.Forms.TextBox textbNumero;
+        private System.Windows.Forms.Label label4;
     }
 }

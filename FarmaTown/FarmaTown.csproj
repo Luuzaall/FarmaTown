@@ -491,6 +491,7 @@
   <ItemGroup>
     <None Include="Resources\listado medicamentos.png" />
     <None Include="Presentacion\Imagenes\reporteVentas.png" />
+    <None Include="Resources\pharmacy.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
