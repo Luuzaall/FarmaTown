@@ -306,7 +306,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.MaximizeBox = false;
             this.Name = "frmABMMedicamentos";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmABMMedicamentos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

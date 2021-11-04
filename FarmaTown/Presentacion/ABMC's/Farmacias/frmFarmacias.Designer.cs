@@ -31,6 +31,9 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFarmacias));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textbSucursal = new System.Windows.Forms.TextBox();
+            this.TextbCalle = new System.Windows.Forms.TextBox();
+            this.textbNumero = new System.Windows.Forms.TextBox();
             this.cbBorrados = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.textbNumero = new System.Windows.Forms.TextBox();
-            this.TextbCalle = new System.Windows.Forms.TextBox();
-            this.textbSucursal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).BeginInit();
@@ -60,6 +60,7 @@ namespace FarmaTown.Presentacion.Farmacias
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textbSucursal);
             this.groupBox1.Controls.Add(this.TextbCalle);
             this.groupBox1.Controls.Add(this.textbNumero);
@@ -76,6 +77,39 @@ namespace FarmaTown.Presentacion.Farmacias
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // textbSucursal
+            // 
+            this.textbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textbSucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbSucursal.Location = new System.Drawing.Point(349, 26);
+            this.textbSucursal.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textbSucursal.Name = "textbSucursal";
+            this.textbSucursal.Size = new System.Drawing.Size(244, 25);
+            this.textbSucursal.TabIndex = 32;
+            this.textbSucursal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbSucursal_KeyDown);
+            // 
+            // TextbCalle
+            // 
+            this.TextbCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.TextbCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextbCalle.Location = new System.Drawing.Point(349, 71);
+            this.TextbCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.TextbCalle.Name = "TextbCalle";
+            this.TextbCalle.Size = new System.Drawing.Size(244, 25);
+            this.TextbCalle.TabIndex = 31;
+            this.TextbCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextbCalle_KeyDown);
+            // 
+            // textbNumero
+            // 
+            this.textbNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textbNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textbNumero.Location = new System.Drawing.Point(349, 120);
+            this.textbNumero.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textbNumero.Name = "textbNumero";
+            this.textbNumero.Size = new System.Drawing.Size(244, 25);
+            this.textbNumero.TabIndex = 30;
+            this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
             // 
             // cbBorrados
             // 
@@ -377,44 +411,14 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // textbNumero
-            // 
-            this.textbNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.textbNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbNumero.Location = new System.Drawing.Point(349, 120);
-            this.textbNumero.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textbNumero.Name = "textbNumero";
-            this.textbNumero.Size = new System.Drawing.Size(244, 25);
-            this.textbNumero.TabIndex = 30;
-            this.textbNumero.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbNumero_KeyDown);
-            // 
-            // TextbCalle
-            // 
-            this.TextbCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.TextbCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextbCalle.Location = new System.Drawing.Point(349, 71);
-            this.TextbCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.TextbCalle.Name = "TextbCalle";
-            this.TextbCalle.Size = new System.Drawing.Size(244, 25);
-            this.TextbCalle.TabIndex = 31;
-            this.TextbCalle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextbCalle_KeyDown);
-            // 
-            // textbSucursal
-            // 
-            this.textbSucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.textbSucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbSucursal.Location = new System.Drawing.Point(349, 26);
-            this.textbSucursal.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textbSucursal.Name = "textbSucursal";
-            this.textbSucursal.Size = new System.Drawing.Size(244, 25);
-            this.textbSucursal.TabIndex = 32;
-            this.textbSucursal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbSucursal_KeyDown);
-            // 
             // frmFarmacias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CancelButton = this.btnSalir;
             this.ClientSize = new System.Drawing.Size(953, 599);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblAviso);
@@ -423,8 +427,11 @@ namespace FarmaTown.Presentacion.Farmacias
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFarmacias";
-            this.Text = "FarmaTown - Gestion de Farmacias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gestion de Farmacias - FarmaTown";
             this.Load += new System.EventHandler(this.frmFarmacias_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
