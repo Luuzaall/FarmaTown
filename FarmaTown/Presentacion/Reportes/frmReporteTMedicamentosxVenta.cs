@@ -30,7 +30,7 @@ namespace FarmaTown.Presentacion.Reportes
         private void frmReporteTMedicamentosxVenta_Load(object sender, EventArgs e)
         {
             ComboBoxService.cargarCombo(this.cboFarmacias, oFarmacia.recuperarTodos(), "Nombre", "IdFarmacia");
-            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos(false), "Nombre", "IdLocalidad");
+            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos(), "Nombre", "IdLocalidad");
             // TODO: esta línea de código carga datos en la tabla 'dataSetGeneral.TiposMedicamento' Puede moverla o quitarla según sea necesario.
             this.tiposMedicamentoTableAdapter.Fill(this.dataSetGeneral.TiposMedicamento);
             this.rpvMedicamentosxVenta.RefreshReport();
@@ -44,22 +44,22 @@ namespace FarmaTown.Presentacion.Reportes
                            , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            int oFarm = -1;
-            int oLoc = -1;
+            string oFarm = "-1";
+            string oLoc = "-1";
             if (this.cboFarmacias.SelectedIndex != -1)
             {
                 Farmacia farm = (Farmacia)this.cboFarmacias.SelectedItem;
-                oFarm = farm.IdFarmacia;
+                oFarm = farm.IdFarmacia.ToString();
             }
             if (this.cboLocalidades.SelectedIndex != -1)
             {
                 Localidad loc = (Localidad)this.cboLocalidades.SelectedItem;
-                oLoc = loc.IdLocalidad;
+                oLoc = loc.IdLocalidad.ToString();
             }
 
 
 
-            Object tabla = oVenta.obtenerDatosReporte(this.fechaDesdePicker.Value, this.fechaHastaPicker.Value, oFarm, oLoc, 2);
+            Object tabla = oVenta.obtenerDatosReporte(this.fechaDesdePicker.Value, this.fechaHastaPicker.Value, oFarm, oLoc, 2, "", "");
             ReportDataSource rprtDTSource = new ReportDataSource("TipoMedicamento", tabla);
 
             rpvMedicamentosxVenta.LocalReport.DataSources.Clear();

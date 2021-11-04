@@ -119,7 +119,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvObrasSociales, oObraSocial.recuperarTodos(false));
+            this.cargarGrilla(dgvObrasSociales, oObraSocial.recuperarTodos());
             this.deshabilitarBotones();
         }
 

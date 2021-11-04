@@ -25,9 +25,9 @@ namespace FarmaTown.Logica
             return this.oLocalidadDao.recuperarCParam(nombre);
         }
 
-        public List<Localidad> recuperarTodos(bool esCBorrados)
+        public List<Localidad> recuperarTodos()
         {
-            return this.oLocalidadDao.recuperarTodos(esCBorrados);
+            return this.oLocalidadDao.recuperarTodos();
         }
 
         public Localidad traerLocalidad(int idLocalidad)

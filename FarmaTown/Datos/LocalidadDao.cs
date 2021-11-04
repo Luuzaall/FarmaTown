@@ -34,13 +34,11 @@ namespace FarmaTown.Datos
 
         }
 
-        public List<Localidad> recuperarTodos(bool esCBorrados)
+        public List<Localidad> recuperarTodos()
         {
             string query = "SELECT *" +
                 " FROM Localidades" +
                 " WHERE borrado = 0";
-            if (esCBorrados)
-                query = query + " OR borrado = 1";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

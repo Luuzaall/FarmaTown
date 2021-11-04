@@ -27,9 +27,9 @@ namespace FarmaTown.Logica
             return this.oObraSocialDao.recuperarCParam(nombre);
         }
 
-        public List<ObraSocial> recuperarTodos(bool esCBorrados)
+        public List<ObraSocial> recuperarTodos()
         {
-            return this.oObraSocialDao.recuperarTodos(esCBorrados);
+            return this.oObraSocialDao.recuperarTodos();
         }
 
         public ObraSocial traerOS(int idOS)

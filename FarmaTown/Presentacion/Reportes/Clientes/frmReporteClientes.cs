@@ -32,7 +32,7 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
 
             ComboBoxService.cargarCombo(this.cboBarrios, oBarrio.recuperarTodos(false)
                 , "Nombre", "IdBarrio");
-            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos(false)
+            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos()
                 , "Nombre", "IdLocalidad");
         }
 

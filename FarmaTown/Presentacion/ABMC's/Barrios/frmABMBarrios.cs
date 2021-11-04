@@ -85,14 +85,14 @@ namespace FarmaTown.Presentacion.Localidades
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Barrio - FarmaTown";
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(true));
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
                         break;
                     }
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Barrio - FarmaTown";
                         this.txtbNombre.Text = oBarrio.Nombre;
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(true));
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
                         this.seleccionarFila(this.dgvLocalidades, oLocalidad.IdLocalidad);
                         this.dgvLocalidades.Enabled = true;
                         break;
@@ -101,7 +101,7 @@ namespace FarmaTown.Presentacion.Localidades
                     {
                         this.Text = "Deshabilitar Barrio - FarmaTown";
                         this.txtbNombre.Text = oBarrio.Nombre;
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(false));
+                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
                         this.cargarFila(this.dgvLocalidades);
                         this.dgvLocalidades.Enabled = false;
                         this.txtbNombre.Enabled = false;

@@ -137,7 +137,7 @@ namespace FarmaTown.Presentacion
 
             ComboBoxService.cargarCombo(this.cboTipoFactura, oTipoFact.recuperarTodos()
                 , "Nombre", "IdTipoFactura");
-            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos(false)
+            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos()
                 , "Nombre", "IdOS");
             ComboBoxService.cargarCombo(this.cboMedioPago, oMedioPago.recuperarTodos()
                 , "Nombre", "IdMedioPago");

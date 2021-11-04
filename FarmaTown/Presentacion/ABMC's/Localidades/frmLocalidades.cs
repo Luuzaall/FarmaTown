@@ -27,7 +27,7 @@ namespace FarmaTown.Presentacion.Localidades
         }
         private void actualizar()
         {
-            this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos(false));
+            this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
             this.deshabilitarBotones();
         }
         private void deshabilitarBotones()

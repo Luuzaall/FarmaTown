@@ -118,9 +118,13 @@ namespace FarmaTown.Datos
         }
 
         public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
-                , String idFarm, String idLocalidad)
+                , String idFarm, String idLocalidad, int reporte, string idEmpleado
+            , string idObraSocial)
         {
-            string query = "SELECT v.idVenta" +
+            
+            if (reporte == 1)
+            {
+                string query = "SELECT v.idVenta" +
                     ", v.nroFactura" +
                     ", f.nombre as farmacia" +
                     ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
@@ -142,45 +146,23 @@ namespace FarmaTown.Datos
                     " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
                         " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
-            if (idFarm != "-1")
-                query += " AND f.idFarmacia = " + idFarm;
-            if (idLocalidad != "-1")
-                query += " AND l.idLocalidad = " + idLocalidad;
-
-            query += " GROUP BY v.idVenta" +
-                        " , f.nombre" +
-                        " , v.fechaFactura" +
-                        " , e.nombre" +
-                        " , t.nombre" +
-                        " , m.nombre" +
-                        " , v.nroFactura" +
-                        ", o.nombre" +
-                        ", l.nombre";
-            if (reporte == 1)
-            {
-                string query = "SELECT v.idVenta" +
-                        ", v.nroFactura" +
-                        ", f.nombre as farmacia" +
-                        ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
-                        ", e.nombre as empleado" +
-                        ", t.nombre as tipoFactura" +
-                        ", m.nombre as medioPago" +
-                        ", ROUND(SUM(precio), 2) as 'Total'" +
-                        " FROM Ventas v" +
-                        " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
-                        " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                        " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
-                        " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
-                        " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
-                        " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
-                            " AND CONVERT(DATE,'" + fechaHasta + "',105)" +
-                        " GROUP BY v.idVenta" +
+                if (idFarm != "-1")
+                    query += " AND f.idFarmacia = " + idFarm;
+                if (idLocalidad != "-1")
+                    query += " AND l.idLocalidad = " + idLocalidad;
+                if (idEmpleado != "-1")
+                    query += " AND e.idEmpleado = " + idEmpleado;
+                if (idObraSocial != "-1")
+                    query += " AND o.idOS = " + idObraSocial;
+                query += " GROUP BY v.idVenta" +
                             " , f.nombre" +
                             " , v.fechaFactura" +
                             " , e.nombre" +
                             " , t.nombre" +
                             " , m.nombre" +
-                            " , v.nroFactura";
+                            " , v.nroFactura" +
+                            ", o.nombre" +
+                            ", l.nombre";
 
 
                 return DBHelper.getDBHelper().consultaSQL(query);
@@ -197,15 +179,15 @@ namespace FarmaTown.Datos
                     " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
                     " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
                     " AND CONVERT(DATE,'" + fechaHasta + "',105)";
-                    
-                if (!(indexFarm == -1))
+
+                if (!(idFarm == "-1"))
                 {
-                    query = query + " AND v.idFarmacia = " + indexFarm;
+                    query = query + " AND v.idFarmacia = " + idFarm;
                 }
 
-                if (!(indexLocalidad == -1))
+                if (!(idLocalidad == "-1"))
                 {
-                    query = query + " AND b.idLocalidad = " + indexLocalidad;
+                    query = query + " AND b.idLocalidad = " + idLocalidad;
                 }
 
                 return DBHelper.getDBHelper().consultaSQL(query);
@@ -215,14 +197,14 @@ namespace FarmaTown.Datos
                 string query = "SELECT f.nombre" +
                     " FROM Ventas v" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "', 105)" +
                     " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
                 return DBHelper.getDBHelper().consultaSQL(query);
             }
 
-             return null;
-           
+            return null;
+
         }
     }
 }

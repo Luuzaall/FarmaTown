@@ -40,13 +40,11 @@ namespace FarmaTown.Datos
 
         }
 
-        public List<ObraSocial> recuperarTodos(bool esCBorrados)
+        public List<ObraSocial> recuperarTodos()
         {
             string query = "SELECT *" +
                 " FROM ObrasSociales" +
                 " WHERE borrado = 0";
-            if (esCBorrados)
-                query = query + " OR borrado = 1";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

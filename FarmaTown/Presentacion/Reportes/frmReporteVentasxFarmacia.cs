@@ -40,10 +40,10 @@ namespace FarmaTown.Presentacion.Reportes
                            , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            int oFarm = -1;
-            int oLoc = -1;
+            string oFarm = "-1";
+            string oLoc = "-1";
 
-            Object tabla = oVenta.obtenerDatosReporte(this.fechaDesdePicker.Value, this.fechaHastaPicker.Value, oFarm, oLoc, 3);
+            Object tabla = oVenta.obtenerDatosReporte(this.fechaDesdePicker.Value, this.fechaHastaPicker.Value, oFarm, oLoc, 3, "", "");
             ReportDataSource rprtDTSource = new ReportDataSource("Farmacia", tabla);
 
             rpvVentaxFarmacia.LocalReport.DataSources.Clear();
