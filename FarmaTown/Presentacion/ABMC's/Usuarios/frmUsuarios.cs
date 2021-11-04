@@ -213,22 +213,5 @@ namespace FarmaTown.Presentacion
             this.deshabilitarBotones();
         }
 
-        private void cbBorrados_CheckedChanged(object sender, EventArgs e)
-        {
-            if (mostrarConBorrados)
-            {
-                this.mostrarConBorrados = false;
-                this.dgvUsuarios.Columns["borrado"].Visible = false;
-                this.actualizar();
-            }
-            else
-            {
-                this.mostrarConBorrados = true;
-                this.dgvUsuarios.Columns["borrado"].Visible = true;
-                this.actualizar();
-            }
-            
-        }
-
     }
 }

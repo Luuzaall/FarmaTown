@@ -31,6 +31,7 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFarmacias));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textbSucursal = new System.Windows.Forms.TextBox();
             this.TextbCalle = new System.Windows.Forms.TextBox();
             this.textbNumero = new System.Windows.Forms.TextBox();
@@ -42,17 +43,16 @@ namespace FarmaTown.Presentacion.Farmacias
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvFarmacias = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Número = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFarmacias)).BeginInit();
@@ -77,6 +77,17 @@ namespace FarmaTown.Presentacion.Farmacias
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.Maroon;
+            this.label4.Location = new System.Drawing.Point(430, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(372, 22);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Debe ingresar al menos uno de los datos";
             // 
             // textbSucursal
             // 
@@ -256,46 +267,6 @@ namespace FarmaTown.Presentacion.Farmacias
             this.dgvFarmacias.TabIndex = 13;
             this.dgvFarmacias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFarmacias_CellClick);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Sucursal
-            // 
-            this.Sucursal.HeaderText = "Sucursal";
-            this.Sucursal.MinimumWidth = 6;
-            this.Sucursal.Name = "Sucursal";
-            this.Sucursal.ReadOnly = true;
-            this.Sucursal.Width = 200;
-            // 
-            // Calle
-            // 
-            this.Calle.HeaderText = "Calle";
-            this.Calle.MinimumWidth = 6;
-            this.Calle.Name = "Calle";
-            this.Calle.ReadOnly = true;
-            this.Calle.Width = 200;
-            // 
-            // Número
-            // 
-            this.Número.HeaderText = "Número";
-            this.Número.MinimumWidth = 6;
-            this.Número.Name = "Número";
-            this.Número.ReadOnly = true;
-            this.Número.Width = 125;
-            // 
-            // Barrio
-            // 
-            this.Barrio.HeaderText = "Barrio";
-            this.Barrio.MinimumWidth = 6;
-            this.Barrio.Name = "Barrio";
-            this.Barrio.ReadOnly = true;
-            this.Barrio.Width = 150;
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Gray;
@@ -400,16 +371,46 @@ namespace FarmaTown.Presentacion.Farmacias
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label4
+            // ID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.Maroon;
-            this.label4.Location = new System.Drawing.Point(430, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(372, 22);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Debe ingresar al menos uno de los datos";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 50;
+            // 
+            // Sucursal
+            // 
+            this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.MinimumWidth = 6;
+            this.Sucursal.Name = "Sucursal";
+            this.Sucursal.ReadOnly = true;
+            this.Sucursal.Width = 200;
+            // 
+            // Calle
+            // 
+            this.Calle.HeaderText = "Calle";
+            this.Calle.MinimumWidth = 6;
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
+            this.Calle.Width = 200;
+            // 
+            // Número
+            // 
+            this.Número.HeaderText = "Número";
+            this.Número.MinimumWidth = 6;
+            this.Número.Name = "Número";
+            this.Número.ReadOnly = true;
+            this.Número.Width = 125;
+            // 
+            // Barrio
+            // 
+            this.Barrio.HeaderText = "Barrio";
+            this.Barrio.MinimumWidth = 6;
+            this.Barrio.Name = "Barrio";
+            this.Barrio.ReadOnly = true;
+            this.Barrio.Width = 200;
             // 
             // frmFarmacias
             // 
@@ -458,14 +459,14 @@ namespace FarmaTown.Presentacion.Farmacias
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private CustomControls.RJControls.RJButton btnActualizar;
+        private System.Windows.Forms.TextBox textbSucursal;
+        private System.Windows.Forms.TextBox TextbCalle;
+        private System.Windows.Forms.TextBox textbNumero;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Número;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barrio;
-        private System.Windows.Forms.TextBox textbSucursal;
-        private System.Windows.Forms.TextBox TextbCalle;
-        private System.Windows.Forms.TextBox textbNumero;
-        private System.Windows.Forms.Label label4;
     }
 }

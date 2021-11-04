@@ -34,8 +34,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.label1 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.dgvObrasSociales = new System.Windows.Forms.DataGridView();
-            this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -48,6 +46,8 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.ttipBtnABM = new System.Windows.Forms.ToolTip(this.components);
             this.lblAviso = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -94,24 +94,10 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.dgvObrasSociales.Name = "dgvObrasSociales";
             this.dgvObrasSociales.ReadOnly = true;
             this.dgvObrasSociales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObrasSociales.Size = new System.Drawing.Size(480, 218);
+            this.dgvObrasSociales.Size = new System.Drawing.Size(375, 218);
             this.dgvObrasSociales.TabIndex = 60;
             this.dgvObrasSociales.TabStop = false;
             this.dgvObrasSociales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObrasSociales_CellClick);
-            // 
-            // idOOSS
-            // 
-            this.idOOSS.HeaderText = "ID";
-            this.idOOSS.Name = "idOOSS";
-            this.idOOSS.ReadOnly = true;
-            this.idOOSS.Width = 50;
-            // 
-            // nomOOSS
-            // 
-            this.nomOOSS.HeaderText = "Nombre";
-            this.nomOOSS.Name = "nomOOSS";
-            this.nomOOSS.ReadOnly = true;
-            this.nomOOSS.Width = 250;
             // 
             // gbResultados
             // 
@@ -120,7 +106,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbResultados.Controls.Add(this.dgvObrasSociales);
             this.gbResultados.Location = new System.Drawing.Point(23, 269);
             this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(622, 268);
+            this.gbResultados.Size = new System.Drawing.Size(587, 268);
             this.gbResultados.TabIndex = 30;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
@@ -141,7 +127,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
+            this.btnActualizar.Location = new System.Drawing.Point(448, 121);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
             this.btnActualizar.TabIndex = 4;
@@ -159,7 +145,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros.Controls.Add(this.label1);
             this.gbFiltros.Location = new System.Drawing.Point(23, 78);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(622, 185);
+            this.gbFiltros.Size = new System.Drawing.Size(587, 185);
             this.gbFiltros.TabIndex = 31;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -180,7 +166,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(245, 109);
+            this.btnConsultar.Location = new System.Drawing.Point(209, 106);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(125, 49);
@@ -231,7 +217,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(592, 554);
+            this.btnSalir.Location = new System.Drawing.Point(523, 554);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 8;
@@ -335,6 +321,21 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta Obras Sociales";
             // 
+            // idOOSS
+            // 
+            this.idOOSS.HeaderText = "ID";
+            this.idOOSS.Name = "idOOSS";
+            this.idOOSS.ReadOnly = true;
+            this.idOOSS.Visible = false;
+            this.idOOSS.Width = 50;
+            // 
+            // nomOOSS
+            // 
+            this.nomOOSS.HeaderText = "Nombre";
+            this.nomOOSS.Name = "nomOOSS";
+            this.nomOOSS.ReadOnly = true;
+            this.nomOOSS.Width = 250;
+            // 
             // frmOOSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -343,7 +344,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.BackgroundImage = global::FarmaTown.Properties.Resources.ABMOOSS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(670, 625);
+            this.ClientSize = new System.Drawing.Size(638, 625);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);
@@ -376,8 +377,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
         private CustomControls.RJControls.RJButton btnConsultar;
         private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.DataGridView dgvObrasSociales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOOSS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomOOSS;
         private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.GroupBox gbFiltros;
         private CustomControls.RJControls.RJButton btnActualizar;
@@ -388,5 +387,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
         private System.Windows.Forms.ToolTip ttipBtnABM;
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idOOSS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomOOSS;
     }
 }

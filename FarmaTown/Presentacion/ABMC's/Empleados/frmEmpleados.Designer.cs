@@ -52,12 +52,12 @@ namespace FarmaTown.Presentacion.Empleados
             this.label1 = new System.Windows.Forms.Label();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.gbResultados = new System.Windows.Forms.GroupBox();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbResultados = new System.Windows.Forms.GroupBox();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.gbResultados.SuspendLayout();
@@ -428,11 +428,25 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvEmpleados.TabStop = false;
             this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
             // 
+            // gbResultados
+            // 
+            this.gbResultados.BackColor = System.Drawing.Color.Transparent;
+            this.gbResultados.Controls.Add(this.dgvEmpleados);
+            this.gbResultados.Controls.Add(this.btnActualizar);
+            this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.gbResultados.Location = new System.Drawing.Point(32, 283);
+            this.gbResultados.Name = "gbResultados";
+            this.gbResultados.Size = new System.Drawing.Size(1094, 310);
+            this.gbResultados.TabIndex = 23;
+            this.gbResultados.TabStop = false;
+            this.gbResultados.Text = "Resultados";
+            // 
             // idEmpleado
             // 
             this.idEmpleado.HeaderText = "ID";
             this.idEmpleado.Name = "idEmpleado";
             this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Visible = false;
             this.idEmpleado.Width = 50;
             // 
             // nomEmpleado
@@ -462,19 +476,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.nomFarmacia.Name = "nomFarmacia";
             this.nomFarmacia.ReadOnly = true;
             this.nomFarmacia.Width = 300;
-            // 
-            // gbResultados
-            // 
-            this.gbResultados.BackColor = System.Drawing.Color.Transparent;
-            this.gbResultados.Controls.Add(this.dgvEmpleados);
-            this.gbResultados.Controls.Add(this.btnActualizar);
-            this.gbResultados.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.gbResultados.Location = new System.Drawing.Point(32, 283);
-            this.gbResultados.Name = "gbResultados";
-            this.gbResultados.Size = new System.Drawing.Size(1094, 310);
-            this.gbResultados.TabIndex = 23;
-            this.gbResultados.TabStop = false;
-            this.gbResultados.Text = "Resultados";
             // 
             // frmEmpleados
             // 
@@ -536,11 +537,11 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJButton btnActualizar;
         private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.GroupBox gbResultados;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
-        private System.Windows.Forms.GroupBox gbResultados;
     }
 }

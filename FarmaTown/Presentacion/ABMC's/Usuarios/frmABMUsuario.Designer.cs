@@ -34,27 +34,27 @@ namespace FarmaTown.Presentacion
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.txtbClave = new System.Windows.Forms.TextBox();
             this.txtbClaveRep = new System.Windows.Forms.TextBox();
+            this.btnVerClaveRep = new CustomControls.RJControls.RJButton();
+            this.btnVerClave = new CustomControls.RJControls.RJButton();
+            this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.cboRol = new System.Windows.Forms.ComboBox();
+            this.lblRol = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.lblRepetirContra = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
+            this.lblContraseña = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.btnRegEmpleado = new CustomControls.RJControls.RJButton();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
-            this.transparentLabel3 = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.btnRegEmpleado = new CustomControls.RJControls.RJButton();
-            this.btnVerClaveRep = new CustomControls.RJControls.RJButton();
-            this.btnVerClave = new CustomControls.RJControls.RJButton();
-            this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.lblNombre = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.lblRol = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.lblRepetirContra = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.lblContraseña = new FarmaTown.Presentacion.DiseñosElemGUI.TransparentLabel();
-            this.btnCancelar = new CustomControls.RJControls.RJButton();
-            this.btnAceptar = new CustomControls.RJControls.RJButton();
             groupBox1 = new System.Windows.Forms.GroupBox();
             groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,162 +119,6 @@ namespace FarmaTown.Presentacion
             this.txtbClaveRep.Size = new System.Drawing.Size(301, 20);
             this.txtbClaveRep.TabIndex = 4;
             this.txtbClaveRep.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.label1.Location = new System.Drawing.Point(17, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 38);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Los campos con (*) \r\nson obligatorios";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cboRol
-            // 
-            this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(469, 151);
-            this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(301, 27);
-            this.cboRol.TabIndex = 6;
-            this.cboRol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.btnActualizar);
-            this.groupBox2.Controls.Add(this.transparentLabel3);
-            this.groupBox2.Controls.Add(this.dgvEmpleados);
-            this.groupBox2.Controls.Add(this.btnRegEmpleado);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(23, 237);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1137, 335);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos del Empleado";
-            // 
-            // dgvEmpleados
-            // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.AllowUserToDeleteRows = false;
-            this.dgvEmpleados.AllowUserToResizeColumns = false;
-            this.dgvEmpleados.AllowUserToResizeRows = false;
-            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEmpleado,
-            this.nomEmpleado,
-            this.nroDoc,
-            this.nomTipoDoc,
-            this.nomFarmacia});
-            this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.dgvEmpleados.Location = new System.Drawing.Point(15, 52);
-            this.dgvEmpleados.MultiSelect = false;
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(976, 267);
-            this.dgvEmpleados.TabIndex = 27;
-            this.dgvEmpleados.TabStop = false;
-            // 
-            // idEmpleado
-            // 
-            this.idEmpleado.HeaderText = "ID";
-            this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.ReadOnly = true;
-            this.idEmpleado.Width = 50;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Nombre";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
-            // 
-            // nroDoc
-            // 
-            this.nroDoc.HeaderText = "N° Documento";
-            this.nroDoc.Name = "nroDoc";
-            this.nroDoc.ReadOnly = true;
-            this.nroDoc.Width = 170;
-            // 
-            // nomTipoDoc
-            // 
-            this.nomTipoDoc.HeaderText = "Tipo Documento";
-            this.nomTipoDoc.Name = "nomTipoDoc";
-            this.nomTipoDoc.ReadOnly = true;
-            this.nomTipoDoc.Width = 150;
-            // 
-            // nomFarmacia
-            // 
-            this.nomFarmacia.HeaderText = "Farmacia";
-            this.nomFarmacia.Name = "nomFarmacia";
-            this.nomFarmacia.ReadOnly = true;
-            this.nomFarmacia.Width = 300;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
-            this.btnActualizar.BorderRadius = 20;
-            this.btnActualizar.BorderSize = 1;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(1015, 206);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(104, 37);
-            this.btnActualizar.TabIndex = 9;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextColor = System.Drawing.Color.Black;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // transparentLabel3
-            // 
-            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.transparentLabel3.Location = new System.Drawing.Point(21, 23);
-            this.transparentLabel3.Name = "transparentLabel3";
-            this.transparentLabel3.Size = new System.Drawing.Size(30, 23);
-            this.transparentLabel3.TabIndex = 36;
-            this.transparentLabel3.TabStop = false;
-            this.transparentLabel3.Text = "(*)";
-            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // btnRegEmpleado
-            // 
-            this.btnRegEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRegEmpleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRegEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegEmpleado.BorderColor = System.Drawing.Color.Green;
-            this.btnRegEmpleado.BorderRadius = 20;
-            this.btnRegEmpleado.BorderSize = 1;
-            this.btnRegEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegEmpleado.FlatAppearance.BorderSize = 0;
-            this.btnRegEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnRegEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnRegEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRegEmpleado.ForeColor = System.Drawing.Color.Black;
-            this.btnRegEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegEmpleado.Location = new System.Drawing.Point(1013, 115);
-            this.btnRegEmpleado.Name = "btnRegEmpleado";
-            this.btnRegEmpleado.Size = new System.Drawing.Size(106, 56);
-            this.btnRegEmpleado.TabIndex = 8;
-            this.btnRegEmpleado.Text = "Registrar Empleado";
-            this.btnRegEmpleado.TextColor = System.Drawing.Color.Black;
-            this.btnRegEmpleado.UseVisualStyleBackColor = false;
-            this.btnRegEmpleado.Click += new System.EventHandler(this.btnRegEmpleado_Click);
             // 
             // btnVerClaveRep
             // 
@@ -352,6 +196,17 @@ namespace FarmaTown.Presentacion
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.label1.Location = new System.Drawing.Point(17, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 38);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Los campos con (*) \r\nson obligatorios";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -363,6 +218,15 @@ namespace FarmaTown.Presentacion
             this.lblNombre.TabStop = false;
             this.lblNombre.Text = "  Nombre(*):";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // cboRol
+            // 
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(469, 151);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(301, 27);
+            this.cboRol.TabIndex = 6;
+            this.cboRol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
             // 
             // lblRol
             // 
@@ -399,6 +263,107 @@ namespace FarmaTown.Presentacion
             this.lblContraseña.TabStop = false;
             this.lblContraseña.Text = "Contraseña(*):";
             this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.btnActualizar);
+            this.groupBox2.Controls.Add(this.transparentLabel3);
+            this.groupBox2.Controls.Add(this.dgvEmpleados);
+            this.groupBox2.Controls.Add(this.btnRegEmpleado);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(23, 237);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1137, 335);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos del Empleado";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnActualizar.BorderColor = System.Drawing.Color.Green;
+            this.btnActualizar.BorderRadius = 20;
+            this.btnActualizar.BorderSize = 1;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnActualizar.Location = new System.Drawing.Point(1015, 206);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(104, 37);
+            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.TextColor = System.Drawing.Color.Black;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // transparentLabel3
+            // 
+            this.transparentLabel3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.transparentLabel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.transparentLabel3.Location = new System.Drawing.Point(21, 23);
+            this.transparentLabel3.Name = "transparentLabel3";
+            this.transparentLabel3.Size = new System.Drawing.Size(30, 23);
+            this.transparentLabel3.TabIndex = 36;
+            this.transparentLabel3.TabStop = false;
+            this.transparentLabel3.Text = "(*)";
+            this.transparentLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.AllowUserToAddRows = false;
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
+            this.dgvEmpleados.AllowUserToResizeColumns = false;
+            this.dgvEmpleados.AllowUserToResizeRows = false;
+            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idEmpleado,
+            this.nomEmpleado,
+            this.nroDoc,
+            this.nomTipoDoc,
+            this.nomFarmacia});
+            this.dgvEmpleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.dgvEmpleados.Location = new System.Drawing.Point(15, 52);
+            this.dgvEmpleados.MultiSelect = false;
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
+            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpleados.Size = new System.Drawing.Size(976, 267);
+            this.dgvEmpleados.TabIndex = 27;
+            this.dgvEmpleados.TabStop = false;
+            // 
+            // btnRegEmpleado
+            // 
+            this.btnRegEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRegEmpleado.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRegEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegEmpleado.BorderColor = System.Drawing.Color.Green;
+            this.btnRegEmpleado.BorderRadius = 20;
+            this.btnRegEmpleado.BorderSize = 1;
+            this.btnRegEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegEmpleado.FlatAppearance.BorderSize = 0;
+            this.btnRegEmpleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRegEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnRegEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegEmpleado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRegEmpleado.ForeColor = System.Drawing.Color.Black;
+            this.btnRegEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnRegEmpleado.Location = new System.Drawing.Point(1013, 115);
+            this.btnRegEmpleado.Name = "btnRegEmpleado";
+            this.btnRegEmpleado.Size = new System.Drawing.Size(106, 56);
+            this.btnRegEmpleado.TabIndex = 8;
+            this.btnRegEmpleado.Text = "Registrar Empleado";
+            this.btnRegEmpleado.TextColor = System.Drawing.Color.Black;
+            this.btnRegEmpleado.UseVisualStyleBackColor = false;
+            this.btnRegEmpleado.Click += new System.EventHandler(this.btnRegEmpleado_Click);
             // 
             // btnCancelar
             // 
@@ -450,6 +415,42 @@ namespace FarmaTown.Presentacion
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // idEmpleado
+            // 
+            this.idEmpleado.HeaderText = "ID";
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Visible = false;
+            this.idEmpleado.Width = 50;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Nombre";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // nroDoc
+            // 
+            this.nroDoc.HeaderText = "N° Documento";
+            this.nroDoc.Name = "nroDoc";
+            this.nroDoc.ReadOnly = true;
+            this.nroDoc.Width = 170;
+            // 
+            // nomTipoDoc
+            // 
+            this.nomTipoDoc.HeaderText = "Tipo Documento";
+            this.nomTipoDoc.Name = "nomTipoDoc";
+            this.nomTipoDoc.ReadOnly = true;
+            this.nomTipoDoc.Width = 150;
+            // 
+            // nomFarmacia
+            // 
+            this.nomFarmacia.HeaderText = "Farmacia";
+            this.nomFarmacia.Name = "nomFarmacia";
+            this.nomFarmacia.ReadOnly = true;
+            this.nomFarmacia.Width = 300;
+            // 
             // frmABMUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,11 +490,6 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnRegEmpleado;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnVerClave;
         private CustomControls.RJControls.RJButton btnVerClaveRep;
@@ -502,5 +498,10 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.TextBox txtbClave;
         private System.Windows.Forms.TextBox txtbClaveRep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
     }
 }
