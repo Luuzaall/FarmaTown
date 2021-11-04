@@ -603,7 +603,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.MaximizeBox = false;
             this.Name = "frmABMEmpleados";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmABMEmpleados_Load);
             gbEmpleados.ResumeLayout(false);
             gbEmpleados.PerformLayout();
