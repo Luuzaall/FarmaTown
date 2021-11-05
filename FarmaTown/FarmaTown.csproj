@@ -82,6 +82,7 @@
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datos\ClienteDao.cs" />
+    <Compile Include="Datos\DetalleVentaDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
     <Compile Include="Datos\Reportes\DSVentas.Designer.cs">
@@ -302,21 +303,21 @@
     <Compile Include="Presentacion\Reportes\Ventas\frmReporteVentas.Designer.cs">
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Transacciones\frmConsVentas.cs">
+    <Compile Include="Presentacion\Transacciones\frmAltaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Transacciones\frmConsVentas.Designer.cs">
-      <DependentUpon>frmConsVentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Transacciones\frmVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Transacciones\frmVentas.Designer.cs">
-      <DependentUpon>frmVentas.cs</DependentUpon>
+    <Compile Include="Presentacion\Transacciones\frmAltaVenta.Designer.cs">
+      <DependentUpon>frmAltaVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
     <Compile Include="Presentacion\Servicios\GrillaService.cs" />
     <Compile Include="Presentacion\Servicios\TextBoxService.cs" />
+    <Compile Include="Presentacion\Transacciones\frmConsultaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmConsultaVentas.designer.cs">
+      <DependentUpon>frmConsultaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -411,11 +412,11 @@
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Ventas\rptVentas.rdlc" />
-    <EmbeddedResource Include="Presentacion\Transacciones\frmConsVentas.resx">
-      <DependentUpon>frmConsVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Transacciones\frmAltaVenta.resx">
+      <DependentUpon>frmAltaVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Transacciones\frmVentas.resx">
-      <DependentUpon>frmVentas.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Transacciones\frmConsultaVentas.resx">
+      <DependentUpon>frmConsultaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -491,6 +492,7 @@
   <ItemGroup>
     <None Include="Resources\listado medicamentos.png" />
     <None Include="Presentacion\Imagenes\reporteVentas.png" />
+    <None Include="Presentacion\Imagenes\consultaVentas.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

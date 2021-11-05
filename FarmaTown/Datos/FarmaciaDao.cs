@@ -103,10 +103,10 @@ namespace FarmaTown.Datos
                 " FROM Farmacias f" +
                 " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " WHERE f.idFarmacia = " + id +
-                " AND f.borrado = 0;";
+                " WHERE f.idFarmacia = " + id;
 
             DataTable tablaFarmacias = DBHelper.getDBHelper().consultaSQL(query);
+
 
             return this.objectMapping(tablaFarmacias.Rows[0]);
         }

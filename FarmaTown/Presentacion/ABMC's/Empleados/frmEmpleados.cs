@@ -42,7 +42,6 @@ namespace FarmaTown.Presentacion.Empleados
              */
             if (this.validarCampos())
             {
-                List<Empleado> resultadosEmpleados = new List<Empleado>();
                 int idTipoDoc;
                 string nroDoc = "";
                 string nomEmpl = this.txtbNombre.Text;
@@ -66,7 +65,7 @@ namespace FarmaTown.Presentacion.Empleados
                         nroDoc = this.txtbNroDoc.Text;
                 }
 
-                resultadosEmpleados = this.oEmpleado.recuperarEmpleadoCParametros(nomEmpl, nroDoc, idTipoDoc, nomFarm);
+                List<Empleado> resultadosEmpleados = this.oEmpleado.recuperarEmpleadoCParametros(nomEmpl, nroDoc, idTipoDoc, nomFarm);
                 this.cargarGrilla(this.dgvEmpleados, resultadosEmpleados);
             }
 
@@ -281,6 +280,9 @@ namespace FarmaTown.Presentacion.Empleados
 
         private bool validarCampos()
         {
+            //Verifica si los datos ingresados son válidos
+            // para la consulta y el paso de parámetros
+            // para la misma.
             string nom = this.txtbNombre.Text;
             string nroDoc = this.txtbNroDoc.Text;
             string nomFarmacia = this.txtbFarmacia.Text;

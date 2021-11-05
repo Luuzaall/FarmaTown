@@ -57,15 +57,15 @@ namespace FarmaTown.Presentacion.Empleados
             this.lnlNomFarm = new System.Windows.Forms.Label();
             this.btnLimpiarFarmacias = new CustomControls.RJControls.RJButton();
             this.dgvFarmacias = new System.Windows.Forms.DataGridView();
+            this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.idFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
-            this.btnCancelar = new CustomControls.RJControls.RJButton();
-            this.btnAceptar = new CustomControls.RJControls.RJButton();
             gbEmpleados = new System.Windows.Forms.GroupBox();
             gbEmpleados.SuspendLayout();
             this.gbFarmacias.SuspendLayout();
@@ -468,47 +468,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvFarmacias.TabStop = false;
             this.dgvFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFarmacias_KeyDown);
             // 
-            // idFarmacia
-            // 
-            this.idFarmacia.HeaderText = "ID";
-            this.idFarmacia.Name = "idFarmacia";
-            this.idFarmacia.ReadOnly = true;
-            this.idFarmacia.Width = 50;
-            // 
-            // nomFarmacia
-            // 
-            this.nomFarmacia.HeaderText = "Nombre";
-            this.nomFarmacia.Name = "nomFarmacia";
-            this.nomFarmacia.ReadOnly = true;
-            this.nomFarmacia.Width = 250;
-            // 
-            // calle
-            // 
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            this.calle.Width = 170;
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "N°";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            // 
-            // nomBarrio
-            // 
-            this.nomBarrio.HeaderText = "Barrio";
-            this.nomBarrio.Name = "nomBarrio";
-            this.nomBarrio.ReadOnly = true;
-            this.nomBarrio.Width = 200;
-            // 
-            // nomLocalidad
-            // 
-            this.nomLocalidad.HeaderText = "Localidad";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 200;
-            // 
             // btnRegFarmacia
             // 
             this.btnRegFarmacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -585,6 +544,48 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // idFarmacia
+            // 
+            this.idFarmacia.HeaderText = "ID";
+            this.idFarmacia.Name = "idFarmacia";
+            this.idFarmacia.ReadOnly = true;
+            this.idFarmacia.Visible = false;
+            this.idFarmacia.Width = 50;
+            // 
+            // nomFarmacia
+            // 
+            this.nomFarmacia.HeaderText = "Nombre";
+            this.nomFarmacia.Name = "nomFarmacia";
+            this.nomFarmacia.ReadOnly = true;
+            this.nomFarmacia.Width = 250;
+            // 
+            // calle
+            // 
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            this.calle.Width = 170;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "N°";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // nomBarrio
+            // 
+            this.nomBarrio.HeaderText = "Barrio";
+            this.nomBarrio.Name = "nomBarrio";
+            this.nomBarrio.ReadOnly = true;
+            this.nomBarrio.Width = 200;
+            // 
+            // nomLocalidad
+            // 
+            this.nomLocalidad.HeaderText = "Localidad";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 200;
+            // 
             // frmABMEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,12 +623,6 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.GroupBox gbFarmacias;
         private System.Windows.Forms.DataGridView dgvFarmacias;
         private CustomControls.RJControls.RJButton btnRegFarmacia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFarmacia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
         private System.Windows.Forms.GroupBox gbFiltrosFarm;
         private CustomControls.RJControls.RJButton btnLimpiarFarmacias;
         private System.Windows.Forms.TextBox txtbNroDoc;
@@ -652,5 +647,11 @@ namespace FarmaTown.Presentacion.Empleados
         private System.Windows.Forms.Label lblNomCalle;
         private System.Windows.Forms.Label lnlNomFarm;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFarmacia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomFarmacia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
     }
 }

@@ -206,50 +206,6 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        private List<Cliente> listMapping(DataTable tabla)
-        {
-            /*
-             * Recibe una tabla con filas
-             * y tranforma la información de cada
-             * una de ellas en un objeto del 
-             * tipo de Empleado
-             */
-            List<Cliente> lista = new List<Cliente>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                lista.Add(this.objectMapping(fila));
-            }
-
-            return lista;
-        }
-
-        private Cliente objectMapping(DataRow row)
-        {
-            Cliente oCliente = new Cliente
-            {
-                IdCliente = Convert.ToInt32(row["idCliente"].ToString()),
-                Nombre = row["nomCliente"].ToString(),
-                Apellido = row["apellido"].ToString(),
-                TipoDoc = new TipoDocumento()
-                {
-                    IdTipo = Convert.ToInt32(row["tipoDoc"].ToString()),
-                    Nombre = row["nomTipoDoc"].ToString()
-                },
-                NroDoc = row["nroDoc"].ToString(),
-                Calle = row["calle"].ToString(),
-                NroCalle = Convert.ToInt32(row["nroCalle"].ToString()),
-                Barrio = new Barrio()
-                {
-                    IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
-                    Nombre = row["nomBarrio"].ToString(),
-                }
-            };
-            return oCliente;
-        }
-
         public Cliente buscarCliente(string nomCli, string apellido , string calle, string nroDoc, int idTipoDoc, int idBarrio)
         {
             string query = "SELECT c.idCliente" +
@@ -295,6 +251,48 @@ namespace FarmaTown.Datos
                 return this.objectMapping(fila);
             }
 
+        }
+        private List<Cliente> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Empleado
+             */
+            List<Cliente> lista = new List<Cliente>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
+        }
+        private Cliente objectMapping(DataRow row)
+        {
+            Cliente oCliente = new Cliente
+            {
+                IdCliente = Convert.ToInt32(row["idCliente"].ToString()),
+                Nombre = row["nomCliente"].ToString(),
+                Apellido = row["apellido"].ToString(),
+                TipoDoc = new TipoDocumento()
+                {
+                    IdTipo = Convert.ToInt32(row["tipoDoc"].ToString()),
+                    Nombre = row["nomTipoDoc"].ToString()
+                },
+                NroDoc = row["nroDoc"].ToString(),
+                Calle = row["calle"].ToString(),
+                NroCalle = Convert.ToInt32(row["nroCalle"].ToString()),
+                Barrio = new Barrio()
+                {
+                    IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
+                    Nombre = row["nomBarrio"].ToString(),
+                }
+            };
+            return oCliente;
         }
     }
 }

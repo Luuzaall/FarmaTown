@@ -32,7 +32,7 @@ namespace FarmaTown.Logica
         }
 
 
-        internal Medicamento traerMedicamento(string medicamento)
+        public Medicamento traerMedicamento(string medicamento)
         {
             Medicamento oMedicamento = oMedicamentoDao.obtenerMedicamentoPorNom(medicamento);
             if (oMedicamento != null)

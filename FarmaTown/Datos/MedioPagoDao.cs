@@ -18,6 +18,18 @@ namespace FarmaTown.Datos
 
         }
 
+        public MedioPago traer(int idMedioPago)
+        {
+            string query = "SELECT *" +
+                "   FROM MediosPago" +
+                "   WHERE borrado = 0" +
+                "   AND idMedioPago = " + idMedioPago;
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            return objectMapping(tabla.Rows[0]);
+        }
+
         private List<MedioPago> listMapping(DataTable tabla)
         {
             /*

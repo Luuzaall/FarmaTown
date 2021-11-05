@@ -130,10 +130,11 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(111, 141);
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(89, 138);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 19);
+            this.label5.Size = new System.Drawing.Size(111, 23);
             this.label5.TabIndex = 58;
             this.label5.Text = "Empleado:";
             // 
@@ -152,10 +153,11 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(542, 136);
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(512, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 19);
+            this.label4.Size = new System.Drawing.Size(125, 23);
             this.label4.TabIndex = 56;
             this.label4.Text = "Obra Social:";
             // 
@@ -176,20 +178,20 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(532, 43);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(506, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 19);
+            this.label3.Size = new System.Drawing.Size(135, 23);
             this.label3.TabIndex = 53;
             this.label3.Text = "Fecha Desde:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(91, 43);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(65, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 19);
+            this.label2.Size = new System.Drawing.Size(135, 23);
             this.label2.TabIndex = 52;
             this.label2.Text = "Fecha Desde:";
             // 
@@ -208,10 +210,11 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblLocalidad.Location = new System.Drawing.Point(554, 89);
+            this.lblLocalidad.BackColor = System.Drawing.Color.White;
+            this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.lblLocalidad.Location = new System.Drawing.Point(528, 88);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(92, 19);
+            this.lblLocalidad.Size = new System.Drawing.Size(109, 23);
             this.lblLocalidad.TabIndex = 50;
             this.lblLocalidad.Text = "Localidad:";
             // 
@@ -230,10 +233,11 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             // lblBarrio
             // 
             this.lblBarrio.AutoSize = true;
-            this.lblBarrio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.lblBarrio.Location = new System.Drawing.Point(111, 92);
+            this.lblBarrio.BackColor = System.Drawing.Color.White;
+            this.lblBarrio.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.lblBarrio.Location = new System.Drawing.Point(96, 89);
             this.lblBarrio.Name = "lblBarrio";
-            this.lblBarrio.Size = new System.Drawing.Size(89, 19);
+            this.lblBarrio.Size = new System.Drawing.Size(104, 23);
             this.lblBarrio.TabIndex = 48;
             this.lblBarrio.Text = "Farmacia:";
             // 

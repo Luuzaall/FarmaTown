@@ -11,13 +11,14 @@ namespace FarmaTown.Logica
     {
         public int IdVenta { get; set; }
         public Farmacia Farmacia { get; set; }
-        public int NroFactura { get; set; }
+        public string NroFactura { get; set; }
         public TipoFactura TipoFactura { get; set; }
         public Cliente Cliente { get; set; }
         public DateTime FechaFactura { get; set; }
         public Empleado Empleado { get; set; }
         public MedioPago MedioPago { get; set; }
         public IList<DetalleVenta> Detalles { get; set; }
+        public ObraSocial ObraSocial { get; set; }
 
         //public bool Borrado { get; set; }
 
@@ -32,15 +33,18 @@ namespace FarmaTown.Logica
             return this.oVenta.crear(nuevaVenta);
         }
 
-        private bool validar(int resultado)
+        public List<Venta> recuperarTodos()
         {
-            if (resultado == 0)
-            {
-                return false;
-            }
-            else
-                return true;
+            return this.oVenta.recuperarTodos();
         }
+        internal List<Venta> recuperarVentasConParam(string idFarm, string idLocalidad
+            , string idEmpleado, string idObraSocial, string fechaDesde
+            , string fechaHasta)
+        {
+            return this.oVenta.recuperarVentasConParam(idFarm, idLocalidad
+                , idEmpleado, idObraSocial, fechaDesde, fechaHasta);
+        }
+
 
         public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
                 , String idFarm, String idLocalidad, int reporte, string idEmpleado

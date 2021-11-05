@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace FarmaTown.Presentacion
 {
-    public partial class frmVentas : Form
+    public partial class frmAltaVenta : Form
     {
         // Atributos
         private TipoFactura oTipoFact;
@@ -28,7 +28,7 @@ namespace FarmaTown.Presentacion
         private MedioPago oMedioPago;
 
 
-        public frmVentas(Usuario usuario)
+        public frmAltaVenta(Usuario usuario)
         {
             InitializeComponent();
             this.dgvDetalle.AutoGenerateColumns = false;
@@ -242,6 +242,7 @@ namespace FarmaTown.Presentacion
                         Empleado = oUsuario.Empleado,
                         Farmacia = oUsuario.Empleado.Farmacia,
                         MedioPago = (MedioPago)this.cboMedioPago.SelectedItem,
+                        ObraSocial = (ObraSocial)this.cboObrasSociales.SelectedItem,
                     };
                     venta.crearVenta(venta);
 
@@ -347,7 +348,6 @@ namespace FarmaTown.Presentacion
                 Cantidad = cantidad,
                 PrecioUnitario = oMedicamento.PrecioLista,
                 Reintegro = descuento,
-                ObraSocial = (ObraSocial)this.cboObrasSociales.SelectedItem,
             };
 
 

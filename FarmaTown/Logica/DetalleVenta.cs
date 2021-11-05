@@ -9,12 +9,11 @@ namespace FarmaTown.Logica
     public class DetalleVenta
     {
         // Propiedades
+
         public Medicamento Medicamento { get; set; }
         public int Cantidad { get; set; }
         public Double PrecioUnitario { get; set; }
         public Double Reintegro { get; set; }
-        public ObraSocial ObraSocial { get; set; }
-
         public Double PrecioUnitarioShort
         {
             get
@@ -22,7 +21,7 @@ namespace FarmaTown.Logica
                 return Math.Round(PrecioUnitario, 2);
             }
         }
-        
+
         public int IdMedicamento
         {
             get

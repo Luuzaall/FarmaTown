@@ -1,7 +1,7 @@
 ﻿
 namespace FarmaTown.Presentacion
 {
-    partial class frmVentas
+    partial class frmAltaVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,15 @@ namespace FarmaTown.Presentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaVenta));
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.cboMedioPago = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblAvisoCant = new System.Windows.Forms.Label();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.lblAvisoStock = new System.Windows.Forms.Label();
@@ -77,8 +79,7 @@ namespace FarmaTown.Presentacion
             this.btnGuardar = new CustomControls.RJControls.RJButton();
             this.btnNuevaFactura = new CustomControls.RJControls.RJButton();
             this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.cboMedioPago = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.gbDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.gbCliente.SuspendLayout();
@@ -89,7 +90,7 @@ namespace FarmaTown.Presentacion
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(49, 26);
+            this.lblUsuario.Location = new System.Drawing.Point(32, 59);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(134, 23);
@@ -101,7 +102,7 @@ namespace FarmaTown.Presentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(569, 22);
+            this.label1.Location = new System.Drawing.Point(622, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 23);
@@ -113,7 +114,7 @@ namespace FarmaTown.Presentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(326, 25);
+            this.label2.Location = new System.Drawing.Point(325, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 23);
@@ -126,7 +127,7 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroFactura.Enabled = false;
             this.txtbNroFactura.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbNroFactura.Location = new System.Drawing.Point(454, 25);
+            this.txtbNroFactura.Location = new System.Drawing.Point(453, 60);
             this.txtbNroFactura.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbNroFactura.Name = "txtbNroFactura";
             this.txtbNroFactura.Size = new System.Drawing.Size(113, 22);
@@ -140,7 +141,7 @@ namespace FarmaTown.Presentacion
             this.dtpFechaActual.CalendarTrailingForeColor = System.Drawing.Color.Green;
             this.dtpFechaActual.Enabled = false;
             this.dtpFechaActual.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaActual.Location = new System.Drawing.Point(653, 19);
+            this.dtpFechaActual.Location = new System.Drawing.Point(709, 54);
             this.dtpFechaActual.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtpFechaActual.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.dtpFechaActual.MinDate = new System.DateTime(2021, 10, 9, 0, 0, 0, 0);
@@ -172,7 +173,7 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.Controls.Add(this.txtbNomMedicamento);
             this.gbDetalle.Controls.Add(this.btnBuscMedicamento);
             this.gbDetalle.Controls.Add(this.lblMedicamento);
-            this.gbDetalle.Location = new System.Drawing.Point(29, 206);
+            this.gbDetalle.Location = new System.Drawing.Point(29, 229);
             this.gbDetalle.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.gbDetalle.Name = "gbDetalle";
             this.gbDetalle.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -181,6 +182,30 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
             this.ttDescripcionBtn.SetToolTip(this.gbDetalle, "Quitar el artículo elegido.");
+            // 
+            // cboMedioPago
+            // 
+            this.cboMedioPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.cboMedioPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboMedioPago.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.cboMedioPago.FormattingEnabled = true;
+            this.cboMedioPago.Location = new System.Drawing.Point(228, 368);
+            this.cboMedioPago.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.cboMedioPago.Name = "cboMedioPago";
+            this.cboMedioPago.Size = new System.Drawing.Size(184, 27);
+            this.cboMedioPago.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(52, 372);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 23);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Medio de Pago:";
             // 
             // lblAvisoCant
             // 
@@ -547,7 +572,7 @@ namespace FarmaTown.Presentacion
             this.cboTipoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoFactura.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboTipoFactura.FormattingEnabled = true;
-            this.cboTipoFactura.Location = new System.Drawing.Point(193, 23);
+            this.cboTipoFactura.Location = new System.Drawing.Point(176, 54);
             this.cboTipoFactura.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboTipoFactura.Name = "cboTipoFactura";
             this.cboTipoFactura.Size = new System.Drawing.Size(100, 27);
@@ -566,7 +591,7 @@ namespace FarmaTown.Presentacion
             this.gbCliente.Controls.Add(this.label9);
             this.gbCliente.Controls.Add(this.txtNomCliente);
             this.gbCliente.Controls.Add(this.lblNomCliente);
-            this.gbCliente.Location = new System.Drawing.Point(29, 69);
+            this.gbCliente.Location = new System.Drawing.Point(29, 92);
             this.gbCliente.Margin = new System.Windows.Forms.Padding(2);
             this.gbCliente.Name = "gbCliente";
             this.gbCliente.Padding = new System.Windows.Forms.Padding(2);
@@ -718,7 +743,7 @@ namespace FarmaTown.Presentacion
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(128, 626);
+            this.btnGuardar.Location = new System.Drawing.Point(128, 649);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(53, 49);
             this.btnGuardar.TabIndex = 23;
@@ -741,7 +766,7 @@ namespace FarmaTown.Presentacion
             this.btnNuevaFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnNuevaFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaFactura.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaFactura.Location = new System.Drawing.Point(29, 626);
+            this.btnNuevaFactura.Location = new System.Drawing.Point(29, 649);
             this.btnNuevaFactura.Name = "btnNuevaFactura";
             this.btnNuevaFactura.Size = new System.Drawing.Size(53, 49);
             this.btnNuevaFactura.TabIndex = 22;
@@ -765,7 +790,7 @@ namespace FarmaTown.Presentacion
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(885, 626);
+            this.btnSalir.Location = new System.Drawing.Point(885, 649);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 20;
@@ -774,29 +799,17 @@ namespace FarmaTown.Presentacion
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // cboMedioPago
+            // label8
             // 
-            this.cboMedioPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.cboMedioPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboMedioPago.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.cboMedioPago.FormattingEnabled = true;
-            this.cboMedioPago.Location = new System.Drawing.Point(228, 368);
-            this.cboMedioPago.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cboMedioPago.Name = "cboMedioPago";
-            this.cboMedioPago.Size = new System.Drawing.Size(184, 27);
-            this.cboMedioPago.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(52, 372);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 23);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Medio de Pago:";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(368, 9);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(214, 33);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Registrar Venta";
             // 
             // frmVentas
             // 
@@ -806,7 +819,8 @@ namespace FarmaTown.Presentacion
             this.AutoSize = true;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.carroVacioVenta;
             this.CancelButton = this.btnSalir;
-            this.ClientSize = new System.Drawing.Size(966, 688);
+            this.ClientSize = new System.Drawing.Size(966, 713);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnNuevaFactura);
             this.Controls.Add(this.btnSalir);
@@ -819,6 +833,7 @@ namespace FarmaTown.Presentacion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUsuario);
             this.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
@@ -887,5 +902,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.Label lblAvisoCant;
         private System.Windows.Forms.ComboBox cboMedioPago;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
     }
 }

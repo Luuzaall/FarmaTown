@@ -23,5 +23,10 @@ namespace FarmaTown.Logica
         {
             return dao.recuperarTodos();
         }
+
+        public MedioPago traer(int idMedioPago)
+        {
+            return dao.traer(idMedioPago);
+        }
     }
 }

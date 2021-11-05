@@ -13,12 +13,22 @@ namespace FarmaTown.Datos
 
         public List<TipoFactura> recuperarTodos()
         {
+            
+            DataTable tabla = DBHelper.getDBHelper()
+                .consultarTabla("TiposFactura");
+            return listMapping(tabla);
+        }
+
+        public TipoFactura traer(int idTipoFactura)
+        {
             string query = "SELECT *" +
-                " FROM TiposFactura" +
-                " WHERE borrado = 0";
+                "   FROM TiposFactura" +
+                "   WHERE borrado = 0" +
+                "   AND idTipoFactura = " + idTipoFactura;
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-            return listMapping(tabla);
+
+            return objectMapping(tabla.Rows[0]);
         }
 
         private List<TipoFactura> listMapping(DataTable tabla)

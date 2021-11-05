@@ -157,5 +157,15 @@ namespace FarmaTown.Presentacion.Localidades
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -64,8 +64,7 @@ namespace FarmaTown.Datos
         {
             string query = "SELECT *" +
                 " FROM ObrasSociales" + 
-                " WHERE borrado = 0" +
-                " AND idOS = " + idOS;
+                " WHERE idOS = " + idOS;
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

@@ -23,5 +23,10 @@ namespace FarmaTown.Logica
         {
             return oTipoFacDao.recuperarTodos();
         }
+
+        public TipoFactura traer (int idTipoFactura)
+        {
+            return oTipoFacDao.traer(idTipoFactura);
+        }
     }
 }
