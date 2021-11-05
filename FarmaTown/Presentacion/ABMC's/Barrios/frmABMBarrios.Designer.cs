@@ -44,8 +44,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.lblAviso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -258,7 +256,6 @@ namespace FarmaTown.Presentacion.Localidades
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
-        private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

@@ -37,7 +37,7 @@ namespace FarmaTown.Presentacion
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmEmpleados()); 
 
-            //Application.Run(new frmBarrios());
+            Application.Run(new frmBarrios());
             //Application.Run(new frmABMBarrios());
             //Application.Run(new frmLocalidades());
 
@@ -53,8 +53,8 @@ namespace FarmaTown.Presentacion
 
             //Usuario us = new Usuario();
             //Application.Run(new frmVentas(us.traerUsuario("Nao")));
-            Usuario us = new Usuario();
-            Application.Run(new frmConsultaVentas(us.traerUsuario("maru")));
+            //Usuario us = new Usuario();
+            //Application.Run(new frmConsultaVentas(us.traerUsuario("maru")));
 
             //Reportes
 

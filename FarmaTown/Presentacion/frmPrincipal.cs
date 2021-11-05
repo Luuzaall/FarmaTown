@@ -244,11 +244,11 @@ namespace FarmaTown.Presentacion
             ofrmListadoVentas.ShowDialog();
         }
 
-        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
-            ofrmListadoMedicamentos.ShowDialog();
-        }
+        //private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        //{
+        ////    frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
+        ////    ofrmListadoMedicamentos.ShowDialog();
+        //}
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
