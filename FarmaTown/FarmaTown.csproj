@@ -285,12 +285,6 @@
     <Compile Include="Presentacion\Reportes\frmReporteTMedicamentosxVenta.Designer.cs">
       <DependentUpon>frmReporteTMedicamentosxVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Reportes\frmListadoMedicamentos.Designer.cs">
-      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteVentasxFarmacia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -391,9 +385,6 @@
     <EmbeddedResource Include="Presentacion\Reportes\frmReporteEmpleados.resx">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\frmListadoMedicamentos.resx">
-      <DependentUpon>frmListadoMedicamentos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\frmReporteClientes.resx">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,7 +397,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\rptVentasFarmacia.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\rptMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptTMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Ventas\frmReporteVentas.resx">
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
@@ -493,6 +483,7 @@
     <None Include="Resources\listado medicamentos.png" />
     <None Include="Presentacion\Imagenes\reporteVentas.png" />
     <None Include="Presentacion\Imagenes\consultaVentas.png" />
+    <None Include="Resources\pharmacy.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -550,6 +541,8 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presentacion\Reportes\Medicamentos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

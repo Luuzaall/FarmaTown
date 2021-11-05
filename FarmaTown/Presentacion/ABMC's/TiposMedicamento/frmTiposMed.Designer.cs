@@ -39,13 +39,13 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvTiposMed = new System.Windows.Forms.DataGridView();
-            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.btnSalir = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.idTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposMed)).BeginInit();
@@ -180,7 +180,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(511, 123);
+            this.btnActualizar.Location = new System.Drawing.Point(439, 127);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
             this.btnActualizar.TabIndex = 4;
@@ -207,24 +207,10 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.dgvTiposMed.Name = "dgvTiposMed";
             this.dgvTiposMed.ReadOnly = true;
             this.dgvTiposMed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTiposMed.Size = new System.Drawing.Size(480, 218);
+            this.dgvTiposMed.Size = new System.Drawing.Size(370, 218);
             this.dgvTiposMed.TabIndex = 60;
             this.dgvTiposMed.TabStop = false;
             this.dgvTiposMed.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposMed_CellClick);
-            // 
-            // idTipo
-            // 
-            this.idTipo.HeaderText = "ID";
-            this.idTipo.Name = "idTipo";
-            this.idTipo.ReadOnly = true;
-            this.idTipo.Width = 50;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 250;
             // 
             // lblAviso
             // 
@@ -328,6 +314,21 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // idTipo
+            // 
+            this.idTipo.HeaderText = "ID";
+            this.idTipo.Name = "idTipo";
+            this.idTipo.ReadOnly = true;
+            this.idTipo.Visible = false;
+            this.idTipo.Width = 50;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 250;
             // 
             // frmTiposMed
             // 

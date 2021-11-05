@@ -119,8 +119,7 @@
             this.medicamentosToolStripMenuItem1,
             this.obrasSocialesToolStripMenuItem,
             this.personalToolStripMenuItem,
-            this.ubicaciónToolStripMenuItem,
-            this.ventasToolStripMenuItem});
+            this.ubicaciónToolStripMenuItem});
             this.gestiónToolStripMenuItem.Name = "gestiónToolStripMenuItem";
             this.gestiónToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.gestiónToolStripMenuItem.Text = "Gestión";
@@ -187,8 +186,8 @@
             // ubicaciónToolStripMenuItem
             // 
             this.ubicaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.localidadesToolStripMenuItem,
-            this.barriosToolStripMenuItem});
+            this.barriosToolStripMenuItem,
+            this.localidadesToolStripMenuItem});
             this.ubicaciónToolStripMenuItem.Name = "ubicaciónToolStripMenuItem";
             this.ubicaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.ubicaciónToolStripMenuItem.Text = "Ubicación";
@@ -278,7 +277,7 @@
             this.reportePorTipoDeMedicamentoToolStripMenuItem,
             this.porFarmaciaToolStripMenuItem});
             this.ventasToolStripMenuItem2.Name = "ventasToolStripMenuItem2";
-            this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
+            this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(176, 24);
             this.ventasToolStripMenuItem2.Text = "Ventas";
             this.ventasToolStripMenuItem2.Click += new System.EventHandler(this.ventasToolStripMenuItem2_Click);
             // 
@@ -411,7 +410,6 @@
         private System.Windows.Forms.ToolStripMenuItem localidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem2;

@@ -276,7 +276,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(1111, 318);
+            this.btnActualizar.Location = new System.Drawing.Point(1085, 316);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
             this.btnActualizar.TabIndex = 12;
@@ -463,7 +463,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvFarmacias.Name = "dgvFarmacias";
             this.dgvFarmacias.ReadOnly = true;
             this.dgvFarmacias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFarmacias.Size = new System.Drawing.Size(1078, 211);
+            this.dgvFarmacias.Size = new System.Drawing.Size(1012, 211);
             this.dgvFarmacias.TabIndex = 11;
             this.dgvFarmacias.TabStop = false;
             this.dgvFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFarmacias_KeyDown);
@@ -484,7 +484,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnRegFarmacia.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.btnRegFarmacia.ForeColor = System.Drawing.Color.Black;
             this.btnRegFarmacia.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegFarmacia.Location = new System.Drawing.Point(1110, 240);
+            this.btnRegFarmacia.Location = new System.Drawing.Point(1085, 237);
             this.btnRegFarmacia.Name = "btnRegFarmacia";
             this.btnRegFarmacia.Size = new System.Drawing.Size(106, 56);
             this.btnRegFarmacia.TabIndex = 11;
@@ -535,7 +535,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(1116, 668);
+            this.btnAceptar.Location = new System.Drawing.Point(1099, 668);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(140, 49);
             this.btnAceptar.TabIndex = 13;

@@ -40,13 +40,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.label1 = new System.Windows.Forms.Label();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.dgvBarrios = new System.Windows.Forms.DataGridView();
-            this.idBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.idBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).BeginInit();
@@ -67,7 +67,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(723, 542);
+            this.btnSalir.Location = new System.Drawing.Point(716, 502);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 43;
@@ -113,7 +113,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(206, 542);
+            this.btnEliminar.Location = new System.Drawing.Point(199, 502);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 41;
@@ -160,13 +160,13 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnConsultar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.btnConsultar.Location = new System.Drawing.Point(337, 75);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(125, 49);
+            this.btnConsultar.Size = new System.Drawing.Size(106, 35);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
@@ -248,27 +248,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvBarrios.TabStop = false;
             this.dgvBarrios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBarrios_CellClick);
             // 
-            // idBarrio
-            // 
-            this.idBarrio.HeaderText = "ID";
-            this.idBarrio.Name = "idBarrio";
-            this.idBarrio.ReadOnly = true;
-            this.idBarrio.Width = 50;
-            // 
-            // nomBarrio
-            // 
-            this.nomBarrio.HeaderText = "Nombre";
-            this.nomBarrio.Name = "nomBarrio";
-            this.nomBarrio.ReadOnly = true;
-            this.nomBarrio.Width = 250;
-            // 
-            // nomLocalidad
-            // 
-            this.nomLocalidad.HeaderText = "Localidad";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 250;
-            // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -309,7 +288,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.ForeColor = System.Drawing.Color.White;
             this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton1.Location = new System.Drawing.Point(34, 542);
+            this.rjButton1.Location = new System.Drawing.Point(27, 502);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(57, 49);
             this.rjButton1.TabIndex = 44;
@@ -334,11 +313,33 @@ namespace FarmaTown.Presentacion.Localidades
             this.lblAviso.AutoSize = true;
             this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
-            this.lblAviso.Location = new System.Drawing.Point(301, 550);
+            this.lblAviso.Location = new System.Drawing.Point(294, 510);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(272, 22);
             this.lblAviso.TabIndex = 47;
             this.lblAviso.Text = "Debe elegir un barrio primero";
+            // 
+            // idBarrio
+            // 
+            this.idBarrio.HeaderText = "ID";
+            this.idBarrio.Name = "idBarrio";
+            this.idBarrio.ReadOnly = true;
+            this.idBarrio.Visible = false;
+            this.idBarrio.Width = 50;
+            // 
+            // nomBarrio
+            // 
+            this.nomBarrio.HeaderText = "Nombre";
+            this.nomBarrio.Name = "nomBarrio";
+            this.nomBarrio.ReadOnly = true;
+            this.nomBarrio.Width = 250;
+            // 
+            // nomLocalidad
+            // 
+            this.nomLocalidad.HeaderText = "Localidad";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
             // 
             // frmBarrios
             // 
@@ -347,7 +348,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.barrios;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(813, 603);
+            this.ClientSize = new System.Drawing.Size(781, 559);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.rjButton1);
@@ -389,10 +390,10 @@ namespace FarmaTown.Presentacion.Localidades
         private CustomControls.RJControls.RJButton btnActualizar;
         private System.Windows.Forms.DataGridView dgvBarrios;
         private CustomControls.RJControls.RJButton rjButton1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblAviso;
     }
 }

@@ -61,11 +61,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnLimpiarUbicacion = new CustomControls.RJControls.RJButton();
             this.btnConsultarUbicacion = new CustomControls.RJControls.RJButton();
             this.dgvBarrios = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.idBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancelar = new CustomControls.RJControls.RJButton();
-            this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.gbClientes.SuspendLayout();
             this.gbUbicacion.SuspendLayout();
             this.gbFiltrosBarrios.SuspendLayout();
@@ -263,7 +263,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.txtbNroCalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroCalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNroCalle.Location = new System.Drawing.Point(609, 40);
+            this.txtbNroCalle.Location = new System.Drawing.Point(608, 37);
             this.txtbNroCalle.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroCalle.MaxLength = 5;
             this.txtbNroCalle.Name = "txtbNroCalle";
@@ -297,7 +297,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNumero.Location = new System.Drawing.Point(481, 37);
+            this.lblNumero.Location = new System.Drawing.Point(481, 34);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(119, 23);
             this.lblNumero.TabIndex = 37;
@@ -388,7 +388,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnAgregarBarrio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarBarrio.ForeColor = System.Drawing.Color.Black;
             this.btnAgregarBarrio.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAgregarBarrio.Location = new System.Drawing.Point(705, 297);
+            this.btnAgregarBarrio.Location = new System.Drawing.Point(609, 297);
             this.btnAgregarBarrio.Name = "btnAgregarBarrio";
             this.btnAgregarBarrio.Size = new System.Drawing.Size(145, 38);
             this.btnAgregarBarrio.TabIndex = 13;
@@ -413,7 +413,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(728, 355);
+            this.btnActualizar.Location = new System.Drawing.Point(629, 358);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
             this.btnActualizar.TabIndex = 14;
@@ -540,31 +540,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.dgvBarrios.Name = "dgvBarrios";
             this.dgvBarrios.ReadOnly = true;
             this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBarrios.Size = new System.Drawing.Size(676, 161);
+            this.dgvBarrios.Size = new System.Drawing.Size(559, 161);
             this.dgvBarrios.TabIndex = 11;
             this.dgvBarrios.TabStop = false;
             this.dgvBarrios.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
-            // 
-            // idBarrio
-            // 
-            this.idBarrio.HeaderText = "ID";
-            this.idBarrio.Name = "idBarrio";
-            this.idBarrio.ReadOnly = true;
-            this.idBarrio.Width = 50;
-            // 
-            // nomBarrio
-            // 
-            this.nomBarrio.HeaderText = "Nombre";
-            this.nomBarrio.Name = "nomBarrio";
-            this.nomBarrio.ReadOnly = true;
-            this.nomBarrio.Width = 250;
-            // 
-            // nomLocalidad
-            // 
-            this.nomLocalidad.HeaderText = "Localidad";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 200;
             // 
             // btnCancelar
             // 
@@ -616,6 +595,28 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // idBarrio
+            // 
+            this.idBarrio.HeaderText = "ID";
+            this.idBarrio.Name = "idBarrio";
+            this.idBarrio.ReadOnly = true;
+            this.idBarrio.Visible = false;
+            this.idBarrio.Width = 50;
+            // 
+            // nomBarrio
+            // 
+            this.nomBarrio.HeaderText = "Nombre";
+            this.nomBarrio.Name = "nomBarrio";
+            this.nomBarrio.ReadOnly = true;
+            this.nomBarrio.Width = 250;
+            // 
+            // nomLocalidad
+            // 
+            this.nomLocalidad.HeaderText = "Localidad";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 200;
             // 
             // frmABMClientes
             // 
@@ -680,10 +681,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private System.Windows.Forms.TextBox txtbLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblBarriosDGV;
+        private System.Windows.Forms.GroupBox gbClientes;
+        private CustomControls.RJControls.RJButton btnLimpiarCalleyNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomLocalidad;
-        private System.Windows.Forms.GroupBox gbClientes;
-        private CustomControls.RJControls.RJButton btnLimpiarCalleyNum;
     }
 }
