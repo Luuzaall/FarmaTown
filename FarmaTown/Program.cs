@@ -30,14 +30,14 @@ namespace FarmaTown.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPrincipal());
+            Application.Run(new frmPrincipal());
 
             //Application.Run(new frmABMUsuario());
             //Application.Run(new frmFarmacias());
             //Application.Run(new frmUsuarios());
             //Application.Run(new frmEmpleados()); 
 
-            Application.Run(new frmBarrios());
+            //Application.Run(new frmBarrios());
             //Application.Run(new frmABMBarrios());
             //Application.Run(new frmLocalidades());
 
