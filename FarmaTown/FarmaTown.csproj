@@ -139,6 +139,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Logica\Activa.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cancelada.cs" />
     <Compile Include="Logica\Cliente.cs" />
