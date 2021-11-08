@@ -100,6 +100,11 @@
     <Compile Include="Datos\DetalleVentaDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
+    <Compile Include="Datos\Reportes\DSMedicamentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Reportes\DSVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -297,6 +302,12 @@
     <Compile Include="Presentacion\Reportes\frmReporteEmpleados.Designer.cs">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.Designer.cs">
+      <DependentUpon>frmReporteMedicamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\Ventas\frmReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +412,10 @@
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\rptClientes.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.resx">
+      <DependentUpon>frmReporteMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Medicamentos\rptMedicamentos.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Ventas\frmReporteVentas.resx">
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
@@ -430,6 +445,17 @@
     </None>
     <None Include="DataSetGeneral.xss">
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xsc">
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMedicamentos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xss">
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
     </None>
     <None Include="Datos\Reportes\DSVentas.xsc">
       <DependentUpon>DSVentas.xsd</DependentUpon>
@@ -549,9 +575,7 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentacion\Reportes\Medicamentos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

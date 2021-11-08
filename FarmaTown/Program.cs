@@ -15,6 +15,7 @@ using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 using FarmaTown.Presentacion.Reportes;
 using FarmaTown.Presentacion.Reportes.Clientes;
+using FarmaTown.Presentacion.Reportes.Medicamentos;
 using FarmaTown.Presentacion.Reportes.Ventas;
 using FarmaTown.Presentacion.Transacciones;
 
@@ -56,11 +57,11 @@ namespace FarmaTown.Presentacion
             //Usuario us = new Usuario();
             //Application.Run(new frmConsultaVentas(us.traerUsuario("maru")));
 
-            Usuario us = new Usuario();
-            Application.Run(new frmConsultaVentas(us.traerUsuario("Nao")));
+            //Usuario us = new Usuario();
+            //Application.Run(new frmConsultaVentas(us.traerUsuario("Nao")));
             //Reportes
 
-            //Application.Run(new frmReporteVentas());
+            Application.Run(new frmReporteMedicamentos());
             //Application.Run(new frmReporteTMedicamentosxVenta());
             //Application.Run(new frmReporteVentasxFarmacia());
             //Application.Run(new frmReporteClientes());
