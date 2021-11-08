@@ -228,6 +228,7 @@ namespace FarmaTown.Datos
                     ", m.nombre as medioPago" +
                     ", o.nombre as obraSocial" +
                     ", l.nombre as localidad" +
+                    ", tp.descripcion as tipoMedicamento" +
                     ", ROUND(SUM(precio), 2) as 'Total'" +
                     " FROM Ventas v" +
                     " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
@@ -238,6 +239,8 @@ namespace FarmaTown.Datos
                     " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
                     " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
                     " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                    " INNER JOIN Medicamentos med ON d.idMedicamento = med.idMedicamento" +
+                    " INNER JOIN TiposMedicamento tp ON med.tipoMedicamento = tp.idTipo" +
                     " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
                         " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
@@ -257,7 +260,8 @@ namespace FarmaTown.Datos
                             " , m.nombre" +
                             " , v.nroFactura" +
                             ", o.nombre" +
-                            ", l.nombre";
+                            ", l.nombre" +
+                            ", tp.descripcion";
 
 
                 return DBHelper.getDBHelper().consultaSQL(query);
@@ -284,16 +288,6 @@ namespace FarmaTown.Datos
                 {
                     query = query + " AND b.idLocalidad = " + idLocalidad;
                 }
-
-                return DBHelper.getDBHelper().consultaSQL(query);
-            }
-            else if (reporte == 3)
-            {
-                string query = "SELECT f.nombre" +
-                    " FROM Ventas v" +
-                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "', 105)" +
-                    " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
                 return DBHelper.getDBHelper().consultaSQL(query);
             }
