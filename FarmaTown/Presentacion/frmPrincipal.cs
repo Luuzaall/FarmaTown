@@ -17,6 +17,7 @@ using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 using FarmaTown.Presentacion.Reportes;
 using FarmaTown.Presentacion.Reportes.Clientes;
+using FarmaTown.Presentacion.Reportes.Medicamentos;
 using FarmaTown.Presentacion.Reportes.ObrasSociales;
 using FarmaTown.Presentacion.Reportes.Ventas;
 using FarmaTown.Presentacion.Transacciones;
@@ -88,36 +89,6 @@ namespace FarmaTown.Presentacion
             }
         }
 
-        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Empleados.frmEmpleados frmEmp = new Empleados.frmEmpleados();
-            frmEmp.ShowDialog();
-        }
-
-        private void tiposDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmTiposDoc ofrmTiposDoc = new frmTiposDoc();
-            ofrmTiposDoc.ShowDialog();
-        }
-
-        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmUsuarios frmUsu = new frmUsuarios();
-            frmUsu.ShowDialog();
-        }
-
-        private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLocalidades oFrmLocalidades = new frmLocalidades();
-            oFrmLocalidades.ShowDialog();
-        }
-
-        private void barriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBarrios oFrmBarrios = new frmBarrios();
-            oFrmBarrios.ShowDialog();
-        }
-
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Está seguro de abandonar la aplicación?",
@@ -163,12 +134,12 @@ namespace FarmaTown.Presentacion
             oSesion.persistir(true);
         }
 
+        //GESTION
         private void obrasSocialesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOOSS frmOS = new frmOOSS();
             frmOS.ShowDialog();
         }
-
 
         private void farmaciasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -179,6 +150,36 @@ namespace FarmaTown.Presentacion
         {
             frmClientes oFrmClientes = new frmClientes(FormMode.management);
             oFrmClientes.ShowDialog();
+        }
+        private void medicamentosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmMedicamentos oFrmMedicamentos = new frmMedicamentos(FormMode.management);
+            oFrmMedicamentos.ShowDialog();
+        }
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Empleados.frmEmpleados frmEmp = new Empleados.frmEmpleados();
+            frmEmp.ShowDialog();
+        }
+        private void tiposDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTiposDoc ofrmTiposDoc = new frmTiposDoc();
+            ofrmTiposDoc.ShowDialog();
+        }
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmUsu = new frmUsuarios();
+            frmUsu.ShowDialog();
+        }
+        private void localidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalidades oFrmLocalidades = new frmLocalidades();
+            oFrmLocalidades.ShowDialog();
+        }
+        private void barriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBarrios oFrmBarrios = new frmBarrios();
+            oFrmBarrios.ShowDialog();
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -228,69 +229,52 @@ namespace FarmaTown.Presentacion
             this.lblReloj.Text = time;
         }
 
-        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        //VENTAS
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAltaVenta ofrmVentas = new frmAltaVenta(oUsuarioLogueado);
             ofrmVentas.ShowDialog();
         }
-
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmConsultaVentas oFrmConsultaVentas = new frmConsultaVentas(oUsuarioLogueado);
+            oFrmConsultaVentas.ShowDialog();
         }
 
-        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReporteVentas ofrmListadoVentas = new frmReporteVentas();
-            ofrmListadoVentas.ShowDialog();
-        }
-
-        //private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
-        //{
-        ////    frmListadoMedicamentos ofrmListadoMedicamentos = new frmListadoMedicamentos();
-        ////    ofrmListadoMedicamentos.ShowDialog();
-        //}
+        //REPORTES
 
         private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmReporteEmpleados ofrmfrmReporteEmpleados = new frmReporteEmpleados();
             ofrmfrmReporteEmpleados.ShowDialog();
         }
-
-        private void listadoToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmReporteEmpleados ofrmReporteEmpleados = new frmReporteEmpleados();
-            ofrmReporteEmpleados.ShowDialog();
-        }
-
-        private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmReporteVentas oFrmListadoVentas = new frmReporteVentas();
-            oFrmListadoVentas.ShowDialog();
-        }
-
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmReporteClientes oFrmReporteClientes = new frmReporteClientes();
             oFrmReporteClientes.ShowDialog();
         }
-
-        private void medicamentosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmMedicamentos oFrmMedicamentos = new frmMedicamentos(FormMode.management);
-            oFrmMedicamentos.ShowDialog();
-        }
-
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultaVentas oFrmConsultaVentas = new frmConsultaVentas(oUsuarioLogueado);
-            oFrmConsultaVentas.ShowDialog();
-        }
-
         private void obrasSocialesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmReporteObrasSociales ofrmReporteObrasSociales = new frmReporteObrasSociales();
             ofrmReporteObrasSociales.ShowDialog();
+        }
+        private void medicamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteMedicamentos oFrmReporteMedicamentos = new frmReporteMedicamentos();
+            oFrmReporteMedicamentos.ShowDialog();
+        }
+
+            //REPORTES VENTAS
+        
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteVentas ofrmListadoVentas = new frmReporteVentas();
+            ofrmListadoVentas.ShowDialog();
+        }
+        private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteVentas oFrmListadoVentas = new frmReporteVentas();
+            oFrmListadoVentas.ShowDialog();
         }
     }
 }

@@ -139,6 +139,7 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
             this.Controls.Add(this.rpvOS);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteObrasSociales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FarmaTown - Reporte de Obras Sociales";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
