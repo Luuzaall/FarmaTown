@@ -74,7 +74,7 @@ namespace FarmaTown.Datos
             }
             if (!string.IsNullOrEmpty(num))
             {
-                query = query + " AND f.numero LIKE '" + Convert.ToInt32(num) + "'";
+                query = query + " AND f.numero LIKE '%" + num + "%'";
             }
 
             query += " ORDER BY f.nombre";

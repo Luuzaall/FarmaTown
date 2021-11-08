@@ -12,7 +12,7 @@
   <xs:element name="DSVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSVentas" msprop:Generator_UserDSName="DSVentas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtVentas" msprop:Generator_TableClassName="dtVentasDataTable" msprop:Generator_TableVarName="tabledtVentas" msprop:Generator_TablePropName="dtVentas" msprop:Generator_RowDeletingName="dtVentasRowDeleting" msprop:Generator_RowChangingName="dtVentasRowChanging" msprop:Generator_RowEvHandlerName="dtVentasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtVentasRowDeleted" msprop:Generator_UserTableName="dtVentas" msprop:Generator_RowChangedName="dtVentasRowChanged" msprop:Generator_RowEvArgName="dtVentasRowChangeEvent" msprop:Generator_RowClassName="dtVentasRow">
+        <xs:element name="dtVentas" msprop:Generator_TableClassName="dtVentasDataTable" msprop:Generator_TableVarName="tabledtVentas" msprop:Generator_RowChangedName="dtVentasRowChanged" msprop:Generator_TablePropName="dtVentas" msprop:Generator_RowDeletingName="dtVentasRowDeleting" msprop:Generator_RowChangingName="dtVentasRowChanging" msprop:Generator_RowEvHandlerName="dtVentasRowChangeEventHandler" msprop:Generator_RowDeletedName="dtVentasRowDeleted" msprop:Generator_RowClassName="dtVentasRow" msprop:Generator_UserTableName="dtVentas" msprop:Generator_RowEvArgName="dtVentasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="farmacia" msprop:Generator_ColumnVarNameInTable="columnfarmacia" msprop:Generator_ColumnPropNameInRow="farmacia" msprop:Generator_ColumnPropNameInTable="farmaciaColumn" msprop:Generator_UserColumnName="farmacia" type="xs:string" minOccurs="0" />
@@ -24,6 +24,7 @@
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
               <xs:element name="obraSocial" msprop:Generator_ColumnVarNameInTable="columnobraSocial" msprop:Generator_ColumnPropNameInRow="obraSocial" msprop:Generator_ColumnPropNameInTable="obraSocialColumn" msprop:Generator_UserColumnName="obraSocial" type="xs:string" minOccurs="0" />
               <xs:element name="localidad" msprop:Generator_ColumnVarNameInTable="columnlocalidad" msprop:Generator_ColumnPropNameInRow="localidad" msprop:Generator_ColumnPropNameInTable="localidadColumn" msprop:Generator_UserColumnName="localidad" type="xs:string" minOccurs="0" />
+              <xs:element name="tipoMedicamento" msprop:Generator_ColumnVarNameInTable="columntipoMedicamento" msprop:Generator_ColumnPropNameInRow="tipoMedicamento" msprop:Generator_ColumnPropNameInTable="tipoMedicamentoColumn" msprop:Generator_UserColumnName="tipoMedicamento" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -75,14 +75,12 @@ namespace FarmaTown.Presentacion.Farmacias
             string calle = this.TextbCalle.Text;
             string numero = this.textbNumero.Text;
 
-            if (validarDatos())
-            {
-                resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, numero, "", "");
-                this.cargarGrilla(this.dgvFarmacias, resultadoFarmacias);
-            }
+            resultadoFarmacias = oFarmacia.recuperarCParam(sucursal, calle, numero, "", "");
+            this.cargarGrilla(this.dgvFarmacias, resultadoFarmacias);
+            
         }
 
-        private bool validarDatos()
+        /*private bool validarDatos()
         {
             string sucursal = this.textbSucursal.Text;
             string calle = this.TextbCalle.Text;
@@ -101,7 +99,7 @@ namespace FarmaTown.Presentacion.Farmacias
                 return false;
             }
             return true;
-        }
+        }*/
 
         private void dgvFarmacias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
