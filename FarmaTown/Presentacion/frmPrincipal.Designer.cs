@@ -60,6 +60,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNomRol = new System.Windows.Forms.Label();
             this.lblReloj = new System.Windows.Forms.Label();
+            this.obrasSocialesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,7 +217,8 @@
             this.clientesToolStripMenuItem1,
             this.empleadosToolStripMenuItem,
             this.medicamentosToolStripMenuItem,
-            this.ventasToolStripMenuItem2});
+            this.ventasToolStripMenuItem2,
+            this.obrasSocialesToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -271,7 +273,7 @@
             // listadoToolStripMenuItem
             // 
             this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
             this.listadoToolStripMenuItem.Text = "General";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
@@ -329,6 +331,13 @@
             this.lblReloj.Size = new System.Drawing.Size(2, 82);
             this.lblReloj.TabIndex = 5;
             this.lblReloj.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // obrasSocialesToolStripMenuItem1
+            // 
+            this.obrasSocialesToolStripMenuItem1.Name = "obrasSocialesToolStripMenuItem1";
+            this.obrasSocialesToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.obrasSocialesToolStripMenuItem1.Text = "Obras Sociales";
+            this.obrasSocialesToolStripMenuItem1.Click += new System.EventHandler(this.obrasSocialesToolStripMenuItem1_Click);
             // 
             // frmPrincipal
             // 
@@ -393,5 +402,6 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem medicamentosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem obrasSocialesToolStripMenuItem1;
     }
 }

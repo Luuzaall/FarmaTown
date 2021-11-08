@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtOSXMed" msprop:Generator_TableClassName="dtOSXMedDataTable" msprop:Generator_TableVarName="tabledtOSXMed" msprop:Generator_TablePropName="dtOSXMed" msprop:Generator_RowDeletingName="dtOSXMedRowDeleting" msprop:Generator_RowChangingName="dtOSXMedRowChanging" msprop:Generator_RowEvHandlerName="dtOSXMedRowChangeEventHandler" msprop:Generator_RowDeletedName="dtOSXMedRowDeleted" msprop:Generator_UserTableName="dtOSXMed" msprop:Generator_RowChangedName="dtOSXMedRowChanged" msprop:Generator_RowEvArgName="dtOSXMedRowChangeEvent" msprop:Generator_RowClassName="dtOSXMedRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="obraSocial" msprop:Generator_ColumnVarNameInTable="columnobraSocial" msprop:Generator_ColumnPropNameInRow="obraSocial" msprop:Generator_ColumnPropNameInTable="obraSocialColumn" msprop:Generator_UserColumnName="obraSocial" type="xs:string" minOccurs="0" />
+              <xs:element name="medicamento" msprop:Generator_ColumnVarNameInTable="columnmedicamento" msprop:Generator_ColumnPropNameInRow="medicamento" msprop:Generator_ColumnPropNameInTable="medicamentoColumn" msprop:Generator_UserColumnName="medicamento" type="xs:string" minOccurs="0" />
+              <xs:element name="descuento" msprop:Generator_ColumnVarNameInTable="columndescuento" msprop:Generator_ColumnPropNameInRow="descuento" msprop:Generator_ColumnPropNameInTable="descuentoColumn" msprop:Generator_UserColumnName="descuento" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
