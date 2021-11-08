@@ -101,6 +101,8 @@ namespace FarmaTown.Presentacion.Transacciones
                     idLocalidad, idEmpleado, idObraSocial, fechaDesde, fechaHasta);
                 this.cargarGrilla(this.dgvVentas, ventas);
             }
+
+            this.cambiarEstadoBotones(false);
         }
 
         private bool validarCampos()
@@ -135,7 +137,7 @@ namespace FarmaTown.Presentacion.Transacciones
         private void actualizar()
         {
             this.cargarGrilla(this.dgvVentas, oVenta.recuperarTodos());
-            this.deshabilitarBotones();              
+            this.cambiarEstadoBotones(false);              
         }
 
         private void cargarGrilla(DataGridView dgv, List<Venta> lista)
@@ -143,47 +145,32 @@ namespace FarmaTown.Presentacion.Transacciones
             /*
              * Carga la grilla con los datos necesarios
              */
-            double total = 0;
             dgv.Rows.Clear();
             if (lista != null)
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    foreach (DetalleVenta item in lista[i].Detalles)
-                    {
-                        total += item.Importe;    
-                    }
 
                     dgv.Rows.Add(lista[i].IdVenta.ToString(),
+                                lista[i].EstadoActual.Nombre.ToString(),
                                 lista[i].NroFactura.ToString(),
                                 lista[i].FechaFactura.ToString(),
                                 lista[i].Farmacia.Nombre.ToString(),
-                                total,
+                                lista[i].obtenerTotales()[0],
                                 lista[i].MedioPago.Nombre.ToString(),
                                 lista[i].TipoFactura.Nombre.ToString(),
                                 lista[i].ObraSocial.Nombre.ToString(),
                                 lista[i].Empleado.Nombre.ToString(),
-                                lista[i].Farmacia.Barrio.Localidad.Nombre.ToString());
+                                lista[i].Farmacia.Barrio.Localidad.Nombre.ToString()) ;
                 }
                 dgv.ClearSelection();
             }
         }
 
-        private void deshabilitarBotones()
-        {
-            /*
-             * Deshabilita los botones cambiándoles
-             * el color para que el usuario visualmente
-             * lo vea
-             */
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.BackColor = Color.Gray;
-            this.lblAviso.Visible = true;
-        }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.actualizar();
+            this.cambiarEstadoBotones(false);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -203,9 +190,26 @@ namespace FarmaTown.Presentacion.Transacciones
             * Habilita los botones para poder ser seleccionados,
             * proyenedo una invitación visual
             */
-            this.btnEliminar.Enabled = true;
-            this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
-            this.lblAviso.Visible = false;
+            this.cambiarEstadoBotones(true);
+        }
+
+        private void cambiarEstadoBotones(bool seHabilita)
+        {
+            this.btnEliminar.Enabled = seHabilita;
+            this.btnVerDetalles.Enabled = seHabilita;
+            this.lblAviso.Visible = !seHabilita;
+            
+            if (seHabilita)
+            {
+                this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
+                this.btnVerDetalles.BackColor = Color.FromArgb(116, 201, 79);
+            }
+            else
+            {
+                this.btnEliminar.BackColor = Color.Gray;
+                this.btnVerDetalles.BackColor = Color.Gray;
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -214,6 +218,15 @@ namespace FarmaTown.Presentacion.Transacciones
             string nroVenta = this.dgvVentas.CurrentRow.Cells[0].Value.ToString();
             Venta ventaSelecc = this.oVenta.traer(nroVenta);
             oFrmBajaVenta.seleccionarVenta(frmVenta.FormMode.delete, ventaSelecc);
+            oFrmBajaVenta.ShowDialog();
+        }
+
+        private void btnVerDetalles_Click(object sender, EventArgs e)
+        {
+            frmVenta oFrmBajaVenta = new frmVenta();
+            string nroVenta = this.dgvVentas.CurrentRow.Cells[0].Value.ToString();
+            Venta ventaSelecc = this.oVenta.traer(nroVenta);
+            oFrmBajaVenta.seleccionarVenta(frmVenta.FormMode.details, ventaSelecc);
             oFrmBajaVenta.ShowDialog();
         }
     }

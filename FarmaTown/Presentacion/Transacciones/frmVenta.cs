@@ -45,6 +45,7 @@ namespace FarmaTown.Presentacion.Transacciones
             List<double> totales = oVenta.obtenerTotales();
             this.lblImporteTotalSDesc.Text = totales[0].ToString();
             this.lblImporteTotalCliente.Text = totales[1].ToString();
+            this.lblEstado.Text = oVenta.EstadoActual.Nombre;
 
             this.cargarGrilla(this.dgvDetalle, oVenta.Detalles);
         }
