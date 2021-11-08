@@ -292,17 +292,5 @@ namespace FarmaTown.Presentacion
             frmReporteObrasSociales ofrmReporteObrasSociales = new frmReporteObrasSociales();
             ofrmReporteObrasSociales.ShowDialog();
         }
-
-        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAltaVenta ofrmVentas = new frmAltaVenta(oUsuarioLogueado);
-            ofrmVentas.ShowDialog();
-        }
-
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultaVentas ofrmConsultaVentas = new frmConsultaVentas(oUsuarioLogueado);
-            ofrmConsultaVentas.ShowDialog();
-        }
     }
 }
