@@ -194,6 +194,7 @@ namespace FarmaTown.Presentacion
             this.cboMedioPago.Name = "cboMedioPago";
             this.cboMedioPago.Size = new System.Drawing.Size(184, 27);
             this.cboMedioPago.TabIndex = 31;
+            this.cboMedioPago.SelectionChangeCommitted += new System.EventHandler(this.cboMedioPago_SelectionChangeCommitted);
             // 
             // label6
             // 

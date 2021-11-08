@@ -17,7 +17,6 @@ namespace FarmaTown.Presentacion
         private Rol oRol;
         private frmABMUsuario frmABMUs;
         private Usuario oUsuario;
-        private bool mostrarConBorrados = false;
 
         public frmUsuarios()
         {
@@ -36,7 +35,7 @@ namespace FarmaTown.Presentacion
              */
             ComboBoxService.cargarCombo(cboRoles, oRol.recuperarTodos(), "nombre", "idRol");
             this.deshabilitarBotones();
-            List<Usuario> listaUsuarios = oUsuario.recuperarTodos(mostrarConBorrados);
+            List<Usuario> listaUsuarios = oUsuario.recuperarTodos();
             if (listaUsuarios.Count > 0)
             {
                 this.cargarGrilla(this.dgvUsuarios, listaUsuarios);
@@ -80,7 +79,7 @@ namespace FarmaTown.Presentacion
                     idRol = -1;
 
                 }
-                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol, mostrarConBorrados);
+                resultadosUsuarios = this.oUsuario.recurperarUsuarioCParametros(usuario, idRol);
                 this.cargarGrilla(this.dgvUsuarios, resultadosUsuarios);
             }
         }
@@ -209,7 +208,7 @@ namespace FarmaTown.Presentacion
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvUsuarios, oUsuario.recuperarTodos(mostrarConBorrados));
+            this.cargarGrilla(dgvUsuarios, oUsuario.recuperarTodos());
             this.deshabilitarBotones();
         }
 

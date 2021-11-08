@@ -10,6 +10,18 @@ namespace FarmaTown.Datos
 {
     class TipoMedDao
     {
+
+        public List<TipoMedicamento> recuperarTodos()
+        {
+            string query = "SELECT *" +
+                " FROM TiposMedicamento" +
+                " WHERE borrado = 0" +
+                " ORDER BY descripcion";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+            return listMapping(tabla);
+        }
+
         public List<TipoMedicamento> recuperarCParam(string descripcion)
         {
             string query = "SELECT idTipo" +
@@ -17,43 +29,14 @@ namespace FarmaTown.Datos
                 ", borrado" +
                 " FROM TiposMedicamento" +
                 " WHERE descripcion LIKE '%" + descripcion + "%' " +
-                " AND borrado = 0";
+                " AND borrado = 0" +
+                " ORDER BY descripcion";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             List<TipoMedicamento> listaTipoMed = new List<TipoMedicamento>();
-            int cantFilas = tabla.Rows.Count;
 
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaTipoMed.Add(this.objectMapping(fila));
-            }
-
-            return listaTipoMed;
-
-        }
-
-        public List<TipoMedicamento> recuperarTodos(bool esCBorrados)
-        {
-            string query = "SELECT *" +
-                " FROM TiposMedicamento" +
-                " WHERE borrado = 0";
-            if (esCBorrados)
-                query = query + " OR borrado = 1";
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            List<TipoMedicamento> listaTipoMed = new List<TipoMedicamento>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaTipoMed.Add(this.objectMapping(fila));
-            }
-
-            return listaTipoMed;
+            return listMapping(tabla);
         }
 
         public TipoMedicamento traer(int idTipo)
@@ -132,16 +115,7 @@ namespace FarmaTown.Datos
 
             return oTipoMed;
         }
-        
-        
-        
-        
-        //NO SE USA CREO
-        public List<TipoMedicamento> recuperarTodos()
-        {
-            DataTable tabla = DBHelper.getDBHelper().consultarTabla("TiposMedicamento");
-            return listMapping(tabla);
-        }
+
 
         private List<TipoMedicamento> listMapping(DataTable tabla)
         {

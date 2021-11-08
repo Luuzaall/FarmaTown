@@ -25,9 +25,9 @@ namespace FarmaTown.Logica
             return this.oTipoMedDao.recuperarCParam(descripcion);
         }
 
-        public List<TipoMedicamento> recuperarTodos(bool esCBorrados)
+        public List<TipoMedicamento> recuperarTodos()
         {
-            return this.oTipoMedDao.recuperarTodos(esCBorrados);
+            return this.oTipoMedDao.recuperarTodos();
         }
 
         public TipoMedicamento traerTipoMed(int idTipo)

@@ -163,7 +163,8 @@ namespace FarmaTown.Presentacion
                 this.txtbTipoDoc.Text = oCliente.TipoDoc.Nombre;
 
                 if (this.cboTipoFactura.SelectedIndex != -1
-                     && listaDetalle.Count != 0)
+                     && listaDetalle.Count != 0
+                     && this.cboMedioPago.SelectedIndex != -1)
                     this.cambiarEstadoBoton(this.btnGuardar, true);
             }
             else
@@ -356,7 +357,6 @@ namespace FarmaTown.Presentacion
             for (int fila = 0; fila < this.dgvDetalle.Rows.Count; fila++)
             {
                 DetalleVenta detalleViejo = (DetalleVenta)this.dgvDetalle.Rows[fila].DataBoundItem;
-                //int idMedicamento = (int)typeof(Medicamento).GetProperty("IdMedicamento").GetValue(detalle);
                 if (idMedNuevo == detalleViejo.Medicamento.IdMedicamento)
                 {
                     detalleViejo.Cantidad += detalle.Cantidad;
@@ -373,8 +373,12 @@ namespace FarmaTown.Presentacion
 
             this.inicializarDetalle();
 
+            /*
+             * Verifica si permite la activación del botón de confirmar
+             */
             if (oCliente.Nombre != null
-                   &&  this.cboTipoFactura.SelectedIndex != -1)
+                   &&  this.cboTipoFactura.SelectedIndex != -1
+                   && this.cboMedioPago.SelectedIndex != -1)
 
                 this.cambiarEstadoBoton(this.btnGuardar, true);
 
@@ -440,6 +444,10 @@ namespace FarmaTown.Presentacion
                 }
             }
 
+
+            /*
+             * Verifica si desactiva el botón de confirmar
+             */
             if (listaDetalle.Count == 0)
                 this.cambiarEstadoBoton(this.btnAgregar, false);
             this.cambiarEstadoBoton(this.btnEliminar, false);
@@ -467,9 +475,26 @@ namespace FarmaTown.Presentacion
 
         private void cboTipoFactura_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            /*
+             * Verifica si permite la activación del botón de confirmar
+             */
             if (oCliente.Nombre != null
-                && listaDetalle.Count != 0)
+                && listaDetalle.Count != 0
+                && this.cboMedioPago.SelectedIndex != -1)
                 this.cambiarEstadoBoton(this.btnGuardar, true);
+        }
+
+        private void cboMedioPago_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            /*
+             * Verifica si permite la activación del botón de confirmar
+             */
+            if (oCliente.Nombre != null
+               && listaDetalle.Count != 0
+               && this.cboTipoFactura.SelectedIndex != -1)
+
+                this.cambiarEstadoBoton(this.btnGuardar, true);
+
         }
     }
 }

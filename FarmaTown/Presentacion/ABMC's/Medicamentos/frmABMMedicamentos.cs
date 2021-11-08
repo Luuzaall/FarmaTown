@@ -47,14 +47,14 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
              * fue llamado, definido en el switch de los distintos
              * FormMode.
              */
-            ComboBoxService.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(true), "descripcion", "idTipo");
+            ComboBoxService.cargarCombo(this.cboTipoMedicamento, oTipoMedicamento.recuperarTodos(), "descripcion", "idTipo");
 
             switch (formMode)
             {
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Medicamento - FarmaTown";
-                        this.txtbPrecio.Text = 0.ToString("C", new CultureInfo("es-AR"));
+                        this.txtbPrecio.Text = 0.ToString("N");
                         break;
                     }
 
@@ -193,7 +193,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 
         }
 
-        internal void seleccionarMedicamento (FormMode _formMode, Medicamento medicamentoSelected)
+        internal void seleccionarMedicamento(FormMode _formMode, Medicamento medicamentoSelected)
         { 
             /*
               * Se obtiene el medicamento seleccionado
@@ -211,9 +211,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private bool validarCampos()
         {
             string nom = this.txtbNombre.Text;
-            string desc = this.txtbDescripcion.Text;
             int indexTipo = this.cboTipoMedicamento.SelectedIndex;
-            float precio = float.Parse(this.txtbPrecio.Text);
+            double precio = double.Parse(this.txtbPrecio.Text);
             int cantidad = int.Parse(this.txtbCantidad.Text);
 
             if (string.IsNullOrEmpty(nom)
@@ -302,6 +301,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private void txtbPrecio_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.enter(this.btnAceptar, e);
+            if (char.IsLetter((char)e.KeyCode))
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 

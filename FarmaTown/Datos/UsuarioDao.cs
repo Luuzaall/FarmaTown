@@ -10,7 +10,7 @@ namespace FarmaTown.Datos
 {
     class UsuarioDao
     {
-        public List<Usuario> recuperarTodos(bool esConBorrados)
+        public List<Usuario> recuperarTodos()
         {
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
@@ -23,17 +23,15 @@ namespace FarmaTown.Datos
                     " FROM Usuarios u" +
                     " INNER JOIN Empleados e ON u.idEmpleado = e.idEmpleado" +
                     " INNER JOIN Roles r ON r.idRol = u.idRol" +
-                    " WHERE u.borrado = 0";
+                    " WHERE u.borrado = 0" +
+                    " ORDER BY u.nombre";
 
-            if (esConBorrados)
-            {
-                query = query + " OR u.borrado = 1";
-            }
+            
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);
         }
 
-        public List<Usuario> consultarUsuariosCParam(string nomUs, int idRol, bool conBorrados)
+        public List<Usuario> consultarUsuariosCParam(string nomUs, int idRol)
         {
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
@@ -48,9 +46,6 @@ namespace FarmaTown.Datos
                     " INNER JOIN Roles r ON r.idRol = u.idRol" +
                     " WHERE u.borrado = 0";
 
-            if (conBorrados)
-                query = query + " OR u.borrado = 1";
-
             if (!(string.IsNullOrEmpty(nomUs)))
             {
                 query = query + " AND u.nombre LIKE '%" + nomUs + "%'";
@@ -59,6 +54,8 @@ namespace FarmaTown.Datos
             {
                 query = query + " AND u.idRol = " + idRol;
             }
+
+            query += " ORDER BY u.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);

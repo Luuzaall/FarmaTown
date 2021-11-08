@@ -50,6 +50,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             TextBoxService.enter(this.btnConsultar, e);
         }
 
+
         private void cboTipoDoc_SelectionChangeCommitted(object sender, EventArgs e)
         {
             /*
@@ -102,6 +103,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             }
 
         }
+
+        private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noLetras(e);
+            TextBoxService.enter(this.btnConsultar, e);
+        }
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             /*
@@ -113,6 +121,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNroDoc.Text = "";
             this.txtbPasaporteLetras.Text = "";
             this.txtbPasaporteNro.Text = "";
+            this.cboTipoDoc.SelectedIndex = -1;
+            this.lblAvisoNroDoc.Visible = false;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

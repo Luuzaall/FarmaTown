@@ -23,7 +23,8 @@ namespace FarmaTown.Datos
             string query = "SELECT *" +
                 "   FROM MediosPago" +
                 "   WHERE borrado = 0" +
-                "   AND idMedioPago = " + idMedioPago;
+                "   AND idMedioPago = " + idMedioPago +
+                "   ORDER BY nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 

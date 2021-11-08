@@ -117,7 +117,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvTiposMed, oTipoMed.recuperarTodos(false));
+            this.cargarGrilla(dgvTiposMed, oTipoMed.recuperarTodos());
             this.deshabilitarBotones();
         }
 

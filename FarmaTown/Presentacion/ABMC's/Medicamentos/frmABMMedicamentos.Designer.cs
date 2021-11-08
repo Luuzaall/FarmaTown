@@ -46,6 +46,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbCantidad = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -235,10 +236,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPrecio.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.txtbPrecio.Location = new System.Drawing.Point(408, 27);
+            this.txtbPrecio.Location = new System.Drawing.Point(424, 27);
             this.txtbPrecio.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPrecio.Name = "txtbPrecio";
-            this.txtbPrecio.Size = new System.Drawing.Size(259, 25);
+            this.txtbPrecio.Size = new System.Drawing.Size(243, 25);
             this.txtbPrecio.TabIndex = 5;
             this.txtbPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPrecio_KeyDown);
             // 
@@ -276,6 +277,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtbCantidad);
             this.groupBox2.Controls.Add(this.lblPrecio);
             this.groupBox2.Controls.Add(this.lblCantidad);
@@ -287,6 +289,17 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Stock";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(404, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 23);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "$";
             // 
             // frmABMMedicamentos
             // 
@@ -334,5 +347,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private System.Windows.Forms.TextBox txtbCantidad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

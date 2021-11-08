@@ -24,7 +24,8 @@ namespace FarmaTown.Datos
                 " FROM Farmacias f" +
                 " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " WHERE f.borrado = 0";
+                " WHERE f.borrado = 0" +
+                " ORDER BY f.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -76,6 +77,7 @@ namespace FarmaTown.Datos
                 query = query + " AND f.numero LIKE '" + Convert.ToInt32(num) + "'";
             }
 
+            query += " ORDER BY f.nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             List<Farmacia> listaFarmacia = new List<Farmacia>();
@@ -111,29 +113,6 @@ namespace FarmaTown.Datos
             return this.objectMapping(tablaFarmacias.Rows[0]);
         }
 
-        private Farmacia objectMapping(DataRow row)
-        {
-            Farmacia oFarmacia = new Farmacia
-            {
-                IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
-                Nombre = row["nomFarmacia"].ToString(),
-                Calle = row["calle"].ToString(),
-                Numero = Convert.ToInt32(row["numero"].ToString()),
-                Barrio = new Barrio
-                {
-                    IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
-                    Nombre = row["nomBarrio"].ToString(),
-                    Localidad = new Localidad
-                    {
-                        IdLocalidad = Convert.ToInt32(row["idLocalidad"].ToString()),
-                        Nombre = row["nomLocalidad"].ToString()
-                    }
-                }
-            };
-
-            return oFarmacia;
-        }
-
         public int crear(Farmacia nuevaFarmacia)
         {
             string query = "INSERT INTO Farmacias" +
@@ -156,7 +135,7 @@ namespace FarmaTown.Datos
         public int cambiarEstado(Farmacia farmacia, bool seHabilita)
         {
             string query = "UPDATE Farmacias" +
-    " SET borrado = ";
+            " SET borrado = ";
 
             if (seHabilita)
                 query = query + "0";
@@ -166,6 +145,29 @@ namespace FarmaTown.Datos
             query = query + " WHERE idFarmacia = " + farmacia.IdFarmacia;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
+        }
+
+        private Farmacia objectMapping(DataRow row)
+        {
+            Farmacia oFarmacia = new Farmacia
+            {
+                IdFarmacia = Convert.ToInt32(row["idFarmacia"].ToString()),
+                Nombre = row["nomFarmacia"].ToString(),
+                Calle = row["calle"].ToString(),
+                Numero = Convert.ToInt32(row["numero"].ToString()),
+                Barrio = new Barrio
+                {
+                    IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),
+                    Nombre = row["nomBarrio"].ToString(),
+                    Localidad = new Localidad
+                    {
+                        IdLocalidad = Convert.ToInt32(row["idLocalidad"].ToString()),
+                        Nombre = row["nomLocalidad"].ToString()
+                    }
+                }
+            };
+
+            return oFarmacia;
         }
     }
 }

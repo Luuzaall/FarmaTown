@@ -45,14 +45,14 @@ namespace FarmaTown.Logica
             return null;
         } 
 
-        public List<Usuario> recuperarTodos(bool esConBorrados)
+        public List<Usuario> recuperarTodos()
         {
-            return this.oUsuarioDao.recuperarTodos(esConBorrados);
+            return this.oUsuarioDao.recuperarTodos();
         }
 
-        public List<Usuario> recurperarUsuarioCParametros(string nom, int idRol, bool conBorrados)
+        public List<Usuario> recurperarUsuarioCParametros(string nom, int idRol)
         {
-            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol, conBorrados);
+            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol);
         }
 
         public bool crearUsuario(Usuario oUsuario)

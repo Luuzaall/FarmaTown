@@ -27,7 +27,8 @@ namespace FarmaTown.Datos
                 " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" + 
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" + 
                 " INNER JOIN TiposDocumento t ON e.tipoDoc = t.idTipo" +
-                " WHERE e.borrado = 0;";
+                " WHERE e.borrado = 0" +
+                " ORDER BY e.nombre;";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);
@@ -69,6 +70,7 @@ namespace FarmaTown.Datos
                 query = query + " AND e.tipoDoc = " + idTipoDoc;
             }
 
+            query += " ORDER BY e.nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);
         }

@@ -17,7 +17,8 @@ namespace FarmaTown.Datos
                 ", borrado" +
                 " FROM Localidades" +
                 " WHERE nombre LIKE '%" + nombre + "%'" +
-                " AND borrado = 0";
+                " AND borrado = 0" +
+                " ORDER BY nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -31,7 +32,8 @@ namespace FarmaTown.Datos
         {
             string query = "SELECT *" +
                 " FROM Localidades" +
-                " WHERE borrado = 0";
+                " WHERE borrado = 0" +
+                " ORDER BY nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -47,7 +49,9 @@ namespace FarmaTown.Datos
                 " FROM Clientes c" +
                 " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                " GROUP BY l.idLocalidad";
+                " GROUP BY l.idLocalidad" +
+                " , l.nombre" +
+                " ORDER BY l.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             List<Localidad> listaLoc = new List<Localidad>();

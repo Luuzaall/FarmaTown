@@ -43,6 +43,7 @@ namespace FarmaTown.Datos
                 || pClave == " "))
                 query = query + " AND descripcion LIKE '%" + pClave + "%'";
 
+            query += " ORDER BY nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             List<TipoDocumento> listaTD = new List<TipoDocumento>();

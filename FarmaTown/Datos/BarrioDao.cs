@@ -20,7 +20,8 @@ namespace FarmaTown.Datos
                 " FROM Barrios b" +
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                 " WHERE b.nombre LIKE '%" + nombre + "%'" +
-                " AND b.borrado = 0 ";
+                " AND b.borrado = 0 " +
+                " ORDER BY b.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -42,7 +43,8 @@ namespace FarmaTown.Datos
                 " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
                 " WHERE b.nombre LIKE '%" + nombre + "%'" +
                 " AND l.nombre LIKE '%" + localidad + "%'" +
-                " AND b.borrado = 0 ";
+                " AND b.borrado = 0 " +
+                " ORDER BY b.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -61,7 +63,8 @@ namespace FarmaTown.Datos
                             ", l.idLocalidad " +
                             " FROM Barrios b " +
                             " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            " WHERE b.borrado = 0";
+                            " WHERE b.borrado = 0" +
+                            " ORDER BY b.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -154,7 +157,8 @@ namespace FarmaTown.Datos
                 " FROM Clientes c" +
                 " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
                 " GROUP BY b.idBarrio" +
-                "	, b.nombre";
+                "	, b.nombre" +
+                " ORDER BY b.nombre";
 
             DataTable tablaNoms = DBHelper.getDBHelper().consultaSQL(query);
 

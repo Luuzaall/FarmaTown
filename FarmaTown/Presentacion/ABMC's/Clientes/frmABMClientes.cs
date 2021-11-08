@@ -562,10 +562,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.noDigitos(e);
+            TextBoxService.enter(this.btnAceptar, e);
         }
         private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.noLetras(e);
+            TextBoxService.enter(this.btnAceptar, e);
         }
     }
 }

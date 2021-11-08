@@ -28,7 +28,8 @@ namespace FarmaTown.Datos
                 " FROM Medicamentos m" +
                 " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
                 " WHERE m.nombre = '" + medicamento + "'" +
-                " AND m.borrado = 0;";
+                " AND m.borrado = 0" +
+                " ORDER BY m.nombre;";
 
             DataTable tablaMedicamentos = DBHelper.getDBHelper().consultaSQL(query);
             if (tablaMedicamentos.Rows.Count > 0)
@@ -49,9 +50,8 @@ namespace FarmaTown.Datos
                     ", m.cantidad" +
                     " FROM Medicamentos m" +
                     " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
-                    " WHERE m.borrado = 0";
-
-           
+                    " WHERE m.borrado = 0" +
+                    " ORDER BY m.nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -93,6 +93,7 @@ namespace FarmaTown.Datos
                 query = query + " AND m.TipoMedicamento = " + idTipo;
             }
 
+            query += " ORDER BY m.nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             List<Medicamento> listaMedicamento = new List<Medicamento>();
@@ -181,7 +182,6 @@ namespace FarmaTown.Datos
                 return false;
             }
             else return true;
-
 
         }
 

@@ -25,7 +25,9 @@ namespace FarmaTown.Datos
                             " FROM Clientes c " +
                             " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
                             " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
-                            " WHERE c.borrado = 0";
+                            " WHERE c.borrado = 0" +
+                            " ORDER BY c.nombre";
+
 
             if (esCBorrados)
                 query = query + " OR borrado = 1";
@@ -67,7 +69,7 @@ namespace FarmaTown.Datos
             }
             if (idTipoDoc != -1)
             {
-                query = query + " AND e.tipoDoc = " + idTipoDoc;
+                query = query + " AND c.tipoDoc = " + idTipoDoc;
             }
             if (!string.IsNullOrEmpty(nroDoc))
             {
@@ -78,6 +80,7 @@ namespace FarmaTown.Datos
                 query = query + " AND c.apellido LIKE '%" + apellido + "%'";
             }                   
 
+            query += " ORDER BY c.nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             return this.listMapping(tabla);
@@ -101,6 +104,8 @@ namespace FarmaTown.Datos
                 query += " AND c.idBarrio = " + idBarrio;
             if (idLocalidad != "-1")
                 query += " AND b.idLocalidad = " + idLocalidad;
+
+            query += " ORDER BY c.nombre";
 
             return DBHelper.getDBHelper().consultaSQL(query);
         }

@@ -16,6 +16,27 @@ namespace FarmaTown.Datos
         {
             oOSXMed = new OSXMedicamentosDao();
         }
+        public List<ObraSocial> recuperarTodos()
+        {
+            string query = "SELECT *" +
+                " FROM ObrasSociales" +
+                " WHERE borrado = 0" +
+                " ORDER BY nombre";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<ObraSocial> listaOS = new List<ObraSocial>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                listaOS.Add(this.objectMapping(fila));
+            }
+
+            return listaOS;
+        }
+
         public List<ObraSocial> recuperarCParam(string nombre)
         {
             string query = "SELECT idOS" +
@@ -23,7 +44,8 @@ namespace FarmaTown.Datos
                 ", borrado" +
                 " FROM ObrasSociales" +
                 " WHERE nombre LIKE '%" + nombre + "%' " +
-                " AND borrado = 0";
+                " AND borrado = 0" +
+                " ORDER BY nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -38,26 +60,6 @@ namespace FarmaTown.Datos
 
             return listaOS;
 
-        }
-
-        public List<ObraSocial> recuperarTodos()
-        {
-            string query = "SELECT *" +
-                " FROM ObrasSociales" +
-                " WHERE borrado = 0";
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            List<ObraSocial> listaOS = new List<ObraSocial>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaOS.Add(this.objectMapping(fila));
-            }
-
-            return listaOS;
         }
 
         public ObraSocial traer(int idOS)
@@ -122,7 +124,6 @@ namespace FarmaTown.Datos
             query = query + " WHERE idOS = " + oOS.IdOS;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
-             
 
         }
 

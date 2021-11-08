@@ -47,13 +47,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.lblAviso = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.btnEditar = new CustomControls.RJControls.RJButton();
-            this.btnEliminar = new CustomControls.RJControls.RJButton();
-            this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.btnSeleccionar = new CustomControls.RJControls.RJButton();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +55,13 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.btnEditar = new CustomControls.RJControls.RJButton();
+            this.btnEliminar = new CustomControls.RJControls.RJButton();
+            this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.btnSeleccionar = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             this.gbResultados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -104,6 +104,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(85, 25);
             this.txtbPasaporteLetras.TabIndex = 4;
             this.txtbPasaporteLetras.Visible = false;
+            this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // txtbApellido
             // 
@@ -152,6 +153,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbNroDoc.Size = new System.Drawing.Size(243, 25);
             this.txtbNroDoc.TabIndex = 4;
             this.txtbNroDoc.Visible = false;
+            this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoLetras_KeyDown);
             // 
             // txtbPasaporteNro
             // 
@@ -164,6 +166,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbPasaporteNro.Size = new System.Drawing.Size(131, 25);
             this.txtbPasaporteNro.TabIndex = 5;
             this.txtbPasaporteNro.Visible = false;
+            this.txtbPasaporteNro.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoLetras_KeyDown);
             // 
             // lblAvisoNroDoc
             // 
@@ -332,6 +335,63 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.dgvClientes.TabStop = false;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
+            // idEmpleado
+            // 
+            this.idEmpleado.HeaderText = "ID";
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Visible = false;
+            this.idEmpleado.Width = 50;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Nombre";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // apellidp
+            // 
+            this.apellidp.HeaderText = "Apellido";
+            this.apellidp.Name = "apellidp";
+            this.apellidp.ReadOnly = true;
+            this.apellidp.Width = 170;
+            // 
+            // nroDoc
+            // 
+            this.nroDoc.HeaderText = "N° Documento";
+            this.nroDoc.Name = "nroDoc";
+            this.nroDoc.ReadOnly = true;
+            this.nroDoc.Width = 170;
+            // 
+            // nomTipoDoc
+            // 
+            this.nomTipoDoc.HeaderText = "Tipo Documento";
+            this.nomTipoDoc.Name = "nomTipoDoc";
+            this.nomTipoDoc.ReadOnly = true;
+            this.nomTipoDoc.Width = 150;
+            // 
+            // calle
+            // 
+            this.calle.FillWeight = 170F;
+            this.calle.HeaderText = "Calle";
+            this.calle.Name = "calle";
+            this.calle.ReadOnly = true;
+            this.calle.Width = 170;
+            // 
+            // nroCalle
+            // 
+            this.nroCalle.HeaderText = "Altura";
+            this.nroCalle.Name = "nroCalle";
+            this.nroCalle.ReadOnly = true;
+            // 
+            // nomBarrio
+            // 
+            this.nomBarrio.HeaderText = "Barrio";
+            this.nomBarrio.Name = "nomBarrio";
+            this.nomBarrio.ReadOnly = true;
+            this.nomBarrio.Width = 200;
+            // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
@@ -471,63 +531,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.btnSeleccionar.TextColor = System.Drawing.Color.Black;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Visible = false;
-            // 
-            // idEmpleado
-            // 
-            this.idEmpleado.HeaderText = "ID";
-            this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.ReadOnly = true;
-            this.idEmpleado.Visible = false;
-            this.idEmpleado.Width = 50;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Nombre";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
-            // 
-            // apellidp
-            // 
-            this.apellidp.HeaderText = "Apellido";
-            this.apellidp.Name = "apellidp";
-            this.apellidp.ReadOnly = true;
-            this.apellidp.Width = 170;
-            // 
-            // nroDoc
-            // 
-            this.nroDoc.HeaderText = "N° Documento";
-            this.nroDoc.Name = "nroDoc";
-            this.nroDoc.ReadOnly = true;
-            this.nroDoc.Width = 170;
-            // 
-            // nomTipoDoc
-            // 
-            this.nomTipoDoc.HeaderText = "Tipo Documento";
-            this.nomTipoDoc.Name = "nomTipoDoc";
-            this.nomTipoDoc.ReadOnly = true;
-            this.nomTipoDoc.Width = 150;
-            // 
-            // calle
-            // 
-            this.calle.FillWeight = 170F;
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            this.calle.Width = 170;
-            // 
-            // nroCalle
-            // 
-            this.nroCalle.HeaderText = "Altura";
-            this.nroCalle.Name = "nroCalle";
-            this.nroCalle.ReadOnly = true;
-            // 
-            // nomBarrio
-            // 
-            this.nomBarrio.HeaderText = "Barrio";
-            this.nomBarrio.Name = "nomBarrio";
-            this.nomBarrio.ReadOnly = true;
-            this.nomBarrio.Width = 200;
             // 
             // frmClientes
             // 
