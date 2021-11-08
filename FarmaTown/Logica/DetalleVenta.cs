@@ -14,7 +14,9 @@ namespace FarmaTown.Logica
         public int Cantidad { get; set; }
         public Double PrecioUnitario { get; set; }
         public Double Reintegro { get; set; }
+        public Estado EstadoActual { get; set; }
         public Double PrecioUnitarioShort
+            
         {
             get
             {

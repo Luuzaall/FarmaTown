@@ -76,7 +76,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -96,8 +96,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datos\CanceladaDao.cs" />
     <Compile Include="Datos\ClienteDao.cs" />
     <Compile Include="Datos\DetalleVentaDao.cs" />
+    <Compile Include="Datos\ActivaDao.cs" />
+    <Compile Include="Datos\EstadoDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
     <Compile Include="Datos\Reportes\DSMedicamentos.Designer.cs">
@@ -303,6 +306,14 @@
     <Compile Include="Presentacion\Reportes\Clientes\frmReporteClientes.Designer.cs">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\DSClientes.cs">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\DSClientes.Designer.cs">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Presentacion\Reportes\frmReporteEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,7 +518,6 @@
     <None Include="DSEmpleados.xss">
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
-    <None Include="packages.config" />
     <None Include="Datos\Reportes\DTSClientes.xsc">
       <DependentUpon>DTSClientes.xsd</DependentUpon>
     </None>
@@ -518,6 +528,18 @@
     </None>
     <None Include="Datos\Reportes\DTSClientes.xss">
       <DependentUpon>DTSClientes.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Presentacion\Reportes\DSClientes.xsc">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Presentacion\Reportes\DSClientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSClientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Presentacion\Reportes\DSClientes.xss">
+      <DependentUpon>DSClientes.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -558,6 +580,11 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\listado medicamentos.png" />
+    <None Include="Presentacion\Imagenes\reporteVentas.png" />
+    <None Include="Presentacion\Imagenes\consultaVentas.png" />
+    <None Include="Resources\pharmacy.png" />
+    <None Include="Presentacion\Imagenes\Baja_Venta.png" />
     <None Include="Presentacion\Imagenes\reporteClientes.png" />
     <None Include="Resources\undraw_small_town_rxs3.png" />
     <None Include="Resources\undraw_quite_town_mg2q.png" />

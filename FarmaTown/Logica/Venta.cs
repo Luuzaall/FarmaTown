@@ -13,11 +13,6 @@ namespace FarmaTown.Logica
         public Farmacia Farmacia { get; set; }
         public string NroFactura { get; set; }
 
-        internal void setEstado(Cancelada nuevoEstado)
-        {
-            throw new NotImplementedException();
-        }
-
         public TipoFactura TipoFactura { get; set; }
         public Cliente Cliente { get; set; }
         public DateTime FechaFactura { get; set; }
@@ -25,7 +20,7 @@ namespace FarmaTown.Logica
         public MedioPago MedioPago { get; set; }
         public IList<DetalleVenta> Detalles { get; set; }
         public ObraSocial ObraSocial { get; set; }
-        public Estado estadoActual { get; set; }
+        public Estado EstadoActual { get; set; }
 
         //public bool Borrado { get; set; }
 
@@ -80,12 +75,13 @@ namespace FarmaTown.Logica
 
         internal void cancelada(Venta oVenta)
         {
-            this.estadoActual.cancelada(this);
+            this.EstadoActual.cancelada(this);
+            this.oVenta.cancelada(oVenta);
         }
 
         public void setEstado(Estado nuevoEstado)
         {
-            estadoActual = nuevoEstado;
+            EstadoActual = nuevoEstado;
         }
 
         public Venta traer(string nroVenta)

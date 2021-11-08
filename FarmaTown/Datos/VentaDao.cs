@@ -16,9 +16,8 @@ namespace FarmaTown.Datos
         EmpleadoDao oEmpleadoDao;
         TipoFacturaDao oTipoFacturaDao;
         MedioPagoDao oMedioPagoDao;
-        BarrioDao oBarrioDao;
-        LocalidadDao oLocalidadDao;
         ObraSocialDao oObraSocialDao;
+        EstadoDao oEstadoDao;
 
         public VentaDao()
         {
@@ -28,9 +27,8 @@ namespace FarmaTown.Datos
             oEmpleadoDao = new EmpleadoDao();
             oTipoFacturaDao = new TipoFacturaDao();
             oMedioPagoDao = new MedioPagoDao();
-            oBarrioDao = new BarrioDao();
-            oLocalidadDao = new LocalidadDao();
             oObraSocialDao = new ObraSocialDao();
+            oEstadoDao = new EstadoDao();
         }
 
         public List<Venta> recuperarTodos()
@@ -45,7 +43,8 @@ namespace FarmaTown.Datos
                     ", t.idTipoFactura " +
                     ", m.idMedioPago " +
                     ", b.idBarrio " +
-                    ", v.idOS" +
+                    ", v.idOS " +
+                    ", v.idEstado" +
                     " FROM Ventas v" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
                     " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
@@ -77,6 +76,7 @@ namespace FarmaTown.Datos
                     ", m.idMedioPago " +
                     ", b.idBarrio " +
                     ", v.idOS" +
+                    ", v.idEstado" +
                     " FROM Ventas v" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
                     " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
@@ -103,6 +103,52 @@ namespace FarmaTown.Datos
 
         }
 
+        internal bool cancelada(Venta oVenta)
+        {
+            DBHelper helper = DBHelper.getDBHelper();
+            try
+            {
+                helper.open();
+                helper.beginTransaction();
+
+                string modifyQuery = " UPDATE Ventas" +
+                    " SET idEstado = @idEstado" +
+                    " WHERE idVenta = " + oVenta.IdVenta;
+
+                var paramNroFact = new Dictionary<string, object>();
+                paramNroFact.Add("idEstado", 2);
+
+                helper.ejecutarSQLCONPARAMETROS(modifyQuery, paramNroFact);
+
+                foreach (var itemVenta in oVenta.Detalles)
+                {
+                    string modifyQueryDetalle = " UPDATE DetalleVentas" +
+                    " SET idEstado = @idEstado" +
+                    " WHERE idVenta = " + oVenta.IdVenta;
+
+                    var paramDetalle = new Dictionary<string, object>();
+                    
+                    paramDetalle.Add("idEstado", 2);
+
+                    helper.ejecutarSQLCONPARAMETROS(modifyQueryDetalle, paramDetalle);
+                }
+
+                helper.commit();
+            }
+            catch (Exception ex)
+            {
+                helper.rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                helper.close();
+
+            }
+            return true;
+        }
+
         internal Venta traer(string nroVenta)
         {
             string query = "SELECT v.idVenta" +
@@ -116,6 +162,7 @@ namespace FarmaTown.Datos
                    ", m.idMedioPago " +
                    ", b.idBarrio " +
                    ", v.idOS" +
+                   ", v.idEstado" +
                    " FROM Ventas v" +
                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
@@ -149,6 +196,7 @@ namespace FarmaTown.Datos
                                 ", idTipoFactura" +
                                 ", idMedioPago" +
                                 ", idOS" +
+                                ", idEstado" +
                                 ", borrado)" +
                             " VALUES" +
                                 "( @idFarmacia" +
@@ -159,6 +207,7 @@ namespace FarmaTown.Datos
                                 ", @tipoFact" +
                                 ", @idTipoPago" +
                                 ", @idOS" +
+                                ", @idEstado" +
                                 ", @borrado)";
 
                 var parametros = new Dictionary<string, object>();
@@ -170,6 +219,7 @@ namespace FarmaTown.Datos
                 parametros.Add("tipoFact", nuevaVenta.TipoFactura.IdTipofactura);
                 parametros.Add("idTipoPago", nuevaVenta.MedioPago.idMedioPago);
                 parametros.Add("idOS", nuevaVenta.ObraSocial.IdOS);
+                parametros.Add("idEstado", 1);
                 parametros.Add("borrado", 0);
                 helper.ejecutarSQLCONPARAMETROS(query, parametros);
 
@@ -255,6 +305,7 @@ namespace FarmaTown.Datos
                 ", o.nombre as obraSocial" +
                 ", l.nombre as localidad" +
                 ", tp.descripcion as tipoMedicamento" +
+                ", v.idEstado " +
                 ", ROUND(SUM(precio), 2) as 'Total'" +
                 " FROM Ventas v" +
                 " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
@@ -320,9 +371,12 @@ namespace FarmaTown.Datos
             int idTipoFactura = Convert.ToInt32(row["idTipoFactura"].ToString());
             int idMedioPago = Convert.ToInt32(row["idMedioPago"].ToString());
             int idOS = Convert.ToInt32(row["idOS"].ToString());
+            int idEstado = Convert.ToInt32(row["idEstado"].ToString());
 
             int idVenta = Convert.ToInt32(row["idVenta"].ToString());
             List<DetalleVenta> listaDetalles = oDetalle.recuperarTodos(idVenta);
+
+            
 
             Venta oVenta = new Venta
             {
@@ -336,6 +390,7 @@ namespace FarmaTown.Datos
                 Empleado = this.oEmpleadoDao.traerEmpleado(idEmpleado),
                 TipoFactura = this.oTipoFacturaDao.traer(idTipoFactura),
                 MedioPago = this.oMedioPagoDao.traer(idMedioPago),
+                EstadoActual = oEstadoDao.traer(idEstado),
             };
             return oVenta;
         }

@@ -46,6 +46,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.farmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +64,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.btnVerDetalles = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.gbResultados.SuspendLayout();
@@ -234,6 +236,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idVenta,
+            this.estado,
             this.nroFactura,
             this.fecha,
             this.farmacia,
@@ -256,6 +259,11 @@ namespace FarmaTown.Presentacion.Transacciones
             this.idVenta.HeaderText = "idVenta";
             this.idVenta.Name = "idVenta";
             this.idVenta.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
             // 
             // nroFactura
             // 
@@ -350,7 +358,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.lblAviso.AutoSize = true;
             this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
-            this.lblAviso.Location = new System.Drawing.Point(223, 562);
+            this.lblAviso.Location = new System.Drawing.Point(432, 562);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(282, 22);
             this.lblAviso.TabIndex = 59;
@@ -394,7 +402,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(130, 546);
+            this.btnEliminar.Location = new System.Drawing.Point(240, 546);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
             this.btnEliminar.TabIndex = 57;
@@ -475,12 +483,36 @@ namespace FarmaTown.Presentacion.Transacciones
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // btnVerDetalles
+            // 
+            this.btnVerDetalles.BackColor = System.Drawing.Color.Gray;
+            this.btnVerDetalles.BackgroundColor = System.Drawing.Color.Gray;
+            this.btnVerDetalles.BackgroundImage = global::FarmaTown.Properties.Resources.detail;
+            this.btnVerDetalles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVerDetalles.BorderColor = System.Drawing.Color.Green;
+            this.btnVerDetalles.BorderRadius = 20;
+            this.btnVerDetalles.BorderSize = 1;
+            this.btnVerDetalles.Enabled = false;
+            this.btnVerDetalles.FlatAppearance.BorderSize = 0;
+            this.btnVerDetalles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btnVerDetalles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVerDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnVerDetalles.Location = new System.Drawing.Point(135, 544);
+            this.btnVerDetalles.Name = "btnVerDetalles";
+            this.btnVerDetalles.Size = new System.Drawing.Size(57, 49);
+            this.btnVerDetalles.TabIndex = 60;
+            this.btnVerDetalles.TextColor = System.Drawing.Color.White;
+            this.btnVerDetalles.UseVisualStyleBackColor = false;
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
+            // 
             // frmConsultaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.consultaVentas;
             this.ClientSize = new System.Drawing.Size(1209, 607);
+            this.Controls.Add(this.btnVerDetalles);
             this.Controls.Add(this.lblAviso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminar);
@@ -535,6 +567,7 @@ namespace FarmaTown.Presentacion.Transacciones
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn farmacia;
@@ -544,5 +577,6 @@ namespace FarmaTown.Presentacion.Transacciones
         private System.Windows.Forms.DataGridViewTextBoxColumn obraSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
+        private CustomControls.RJControls.RJButton btnVerDetalles;
     }
 }
