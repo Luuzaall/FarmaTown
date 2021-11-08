@@ -212,88 +212,56 @@ namespace FarmaTown.Datos
         }
 
         public Object obtenerDatosReporte(DateTime fechaDesde, DateTime fechaHasta
-                , String idFarm, String idLocalidad, int reporte, string idEmpleado
+                , String idFarm, String idLocalidad, string idEmpleado
             , string idObraSocial)
         {
-            
-            if (reporte == 1)
-            {
-                string query = 
-                    "SELECT v.idVenta" +
-                    ", v.nroFactura" +
-                    ", f.nombre as farmacia" +
-                    ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
-                    ", e.nombre as empleado" +
-                    ", t.nombre as tipoFactura" +
-                    ", m.nombre as medioPago" +
-                    ", o.nombre as obraSocial" +
-                    ", l.nombre as localidad" +
-                    ", tp.descripcion as tipoMedicamento" +
-                    ", ROUND(SUM(precio), 2) as 'Total'" +
-                    " FROM Ventas v" +
-                    " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
-                    " INNER JOIN ObrasSociales o ON v.idOS = o.idOS" +
-                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                    " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                    " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
-                    " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
-                    " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
-                    " INNER JOIN Medicamentos med ON d.idMedicamento = med.idMedicamento" +
-                    " INNER JOIN TiposMedicamento tp ON med.tipoMedicamento = tp.idTipo" +
-                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
-                        " AND CONVERT(DATE,'" + fechaHasta + "',105)";
-
-                if (idFarm != "-1")
-                    query += " AND f.idFarmacia = " + idFarm;
-                if (idLocalidad != "-1")
-                    query += " AND l.idLocalidad = " + idLocalidad;
-                if (idEmpleado != "-1")
-                    query += " AND e.idEmpleado = " + idEmpleado;
-                if (idObraSocial != "-1")
-                    query += " AND o.idOS = " + idObraSocial;
-                query += " GROUP BY v.idVenta" +
-                            " , f.nombre" +
-                            " , v.fechaFactura" +
-                            " , e.nombre" +
-                            " , t.nombre" +
-                            " , m.nombre" +
-                            " , v.nroFactura" +
-                            ", o.nombre" +
-                            ", l.nombre" +
-                            ", tp.descripcion";
-
-
-                return DBHelper.getDBHelper().consultaSQL(query);
-            }
-            else if (reporte == 2)
-            {
-                string query = "SELECT" +
-                    " tm.descripcion" +
-                    " FROM Ventas v" +
-                    " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
-                    " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                    " INNER JOIN Medicamentos m ON d.idMedicamento = m.idMedicamento" +
-                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
-                    " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
+            string query = 
+                "SELECT v.idVenta" +
+                ", v.nroFactura" +
+                ", f.nombre as farmacia" +
+                ", CONVERT(varchar(10), v.fechaFactura, 103) as fecha" +
+                ", e.nombre as empleado" +
+                ", t.nombre as tipoFactura" +
+                ", m.nombre as medioPago" +
+                ", o.nombre as obraSocial" +
+                ", l.nombre as localidad" +
+                ", tp.descripcion as tipoMedicamento" +
+                ", ROUND(SUM(precio), 2) as 'Total'" +
+                " FROM Ventas v" +
+                " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
+                " INNER JOIN ObrasSociales o ON v.idOS = o.idOS" +
+                " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
+                " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
+                " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                " INNER JOIN Medicamentos med ON d.idMedicamento = med.idMedicamento" +
+                " INNER JOIN TiposMedicamento tp ON med.tipoMedicamento = tp.idTipo" +
+                " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
                     " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
-                if (!(idFarm == "-1"))
-                {
-                    query = query + " AND v.idFarmacia = " + idFarm;
-                }
+            if (idFarm != "-1")
+                query += " AND f.idFarmacia = " + idFarm;
+            if (idLocalidad != "-1")
+                query += " AND l.idLocalidad = " + idLocalidad;
+            if (idEmpleado != "-1")
+                query += " AND e.idEmpleado = " + idEmpleado;
+            if (idObraSocial != "-1")
+                query += " AND o.idOS = " + idObraSocial;
+            query += " GROUP BY v.idVenta" +
+                        " , f.nombre" +
+                        " , v.fechaFactura" +
+                        " , e.nombre" +
+                        " , t.nombre" +
+                        " , m.nombre" +
+                        " , v.nroFactura" +
+                        ", o.nombre" +
+                        ", l.nombre" +
+                        ", tp.descripcion";
 
-                if (!(idLocalidad == "-1"))
-                {
-                    query = query + " AND b.idLocalidad = " + idLocalidad;
-                }
 
-                return DBHelper.getDBHelper().consultaSQL(query);
-            }
-
-            return null;
-
+            return DBHelper.getDBHelper().consultaSQL(query);
         }
 
         private List<Venta> listMapping(DataTable tabla)

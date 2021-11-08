@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
 
                 this.rpvVentas.LocalReport.DataSources.Clear();
                 Object tabla = oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
-                    , idFarm, idLocalidad, 1, idEmpleado, idObraSocial);
+                    , idFarm, idLocalidad, idEmpleado, idObraSocial);
                 ReportDataSource rprtDTSource = new ReportDataSource("DSVentas", tabla);
 
                 //Crea las variables para los parámetros que recibirá 
