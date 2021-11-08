@@ -110,7 +110,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.cboEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEmpleados.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboEmpleados.FormattingEnabled = true;
-            this.cboEmpleados.Location = new System.Drawing.Point(278, 129);
+            this.cboEmpleados.Location = new System.Drawing.Point(277, 130);
             this.cboEmpleados.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(211, 27);
@@ -122,7 +122,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.cboObrasSociales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboObrasSociales.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboObrasSociales.FormattingEnabled = true;
-            this.cboObrasSociales.Location = new System.Drawing.Point(808, 124);
+            this.cboObrasSociales.Location = new System.Drawing.Point(808, 128);
             this.cboObrasSociales.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboObrasSociales.Name = "cboObrasSociales";
             this.cboObrasSociales.Size = new System.Drawing.Size(211, 27);
@@ -134,7 +134,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.cboLocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboLocalidades.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(808, 80);
+            this.cboLocalidades.Location = new System.Drawing.Point(808, 78);
             this.cboLocalidades.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboLocalidades.Name = "cboLocalidades";
             this.cboLocalidades.Size = new System.Drawing.Size(211, 27);
@@ -146,7 +146,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.cboFarmacias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboFarmacias.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.cboFarmacias.FormattingEnabled = true;
-            this.cboFarmacias.Location = new System.Drawing.Point(278, 80);
+            this.cboFarmacias.Location = new System.Drawing.Point(278, 78);
             this.cboFarmacias.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboFarmacias.Name = "cboFarmacias";
             this.cboFarmacias.Size = new System.Drawing.Size(211, 27);
@@ -249,6 +249,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(1013, 208);
             this.dgvVentas.TabIndex = 52;
+            this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
             // idVenta
             // 
@@ -399,6 +400,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.btnEliminar.TabIndex = 57;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 

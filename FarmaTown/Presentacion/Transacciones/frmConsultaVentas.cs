@@ -33,7 +33,7 @@ namespace FarmaTown.Presentacion.Transacciones
 
         private void frmConsVentas_Load(object sender, EventArgs e)
         {
-            this.dtpFechaDesde.Value = DateTime.Today.AddMonths(-1);
+            this.dtpFechaDesde.Value = DateTime.Today.AddDays(-7);
             this.dtpFechaHasta.Value = DateTime.Today.AddDays(1);
 
             ComboBoxService.cargarCombo(this.cboFarmacias, oFarmacia.recuperarTodos()
@@ -53,8 +53,8 @@ namespace FarmaTown.Presentacion.Transacciones
              * Inicializa los filtros del generador
              * del Reporte.
              */
-            this.dtpFechaDesde.Value = DateTime.Today.AddMonths(-1);
-            this.dtpFechaHasta.Value = DateTime.Today;
+            this.dtpFechaDesde.Value = DateTime.Today.AddDays(-7);
+            this.dtpFechaHasta.Value = DateTime.Today.AddDays(1);
             this.cboFarmacias.SelectedIndex = -1;
             this.cboLocalidades.SelectedIndex = -1;
             this.cboEmpleados.SelectedIndex = -1;
@@ -195,6 +195,26 @@ namespace FarmaTown.Presentacion.Transacciones
         {
             frmAltaVenta oFrmVentas = new frmAltaVenta(oUsuarioLogueado);
             oFrmVentas.ShowDialog();
+        }
+
+        private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+            * Habilita los botones para poder ser seleccionados,
+            * proyenedo una invitación visual
+            */
+            this.btnEliminar.Enabled = true;
+            this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
+            this.lblAviso.Visible = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmVenta oFrmBajaVenta = new frmVenta();
+            string nroVenta = this.dgvVentas.CurrentRow.Cells[0].Value.ToString();
+            Venta ventaSelecc = this.oVenta.traer(nroVenta);
+            oFrmBajaVenta.seleccionarVenta(frmVenta.FormMode.delete, ventaSelecc);
+            oFrmBajaVenta.ShowDialog();
         }
     }
 }

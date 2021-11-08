@@ -93,14 +93,43 @@ namespace FarmaTown.Datos
             if (idLocalidad != "-1")
                 query += " AND l.idLocalidad = " + idLocalidad;
             if (idEmpleado != "-1")
-                query += " AND e.idEmplado" + idEmpleado;
+                query += " AND e.idEmpleado = " + idEmpleado;
             if (idObraSocial != "-1")
-                query += " AND o.idOS = " + idObraSocial;
+                query += " AND v.idOS = " + idObraSocial;
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             return listMapping(tabla);
 
+        }
+
+        internal Venta traer(string nroVenta)
+        {
+            string query = "SELECT v.idVenta" +
+                   " , f.nombre as nomFarmacia" +
+                   " , f.idFarmacia" +
+                   " , v.nroFactura" +
+                   " , c.idCliente " +
+                   ", v.fechaFactura" +
+                   ", e.idEmpleado " +
+                   ", t.idTipoFactura " +
+                   ", m.idMedioPago " +
+                   ", b.idBarrio " +
+                   ", v.idOS" +
+                   " FROM Ventas v" +
+                   " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
+                   " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
+                   " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                   " INNER JOIN Clientes c ON v.idCliente = c.idCliente" +
+                   " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
+                   " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
+                   " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                   " WHERE v.borrado = 0 " +
+                   " AND v.idVenta = " + nroVenta;
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            return objectMapping(tabla.Rows[0]);
         }
 
         public bool crear(Venta nuevaVenta)

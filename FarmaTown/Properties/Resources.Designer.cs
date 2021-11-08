@@ -133,6 +133,16 @@ namespace FarmaTown.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Baja_Venta {
+            get {
+                object obj = ResourceManager.GetObject("Baja_Venta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barrios {
             get {
                 object obj = ResourceManager.GetObject("barrios", resourceCulture);

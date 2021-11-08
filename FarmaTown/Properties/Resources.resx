@@ -121,20 +121,17 @@
   <data name="trash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="consultaVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\consultaVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add-location" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\add-location.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\principal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\Empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="undraw_town_r6pc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_town_r6pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coworkers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\coworkers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +142,14 @@
   <data name="undraw_small_town_rxs3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_small_town_rxs3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="carroVacioVenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\carroVacioVenta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="addPerson" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\addPerson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rehacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\rehacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undraw_High_five_re_jy712" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,14 +178,17 @@
   <data name="listado medicamentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listado medicamentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="undraw_Location_tracking_re_n3ok (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\addOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addDocument" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\addDocument.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undraw_quite_town_mg2q" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undraw_quite_town_mg2q.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +199,8 @@
   <data name="delete(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\delete(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undraw_Location_tracking_re_n3ok (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\addOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MedicalResearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\MedicalResearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +214,11 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clients" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\clients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="reporteClientes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\reporteClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pharmacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondoFarmaTown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\FondoFarmaTown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,11 +235,8 @@
   <data name="undraw_High_five_re_jy71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reporteClientes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\reporteClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="frmABMTiposDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\frmABMTiposDoc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undraw_Location_tracking_re_n3ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undraw_Location_tracking_re_n3ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,11 +250,11 @@
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="carroVacioVenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\carroVacioVenta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="undraw_quite_town_mg2q" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\undraw_quite_town_mg2q.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clients" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\clients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undraw_High_five_re_jy711" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_High_five_re_jy71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,16 +268,13 @@
   <data name="eyeParaClave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\eyeParaClave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rehacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\rehacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\Empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undraw_Location_tracking_re_n3ok (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Presentacion\Imagenes\undraw_Location_tracking_re_n3ok (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="consultaVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Presentacion\Imagenes\consultaVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pharmacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pharmacy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Baja_Venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Presentacion\Imagenes\Baja_Venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
