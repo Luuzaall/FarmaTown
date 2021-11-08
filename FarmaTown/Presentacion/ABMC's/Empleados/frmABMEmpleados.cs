@@ -55,7 +55,7 @@ namespace FarmaTown.Presentacion.Empleados
 
             }
 
-            switch (formMode)
+            switch (this.formMode)
             {
                 case FormMode.insert:
                     {
@@ -159,7 +159,8 @@ namespace FarmaTown.Presentacion.Empleados
                     }
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea deshabilitar el empleado seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        var decision = MessageBox.Show("Seguro que desea deshabilitar el empleado seleccionado?"
+                            , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 

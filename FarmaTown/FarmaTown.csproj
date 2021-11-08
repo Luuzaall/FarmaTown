@@ -108,10 +108,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Logica\Activa.cs" />
     <Compile Include="Logica\Barrio.cs" />
+    <Compile Include="Logica\Cancelada.cs" />
     <Compile Include="Logica\Cliente.cs" />
     <Compile Include="Logica\DetalleVenta.cs" />
     <Compile Include="Logica\Empleado.cs" />
+    <Compile Include="Logica\Estado.cs" />
     <Compile Include="Logica\Farmacia.cs" />
     <Compile Include="Logica\Localidad.cs" />
     <Compile Include="Logica\Medicamento.cs" />
@@ -306,6 +309,12 @@
     <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
     <Compile Include="Presentacion\Servicios\GrillaService.cs" />
     <Compile Include="Presentacion\Servicios\TextBoxService.cs" />
+    <Compile Include="Presentacion\Transacciones\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsultaVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +414,9 @@
     <EmbeddedResource Include="Presentacion\Transacciones\frmAltaVenta.resx">
       <DependentUpon>frmAltaVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Transacciones\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsultaVentas.resx">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +496,7 @@
     <None Include="Presentacion\Imagenes\reporteVentas.png" />
     <None Include="Presentacion\Imagenes\consultaVentas.png" />
     <None Include="Resources\pharmacy.png" />
+    <None Include="Presentacion\Imagenes\Baja_Venta.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
