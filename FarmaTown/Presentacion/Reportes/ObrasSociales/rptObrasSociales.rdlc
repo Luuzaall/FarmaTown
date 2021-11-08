@@ -304,7 +304,7 @@
             <Top>0.63415cm</Top>
             <Left>2.2987cm</Left>
             <Height>1.2cm</Height>
-            <Width>15.4375cm</Width>
+            <Width>15.43749cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1028,14 +1028,15 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Descuentos de Obras Sociales por Medicamento</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>SemiBold</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
                 </Style>
                 <Position>TopLeft</Position>
               </ChartTitle>
