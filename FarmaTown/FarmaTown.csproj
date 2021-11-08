@@ -103,6 +103,19 @@
     <Compile Include="Datos\EstadoDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
+    <Compile Include="Datos\Reportes\DSMedicamentos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Reportes\DSObrasSociales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSObrasSociales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\Reportes\DSVentas.cs">
+      <DependentUpon>DSVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Reportes\DSVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,7 +139,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Logica\Activa.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cancelada.cs" />
     <Compile Include="Logica\Cliente.cs" />
@@ -308,6 +320,18 @@
     <Compile Include="Presentacion\Reportes\frmReporteEmpleados.Designer.cs">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.Designer.cs">
+      <DependentUpon>frmReporteMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ObrasSociales\frmReporteObrasSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Reportes\ObrasSociales\frmReporteObrasSociales.Designer.cs">
+      <DependentUpon>frmReporteObrasSociales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Reportes\Ventas\frmReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,17 +347,17 @@
     <Compile Include="Presentacion\Servicios\ComboBoxService.cs" />
     <Compile Include="Presentacion\Servicios\GrillaService.cs" />
     <Compile Include="Presentacion\Servicios\TextBoxService.cs" />
-    <Compile Include="Presentacion\Transacciones\frmVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Transacciones\frmVenta.Designer.cs">
-      <DependentUpon>frmVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsultaVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Transacciones\frmConsultaVentas.designer.cs">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Transacciones\frmVenta.Designer.cs">
+      <DependentUpon>frmVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -412,6 +436,14 @@
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\rptClientes.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.resx">
+      <DependentUpon>frmReporteMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Medicamentos\rptMedicamentos.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\ObrasSociales\frmReporteObrasSociales.resx">
+      <DependentUpon>frmReporteObrasSociales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\ObrasSociales\rptObrasSociales.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Ventas\frmReporteVentas.resx">
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
@@ -420,11 +452,11 @@
     <EmbeddedResource Include="Presentacion\Transacciones\frmAltaVenta.resx">
       <DependentUpon>frmAltaVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Transacciones\frmVenta.resx">
-      <DependentUpon>frmVenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Transacciones\frmConsultaVentas.resx">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Transacciones\frmVenta.resx">
+      <DependentUpon>frmVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -441,6 +473,28 @@
     </None>
     <None Include="DataSetGeneral.xss">
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xsc">
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMedicamentos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datos\Reportes\DSMedicamentos.xss">
+      <DependentUpon>DSMedicamentos.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSObrasSociales.xsc">
+      <DependentUpon>DSObrasSociales.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSObrasSociales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSObrasSociales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos\Reportes\DSObrasSociales.xss">
+      <DependentUpon>DSObrasSociales.xsd</DependentUpon>
     </None>
     <None Include="Datos\Reportes\DSVentas.xsc">
       <DependentUpon>DSVentas.xsd</DependentUpon>
@@ -509,6 +563,10 @@
     <None Include="Presentacion\Imagenes\undraw_Hire_re_gn5j.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\listado medicamentos.png" />
+    <None Include="Presentacion\Imagenes\reporteVentas.png" />
+    <None Include="Presentacion\Imagenes\consultaVentas.png" />
+    <None Include="Resources\pharmacy.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -571,9 +629,7 @@
     <None Include="Presentacion\Imagenes\undraw_town_r6pc.png" />
     <Content Include="Presentacion\Imagenes\vectorstock_25148542.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentacion\Reportes\Medicamentos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

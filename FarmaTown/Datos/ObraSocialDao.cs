@@ -16,6 +16,7 @@ namespace FarmaTown.Datos
         {
             oOSXMed = new OSXMedicamentosDao();
         }
+
         public List<ObraSocial> recuperarTodos()
         {
             string query = "SELECT *" +
@@ -35,6 +36,20 @@ namespace FarmaTown.Datos
             }
 
             return listaOS;
+        }
+
+        internal object obtenerDatosReporte()
+        {
+            string query = "SELECT m.nombre as medicamento" +
+                ", o.nombre as obraSocial" +
+                ", x.descuento as descuento" +
+                " FROM OSXMedicamentos x" +
+                " INNER JOIN Medicamentos m ON x.idMedicamento = m.idMedicamento" +
+                " INNER JOIN ObrasSociales o ON x.idOS = o.idOS" +
+                " GROUP BY o.nombre, m.nombre, x.descuento" +
+                " ORDER BY x.descuento";
+
+            return DBHelper.getDBHelper().consultaSQL(query);
         }
 
         public List<ObraSocial> recuperarCParam(string nombre)

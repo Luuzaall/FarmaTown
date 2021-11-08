@@ -80,27 +80,6 @@ namespace FarmaTown.Presentacion.Farmacias
             
         }
 
-        /*private bool validarDatos()
-        {
-            string sucursal = this.textbSucursal.Text;
-            string calle = this.TextbCalle.Text;
-            string numero = this.textbNumero.Text;
-            if (string.IsNullOrEmpty(sucursal)
-                && string.IsNullOrEmpty(calle)
-                && string.IsNullOrEmpty(numero)
-                )
-            {
-                MessageBox.Show("Debe ingresar al menos uno de los datos",
-                    "Validación de Datos", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                this.textbSucursal.Focus();
-                this.TextbCalle.Focus();
-                this.textbNumero.Focus();
-                return false;
-            }
-            return true;
-        }*/
-
         private void dgvFarmacias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.btnEditar.Enabled = true;

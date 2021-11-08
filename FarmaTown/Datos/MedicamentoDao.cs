@@ -215,13 +215,12 @@ namespace FarmaTown.Datos
         public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
         {
             string query = "SELECT m.idMedicamento" +
-                    ", m.nombre" +
-                    ", m.descripcion" +
-                    ", tipoMedicamento" +
-                    ", precioLista" +
-                    ", cantidad" +
+                    ", m.nombre as nombre" +
+                    ", m.cantidad as cantidad" +
+                    ", tm.descripcion as tipoMedicamento" +
+                    ", m.precioLista as precioLista" +
                     " FROM Medicamentos m" +
-                    " INNER JOIN TiposMedicamento t ON m.tipoMedicamento = t.idTipo" +
+                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
                     " WHERE m.borrado = 0";
             
             if (cantidadMaxima > -1 || cantidadMinima > -1)
