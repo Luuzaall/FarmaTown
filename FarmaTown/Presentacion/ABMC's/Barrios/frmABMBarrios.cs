@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -264,6 +265,11 @@ namespace FarmaTown.Presentacion.Localidades
                         break;
                     }
             }
+        }
+
+        private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnAceptar, e);
         }
     }
 }

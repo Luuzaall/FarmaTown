@@ -375,7 +375,6 @@ namespace FarmaTown.Datos
 
             int idVenta = Convert.ToInt32(row["idVenta"].ToString());
             List<DetalleVenta> listaDetalles = oDetalle.recuperarTodos(idVenta);
-
             
 
             Venta oVenta = new Venta

@@ -36,14 +36,14 @@ namespace FarmaTown.Presentacion.Localidades
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmABMBarrios));
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.dgvLocalidades = new System.Windows.Forms.DataGridView();
+            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new CustomControls.RJControls.RJButton();
             this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(217, 25);
             this.txtbNombre.TabIndex = 34;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // dgvLocalidades
             // 
@@ -83,6 +84,25 @@ namespace FarmaTown.Presentacion.Localidades
             this.dgvLocalidades.Size = new System.Drawing.Size(298, 244);
             this.dgvLocalidades.TabIndex = 41;
             this.dgvLocalidades.TabStop = false;
+            // 
+            // idLocalidad
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idLocalidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idLocalidad.HeaderText = "ID";
+            this.idLocalidad.Name = "idLocalidad";
+            this.idLocalidad.ReadOnly = true;
+            this.idLocalidad.Visible = false;
+            this.idLocalidad.Width = 50;
+            // 
+            // nomLocalidad
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomLocalidad.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nomLocalidad.HeaderText = "Nombre";
+            this.nomLocalidad.Name = "nomLocalidad";
+            this.nomLocalidad.ReadOnly = true;
+            this.nomLocalidad.Width = 250;
             // 
             // btnCancelar
             // 
@@ -195,25 +215,6 @@ namespace FarmaTown.Presentacion.Localidades
             this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 45;
             this.label2.Text = "Localidad(*):";
-            // 
-            // idLocalidad
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLocalidad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idLocalidad.HeaderText = "ID";
-            this.idLocalidad.Name = "idLocalidad";
-            this.idLocalidad.ReadOnly = true;
-            this.idLocalidad.Visible = false;
-            this.idLocalidad.Width = 50;
-            // 
-            // nomLocalidad
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomLocalidad.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nomLocalidad.HeaderText = "Nombre";
-            this.nomLocalidad.Name = "nomLocalidad";
-            this.nomLocalidad.ReadOnly = true;
-            this.nomLocalidad.Width = 250;
             // 
             // frmABMBarrios
             // 

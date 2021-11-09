@@ -110,7 +110,6 @@ namespace FarmaTown.Presentacion
         {
             frmABMUs = new frmABMUsuario();
             frmABMUs.ShowDialog();
-            this.actualizar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

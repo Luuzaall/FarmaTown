@@ -34,6 +34,9 @@ namespace FarmaTown.Presentacion.Transacciones
 
         private void cargarDatos(Venta oVenta)
         {
+            this.lblEmpleado.Text = oVenta.Empleado.Nombre;
+            this.lblFarmacia.Text = oVenta.Farmacia.Nombre;
+            this.lblLocalidad.Text = oVenta.Farmacia.Barrio.Localidad.Nombre;
             this.lblTipoFactura.Text = oVenta.TipoFactura.Nombre;
             this.lblNroFactura.Text = oVenta.NroFactura;
             this.lblFecha.Text = oVenta.FechaFactura.ToString();
@@ -77,12 +80,14 @@ namespace FarmaTown.Presentacion.Transacciones
                 case FormMode.delete:
                     {
                         this.Text = "Baja de Venta - FarmaTown";
+                        this.lblTitulo.Text = "Baja de Venta";
                         break;
                     }
 
                 case FormMode.details:
                     {
                         this.Text = "Consulta Detalle de Ventas - FarmaTown";
+                        this.lblTitulo.Text = "Consulta de Venta";
                         break;
                     }
             }

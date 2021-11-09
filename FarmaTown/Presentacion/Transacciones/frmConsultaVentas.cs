@@ -120,18 +120,10 @@ namespace FarmaTown.Presentacion.Transacciones
                     "que la fecha desde.", "Información"
                     , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.dtpFechaDesde.Focus();
-            }
-            else if (indexFarmacia == -1
-                && indexEmpleado == -1
-                && indexLocalidad == -1
-                && indexObraSocial == -1)
-            {
-                this.actualizar();
+                return false;
             }
             else
                 return true;
-
-            return false;
         }
 
         private void actualizar()

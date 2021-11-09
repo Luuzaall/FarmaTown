@@ -45,6 +45,15 @@ namespace FarmaTown.Presentacion.Transacciones
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.gbResultados = new System.Windows.Forms.GroupBox();
+            this.btnActualizar = new CustomControls.RJControls.RJButton();
+            this.lblAviso = new System.Windows.Forms.Label();
+            this.btnSalir = new CustomControls.RJControls.RJButton();
+            this.btnEliminar = new CustomControls.RJControls.RJButton();
+            this.btnAgregar = new CustomControls.RJControls.RJButton();
+            this.btnLimpiar = new CustomControls.RJControls.RJButton();
+            this.btnConsultar = new CustomControls.RJControls.RJButton();
+            this.btnVerDetalles = new CustomControls.RJControls.RJButton();
             this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,15 +65,6 @@ namespace FarmaTown.Presentacion.Transacciones
             this.obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbResultados = new System.Windows.Forms.GroupBox();
-            this.btnActualizar = new CustomControls.RJControls.RJButton();
-            this.lblAviso = new System.Windows.Forms.Label();
-            this.btnSalir = new CustomControls.RJControls.RJButton();
-            this.btnEliminar = new CustomControls.RJControls.RJButton();
-            this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.btnLimpiar = new CustomControls.RJControls.RJButton();
-            this.btnConsultar = new CustomControls.RJControls.RJButton();
-            this.btnVerDetalles = new CustomControls.RJControls.RJButton();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.gbResultados.SuspendLayout();
@@ -78,9 +78,9 @@ namespace FarmaTown.Presentacion.Transacciones
             this.label8.Location = new System.Drawing.Point(509, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 33);
+            this.label8.Size = new System.Drawing.Size(235, 33);
             this.label8.TabIndex = 48;
-            this.label8.Text = "Consultar Venta";
+            this.label8.Text = "Consultar Ventas";
             // 
             // gbFiltros
             // 
@@ -253,68 +253,6 @@ namespace FarmaTown.Presentacion.Transacciones
             this.dgvVentas.Size = new System.Drawing.Size(1013, 208);
             this.dgvVentas.TabIndex = 52;
             this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
-            // 
-            // idVenta
-            // 
-            this.idVenta.HeaderText = "idVenta";
-            this.idVenta.Name = "idVenta";
-            this.idVenta.Visible = false;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
-            // 
-            // nroFactura
-            // 
-            this.nroFactura.HeaderText = "N° Factura";
-            this.nroFactura.Name = "nroFactura";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.Width = 150;
-            // 
-            // farmacia
-            // 
-            this.farmacia.HeaderText = "Farmacia";
-            this.farmacia.Name = "farmacia";
-            this.farmacia.Width = 200;
-            // 
-            // total
-            // 
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            // 
-            // medioPago
-            // 
-            this.medioPago.HeaderText = "Medio Pago";
-            this.medioPago.Name = "medioPago";
-            this.medioPago.Width = 150;
-            // 
-            // tipoFactura
-            // 
-            this.tipoFactura.HeaderText = "Tipo Factura";
-            this.tipoFactura.Name = "tipoFactura";
-            // 
-            // obraSocial
-            // 
-            this.obraSocial.HeaderText = "Obra Social";
-            this.obraSocial.Name = "obraSocial";
-            this.obraSocial.Width = 150;
-            // 
-            // empleado
-            // 
-            this.empleado.HeaderText = "Empleado";
-            this.empleado.Name = "empleado";
-            this.empleado.Width = 200;
-            // 
-            // localidad
-            // 
-            this.localidad.HeaderText = "Localidad";
-            this.localidad.Name = "localidad";
-            this.localidad.Width = 200;
             // 
             // gbResultados
             // 
@@ -506,6 +444,69 @@ namespace FarmaTown.Presentacion.Transacciones
             this.btnVerDetalles.UseVisualStyleBackColor = false;
             this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
             // 
+            // idVenta
+            // 
+            this.idVenta.HeaderText = "idVenta";
+            this.idVenta.Name = "idVenta";
+            this.idVenta.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
+            this.estado.Width = 150;
+            // 
+            // nroFactura
+            // 
+            this.nroFactura.HeaderText = "N° Factura";
+            this.nroFactura.Name = "nroFactura";
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.Width = 150;
+            // 
+            // farmacia
+            // 
+            this.farmacia.HeaderText = "Farmacia";
+            this.farmacia.Name = "farmacia";
+            this.farmacia.Width = 200;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            // 
+            // medioPago
+            // 
+            this.medioPago.HeaderText = "Medio Pago";
+            this.medioPago.Name = "medioPago";
+            this.medioPago.Width = 150;
+            // 
+            // tipoFactura
+            // 
+            this.tipoFactura.HeaderText = "Tipo Factura";
+            this.tipoFactura.Name = "tipoFactura";
+            // 
+            // obraSocial
+            // 
+            this.obraSocial.HeaderText = "Obra Social";
+            this.obraSocial.Name = "obraSocial";
+            this.obraSocial.Width = 150;
+            // 
+            // empleado
+            // 
+            this.empleado.HeaderText = "Empleado";
+            this.empleado.Name = "empleado";
+            this.empleado.Width = 200;
+            // 
+            // localidad
+            // 
+            this.localidad.HeaderText = "Localidad";
+            this.localidad.Name = "localidad";
+            this.localidad.Width = 200;
+            // 
             // frmConsultaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -566,6 +567,7 @@ namespace FarmaTown.Presentacion.Transacciones
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnEliminar;
         private CustomControls.RJControls.RJButton btnAgregar;
+        private CustomControls.RJControls.RJButton btnVerDetalles;
         private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroFactura;
@@ -577,6 +579,5 @@ namespace FarmaTown.Presentacion.Transacciones
         private System.Windows.Forms.DataGridViewTextBoxColumn obraSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
-        private CustomControls.RJControls.RJButton btnVerDetalles;
     }
 }
