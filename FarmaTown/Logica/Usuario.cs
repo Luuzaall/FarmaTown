@@ -69,5 +69,10 @@ namespace FarmaTown.Logica
         {
             return this.oUsuarioDao.cambiarEstado(oUsuario, seHabilita);
         }
+
+        internal bool esVendedor()
+        {
+            return Rol.esVendedor();
+        }
     }
 }

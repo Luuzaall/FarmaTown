@@ -24,6 +24,13 @@ namespace FarmaTown.Logica
         {
             return oRolDao.recuperarTodos();
         }
+
+        internal bool esVendedor()
+        {
+            if (this.IdRol == 2)
+                return true;
+            return false;
+        }
     }
 
 }

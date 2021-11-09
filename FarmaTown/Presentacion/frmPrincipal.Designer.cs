@@ -288,7 +288,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))));
-            this.lblUsuario.Location = new System.Drawing.Point(23, 124);
+            this.lblUsuario.Location = new System.Drawing.Point(46, 124);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(233, 47);
             this.lblUsuario.TabIndex = 1;

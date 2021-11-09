@@ -153,7 +153,7 @@ namespace FarmaTown.Presentacion
         }
         private void medicamentosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmMedicamentos oFrmMedicamentos = new frmMedicamentos(FormMode.management);
+            frmMedicamentos oFrmMedicamentos = new frmMedicamentos(FormMode.management, oUsuarioLogueado);
             oFrmMedicamentos.ShowDialog();
         }
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -33,6 +33,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
+            this.idMedicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAviso = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtbMedicamento = new System.Windows.Forms.TextBox();
@@ -46,12 +52,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnEliminar = new CustomControls.RJControls.RJButton();
             this.btnEditar = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
-            this.idMedicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -86,7 +86,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Black;
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnActualizar.Location = new System.Drawing.Point(939, 101);
+            this.btnActualizar.Location = new System.Drawing.Point(939, 148);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 48);
             this.btnActualizar.TabIndex = 15;
@@ -123,6 +123,48 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.dgvMedicamentos.TabIndex = 14;
             this.dgvMedicamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellClick);
             // 
+            // idMedicamentos
+            // 
+            this.idMedicamentos.HeaderText = "ID";
+            this.idMedicamentos.Name = "idMedicamentos";
+            this.idMedicamentos.ReadOnly = true;
+            this.idMedicamentos.Visible = false;
+            this.idMedicamentos.Width = 50;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 200;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo Medicamento";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 200;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio Lista";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 130;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 200;
+            // 
             // lblAviso
             // 
             this.lblAviso.AutoSize = true;
@@ -130,9 +172,9 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.lblAviso.ForeColor = System.Drawing.Color.Maroon;
             this.lblAviso.Location = new System.Drawing.Point(301, 528);
             this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(284, 22);
+            this.lblAviso.Size = new System.Drawing.Size(346, 22);
             this.lblAviso.TabIndex = 23;
-            this.lblAviso.Text = "Debe elegir un usuario primero";
+            this.lblAviso.Text = "Debe elegir un medicamento primero";
             // 
             // groupBox1
             // 
@@ -361,48 +403,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // idMedicamentos
-            // 
-            this.idMedicamentos.HeaderText = "ID";
-            this.idMedicamentos.Name = "idMedicamentos";
-            this.idMedicamentos.ReadOnly = true;
-            this.idMedicamentos.Visible = false;
-            this.idMedicamentos.Width = 50;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo Medicamento";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 200;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio Lista";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 130;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 200;
             // 
             // frmMedicamentos
             // 

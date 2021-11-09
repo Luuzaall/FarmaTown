@@ -180,7 +180,7 @@ namespace FarmaTown.Presentacion
              * Debe ejecutar el form de consulta medicamentos
              * Y pasar por parámtetro el elegido.
              */
-            frmMedicamentos oFrmMed = new frmMedicamentos(FormMode.selection);
+            frmMedicamentos oFrmMed = new frmMedicamentos(FormMode.selection, oUsuario);
             DialogResult resultado = oFrmMed.ShowDialog();
             if (resultado != DialogResult.Cancel)
             {

@@ -21,13 +21,15 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
         private bool mostrarConBorrados = false;
         private frmABMMedicamentos frmABMMed;
         FormMode modo;
+        Usuario usuarioLogueado;
 
-        public frmMedicamentos(FormMode _modo)
+        public frmMedicamentos(FormMode _modo, Usuario _usuarioLogueado)
         {
             InitializeComponent();
             oMedicamento = new Medicamento();
             oTipoMedicamento = new TipoMedicamento();
             modo = _modo;
+            usuarioLogueado = _usuarioLogueado;
 
         }
 
@@ -50,7 +52,16 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                 this.dgvMedicamentos.Rows.Add("No se encontraron Medicamentos...");
             }
             if (modo == FormMode.selection)
+            {
                 this.btnSeleccionar.Visible = true;
+                if (usuarioLogueado.esVendedor())
+                {
+                    this.btnAgregar.Visible = false;
+                    this.btnEliminar.Visible = false;
+                    this.btnEditar.Visible = false;
+                }
+            }
+                
         }
 
         private void cargarGrilla(DataGridView dgv, List<Medicamento> lista)
@@ -159,6 +170,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                     , idTipo, mostrarConBorrados);
                 this.cargarGrilla(this.dgvMedicamentos, resultadoMedicamentos);
             }
+
+            this.deshabilitarBotones();
         }
 
         private bool validarDatos()
