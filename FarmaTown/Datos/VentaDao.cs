@@ -305,7 +305,7 @@ namespace FarmaTown.Datos
                 ", o.nombre as obraSocial" +
                 ", l.nombre as localidad" +
                 ", tp.descripcion as tipoMedicamento" +
-                ", v.idEstado " +
+                ", est.nombre as estado " +
                 ", ROUND(SUM(precio), 2) as 'Total'" +
                 " FROM Ventas v" +
                 " INNER JOIN DetalleVentas d ON d.idVenta = v.idVenta" +
@@ -318,6 +318,7 @@ namespace FarmaTown.Datos
                 " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
                 " INNER JOIN Medicamentos med ON d.idMedicamento = med.idMedicamento" +
                 " INNER JOIN TiposMedicamento tp ON med.tipoMedicamento = tp.idTipo" +
+                " INNER JOIN Estados est ON v.idEstado = est.idEstado" +
                 " WHERE v.fechaFactura BETWEEN CONVERT(DATE,'" + fechaDesde + "',105)" +
                     " AND CONVERT(DATE,'" + fechaHasta + "',105)";
 
@@ -338,7 +339,8 @@ namespace FarmaTown.Datos
                         " , v.nroFactura" +
                         ", o.nombre" +
                         ", l.nombre" +
-                        ", tp.descripcion";
+                        ", tp.descripcion" +
+                        ", est.nombre";
 
 
             return DBHelper.getDBHelper().consultaSQL(query);

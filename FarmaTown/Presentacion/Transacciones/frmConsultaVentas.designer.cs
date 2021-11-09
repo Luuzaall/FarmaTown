@@ -249,6 +249,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.dgvVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
             this.dgvVentas.Location = new System.Drawing.Point(21, 31);
             this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.ReadOnly = true;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(1013, 208);
             this.dgvVentas.TabIndex = 52;
@@ -448,63 +449,74 @@ namespace FarmaTown.Presentacion.Transacciones
             // 
             this.idVenta.HeaderText = "idVenta";
             this.idVenta.Name = "idVenta";
+            this.idVenta.ReadOnly = true;
             this.idVenta.Visible = false;
             // 
             // estado
             // 
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             this.estado.Width = 150;
             // 
             // nroFactura
             // 
             this.nroFactura.HeaderText = "N° Factura";
             this.nroFactura.Name = "nroFactura";
+            this.nroFactura.ReadOnly = true;
             // 
             // fecha
             // 
             this.fecha.HeaderText = "Fecha";
             this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
             this.fecha.Width = 150;
             // 
             // farmacia
             // 
             this.farmacia.HeaderText = "Farmacia";
             this.farmacia.Name = "farmacia";
+            this.farmacia.ReadOnly = true;
             this.farmacia.Width = 200;
             // 
             // total
             // 
             this.total.HeaderText = "Total";
             this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
             // medioPago
             // 
             this.medioPago.HeaderText = "Medio Pago";
             this.medioPago.Name = "medioPago";
+            this.medioPago.ReadOnly = true;
             this.medioPago.Width = 150;
             // 
             // tipoFactura
             // 
             this.tipoFactura.HeaderText = "Tipo Factura";
             this.tipoFactura.Name = "tipoFactura";
+            this.tipoFactura.ReadOnly = true;
             // 
             // obraSocial
             // 
             this.obraSocial.HeaderText = "Obra Social";
             this.obraSocial.Name = "obraSocial";
+            this.obraSocial.ReadOnly = true;
             this.obraSocial.Width = 150;
             // 
             // empleado
             // 
             this.empleado.HeaderText = "Empleado";
             this.empleado.Name = "empleado";
+            this.empleado.ReadOnly = true;
             this.empleado.Width = 200;
             // 
             // localidad
             // 
             this.localidad.HeaderText = "Localidad";
             this.localidad.Name = "localidad";
+            this.localidad.ReadOnly = true;
             this.localidad.Width = 200;
             // 
             // frmConsultaVentas

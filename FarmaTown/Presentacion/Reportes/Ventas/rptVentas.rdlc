@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>bf27a891-3cd1-445e-92d0-d07afce64b41</rd:DataSourceID>
+      <rd:DataSourceID>2e1619c6-bfae-43c2-a614-b4597ae9f19a</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -57,10 +57,14 @@
           <DataField>tipoMedicamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="estado">
+          <DataField>estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSVentas</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\valen\Source\Repos\Luuzaall\FarmaTown\FarmaTown\Datos\Reportes\DSVentas.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\marus\Source\Repos\Luuzaall\FarmaTown\FarmaTown\Datos\Reportes\DSVentas.xsd</rd:SchemaPath>
         <rd:TableName>dtVentas</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -98,6 +102,9 @@
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.79104cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -376,6 +383,40 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox31">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Estado</Value>
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox31</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Silver</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -624,6 +665,38 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>localidad</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="estado">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!estado.Value</Value>
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>estado</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -914,12 +987,47 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox33">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -1064,10 +1172,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSVentas</DataSetName>
-            <Top>0.43146cm</Top>
-            <Left>0.68599cm</Left>
+            <Top>0.34243cm</Top>
+            <Left>0.3285cm</Left>
             <Height>1.8cm</Height>
-            <Width>25.11936cm</Width>
+            <Width>27.61936cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1424,9 +1532,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>2.28354cm</Top>
-            <Left>0.68599cm</Left>
+            <Top>2.24826cm</Top>
+            <Left>1.5062cm</Left>
             <Height>5.48569cm</Height>
             <Width>7.83924cm</Width>
             <ZIndex>1</ZIndex>
@@ -1797,9 +1904,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>2.28354cm</Top>
-            <Left>8.70162cm</Left>
+            <Top>2.24826cm</Top>
+            <Left>9.52183cm</Left>
             <Height>5.48569cm</Height>
             <Width>8.15799cm</Width>
             <ZIndex>2</ZIndex>
@@ -2175,9 +2281,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>2.28354cm</Top>
-            <Left>17.03599cm</Left>
+            <Top>2.24826cm</Top>
+            <Left>17.8562cm</Left>
             <Height>5.48569cm</Height>
             <Width>8.76938cm</Width>
             <ZIndex>3</ZIndex>
@@ -2537,9 +2642,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>8.04264cm</Top>
-            <Left>8.70162cm</Left>
+            <Top>8.00736cm</Top>
+            <Left>9.52183cm</Left>
             <Height>5.23812cm</Height>
             <Width>8.15799cm</Width>
             <ZIndex>4</ZIndex>
@@ -2908,9 +3012,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>8.04264cm</Top>
-            <Left>0.68599cm</Left>
+            <Top>8.00736cm</Top>
+            <Left>1.5062cm</Left>
             <Height>5.23812cm</Height>
             <Width>7.83924cm</Width>
             <ZIndex>5</ZIndex>
@@ -2958,6 +3061,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -3270,9 +3375,8 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DSVentas</DataSetName>
-            <Top>8.04264cm</Top>
-            <Left>17.03601cm</Left>
+            <Top>8.00736cm</Top>
+            <Left>17.85622cm</Left>
             <Height>5.23812cm</Height>
             <Width>8.76936cm</Width>
             <ZIndex>6</ZIndex>
@@ -3286,10 +3390,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>6.18004in</Height>
+        <Height>5.36754in</Height>
         <Style />
       </Body>
-      <Width>10.48276in</Width>
+      <Width>11.16467in</Width>
       <Page>
         <PageHeader>
           <Height>6.25932cm</Height>
@@ -4023,8 +4127,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.24694cm</Top>
-              <Left>20.22092cm</Left>
+              <Top>0.21166cm</Top>
+              <Left>22.15238cm</Left>
               <Height>0.75875cm</Height>
               <Width>3.79647cm</Width>
               <Style>
@@ -4044,7 +4148,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!PageName</Value>
+                      <Value>=Globals!PageNumber</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>15pt</FontSize>
@@ -4058,8 +4162,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.14111cm</Top>
-              <Left>24.08794cm</Left>
+              <Top>0.10583cm</Top>
+              <Left>26.0194cm</Left>
               <Height>0.75875cm</Height>
               <Width>1.33585cm</Width>
               <ZIndex>1</ZIndex>

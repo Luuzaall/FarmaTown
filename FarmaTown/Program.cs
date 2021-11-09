@@ -20,15 +20,15 @@ namespace FarmaTown.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPrincipal());
+            Application.Run(new frmPrincipal());
 
             //Usuario us = new Usuario();
             //Application.Run(new frmVentas(us.traerUsuario("Nao")));
             //Usuario us = new Usuario();
             //Application.Run(new frmConsultaVentas(us.traerUsuario("maru")));
 
-            Usuario us = new Usuario();
-            Application.Run(new frmConsultaVentas(us.traerUsuario("Nao")));
+            //Usuario us = new Usuario();
+            //Application.Run(new frmConsultaVentas(us.traerUsuario("Nao")));
 
             //Reportes
 

@@ -105,5 +105,9 @@ namespace FarmaTown
             return false;
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.txtbUsuario.Focus();
+        }
     }
 }
