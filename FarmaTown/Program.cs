@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Reportes.ObrasSociales;
 using FarmaTown.Presentacion.Transacciones;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace FarmaTown.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmPrincipal());
 
             //Usuario us = new Usuario();
             //Application.Run(new frmVentas(us.traerUsuario("Nao")));
@@ -34,7 +35,7 @@ namespace FarmaTown.Presentacion
 
             //Application.Run(new frmReporteTMedicamentosxVenta());
             //Application.Run(new frmReporteVentasxFarmacia());
-            //Application.Run(new frmReporteClientes());
+            Application.Run(new frmReporteObrasSociales());
 
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());

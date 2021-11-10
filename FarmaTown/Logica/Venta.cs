@@ -39,12 +39,12 @@ namespace FarmaTown.Logica
         {
             return this.oVenta.recuperarTodos();
         }
-        internal List<Venta> recuperarVentasConParam(string idFarm, string idLocalidad
-            , string idEmpleado, string idObraSocial, string fechaDesde
+        internal List<Venta> recuperarVentasConParam(string idFarm, string idEstado
+            , string nroFactura, string fechaDesde
             , string fechaHasta)
         {
-            return this.oVenta.recuperarVentasConParam(idFarm, idLocalidad
-                , idEmpleado, idObraSocial, fechaDesde, fechaHasta);
+            return this.oVenta.recuperarVentasConParam(idFarm, idEstado
+                , nroFactura, fechaDesde, fechaHasta);
         }
 
 

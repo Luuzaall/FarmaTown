@@ -33,73 +33,55 @@ namespace FarmaTown.Datos
 
         public List<Venta> recuperarTodos()
         {
-            string query =" SELECT v.idVenta" +
+            string query = "SELECT v.idVenta" +
                     " , f.nombre as nomFarmacia" +
                     " , f.idFarmacia" +
                     " , v.nroFactura" +
-                    " , c.idCliente " +
                     ", v.fechaFactura" +
                     ", e.idEmpleado " +
-                    ", t.idTipoFactura " +
-                    ", m.idMedioPago " +
-                    ", b.idBarrio " +
-                    ", v.idOS " +
                     ", v.idEstado" +
+                    ", v.idCliente" +
+                    ", v.idTipoFactura" +
+                    ", v.idMedioPago" +
+                    ", v.idOS" +
                     " FROM Ventas v" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                    " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                    " INNER JOIN Clientes c ON v.idCliente = c.idCliente" +
+                    " INNER JOIN Estados est ON est.idEstado = v.idEstado" +
                     " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
-                    " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
-                    " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
-                    " WHERE v.borrado = 0; ";
+                    " WHERE v.borrado = 0 ";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            return listMapping(tabla);
+            return listMapping(tabla, true);
                
         }
 
-        internal List<Venta> recuperarVentasConParam(string idFarm, string idLocalidad
-            , string idEmpleado, string idObraSocial, string fechaDesde
+        internal List<Venta> recuperarVentasConParam(string idFarm, string idEstado
+            ,string nroFactura, string fechaDesde
             , string fechaHasta)
         {
             string query = "SELECT v.idVenta" +
                     " , f.nombre as nomFarmacia" +
                     " , f.idFarmacia" +
                     " , v.nroFactura" +
-                    " , c.idCliente " +
                     ", v.fechaFactura" +
-                    ", e.idEmpleado " +
-                    ", t.idTipoFactura " +
-                    ", m.idMedioPago " +
-                    ", b.idBarrio " +
-                    ", v.idOS" +
                     ", v.idEstado" +
                     " FROM Ventas v" +
                     " INNER JOIN Farmacias f ON v.idFarmacia = f.idFarmacia" +
-                    " INNER JOIN Barrios b ON f.idBarrio = b.idBarrio" +
-                    " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                    " INNER JOIN Clientes c ON v.idCliente = c.idCliente" +
-                    " INNER JOIN Empleados e ON v.idEmpleado = e.idEmpleado" +
-                    " INNER JOIN TiposFactura t ON v.idTipoFactura = t.idTipoFactura" +
-                    " INNER JOIN MediosPago m ON v.idMedioPago = m.idMedioPago" +
+                    " INNER JOIN Estados est ON est.idEstado = v.idEstado" +
                     " WHERE v.borrado = 0 " +
                     " AND v.fechaFactura BETWEEN CONVERT(DATE, '" + fechaDesde + "', 105)" +
                     " AND CONVERT(DATE,'" + fechaHasta + "',105)";
             if (idFarm != "-1")
                 query += " AND f.idFarmacia = " + idFarm;
-            if (idLocalidad != "-1")
-                query += " AND l.idLocalidad = " + idLocalidad;
-            if (idEmpleado != "-1")
-                query += " AND e.idEmpleado = " + idEmpleado;
-            if (idObraSocial != "-1")
-                query += " AND v.idOS = " + idObraSocial;
+            if (idEstado != "-1")
+                query += " AND v.idEstado = " + idEstado;
+            if (nroFactura != "")
+                query += " AND v.nroFactura = %" + nroFactura + "%";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            return listMapping(tabla);
+            return listMapping(tabla, true);
 
         }
 
@@ -176,7 +158,7 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            return objectMapping(tabla.Rows[0]);
+            return objectMapping(tabla.Rows[0], false);
         }
 
         public bool crear(Venta nuevaVenta)
@@ -346,7 +328,7 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 
-        private List<Venta> listMapping(DataTable tabla)
+        private List<Venta> listMapping(DataTable tabla, bool optima)
         {
             /*
              * Recibe una tabla con filas
@@ -360,19 +342,14 @@ namespace FarmaTown.Datos
             for (int i = 0; i < cantFilas; i++)
             {
                 DataRow fila = tabla.Rows[i];
-                lista.Add(this.objectMapping(fila));
+                lista.Add(this.objectMapping(fila, optima));
             }
 
             return lista;
         }
-        private Venta objectMapping(DataRow row)
+        private Venta objectMapping(DataRow row, bool optima)
         {
             int idFarmacia = Convert.ToInt32(row["idFarmacia"].ToString());
-            int idCliente = Convert.ToInt32(row["idCliente"].ToString());
-            int idEmpleado = Convert.ToInt32(row["idEmpleado"].ToString());
-            int idTipoFactura = Convert.ToInt32(row["idTipoFactura"].ToString());
-            int idMedioPago = Convert.ToInt32(row["idMedioPago"].ToString());
-            int idOS = Convert.ToInt32(row["idOS"].ToString());
             int idEstado = Convert.ToInt32(row["idEstado"].ToString());
 
             int idVenta = Convert.ToInt32(row["idVenta"].ToString());
@@ -385,14 +362,24 @@ namespace FarmaTown.Datos
                 Detalles = listaDetalles,
                 Farmacia = this.oFarmaciaDao.traerFarmacia(idFarmacia),
                 NroFactura = row["nroFactura"].ToString(),
-                Cliente = this.oClienteDao.traer(idCliente),
-                ObraSocial = this.oObraSocialDao.traer(idOS),
                 FechaFactura = Convert.ToDateTime(row["fechaFactura"].ToString()),
-                Empleado = this.oEmpleadoDao.traerEmpleado(idEmpleado),
-                TipoFactura = this.oTipoFacturaDao.traer(idTipoFactura),
-                MedioPago = this.oMedioPagoDao.traer(idMedioPago),
                 EstadoActual = oEstadoDao.traer(idEstado),
             };
+
+            if (!optima)
+            {
+                int idCliente = Convert.ToInt32(row["idCliente"].ToString());
+                int idTipoFactura = Convert.ToInt32(row["idTipoFactura"].ToString());
+                int idMedioPago = Convert.ToInt32(row["idMedioPago"].ToString());
+                int idOS = Convert.ToInt32(row["idOS"].ToString());
+                int idEmpleado = Convert.ToInt32(row["idEmpleado"].ToString());
+
+                oVenta.Empleado = this.oEmpleadoDao.traerEmpleado(idEmpleado);
+                oVenta.Cliente = this.oClienteDao.traer(idCliente);
+                oVenta.ObraSocial = this.oObraSocialDao.traer(idOS);
+                oVenta.TipoFactura = this.oTipoFacturaDao.traer(idTipoFactura);
+                oVenta.MedioPago = this.oMedioPagoDao.traer(idMedioPago);
+            }
             return oVenta;
         }
     }

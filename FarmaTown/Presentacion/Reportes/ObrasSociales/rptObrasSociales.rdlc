@@ -83,7 +83,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Silver</BackgroundColor>
+                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -117,7 +117,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>Silver</BackgroundColor>
+                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -197,6 +197,79 @@
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=CountDistinct(Fields!obraSocial.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
@@ -234,7 +307,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
-                          <BackgroundColor>Silver</BackgroundColor>
+                          <BackgroundColor>Gray</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -298,12 +371,50 @@
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>5.14583cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox8">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Cantidad Obras Sociales</Value>
+                                <Style>
+                                  <FontFamily>Century Gothic</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox8</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>LightGrey</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSObrasSociales</DataSetName>
             <Top>0.63415cm</Top>
             <Left>2.2987cm</Left>
-            <Height>1.2cm</Height>
+            <Height>1.8cm</Height>
             <Width>15.43749cm</Width>
             <Style>
               <Border>
@@ -347,6 +458,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -631,7 +744,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Cobertura de Obras Sociales</Caption>
+                <Caption>Cobertura por Obras Sociales</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontStyle>Italic</FontStyle>
@@ -662,7 +775,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DSObrasSociales</DataSetName>
-            <Top>2.78665cm</Top>
+            <Top>3.44811cm</Top>
             <Left>2.2987cm</Left>
             <Height>6.52521cm</Height>
             <Width>15.4375cm</Width>
@@ -677,8 +790,8 @@
             </Style>
           </Chart>
           <Line Name="Line1">
-            <Top>9.87568cm</Top>
-            <Left>1.08162cm</Left>
+            <Top>10.34311cm</Top>
+            <Left>1.08161cm</Left>
             <Height>0cm</Height>
             <Width>18.61125cm</Width>
             <ZIndex>2</ZIndex>
@@ -690,7 +803,7 @@
             </Style>
           </Line>
           <Line Name="Line2">
-            <Top>2.36332cm</Top>
+            <Top>2.91894cm</Top>
             <Left>1.08162cm</Left>
             <Height>0cm</Height>
             <Width>18.61125cm</Width>
@@ -747,6 +860,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -1059,8 +1174,8 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DSObrasSociales</DataSetName>
-            <Top>10.34311cm</Top>
-            <Left>2.2987cm</Left>
+            <Top>10.81054cm</Top>
+            <Left>2.29869cm</Left>
             <Height>10.05479cm</Height>
             <Width>15.4375cm</Width>
             <ZIndex>4</ZIndex>
@@ -1074,13 +1189,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>8.14799in</Height>
+        <Height>8.35632in</Height>
         <Style />
       </Body>
-      <Width>8.24317in</Width>
+      <Width>8.03484in</Width>
       <Page>
         <PageHeader>
-          <Height>3.91351cm</Height>
+          <Height>4.41622cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1109,8 +1224,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>2.51963cm</Top>
-              <Left>9.24086cm</Left>
+              <Top>2.22859cm</Top>
+              <Left>8.55294cm</Left>
               <Height>0.79692cm</Height>
               <Width>8.78701cm</Width>
               <Style>
@@ -1146,7 +1261,7 @@
               <Top>0.75242cm</Top>
               <Left>5.65891cm</Left>
               <Height>1.10271cm</Height>
-              <Width>9.95999cm</Width>
+              <Width>9.56312cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1185,8 +1300,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>2.51963cm</Top>
-              <Left>5.01225cm</Left>
+              <Top>2.22859cm</Top>
+              <Left>4.32433cm</Left>
               <Height>0.79692cm</Height>
               <Width>4.19333cm</Width>
               <ZIndex>2</ZIndex>
@@ -1216,6 +1331,82 @@
                 </Border>
               </Style>
             </Image>
+            <Textbox Name="Textbox19">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Cantidad Coberturas</Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>15pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>: </Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>15pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox16</rd:DefaultName>
+              <Top>3.38392cm</Top>
+              <Left>4.32433cm</Left>
+              <Height>0.79692cm</Height>
+              <Width>5.95722cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=CountRows("DSObrasSociales")</Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>15pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox16</rd:DefaultName>
+              <Top>3.38392cm</Top>
+              <Left>10.38739cm</Left>
+              <Height>0.79692cm</Height>
+              <Width>6.03534cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>
@@ -1225,7 +1416,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>1.34938cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1250,7 +1441,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
-              <Top>0.95677cm</Top>
+              <Top>0.17639cm</Top>
               <Left>18.05433cm</Left>
               <Height>0.62646cm</Height>
               <Width>1.63854cm</Width>
@@ -1281,7 +1472,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox18</rd:DefaultName>
-              <Top>0.95677cm</Top>
+              <Top>0.37469cm</Top>
               <Left>13.06724cm</Left>
               <Height>0.62646cm</Height>
               <Width>4.96062cm</Width>
@@ -1301,7 +1492,7 @@
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>#d9ffca</BackgroundColor>
+            <BackgroundColor>#f0ffe1</BackgroundColor>
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>

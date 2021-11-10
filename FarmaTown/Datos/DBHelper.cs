@@ -171,8 +171,6 @@ namespace FarmaTown.Datos
                 this.closeConnection(cnn);
             }
         }
-
-
         private void closeConnection(SqlConnection cnn)
         {
             /*

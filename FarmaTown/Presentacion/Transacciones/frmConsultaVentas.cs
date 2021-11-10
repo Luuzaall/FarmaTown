@@ -16,18 +16,12 @@ namespace FarmaTown.Presentacion.Transacciones
     {
         Venta oVenta;
         Farmacia oFarmacia;
-        Localidad oLocalidad;
-        Empleado oEmpleado;
-        ObraSocial oObraSocial;
         Usuario oUsuarioLogueado;
         public frmConsultaVentas(Usuario _oUsuarioLogueado)
         {
             InitializeComponent();
             oVenta = new Venta();
             oFarmacia = new Farmacia();
-            oLocalidad = new Localidad();
-            oEmpleado = new Empleado();
-            oObraSocial = new ObraSocial();
             oUsuarioLogueado = _oUsuarioLogueado;
         }
 
@@ -38,12 +32,8 @@ namespace FarmaTown.Presentacion.Transacciones
 
             ComboBoxService.cargarCombo(this.cboFarmacias, oFarmacia.recuperarTodos()
                 , "Nombre", "IdFarmacia");
-            ComboBoxService.cargarCombo(this.cboLocalidades, oLocalidad.recuperarTodos()
-                , "Nombre", "IdLocalidad");
-            ComboBoxService.cargarCombo(this.cboEmpleados, oEmpleado.recuperarTodos()
-                , "Nombre", "IdEmpleado");
-            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos()
-                , "Nombre", "IdOS");
+            ComboBoxService.cargarCombo(this.cboEstados, Estado.recuperarTodos()
+                , "Nombre", "IdEstado");
 
         }
 
@@ -56,49 +46,36 @@ namespace FarmaTown.Presentacion.Transacciones
             this.dtpFechaDesde.Value = DateTime.Today.AddDays(-7);
             this.dtpFechaHasta.Value = DateTime.Today.AddDays(1);
             this.cboFarmacias.SelectedIndex = -1;
-            this.cboLocalidades.SelectedIndex = -1;
-            this.cboEmpleados.SelectedIndex = -1;
-            this.cboObrasSociales.SelectedIndex = -1;
+            this.cboEstados.SelectedIndex = -1;
+            this.txtbNroFactura.Text = "";
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             int indexFarm = this.cboFarmacias.SelectedIndex;
-            int indexLocalidad = this.cboLocalidades.SelectedIndex;
-            int indexEmpleado = this.cboEmpleados.SelectedIndex;
-            int indexObraSocial = this.cboObrasSociales.SelectedIndex;
+            int indexEstado = this.cboEstados.SelectedIndex;
             string fechaDesde = this.dtpFechaDesde.Value.ToString();
             string fechaHasta = this.dtpFechaHasta.Value.ToString();
+            string nroFactura = this.txtbNroFactura.Text;
 
             string idFarm;
-            string idLocalidad;
+            string idEstado;
             string idEmpleado;
-            string idObraSocial;
 
             if (indexFarm == -1)
                 idFarm = "-1";
             else
                 idFarm = this.cboFarmacias.SelectedValue.ToString();
 
-            if (indexLocalidad == -1)
-                idLocalidad = "-1";
+            if (indexEstado == -1)
+                idEstado = "-1";
             else
-                idLocalidad = this.cboLocalidades.SelectedValue.ToString();
-
-            if (indexEmpleado == -1)
-                idEmpleado = "-1";
-            else
-                idEmpleado = this.cboEmpleados.SelectedValue.ToString();
-
-            if (indexObraSocial == -1)
-                idObraSocial = "-1";
-            else
-                idObraSocial = this.cboObrasSociales.SelectedValue.ToString();
+                idEstado = this.cboEstados.SelectedValue.ToString();
 
             if (validarCampos())
             {
                 List<Venta> ventas = this.oVenta.recuperarVentasConParam(idFarm,
-                    idLocalidad, idEmpleado, idObraSocial, fechaDesde, fechaHasta);
+                    idEstado, nroFactura, fechaDesde, fechaHasta);
                 this.cargarGrilla(this.dgvVentas, ventas);
             }
 
@@ -109,10 +86,6 @@ namespace FarmaTown.Presentacion.Transacciones
         {
             DateTime fechaDesde = this.dtpFechaDesde.Value;
             DateTime fechaHasta = this.dtpFechaHasta.Value;
-            int indexFarmacia = this.cboFarmacias.SelectedIndex;
-            int indexEmpleado = this.cboEmpleados.SelectedIndex;
-            int indexLocalidad = this.cboLocalidades.SelectedIndex;
-            int indexObraSocial = this.cboObrasSociales.SelectedIndex;
 
             if (fechaHasta < fechaDesde)
             {
@@ -148,12 +121,7 @@ namespace FarmaTown.Presentacion.Transacciones
                                 lista[i].NroFactura.ToString(),
                                 lista[i].FechaFactura.ToString(),
                                 lista[i].Farmacia.Nombre.ToString(),
-                                lista[i].obtenerTotales()[0],
-                                lista[i].MedioPago.Nombre.ToString(),
-                                lista[i].TipoFactura.Nombre.ToString(),
-                                lista[i].ObraSocial.Nombre.ToString(),
-                                lista[i].Empleado.Nombre.ToString(),
-                                lista[i].Farmacia.Barrio.Localidad.Nombre.ToString()) ;
+                                lista[i].obtenerTotales()[0]);
                 }
                 dgv.ClearSelection();
             }
@@ -220,6 +188,11 @@ namespace FarmaTown.Presentacion.Transacciones
             Venta ventaSelecc = this.oVenta.traer(nroVenta);
             oFrmBajaVenta.seleccionarVenta(frmVenta.FormMode.details, ventaSelecc);
             oFrmBajaVenta.ShowDialog();
+        }
+
+        private void txtbNroFactura_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.noDigitos(e);
         }
     }
 }

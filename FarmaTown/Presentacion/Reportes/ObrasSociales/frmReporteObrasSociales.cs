@@ -46,5 +46,10 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
         {
             this.rpvOS.RefreshReport();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

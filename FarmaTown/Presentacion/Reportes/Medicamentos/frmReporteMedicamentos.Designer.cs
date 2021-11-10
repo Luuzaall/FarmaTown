@@ -32,6 +32,8 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteMedicamentos));
+            this.dSMedicamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSMedicamentos = new FarmaTown.Datos.Reportes.DSMedicamentos();
             this.rpvMedicamentos = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -39,14 +41,22 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.txtbCantMin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblBarrio = new System.Windows.Forms.Label();
-            this.dSMedicamentos = new FarmaTown.Datos.Reportes.DSMedicamentos();
-            this.dSMedicamentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
-            this.gbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentos)).BeginInit();
+            this.gbFiltros.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dSMedicamentosBindingSource
+            // 
+            this.dSMedicamentosBindingSource.DataSource = this.dSMedicamentos;
+            this.dSMedicamentosBindingSource.Position = 0;
+            // 
+            // dSMedicamentos
+            // 
+            this.dSMedicamentos.DataSetName = "DSMedicamentos";
+            this.dSMedicamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rpvMedicamentos
             // 
@@ -107,7 +117,7 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.txtbCantMin.Location = new System.Drawing.Point(175, 42);
             this.txtbCantMin.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbCantMin.Name = "txtbCantMin";
-            this.txtbCantMin.Size = new System.Drawing.Size(142, 25);
+            this.txtbCantMin.Size = new System.Drawing.Size(171, 25);
             this.txtbCantMin.TabIndex = 53;
             // 
             // label2
@@ -130,16 +140,6 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.lblBarrio.Size = new System.Drawing.Size(147, 23);
             this.lblBarrio.TabIndex = 48;
             this.lblBarrio.Text = "Stock Máximo:";
-            // 
-            // dSMedicamentos
-            // 
-            this.dSMedicamentos.DataSetName = "DSMedicamentos";
-            this.dSMedicamentos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dSMedicamentosBindingSource
-            // 
-            this.dSMedicamentosBindingSource.DataSource = this.dSMedicamentos;
-            this.dSMedicamentosBindingSource.Position = 0;
             // 
             // btnLimpiar
             // 
@@ -212,10 +212,10 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Medicamentos - FarmaTown";
             this.Load += new System.EventHandler(this.frmReporteMedicamentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentos)).EndInit();
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMedicamentosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

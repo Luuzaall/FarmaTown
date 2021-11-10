@@ -361,7 +361,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSMedicamentos</DataSetName>
-            <Top>0.84349cm</Top>
+            <Top>0.3937cm</Top>
             <Left>2.95953cm</Left>
             <Height>1.2cm</Height>
             <Width>15.18584cm</Width>
@@ -408,6 +408,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -768,6 +770,8 @@
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -1271,7 +1275,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>12.19255cm</Left>
+              <Left>12.36894cm</Left>
               <Height>0.75875cm</Height>
               <Width>5.46335cm</Width>
               <Style>
@@ -1305,7 +1309,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox20</rd:DefaultName>
-              <Top>0.17639cm</Top>
+              <Top>0.10583cm</Top>
               <Left>17.83229cm</Left>
               <Height>0.75875cm</Height>
               <Width>2.23177cm</Width>
