@@ -103,6 +103,11 @@
     <Compile Include="Datos\EstadoDao.cs" />
     <Compile Include="Datos\MedioPagoDao.cs" />
     <Compile Include="Datos\OSXMedicamentos.cs" />
+    <Compile Include="Datos\Reportes\DSEmpleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datos\Reportes\DSMedicamentos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,11 +139,6 @@
     <Compile Include="Datos\TipoDocDao.cs" />
     <Compile Include="Datos\TipoMedDao.cs" />
     <Compile Include="Datos\UsuarioDao.cs" />
-    <Compile Include="DSEmpleados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSEmpleados.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Logica\Activa.cs" />
     <Compile Include="Logica\Barrio.cs" />
     <Compile Include="Logica\Cancelada.cs" />
@@ -315,10 +315,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmReporteEmpleados.cs">
+    <Compile Include="Presentacion\Reportes\Empleados\frmReporteEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Reportes\frmReporteEmpleados.Designer.cs">
+    <Compile Include="Presentacion\Reportes\Empleados\frmReporteEmpleados.Designer.cs">
       <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.cs">
@@ -430,13 +430,14 @@
     <EmbeddedResource Include="Presentacion\ABMC%27s\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Reportes\frmReporteEmpleados.resx">
-      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\frmReporteClientes.resx">
       <DependentUpon>frmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\Clientes\rptClientes.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Empleados\frmReporteEmpleados.resx">
+      <DependentUpon>frmReporteEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Reportes\Empleados\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Medicamentos\frmReporteMedicamentos.resx">
       <DependentUpon>frmReporteMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
@@ -445,7 +446,6 @@
       <DependentUpon>frmReporteObrasSociales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Reportes\ObrasSociales\rptObrasSociales.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\rptEmpleados.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Ventas\frmReporteVentas.resx">
       <DependentUpon>frmReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -474,6 +474,17 @@
     </None>
     <None Include="DataSetGeneral.xss">
       <DependentUpon>DataSetGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSEmpleados.xsc">
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\Reportes\DSEmpleados.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEmpleados.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datos\Reportes\DSEmpleados.xss">
+      <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
     <None Include="Datos\Reportes\DSMedicamentos.xsc">
       <DependentUpon>DSMedicamentos.xsd</DependentUpon>
@@ -507,17 +518,6 @@
     </None>
     <None Include="Datos\Reportes\DSVentas.xss">
       <DependentUpon>DSVentas.xsd</DependentUpon>
-    </None>
-    <None Include="DSEmpleados.xsc">
-      <DependentUpon>DSEmpleados.xsd</DependentUpon>
-    </None>
-    <None Include="DSEmpleados.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSEmpleados.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DSEmpleados.xss">
-      <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
     <None Include="Datos\Reportes\DTSClientes.xsc">
       <DependentUpon>DTSClientes.xsd</DependentUpon>

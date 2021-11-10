@@ -77,9 +77,11 @@ namespace FarmaTown.Datos
 
         internal object obtenerDatosReporte(string nom)
         {
-            string query = "SELECT nombre, nroDoc, tipoDoc,idFarmacia " +
-                " FROM Empleados" +
-                " WHERE borrado = 0 AND nombre LIKE '" + nom + "%'"+
+            string query = "SELECT e.nombre, e.nroDoc, td.nombre AS tipoDoc, f.nombre AS farmacia" +
+                " FROM Empleados e" +
+                " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
+                " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
+                " WHERE e.borrado = 0 AND e.nombre LIKE '" + nom + "%'"+
                 " ORDER BY 1";
             return DBHelper.getDBHelper().consultaSQL(query);
         }

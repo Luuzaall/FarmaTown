@@ -1,5 +1,4 @@
 ﻿using FarmaTown.Logica;
-using FarmaTown.Presentacion.Servicios;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaTown.Presentacion.Reportes
+namespace FarmaTown.Presentacion.Reportes.Empleados
 {
     public partial class frmReporteEmpleados : Form
     {
@@ -24,29 +23,26 @@ namespace FarmaTown.Presentacion.Reportes
             oEmpleado = new Empleado();
         }
 
-        
+        private void frmReporteEmpleados_Load(object sender, EventArgs e)
+        {
+            this.rpvEmpleados.RefreshReport();
+        }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             string nom = this.txtbNombre.Text;
 
-            this.rptEmpleados.LocalReport.DataSources.Clear();
+            this.rpvEmpleados.LocalReport.DataSources.Clear();
             Object tabla = oEmpleado.obtenerDatosReporte(nom);
             ReportDataSource rprtDTSource = new ReportDataSource("DSEmpleados", tabla);
 
-            this.rptEmpleados.LocalReport.DataSources.Add(rprtDTSource);
-            this.rptEmpleados.RefreshReport();
+            this.rpvEmpleados.LocalReport.DataSources.Add(rprtDTSource);
+            this.rpvEmpleados.RefreshReport();
         }
 
-        private void frmReporteEmpleados_Load(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.rptEmpleados.RefreshReport();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            this.txtbNombre.Text = "";
         }
     }
-    
 }

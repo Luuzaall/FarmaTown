@@ -7,14 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b210c623-951f-49a0-b222-fc38cfd83641</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="DataSetGeneral">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>1a14d8bd-af4c-46f1-81d7-94af8d233184</rd:DataSourceID>
+      <rd:DataSourceID>f02961cf-44ea-4d0d-a416-33b6266c4e34</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -26,7 +19,7 @@
       <Fields>
         <Field Name="idEmpleado">
           <DataField>idEmpleado</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nroDoc">
           <DataField>nroDoc</DataField>
@@ -34,28 +27,24 @@
         </Field>
         <Field Name="tipoDoc">
           <DataField>tipoDoc</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="idFarmacia">
-          <DataField>idFarmacia</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="farmacia">
+          <DataField>farmacia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nombre">
           <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="borrado">
-          <DataField>borrado</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSEmpleados</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\Source\Repos\FarmaTown\FarmaTown\DSEmpleados.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\romel\Source\Repos\Luuzaall\FarmaTown\FarmaTown\Datos\Reportes\DSEmpleados.xsd</rd:SchemaPath>
         <rd:TableName>Empleados</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EmpleadosTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -63,29 +52,29 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix1">
+          <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.35353in</Width>
+                  <Width>3.49448cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.65092in</Width>
+                  <Width>4.87914cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41716in</Width>
+                  <Width>3.98001cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.88542in</Width>
+                  <Width>3.29666cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.6cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -102,7 +91,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -119,14 +108,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox19">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Numero de Documento</Value>
+                                  <Value>Número de Documento</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -136,7 +125,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -153,7 +142,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox15">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -170,7 +159,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -187,14 +176,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
+                        <Textbox Name="Textbox20">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Identificador de Farmacia</Value>
+                                  <Value>Farmacia</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -204,7 +193,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -222,7 +211,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.6cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -316,21 +305,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="idFarmacia">
+                        <Textbox Name="farmacia">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!idFarmacia.Value</Value>
+                                  <Value>=Fields!farmacia.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>idFarmacia</rd:DefaultName>
+                          <rd:DefaultName>farmacia</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -362,53 +351,53 @@
                   <KeepWithGroup>After</KeepWithGroup>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="Details" />
+                  <Group Name="Detalles" />
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DSEmpleados</DataSetName>
-            <Top>0.28in</Top>
-            <Left>0.19001in</Left>
-            <Height>0.5in</Height>
-            <Width>6.30703in</Width>
+            <Top>0.52599cm</Top>
+            <Left>0.34786cm</Left>
+            <Height>1.2cm</Height>
+            <Width>15.6503cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Chart Name="Chart2">
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart2_CategoryGroup">
+                  <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!idFarmacia.Value</GroupExpression>
+                      <GroupExpression>=Fields!farmacia.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!idFarmacia.Value</Value>
+                      <Value>=Fields!farmacia.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!idFarmacia.Value</Label>
+                  <Label>=Fields!farmacia.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>id Farmacia</Label>
+                  <Label>nombre</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="idEmpleado">
+                <ChartSeries Name="nombre">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=COUNT(Fields!idFarmacia.Value)</Y>
+                        <Y>=Count(Fields!nombre.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -423,7 +412,7 @@
                     </ChartDataPoint>
                   </ChartDataPoints>
                   <Type>Shape</Type>
-                  <Subtype>ExplodedDoughnut</Subtype>
+                  <Subtype>ExplodedPie</Subtype>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -671,7 +660,6 @@
                 </ChartValueAxes>
                 <ChartThreeDProperties>
                   <Enabled>true</Enabled>
-                  <Inclination>25</Inclination>
                 </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
@@ -685,7 +673,6 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
-                <Position>TopLeft</Position>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -700,14 +687,15 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Empleados por farmacia</Caption>
+                <Caption>Empleados por Farmacia</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
+                  <FontStyle>Italic</FontStyle>
+                  <FontFamily>Century Gothic</FontFamily>
+                  <FontSize>13pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                   <TextAlign>Left</TextAlign>
                   <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
                 </Style>
                 <Position>TopLeft</Position>
               </ChartTitle>
@@ -721,7 +709,7 @@
               </Style>
             </ChartBorderSkin>
             <ChartNoDataMessage Name="NoDataMessage">
-              <Caption>No Data Available</Caption>
+              <Caption>Sin datos disponibles</Caption>
               <Style>
                 <BackgroundGradientType>None</BackgroundGradientType>
                 <FontWeight>Bold</FontWeight>
@@ -730,10 +718,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DSEmpleados</DataSetName>
-            <Top>1.00916in</Top>
-            <Left>1.72792in</Left>
-            <Height>2in</Height>
-            <Width>3in</Width>
+            <Top>1.90238cm</Top>
+            <Left>3.84234cm</Left>
+            <Height>5.93361cm</Height>
+            <Width>8.85915cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -745,13 +733,13 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.19791in</Height>
+        <Height>3.22045in</Height>
         <Style />
       </Body>
-      <Width>6.61334in</Width>
+      <Width>6.54501in</Width>
       <Page>
         <PageHeader>
-          <Height>1.14583in</Height>
+          <Height>3.80188cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -759,10 +747,10 @@
               <Source>Embedded</Source>
               <Value>logopng</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.28152cm</Top>
-              <Left>0.40109cm</Left>
-              <Height>2.18792cm</Height>
-              <Width>2.07666cm</Width>
+              <Top>0.3175cm</Top>
+              <Left>0.34786cm</Left>
+              <Height>2.55834cm</Height>
+              <Width>2.51423cm</Width>
               <ToolTip>Logo FarmaTown</ToolTip>
               <Style>
                 <Border>
@@ -770,14 +758,14 @@
                 </Border>
               </Style>
             </Image>
-            <Textbox Name="Textbox2">
+            <Textbox Name="Textbox1">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de Empleados</Value>
+                      <Value>Reporte Empleados</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>20pt</FontSize>
@@ -786,13 +774,16 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>0.28152cm</Top>
-              <Left>3.19742cm</Left>
-              <Height>1.10271cm</Height>
-              <Width>9.98646cm</Width>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.3175cm</Top>
+              <Left>4.67995cm</Left>
+              <Height>1.02333cm</Height>
+              <Width>7.5cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -805,14 +796,22 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox16">
+            <Textbox Name="Textbox2">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fecha emisión: </Value>
+                      <Value>Fecha emisión</Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>15pt</FontSize>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>:</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>15pt</FontSize>
@@ -822,11 +821,11 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>1.67252cm</Top>
-              <Left>3.19742cm</Left>
-              <Height>0.79692cm</Height>
-              <Width>4.19333cm</Width>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>2.11709cm</Top>
+              <Left>3.25011cm</Left>
+              <Height>0.75875cm</Height>
+              <Width>4.06104cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -838,7 +837,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox17">
+            <Textbox Name="Textbox3">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -851,22 +850,17 @@
                         <FontSize>15pt</FontSize>
                       </Style>
                     </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <Style>
-                        <FontFamily>Century Gothic</FontFamily>
-                        <FontSize>15pt</FontSize>
-                      </Style>
-                    </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>1.67252cm</Top>
-              <Left>7.42603cm</Left>
-              <Height>0.79692cm</Height>
-              <Width>5.66767cm</Width>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>2.09201cm</Top>
+              <Left>7.48754cm</Left>
+              <Height>0.75875cm</Height>
+              <Width>7.63292cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -887,11 +881,43 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.39583in</Height>
+          <Height>1.29646cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="PageNumber">
+            <Textbox Name="Textbox6">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Reporte Empleados|</Value>
+                      <Style>
+                        <FontFamily>Century Gothic</FontFamily>
+                        <FontSize>12pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.24694cm</Top>
+              <Left>9.81632cm</Left>
+              <Height>0.75875cm</Height>
+              <Width>4.6696cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -906,45 +932,16 @@
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>13.18388cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.00271cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox14">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Reporte de Empleados|</Value>
-                      <Style>
-                        <FontFamily>Century Gothic</FontFamily>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>0.17639cm</Top>
-              <Left>8.09096cm</Left>
-              <Height>0.6cm</Height>
-              <Width>5.09292cm</Width>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.24694cm</Top>
+              <Left>14.66231cm</Left>
+              <Height>0.75875cm</Height>
+              <Width>1.33585cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -961,12 +958,16 @@
             <Border>
               <Style>None</Style>
             </Border>
+            <BackgroundColor>#f0ffe1</BackgroundColor>
           </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -988,6 +989,6 @@ pD+y37+o/qHF40p/2JIun3sbbotH0XlZSU0AQcnWhNMJpP8drUK0fr2i2WLSxkMZ0DtkU29WKbR0L5ja
 aX5+MCxEebxy3OCaUBa4nw2oMxyJtnf15fm8XuscoCyFpgVIQrGRulk5QSHzrlXI0YP2eA2OBSY6L8N5DV/7gvrLXwMXhYdokMojqe5KO68hMUBsgE5dnjPzvM8CAVOXjmWp+jPEQhCUcy+xcyKPeUVJRDlS1jBv0YM50aKNmdKykJQaz4bknEw3cAd0l416y1lWtOYh9nQQmamFVl0zkpKKkEBWi+QJpfFTQxlJbCEykvKmll+62kJSx5PQaKlqJeFC41Fwhy5cMUO8uSR4IyEv4K3a2TBrxXSYrTv7PykswEkNEJQ1KoXZ7zt3LuiNHB8PA1Pt32IMkLt12YyfQ78bfw8My2C0pBGjSaSqsG5DZeH43RZ0M5xkWAPDGnCdBv4Hb14ljBulrRUAAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>37223624-e466-4750-8ec8-c827b16e9763</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>c02a50c4-6c66-4681-8f02-146a7f2e2292</rd:ReportID>
 </Report>

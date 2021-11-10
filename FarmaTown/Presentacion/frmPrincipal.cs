@@ -17,6 +17,7 @@ using FarmaTown.Presentacion.Localidades;
 using FarmaTown.Presentacion.ObrasSociales;
 using FarmaTown.Presentacion.Reportes;
 using FarmaTown.Presentacion.Reportes.Clientes;
+using FarmaTown.Presentacion.Reportes.Empleados;
 using FarmaTown.Presentacion.Reportes.Medicamentos;
 using FarmaTown.Presentacion.Reportes.ObrasSociales;
 using FarmaTown.Presentacion.Reportes.Ventas;
