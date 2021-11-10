@@ -75,14 +75,20 @@ namespace FarmaTown.Datos
             return listMapping(tabla);
         }
 
-        internal object obtenerDatosReporte(string nom)
+        internal object obtenerDatosReporte(string nomEmpleado, string idFarmacia)
         {
-            string query = "SELECT e.nombre, e.nroDoc, td.nombre AS tipoDoc, f.nombre AS farmacia" +
+            string query = "SELECT e.nombre, e.nroDoc" +
+                ", td.nombre AS tipoDoc, f.nombre AS farmacia" +
                 " FROM Empleados e" +
                 " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
                 " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
-                " WHERE e.borrado = 0 AND e.nombre LIKE '" + nom + "%'"+
-                " ORDER BY 1";
+                " WHERE e.borrado = 0 AND e.nombre LIKE '" + nomEmpleado + "%'";
+
+            if (idFarmacia != "-1")
+                query += " AND e.idFarmacia = " + idFarmacia;
+
+            query += " ORDER BY e.nombre";
+
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 

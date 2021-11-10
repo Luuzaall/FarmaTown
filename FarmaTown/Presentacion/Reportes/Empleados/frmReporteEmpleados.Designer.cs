@@ -37,11 +37,12 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rpvEmpleados = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboFarmacias = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
-            this.rpvEmpleados = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSEmpleados)).BeginInit();
             this.gbFiltros.SuspendLayout();
@@ -62,7 +63,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(222, 9);
+            this.label1.Location = new System.Drawing.Point(277, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 33);
@@ -72,7 +73,8 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.gbFiltros.Controls.Add(this.textBox1);
+            this.gbFiltros.Controls.Add(this.cboFarmacias);
+            this.gbFiltros.Controls.Add(this.label3);
             this.gbFiltros.Controls.Add(this.txtbNombre);
             this.gbFiltros.Controls.Add(this.label2);
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
@@ -80,7 +82,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.gbFiltros.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.gbFiltros.Size = new System.Drawing.Size(640, 111);
+            this.gbFiltros.Size = new System.Drawing.Size(781, 111);
             this.gbFiltros.TabIndex = 51;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -89,11 +91,55 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(130, 51);
+            this.txtbNombre.Location = new System.Drawing.Point(128, 51);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(229, 25);
             this.txtbNombre.TabIndex = 53;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(23, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 23);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Nombre:";
+            // 
+            // rpvEmpleados
+            // 
+            reportDataSource1.Name = "DSEmpleados";
+            reportDataSource1.Value = this.dSEmpleadosBindingSource;
+            this.rpvEmpleados.LocalReport.DataSources.Add(reportDataSource1);
+            this.rpvEmpleados.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.Empleados.rptEmpleados.rdlc";
+            this.rpvEmpleados.Location = new System.Drawing.Point(15, 240);
+            this.rpvEmpleados.Name = "rpvEmpleados";
+            this.rpvEmpleados.ServerReport.BearerToken = null;
+            this.rpvEmpleados.Size = new System.Drawing.Size(784, 251);
+            this.rpvEmpleados.TabIndex = 52;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(428, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 23);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Farmacia:";
+            // 
+            // cboFarmacias
+            // 
+            this.cboFarmacias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.cboFarmacias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFarmacias.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.cboFarmacias.FormattingEnabled = true;
+            this.cboFarmacias.Location = new System.Drawing.Point(540, 51);
+            this.cboFarmacias.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.cboFarmacias.Name = "cboFarmacias";
+            this.cboFarmacias.Size = new System.Drawing.Size(211, 27);
+            this.cboFarmacias.TabIndex = 55;
             // 
             // btnLimpiar
             // 
@@ -111,7 +157,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(204, 179);
+            this.btnLimpiar.Location = new System.Drawing.Point(268, 179);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(114, 37);
             this.btnLimpiar.TabIndex = 50;
@@ -136,7 +182,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.Black;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnGenerar.Location = new System.Drawing.Point(399, 179);
+            this.btnGenerar.Location = new System.Drawing.Point(463, 179);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(114, 37);
             this.btnGenerar.TabIndex = 49;
@@ -144,38 +190,6 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.btnGenerar.TextColor = System.Drawing.Color.Black;
             this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
-            // 
-            // rpvEmpleados
-            // 
-            reportDataSource1.Name = "DSEmpleados";
-            reportDataSource1.Value = this.dSEmpleadosBindingSource;
-            this.rpvEmpleados.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpvEmpleados.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.Empleados.rptEmpleados.rdlc";
-            this.rpvEmpleados.Location = new System.Drawing.Point(15, 240);
-            this.rpvEmpleados.Name = "rpvEmpleados";
-            this.rpvEmpleados.ServerReport.BearerToken = null;
-            this.rpvEmpleados.Size = new System.Drawing.Size(640, 251);
-            this.rpvEmpleados.TabIndex = 52;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(9, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 23);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Nombre:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(114, 51);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 25);
-            this.textBox1.TabIndex = 53;
             // 
             // frmReporteEmpleados
             // 
@@ -213,13 +227,14 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbFiltros;
-        private System.Windows.Forms.TextBox txtbNombre;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnGenerar;
         private Microsoft.Reporting.WinForms.ReportViewer rpvEmpleados;
         private System.Windows.Forms.BindingSource dSEmpleadosBindingSource;
         private Datos.Reportes.DSEmpleados dSEmpleados;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboFarmacias;
     }
 }
