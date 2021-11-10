@@ -28,7 +28,6 @@ namespace FarmaTown.Datos
                 " FROM Medicamentos m" +
                 " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
                 " WHERE m.nombre = '" + medicamento + "'" +
-                " AND m.borrado = 0" +
                 " ORDER BY m.nombre;";
 
             DataTable tablaMedicamentos = DBHelper.getDBHelper().consultaSQL(query);
@@ -67,7 +66,7 @@ namespace FarmaTown.Datos
             return listaMed;
         }
 
-        public List<Medicamento> consultarMedicamentoCParam(string nom, int idTipo, bool conBorrados)
+        public List<Medicamento> consultarMedicamentoCParam(string nom, int idTipo)
         {
             string query = "SELECT m.idMedicamento" +
                 ", m.nombre as nombreMedicamento" +
@@ -80,9 +79,6 @@ namespace FarmaTown.Datos
                 " FROM Medicamentos m " +
                 " INNER JOIN TiposMedicamento t ON t.idTipo = m.TipoMedicamento" +
                 " WHERE m.borrado = 0";
-
-            if (conBorrados)
-                query = query + " OR m.borrado = 1";
 
             if (!(string.IsNullOrEmpty(nom)))
             {

@@ -81,7 +81,7 @@ namespace FarmaTown.Presentacion.Transacciones
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(383, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(361, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(23, 33);

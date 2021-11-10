@@ -58,9 +58,9 @@ namespace FarmaTown.Logica
             return this.oMedicamentoDao.cambiarEstado(oMedicamento, habilitado);
         }
 
-        internal List<Medicamento> recurperarMedicamentoCParametros(string nom, int idTipo, bool conBorrados)
+        internal List<Medicamento> recurperarMedicamentoCParametros(string nom, int idTipo)
         { 
-            return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo, conBorrados);
+            return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo);
         }
 
         public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)

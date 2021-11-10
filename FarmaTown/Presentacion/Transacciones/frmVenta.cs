@@ -79,8 +79,8 @@ namespace FarmaTown.Presentacion.Transacciones
             {
                 case FormMode.delete:
                     {
-                        this.Text = "Baja de Venta - FarmaTown";
-                        this.lblTitulo.Text = "Baja de Venta";
+                        this.Text = "Anulación de Venta - FarmaTown";
+                        this.lblTitulo.Text = "Anulación de Venta";
                         break;
                     }
 
@@ -99,13 +99,13 @@ namespace FarmaTown.Presentacion.Transacciones
             {
                 case FormMode.delete:
                     {
-                        var decision = MessageBox.Show("Seguro que desea cancelar la venta seleccionada?"
+                        var decision = MessageBox.Show("Seguro que desea anular la venta seleccionada?"
                               , "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
 
                             oVenta.cancelada(oVenta);
-                            MessageBox.Show("Venta Deshabilitada!", "Información"
+                            MessageBox.Show("Venta anulada!", "Información"
                                , MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }

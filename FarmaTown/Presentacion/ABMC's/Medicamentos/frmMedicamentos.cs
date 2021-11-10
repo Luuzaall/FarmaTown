@@ -18,7 +18,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
     {
         TipoMedicamento oTipoMedicamento;
         Medicamento oMedicamento;
-        private bool mostrarConBorrados = false;
         private frmABMMedicamentos frmABMMed;
         FormMode modo;
         Usuario usuarioLogueado;
@@ -113,23 +112,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             }
         }
 
-        private void cbBorrados_CheckedChanged(object sender, EventArgs e)
-        {
-            if (mostrarConBorrados)
-            {
-                this.mostrarConBorrados = false;
-                this.dgvMedicamentos.Columns["borrado"].Visible = false;
-                this.actualizar();
-            }
-            else
-            {
-                this.mostrarConBorrados = true;
-                this.dgvMedicamentos.Columns["borrado"].Visible = true;
-                this.actualizar();
-            }
-
-        }
-
         public Medicamento recuperarSeleccion()
         {
             string nombreMed = this.dgvMedicamentos.SelectedRows[0].Cells[1].Value.ToString();
@@ -167,7 +149,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
 
                 }
                 resultadoMedicamentos = oMedicamento.recurperarMedicamentoCParametros(medicamento
-                    , idTipo, mostrarConBorrados);
+                    , idTipo);
                 this.cargarGrilla(this.dgvMedicamentos, resultadoMedicamentos);
             }
 

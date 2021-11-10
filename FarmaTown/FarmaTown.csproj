@@ -552,6 +552,7 @@
     <None Include="Presentacion\Imagenes\reporteVentas.png" />
     <None Include="Presentacion\Imagenes\consultaVentas.png" />
     <None Include="Resources\pharmacy.png" />
+    <None Include="Presentacion\Imagenes\deshabilitarVenta.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
