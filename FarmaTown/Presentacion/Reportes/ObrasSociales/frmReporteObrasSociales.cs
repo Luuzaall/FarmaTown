@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -15,41 +16,35 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
     public partial class frmReporteObrasSociales : Form
     {
         ObraSocial oObraSocial;
+        Medicamento oMedicamento;
 
         public frmReporteObrasSociales()
         {
             oObraSocial = new ObraSocial();
+            oMedicamento = new Medicamento();
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.rpvOS.RefreshReport();
+            ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos()
+    , "Nombre", "IdOS");
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             this.rpvOS.LocalReport.DataSources.Clear();
-            Object tabla = oObraSocial.obtenerDatosReporte();
+            Object tabla = oObraSocial.obtenerDatosReporte(this.cboObrasSociales.Text);
             ReportDataSource rprtDTSource = new ReportDataSource("DSObrasSociales", tabla);
             this.rpvOS.LocalReport.DataSources.Add(rprtDTSource);
             this.rpvOS.RefreshReport();
 
         }
 
-        private void rpvOS_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            this.rpvOS.RefreshReport();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.cboObrasSociales.SelectedIndex = -1;
         }
     }
 }

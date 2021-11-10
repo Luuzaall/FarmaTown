@@ -32,9 +32,9 @@ namespace FarmaTown.Logica
             return this.oObraSocialDao.recuperarTodos();
         }
 
-        public Object obtenerDatosReporte()
+        public Object obtenerDatosReporte(string nomObraSocial)
         {
-            return oObraSocialDao.obtenerDatosReporte();
+            return oObraSocialDao.obtenerDatosReporte(nomObraSocial);
         }
 
         public ObraSocial traerOS(int idOS)

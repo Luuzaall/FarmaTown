@@ -38,15 +38,20 @@ namespace FarmaTown.Datos
             return listaOS;
         }
 
-        internal object obtenerDatosReporte()
+        internal object obtenerDatosReporte(string nomObraSocial)
         {
             string query = "SELECT m.nombre as medicamento" +
                 ", o.nombre as obraSocial" +
                 ", x.descuento as descuento" +
                 " FROM OSXMedicamentos x" +
                 " INNER JOIN Medicamentos m ON x.idMedicamento = m.idMedicamento" +
-                " INNER JOIN ObrasSociales o ON x.idOS = o.idOS" +
-                " GROUP BY o.nombre, m.nombre, x.descuento" +
+                " INNER JOIN ObrasSociales o ON x.idOS = o.idOS";
+
+            if (nomObraSocial != "") {
+                query += " WHERE o.nombre IS LIKE '" + nomObraSocial + "'";
+            }
+
+            query += " GROUP BY o.nombre, m.nombre, x.descuento" +
                 " ORDER BY x.descuento";
 
             return DBHelper.getDBHelper().consultaSQL(query);
