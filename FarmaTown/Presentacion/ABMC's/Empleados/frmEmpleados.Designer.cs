@@ -92,7 +92,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.txtbFarmacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbFarmacia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbFarmacia.Location = new System.Drawing.Point(673, 45);
+            this.txtbFarmacia.Location = new System.Drawing.Point(798, 45);
             this.txtbFarmacia.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbFarmacia.Name = "txtbFarmacia";
             this.txtbFarmacia.Size = new System.Drawing.Size(243, 25);
@@ -115,10 +115,10 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteLetras.Enabled = false;
-            this.txtbPasaporteLetras.Location = new System.Drawing.Point(678, 88);
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(798, 88);
             this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
-            this.txtbPasaporteLetras.Size = new System.Drawing.Size(85, 25);
+            this.txtbPasaporteLetras.Size = new System.Drawing.Size(90, 25);
             this.txtbPasaporteLetras.TabIndex = 4;
             this.txtbPasaporteLetras.Visible = false;
             this.txtbPasaporteLetras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbPasaporteLetras_KeyDown);
@@ -128,7 +128,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteNro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteNro.Enabled = false;
-            this.txtbPasaporteNro.Location = new System.Drawing.Point(785, 88);
+            this.txtbPasaporteNro.Location = new System.Drawing.Point(910, 88);
             this.txtbPasaporteNro.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteNro.Name = "txtbPasaporteNro";
             this.txtbPasaporteNro.Size = new System.Drawing.Size(131, 25);
@@ -151,10 +151,10 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
-            this.txtbNroDoc.Location = new System.Drawing.Point(678, 88);
+            this.txtbNroDoc.Location = new System.Drawing.Point(798, 88);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.Name = "txtbNroDoc";
-            this.txtbNroDoc.Size = new System.Drawing.Size(238, 25);
+            this.txtbNroDoc.Size = new System.Drawing.Size(243, 25);
             this.txtbNroDoc.TabIndex = 4;
             this.txtbNroDoc.Visible = false;
             this.txtbNroDoc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNroDoc_KeyDown);
@@ -164,7 +164,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(491, 90);
+            this.label5.Location = new System.Drawing.Point(616, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 23);
             this.label5.TabIndex = 16;
@@ -175,7 +175,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(538, 45);
+            this.label3.Location = new System.Drawing.Point(663, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 14;
@@ -197,7 +197,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(299, 140);
+            this.btnLimpiar.Location = new System.Drawing.Point(396, 145);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(102, 37);
             this.btnLimpiar.TabIndex = 7;
@@ -233,7 +233,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(533, 140);
+            this.btnConsultar.Location = new System.Drawing.Point(620, 145);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(113, 37);
             this.btnConsultar.TabIndex = 6;
@@ -371,7 +371,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(233)))), ((int)(((byte)(209)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(466, 19);
+            this.label1.Location = new System.Drawing.Point(436, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(281, 33);

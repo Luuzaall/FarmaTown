@@ -32,19 +32,30 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteEmpleados));
+            this.dSEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSEmpleados = new FarmaTown.Datos.Reportes.DSEmpleados();
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.txtbNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
             this.rpvEmpleados = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dSEmpleados = new FarmaTown.Datos.Reportes.DSEmpleados();
-            this.dSEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleados)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleados)).BeginInit();
+            this.gbFiltros.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dSEmpleadosBindingSource
+            // 
+            this.dSEmpleadosBindingSource.DataSource = this.dSEmpleados;
+            this.dSEmpleadosBindingSource.Position = 0;
+            // 
+            // dSEmpleados
+            // 
+            this.dSEmpleados.DataSetName = "DSEmpleados";
+            this.dSEmpleados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -61,8 +72,9 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             // gbFiltros
             // 
             this.gbFiltros.BackColor = System.Drawing.Color.Transparent;
+            this.gbFiltros.Controls.Add(this.textBox1);
             this.gbFiltros.Controls.Add(this.txtbNombre);
-            this.gbFiltros.Controls.Add(this.lblNombre);
+            this.gbFiltros.Controls.Add(this.label2);
             this.gbFiltros.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.gbFiltros.Location = new System.Drawing.Point(15, 60);
             this.gbFiltros.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -83,16 +95,6 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.txtbNombre.Size = new System.Drawing.Size(229, 25);
             this.txtbNombre.TabIndex = 53;
             // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblNombre.Location = new System.Drawing.Point(25, 51);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(90, 23);
-            this.lblNombre.TabIndex = 52;
-            this.lblNombre.Text = "Nombre:";
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
@@ -109,7 +111,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(678, 134);
+            this.btnLimpiar.Location = new System.Drawing.Point(204, 179);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(114, 37);
             this.btnLimpiar.TabIndex = 50;
@@ -134,7 +136,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.btnGenerar.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.Black;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnGenerar.Location = new System.Drawing.Point(678, 80);
+            this.btnGenerar.Location = new System.Drawing.Point(399, 179);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(114, 37);
             this.btnGenerar.TabIndex = 49;
@@ -149,21 +151,31 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             reportDataSource1.Value = this.dSEmpleadosBindingSource;
             this.rpvEmpleados.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvEmpleados.LocalReport.ReportEmbeddedResource = "FarmaTown.Presentacion.Reportes.Empleados.rptEmpleados.rdlc";
-            this.rpvEmpleados.Location = new System.Drawing.Point(15, 216);
+            this.rpvEmpleados.Location = new System.Drawing.Point(15, 240);
             this.rpvEmpleados.Name = "rpvEmpleados";
             this.rpvEmpleados.ServerReport.BearerToken = null;
-            this.rpvEmpleados.Size = new System.Drawing.Size(640, 275);
+            this.rpvEmpleados.Size = new System.Drawing.Size(640, 251);
             this.rpvEmpleados.TabIndex = 52;
             // 
-            // dSEmpleados
+            // label2
             // 
-            this.dSEmpleados.DataSetName = "DSEmpleados";
-            this.dSEmpleados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(9, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 23);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Nombre:";
             // 
-            // dSEmpleadosBindingSource
+            // textBox1
             // 
-            this.dSEmpleadosBindingSource.DataSource = this.dSEmpleados;
-            this.dSEmpleadosBindingSource.Position = 0;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(114, 51);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(229, 25);
+            this.textBox1.TabIndex = 53;
             // 
             // frmReporteEmpleados
             // 
@@ -182,14 +194,16 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.MaximizeBox = false;
             this.Name = "frmReporteEmpleados";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Empleados - FarmaTown";
             this.Load += new System.EventHandler(this.frmReporteEmpleados_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleados)).EndInit();
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,11 +214,12 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbFiltros;
         private System.Windows.Forms.TextBox txtbNombre;
-        private System.Windows.Forms.Label lblNombre;
         private CustomControls.RJControls.RJButton btnLimpiar;
         private CustomControls.RJControls.RJButton btnGenerar;
         private Microsoft.Reporting.WinForms.ReportViewer rpvEmpleados;
         private System.Windows.Forms.BindingSource dSEmpleadosBindingSource;
         private Datos.Reportes.DSEmpleados dSEmpleados;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
