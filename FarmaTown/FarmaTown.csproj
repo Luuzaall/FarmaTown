@@ -91,11 +91,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetGeneral.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Datos\CanceladaDao.cs" />
     <Compile Include="Datos\ClienteDao.cs" />
     <Compile Include="Datos\DetalleVentaDao.cs" />
@@ -464,17 +459,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DataSetGeneral.xsc">
-      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetGeneral.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetGeneral.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetGeneral.xss">
-      <DependentUpon>DataSetGeneral.xsd</DependentUpon>
-    </None>
     <None Include="Datos\Reportes\DSEmpleados.xsc">
       <DependentUpon>DSEmpleados.xsd</DependentUpon>
     </None>
