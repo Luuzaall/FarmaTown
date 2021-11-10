@@ -1,5 +1,8 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Reportes.Empleados;
+using FarmaTown.Presentacion.Reportes.Medicamentos;
 using FarmaTown.Presentacion.Reportes.ObrasSociales;
+using FarmaTown.Presentacion.Reportes.Ventas;
 using FarmaTown.Presentacion.Transacciones;
 using System;
 using System.Collections.Generic;
@@ -33,10 +36,10 @@ namespace FarmaTown.Presentacion
 
             //Reportes
 
-            //Application.Run(new frmReporteTMedicamentosxVenta());
-            //Application.Run(new frmReporteVentasxFarmacia());
-            Application.Run(new frmReporteObrasSociales());
-
+            //Application.Run(new frmReporteMedicamentos());
+            //Application.Run(new frmReporteVentas());
+            //Application.Run(new frmReporteObrasSociales());
+            Application.Run(new frmReporteEmpleados());
             //Application.Run(new frmClientes(FormMode.management));
             //Application.Run(new frmABMClientes());
 

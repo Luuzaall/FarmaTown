@@ -126,6 +126,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.cboEmpleados.Name = "cboEmpleados";
             this.cboEmpleados.Size = new System.Drawing.Size(211, 27);
             this.cboEmpleados.TabIndex = 59;
+            this.cboEmpleados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // label5
             // 
@@ -149,6 +150,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.cboObrasSociales.Name = "cboObrasSociales";
             this.cboObrasSociales.Size = new System.Drawing.Size(211, 27);
             this.cboObrasSociales.TabIndex = 57;
+            this.cboObrasSociales.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // label4
             // 
@@ -167,6 +169,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(211, 32);
             this.dtpFechaHasta.TabIndex = 55;
+            this.dtpFechaHasta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // dtpFechaDesde
             // 
@@ -174,6 +177,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(213, 32);
             this.dtpFechaDesde.TabIndex = 54;
+            this.dtpFechaDesde.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // label3
             // 
@@ -206,6 +210,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.cboLocalidades.Name = "cboLocalidades";
             this.cboLocalidades.Size = new System.Drawing.Size(211, 27);
             this.cboLocalidades.TabIndex = 51;
+            this.cboLocalidades.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // lblLocalidad
             // 
@@ -229,6 +234,7 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.cboFarmacias.Name = "cboFarmacias";
             this.cboFarmacias.Size = new System.Drawing.Size(211, 27);
             this.cboFarmacias.TabIndex = 49;
+            this.cboFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // lblBarrio
             // 

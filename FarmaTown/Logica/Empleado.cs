@@ -35,7 +35,8 @@ namespace FarmaTown.Logica
 
         }
 
-        public bool existeEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
+        public bool existeEmpleado(string nomEmpl, string nroDoc
+            , int idTipoDoc, int idFarm)
         {
             object emplEncontrado = oEmpleadoDao.buscarEmpleado(nomEmpl, nroDoc, idTipoDoc, idFarm);
             if (emplEncontrado is null)
@@ -45,9 +46,9 @@ namespace FarmaTown.Logica
 
         }
 
-        internal object obtenerDatosReporte(string nom)
+        internal object obtenerDatosReporte(string nomEmpleado, string idFarmacia)
         {
-            return this.oEmpleadoDao.obtenerDatosReporte(nom);
+            return this.oEmpleadoDao.obtenerDatosReporte(nomEmpleado, idFarmacia);
         }
 
         internal List<Empleado> recuperarEmpleadoCParametros(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)

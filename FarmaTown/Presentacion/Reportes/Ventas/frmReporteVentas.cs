@@ -150,5 +150,10 @@ namespace FarmaTown.Presentacion.Reportes.Ventas
             this.cboEmpleados.SelectedIndex = -1;
             this.cboObrasSociales.SelectedIndex = -1;
         }
+
+        private void enter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnGenerar, e);
+        }
     }
 }
