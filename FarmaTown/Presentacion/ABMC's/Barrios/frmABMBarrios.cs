@@ -41,10 +41,10 @@ namespace FarmaTown.Presentacion.Localidades
             oBarrio = barrioSelected;
         }
 
+        //Valida que todos los campos estén completos
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
-            //Nueva:
             oLocalidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
             if (string.IsNullOrEmpty(nombre)
                 || nombre == " ")
@@ -66,6 +66,7 @@ namespace FarmaTown.Presentacion.Localidades
             return true;
         }
 
+        //Devuelve el barrio ya existente
         private bool existeBarrio(string nombre)
         {
             Barrio resultado = this.oBarrio.traerBarrio(nombre);
@@ -106,7 +107,6 @@ namespace FarmaTown.Presentacion.Localidades
                         this.txtbNombre.Enabled = false;
                         this.btnLimpiar.Enabled = false;
                         break;
-
                     }
             }
         }
@@ -116,9 +116,9 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Text = oBarrio.Nombre;
         }
 
+        //Borra todo lo que no esta seleccionado de la dgv
         private void cargarFila(DataGridView dgv)
         {
-            //Borra todo lo que no esta seleccionado de la dgv
             int cantFilasdgv = dgv.RowCount;
 
             for (int i = 0; i < cantFilasdgv; i++)
@@ -133,13 +133,10 @@ namespace FarmaTown.Presentacion.Localidades
             }
         }
 
+        //Busca en el DataGridView la fila correspondiente al dato que corresponde al id guardado en la base
+        //de datos para seleccionarlo para el usuario.
         private void seleccionarFila(DataGridView dgv, int id)
         {
-            /*
-             * Busca en el DataGridView la fila correspondiente
-             * al dato que corresponde al id guardado en la base
-             * de datos para seleccionarlo para el usuario.
-             */
             int cantFilasdgv = dgv.RowCount;
 
             for (int i = 0; i < cantFilasdgv; i++)
@@ -152,12 +149,9 @@ namespace FarmaTown.Presentacion.Localidades
                 }
             }
         }
+        //Carga la grilla con los datos necesarios pasados por lista.
         private void cargarGrilla(DataGridView dgv, List<Localidad> lista)
         {
-            /*
-             * Carga la grilla con los datos necesarios
-             * pasado por lista.
-             */
             dgv.Rows.Clear();
             if (lista != null)
             {
@@ -171,7 +165,7 @@ namespace FarmaTown.Presentacion.Localidades
                 dgv.ClearSelection();
             }
         }
-        // HASTA ACA
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
@@ -194,11 +188,8 @@ namespace FarmaTown.Presentacion.Localidades
                             if (!this.existeBarrio(nombre))
                             {
                                 Barrio oNuevoBarrio = new Barrio();
-                                //oNuevoBarrio.Nombre = nombre;
-                                //nueva, vieja la de arriba
                                 oNuevoBarrio.Nombre = this.txtbNombre.Text;
                                 oNuevoBarrio.IdBarrio = Convert.ToInt32(this.dgvLocalidades.SelectedRows[0].Cells[0].Value);
-                                //Nueva:
                                 oNuevoBarrio.Localidad = new Localidad();
                                 oNuevoBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.CurrentRow.Cells[0].Value.ToString());
 
@@ -224,12 +215,8 @@ namespace FarmaTown.Presentacion.Localidades
                         if (validarCampos())
                         {
                             oBarrio.Nombre = this.txtbNombre.Text;
-                            //¿que hace la linea que sige??
-                            //oBarrio.IdBarrio = Convert.ToInt32( this.dgvLocalidades.SelectedRows[0].Cells[0].Value.ToString() );
                             oBarrio.Localidad = new Localidad();
-                            //Nueva:
                             oBarrio.Localidad.IdLocalidad = Convert.ToInt32(this.dgvLocalidades.SelectedRows[0].Cells[0].Value);
-
 
                             bool resultActualiz = this.oBarrio.actualizar(oBarrio);
                             if (resultActualiz)
