@@ -230,5 +230,28 @@ namespace FarmaTown.Datos
 
             return oMedicamento;
         }
+
+        public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima, string idTipo)
+        {
+            string query = "SELECT m.idMedicamento" +
+                    ", m.nombre as nombre" +
+                    ", m.cantidad as cantidad" +
+                    ", tm.descripcion as tipoMedicamento" +
+                    ", m.precioLista as precioLista" +
+                    " FROM Medicamentos m" +
+                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
+                    " WHERE m.borrado = 0";
+
+            if (idTipo != "-1")
+                query += " AND tm.idTipo = " + idTipo;
+            if (cantidadMinima != -1)
+                query += " AND m.cantidad > " + cantidadMinima;
+            if (cantidadMaxima != -1)
+                query += " AND m.cantidad < " + cantidadMaxima;
+
+            query = query + " ORDER BY m.nombre";
+
+         return DBHelper.getDBHelper().consultaSQL(query);
+        }
     }
 }
