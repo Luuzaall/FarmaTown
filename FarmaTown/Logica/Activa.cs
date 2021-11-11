@@ -10,6 +10,10 @@ namespace FarmaTown.Logica
     {
         public override void cancelada(Venta oVenta)
         {
+            /*
+             * La venta le delega la responsabilidad de cancelarla
+             * y a sus detalles.
+             */
             Cancelada nuevoEstado = new Cancelada();
             oVenta.setEstado(nuevoEstado);
         }

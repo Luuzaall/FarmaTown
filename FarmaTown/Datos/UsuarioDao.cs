@@ -113,6 +113,10 @@ namespace FarmaTown.Datos
 
         public int cambiarEstado(Usuario oUsuario)
         {
+            /*
+             * Aplica la baja lógica del usuario
+             * recibido.
+             */
             string query = "UPDATE Usuarios" +
                 " SET borrado = 1";
 
@@ -120,13 +124,12 @@ namespace FarmaTown.Datos
 
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
             return afectadas;
-
         }
 
         public Usuario obtenerUsuarioPorNom(string nomUs)
         {
             /*
-            * Permite obtener el usuario por su nombre
+            * Permite obtener UN usuario por su nombre
             */
             string query = "SELECT u.idUsuario" +
                 " , u.idEmpleado" +
@@ -156,7 +159,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Usuario
              */
             List<Usuario> lista = new List<Usuario>();
             int cantFilas = tabla.Rows.Count;

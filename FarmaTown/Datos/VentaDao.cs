@@ -21,6 +21,8 @@ namespace FarmaTown.Datos
 
         public VentaDao()
         {
+            // Inicializa los objetos que necesita
+            // para el object mapping
             oDetalle = new DetalleVentaDao();
             oFarmaciaDao = new FarmaciaDao();
             oClienteDao = new ClienteDao();
@@ -33,6 +35,9 @@ namespace FarmaTown.Datos
 
         public List<Venta> recuperarTodos()
         {
+            /*
+             * Recupera todas las ventas sin parámetros.
+             */
             string query = "SELECT v.idVenta" +
                     " , f.nombre as nomFarmacia" +
                     " , f.idFarmacia" +
@@ -52,14 +57,17 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            return listMapping(tabla, true);
-               
+            return listMapping(tabla, true);      
         }
 
         internal List<Venta> recuperarVentasConParam(string idFarm, string idEstado
             ,string nroFactura, string fechaDesde
             , string fechaHasta)
         {
+            /*
+             * Recupera las ventas con los parámetros 
+             * recibidos.
+             */
             string query = "SELECT v.idVenta" +
                     " , f.nombre as nomFarmacia" +
                     " , f.idFarmacia" +
@@ -86,7 +94,13 @@ namespace FarmaTown.Datos
         }
 
         internal bool cancelada(Venta oVenta)
-        {
+        { 
+            /*
+             * Cambia el estado de la venta y sus detalles, 
+             * persistiendo estos cambios.
+             * Aplica la metodología de transacción
+             * para asegurar consistencia.
+             */
             DBHelper helper = DBHelper.getDBHelper();
             try
             {
@@ -133,6 +147,10 @@ namespace FarmaTown.Datos
 
         internal Venta traer(string nroVenta)
         {
+            /*
+             * Recupera la venta cuyo número es
+             * recibido por parámetro.
+             */
             string query = "SELECT v.idVenta" +
                    " , f.nombre as nomFarmacia" +
                    " , f.idFarmacia" +
@@ -163,6 +181,11 @@ namespace FarmaTown.Datos
 
         public bool crear(Venta nuevaVenta)
         {
+            /*
+             * Persiste la nueva venta realizada.
+             * Aplica transacción para asegurar
+             * integridad.
+             */
             DBHelper helper = DBHelper.getDBHelper();
             try
             {
@@ -279,6 +302,10 @@ namespace FarmaTown.Datos
                 , String idFarm, String idLocalidad, string idEmpleado
             , string idObraSocial)
         {
+            /*
+             * Recupera en DataTable los datos de las ventas
+             * con los parámetros recibidos.
+             */
             string query = 
                 "SELECT v.idVenta" +
                 ", v.nroFactura" +
@@ -337,7 +364,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Venta
              */
             List<Venta> lista = new List<Venta>();
             int cantFilas = tabla.Rows.Count;
@@ -352,6 +379,13 @@ namespace FarmaTown.Datos
         }
         private Venta objectMapping(DataRow row, bool optima)
         {
+            /*
+             * Recibe los datos de una fila del DataTable
+             * y los guarda en una instancia de la venta.
+             * 
+             * El parámetro OPTIMA asegura una carga más rápida, sólo
+             * guardando los datos necesarios para su muestra acotada.
+             */
             int idFarmacia = Convert.ToInt32(row["idFarmacia"].ToString());
             int idEstado = Convert.ToInt32(row["idEstado"].ToString());
 

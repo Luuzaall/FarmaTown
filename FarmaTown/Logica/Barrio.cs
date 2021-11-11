@@ -22,23 +22,39 @@ namespace FarmaTown.Logica
         }
         public List<Barrio> recuperarCParam(string nombre)
         {
+            /*
+             * Recupera todos los barrios por nombre.
+             */
             return this.oBarrioDao.recuperarCParam(nombre);
         }
         public List<Barrio> recuperarCParamOtro(string nombre, string localidad)
         {
+            /*
+             * Recupera todos los barrios con los parámetros recibidos.
+             */
             return this.oBarrioDao.recuperarCParamOtro(nombre, localidad);
         }
         public List<Barrio> recuperarTodos()
         {
+            /*
+             * Recupera sin parámetros.
+             */
             return this.oBarrioDao.recuperarTodos();
         }
 
         public List<Barrio> recuperarSoloUsadosClientes()
         {
+            /*
+             * Recupera los barrios que tengan al 
+             * menos un cliente registrado.
+             */
             return this.oBarrioDao.recuperarSoloUsadosClientes();
         }
         public Barrio traerBarrio(int idBarrio)
         {
+            /*
+             * 
+             */
             return this.oBarrioDao.traer(idBarrio);
         }
 
