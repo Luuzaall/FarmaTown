@@ -174,7 +174,7 @@ namespace FarmaTown.Presentacion.ABMC_s.TiposMedicamento
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oTipoMed.cambiarEstado(oTipoMed, false))
+                            if (oTipoMed.cambiarEstado(oTipoMed))
                             {
                                 MessageBox.Show("Tipo de medicamento Deshabilitado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -18,6 +18,11 @@ namespace FarmaTown.Logica
 
         public static List<Estado> recuperarTodos()
         {
+            /*
+             * Recupera todos los estados sin filtro.
+             * Es un método estático para no romper su 
+             * abstracción.
+             */
             EstadoDao oEstadoDao = new EstadoDao();
             return oEstadoDao.recuperarTodos();
         }

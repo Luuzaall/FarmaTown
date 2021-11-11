@@ -24,6 +24,14 @@ namespace FarmaTown.Logica
         }
         internal string validarUsuario(string usuario, string clave)
         {
+            /*
+             * Recibe los datos de un usuario y 
+             * verifica si se encuentra registrado.
+             * 
+             * Devuelve:
+             * -TRUE: Si se encuentra registrado.
+             * -FALSE: Si no lo está.
+             */
             Usuario usuLogin = this.traerUsuario(usuario);
             if (usuLogin != null)
             {
@@ -37,6 +45,9 @@ namespace FarmaTown.Logica
 
         internal Usuario traerUsuario(string usuario)
         {
+            /*
+             * Trae un usuario por su nombre.
+             */
             Usuario oUsuario = oUsuarioDao.obtenerUsuarioPorNom(usuario);
             if (oUsuario != null)
             {
@@ -47,35 +58,78 @@ namespace FarmaTown.Logica
 
         public List<Usuario> recuperarTodos()
         {
+            /*
+             * Recupera todos los usuarios.
+             */
             return this.oUsuarioDao.recuperarTodos();
         }
 
-        public List<Usuario> recurperarUsuarioCParametros(string nom, int idRol)
+        public List<Usuario> recurperarUsuarioCParametros(string nom
+            , int idRol)
         {
-            return this.oUsuarioDao.consultarUsuariosCParam(nom, idRol);
+            /*
+             * Recupera todos los usuarios con parámetros.
+             */
+            return this.oUsuarioDao.consultarUsuariosCParam(nom
+                , idRol);
         }
 
         public bool crearUsuario(Usuario oUsuario)
         {
+            /*
+             * Persiste un nuevo Usuario,
+             *  recibido por parámetro
+             *  
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo persistirlo.
+             */
             return this.validar(this.oUsuarioDao.insertar(oUsuario));
         }
 
         public bool actualizarUsuario(Usuario oUsuario)
         {
+            /*
+             * Cambia los datos del Usuario recibido
+             * por los nuevos.
+             * 
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo cambiar los datos.
+             */
             return this.oUsuarioDao.actualizar(oUsuario);
         }
 
         public bool cambiarEstadoUsuario(Usuario oUsuario)
         {
+            /*
+             * Deshabilita el Usuario recibido.
+             * 
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo deshabilitarlo.
+             */
             return this.validar(this.oUsuarioDao.cambiarEstado(oUsuario));
         }
 
         internal bool esVendedor()
         {
+            /*
+             * Determina si el usuario es un vendedor.
+             * Lo delega al rol que posee.
+             * 
+             * Devuelve:
+             * -TRUE: Si es un vendedor.
+             * -FALSE: Si no lo es.
+             */
             return Rol.esVendedor();
         }
         private bool validar(int resultado)
         {
+            /*
+             * Determina si se pudo 
+             * llevar a cabo la tarea, o no.
+             */
             if (resultado == 0)
             {
                 return false;

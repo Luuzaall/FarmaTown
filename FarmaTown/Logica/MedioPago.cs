@@ -21,12 +21,11 @@ namespace FarmaTown.Logica
 
         public List<MedioPago> recuperarTodos()
         {
+            /*
+             * Recupera todos los medios de pago 
+             * sin parámetros.
+             */
             return dao.recuperarTodos();
-        }
-
-        public MedioPago traer(int idMedioPago)
-        {
-            return dao.traer(idMedioPago);
         }
     }
 }

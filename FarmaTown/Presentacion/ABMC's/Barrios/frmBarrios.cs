@@ -21,10 +21,14 @@ namespace FarmaTown.Presentacion.Localidades
             oBarrio = new Barrio();
             InitializeComponent();
         }
+
         //MÉTODOS FUNCIONALES
 
         private void frmBarrios_Load(object sender, EventArgs e)
         {
+            /*
+             * Carga los barrios a la grilla.
+             */
             this.actualizar();
         }
 

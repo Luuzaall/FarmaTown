@@ -35,10 +35,15 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         // MÉTODOS DE RESPUESTA A EVENTOS
         private void frmClientes_Load(object sender, EventArgs e)
         {
+            /*
+             * Carga los combos y, dependiendo del tipo de fomrulario, 
+             * ubica visible el botón de seleccionar, como no.
+             */
             ComboBoxService.cargarCombo(this.cboTipoDoc, oTipoDoc.recuperarTodos()
                 , "nombre", "idTipo");
 
            if (modo == FormMode.selection)
+                //Caso de que sea abierto desde la ventana de ventas...
                 this.btnSeleccionar.Visible = true;
             else
                 this.btnSeleccionar.Visible = false;
@@ -46,6 +51,12 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void txtbNoDigitos_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
+             * Verifica que no ingrese dígitos y
+             * que si apreta enter, es como
+             * hacer click en el botón
+             * de consulta.
+             */
             TextBoxService.noDigitos(e);
             TextBoxService.enter(this.btnConsultar, e);
         }
@@ -59,7 +70,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
              * al número de documento.
              * 
              * Además, pone a la vista los textbox
-             * correctos para el tipo de documento
+             * correspondientes para el tipo de documento
              * que se haya elegido
              */
 
@@ -106,6 +117,14 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void txtbNoLetras_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
+             * No permite el ingreso de letras 
+             * para el textbox que se le haya aplicado
+             * esta respuesta de evento.
+             * 
+             * Además, al apretar enter simula el click en 
+             * el botón consultar.
+             */
             TextBoxService.noLetras(e);
             TextBoxService.enter(this.btnConsultar, e);
         }
@@ -128,10 +147,15 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             /*
-             * Verifica la correcta selección
-             * para el formulario y filtra
+             * Luego de validar los campos, toma los
+             * datos de los textbox y se los envía a
+             * la instancia de cliente para que recupere
+             * los clientes que corresponden a los filtros
+             * aplicados.
+             * 
+             * Deshabilita botones de editar y eliminar,
+             * ya que se deselecciona el cliente.
              */
-
             if (this.validarCampos())
             {
                 List<Cliente> resultadosClientes = new List<Cliente>();
@@ -189,17 +213,28 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            /*
+             * AL hacer click, vuelve a cargar todos los clientes.
+             */
             this.cargarGrilla(this.dgvClientes, oCliente.recuperarTodos());
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            /*
+             * Instancia la ventana para la creación de un nuevo cliente
+             *  y la muestra.
+             */
             frmABMClientes oFrmABMClientes = new frmABMClientes();
             oFrmABMClientes.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            /*
+             * Instancia la ventana con el modo de edición y le pasa
+             * el cliente a modificar para que se muestre.
+             */
             int idClienteSelecc = int.Parse(this.dgvClientes.CurrentRow.Cells[0].Value.ToString());
             Cliente clienteSelecc = oCliente.traerCliente(idClienteSelecc);
             frmABMClientes oFrmABMClientes = new frmABMClientes();
@@ -210,6 +245,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            /*
+             * Instancia la ventana de clientes en modo deshabilitación
+             *  y le pasa el cliente seleccionado para que lo muestre.
+             */
             int idClienteSelecc = int.Parse(this.dgvClientes.CurrentRow.Cells[0].Value.ToString());
             Cliente clienteSelecc = oCliente.traerCliente(idClienteSelecc);
             frmABMClientes oFrmABMClientes = new frmABMClientes();
@@ -220,6 +259,9 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            /*
+             * Cierra la ventana.
+             */
             this.Close();
         }
 
@@ -228,6 +270,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private bool validarCampos()
         {
+            /*
+             * Valida que si todos los cambios están vacíos, 
+             * igual actualice.
+             */
             string nombre = this.txtbNombre.Text;
             string apellido = this.txtbApellido.Text;
             string nroDoc = this.txtbNroDoc.Text;
@@ -251,6 +297,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void actualizar()
         {
+            /*
+             * Recupera todos los clientes sin parámetros,
+             * los carga en la grilla y deshabilita los botones
+             * de edición y eliminación.
+             */
             this.cargarGrilla(dgvClientes, oCliente.recuperarTodos());
             this.deshabilitarBotones();
         }
@@ -280,6 +331,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void deshabilitarTextBox()
         {
+            /*
+             * Para la eliminación, deshabilita los
+             * textbox de ingreso de número de documento.
+             */
             this.txtbNroDoc.Enabled = false;
             this.txtbNroDoc.Visible = false;
 
@@ -295,7 +350,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             /*
              * Deshabilita los botones cambiándoles
              * el color para que el usuario visualmente
-             * lo vea
+             * lo distinga.
              */
             this.btnEditar.Enabled = false;
             this.btnEditar.BackColor = Color.Gray;
@@ -312,6 +367,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         public Cliente recuperarSeleccion()
         {
+            /*
+             * Recupara el cliente que el usuario
+             * seleccionó en la grilla.
+             */
             int idCliente = int.Parse( this.dgvClientes.SelectedRows[0].Cells[0].Value.ToString());
             return oCliente.traerCliente(idCliente);
         }

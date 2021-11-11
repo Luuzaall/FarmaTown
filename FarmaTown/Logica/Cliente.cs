@@ -28,42 +28,82 @@ namespace FarmaTown.Logica
 
         public List<Cliente> recuperarTodos()
         {
+            /*
+             * Recupera todos los clientes sin parámetros.
+             */
             return this.oClienteDao.recuperarTodos();
         }
 
         public List<Cliente> recuperarConParam(string nombre, string apellido
             , string nroDoc, int idTipoDoc)
         {
+            /*
+             * Recpera todos los clientes con 
+             * los parámetros recibidos
+             */
             return oClienteDao.recuperarConParam(nombre, apellido, nroDoc, idTipoDoc);
         }
 
         public Cliente traerCliente(int idCliente)
         {
+            /*
+             * Recuper UN cliente por ID.
+             */
             return oClienteDao.traer(idCliente);
         }
 
         public bool crear(Cliente oCliente)
         {
+            /*
+             * Persiste un nuevo cliente,
+             *  recibido por parámetro
+             *  
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo persistirlo.
+             */
             return validar( oClienteDao.insertar(oCliente) );
         }
 
         public bool actualizar(Cliente oCliente)
         {
+            /*
+             * Cambia los datos del cliente recibido
+             * por los nuevos.
+             * 
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo cambiar los datos.
+             */
             return validar(oClienteDao.actualizar(oCliente));
-        }
-
-        public object obtenerDatosReporte(string idBarrio, string idLocalidad)
-        {
-            return oClienteDao.obtenerDatosReporte(idBarrio, idLocalidad);
         }
 
         public bool cambiarEstado(Cliente oCliente)
         {
+            /*
+             * Deshabilita el cliente recibido.
+             * 
+             *  Devuelve:
+             *  -TRUE: Si lo consiguió.
+             *  -FALSE: Si no pudo deshabilitarlo.
+             */
             return validar(oClienteDao.cambiarEstado(oCliente));
+        }
+        public object obtenerDatosReporte(string idBarrio, string idLocalidad)
+        {
+            /*
+             * Recupera los datos en formato
+             * DataTable para entregarlos al ReportViewer
+             */
+            return oClienteDao.obtenerDatosReporte(idBarrio, idLocalidad);
         }
 
         private bool validar(int resultado)
         {
+            /*
+             * Determina si se pudo 
+             * llevar a cabo la tarea, o no.
+             */
             if (resultado == 0)
             {
                 return false;
@@ -74,6 +114,14 @@ namespace FarmaTown.Logica
         public bool existeCliente(string nomCliente, string nroDoc
             , int idTipoDoc, int idBarrio)
         {
+            /*
+             * Con los datos recibidos, determina
+             * si el cliente ya existe.
+             * 
+             * Devuelve:
+             * -TRUE: Si el cliente EXISTE.
+             * -FALSE: Si el cliente NO existe.
+             */
             object clienteEncontrado = oClienteDao.buscarCliente(nomCliente, nroDoc
                 , idTipoDoc, idBarrio);
             if (clienteEncontrado is null)

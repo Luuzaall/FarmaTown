@@ -35,14 +35,23 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             oBarrio = new Barrio();
         }
         
+        // Métodos funcionales.
         internal void seleccionarCliente(FormModeABM _formMode, Cliente clienteSelected)
         {
+            /*
+             * Permite recibir el cliente que se seleccionó
+             * en la ventana anterior.
+             */
             formMode = _formMode;
             oCliente = clienteSelected;
         }
 
         private void deshabilitarTextBox()
         {
+            /*
+             * Deshabilita todos los textbox en caso
+             * de ser iniciado como deshabilitación.
+             */
             this.txtbNroDoc.Enabled = false;
             this.txtbNroDoc.Visible = false;
 
@@ -56,14 +65,14 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         {
             /*
              *Permite actualizar el aviso de lo que
-             *debe ingresar para el textbox correspondiente
-            * al número de documento.
+             * debe ingresar para el textbox correspondiente
+             * al número de documento.
 
-            *
-            *Además, pone a la vista los textbox
-             *correctos para el tipo de documento
-            * que se haya elegido
-            */
+             *
+             * Además, pone a la vista los textbox
+             * correctos para el tipo de documento
+             * que se haya elegido
+             */
            int indiceSelecc = (int)this.cboTipoDoc.SelectedIndex;
             if (indiceSelecc != -1)
             {
@@ -104,6 +113,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private bool validarCampos()
         {
+            /*
+             * Verifica que todos los datos sean válidos
+             * para el registro del cliente.
+             */
             string nombre = this.txtbNombre.Text; 
             string apellido = this.txtbApellido.Text;
             string nroDoc = this.txtbNroDoc.Text;
@@ -188,12 +201,20 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            /*
+             * Ejecuta la tarea para la cual la ventana fue iniciada
+             */
             switch (formMode)
             {
                 case FormModeABM.insert:
                     {
                         if (this.validarCampos())
                         {
+                            /*
+                             * Valida los datos, verifica que no exista el cliente
+                             * y lo persiste, indicándole al cliente si se pudo
+                             * agregar o no.
+                             */
                             if (!this.existeCliente())
                             {
 
@@ -218,6 +239,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                     }
                 case FormModeABM.update:
                     {
+                        /*
+                         * Valida los datos y persiste los cambios
+                         * , indicándole al cliente si se lograron
+                         * guardar los cambios o no.
+                         */
                         if (this.validarCampos())
                         {
                             oCliente = this.cargarDatos(oCliente);
@@ -236,6 +262,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                     }
                 case FormModeABM.delete:
                     {
+                        /*
+                         * Pregunta de confirmación y realiza la deshabilitación,
+                         * avisándole al cliente el resultado.
+                         */
                         var decision = MessageBox.Show("Seguro que desea deshabilitar el Cliente seleccionado?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {

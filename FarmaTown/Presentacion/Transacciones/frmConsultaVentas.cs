@@ -60,7 +60,6 @@ namespace FarmaTown.Presentacion.Transacciones
 
             string idFarm;
             string idEstado;
-            string idEmpleado;
 
             if (indexFarm == -1)
                 idFarm = "-1";

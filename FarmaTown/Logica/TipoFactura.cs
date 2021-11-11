@@ -21,12 +21,11 @@ namespace FarmaTown.Logica
 
         public List<TipoFactura> recuperarTodos()
         {
+            /*
+             * Recupera todos los tipos de facura
+             * sin parámetros.
+             */
             return oTipoFacDao.recuperarTodos();
-        }
-
-        public TipoFactura traer (int idTipoFactura)
-        {
-            return oTipoFacDao.traer(idTipoFactura);
         }
     }
 }

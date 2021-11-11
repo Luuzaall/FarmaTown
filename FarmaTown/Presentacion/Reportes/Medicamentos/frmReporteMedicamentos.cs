@@ -28,7 +28,7 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
         {
             this.rpvMedicamentos.RefreshReport();
 
-            ComboBoxService.cargarCombo(this.cboTipoMed, oTipoMed.recuperarSoloUsadosMedicamentos()
+            ComboBoxService.cargarCombo(this.cboTipoMed, oTipoMed.recuperarTodos()
                 , "Descripcion", "IdTipo");
         }
         private void btnGenerar_Click(object sender, EventArgs e)

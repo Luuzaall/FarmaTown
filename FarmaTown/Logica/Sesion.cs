@@ -24,15 +24,27 @@ namespace FarmaTown.Logica
 
         internal bool persistirInicio()
         {
+            /*
+             * Persiste la sesión y su hora de inicio
+             * Los datos están en la misma instancia que lo llama.
+             */
             return validar(dao.persistirSesionInicio(this));
         }
 
         internal bool persistirFinal()
         {
+            /*
+             * Guarda la hora final de la sesión.
+             * Los datos están en la misma instancia que lo llama.
+             */
             return validar(dao.persistirSesionFinal(this));
         }
         private bool validar(int resultado)
         {
+            /*
+             * Determina si se pudo 
+             * llevar a cabo la tarea, o no.
+             */
             if (resultado == 0)
             {
                 return false;

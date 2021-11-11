@@ -32,17 +32,29 @@ namespace FarmaTown.Logica
 
         public bool crearVenta(Venta nuevaVenta)
         {
+            /*
+             * Persiste una venta realizada.
+             */
             return this.oVenta.crear(nuevaVenta);
         }
 
         public List<Venta> recuperarTodos()
         {
+            /*
+             * Recupera todas las ventas 
+             * sin parámetros
+             * AVISO: LENTO.
+             */
             return this.oVenta.recuperarTodos();
         }
         internal List<Venta> recuperarVentasConParam(string idFarm, string idEstado
             , string nroFactura, string fechaDesde
             , string fechaHasta)
         {
+            /*
+             * Recupera todas las ventas con los parámetros
+             * recibidos.
+             */
             return this.oVenta.recuperarVentasConParam(idFarm, idEstado
                 , nroFactura, fechaDesde, fechaHasta);
         }
@@ -52,12 +64,22 @@ namespace FarmaTown.Logica
                 , String idFarm, String idLocalidad, string idEmpleado
             , string idObraSocial)
         {
+            /*
+             * Obtiene los datos de las ventas
+             * filtradas por los parámetros recibidos.
+             * Devuelve: DataTable para el ReportViewer.
+             */
             return this.oVenta.obtenerDatosReporte(fechaDesde, fechaHasta
                 , idFarm, idLocalidad, idEmpleado, idObraSocial);
         }
 
         public List<double> obtenerTotales()
         {
+            /*
+             * Calcula el valor total de la venta, 
+             * ya sea con descuento (Precio al cliente)
+             * o sin descuento.
+             */
             double totalConDescuento = 0;
             double totalSinDescuento = 0;
             foreach (DetalleVenta detalle in Detalles)
@@ -75,17 +97,30 @@ namespace FarmaTown.Logica
 
         internal void cancelada(Venta oVenta)
         {
+            /*
+             * Cancela una venta existente, cambiándole
+             * el estado y persistiendo este cambio.
+             * 
+             * Se lo delega a su estado actual por Patrón State.
+             */
             this.EstadoActual.cancelada(this);
             this.oVenta.cancelada(oVenta);
         }
 
         public void setEstado(Estado nuevoEstado)
         {
+            /*
+             * Permite que le envíen el nuevo
+             * estado actual.
+             */
             EstadoActual = nuevoEstado;
         }
 
         public Venta traer(string nroVenta)
         {
+            /*
+             * Recupera UNA venta con su número de venta.
+             */
             return this.oVenta.traer(nroVenta);
         }
     }

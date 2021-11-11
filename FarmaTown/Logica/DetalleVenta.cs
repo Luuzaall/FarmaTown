@@ -20,6 +20,8 @@ namespace FarmaTown.Logica
         {
             get
             {
+                // redondea el precio unitario para
+                // mostrar.
                 return Math.Round(PrecioUnitario, 2);
             }
         }
@@ -28,6 +30,7 @@ namespace FarmaTown.Logica
         {
             get
             {
+                //Accede al ID del medicamento.
                 return Medicamento.IdMedicamento;
             }
         }
@@ -43,7 +46,11 @@ namespace FarmaTown.Logica
         {
             get
             {
+                //Calcula el subtotal de el detalle
+                // con o sin descuento para la cantidad
+                // registrada.
                 if (Reintegro == 0)
+                    // Si tuvo descuento...
                     return Math.Round( (Cantidad * PrecioUnitario), 2);
                 else
                 {
