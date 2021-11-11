@@ -64,5 +64,9 @@ namespace FarmaTown.Logica
             else
                 return true;
         }
+        public List<TipoMedicamento> recuperarSoloUsadosMedicamentos()
+        {
+            return this.oTipoMedDao.recuperarSoloUsadosMedicamentos();
+        }
     }
 }

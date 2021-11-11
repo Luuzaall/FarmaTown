@@ -136,5 +136,25 @@ namespace FarmaTown.Datos
 
             return lista;
         }
+        public List<TipoMedicamento> recuperarSoloUsadosMedicamentos()
+        {
+            string query = "SELECT tm.descripcion" +
+                " FROM Medicamentos m" +
+                " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
+                " GROUP BY tm.idTipo" +
+                "	, tm.descripcion" +
+                " ORDER BY tm.descripcion";
+
+            DataTable tablaNoms = DBHelper.getDBHelper().consultaSQL(query);
+
+            List<TipoMedicamento> tiposMedicamento = new List<TipoMedicamento>();
+
+            for (int fila = 0; fila < tablaNoms.Rows.Count; fila++)
+            {
+                string nom = tablaNoms.Rows[fila]["descripcion"].ToString();
+                tiposMedicamento.Add(this.traer(nom));
+            }
+            return tiposMedicamento;
+        }
     }
 }

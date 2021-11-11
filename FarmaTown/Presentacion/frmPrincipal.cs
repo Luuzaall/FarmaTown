@@ -266,12 +266,7 @@ namespace FarmaTown.Presentacion
         }
 
             //REPORTES VENTAS
-        
-        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReporteVentas ofrmListadoVentas = new frmReporteVentas();
-            ofrmListadoVentas.ShowDialog();
-        }
+
         private void ventasToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmReporteVentas oFrmListadoVentas = new frmReporteVentas();
