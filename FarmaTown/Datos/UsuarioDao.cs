@@ -12,6 +12,9 @@ namespace FarmaTown.Datos
     {
         public List<Usuario> recuperarTodos()
         {
+            /*
+             * Recupera todos los usuarios sin parámetros.
+             */
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
                     ", u.clave" + 
@@ -33,6 +36,10 @@ namespace FarmaTown.Datos
 
         public List<Usuario> consultarUsuariosCParam(string nomUs, int idRol)
         {
+            /*
+             * Recupera todos los usuarios con los
+             * parámetros que recibe.
+             */
             string query = "SELECT u.idUsuario" +
                     ", u.nombre as nomUsuario" +
                     ", u.clave" +
@@ -61,13 +68,10 @@ namespace FarmaTown.Datos
             return listMapping(tabla);
         }
 
-        public bool insertar(Usuario oUsuario)
+        public int insertar(Usuario oUsuario)
         {
             /*
              * Inserta el usuario nuevo en la base de datos.
-             * Su resultado se retornará en booleano.
-             * - TRUE si se insertó exitosamente
-             * - FALSE si no se logró insertar.
              */
             string query = "INSERT INTO Usuarios" +
                 "(idEmpleado" +
@@ -83,11 +87,7 @@ namespace FarmaTown.Datos
                 ", 0)";
 
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if (afectadas == 0)
-            {
-                return false;
-            }
-            else return true;
+            return afectadas;
         }
 
         public bool actualizar(Usuario oUsuario)
@@ -111,24 +111,15 @@ namespace FarmaTown.Datos
             return false;
         }
 
-        public bool cambiarEstado(Usuario oUsuario, bool seHabilita)
+        public int cambiarEstado(Usuario oUsuario)
         {
             string query = "UPDATE Usuarios" +
-                " SET borrado = ";
-
-            if (seHabilita)
-                query = query + "0";
-            else
-                query = query + "1";
+                " SET borrado = 1";
 
             query = query + " WHERE idUsuario = " + oUsuario.IdUsuario;
 
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if (afectadas > 0)
-            {
-                return true;
-            }
-            return false;
+            return afectadas;
 
         }
 

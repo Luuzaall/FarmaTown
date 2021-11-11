@@ -11,6 +11,10 @@ namespace FarmaTown.Datos
     {
         public int persistirSesionInicio(Sesion oSesion)
         {
+            /*
+             * Permite persistir la sesión en el momento
+             * en que inicia sesión.
+             */
             string query = "INSERT INTO Sesiones(idUsuario," +
                              "fechaInicio, fechaFin, borrado)" +
                               " VALUES" +
@@ -21,11 +25,14 @@ namespace FarmaTown.Datos
             
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
             return afectadas;
-            
         } 
 
         public int persistirSesionFinal(Sesion oSesion)
         {
+            /*
+             * Guarda la fecha fin de la sesión
+             * cuando la cierra.
+             */
             string query = "UPDATE Sesiones" +
                 " SET fechaFin = CONVERT(DATETIME, '" + oSesion.FechaFin + "', 103)" +
                 " WHERE fechaInicio = CONVERT(DATETIME, '" + oSesion.FechaInicio + "', 103)";

@@ -57,7 +57,7 @@ namespace FarmaTown.Logica
 
         public bool crearUsuario(Usuario oUsuario)
         {
-            return this.oUsuarioDao.insertar(oUsuario);
+            return this.validar(this.oUsuarioDao.insertar(oUsuario));
         }
 
         public bool actualizarUsuario(Usuario oUsuario)
@@ -65,14 +65,23 @@ namespace FarmaTown.Logica
             return this.oUsuarioDao.actualizar(oUsuario);
         }
 
-        public bool cambiarEstadoUsuario(Usuario oUsuario, bool seHabilita)
+        public bool cambiarEstadoUsuario(Usuario oUsuario)
         {
-            return this.oUsuarioDao.cambiarEstado(oUsuario, seHabilita);
+            return this.validar(this.oUsuarioDao.cambiarEstado(oUsuario));
         }
 
         internal bool esVendedor()
         {
             return Rol.esVendedor();
+        }
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

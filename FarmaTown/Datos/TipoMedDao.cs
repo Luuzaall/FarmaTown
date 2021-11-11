@@ -10,9 +10,12 @@ namespace FarmaTown.Datos
 {
     class TipoMedDao
     {
-
         public List<TipoMedicamento> recuperarTodos()
         {
+            /*
+             * Recupera todos los medicamentos sin 
+             * parámetros.
+             */
             string query = "SELECT *" +
                 " FROM TiposMedicamento" +
                 " WHERE borrado = 0" +
@@ -21,9 +24,12 @@ namespace FarmaTown.Datos
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
             return listMapping(tabla);
         }
-
         public List<TipoMedicamento> recuperarCParam(string descripcion)
         {
+            /*
+             * Recuper todos los medicamentos que 
+             * cumplan con el parámetro ingresado.
+             */
             string query = "SELECT idTipo" +
                 ", descripcion" +
                 ", borrado" +
@@ -34,13 +40,16 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<TipoMedicamento> listaTipoMed = new List<TipoMedicamento>();
-
             return listMapping(tabla);
         }
 
         public TipoMedicamento traer(int idTipo)
         {
+            /*
+             * Recuepera un tipo medicamento
+             * correspondiente con el id recibido
+             * por el parámetro.
+             */
             string query = "SELECT *" +
                 " FROM TiposMedicamento" +
                 " WHERE borrado = 0" +
@@ -54,6 +63,11 @@ namespace FarmaTown.Datos
 
         public TipoMedicamento traer(string descripcion)
         {
+            /*
+             * Recupera el tipo de medicamento
+             * que corresponda a la descripción 
+             * recibida por parámetro.
+             */
             string query = "SELECT *" +
                 " FROM TiposMedicamento" +
                 " WHERE borrado = 0" +
@@ -72,6 +86,10 @@ namespace FarmaTown.Datos
 
         public int crear(TipoMedicamento nuevoTipoMed)
         {
+            /*
+             * Persiste el tipo de medicamento recibido
+             * por parámetro.
+             */
             string query = "INSERT INTO TiposMedicamento" +
                 "(descripcion, borrado)" +
                 " VALUES" +
@@ -82,6 +100,10 @@ namespace FarmaTown.Datos
 
         public int actualizar(TipoMedicamento oTipoMed)
         {
+            /*
+             * Realiza los cambios de datos del tipo 
+             * de medicamento a los datos nuevos.
+             */
             string query = "UPDATE TiposMedicamento" +
                 " SET descripcion = '" + oTipoMed.Descripcion + "'" +
                 " WHERE idTipo = " + oTipoMed.IdTipo;
@@ -89,33 +111,18 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public int cambiarEstado(TipoMedicamento oTipoMed, bool seHabilita)
+        public int cambiarEstado(TipoMedicamento oTipoMed)
         {
+            /*
+             * Realiza la baja lógica del tipo 
+             * de medicamento.
+             */
             string query = "UPDATE TiposMedicamento" +
-                " SET borrado = ";
-
-            if (seHabilita)
-                query = query + "0";
-            else
-                query = query + "1";
-
-            query = query + " WHERE idTipo = " + oTipoMed.IdTipo;
+                " SET borrado = 1" +
+                " WHERE idTipo = " + oTipoMed.IdTipo;
 
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
-
-        public TipoMedicamento objectMapping(DataRow row)
-        {
-            int idTipo = Convert.ToInt32(row["idTipo"].ToString());
-            TipoMedicamento oTipoMed = new TipoMedicamento
-            {
-                IdTipo = idTipo,
-                Descripcion = row["descripcion"].ToString(),
-            };
-
-            return oTipoMed;
-        }
-
 
         private List<TipoMedicamento> listMapping(DataTable tabla)
         {
@@ -123,7 +130,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de TipoMedicamento
              */
             List<TipoMedicamento> lista = new List<TipoMedicamento>();
             int cantFilas = tabla.Rows.Count;
@@ -135,6 +142,22 @@ namespace FarmaTown.Datos
             }
 
             return lista;
+        }
+
+        public TipoMedicamento objectMapping(DataRow row)
+        {
+            /*
+             * Toma los datos de la fila y los guarda
+             * en una instancia de la clase.
+             */
+            int idTipo = Convert.ToInt32(row["idTipo"].ToString());
+            TipoMedicamento oTipoMed = new TipoMedicamento
+            {
+                IdTipo = idTipo,
+                Descripcion = row["descripcion"].ToString(),
+            };
+
+            return oTipoMed;
         }
     }
 }

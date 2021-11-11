@@ -200,7 +200,7 @@ namespace FarmaTown.Presentacion
                         if ( decision == DialogResult.OK)
                         {
 
-                            if (oUsuario.cambiarEstadoUsuario(oUsuario, false))
+                            if (oUsuario.cambiarEstadoUsuario(oUsuario))
                             {
                                 MessageBox.Show("Usuario Deshabilitado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
