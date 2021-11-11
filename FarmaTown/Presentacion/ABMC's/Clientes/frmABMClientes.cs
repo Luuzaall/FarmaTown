@@ -309,9 +309,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
         private bool existeCliente()
         {
             string nombre = this.txtbNombre.Text;
-            string apellido = this.txtbApellido.Text;
             string nroDoc = this.txtbNroDoc.Text;
-            string calle = this.txtbCalle.Text;
 
             int idBarrio = int.Parse(this.dgvBarrios.SelectedRows[0].Cells[0].Value.ToString());
             int indexCboTipoDoc = this.cboTipoDoc.SelectedIndex;
@@ -322,7 +320,8 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             else
                 idTipoDoc = (int)this.cboTipoDoc.SelectedValue;
 
-            return oCliente.existeCliente(nombre, apellido, calle, nroDoc, idTipoDoc, idBarrio);
+            return oCliente.existeCliente(nombre, nroDoc
+                , idTipoDoc, idBarrio);
         }
         //private bool existeCliente()
         //{

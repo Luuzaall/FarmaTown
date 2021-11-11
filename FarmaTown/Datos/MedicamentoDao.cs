@@ -11,35 +11,12 @@ namespace FarmaTown.Datos
 {
     class MedicamentoDao
     {
-        
-
-        public Medicamento obtenerMedicamentoPorNom(string medicamento)
-        {
-            /*
-            * Permite obtener el medicamento por su nombre
-            */
-            string query = "SELECT m.idMedicamento," +
-                " m.nombre as nombreMedicamento," +
-                " m.descripcion as descripcionMed," +
-                " t.idTipo as idTipoMed,"+
-                " t.descripcion as nombreTipoMed,"+
-                " m.precioLista,"+
-                " m.cantidad"+
-                " FROM Medicamentos m" +
-                " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
-                " WHERE m.nombre = '" + medicamento + "'" +
-                " ORDER BY m.nombre;";
-
-            DataTable tablaMedicamentos = DBHelper.getDBHelper().consultaSQL(query);
-            if (tablaMedicamentos.Rows.Count > 0)
-            {
-                return objectMapping(tablaMedicamentos.Rows[0]);
-            }
-            return null;
-        }
-
         public List<Medicamento> recuperarTodos()
         {
+            /*
+             * Recupera todos los medicamentos sin 
+             * parámetros.
+             */
             string query = "SELECT m.idMedicamento" +
                     ", m.nombre as nombreMedicamento" +
                     ", m.descripcion as descripcionMed" +
@@ -54,20 +31,40 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<Medicamento> listaMed = new List<Medicamento>();
-            int cantFilas = tabla.Rows.Count;
+            return listMapping(tabla);
+        }
 
-            for (int i = 0; i < cantFilas; i++)
+        public Medicamento obtenerMedicamentoPorNom(string medicamento)
+        {
+            /*
+            * Permite obtener un único medicamento por su nombre.
+            */
+            string query = "SELECT m.idMedicamento," +
+                " m.nombre as nombreMedicamento," +
+                " m.descripcion as descripcionMed," +
+                " t.idTipo as idTipoMed,"+
+                " t.descripcion as nombreTipoMed,"+
+                " m.precioLista,"+
+                " m.cantidad"+
+                " FROM Medicamentos m" +
+                " INNER JOIN TiposMedicamento t ON t.idTipo = m.tipoMedicamento" +
+                " WHERE m.nombre = '" + medicamento + "'" +
+                " ORDER BY m.nombre;";
+
+            DataTable tablaMedicamentos = DBHelper.getDBHelper().consultaSQL(query);
+            if (tablaMedicamentos.Rows.Count != 0)
             {
-                DataRow fila = tabla.Rows[i];
-                listaMed.Add(this.objectMapping(fila));
+                return objectMapping(tablaMedicamentos.Rows[0]);
             }
-
-            return listaMed;
+            return null;
         }
 
         public List<Medicamento> consultarMedicamentoCParam(string nom, int idTipo)
         {
+            /*
+             * Recupera todos los medicamentos, filtrados
+             * por los parámetros recibidos. 
+             */
             string query = "SELECT m.idMedicamento" +
                 ", m.nombre as nombreMedicamento" +
                 ", m.descripcion as descripcionMed" +
@@ -90,18 +87,10 @@ namespace FarmaTown.Datos
             }
 
             query += " ORDER BY m.nombre";
+
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<Medicamento> listaMedicamento = new List<Medicamento>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaMedicamento.Add(this.objectMapping(fila));
-            }
-
-            return listaMedicamento;
+            return listMapping(tabla);
 
         }
 
@@ -128,15 +117,14 @@ namespace FarmaTown.Datos
             return false;
         }
 
-        internal bool cambiarEstado(Medicamento oMedicamento, bool habilitado)
+        internal bool cambiarEstado(Medicamento oMedicamento)
         {
+            /*
+             * Aplica el borrado lógico sobre el 
+             * medicamento recibido.
+             */
             string query = "UPDATE Medicamentos" +
-                 " SET borrado = ";
-
-            if (habilitado)
-                query = query + "0";
-            else
-                query = query + "1";
+                 " SET borrado = 1";
 
             query = query + " WHERE idMedicamento = " + oMedicamento.IdMedicamento;
 
@@ -148,13 +136,10 @@ namespace FarmaTown.Datos
             return false;
         }
 
-        internal bool insertar(Medicamento oMedicamento)
+        internal int insertar(Medicamento oMedicamento)
         {
             /*
-             * Inserta el medicamento nuevo en la base de datos.
-             * Su resultado se retornará en booleano.
-             * - TRUE si se insertó exitosamente
-             * - FALSE si no se logró insertar.
+             * Persiste el medicamento nuevo en la base de datos.
              */
             string query = "INSERT INTO Medicamentos" +
                 "(descripcion" +
@@ -171,14 +156,53 @@ namespace FarmaTown.Datos
                 ", '" + oMedicamento.CantidadStock + "'" +
                 ", 0)";
 
-
             int afectadas = DBHelper.getDBHelper().ejecutarSQL(query);
-            if (afectadas == 0)
-            {
-                return false;
-            }
-            else return true;
+            return afectadas;
 
+        }
+        public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
+        {
+            /*
+             * Recupera todos los medicamentos con su filtro
+             * y devuelve en DataTable para el ReportViewer.
+             */
+            string query = "SELECT m.idMedicamento" +
+                    ", m.nombre as nombre" +
+                    ", m.cantidad as cantidad" +
+                    ", tm.descripcion as tipoMedicamento" +
+                    ", m.precioLista as precioLista" +
+                    " FROM Medicamentos m" +
+                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
+                    " WHERE m.borrado = 0";
+
+            if (cantidadMinima != -1)
+                query += " AND m.cantidad > " + cantidadMinima;
+            if (cantidadMaxima != -1)
+                query += " AND m.cantidad < " + cantidadMaxima;
+
+            query = query + " ORDER BY m.nombre";
+
+            return DBHelper.getDBHelper().consultaSQL(query);
+        }
+
+        private List<Medicamento> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de Medicamento
+             */
+            List<Medicamento> lista = new List<Medicamento>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
         }
 
         public Medicamento objectMapping(DataRow row)
@@ -204,29 +228,7 @@ namespace FarmaTown.Datos
 
             };
 
-
             return oMedicamento;
-        }
-
-        public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima)
-        {
-            string query = "SELECT m.idMedicamento" +
-                    ", m.nombre as nombre" +
-                    ", m.cantidad as cantidad" +
-                    ", tm.descripcion as tipoMedicamento" +
-                    ", m.precioLista as precioLista" +
-                    " FROM Medicamentos m" +
-                    " INNER JOIN TiposMedicamento tm ON m.tipoMedicamento = tm.idTipo" +
-                    " WHERE m.borrado = 0";
-
-            if (cantidadMinima != -1)
-                query += " AND m.cantidad > " + cantidadMinima;
-            if (cantidadMaxima != -1)
-                query += " AND m.cantidad < " + cantidadMaxima;
-
-            query = query + " ORDER BY m.nombre";
-
-         return DBHelper.getDBHelper().consultaSQL(query);
         }
     }
 }

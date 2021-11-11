@@ -12,6 +12,10 @@ namespace FarmaTown.Datos
     {
         public List<MedioPago> recuperarTodos()
         {
+            /*
+             * Recupera todos los medios de pagos
+             * registrados sin parámetros.
+             */
             DataTable tabla = DBHelper.getDBHelper().consultarTabla("MediosPago");
 
             return listMapping(tabla);
@@ -20,6 +24,10 @@ namespace FarmaTown.Datos
 
         public MedioPago traer(int idMedioPago)
         {
+            /*
+             * Recupera un medio de pago específico
+             * indicado por parámetro.
+             */
             string query = "SELECT *" +
                 "   FROM MediosPago" +
                 "   WHERE borrado = 0" +
@@ -37,7 +45,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de MedioPago
              */
             List<MedioPago> lista = new List<MedioPago>();
             int cantFilas = tabla.Rows.Count;
@@ -56,7 +64,7 @@ namespace FarmaTown.Datos
             /*
              * Recibe una registro de datos y lo 
              * tranforma a una instancia de una clase 
-             * Tipo Factura.
+             * Tipo MedioPago.
              */
 
             MedioPago oMedioPago = new MedioPago

@@ -67,9 +67,9 @@ namespace FarmaTown.Logica
             return validar( oEmpleadoDao.actualizarEmpleado(oEmpleado) );
         }
 
-        public bool cambiarEstado(Empleado oEmpleado, bool seHabilita)
+        public bool cambiarEstado(Empleado oEmpleado)
         {
-            return validar( this.oEmpleadoDao.cambiarEstado(oEmpleado, seHabilita) );
+            return validar( this.oEmpleadoDao.cambiarEstado(oEmpleado) );
  
         }
 

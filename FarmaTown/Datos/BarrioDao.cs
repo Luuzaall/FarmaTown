@@ -10,8 +10,31 @@ namespace FarmaTown.Datos
 {
     class BarrioDao
     {
+        public List<Barrio> recuperarTodos()
+        {
+            /* 
+             * Recupera todos los barrios sin parámetros
+             */
+            string query = "SELECT b.idBarrio" +
+                            ", b.nombre as nomBarrio" +
+                            ", l.nombre as nomLocalidad" +
+                            ", l.idLocalidad " +
+                            " FROM Barrios b " +
+                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
+                            " WHERE b.borrado = 0" +
+                            " ORDER BY b.nombre";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            return this.listMapping(tabla);
+        }
+
         public List<Barrio> recuperarCParam(string nombre)
         {
+            /*
+             * Recupera todos los barrios en base
+             * a su nombre
+             */
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
@@ -25,16 +48,15 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<Barrio> listaBarrio = new List<Barrio>();
-            int cantFilas = tabla.Rows.Count;
-
             return this.listMapping(tabla);
 
         }
-
-        //AGREGADA PARA PODER HACER LA CONSULTA EN ABM CLIENTES
         public List<Barrio> recuperarCParamOtro(string nombre, string localidad)
         {
+            /*
+             * Recupera todos los barrios en base 
+             * a los dos parámetros
+             */
             string query = "SELECT idBarrio" +
                 ", b.nombre as nomBarrio" +
                 ", l.nombre as nomLocalidad" +
@@ -48,34 +70,16 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<Barrio> listaBarrio = new List<Barrio>();
-            int cantFilas = tabla.Rows.Count;
-
             return this.listMapping(tabla);
 
-        }
-
-        public List<Barrio> recuperarTodos()
-        {
-            string query = "SELECT b.idBarrio" +
-                            ", b.nombre as nomBarrio" +
-                            ", l.nombre as nomLocalidad" +
-                            ", l.idLocalidad " +
-                            " FROM Barrios b " +
-                            " INNER JOIN Localidades l ON b.idLocalidad = l.idLocalidad" +
-                            " WHERE b.borrado = 0" +
-                            " ORDER BY b.nombre";
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            List<Barrio> listaBarrio = new List<Barrio>();
-            int cantFilas = tabla.Rows.Count;
-
-            return this.listMapping(tabla);
         }
 
         public Barrio traer(int idBarrio)
         {
+            /*
+             * Busca un barrio en particular en 
+             * base a su id.
+             */
             string query = "SELECT b.idBarrio" +
                            ", b.nombre as nomBarrio" +
                            ", l.nombre as nomLocalidad" +
@@ -93,6 +97,10 @@ namespace FarmaTown.Datos
 
         public Barrio traer(string nombre)
         {
+            /*
+             * Busca un barrio en particular en 
+             * base a su nombre.
+             */
             string query = "SELECT b.idBarrio" +
                            ", b.nombre as nomBarrio" +
                            ", l.nombre as nomLocalidad" +
@@ -114,6 +122,11 @@ namespace FarmaTown.Datos
         }
         public int crear(Barrio nuevoBarrio)
         {
+            /*
+             * Inserta un barrio nuevo con
+             * los datos que recibe de la instancia
+             * nuevoBarrio.
+             */
             string query = "INSERT INTO Barrios" +
                             "(nombre" +
                             ", idLocalidad" +
@@ -128,6 +141,11 @@ namespace FarmaTown.Datos
 
         public int actualizar(Barrio oBarrio)
         {
+            /*
+             * Actualiza o reescribe los datos
+             * del barrio correspondiente para
+             * cambios.
+             */
             string query = "UPDATE Barrios" +
                 " SET nombre = '" + oBarrio.Nombre + "'" + 
                 ",idLocalidad = " + oBarrio.Localidad.IdLocalidad + 
@@ -136,15 +154,14 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-            public int cambiarEstado(Barrio oBarrio, bool seHabilita)
+        public int cambiarEstado(Barrio oBarrio)
         {
+            /*
+             * Deshabilita un barrio seleccionado
+             * aplicando borrado lógico.
+             */
             string query = "UPDATE Barrios" +
-                " SET borrado = ";
-
-            if (seHabilita)
-                query = query + "0";
-            else
-                query = query + "1";
+                " SET borrado = 1";
 
             query = query + " WHERE idBarrio = " + oBarrio.IdBarrio;
 
@@ -152,7 +169,12 @@ namespace FarmaTown.Datos
         }
 
         public List<Barrio> recuperarSoloUsadosClientes()
-        {
+        { 
+            /*
+             * Apoya el reporte de clientes
+             * Busca sólo aquellos barrios que se utilizan
+             * al menos una vez por los clientes.
+             */
             string query = "SELECT b.nombre" +
                 " FROM Clientes c" +
                 " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
@@ -179,7 +201,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Barrio
              */
             List<Barrio> lista = new List<Barrio>();
             int cantFilas = tabla.Rows.Count;
@@ -195,6 +217,10 @@ namespace FarmaTown.Datos
 
         private Barrio objectMapping(DataRow row)
         {
+            /*
+             * Toma los datos del DataRow y
+             * lo guarda en una instancia del objeto
+             */
             Barrio oBarrio = new Barrio
             {
                 IdBarrio = Convert.ToInt32(row["idBarrio"].ToString()),

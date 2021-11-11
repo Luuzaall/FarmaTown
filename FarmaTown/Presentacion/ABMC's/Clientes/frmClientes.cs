@@ -189,7 +189,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            this.cargarGrilla(this.dgvClientes, oCliente.recuperarTodos(false));
+            this.cargarGrilla(this.dgvClientes, oCliente.recuperarTodos());
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -251,7 +251,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
 
         private void actualizar()
         {
-            this.cargarGrilla(dgvClientes, oCliente.recuperarTodos(false));
+            this.cargarGrilla(dgvClientes, oCliente.recuperarTodos());
             this.deshabilitarBotones();
         }
 

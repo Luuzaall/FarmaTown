@@ -121,6 +121,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSVentas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datos\SesionDao.cs" />
     <Compile Include="Datos\TipoFacturaDao.cs" />
     <Compile Include="Datos\VentaDao.cs" />
     <Compile Include="Datos\DBHelper.cs" />

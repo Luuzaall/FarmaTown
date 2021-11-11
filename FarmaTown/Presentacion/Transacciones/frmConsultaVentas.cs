@@ -151,22 +151,28 @@ namespace FarmaTown.Presentacion.Transacciones
             * proyenedo una invitación visual
             */
             this.cambiarEstadoBotones(true);
+            string estadoSelecc = this.dgvVentas.CurrentRow.Cells[1].Value.ToString();
+            if (estadoSelecc == "Anulada")
+            {
+                this.btnAnular.BackColor = Color.Gray;
+                this.btnAnular.Enabled = false;
+            }
         }
 
         private void cambiarEstadoBotones(bool seHabilita)
         {
-            this.btnEliminar.Enabled = seHabilita;
+            this.btnAnular.Enabled = seHabilita;
             this.btnVerDetalles.Enabled = seHabilita;
             this.lblAviso.Visible = !seHabilita;
             
             if (seHabilita)
             {
-                this.btnEliminar.BackColor = Color.FromArgb(116, 201, 79);
+                this.btnAnular.BackColor = Color.FromArgb(116, 201, 79);
                 this.btnVerDetalles.BackColor = Color.FromArgb(116, 201, 79);
             }
             else
             {
-                this.btnEliminar.BackColor = Color.Gray;
+                this.btnAnular.BackColor = Color.Gray;
                 this.btnVerDetalles.BackColor = Color.Gray;
             }
 

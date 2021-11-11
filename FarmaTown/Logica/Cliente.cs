@@ -26,9 +26,9 @@ namespace FarmaTown.Logica
             oClienteDao = new ClienteDao();
         }
 
-        public List<Cliente> recuperarTodos(bool esCBorrados)
+        public List<Cliente> recuperarTodos()
         {
-            return this.oClienteDao.recuperarTodos(esCBorrados);
+            return this.oClienteDao.recuperarTodos();
         }
 
         public List<Cliente> recuperarConParam(string nombre, string apellido
@@ -40,16 +40,6 @@ namespace FarmaTown.Logica
         public Cliente traerCliente(int idCliente)
         {
             return oClienteDao.traer(idCliente);
-        }
-
-        public bool existe(int idTipoDoc, string nroDoc)
-        {
-            Cliente resultado = oClienteDao.recuperar(idTipoDoc, nroDoc);
-
-            if (resultado is null)
-                return false;
-            else
-                return true;
         }
 
         public bool crear(Cliente oCliente)
@@ -81,9 +71,11 @@ namespace FarmaTown.Logica
             else
                 return true;
         }
-        public bool existeCliente(string nomCliente, string apellido, string calle, string nroDoc, int idTipoDoc, int idBarrio)
+        public bool existeCliente(string nomCliente, string nroDoc
+            , int idTipoDoc, int idBarrio)
         {
-            object clienteEncontrado = oClienteDao.buscarCliente(nomCliente,apellido, calle, nroDoc, idTipoDoc, idBarrio);
+            object clienteEncontrado = oClienteDao.buscarCliente(nomCliente, nroDoc
+                , idTipoDoc, idBarrio);
             if (clienteEncontrado is null)
                 return false;
             else

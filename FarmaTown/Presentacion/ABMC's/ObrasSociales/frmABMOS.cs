@@ -176,7 +176,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oOS.cambiarEstado(oOS, false))
+                            if (oOS.cambiarEstado(oOS))
                             {
                                 MessageBox.Show("Obra social Deshabilitada!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);

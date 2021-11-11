@@ -1,5 +1,4 @@
-﻿using FarmaTown.Logica;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -64,7 +63,7 @@ namespace FarmaTown.Datos
         {
             /*
              * Permite utilziar una instancia del DBHelper
-             * , siendo el patrón Singleton
+             * , aplicando el patrón Singleton
              */
             if (instance == null)
                 instance = new DBHelper();
@@ -76,32 +75,6 @@ namespace FarmaTown.Datos
             * Permite obtener el string de conexión
             */
             return stringConexion;
-        }
-
-
-        public bool persistirSesion(Sesion ses, bool esFinal)
-        {
-            string query = "";
-            if (!esFinal)
-            {
-                query = "INSERT INTO Sesiones(idUsuario," +
-                            "fechaInicio, fechaFin, borrado)" +
-                            " VALUES" +
-                             " (" + ses.Usuario.IdUsuario +
-                             ", CONVERT(DATETIME, '" + ses.FechaInicio + "', 103), null, 0)";
-            }
-            else
-            {
-                query = "UPDATE Sesiones" +
-                    " SET fechaFin = CONVERT(DATETIME, '" + ses.FechaFin + "', 103)" +
-                    " WHERE fechaInicio = CONVERT(DATETIME, '" + ses.FechaInicio + "', 103)";
-            }
-            int resultado = this.ejecutarSQL(query);
-            if (resultado==0)
-            {
-                return false;
-            }
-            return true;
         }
 
         public int ejecutarSQL(string strSql)
@@ -118,20 +91,21 @@ namespace FarmaTown.Datos
             {
                 cnn.Open();
 
-                //Starts the transaction
+                //Comienza la transacción
                 t = cnn.BeginTransaction();
                 cmd.Connection = cnn;
                 cmd.CommandText = strSql;
                 cmd.Transaction = t;
 
                 afectadas = cmd.ExecuteNonQuery();
-                //Finishes the transaction
+                //Termina la transacción
                 t.Commit();
 
              } catch (Exception ex)
             {
                 if (t != null)
                 {
+                    // Si hubo algún error...
                     t.Rollback();
                     afectadas = 0;
                 }
@@ -141,6 +115,7 @@ namespace FarmaTown.Datos
                 this.closeConnection(cnn);
             }
 
+            // Devuelve las filas afectadas.
             return afectadas;
 
         }
@@ -191,9 +166,9 @@ namespace FarmaTown.Datos
                 " WHERE borrado = 0");
         }
 
-        public int ejecutarSQLCONPARAMETROS(string strSql, Dictionary<string, object> parametros = null)
+        public int ejecutarSQLCONPARAMETROS(string strSql
+            , Dictionary<string, object> parametros = null)
         {
-            // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
 
             SqlCommand cmd = new SqlCommand();
 
@@ -230,6 +205,10 @@ namespace FarmaTown.Datos
 
         public object consultaSQLScalar(string strSql)
         {
+            /*
+             * Obtiene un valor luego de alguna
+             * consulta compleja de inserción
+             */
             SqlCommand cmd = new SqlCommand();
             try
             {

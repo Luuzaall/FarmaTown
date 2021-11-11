@@ -175,7 +175,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
                             MessageBox.Show("Medicamento Deshabilitado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
 
-                            if (oMedicamento.cambiarEstadoMedicamento(oMedicamento, false))
+                            if (oMedicamento.cambiarEstadoMedicamento(oMedicamento))
                             {
                                 MessageBox.Show("Medicamento Borrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();

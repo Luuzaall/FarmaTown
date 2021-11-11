@@ -10,8 +10,12 @@ namespace FarmaTown.Datos
 {
     class ClienteDao
     {
-        public List<Cliente> recuperarTodos(bool esCBorrados)
+        public List<Cliente> recuperarTodos()
         {
+            /*
+             * Recupera todos los clientes sin parámetros
+             *  y devuelve como lista el resultado.
+             */
             string query = "SELECT c.idCliente" +
                             ", c.nroDoc" +
                             ", c.tipoDoc" +
@@ -28,26 +32,17 @@ namespace FarmaTown.Datos
                             " WHERE c.borrado = 0" +
                             " ORDER BY c.nombre";
 
-
-            if (esCBorrados)
-                query = query + " OR borrado = 1";
-
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<Cliente> listaCliente = new List<Cliente>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaCliente.Add(this.objectMapping(fila));
-            }
-
-            return listaCliente;
+            return listMapping(tabla);
         }
         public List<Cliente> recuperarConParam(string nombre, string apellido
             , string nroDoc, int idTipoDoc)
         {
+            /*
+             * Recupera los clientes filtrados por
+             * los parámetros indicados.
+             */
             string query = "SELECT c.idCliente" +
                             ", c.nroDoc" +
                             ", c.tipoDoc" +
@@ -81,6 +76,7 @@ namespace FarmaTown.Datos
             }                   
 
             query += " ORDER BY c.nombre";
+
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
             return this.listMapping(tabla);
@@ -88,6 +84,11 @@ namespace FarmaTown.Datos
 
         public Object obtenerDatosReporte(string idBarrio, string idLocalidad)
         {
+            /*
+             * Obtiene los filtros y devuelve los clientes 
+             * como DataTable para que lo reciba el 
+             * ReportViewer.
+             */
             string query = "SELECT c.nombre" +
                 " , c.apellido" +
                 " , t.nombre as tipoDocumento" +
@@ -110,36 +111,12 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().consultaSQL(query);
         }
 
-        public Cliente recuperar( int idTipoDoc, string nroDoc)
-        {
-            string query = "SELECT c.idCliente" +
-                            ", c.nroDoc" +
-                            ", c.tipoDoc" +
-                            ", c.apellido " +
-                            ", c.nombre as nomCliente" +
-                            ", c.calle " +
-                            ", c.nroCalle " +
-                            ", c.idBarrio " +
-                            ", b.nombre as nomBarrio" +
-                            ", td.nombre as nomTipoDoc" +
-                            " FROM Clientes c " +
-                            " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
-                            " INNER JOIN TiposDocumento td ON c.tipoDoc = td.idTipo" +
-                            " WHERE c.borrado = 0" +
-                            " AND c.nroDoc = '" + nroDoc + "'" +
-                            " AND c.tipoDoc = " + idTipoDoc;
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            if (tabla.Rows.Count == 0)
-                return null;
-            else
-                return this.objectMapping(tabla.Rows[0]);
-
-        }
-
         public Cliente traer(int idCliente)
         {
+            /*
+             * Recupera el cliente en base a su número
+             * identificatorio.
+             */
             string query = "SELECT c.idCliente" +
                             ", c.nroDoc" +
                             ", c.tipoDoc" +
@@ -161,6 +138,10 @@ namespace FarmaTown.Datos
 
         public int insertar(Cliente oCliente) 
         {
+            /*
+             * Guarda los datos de un NUEVO cliente
+             * traidos por parámetro.
+             */
             string query = "INSERT INTO Clientes" +
                 "(nroDoc, tipoDoc, apellido, nombre, calle, nroCalle" +
                 ", idBarrio, borrado)" +
@@ -180,6 +161,10 @@ namespace FarmaTown.Datos
 
         public int actualizar(Cliente oCliente)
         {
+            /*
+             * Cambia los valores ya existentes del cliente
+             * a los nuevos recibidos por parámetro.
+             */
             string query = "UPDATE Clientes" +
                    " SET nroDoc = '" + oCliente.NroDoc + "'" +
                     ", tipoDoc = " + oCliente.TipoDoc.IdTipo +
@@ -196,23 +181,24 @@ namespace FarmaTown.Datos
 
         public int cambiarEstado(Cliente oCliente)
         {
+            /*
+             * Deshabilita el cliente indicado
+             * por parámetro.
+             */
             string query = "UPDATE Clientes " +
                " SET borrado = 1" +
                " WHERE idCliente= " + oCliente.IdCliente;
 
-
-            //if (seHabilita)
-            //    query = query + "0";
-            //else
-            //    query = query + "1";
-
-            //query = query + " WHERE idEmpleado = " + empl.IdEmpleado;
-
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public Cliente buscarCliente(string nomCli, string apellido , string calle, string nroDoc, int idTipoDoc, int idBarrio)
+        public Cliente buscarCliente(string nomCli
+            , string nroDoc, int idTipoDoc, int idBarrio)
         {
+            /*
+             * Busca un cliente particular con todos los parámetros
+             * indicador.
+             */
             string query = "SELECT c.idCliente" +
                             ", c.nroDoc" +
                             ", c.tipoDoc" +
@@ -248,6 +234,7 @@ namespace FarmaTown.Datos
             DataTable tablaClientes = DBHelper.getDBHelper().consultaSQL(query);
             if (tablaClientes.Rows.Count == 0)
             {
+                // Si no se encontró...
                 return null;
             }
             else
@@ -263,7 +250,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Cliente
              */
             List<Cliente> lista = new List<Cliente>();
             int cantFilas = tabla.Rows.Count;
@@ -278,6 +265,11 @@ namespace FarmaTown.Datos
         }
         private Cliente objectMapping(DataRow row)
         {
+            /*
+             * Recibe una fila del DataTable
+             * y utiliza todos sus datos para guardarlos
+             * en una instancia de cliente.
+             */
             Cliente oCliente = new Cliente
             {
                 IdCliente = Convert.ToInt32(row["idCliente"].ToString()),

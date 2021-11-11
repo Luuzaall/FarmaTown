@@ -167,7 +167,7 @@ namespace FarmaTown.Presentacion.Empleados
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oEmpleado.cambiarEstado(oEmpleado, false))
+                            if (oEmpleado.cambiarEstado(oEmpleado))
                             {
                                 MessageBox.Show("Empleado Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();

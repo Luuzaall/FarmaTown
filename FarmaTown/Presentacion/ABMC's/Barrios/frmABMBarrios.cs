@@ -251,7 +251,7 @@ namespace FarmaTown.Presentacion.Localidades
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oBarrio.cambiarEstado(oBarrio, false))
+                            if (oBarrio.cambiarEstado(oBarrio))
                             {
                                 MessageBox.Show("Barrio Deshabilitado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);

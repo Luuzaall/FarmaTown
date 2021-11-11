@@ -13,6 +13,10 @@ namespace FarmaTown.Datos
 
         public List<Rol> recuperarTodos()
         {
+            /*
+             * Recupera todos los roles registrados
+             * sin parámetros.
+             */
             DataTable tabla = DBHelper.getDBHelper().consultarTabla("Roles");
 
             return listMapping(tabla);
@@ -24,7 +28,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Rol
              */
             List<Rol> lista = new List<Rol>();
             int cantFilas = tabla.Rows.Count;
@@ -43,7 +47,7 @@ namespace FarmaTown.Datos
             /*
              * Recibe una registro de datos y lo 
              * tranforma a una instancia de una clase 
-             * Tipo Factura.
+             * Tipo Rol.
              */
 
             Rol oRol = new Rol

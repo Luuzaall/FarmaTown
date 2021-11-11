@@ -16,12 +16,29 @@ namespace FarmaTown.Logica
         public DateTime FechaFin { get; set; }
         public bool Borrado { get; set; }
 
-        internal void persistir(bool esFinal)
+        SesionDao dao;
+        public Sesion()
         {
-            bool bandera;
+            dao = new SesionDao();
+        }
 
-            bandera = DBHelper.getDBHelper().persistirSesion(this, esFinal);
-            Console.WriteLine(bandera);
+        internal bool persistirInicio()
+        {
+            return validar(dao.persistirSesionInicio(this));
+        }
+
+        internal bool persistirFinal()
+        {
+            return validar(dao.persistirSesionFinal(this));
+        }
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

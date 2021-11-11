@@ -59,9 +59,9 @@ namespace FarmaTown.Logica
    
         }
 
-        public bool cambiarEstado(ObraSocial oOS, bool seHabilita)
+        public bool cambiarEstado(ObraSocial oOS)
         {
-            return validar( this.oObraSocialDao.cambiarEstado(oOS, false) );
+            return validar( this.oObraSocialDao.cambiarEstado(oOS) );
 
         }
 

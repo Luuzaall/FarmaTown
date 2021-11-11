@@ -13,22 +13,22 @@ namespace FarmaTown.Datos
 
         public List<TipoDocumento> recuperarTodos()
         {
+            /*
+             * Recupera todos los tipos de documento
+             * sin parámetros.
+             */
             DataTable tabla = DBHelper.getDBHelper().consultarTabla("TiposDocumento");
             int cantFilas = tabla.Rows.Count;
 
-            List<TipoDocumento> listaTD = new List<TipoDocumento>();
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaTD.Add(this.objectMapping(fila));
-            }
-
-            return listaTD;
-
+            return listMapping(tabla);
         }
 
         public List<TipoDocumento> recuperarCParam(string nombre, string pClave)
         {
+            /*
+             * Recupera todos los tipo de documento
+             * filtrados con los parámetros recibidos.
+             */
             string query = "SELECT idTipo" +
                 ", nombre" +
                 ", descripcion" +
@@ -46,21 +46,15 @@ namespace FarmaTown.Datos
             query += " ORDER BY nombre";
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            List<TipoDocumento> listaTD = new List<TipoDocumento>();
-            int cantFilas = tabla.Rows.Count;
-
-            for (int i = 0; i < cantFilas; i++)
-            {
-                DataRow fila = tabla.Rows[i];
-                listaTD.Add(this.objectMapping(fila));
-            }
-
-            return listaTD;
-
+            return listMapping(tabla);
         }
 
         public TipoDocumento traer(int idTipo)
         {
+            /*
+             * Recupera un tipo de documento
+             * en particular con su ID:
+             */
             string query = "SELECT *" +
                 " FROM TiposDocumento" +
                 " WHERE borrado = 0" +
@@ -74,6 +68,10 @@ namespace FarmaTown.Datos
 
         public TipoDocumento traer(string nom)
         {
+            /*
+             * Recupera un tipo de documento
+             * en particular con su nombre:
+             */
             string query = "SELECT *" +
                 " FROM TiposDocumento" +
                 " WHERE borrado = 0" +
@@ -92,6 +90,10 @@ namespace FarmaTown.Datos
 
         public int crear(TipoDocumento oNuevoTipoDoc)
         {
+            /*
+             * Persite el tipo de documento
+             * recibido por parámetro.
+             */
             string query = "INSERT INTO TiposDocumento" +
                 "(nombre, borrado, descripcion)" +
                 " VALUES" +
@@ -126,12 +128,32 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
+        private List<TipoDocumento> listMapping(DataTable tabla)
+        {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información de cada
+             * una de ellas en un objeto del 
+             * tipo de TipoDocumento
+             */
+            List<TipoDocumento> lista = new List<TipoDocumento>();
+            int cantFilas = tabla.Rows.Count;
+
+            for (int i = 0; i < cantFilas; i++)
+            {
+                DataRow fila = tabla.Rows[i];
+                lista.Add(this.objectMapping(fila));
+            }
+
+            return lista;
+        }
+
         private TipoDocumento objectMapping(DataRow row)
         {
             /*
              * Recibe una registro de datos y lo 
              * tranforma a una instancia de una clase 
-             * Empleado.
+             * TipoDocumento.
              */
             TipoDocumento oOS = new TipoDocumento
             {
