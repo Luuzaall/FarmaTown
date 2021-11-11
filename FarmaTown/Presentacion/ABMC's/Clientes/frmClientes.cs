@@ -162,6 +162,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
                 resultadosClientes = this.oCliente.recuperarConParam(nombre, apellido, nroDoc
                     , idTipoDoc);
                 this.cargarGrilla(this.dgvClientes, resultadosClientes);
+                this.deshabilitarBotones();
             }
 
         }

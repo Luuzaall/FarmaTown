@@ -119,7 +119,6 @@ namespace FarmaTown.Presentacion
             oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.update, oUsuario);
             frmABMUs.ShowDialog();
-            this.actualizar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -129,7 +128,6 @@ namespace FarmaTown.Presentacion
             oUsuario = this.oUsuario.traerUsuario(nomUsuario);
             frmABMUs.seleccionarUsuario(frmABMUsuario.FormMode.delete, oUsuario);
             frmABMUs.ShowDialog();
-            this.actualizar();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

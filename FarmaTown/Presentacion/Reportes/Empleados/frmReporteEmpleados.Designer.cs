@@ -36,11 +36,11 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.dSEmpleados = new FarmaTown.Datos.Reportes.DSEmpleados();
             this.label1 = new System.Windows.Forms.Label();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.cboFarmacias = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rpvEmpleados = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboFarmacias = new System.Windows.Forms.ComboBox();
             this.btnLimpiar = new CustomControls.RJControls.RJButton();
             this.btnGenerar = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.dSEmpleadosBindingSource)).BeginInit();
@@ -87,6 +87,29 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
+            // cboFarmacias
+            // 
+            this.cboFarmacias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
+            this.cboFarmacias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboFarmacias.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.cboFarmacias.FormattingEnabled = true;
+            this.cboFarmacias.Location = new System.Drawing.Point(540, 51);
+            this.cboFarmacias.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.cboFarmacias.Name = "cboFarmacias";
+            this.cboFarmacias.Size = new System.Drawing.Size(211, 27);
+            this.cboFarmacias.TabIndex = 55;
+            this.cboFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(428, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 23);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Farmacia:";
+            // 
             // txtbNombre
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
@@ -96,6 +119,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(229, 25);
             this.txtbNombre.TabIndex = 53;
+            this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter_KeyDown);
             // 
             // label2
             // 
@@ -116,30 +140,8 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.rpvEmpleados.Location = new System.Drawing.Point(15, 240);
             this.rpvEmpleados.Name = "rpvEmpleados";
             this.rpvEmpleados.ServerReport.BearerToken = null;
-            this.rpvEmpleados.Size = new System.Drawing.Size(784, 251);
+            this.rpvEmpleados.Size = new System.Drawing.Size(784, 398);
             this.rpvEmpleados.TabIndex = 52;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(428, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 23);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Farmacia:";
-            // 
-            // cboFarmacias
-            // 
-            this.cboFarmacias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
-            this.cboFarmacias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboFarmacias.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.cboFarmacias.FormattingEnabled = true;
-            this.cboFarmacias.Location = new System.Drawing.Point(540, 51);
-            this.cboFarmacias.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cboFarmacias.Name = "cboFarmacias";
-            this.cboFarmacias.Size = new System.Drawing.Size(211, 27);
-            this.cboFarmacias.TabIndex = 55;
             // 
             // btnLimpiar
             // 
@@ -198,7 +200,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::FarmaTown.Properties.Resources.frmABMTiposDoc;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(811, 515);
+            this.ClientSize = new System.Drawing.Size(811, 650);
             this.Controls.Add(this.rpvEmpleados);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.btnLimpiar);

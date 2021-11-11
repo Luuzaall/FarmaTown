@@ -70,7 +70,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnSalir.Location = new System.Drawing.Point(681, 542);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 43;
+            this.btnSalir.TabIndex = 8;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -93,7 +93,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEditar.Location = new System.Drawing.Point(112, 542);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 40;
+            this.btnEditar.TabIndex = 6;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -116,7 +116,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnEliminar.Location = new System.Drawing.Point(206, 542);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 41;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -131,7 +131,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbFiltros.Location = new System.Drawing.Point(24, 48);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(722, 133);
-            this.gbFiltros.TabIndex = 38;
+            this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
@@ -139,11 +139,11 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(148, 42);
+            this.txtbNombre.Location = new System.Drawing.Point(261, 45);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(218, 25);
-            this.txtbNombre.TabIndex = 12;
+            this.txtbNombre.TabIndex = 1;
             this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // btnConsultar
@@ -162,11 +162,11 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnConsultar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultar.ForeColor = System.Drawing.Color.Black;
             this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnConsultar.Location = new System.Drawing.Point(183, 77);
+            this.btnConsultar.Location = new System.Drawing.Point(296, 80);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(106, 35);
-            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.TabIndex = 2;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -188,11 +188,11 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(424, 35);
+            this.btnLimpiar.Location = new System.Drawing.Point(522, 38);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(96, 38);
-            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -203,7 +203,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 44);
+            this.label1.Location = new System.Drawing.Point(139, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 23);
@@ -218,7 +218,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.gbResultados.Location = new System.Drawing.Point(24, 198);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(722, 330);
-            this.gbResultados.TabIndex = 37;
+            this.gbResultados.TabIndex = 2;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
@@ -287,7 +287,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnActualizar.Location = new System.Drawing.Point(574, 187);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(105, 37);
-            this.btnActualizar.TabIndex = 30;
+            this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -311,7 +311,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.rjButton1.Location = new System.Drawing.Point(21, 542);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(57, 49);
-            this.rjButton1.TabIndex = 44;
+            this.rjButton1.TabIndex = 5;
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.btnAgregar_Click);

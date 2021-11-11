@@ -32,7 +32,7 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            string nomEmpleado = this.txtbNombre.Text;
+            string nomEmpleado = this.txtbNombre.Text; ;
             int indexFarmacia = this.cboFarmacias.SelectedIndex;
             string idFarmacia;
             string nomFarmacia = "No Filtrado";
@@ -52,6 +52,10 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
             ReportDataSource rprtDTSource = new ReportDataSource("DSEmpleados", tabla);
 
 
+
+            if (string.IsNullOrEmpty(nomEmpleado)
+                || nomEmpleado == " ")
+                nomEmpleado = "No Filtrado";
             //Crea las variables para los parámetros que recibirá 
             // el reporte.
             var paramFarmacia = new ReportParameter("farmacia", nomFarmacia);
@@ -74,6 +78,12 @@ namespace FarmaTown.Presentacion.Reportes.Empleados
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
+            this.cboFarmacias.SelectedIndex = -1;
+        }
+
+        private void enter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnGenerar, e);
         }
     }
 }

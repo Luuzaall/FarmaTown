@@ -77,7 +77,7 @@ namespace FarmaTown.Datos
             if (idEstado != "-1")
                 query += " AND v.idEstado = " + idEstado;
             if (nroFactura != "")
-                query += " AND v.nroFactura = %" + nroFactura + "%";
+                query += " AND v.nroFactura LIKE '" + nroFactura + "%'";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
@@ -229,20 +229,22 @@ namespace FarmaTown.Datos
 
                 foreach (var itemVenta in nuevaVenta.Detalles)
                 {
-                    string queryDetalle = string.Concat(" INSERT INTO [dbo].[DetalleVentas]   ",
+                    string queryDetalle = string.Concat(" INSERT INTO [dbo].[DetalleVentas] ",
                                                         "           ([idVenta]              ",
                                                         "           ,[idMedicamento]        ",
                                                         "           ,[cantidad]             ",
                                                         "           ,[precio]               ",
-                                                        "           ,[reintegro]             ",
-                                                        "           ,[borrado] )             ",
+                                                        "           ,[reintegro]            ",
+                                                        "           ,[idEstado]             ",
+                                                        "           ,[borrado] )            ",
                                                         "     VALUES                        ",
                                                         "           (@idVenta               ",
                                                         "           ,@idMedicamento         ",
                                                         "           ,@cantidad              ",
                                                         "           ,@precio                ",
                                                         "           ,@reintegro             ",
-                                                        "           ,@borrado)               ");
+                                                        "           ,@idEstado              ",
+                                                        "           ,@borrado)              ");
 
                     var paramDetalle = new Dictionary<string, object>();
                     paramDetalle.Add("idVenta", nuevaVenta.IdVenta);
@@ -250,6 +252,7 @@ namespace FarmaTown.Datos
                     paramDetalle.Add("cantidad", itemVenta.Cantidad);
                     paramDetalle.Add("precio", itemVenta.PrecioUnitario);
                     paramDetalle.Add("reintegro", itemVenta.Reintegro);
+                    paramDetalle.Add("idEstado", 1);
                     paramDetalle.Add("borrado", 0);
 
                     helper.ejecutarSQLCONPARAMETROS(queryDetalle, paramDetalle);

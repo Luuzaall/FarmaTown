@@ -57,15 +57,15 @@ namespace FarmaTown.Presentacion.Empleados
             this.lnlNomFarm = new System.Windows.Forms.Label();
             this.btnLimpiarFarmacias = new CustomControls.RJControls.RJButton();
             this.dgvFarmacias = new System.Windows.Forms.DataGridView();
-            this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
-            this.btnCancelar = new CustomControls.RJControls.RJButton();
-            this.btnAceptar = new CustomControls.RJControls.RJButton();
             this.idFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomFarmacia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegFarmacia = new CustomControls.RJControls.RJButton();
+            this.btnCancelar = new CustomControls.RJControls.RJButton();
+            this.btnAceptar = new CustomControls.RJControls.RJButton();
             gbEmpleados = new System.Windows.Forms.GroupBox();
             gbEmpleados.SuspendLayout();
             this.gbFarmacias.SuspendLayout();
@@ -91,16 +91,17 @@ namespace FarmaTown.Presentacion.Empleados
             gbEmpleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             gbEmpleados.Location = new System.Drawing.Point(23, 12);
             gbEmpleados.Name = "gbEmpleados";
-            gbEmpleados.Size = new System.Drawing.Size(1233, 200);
-            gbEmpleados.TabIndex = 30;
+            gbEmpleados.Size = new System.Drawing.Size(1233, 152);
+            gbEmpleados.TabIndex = 1;
             gbEmpleados.TabStop = false;
             gbEmpleados.Text = "Datos del Empleado";
             // 
             // lblTipoDoc
             // 
             this.lblTipoDoc.AutoSize = true;
+            this.lblTipoDoc.BackColor = System.Drawing.Color.White;
             this.lblTipoDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblTipoDoc.Location = new System.Drawing.Point(239, 80);
+            this.lblTipoDoc.Location = new System.Drawing.Point(239, 70);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(201, 23);
             this.lblTipoDoc.TabIndex = 31;
@@ -110,7 +111,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblNroDoc.AutoSize = true;
             this.lblNroDoc.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblNroDoc.Location = new System.Drawing.Point(255, 133);
+            this.lblNroDoc.Location = new System.Drawing.Point(255, 115);
             this.lblNroDoc.Name = "lblNroDoc";
             this.lblNroDoc.Size = new System.Drawing.Size(185, 23);
             this.lblNroDoc.TabIndex = 30;
@@ -143,7 +144,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteLetras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteLetras.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteLetras.Enabled = false;
-            this.txtbPasaporteLetras.Location = new System.Drawing.Point(477, 136);
+            this.txtbPasaporteLetras.Location = new System.Drawing.Point(477, 118);
             this.txtbPasaporteLetras.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteLetras.Name = "txtbPasaporteLetras";
             this.txtbPasaporteLetras.Size = new System.Drawing.Size(86, 20);
@@ -156,7 +157,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbPasaporteNro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbPasaporteNro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbPasaporteNro.Enabled = false;
-            this.txtbPasaporteNro.Location = new System.Drawing.Point(593, 136);
+            this.txtbPasaporteNro.Location = new System.Drawing.Point(593, 118);
             this.txtbPasaporteNro.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbPasaporteNro.Name = "txtbPasaporteNro";
             this.txtbPasaporteNro.Size = new System.Drawing.Size(185, 20);
@@ -179,7 +180,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.txtbNroDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbNroDoc.Enabled = false;
-            this.txtbNroDoc.Location = new System.Drawing.Point(477, 136);
+            this.txtbNroDoc.Location = new System.Drawing.Point(477, 118);
             this.txtbNroDoc.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbNroDoc.Name = "txtbNroDoc";
             this.txtbNroDoc.Size = new System.Drawing.Size(301, 20);
@@ -204,7 +205,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.btnLimpiarEmpleado.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarEmpleado.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarEmpleado.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiarEmpleado.Location = new System.Drawing.Point(916, 58);
+            this.btnLimpiarEmpleado.Location = new System.Drawing.Point(876, 58);
             this.btnLimpiarEmpleado.Name = "btnLimpiarEmpleado";
             this.btnLimpiarEmpleado.Size = new System.Drawing.Size(129, 49);
             this.btnLimpiarEmpleado.TabIndex = 4;
@@ -227,7 +228,7 @@ namespace FarmaTown.Presentacion.Empleados
             // cboTipoDoc
             // 
             this.cboTipoDoc.FormattingEnabled = true;
-            this.cboTipoDoc.Location = new System.Drawing.Point(477, 80);
+            this.cboTipoDoc.Location = new System.Drawing.Point(477, 70);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(301, 27);
             this.cboTipoDoc.TabIndex = 2;
@@ -243,10 +244,10 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFarmacias.Controls.Add(this.dgvFarmacias);
             this.gbFarmacias.Controls.Add(this.btnRegFarmacia);
             this.gbFarmacias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.gbFarmacias.Location = new System.Drawing.Point(23, 233);
+            this.gbFarmacias.Location = new System.Drawing.Point(23, 170);
             this.gbFarmacias.Name = "gbFarmacias";
             this.gbFarmacias.Size = new System.Drawing.Size(1233, 429);
-            this.gbFarmacias.TabIndex = 29;
+            this.gbFarmacias.TabIndex = 3;
             this.gbFarmacias.TabStop = false;
             this.gbFarmacias.Text = "Datos de Farmacias";
             // 
@@ -301,7 +302,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.gbFiltrosFarm.Location = new System.Drawing.Point(18, 32);
             this.gbFiltrosFarm.Name = "gbFiltrosFarm";
             this.gbFiltrosFarm.Size = new System.Drawing.Size(1198, 136);
-            this.gbFiltrosFarm.TabIndex = 35;
+            this.gbFiltrosFarm.TabIndex = 2;
             this.gbFiltrosFarm.TabStop = false;
             this.gbFiltrosFarm.Text = "FILTROS";
             // 
@@ -468,82 +469,6 @@ namespace FarmaTown.Presentacion.Empleados
             this.dgvFarmacias.TabStop = false;
             this.dgvFarmacias.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFarmacias_KeyDown);
             // 
-            // btnRegFarmacia
-            // 
-            this.btnRegFarmacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRegFarmacia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnRegFarmacia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegFarmacia.BorderColor = System.Drawing.Color.Green;
-            this.btnRegFarmacia.BorderRadius = 20;
-            this.btnRegFarmacia.BorderSize = 1;
-            this.btnRegFarmacia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegFarmacia.FlatAppearance.BorderSize = 0;
-            this.btnRegFarmacia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnRegFarmacia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnRegFarmacia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegFarmacia.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRegFarmacia.ForeColor = System.Drawing.Color.Black;
-            this.btnRegFarmacia.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnRegFarmacia.Location = new System.Drawing.Point(1085, 237);
-            this.btnRegFarmacia.Name = "btnRegFarmacia";
-            this.btnRegFarmacia.Size = new System.Drawing.Size(106, 56);
-            this.btnRegFarmacia.TabIndex = 11;
-            this.btnRegFarmacia.Text = "Registrar Farmacia";
-            this.btnRegFarmacia.TextColor = System.Drawing.Color.Black;
-            this.btnRegFarmacia.UseVisualStyleBackColor = false;
-            this.btnRegFarmacia.Click += new System.EventHandler(this.btnRegFarmacia_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.BorderColor = System.Drawing.Color.Green;
-            this.btnCancelar.BorderRadius = 20;
-            this.btnCancelar.BorderSize = 1;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(712, 670);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(129, 49);
-            this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextColor = System.Drawing.Color.Black;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAceptar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
-            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAceptar.BorderColor = System.Drawing.Color.Green;
-            this.btnAceptar.BorderRadius = 20;
-            this.btnAceptar.BorderSize = 1;
-            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.Black;
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(1099, 668);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(140, 49);
-            this.btnAceptar.TabIndex = 13;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextColor = System.Drawing.Color.Black;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // idFarmacia
             // 
             this.idFarmacia.HeaderText = "ID";
@@ -586,6 +511,82 @@ namespace FarmaTown.Presentacion.Empleados
             this.nomLocalidad.ReadOnly = true;
             this.nomLocalidad.Width = 200;
             // 
+            // btnRegFarmacia
+            // 
+            this.btnRegFarmacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRegFarmacia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnRegFarmacia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegFarmacia.BorderColor = System.Drawing.Color.Green;
+            this.btnRegFarmacia.BorderRadius = 20;
+            this.btnRegFarmacia.BorderSize = 1;
+            this.btnRegFarmacia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegFarmacia.FlatAppearance.BorderSize = 0;
+            this.btnRegFarmacia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnRegFarmacia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnRegFarmacia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegFarmacia.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btnRegFarmacia.ForeColor = System.Drawing.Color.Black;
+            this.btnRegFarmacia.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnRegFarmacia.Location = new System.Drawing.Point(1085, 237);
+            this.btnRegFarmacia.Name = "btnRegFarmacia";
+            this.btnRegFarmacia.Size = new System.Drawing.Size(106, 56);
+            this.btnRegFarmacia.TabIndex = 11;
+            this.btnRegFarmacia.Text = "Registrar Farmacia";
+            this.btnRegFarmacia.TextColor = System.Drawing.Color.Black;
+            this.btnRegFarmacia.UseVisualStyleBackColor = false;
+            this.btnRegFarmacia.Click += new System.EventHandler(this.btnRegFarmacia_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderColor = System.Drawing.Color.Green;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderSize = 1;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnCancelar.Location = new System.Drawing.Point(729, 605);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(129, 49);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.Black;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnAceptar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(79)))));
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAceptar.BorderColor = System.Drawing.Color.Green;
+            this.btnAceptar.BorderRadius = 20;
+            this.btnAceptar.BorderSize = 1;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.Black;
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAceptar.Location = new System.Drawing.Point(1116, 603);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(140, 49);
+            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextColor = System.Drawing.Color.Black;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // frmABMEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,7 +595,7 @@ namespace FarmaTown.Presentacion.Empleados
             this.BackgroundImage = global::FarmaTown.Properties.Resources.Empleados;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(1281, 731);
+            this.ClientSize = new System.Drawing.Size(1281, 664);
             this.Controls.Add(gbEmpleados);
             this.Controls.Add(this.gbFarmacias);
             this.Controls.Add(this.btnCancelar);

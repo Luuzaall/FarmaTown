@@ -192,7 +192,7 @@ namespace FarmaTown.Presentacion.Transacciones
 
         private void txtbNroFactura_KeyDown(object sender, KeyEventArgs e)
         {
-            TextBoxService.noDigitos(e);
+            TextBoxService.noLetras(e);
         }
     }
 }

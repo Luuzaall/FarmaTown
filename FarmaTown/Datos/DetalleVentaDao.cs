@@ -65,8 +65,7 @@ namespace FarmaTown.Datos
                 Medicamento = this.oMedicamentoDao.obtenerMedicamentoPorNom(nomMedicamento),
                 Cantidad = Convert.ToInt32(row["cantidad"].ToString()),
                 PrecioUnitario = Convert.ToDouble(row["precio"].ToString()),
-                EstadoActual = this.oEstadoDao.traer(Convert.ToInt32(row["idEstado"].ToString() ) ),
-
+                EstadoActual = this.oEstadoDao.traer(Convert.ToInt32(row["idEstado"])),
             };
             return oDetalleVenta;
         }

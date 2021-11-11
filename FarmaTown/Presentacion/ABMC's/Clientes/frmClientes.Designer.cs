@@ -115,7 +115,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.txtbApellido.MaxLength = 30;
             this.txtbApellido.Name = "txtbApellido";
             this.txtbApellido.Size = new System.Drawing.Size(243, 25);
-            this.txtbApellido.TabIndex = 3;
+            this.txtbApellido.TabIndex = 2;
             this.txtbApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNoDigitos_KeyDown);
             // 
             // lblApellido
@@ -256,7 +256,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Clientes
             this.cboTipoDoc.Location = new System.Drawing.Point(765, 39);
             this.cboTipoDoc.Name = "cboTipoDoc";
             this.cboTipoDoc.Size = new System.Drawing.Size(243, 31);
-            this.cboTipoDoc.TabIndex = 2;
+            this.cboTipoDoc.TabIndex = 3;
             this.cboTipoDoc.SelectionChangeCommitted += new System.EventHandler(this.cboTipoDoc_SelectionChangeCommitted);
             // 
             // lblTipoDoc

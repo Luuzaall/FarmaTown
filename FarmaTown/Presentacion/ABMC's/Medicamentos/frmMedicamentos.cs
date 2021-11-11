@@ -190,7 +190,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             oMedicamento = this.oMedicamento.traerMedicamento(nomMed);
             frmABMMed.seleccionarMedicamento(frmABMMedicamentos.FormMode.update, oMedicamento);
             frmABMMed.ShowDialog();
-            this.actualizar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -200,7 +199,6 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             oMedicamento = this.oMedicamento.traerMedicamento(nomMed);
             frmABMMed.seleccionarMedicamento(frmABMMedicamentos.FormMode.delete, oMedicamento);
             frmABMMed.ShowDialog();
-            this.actualizar();
         }
 
         private void actualizar()

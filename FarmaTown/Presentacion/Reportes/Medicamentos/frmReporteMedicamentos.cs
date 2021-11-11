@@ -90,7 +90,7 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.txtbCantMax.Text = "";
         }
 
-        private void txtbStocks_KeyPressed(object sender, KeyEventArgs e)
+        private void txtbStocks_KeyDown(object sender, KeyEventArgs e)
         {
             TextBoxService.noLetras(e);
             TextBoxService.enter(this.btnGenerar, e);

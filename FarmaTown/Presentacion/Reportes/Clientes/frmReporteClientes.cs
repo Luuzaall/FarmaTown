@@ -89,5 +89,10 @@ namespace FarmaTown.Presentacion.Reportes.Clientes
             this.rpvClientes.LocalReport.DataSources.Add(rprtDTSource);
             this.rpvClientes.RefreshReport();
         }
+
+        private void cbosEnter_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBoxService.enter(this.btnGenerar, e);
+        }
     }
 }

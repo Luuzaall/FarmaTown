@@ -79,8 +79,11 @@ namespace FarmaTown.Presentacion.Empleados
                         this.lblAviso.Visible = false;
                         this.txtbNombre.Enabled = false;
                         this.txtbNroDoc.Enabled = false;
+                        this.txtbPasaporteLetras.Enabled = false;
+                        this.txtbPasaporteNro.Enabled = false;
                         this.cboTipoDoc.Enabled = false;
                         this.btnLimpiarEmpleado.Enabled = false;
+                        this.btnActualizar.Enabled = false;
 
                         this.gbFarmacias.Enabled = false;
 

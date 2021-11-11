@@ -82,7 +82,11 @@ namespace FarmaTown.Datos
                 " FROM Empleados e" +
                 " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
                 " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
-                " WHERE e.borrado = 0 AND e.nombre LIKE '" + nomEmpleado + "%'";
+                " WHERE e.borrado = 0 ";
+
+            if (! (string.IsNullOrEmpty(nomEmpleado)
+                || nomEmpleado == " ") )
+                query += " AND e.nombre LIKE '" + nomEmpleado + "%'"; 
 
             if (idFarmacia != "-1")
                 query += " AND e.idFarmacia = " + idFarmacia;
