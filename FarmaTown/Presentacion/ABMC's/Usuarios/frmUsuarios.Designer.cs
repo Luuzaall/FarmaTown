@@ -32,6 +32,11 @@ namespace FarmaTown.Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -48,11 +53,6 @@ namespace FarmaTown.Presentacion
             this.btnAgregar = new CustomControls.RJControls.RJButton();
             this.lblAviso = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -85,6 +85,43 @@ namespace FarmaTown.Presentacion
             this.dgvUsuarios.TabIndex = 60;
             this.dgvUsuarios.TabStop = false;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Visible = false;
+            this.idUsuario.Width = 50;
+            // 
+            // nomUsuario
+            // 
+            this.nomUsuario.HeaderText = "Usuario";
+            this.nomUsuario.Name = "nomUsuario";
+            this.nomUsuario.ReadOnly = true;
+            this.nomUsuario.Width = 200;
+            // 
+            // nomRol
+            // 
+            this.nomRol.HeaderText = "Rol";
+            this.nomRol.Name = "nomRol";
+            this.nomRol.ReadOnly = true;
+            this.nomRol.Width = 200;
+            // 
+            // nomEmpleado
+            // 
+            this.nomEmpleado.HeaderText = "Empleado";
+            this.nomEmpleado.Name = "nomEmpleado";
+            this.nomEmpleado.ReadOnly = true;
+            this.nomEmpleado.Width = 200;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.borrado.Visible = false;
             // 
             // gbResultados
             // 
@@ -216,7 +253,7 @@ namespace FarmaTown.Presentacion
             // cboRoles
             // 
             this.cboRoles.FormattingEnabled = true;
-            this.cboRoles.Location = new System.Drawing.Point(542, 42);
+            this.cboRoles.Location = new System.Drawing.Point(657, 45);
             this.cboRoles.Name = "cboRoles";
             this.cboRoles.Size = new System.Drawing.Size(244, 31);
             this.cboRoles.TabIndex = 2;
@@ -227,7 +264,7 @@ namespace FarmaTown.Presentacion
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(459, 45);
+            this.label2.Location = new System.Drawing.Point(574, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 23);
             this.label2.TabIndex = 1;
@@ -356,43 +393,6 @@ namespace FarmaTown.Presentacion
             this.label3.Size = new System.Drawing.Size(242, 33);
             this.label3.TabIndex = 39;
             this.label3.Text = "Consulta Usuarios";
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Visible = false;
-            this.idUsuario.Width = 50;
-            // 
-            // nomUsuario
-            // 
-            this.nomUsuario.HeaderText = "Usuario";
-            this.nomUsuario.Name = "nomUsuario";
-            this.nomUsuario.ReadOnly = true;
-            this.nomUsuario.Width = 200;
-            // 
-            // nomRol
-            // 
-            this.nomRol.HeaderText = "Rol";
-            this.nomRol.Name = "nomRol";
-            this.nomRol.ReadOnly = true;
-            this.nomRol.Width = 200;
-            // 
-            // nomEmpleado
-            // 
-            this.nomEmpleado.HeaderText = "Empleado";
-            this.nomEmpleado.Name = "nomEmpleado";
-            this.nomEmpleado.ReadOnly = true;
-            this.nomEmpleado.Width = 200;
-            // 
-            // borrado
-            // 
-            this.borrado.HeaderText = "Borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
-            this.borrado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.borrado.Visible = false;
             // 
             // frmUsuarios
             // 

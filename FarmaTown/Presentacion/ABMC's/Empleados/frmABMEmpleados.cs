@@ -79,8 +79,11 @@ namespace FarmaTown.Presentacion.Empleados
                         this.lblAviso.Visible = false;
                         this.txtbNombre.Enabled = false;
                         this.txtbNroDoc.Enabled = false;
+                        this.txtbPasaporteLetras.Enabled = false;
+                        this.txtbPasaporteNro.Enabled = false;
                         this.cboTipoDoc.Enabled = false;
                         this.btnLimpiarEmpleado.Enabled = false;
+                        this.btnActualizar.Enabled = false;
 
                         this.gbFarmacias.Enabled = false;
 
@@ -164,7 +167,7 @@ namespace FarmaTown.Presentacion.Empleados
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oEmpleado.cambiarEstado(oEmpleado, false))
+                            if (oEmpleado.cambiarEstado(oEmpleado))
                             {
                                 MessageBox.Show("Empleado Deshabilitado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();

@@ -84,7 +84,7 @@ namespace FarmaTown.Presentacion
         private void calcularTotales()
         {
             var importeTotal = listaDetalle.Sum(p => p.Importe);
-            txtbImporteTotal.Text = importeTotal.ToString("C", new CultureInfo("es-AR"));
+            lblImporteTotal.Text = importeTotal.ToString("C", new CultureInfo("es-AR"));
         }
 
         private bool validarInput()
@@ -277,7 +277,6 @@ namespace FarmaTown.Presentacion
              * para una nueva factura.
              */
             this.inicializarFormulario();
-            this.txtbImporteTotal.Text = 0.ToString("C", new CultureInfo("es-AR"));
             this.cambiarEstadoBoton(this.btnGuardar, false);
         }
 

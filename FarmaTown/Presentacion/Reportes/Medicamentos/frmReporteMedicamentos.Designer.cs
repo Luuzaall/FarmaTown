@@ -113,7 +113,7 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.txtbCantMax.Name = "txtbCantMax";
             this.txtbCantMax.Size = new System.Drawing.Size(171, 25);
             this.txtbCantMax.TabIndex = 2;
-            this.txtbCantMax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbStocks_KeyPressed);
+            this.txtbCantMax.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbStocks_KeyDown);
             // 
             // txtbCantMin
             // 
@@ -124,7 +124,7 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
             this.txtbCantMin.Name = "txtbCantMin";
             this.txtbCantMin.Size = new System.Drawing.Size(171, 25);
             this.txtbCantMin.TabIndex = 1;
-            this.txtbCantMin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbStocks_KeyPressed);
+            this.txtbCantMin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbStocks_KeyDown);
             // 
             // label2
             // 

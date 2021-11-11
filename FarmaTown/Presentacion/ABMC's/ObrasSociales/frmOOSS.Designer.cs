@@ -34,6 +34,8 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.label1 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.dgvObrasSociales = new System.Windows.Forms.DataGridView();
+            this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbResultados = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new CustomControls.RJControls.RJButton();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
@@ -46,8 +48,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.ttipBtnABM = new System.Windows.Forms.ToolTip(this.components);
             this.lblAviso = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.idOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomOOSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObrasSociales)).BeginInit();
             this.gbResultados.SuspendLayout();
             this.gbFiltros.SuspendLayout();
@@ -99,6 +99,21 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.dgvObrasSociales.TabStop = false;
             this.dgvObrasSociales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObrasSociales_CellClick);
             // 
+            // idOOSS
+            // 
+            this.idOOSS.HeaderText = "ID";
+            this.idOOSS.Name = "idOOSS";
+            this.idOOSS.ReadOnly = true;
+            this.idOOSS.Visible = false;
+            this.idOOSS.Width = 50;
+            // 
+            // nomOOSS
+            // 
+            this.nomOOSS.HeaderText = "Nombre";
+            this.nomOOSS.Name = "nomOOSS";
+            this.nomOOSS.ReadOnly = true;
+            this.nomOOSS.Width = 250;
+            // 
             // gbResultados
             // 
             this.gbResultados.BackColor = System.Drawing.Color.Transparent;
@@ -107,7 +122,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbResultados.Location = new System.Drawing.Point(23, 269);
             this.gbResultados.Name = "gbResultados";
             this.gbResultados.Size = new System.Drawing.Size(587, 268);
-            this.gbResultados.TabIndex = 30;
+            this.gbResultados.TabIndex = 2;
             this.gbResultados.TabStop = false;
             this.gbResultados.Text = "Resultados";
             // 
@@ -146,7 +161,7 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.gbFiltros.Location = new System.Drawing.Point(23, 78);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Size = new System.Drawing.Size(587, 185);
-            this.gbFiltros.TabIndex = 31;
+            this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
             // 
@@ -320,21 +335,6 @@ namespace FarmaTown.Presentacion.ObrasSociales
             this.label2.Size = new System.Drawing.Size(331, 33);
             this.label2.TabIndex = 12;
             this.label2.Text = "Consulta Obras Sociales";
-            // 
-            // idOOSS
-            // 
-            this.idOOSS.HeaderText = "ID";
-            this.idOOSS.Name = "idOOSS";
-            this.idOOSS.ReadOnly = true;
-            this.idOOSS.Visible = false;
-            this.idOOSS.Width = 50;
-            // 
-            // nomOOSS
-            // 
-            this.nomOOSS.HeaderText = "Nombre";
-            this.nomOOSS.Name = "nomOOSS";
-            this.nomOOSS.ReadOnly = true;
-            this.nomOOSS.Width = 250;
             // 
             // frmOOSS
             // 

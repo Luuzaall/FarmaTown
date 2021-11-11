@@ -12,6 +12,11 @@ namespace FarmaTown.Datos
     {
         public Estado traer()
         {
+            /*
+             * No recibe parámetro porque ya 
+             * se sabe que estado es por instanciar
+             * esta clase
+             */
             string query = "SELECT *" +
                 " FROM Estados " +
                 " WHERE borrado = 0" +
@@ -19,14 +24,15 @@ namespace FarmaTown.Datos
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
 
-            if (tabla.Rows.Count != 0)
-                return objectMapping(tabla.Rows[0]);
-            else
-                return null;
+           return objectMapping(tabla.Rows[0]);
         }
 
         private Activa objectMapping(DataRow row)
         {
+            /*
+             * Toma los datos del DataRow y
+             * lo guarda en una instancia del objeto
+             */
             Activa oEstado = new Activa()
             {
                 IdEstado = Convert.ToInt32(row["idEstado"].ToString()),

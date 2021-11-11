@@ -165,7 +165,7 @@ namespace FarmaTown.Presentacion.Localidades
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oLocalidad.cambiarEstado(oLocalidad, false))
+                            if (oLocalidad.cambiarEstado(oLocalidad))
                             {
                                 MessageBox.Show("Localidad Deshabilitada!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);

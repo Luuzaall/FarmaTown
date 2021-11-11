@@ -14,11 +14,18 @@ namespace FarmaTown.Datos
 
         public OSXMedicamentosDao()
         {
+            // Instancia la clase que necesita
+            // para el objectMapping.
             oMedicamentoDao = new MedicamentoDao();
         }
 
         public List<List<Object>> recuperarTodos(int idOS)
         {
+            /*
+             * Recupera todas las coberturas de una 
+             * obra social en particular, cuyo id se
+             * recibe por parámetro.
+             */
             string query = "SELECT ox.descuento" +
                 ", m.nombre as NombreMedicamento" +
                 ", m.idMedicamento" +
@@ -43,6 +50,13 @@ namespace FarmaTown.Datos
         }
         private List<List<Object>> listMapping(DataTable tabla)
         {
+            /*
+             * Recibe una tabla con filas
+             * y tranforma la información en
+             * una lista de lista, donde primero
+             * se encuentra el medicamento
+             * y luego su porcentaje en cobertura.
+             */
             List<List<Object>> listasDescuentos = new List<List<Object>>();
             int cantFilas = tabla.Rows.Count;
             for (int fila = 0; fila < cantFilas; fila++)
@@ -54,6 +68,11 @@ namespace FarmaTown.Datos
 
         private List<Object> objectMapping(DataRow row)
         {
+            /*
+             * Toma los datos de la fila y los guarda en una
+             * lista, primero el medicamento y luego
+             * su descuento en porcentaje.
+             */
             List<Object> listaOSXMed = new List<Object>();
             Medicamento oMedicamento = oMedicamentoDao.objectMapping(row);
             listaOSXMed.Add(oMedicamento);

@@ -66,7 +66,7 @@ namespace FarmaTown.Presentacion
                 oUsuarioLogueado = oUsuarioLogueado.traerUsuario(frmLog.nomUsuario);
                 oSesion.Usuario = oUsuarioLogueado;
                 oSesion.FechaInicio = DateTime.Now;
-                oSesion.persistir(false);
+                oSesion.persistirInicio();
                 
                 estaLogeado = true;
 
@@ -132,7 +132,7 @@ namespace FarmaTown.Presentacion
         private void cerrarSesion()
         {
             oSesion.FechaFin = DateTime.Now;
-            oSesion.persistir(true);
+            oSesion.persistirFinal();
         }
 
         //GESTION

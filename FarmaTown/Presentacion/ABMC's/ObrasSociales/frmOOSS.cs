@@ -157,8 +157,5 @@ namespace FarmaTown.Presentacion.ObrasSociales
             }
         }
 
-
-        
-
     }
 }

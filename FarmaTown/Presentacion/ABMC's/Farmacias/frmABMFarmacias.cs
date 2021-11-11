@@ -236,7 +236,7 @@ namespace FarmaTown.Presentacion.Farmacias
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oFarmacia.cambiarEstadoFarmacia(oFarmacia, false))
+                            if (oFarmacia.cambiarEstadoFarmacia(oFarmacia))
                             {
                                 MessageBox.Show("Farmacia Deshabilitada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();

@@ -37,6 +37,7 @@ namespace FarmaTown.Presentacion
             this.txtbNroFactura = new System.Windows.Forms.TextBox();
             this.dtpFechaActual = new System.Windows.Forms.DateTimePicker();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
+            this.lblImporteTotal = new System.Windows.Forms.Label();
             this.cboMedioPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblAvisoCant = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@ namespace FarmaTown.Presentacion
             this.lblAvisoStock = new System.Windows.Forms.Label();
             this.txtbDescuentoOS = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtbImporteTotal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRehacerDetalle = new CustomControls.RJControls.RJButton();
             this.btnAgregar = new CustomControls.RJControls.RJButton();
@@ -102,7 +102,7 @@ namespace FarmaTown.Presentacion
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(622, 57);
+            this.label1.Location = new System.Drawing.Point(576, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 23);
@@ -141,17 +141,18 @@ namespace FarmaTown.Presentacion
             this.dtpFechaActual.CalendarTrailingForeColor = System.Drawing.Color.Green;
             this.dtpFechaActual.Enabled = false;
             this.dtpFechaActual.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaActual.Location = new System.Drawing.Point(709, 54);
+            this.dtpFechaActual.Location = new System.Drawing.Point(652, 54);
             this.dtpFechaActual.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtpFechaActual.MaxDate = new System.DateTime(9988, 12, 31, 0, 0, 0, 0);
             this.dtpFechaActual.MinDate = new System.DateTime(2021, 10, 9, 0, 0, 0, 0);
             this.dtpFechaActual.Name = "dtpFechaActual";
-            this.dtpFechaActual.Size = new System.Drawing.Size(229, 32);
+            this.dtpFechaActual.Size = new System.Drawing.Size(286, 32);
             this.dtpFechaActual.TabIndex = 6;
             // 
             // gbDetalle
             // 
             this.gbDetalle.BackColor = System.Drawing.Color.Transparent;
+            this.gbDetalle.Controls.Add(this.lblImporteTotal);
             this.gbDetalle.Controls.Add(this.cboMedioPago);
             this.gbDetalle.Controls.Add(this.label6);
             this.gbDetalle.Controls.Add(this.lblAvisoCant);
@@ -159,7 +160,6 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.Controls.Add(this.lblAvisoStock);
             this.gbDetalle.Controls.Add(this.txtbDescuentoOS);
             this.gbDetalle.Controls.Add(this.label12);
-            this.gbDetalle.Controls.Add(this.txtbImporteTotal);
             this.gbDetalle.Controls.Add(this.label7);
             this.gbDetalle.Controls.Add(this.btnRehacerDetalle);
             this.gbDetalle.Controls.Add(this.btnAgregar);
@@ -182,6 +182,17 @@ namespace FarmaTown.Presentacion
             this.gbDetalle.TabStop = false;
             this.gbDetalle.Text = "Detalle";
             this.ttDescripcionBtn.SetToolTip(this.gbDetalle, "Quitar el artículo elegido.");
+            // 
+            // lblImporteTotal
+            // 
+            this.lblImporteTotal.AutoSize = true;
+            this.lblImporteTotal.BackColor = System.Drawing.Color.IndianRed;
+            this.lblImporteTotal.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.lblImporteTotal.Location = new System.Drawing.Point(676, 351);
+            this.lblImporteTotal.Name = "lblImporteTotal";
+            this.lblImporteTotal.Size = new System.Drawing.Size(72, 26);
+            this.lblImporteTotal.TabIndex = 33;
+            this.lblImporteTotal.Text = "$ 0.00";
             // 
             // cboMedioPago
             // 
@@ -283,18 +294,6 @@ namespace FarmaTown.Presentacion
             this.label12.Size = new System.Drawing.Size(273, 23);
             this.label12.TabIndex = 26;
             this.label12.Text = "Descuento de Obra Social:";
-            // 
-            // txtbImporteTotal
-            // 
-            this.txtbImporteTotal.BackColor = System.Drawing.Color.IndianRed;
-            this.txtbImporteTotal.Enabled = false;
-            this.txtbImporteTotal.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.txtbImporteTotal.Location = new System.Drawing.Point(667, 349);
-            this.txtbImporteTotal.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtbImporteTotal.Name = "txtbImporteTotal";
-            this.txtbImporteTotal.Size = new System.Drawing.Size(169, 29);
-            this.txtbImporteTotal.TabIndex = 25;
-            this.txtbImporteTotal.TabStop = false;
             // 
             // label7
             // 
@@ -879,7 +878,6 @@ namespace FarmaTown.Presentacion
         private CustomControls.RJControls.RJButton btnRehacerDetalle;
         private System.Windows.Forms.TextBox txtbNroDoc;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtbImporteTotal;
         private System.Windows.Forms.Label label7;
         private CustomControls.RJControls.RJButton btnSalir;
         private CustomControls.RJControls.RJButton btnNuevaFactura;
@@ -904,5 +902,6 @@ namespace FarmaTown.Presentacion
         private System.Windows.Forms.ComboBox cboMedioPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblImporteTotal;
     }
 }

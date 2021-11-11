@@ -48,9 +48,9 @@ namespace FarmaTown.Logica
             return validar(oFarmaciaDao.actualizar(farmacia));
         }
 
-        public bool cambiarEstadoFarmacia(Farmacia farmacia, bool habilitar)
+        public bool cambiarEstadoFarmacia(Farmacia farmacia)
         {
-            return validar(oFarmaciaDao.cambiarEstado(farmacia, habilitar));
+            return validar(oFarmaciaDao.cambiarEstado(farmacia));
         }
         private bool validar(int resultado)
         {

@@ -29,9 +29,6 @@ namespace FarmaTown.Presentacion
             //Usuario us = new Usuario();
             //Application.Run(new frmVentas(us.traerUsuario("Nao")));
             //Usuario us = new Usuario();
-            //Application.Run(new frmConsultaVentas(us.traerUsuario("maru")));
-
-            //Usuario us = new Usuario();
             //Application.Run(new frmConsultaVentas(us.traerUsuario("Nao")));
 
             //Reportes

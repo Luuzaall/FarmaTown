@@ -55,7 +55,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnCancelar.Location = new System.Drawing.Point(116, 158);
+            this.btnCancelar.Location = new System.Drawing.Point(116, 147);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 46);
@@ -81,7 +81,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.Black;
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnAceptar.Location = new System.Drawing.Point(299, 158);
+            this.btnAceptar.Location = new System.Drawing.Point(299, 147);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(120, 46);
@@ -108,7 +108,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnLimpiar.Location = new System.Drawing.Point(431, 81);
+            this.btnLimpiar.Location = new System.Drawing.Point(431, 70);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(103, 40);
@@ -122,7 +122,7 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.lblNomLocalidad.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.lblNomLocalidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNomLocalidad.Location = new System.Drawing.Point(31, 96);
+            this.lblNomLocalidad.Location = new System.Drawing.Point(31, 85);
             this.lblNomLocalidad.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.lblNomLocalidad.Name = "lblNomLocalidad";
             this.lblNomLocalidad.Size = new System.Drawing.Size(126, 41);
@@ -135,7 +135,7 @@ namespace FarmaTown.Presentacion.Localidades
             // 
             this.txtbNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbNombre.Location = new System.Drawing.Point(187, 96);
+            this.txtbNombre.Location = new System.Drawing.Point(187, 85);
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(212, 25);
@@ -147,7 +147,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.lblAviso.AutoSize = true;
             this.lblAviso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.lblAviso.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.lblAviso.Location = new System.Drawing.Point(27, 36);
+            this.lblAviso.Location = new System.Drawing.Point(27, 25);
             this.lblAviso.Name = "lblAviso";
             this.lblAviso.Size = new System.Drawing.Size(218, 22);
             this.lblAviso.TabIndex = 43;

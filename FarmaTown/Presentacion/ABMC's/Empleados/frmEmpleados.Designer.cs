@@ -140,7 +140,7 @@ namespace FarmaTown.Presentacion.Empleados
             // 
             this.lblAvisoNroDoc.AutoSize = true;
             this.lblAvisoNroDoc.BackColor = System.Drawing.Color.IndianRed;
-            this.lblAvisoNroDoc.Location = new System.Drawing.Point(674, 119);
+            this.lblAvisoNroDoc.Location = new System.Drawing.Point(776, 123);
             this.lblAvisoNroDoc.Name = "lblAvisoNroDoc";
             this.lblAvisoNroDoc.Size = new System.Drawing.Size(0, 23);
             this.lblAvisoNroDoc.TabIndex = 30;

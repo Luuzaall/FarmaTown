@@ -1,4 +1,5 @@
 ﻿using FarmaTown.Logica;
+using FarmaTown.Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,11 +74,8 @@ namespace FarmaTown.Presentacion.Localidades
 
         private void txtbNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (char.IsDigit((char)e.KeyCode))
-            {
-                e.SuppressKeyPress = true;
-            }
-
+            TextBoxService.noDigitos(e);
+            TextBoxService.enter(this.btnConsultar, e);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

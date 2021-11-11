@@ -56,7 +56,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Margin = new System.Windows.Forms.Padding(12, 5, 6, 5);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(217, 25);
-            this.txtbNombre.TabIndex = 34;
+            this.txtbNombre.TabIndex = 1;
             this.txtbNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbNombre_KeyDown);
             // 
             // dgvLocalidades
@@ -125,7 +125,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 44);
-            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -151,7 +151,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(113, 44);
-            this.btnAceptar.TabIndex = 37;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextColor = System.Drawing.Color.Black;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -178,7 +178,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(117, 40);
-            this.btnLimpiar.TabIndex = 36;
+            this.btnLimpiar.TabIndex = 2;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;

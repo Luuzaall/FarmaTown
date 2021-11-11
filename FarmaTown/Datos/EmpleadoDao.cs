@@ -12,6 +12,10 @@ namespace FarmaTown.Datos
     {
         public List<Empleado> recuperarTodos()
         {
+            /*
+             * Recupera todos los empleados sin 
+             * parámetros.
+             */
             string query = "SELECT e.idEmpleado" +
                 ", e.nroDoc" +
                 ", e.nombre as nomEmpleado" +
@@ -34,8 +38,13 @@ namespace FarmaTown.Datos
             return listMapping(tabla);
         }
 
-        internal List<Empleado> recuperarConParam(string nomEmpl, string nroDoc, int idTipoDoc, string nomFarm)
+        internal List<Empleado> recuperarConParam(string nomEmpl, string nroDoc
+            , int idTipoDoc, string nomFarm)
         {
+            /*
+             * Recupera los empleados filtrados en base a los
+             * parámetros recibidos.
+             */
             string query = "SELECT e.idEmpleado" +
                 ", e.nroDoc" +
                 ", t.idTipo" +
@@ -77,12 +86,21 @@ namespace FarmaTown.Datos
 
         internal object obtenerDatosReporte(string nomEmpleado, string idFarmacia)
         {
+            /*
+             * Recupera todos los empleados
+             * en base a los parámetros para el 
+             * ReportViewer, pasándole el DataTable.
+             */
             string query = "SELECT e.nombre, e.nroDoc" +
                 ", td.nombre AS tipoDoc, f.nombre AS farmacia" +
                 " FROM Empleados e" +
                 " INNER JOIN TiposDocumento td ON e.tipoDoc = td.idTipo" +
                 " INNER JOIN Farmacias f ON e.idFarmacia = f.idFarmacia" +
-                " WHERE e.borrado = 0 AND e.nombre LIKE '" + nomEmpleado + "%'";
+                " WHERE e.borrado = 0 ";
+
+            if (! (string.IsNullOrEmpty(nomEmpleado)
+                || nomEmpleado == " ") )
+                query += " AND e.nombre LIKE '" + nomEmpleado + "%'"; 
 
             if (idFarmacia != "-1")
                 query += " AND e.idFarmacia = " + idFarmacia;
@@ -94,6 +112,9 @@ namespace FarmaTown.Datos
 
         internal Empleado traerEmpleado(int idEmpleado)
         {
+            /*
+             * Recupera un empleado particular con su id.
+             */
             string query = "SELECT e.idEmpleado" +
                 ", td.idTipo" +
                 ", e.idFarmacia" +
@@ -117,8 +138,13 @@ namespace FarmaTown.Datos
             return this.objectMapping(tablaEmpleados.Rows[0]);
         }
 
-        public Empleado buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc, int idFarm)
+        public Empleado buscarEmpleado(string nomEmpl, string nroDoc, int idTipoDoc
+            , int idFarm)
         {
+            /*
+             * Busca un empleado que cumpla con todos 
+             * los parámetros que se reciben.
+             */
             string query = "SELECT e.idEmpleado" +
                 ", e.nombre as nomEmpleado" +
                 ", e.nroDoc " +
@@ -148,6 +174,7 @@ namespace FarmaTown.Datos
             DataTable tablaEmpleados = DBHelper.getDBHelper().consultaSQL(query);
             if(tablaEmpleados.Rows.Count == 0)
             {
+                // Si no se encontró...
                 return null;
             }
             else
@@ -160,6 +187,10 @@ namespace FarmaTown.Datos
 
         public int insertarEmpleado(Empleado oEmpleado)
         {
+            /*
+             * Guadra un empleado con los datos
+             * que se reciben por parámetro.
+             */
             string query = "INSERT INTO Empleados" +
                 "(nroDoc, tipoDoc, idFarmacia, nombre, borrado)" +
                 "VALUES " +
@@ -175,6 +206,11 @@ namespace FarmaTown.Datos
 
         public int actualizarEmpleado(Empleado oEmpleado)
         {
+            /*
+             * Cambia los valores a unos nuevos 
+             * recibidos por parámetro de un 
+             * empleado en particular.
+             */
             string query = "UPDATE Empleados" +
                 " SET nroDoc = '" + oEmpleado.NroDoc + "'" + 
                 ", tipoDoc = " + oEmpleado.TipoDoc.IdTipo +
@@ -185,15 +221,14 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public int cambiarEstado(Empleado empl, bool seHabilita)
+        public int cambiarEstado(Empleado empl)
         {
+            /*
+             * Aplica el borrado lógico para el
+             * empleado indicado.
+             */
             string query = "UPDATE Empleados " +
-                " SET borrado = ";
-
-            if (seHabilita)
-                query = query + "0";
-            else
-                query = query + "1";
+                " SET borrado = 1";
 
             query = query + " WHERE idEmpleado = " + empl.IdEmpleado;
 

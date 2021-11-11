@@ -59,9 +59,9 @@ namespace FarmaTown.Logica
 
         }
 
-        public bool cambiarEstado(Barrio oBarrio, bool seHabilita)
+        public bool cambiarEstado(Barrio oBarrio)
         {
-            return validar(this.oBarrioDao.cambiarEstado(oBarrio, false));
+            return validar(this.oBarrioDao.cambiarEstado(oBarrio));
 
         }
 

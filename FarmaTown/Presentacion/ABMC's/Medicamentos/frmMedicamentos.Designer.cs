@@ -66,7 +66,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.groupBox2.Location = new System.Drawing.Point(21, 197);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1049, 312);
-            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultados";
             // 
@@ -89,7 +89,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnActualizar.Location = new System.Drawing.Point(939, 148);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(104, 48);
-            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.TextColor = System.Drawing.Color.Black;
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -121,6 +121,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.dgvMedicamentos.ShowEditingIcon = false;
             this.dgvMedicamentos.Size = new System.Drawing.Size(914, 275);
             this.dgvMedicamentos.TabIndex = 14;
+            this.dgvMedicamentos.TabStop = false;
             this.dgvMedicamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_CellClick);
             // 
             // idMedicamentos
@@ -189,7 +190,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.groupBox1.Location = new System.Drawing.Point(21, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1049, 156);
-            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
@@ -201,7 +202,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbMedicamento.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.txtbMedicamento.Name = "txtbMedicamento";
             this.txtbMedicamento.Size = new System.Drawing.Size(244, 25);
-            this.txtbMedicamento.TabIndex = 27;
+            this.txtbMedicamento.TabIndex = 1;
             this.txtbMedicamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
             // 
             // btnConsultar
@@ -223,7 +224,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnConsultar.Location = new System.Drawing.Point(511, 97);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(104, 37);
-            this.btnConsultar.TabIndex = 26;
+            this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextColor = System.Drawing.Color.Black;
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -248,7 +249,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnLimpiar.Location = new System.Drawing.Point(371, 97);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(104, 37);
-            this.btnLimpiar.TabIndex = 25;
+            this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -257,10 +258,10 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             // cboTipos
             // 
             this.cboTipos.FormattingEnabled = true;
-            this.cboTipos.Location = new System.Drawing.Point(607, 44);
+            this.cboTipos.Location = new System.Drawing.Point(732, 44);
             this.cboTipos.Name = "cboTipos";
             this.cboTipos.Size = new System.Drawing.Size(244, 31);
-            this.cboTipos.TabIndex = 23;
+            this.cboTipos.TabIndex = 2;
             this.cboTipos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
             // 
             // lblTipoMedicamento
@@ -268,7 +269,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.lblTipoMedicamento.AutoSize = true;
             this.lblTipoMedicamento.BackColor = System.Drawing.Color.White;
             this.lblTipoMedicamento.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoMedicamento.Location = new System.Drawing.Point(530, 52);
+            this.lblTipoMedicamento.Location = new System.Drawing.Point(655, 52);
             this.lblTipoMedicamento.Name = "lblTipoMedicamento";
             this.lblTipoMedicamento.Size = new System.Drawing.Size(55, 23);
             this.lblTipoMedicamento.TabIndex = 22;
@@ -305,7 +306,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnSeleccionar.Location = new System.Drawing.Point(727, 515);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(178, 49);
-            this.btnSeleccionar.TabIndex = 45;
+            this.btnSeleccionar.TabIndex = 9;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.TextColor = System.Drawing.Color.Black;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -329,7 +330,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnSalir.Location = new System.Drawing.Point(1011, 515);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
-            this.btnSalir.TabIndex = 24;
+            this.btnSalir.TabIndex = 10;
             this.btnSalir.TextColor = System.Drawing.Color.White;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -352,7 +353,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnEliminar.Location = new System.Drawing.Point(211, 515);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(57, 49);
-            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -376,7 +377,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnEditar.Location = new System.Drawing.Point(120, 515);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(58, 49);
-            this.btnEditar.TabIndex = 18;
+            this.btnEditar.TabIndex = 7;
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -399,7 +400,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.btnAgregar.Location = new System.Drawing.Point(22, 515);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 49);
-            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.TabIndex = 6;
             this.btnAgregar.TextColor = System.Drawing.Color.White;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);

@@ -81,29 +81,27 @@ namespace FarmaTown.Presentacion.Localidades
 
         private void frmABMBarrios_Load(object sender, EventArgs e)
         {
+            this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
             switch (formMode)
             {
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Barrio - FarmaTown";
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
                         break;
                     }
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Barrio - FarmaTown";
-                        this.txtbNombre.Text = oBarrio.Nombre;
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
-                        this.seleccionarFila(this.dgvLocalidades, oLocalidad.IdLocalidad);
-                        this.dgvLocalidades.Enabled = true;
+                        this.cargarDatos(oBarrio);
+                        this.seleccionarFila(this.dgvLocalidades, oBarrio.Localidad.IdLocalidad);
                         break;
                     }
                 case FormMode.delete:
                     {
                         this.Text = "Deshabilitar Barrio - FarmaTown";
-                        this.txtbNombre.Text = oBarrio.Nombre;
-                        this.cargarGrilla(dgvLocalidades, oLocalidad.recuperarTodos());
+                        this.cargarDatos(oBarrio);
                         this.cargarFila(this.dgvLocalidades);
+
                         this.dgvLocalidades.Enabled = false;
                         this.txtbNombre.Enabled = false;
                         this.btnLimpiar.Enabled = false;
@@ -113,8 +111,10 @@ namespace FarmaTown.Presentacion.Localidades
             }
         }
 
-
-        //NUEVO DESDE ACA
+        private void cargarDatos(Barrio oBarrio)
+        {
+            this.txtbNombre.Text = oBarrio.Nombre;
+        }
 
         private void cargarFila(DataGridView dgv)
         {
@@ -144,7 +144,7 @@ namespace FarmaTown.Presentacion.Localidades
 
             for (int i = 0; i < cantFilasdgv; i++)
             {
-                int idFila = Convert.ToInt32(dgv.Rows[i].Cells[0].Value.ToString());
+                int idFila = int.Parse(dgv.Rows[i].Cells[0].Value.ToString());
                 if (idFila == id)
                 {
                     dgv.Rows[i].Selected = true;
@@ -251,7 +251,7 @@ namespace FarmaTown.Presentacion.Localidades
                         if (decision == DialogResult.OK)
                         {
 
-                            if (oBarrio.cambiarEstado(oBarrio, false))
+                            if (oBarrio.cambiarEstado(oBarrio))
                             {
                                 MessageBox.Show("Barrio Deshabilitado!", "Información"
                                     , MessageBoxButtons.OK, MessageBoxIcon.Information);

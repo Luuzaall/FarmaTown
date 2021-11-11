@@ -181,7 +181,7 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.BackColor = System.Drawing.Color.White;
             this.lblDescripcion.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.lblDescripcion.Location = new System.Drawing.Point(245, 93);
+            this.lblDescripcion.Location = new System.Drawing.Point(245, 82);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(132, 23);
             this.lblDescripcion.TabIndex = 9;
@@ -201,10 +201,11 @@ namespace FarmaTown.Presentacion.ABMC_s.Medicamentos
             this.txtbDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(208)))), ((int)(((byte)(159)))));
             this.txtbDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbDescripcion.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
-            this.txtbDescripcion.Location = new System.Drawing.Point(408, 93);
+            this.txtbDescripcion.Location = new System.Drawing.Point(408, 78);
             this.txtbDescripcion.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.txtbDescripcion.Multiline = true;
             this.txtbDescripcion.Name = "txtbDescripcion";
-            this.txtbDescripcion.Size = new System.Drawing.Size(259, 25);
+            this.txtbDescripcion.Size = new System.Drawing.Size(259, 50);
             this.txtbDescripcion.TabIndex = 2;
             this.txtbDescripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbEnter_KeyDown);
             // 

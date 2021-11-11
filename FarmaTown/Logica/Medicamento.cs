@@ -44,7 +44,7 @@ namespace FarmaTown.Logica
 
         internal bool crearMedicamento(Medicamento oMedicamento)
         {
-            return this.oMedicamentoDao.insertar(oMedicamento);
+            return validar(this.oMedicamentoDao.insertar(oMedicamento));
         }
 
 
@@ -53,19 +53,28 @@ namespace FarmaTown.Logica
             return this.oMedicamentoDao.actualizar(oMedicamento);
         }
 
-        internal bool cambiarEstadoMedicamento(Medicamento oMedicamento, bool habilitado)
+        internal bool cambiarEstadoMedicamento(Medicamento oMedicamento)
         {
-            return this.oMedicamentoDao.cambiarEstado(oMedicamento, habilitado);
+            return this.oMedicamentoDao.cambiarEstado(oMedicamento);
         }
 
         internal List<Medicamento> recurperarMedicamentoCParametros(string nom, int idTipo)
-        { 
+        {
             return this.oMedicamentoDao.consultarMedicamentoCParam(nom, idTipo);
         }
 
         public Object obtenerDatosReporte(int cantidadMinima, int cantidadMaxima, string idTipoMed)
         {
             return this.oMedicamentoDao.obtenerDatosReporte(cantidadMinima, cantidadMaxima, idTipoMed);
+        }
+        private bool validar(int resultado)
+        {
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

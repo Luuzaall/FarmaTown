@@ -10,8 +10,28 @@ namespace FarmaTown.Datos
 {
     class LocalidadDao
     {
+
+        public List<Localidad> recuperarTodos()
+        {
+            /*
+             * Recupera todas las localidades
+             * y las devuelve en la lista.
+             */
+            string query = "SELECT *" +
+                " FROM Localidades" +
+                " WHERE borrado = 0" +
+                " ORDER BY nombre";
+
+            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
+
+            return this.listMapping(tabla);
+        }
         public List<Localidad> recuperarCParam(string nombre)
         {
+            /*
+             * Recupera todas las localidades en 
+             * base al parámetro recibido.
+             */
             string query = "SELECT idLocalidad" +
                 ", nombre" +
                 ", borrado" +
@@ -21,30 +41,16 @@ namespace FarmaTown.Datos
                 " ORDER BY nombre";
 
             DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            List<Localidad> listaLoc = new List<Localidad>();
-            int cantFilas = tabla.Rows.Count;
             
-            return this.listMapping(tabla);
-        }
-
-        public List<Localidad> recuperarTodos()
-        {
-            string query = "SELECT *" +
-                " FROM Localidades" +
-                " WHERE borrado = 0" +
-                " ORDER BY nombre";
-
-            DataTable tabla = DBHelper.getDBHelper().consultaSQL(query);
-
-            List<Localidad> listaLoc = new List<Localidad>();
-            int cantFilas = tabla.Rows.Count;
-
             return this.listMapping(tabla);
         }
 
         public List<Localidad> recuperarSoloUsadosClientes()
         {
+            /*
+             * Recupera sólo las localidades que estén
+             * utilizando al menos un cliente.
+             */
             string query = "SELECT l.idLocalidad" +
                 " FROM Clientes c" +
                 " INNER JOIN Barrios b ON c.idBarrio = b.idBarrio" +
@@ -63,8 +69,13 @@ namespace FarmaTown.Datos
 
             return listaLoc;
         }
+
         public Localidad traer(int idLocalidad)
         {
+            /*
+             * Recupera la localidad cuyo ID
+             * se recibe por parámetro.
+             */
             string query = "SELECT *" +
                 " FROM Localidades" +
                 " WHERE borrado = 0" +
@@ -78,6 +89,10 @@ namespace FarmaTown.Datos
 
         public Localidad traer(string nombre)
         {
+            /*
+             * Recupera la localidad cuyo
+             * nombre se recibe por parámetro.
+             */
             string query = "SELECT *" +
                 " FROM Localidades" +
                 " WHERE borrado = 0" +
@@ -96,6 +111,10 @@ namespace FarmaTown.Datos
 
         public int crear(Localidad nuevaLocalidad)
         {
+            /*
+             * Persiste una localidad recibida por 
+             * parámetro.
+             */
             string query = "INSERT INTO Localidades" +
                 "(nombre, borrado)" +
                 " VALUES" +
@@ -106,6 +125,10 @@ namespace FarmaTown.Datos
 
         public int actualizar(Localidad oLocalidad)
         {
+            /*
+             * Cambia los datos de la localidad a los
+             * que recibe por parámetro.
+             */
             string query = "UPDATE Localidades" +
                 " SET nombre = '" + oLocalidad.Nombre + "'" +
                 " WHERE idLocalidad = " + oLocalidad.IdLocalidad;
@@ -113,15 +136,14 @@ namespace FarmaTown.Datos
             return DBHelper.getDBHelper().ejecutarSQL(query);
         }
 
-        public int cambiarEstado(Localidad oLocalidad, bool seHabilita)
+        public int cambiarEstado(Localidad oLocalidad)
         {
+            /*
+             * Aplica el borrado lógico sobre
+             * la localidad recibida.
+             */
             string query = "UPDATE Localidades" +
-                " SET borrado = ";
-
-            if (seHabilita)
-                query = query + "0";
-            else
-                query = query + "1";
+                " SET borrado = 1";
 
             query = query + " WHERE idLocalidad = " + oLocalidad.IdLocalidad;
 
@@ -135,7 +157,7 @@ namespace FarmaTown.Datos
              * Recibe una tabla con filas
              * y tranforma la información de cada
              * una de ellas en un objeto del 
-             * tipo de Empleado
+             * tipo de Localidad
              */
             List<Localidad> lista = new List<Localidad>();
             int cantFilas = tabla.Rows.Count;
@@ -151,6 +173,11 @@ namespace FarmaTown.Datos
 
         private Localidad objectMapping(DataRow row)
         {
+            /*
+             * Guarda los datos de la fila recibida
+             * en una instancia de la clase
+             * de Localidad.
+             */
             Localidad oLocalidad = new Localidad
             {
                 IdLocalidad = Convert.ToInt32(row["idLocalidad"].ToString()),
