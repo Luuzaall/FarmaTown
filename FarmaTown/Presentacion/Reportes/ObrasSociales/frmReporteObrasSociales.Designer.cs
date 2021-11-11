@@ -141,6 +141,7 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextColor = System.Drawing.Color.Black;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGenerar
             // 
