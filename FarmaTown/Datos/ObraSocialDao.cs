@@ -48,7 +48,7 @@ namespace FarmaTown.Datos
                 " INNER JOIN ObrasSociales o ON x.idOS = o.idOS";
 
             if (nomObraSocial != "") {
-                query += " WHERE o.nombre IS LIKE '" + nomObraSocial + "'";
+                query += " WHERE o.nombre LIKE '" + nomObraSocial + "'";
             }
 
             query += " GROUP BY o.nombre, m.nombre, x.descuento" +
