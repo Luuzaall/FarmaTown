@@ -35,13 +35,14 @@ namespace FarmaTown.Presentacion.Localidades
         //-----------------------------------------------------------------------------------
         //MÉTODOS FUNCIONALES
 
+        //Permite recibir el barrio que se seleccionóen la ventana anterior.
         public void seleccionarBarrio(FormMode _formMode, Barrio barrioSelected)
         {
             formMode = _formMode;
             oBarrio = barrioSelected;
         }
 
-        //Valida que todos los campos estén completos
+        //Verifica que todos los datos sean válidos para el registro del barrio.
         private bool validarCampos()
         {
             string nombre = this.txtbNombre.Text;
@@ -116,7 +117,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.txtbNombre.Text = oBarrio.Nombre;
         }
 
-        //Borra todo lo que no esta seleccionado de la dgv
+        //Borra todo lo que no esta seleccionado del DataGridView
         private void cargarFila(DataGridView dgv)
         {
             int cantFilasdgv = dgv.RowCount;
@@ -149,6 +150,7 @@ namespace FarmaTown.Presentacion.Localidades
                 }
             }
         }
+
         //Carga la grilla con los datos necesarios pasados por lista.
         private void cargarGrilla(DataGridView dgv, List<Localidad> lista)
         {
@@ -166,6 +168,7 @@ namespace FarmaTown.Presentacion.Localidades
             }
         }
 
+        //Limpia el textbox cuando el usuario haga click en el botón Limpiar.
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.txtbNombre.Text = "";
@@ -176,6 +179,7 @@ namespace FarmaTown.Presentacion.Localidades
             this.Close();
         }
 
+        //El comportamiento del botón depende de lo determinado por el formMode
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string nombre = this.txtbNombre.Text;

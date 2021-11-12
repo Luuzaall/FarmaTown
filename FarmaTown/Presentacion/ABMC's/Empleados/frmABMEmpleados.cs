@@ -31,6 +31,11 @@ namespace FarmaTown.Presentacion.Empleados
 
         public enum FormMode
         {
+            /*
+             * Se crea una clase del tipo enum
+             * que permita determinar el comportamiento
+             * variable del formulario según su aplicación.
+             */
             insert,
             update,
             delete

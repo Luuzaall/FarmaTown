@@ -76,6 +76,8 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
                 parametros.Add(paramCantMax);
                 parametros.Add(paramTipoMed);
 
+                //Le pasa los parámetros del formulario útiles 
+                //Para agregarlo en el reporte.
                 rpvMedicamentos.LocalReport.DataSources.Add(rprtDTSource);
                 this.rpvMedicamentos.LocalReport.SetParameters(parametros);
                 rpvMedicamentos.RefreshReport();
@@ -104,6 +106,10 @@ namespace FarmaTown.Presentacion.Reportes.Medicamentos
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            /*
+             * Inicializa los filtros del generador
+             * del Reporte.
+             */
             this.txtbCantMin.Text = "";
             this.txtbCantMax.Text = "";
             this.cboTipoMed.SelectedIndex = -1;
