@@ -186,7 +186,7 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FarmaTown - Reporte de Obras Sociales";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmReporteObrasSociales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.gbFiltros.ResumeLayout(false);

@@ -16,21 +16,32 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
     public partial class frmReporteObrasSociales : Form
     {
         ObraSocial oObraSocial;
-        Medicamento oMedicamento;
 
         public frmReporteObrasSociales()
         {
             oObraSocial = new ObraSocial();
-            oMedicamento = new Medicamento();
             InitializeComponent();
         }
+        
+        /* 
+         * Recarga el ReportViewer y 
+         * carga el comboBox de Obras Sociales
+         * al inicializar el formulario
+         */
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmReporteObrasSociales_Load(object sender, EventArgs e)
         {
             this.rpvOS.RefreshReport();
             ComboBoxService.cargarCombo(this.cboObrasSociales, oObraSocial.recuperarTodos()
     , "Nombre", "IdOS");
         }
+
+        /*
+         * Respuesta al boton de generar reporte
+         * carga una tabla con los datos necesarios
+         * genera un DataSource para el ReportViewer
+         * para que sean mostrados
+         */
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
@@ -41,6 +52,10 @@ namespace FarmaTown.Presentacion.Reportes.ObrasSociales
             this.rpvOS.RefreshReport();
 
         }
+
+        /*
+         * Reinicia el item seleccionado del comboBox a vacio 
+         */
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

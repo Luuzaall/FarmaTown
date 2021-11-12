@@ -43,11 +43,17 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             /*
              * Se obtiene el usuario seleccionado
-             * y el modo de apertura del formABMUsuarios
+             * y el modo de apertura del formABMFarmacias
              */
             formMode = _formMode;
             oFarmacia = farmaciaSelected;
         }
+
+        /*
+         * Respuesta a la ejecucion del formulario
+         * muestra en la grilla los barrios
+         * verifica el comportamiento del formulario solicitado
+         */
 
         private void frmABMFarmacias_Load(object sender, EventArgs e)
         {
@@ -62,6 +68,11 @@ namespace FarmaTown.Presentacion.Farmacias
 
                 case FormMode.update:
                     {
+
+                        /*
+                         * Carga los datos de la farmacia a modificar
+                         * y permite la edicion de sus datos
+                         */
                         this.Text = "Actualizar Farmacia - FarmaTown";
                         this.cargarDatos();
                         this.txtbNombre.Enabled = true;
@@ -72,6 +83,10 @@ namespace FarmaTown.Presentacion.Farmacias
 
                 case FormMode.delete:
                     {
+                        /*
+                         * Carga los datos de la farmacia a dar de baja
+                         * los muestra pero no permite la edicion de los mismos
+                         */
                         this.cargarDatos();
                         this.Text = "Deshabilitar Farmacia - FarmaTown";
                         this.cargarFila(this.dgvBarrios);
@@ -97,6 +112,10 @@ namespace FarmaTown.Presentacion.Farmacias
 
             this.seleccionarFila(this.dgvBarrios, oFarmacia.Barrio.IdBarrio);
         }
+
+        /*
+         * Muestra una unica fila seleccionada
+         */
 
         private void cargarFila(DataGridView dgv)
         {
@@ -134,6 +153,11 @@ namespace FarmaTown.Presentacion.Farmacias
             }
         }
 
+        /*
+         * Guarda todos los barrios en una lista 
+         * y los carga en una grilla
+         */
+
         private void mostrarBarrios()
         {
             List<Barrio> tablaBarrios = oBarrio.recuperarTodos();
@@ -169,6 +193,11 @@ namespace FarmaTown.Presentacion.Farmacias
             this.limpiarDatos();
         }
 
+        /*
+         * Borra el contenido de los textBox del formulario 
+         * y los deja vacios
+         */
+
         private void limpiarDatos()
         {
             this.txtbNombre.Text = "";
@@ -176,10 +205,19 @@ namespace FarmaTown.Presentacion.Farmacias
             this.txtbNumero.Text = "";
         }
 
+        /*
+         * Cierra el formulario
+         */
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        /*
+         * Respuesta al boton aceptar
+         * verifica el comportamiento solicitado del formulario
+         */
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -187,8 +225,15 @@ namespace FarmaTown.Presentacion.Farmacias
             {
                 case FormMode.insert:
                     {
+                        /*
+                         * valida que haya ingresado todos los datos
+                         */
                         if (this.validarCampos())
                         {
+                            /*
+                             * valida que no haya una farmacia con los mismos datos
+                             * carga los datos a la base de datos
+                             */
                             if (this.existeFarmacia() == false)
                             {
                                 var oFarmacia = new Farmacia();
@@ -211,6 +256,10 @@ namespace FarmaTown.Presentacion.Farmacias
                     }
                 case FormMode.update:
                     {
+                        /*
+                         * valida que haya ingresado todos los datos
+                         * carga la farmacia en base de datos
+                        */
                         if (this.validarCampos())
                         {
                             oFarmacia.Nombre = txtbNombre.Text;
@@ -232,6 +281,10 @@ namespace FarmaTown.Presentacion.Farmacias
                     }
                 case FormMode.delete:
                     {
+                        /*
+                         * consulta si desea deshabilitar la farmacia
+                         * cambia de estado la farmacia en la base de datos
+                         */
                         var decision = MessageBox.Show("Seguro que desea deshabilitar la farmacia seleccionada?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (decision == DialogResult.OK)
                         {
@@ -251,6 +304,11 @@ namespace FarmaTown.Presentacion.Farmacias
             }
         }
 
+        /*
+         * Verifica si existe una farmacia
+         * con los datos pasados por el usuario
+         */
+
         private bool existeFarmacia()
         {
             string nom = this.txtbNombre.Text;
@@ -267,6 +325,10 @@ namespace FarmaTown.Presentacion.Farmacias
             }
         }
 
+        /*
+         * Verifica que el usuario 
+         * haya ingresado todos los datos necesarios
+         */
         private bool validarCampos()
         {
             string nom = this.txtbNombre.Text;
@@ -309,6 +371,10 @@ namespace FarmaTown.Presentacion.Farmacias
             // alguno anterior...
             return false;
         }
+
+        /*
+         * Crea una instancia del formulario de creacion de barrios
+         */
 
         private void btnRegBarrio_Click(object sender, EventArgs e)
         {

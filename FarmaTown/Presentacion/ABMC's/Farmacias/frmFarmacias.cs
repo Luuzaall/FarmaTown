@@ -24,6 +24,10 @@ namespace FarmaTown.Presentacion.Farmacias
             InitializeComponent();
         }
 
+        /*
+         * Carga la grilla con farmacias de la base de datos
+         * una vez ejecutado el formulario
+         */
         private void frmFarmacias_Load(object sender, EventArgs e)
         {
             //this.deshabilitarBotones();
@@ -38,6 +42,7 @@ namespace FarmaTown.Presentacion.Farmacias
 
             }
         }
+
         private void cargarGrilla(DataGridView dgv, List<Farmacia> lista)
         {
             /*
@@ -61,6 +66,11 @@ namespace FarmaTown.Presentacion.Farmacias
             }
         }
 
+        /*
+         * Borra el contenido de los textBox del formulario 
+         * y los deja vacios
+         */
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.textbSucursal.Text = "";
@@ -68,6 +78,12 @@ namespace FarmaTown.Presentacion.Farmacias
             this.textbNumero.Text = "";
         }
 
+        /*
+         * Respuesta a boton consultar
+         * consulta a la base de datos las farmacias
+         * con los parametros ingresados por el usuario
+         * y carga la grilla con estos
+         */
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<Farmacia> resultadoFarmacias;
@@ -79,6 +95,11 @@ namespace FarmaTown.Presentacion.Farmacias
             this.cargarGrilla(this.dgvFarmacias, resultadoFarmacias);
             
         }
+
+        /*
+         * Respuesta a una seleccion de celda de la grilla
+         * habilita los botones de ABM para la farmacia seleccionada
+         */
 
         private void dgvFarmacias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -93,6 +114,11 @@ namespace FarmaTown.Presentacion.Farmacias
         {
             this.actualizar();
         }
+
+        /*
+         * Recarga la grilla con todas las farmacias
+         * de la base de datos
+         */
 
         private void actualizar()
         {
@@ -114,6 +140,11 @@ namespace FarmaTown.Presentacion.Farmacias
             this.lblAviso.Visible = true;
         }
 
+        /*
+         * Respuesta al boton agregar
+         * crea una instancia del formulario de abm
+         * y lo ejecuta en su modo insert
+         */
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ABMFar = new frmABMFarmacias();
@@ -121,6 +152,11 @@ namespace FarmaTown.Presentacion.Farmacias
             this.actualizar();
         }
 
+        /*
+         * Respuesta al boton editar
+         * crea una instancia del formulario de abm
+         * y lo ejecuta en su modo update
+         */
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ABMFar = new frmABMFarmacias();
@@ -131,6 +167,12 @@ namespace FarmaTown.Presentacion.Farmacias
             this.actualizar();
         }
 
+        /*
+         * Respuesta al boton eliminar
+         * crea una instancia del formulario de abm
+         * y lo ejecuta en su modo delete
+         * trae de la base de datos la farmacia seleccionada
+         */
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ABMFar = new frmABMFarmacias();
